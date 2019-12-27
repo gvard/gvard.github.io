@@ -1,0 +1,73 @@
+body {
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  background: #ffffff url("lapa.jpg") no-repeat 90% 0;
+  /* opacity: 0.7; */
+}
+
+h1 {
+  width: 260px;
+  font-family: "Arial", sans-serif;
+  font-size: 36px;
+  line-height: 36px;
+}
+
+.site-header {
+  margin-bottom: 190px;
+}
+
+.skills-item {
+  margin-bottom: 5px;
+}
+
+.container {
+  width: 480px;
+  margin: 0 auto;
+}
+
+.site-header img {
+  display: block;
+  margin: 0 auto;
+}
+
+.features {
+  margin-bottom: 30px;
+}
+
+.features p {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  margin: 0 5px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  text-transform: uppercase;
+}
+
+.feature-kitten {
+  padding-top: 60px;
+  background-image: url("img/bottle.svg");
+}
+
+.feature-cat {
+  padding-top: 60px;
+  background-image: url("img/cat.svg");
+}
+
+.feature-train {
+  padding-top: 60px;
+  background-image: url("img/whistle.svg");
+}
+
+.skills-list {
+  padding: 0;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  color: #999999;
+}

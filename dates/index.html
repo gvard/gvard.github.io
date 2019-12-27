@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Знаменательные даты</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body onload="findDate()">
+<div class="wrapper">
+<div class="column left">
+<div class="desc">Для наполнения материалом страницы дат необходимо соблюдать последовательность блоков и их формат:
+<ul>
+    <li>Указание для тематического рубрикатора, одно из слов: Астрономия, Космонавтика, Авиация, Физика, Информатика.</li>
+    <li>Даты вида дд.мм.гггг на отдельной строке.</li>
+    <li>Изображение или ссылка на изображение из (англоязычной) википедии.</li>
+    <li>Описание, начинающееся со слов вида " назад произошло...". Число прошедших лет и слово "год/года/лет" будет вставлено автоматически.</li>
+</ul>
+<p><a href="carousel.html">Версия с перелистыванием, задержка 6 секунд</a>.</p>
+</div>
+
+<h1>Что произошло сегодня?</h1>
+
+<h2>Астрономия</h2>
+<div class="wrap">
+<div class="date">14.12.1546</div>
+<div class="desc">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Tycho_Brahe.JPG/324px-Tycho_Brahe.JPG" alt="">
+<p><span class="ago"></span> со дня рождения датского астронома Тихо Браге, известного своими исключительно точными наблюдениями. Тихо Браге умер 24 октября 1601 года в возрасте 54 лет. До первой демонстрации телескопа Галилеем оставалось 8 лет.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">20.12.1904</div>
+<div class="desc">
+<img src="img\20.12..jpg" alt="">
+<p><span class="ago"></span> назад была открыта американская обсерватория Маунт-Вилсон (Mt. Wilson Observatory).</p>
+</div>
+</div>
+    
+<div class="wrap">
+<div class="date">15.12.1966</div>
+<div class="desc">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/PIA12714_Janus_crop.jpg/577px-PIA12714_Janus_crop.jpg" alt="">
+<p><span class="ago"></span> назад французским астрономом Одуэном Дольфюсом открыт спутник Сатурна Янус, находящийся на коорбитальной орбите с другим спутником Сатурна, Эпиметеем. Из-за этого спутники некоторое время путали.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">25.12.1904</div>
+<div class="desc">
+<img src="https://upload.wikimedia.org/wikipedia/ru/1/12/%D0%94%D1%83%D0%B1%D0%BE%D1%88%D0%B8%D0%BD_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87.jpg" alt="">
+<p><span class="ago"></span> лет назад родился советский астроном Георгий Николаевич Дубошин. Он является одним из создателей московской школы небесной механики, автор ряда фундаментальных учебников по небесной механике, вёл исследования в области астродинамики, теоретической механики, теории устойчивости, теории притяжения. </p>
+</div>
+</div>
+    
+<div class="wrap">
+<div class="date">27.12.1571</div>
+<div class="desc">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Johannes_Kepler_1610.jpg/437px-Johannes_Kepler_1610.jpg" alt="">
+<p><span class="ago"></span> лет со дня рождения немецкого математика, астронома, механика, оптика, первооткрывателя законов движения планет Солнечной системы Иоганна Кеплера.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">31.12.1864</div>
+<div class="desc">
+<img src="img\31.12.(2).jpg" alt="">
+<p><span class="ago"></span> лет со дня рождения американский астронома и конструктора телескопов Джорджа Уиллиса Ричи. Совершенствовал астрономические инструменты и методы наблюдений, соавтор распространенной современной системы рефлектора Ричи – Кретьена.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">31.12.1864</div>
+<div class="desc">
+<img src="img\31.12.(3).jpg" alt="">
+<p><span class="ago"></span> лет со дня рождения американского астронома Роберта Гранта Эйткена. Эйткен открыл более 3000 двойных звезд.</p>
+</div>
+</div>
+
+<h2>Космонавтика</h2>
+
+<div class="wrap">
+<div class="date">04.10.1957</div>
+<div class="desc">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Sputnik_asm.jpg/586px-Sputnik_asm.jpg" alt="">
+<p><span class="ago"></span> назад был запущен первый искусственный спутник Земли.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">14.12.1962</div>
+<div class="desc">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mariner_2.jpg/598px-Mariner_2.jpg" alt="">
+<p><span class="ago"></span> назад аппарат NASA Маринер-2 стал первой межпланетной миссией, пролетев  на расстоянии 34833 км от поверхности Венеры.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">15.12.1984</div>
+<div class="desc">
+<img src="img\15.12.(2).jpg" alt="">
+<p><span class="ago"></span> назад, 15 и 21 декабря, с помощью ракеты «Протон» стартовали «Вега-1» и «Вега-2». Эти советские автоматические межпланетные станции предназначались для изучения Венеры и кометы Галлея.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">16.12.1965</div>
+<div class="desc">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Pioneer-6-9.jpg/487px-Pioneer-6-9.jpg" alt="">
+<p><span class="ago"></span> назад на гелиоцентрическую орбиту выведена автоматическая межпланетная станция «Пионер-6». Целью аппаратов «Пионер» было изучение солнечной плазмы, микрометеоритных потоков, космических лучей, магнитных возмущений, солнечного ветра, физики частиц. </p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">24.12.1968</div>
+<div class="desc">
+<img src="img\24.12..jpg" alt="">
+<p><span class="ago"></span> назад состоялась миссия «Аполлон-8». Земляне впервые облетели Луну. Была получена знаменитая фотография восхода Земли над лунным горизонтом. Корабль вышел на окололунную орбиту 24 декабря и оставался на ней в течение 20 часов, сделав 10 витков вокруг Луны.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">26.12.1974</div>
+<div class="desc">
+<img src="img\26.12.(4).jpg" alt="">
+<p><span class="ago"></span> назад была запущена Космическая Станция «Салют-4».</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">07.12.1972</div>
+<div class="desc">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/480px-The_Earth_seen_from_Apollo_17.jpg" alt="">
+<p><span class="ago"></span> назад стартовала последняя миссия к Луне Аполлон 17. С борта космического корабля была сделана знаменитая фотография Земли из космоса.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">11.12.1972</div>
+<div class="desc">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/NASA_Apollo_17_Lunar_Roving_Vehicle.jpg/480px-NASA_Apollo_17_Lunar_Roving_Vehicle.jpg" alt="">
+<p><span class="ago"></span> назад в ходе миссии Аполлон-17 произошла шестая и последняя высадка человека на Луну. Астронавты оставались на Луне чуть более трёх суток. За это время они совершили три выхода из корабля общей продолжительностью 22 часа. Было собрано и привезено на Землю 110.5 кг образцов лунной породы. </p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">14.12.1972</div>
+<div class="desc">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Apollo_17_Cernan_on_moon.jpg/465px-Apollo_17_Cernan_on_moon.jpg" alt="">
+<p><span class="ago"></span> назад Харрисон Шмитт и Юджин Сернан покинули поверхность Луны в ходе последней пилотируемой миссии Аполлон-17. Юджин Сернан стал последним человеком, стоявшим на поверхности Луны.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">25.12.1978</div>
+<div class="desc">
+<img src="img\25.12.(2).jpg" alt="">
+<p><span class="ago"></span> назад космический аппарат «Венера 12» совершил мягкую посадку на поверхность Венеры.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">07.12.1995</div>
+<div class="desc">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Artwork_Galileo-Io-Jupiter.JPG/597px-Artwork_Galileo-Io-Jupiter.JPG" alt="">
+<p><span class="ago"></span>  назад космический аппарат Галилео достиг Юпитера.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">31.12.2014</div>
+<div class="desc">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/20090829_Model_of_Fengyun-2_4002.JPG/399px-20090829_Model_of_Fengyun-2_4002.JPG" alt="">
+<p><span class="ago"></span> назад был запущен китайский метеорологический спутник Фэнъюнь-2G. Китайская космонавтика работает без выходных!</p>
+</div>
+</div>
+
+<h2>Наблюдательная астрономия</h2>
+<div class="wrap">
+<div class="date">12.12.2019</div>
+<div class="desc">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/505px-FullMoon2010.jpg" alt="">
+<p><span class="ago"></span> Полнолуние (Ф=1,0 в 08:15)</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">13.12.2019</div>
+<div class="desc">
+<img src="img\13.12..jpg" alt="">
+<p><span class="ago"></span> Максимум действия метеорного потока Геминиды из созвездия Близнецы.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">14.12.2019</div>
+<div class="desc">
+<img src="img\14.12.(1).jpg" alt="">
+<p><span class="ago"></span> Комета C/2018 N2 (ASASSN) близ М31 из созвездия Андромеды (в течение всей последующей недели).</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">17.12.2019</div>
+<div class="desc">
+<img src="img\17.12..jpg" alt="">
+<p><span class="ago"></span> Луна (Ф=0,71-) проходит в 4° севернее Регула (+1,4 m) (на юго-западной стороне неба утром)</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">18.12.2019</div>
+<div class="desc">
+<img src="img\18.12..jpg" alt="">
+<p><span class="ago"></span> Луна (Ф= 0,54-) в перигее, расстояние от Земли 370258 км (23:31)</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">19.12.2019</div>
+<div class="desc">
+<img src="img\19.12..jpg" alt="">
+<p><span class="ago"></span> Луна в фазе последней четверти (07:59)</p>
+</div>
+</div>
+
+
+<div class="wrap">
+<div class="date">21.12.2019</div>
+<div class="desc">
+<img src="img\21.12..png" alt="">
+<p><span class="ago"></span> Луна (Ф= 0,3-) проходит в 7° севернее Спики (+1,0 m) (утром с южной стороны неба)</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">22.12.2019</div>
+<div class="desc">
+<img src="img\22.12..jpg" alt="">
+<p><span class="ago"></span> Зимнее солнцестояние (07:19)</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">23.12.2019</div>
+<div class="desc">
+<img src="img\23.12.(1).jpg" alt="">
+<p><span class="ago"></span> Максимум действия метеорного потока Урсиды (ZHR= 10) из созвездия Малая Медведица (06:00)</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">23.12.2019</div>
+<div class="desc">
+<img src="img\23.12.(2).jpg" alt="">
+<p><span class="ago"></span> Луна (Ф= 0,11-) проходит в 3° севернее Марса (+1,6 m) (утром с юго-восточной стороны горизонта)</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">25.12.2019</div>
+<div class="desc">
+<img src="img\25.12.(1).png" alt="">
+<p><span class="ago"></span> Луна (Ф= 0,01-) близ Меркурия (утром с юго-восточной стороны горизонта)</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">26.12.2019</div>
+<div class="desc">
+<img src="img\26.12.(1).jpg" alt="">
+<p><span class="ago"></span> Новолуние (Ф=0,00 в 08:16). Спутник не освещается солнечным светом, поэтому не появится на ночном небе. Это лучший период для поиска слабых небесных объектов.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">26.12.2019</div>
+<div class="desc">
+<img src="img\26.12.(2).jpg" alt="">
+<p><span class="ago"></span> Кольцеобразное затмение Солнца (макс. фаза = 0,97 в 8:17мск). Частные фазы видны на территории России!</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">26.12.2019</div>
+<div class="desc">
+<img src="img\26.12.(3).jpg" alt="">
+<p><span class="ago"></span> Окончание активности метеорного потока Урсиды.</p>
+</div>
+</div>
+
+
+<div class="wrap">
+<div class="date">28.12.2019</div>
+<div class="desc">
+<img src="img\28.12..jpg" alt="">
+<p><span class="ago"></span> Начало активности метеорного потока Квадрантиды.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">29.12.2019</div>
+<div class="desc">
+<img src="img\29.12..jpg" alt="">
+<p><span class="ago"></span> Луна (Ф= 0,12+) проходит в 1,0° южнее Венеры (вечером с юго-западной стороны горизонта).</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="date">31.12.2019</div>
+<div class="desc">
+<img src="img\31.12.(1).png" alt="">
+<p><span class="ago"></span> Меркурий в афелии.</p>
+</div>
+</div>
+    
+
+<h2>Авиация</h2>
+
+<div class="wrap">
+<div class="date">07.12.1944</div>
+<div class="desc">
+<img src="https://upload.wikimedia.org/wikipedia/ru/6/62/International_Civil_Aviation_Organization_logo.svg" width="500" alt="">
+<p><span class="ago"></span> назад была подписана конвенция о международной гражданской авиации. С 1994 года седьмого декабря отмечается международный день гражданской авиации.</p>
+</div>
+</div>
+
+<h2>Программирование</h2>
+
+<div class="wrap">
+    <div class="date">11.05.1930</div>
+    <div class="desc">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Edsger_Wybe_Dijkstra.jpg/360px-Edsger_Wybe_Dijkstra.jpg" alt="">
+    <p><span class="ago"></span> назад родился Эдсгер Вибе Дейкстра &ndash; нидерландский ученый, труды которого  оказали влияние на развитие информатики и информационных технологий; один из разработчиков концепции структурного программирования. Автор статьи "о вреде оператора GoTo", опубликованной в марте 1968 года.</p>
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="date">09.09.1947</div>
+    <div class="desc">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/H96566k.jpg" alt="">
+    <p><span class="ago"></span> назад операторами электромеханического компьютера Harvard Mark II был найден первый в истории баг &ndash; моль в реле. В это время с компьютером работала пионер в программировании Грейс Хоппер.</p>
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="date">24.02.1955</div>
+    <div class="desc">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Steve_Jobs_Headshot_2010-CROP2.jpg/375px-Steve_Jobs_Headshot_2010-CROP2.jpg" alt="">
+    <p><span class="ago"></span> назад родился Стивен Пол (Стив) Джобс, предприниматель, промышленный дизайнер и сооснователь корпорации Apple.</p>
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="date">02.12.1960</div>
+    <div class="desc">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Anders_Hejlsberg.jpg/440px-Anders_Hejlsberg.jpg" alt="">
+    <p><span class="ago"></span> назад родился Андерс Хейлсберг, датский инженер-программист, создатель Turbo Pascal и главный архитектор Delphi, ключевой разработчик C# и TypeScript.</p>
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="date">01.04.1976</div>
+    <div class="desc">
+    <img src="img/Jobs-Wozniak_photo_20100127.jpg" alt="">
+    <!-- <a href="https://www.cnbc.com/2019/05/28/wozniak-built-apple-1-computer-sold-for-almost-500000-at-christies.html" target="_blank" rel="noopener noreferrer">photo from</a> -->
+    <p><span class="ago"></span> назад Стивом Джобсом, Стивом Возняком и Рональдом Уэйном была основана Apple Computer Company.</p>
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="date">07.12.1978</div>
+    <div class="desc">
+    <img src="https://russianpulse.ru/img/http://ic.pics.livejournal.com/matveychev_oleg/27303223/4331761/4331761_original.jpg" alt="">
+    <p><span class="ago"></span> назад была сделана фотография команды Microsoft. Найдите Билла Гейтса!</p>
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="date">24.01.1984</div>
+    <div class="desc">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Macintosh_128k_transparency.png" alt="">
+    <p><span class="ago"></span> назад в продажу поступил компьютер <a href="https://en.wikipedia.org/wiki/Macintosh_128K" target="_blank" rel="noopener noreferrer">Apple Macintosh</a>.</p>
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="date">06.06.1984</div>
+    <div class="desc">
+    <img src="https://cs6.pikabu.ru/post_img/big/2014/06/06/11/1402078970_102983514.jpg" alt="">
+    <p><span class="ago"></span> назад советским программистом Алексеем Пажитновым представлена игра "Тетрис". В это время Пажитнов работал в Вычислительном центре Академии наук СССР.</p>
+    </div>
+</div>
+
+</div>
+
+
+<div class="column right">
+<h2>Выбор даты</h2>
+День и месяц формата дд.мм,<br>год формата гггг:<br>
+<input type="text" id="daymon" size="4" maxlength="5" value=""> <input type="text" id="year" size="4" maxlength="4" value="">
+<br><input type="checkbox" id="onlyMonth" onclick="findDate()"> За текущий месяц<br>
+<button onclick="findDate()">Что произошло в эту дату?</button>
+<button onclick="showAll()">Показать все события</button>
+<ul>
+    <li>При пустом поле даты выводятся события текущей даты</li>
+    <li>При пустом поле года выводятся все события заданной даты</li>
+</ul>
+<br>
+</div>
+
+</div>
+</body>
+</html>

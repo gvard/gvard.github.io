@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Звезды</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<div id="messageBox">
+    <div id="contents"></div>
+</div>
+
+<main>
+<h1>Звезды не как точки</h1>
+
+<button onclick="showHideThis('none','.size')">Скрыть радиусы</button>
+<button onclick="showHideThis('block','.size')">Показать радиусы</button>
+<button onclick="showHideThis('none','.mass')">Скрыть массу</button>
+<button onclick="showHideThis('block','.mass')">Показать массу</button>
+<button onclick="showHideThis('none','.class')">Скрыть спектральный класс</button>
+<button onclick="showHideThis('block','.class')">Показать спектральный класс</button>
+<button onclick="toSort('size')">Сортировать по возрастанию размера</button>
+<button onclick="toSort('mass')">Сортировать по возрастанию массы</button>
+
+<section class="tab main">
+<div class="obj sg">
+    <div class="img" onmouseover="show(this)" onmouseout="hide()"><a href="#"><img alt="" src="images/Betelgeuse.jpg"></a></div>
+    <div class="desc"><a href="https://en.wikipedia.org/wiki/Betelgeuse" title="Betelgeuse">Бетельгейзе</a></div>
+    <div class="angular">50</div>
+    <div class="size">887</div>
+    <div class="mass">11.6</div>
+    <div class="class">M1–M2 Ia–ab</div>
+    <div class="temp">3590</div>
+</div><div class="obj sg">
+    <div class="img" onmouseover="show(this)" onmouseout="hide()"><a href="#"><img alt="" src="images/Antares.jpg"></a></div>
+    <div class="desc"><a href="https://en.wikipedia.org/wiki/Antares" title="Antares">Антарес</a></div>
+    <div class="angular">37-41</div>
+    <div class="size">680–800</div>
+    <div class="mass">11–14.3</div>
+    <div class="class">M1.5 Iab-Ib</div>
+    <div class="temp">3660</div>
+</div><div class="obj agb">
+    <div class="img" onmouseover="show(this)" onmouseout="hide()"><a href="#"><img alt="" src="images/Pi1Gruis.jpg"></a></div>
+    <div class="desc"><a href="https://en.wikipedia.org/wiki/Pi1_Gruis" title="">π1 Gruis</a></div>
+    <div class="angular">18.4</div>
+    <div class="size">350</div>
+    <div class="mass">1.5</div>
+    <div class="class">S5,7: (~M5)</div>
+    <div class="temp">3100</div>
+</div>
+
+</section>
+
+<section class="comment">
+<p>Этот список звезд содержит:</p>
+<ul>
+    <li>Все звезды из <a href="https://en.wikipedia.org/wiki/List_of_stars_with_resolved_images" target="_blank" rel="noopener noreferrer">списка разрешенных звезд</a></li>
+</ul>
+
+<p>А также:<br>
+Близкие звезды<br>
+<img src="images/nearest8pc.png" width="600" alt=""><br>
+Гиганты и сверхгиганты<br>
+<img src="images/biggest_angular.jpg" width="1000" alt=""><br>
+Быстро вращающиеся звезды<br>
+<a href="http://www.chara.gsu.edu/science-highlights/rapid-rotators" target="_blank" rel="noopener noreferrer"><img src="http://www.chara.gsu.edu/files/images/rapid_rotator_crop.png" alt=""></a>
+</p>
+
+<p>Замечания:</p>
+<ul>
+<li>Бетельгейзе &ndash; первая звезда, угловой диаметр которой измерен методом интерферометрии в 1920 году.</li>
+</ul>
+
+</section>
+</main>
+<footer>2019 Википедия. Компиляция, код: Д.С. Насонов.</footer>
+</body>
+</html>

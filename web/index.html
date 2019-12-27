@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Немного про web-дизайн</title>
+    <meta name="description" content="Описание сайта содержит не более 150 символов">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+    <h1>Основы Web-дизайна</h1>
+    <p>Страница создана для учеников кружков "Web-дизайн" Московского Дворца пионеров. Занятия проходят по адресу Москва, ул. Косыгина, д. 17 в 4-м корпусе, ауд. 4.2.1 по субботам.</p>
+
+    <h2>Инструменты</h2>
+    <p>Для того, чтобы создавать и просматривать web-страницы, нужно всего две программы: текстовый редактор и web-браузер. Хорошим выбором будет Microsoft <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio Code</a> (есть поддержка русского языка в интерфейсе) и Google <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">Chrome</a>. Если VSCode ощутимо "тормозит", подойдет более простой редактор <a href="https://notepad-plus-plus.org/" target="_blank" rel="noopener noreferrer">Notepad++</a>. В качестве браузера также подойдут Apple Safari, Mozilla Firefox и Microsoft Edge. Использование Microsoft Internet Explorer нежелательно, так как он устарел и не поддерживает должным образом многие современные технологии.</p>
+    <p>В текстовом редакторе создаются файлы с расширением html и css. Их необходимо сохранить на диске. Затем файл html открывается в браузере при помощи диалогового окна, вызываемого нажатием клавиш Ctrl+O.
+    Для просмотра исходного кода страницы следует нажать Ctrl+U. Визуальный инспектор кода вызывается сочетанием клавиш Ctrl+Shift+C. Консоль разработчика доступна при нажатии F12.
+</p><p>    
+    В дальнейшем файлы web-проекта могут быть выложены на <em>хостинг</em> для доступа к ним по сети Интернет через <a href="https://ru.wikipedia.org/wiki/URL" target="_blank" rel="noopener noreferrer">URL</a>, уникальный адрес. Хостинг может быть бесплатным, как, например, <a href="https://www.000webhost.com/" target="_blank" rel="noopener noreferrer">000webhost.com</a>. После регистрации становится возможным выкладывать свои web-страницы в открытый доступ.
+</p><p>
+    Для быстрой проверки кода подойдут онлайн-сервисы типа <a href="https://codepen.io/" target="_blank" rel="noopener noreferrer">Codepen.io</a>. После регистрации своими примерами <a href="https://codepen.io/gvardovich/pen/zYYoOWV" target="_blank" rel="noopener noreferrer">можно делиться!</a><br>
+    
+    В окно HTML вставляется код из тега &lt;body&gt;.
+    В окно CSS копируется содержимое стилевого файла и/или содержимое html-тега &lt;style&gt;. Окно JavaScript можно скрыть за недадобностью.
+    </p>
+
+    <h2>Основы HTML</h2>
+    <p>Web-страницы созаются на языке гипертекствой разметки, <a href="https://ru.wikipedia.org/wiki/HTML" target="_blank" rel="noopener noreferrer">HyperText Markup Language</a>. В HTML для разметки пользуются тегами &ndash; ключевыми словами в угловых скобках. Теги бывают одиночные и парные. Парные теги являются <em>контейнерами</em>, в которых можно расположить текст, изображения или иной объект. Web-дизайнер должен понимать смысл и назначение основных тегов html.
+    </p><p>
+    <a href="html.html">Памятка по тегам html</a>.
+    </p>
+
+    <h2>Основы CSS</h2>
+    <p>В современной версии стандарта HTML5 практически все оформление страницы делается при помощи каскадных листов стилей, <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank" rel="noopener noreferrer">CSS</a>. Команда CSS состоит из селектора и соответствующих ему свойств:<br>
+    <img src="css.png" width="300" alt="Иллюстрация из Большая книга CSS3. Д. Макфарлард.">
+    </p><p>
+    Файлы с расширением .css подключаются к html-документу при помощи следующей строки <b>внутри</b> тега &lt;head&gt;: <pre>&lt;link rel="stylesheet" href="style.css"&gt;</pre>
+    </p><p>
+        <a href="css.html">Памятка по основным свойствам css</a>.
+    </p>
+    <h2>Геометрия в CSS</h2>
+    <p>
+        <ul>
+            <li><a href="https://codepen.io/gvardovich/pen/LYYempB" target="_blank" rel="noopener noreferrer">Прямоугольник</a></li>
+            <li><a href="https://codepen.io/vitaliy_kirenkov/pen/qBBPqxm" target="_blank" rel="noopener noreferrer">Треугольники</a></li>
+            <li><a href="https://cloudfour.com/thinks/css-circles/" target="_blank" rel="noopener noreferrer">Круги</a></li>
+        </ul>
+
+    </p>
+    <p><a href="https://www.jqueryscript.net/blog/best-carousel.html#css" target="_blank" rel="noopener noreferrer">Как сделать карусель</a></p>
+    <h2>Учебные страницы к занятиям:</h2>
+    <ul>
+        <li><a href="meow/">Web-кот и его Собака</a>. <b>Задача</b>: создать html-страницу с элементами <b>заголовок</b>, <b>параграф</b>, <b>изображение</b>, <b>список</b>, <b>ссылка</b> и открыть ее в браузере.</li>
+        <li><a href="meow/page.html">Домашняя страница Кота</a>. <b>Задача</b>: создать страницу с оформлением из данного примера. Создать и подключить стилевой файл, вставить иконку страницы, изменить фон страницы, поместить на фон картинку.</li>
+        <li><a href="structure.html">Как выглядит семантическая разметка</a>. Памятка по структуре документа.</li>
+        <li><a href="news1/">Простая статья с оформлением</a>. <b>Задача</b>: создать html-страницу с семантическими тегами <b>header</b>, <b>main</b>, <b>footer</b>, <b>article</b>. Заполнить тег article статьей. Выделить основное содержимое средствами css.</li>
+        <li><a href="news/">Новостная страница с меню</a>. <b>Задача</b>: создать страницу с семантической версткой. В шапку сайта вставить меню, сделанное на основе ненумерованного списка. Оформить страницу по образцу.</li>
+    </ul>
+</main>
+</body>
+</html>
