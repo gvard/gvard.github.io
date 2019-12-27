@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    h1 {margin: 0; padding: 0; font-size: 1.8em;}
+  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Одновременная игра</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+  function game(){
+    // Get a random number from 0 to size
+    var getRandomNumber = function (size) {
+      return Math.floor(Math.random() * size);
+    };
+
+    // Calculate distance between click event and target
+    var getDistance = function (event, target) {
+      var diffX = event.offsetX - target.x;
+      var diffY = event.offsetY - target.y;
+      return Math.sqrt((diffX * diffX) + (diffY * diffY));
+    };
+
+    // Get a string representing the distance
+    var getDistanceHint = function (distance) {
+      if (distance < 10) {
+        return "Обожжешься!!";
+      } else if (distance < 20) {
+        return "Очень горячо!";
+      } else if (distance < 40) {
+        return "Горячо";
+      } else if (distance < 80) {
+        return "Тепло";
+      } else if (distance < 160) {
+        return "Холодно";
+      } else if (distance < 320) {
+        return "Дубак!";
+      } else {
+        return "Замерзнешь!!";
+      }
+    };
+
+    // Set up our variables
+    var width = 400;
+    var height = 400;
+    var clicks = 0;
+
+    // Create a random target location
+    var target = {
+      x: getRandomNumber(width),
+      y: getRandomNumber(height)
+    };
+
+    // Add a click handler to the img element
+    $("#map").click(function (event) {
+      clicks++;
+
+      // Get distance between click event and target
+      var distance = getDistance(event, target);
+      // Convert distance to a hint
+      var distanceHint = getDistanceHint(distance);
+
+      $("#distance").text(distanceHint);
+
+      if (distance < 8) {
+        alert("Клад! Чтобы его найти, вы сделали " + clicks + " ям(ы)!");
+      }
+    });
+  }
+
+  function game2() {
+        // Get a random number from 0 to size
+        var getRandomNumber = function (size) {
+          return Math.floor(Math.random() * size);
+        };
+    
+        // Calculate distance between click event and target
+        var getDistance = function (event, target) {
+          var diffX = event.offsetX - target.x;
+          var diffY = event.offsetY - target.y;
+          return Math.sqrt((diffX * diffX) + (diffY * diffY));
+        };
+    
+        // Get a string representing the distance
+        var getDistanceHint = function (distance) {
+          if (distance < 10) {
+            return "Ура!! (Вы сделали " + clicks + " кликов!)";
+          } else if (distance < 20) {
+            return "Почти!";
+          } else if (distance < 40) {
+            return "Еле грузит";
+          } else if (distance < 80) {
+            return "Слабый";
+          } else if (distance < 160) {
+            return "Очень слабый";
+          } else if (distance < 320) {
+            return "Не грузит вообще!";
+          } else {
+            return "Нет сети!!";
+          }
+        };
+    
+        // Set up our variables
+        var width = 400;
+        var height = 400;
+        var clicks = 0;
+    
+        // Create a random target location
+        var target = {
+          x: getRandomNumber(width),
+          y: getRandomNumber(height)
+        };
+    
+        // Add a click handler to the img element
+        $("#mapmap").click(function (event) {
+          clicks++;
+    
+          // Get distance between click event and target
+          var distance = getDistance(event, target);
+          // Convert distance to a hint
+          var distanceHint = getDistanceHint(distance);
+    
+          $("#distance").text(distanceHint);
+    
+    
+          if (distance < 10) {
+            alert("Ура, грузит! Чтобы поймать интернет, вы сделали " + clicks + " кликов! Игра перезагружена, можете играть.");
+            clicks = 0;
+            target = {
+               x: getRandomNumber(width),
+               y: getRandomNumber(height)
+             };
+            game2();
+          }
+        });
+        }
+  </script>
+</head>
+<body onload="game()">
+<h1>Игра "найди клад!"</h1>
+<img id="map" width="400" height="400" src="treasuremap.png">
+<h2 id="distance">&nbsp;</h2>
+
+<h1>Игра "найди интренет"</h1>
+<img id="mapmap" width="400" height="400" src="https://zlat102.000webhostapp.com/files/City.jpg">
+<br><button onclick="game2()">Старт!</button>
+</body>
+</html>

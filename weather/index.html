@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Монитор космической погоды</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- <div class="mySlides">
+  <iframe src="https://voshod-solnca.ru/widget.php?view=true&newdb=true&time=3&days=7&text=054871" scrolling="no" width="400" height="300" frameborder="0"></iframe>
+</div> -->
+
+<div class="wrap">
+
+<div class="mySlides">
+<div class="part right">
+<h1>Солнце в видимом свете (SDO, NASA)</h1>
+<div class="img">
+  <img src="http://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_HMIIC.jpg" alt="Sun visible. SDO, NASA.">
+</div>
+</div><div class="part left">
+<h1>Хромосфера Солнца в линии гелия 304 Å</h1>
+<div class="img">
+  <img src="http://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0304.jpg" alt="Sun 304A. SDO, NASA.">
+</div>
+</div>
+</div>
+
+<div class="mySlides">
+<h1>Солнце в диапазоне вакуумного ультрафиолета</h1>
+<div class="desc">Изображение получено на длине волны 284 Ангстрема, что соответствует излучению вещества с температурой 2 миллиона градусов Кельвина.</div>
+<img src="http://sohowww.nascom.nasa.gov/data/realtime/eit_284/1024/latest.jpg" alt="Sun 284A">
+<div class="desc">Данные телескопа EIT (Extreme ultraviolet Imaging Telescope) космической обсерватории SOHO, NASA.</div>
+</div>
+
+<div class="mySlides">
+  <h1>Внутренняя солнечная корона (SOHO камера LASCO C2, NASA)</h1>
+  <img src="http://sohowww.nascom.nasa.gov/data/realtime/c2/1024/latest.jpg" alt="Sun C2">
+</div>
+
+<div class="mySlides">
+  <h1>Внешняя солнечная корона (SOHO камера LASCO C3 NASA)</h1>
+  <img src="http://sohowww.nascom.nasa.gov/data/realtime/c3/1024/latest.jpg" alt="Sun C3">
+</div>
+
+<div class="mySlides">
+  <h1>Прогноз потоков солнечных частиц в межпланетном магнитном поле на 10 дней</h1>
+  <img src="http://iswa.gsfc.nasa.gov/IswaSystemWebApp/iSWACygnetStreamer?timestamp=2038-01-23+00%3A44%3A00&window=-1&cygnetId=261" alt="NASA Integrated Space Weather Analysis System. ENLIL Density Nowcast (Inner Planets)">
+</div>
+
+<div class="block mySlides">
+  <h1>Вариации магнитного поля Земли и К-индекс за последние сутки (ИЗМИРАН)</h1>
+<div class="block desc">
+(Зелёный &ndash; спокойная обстановка, жёлтый &ndash; возмущённая, красный &ndash; магнитная буря)
+</div>
+  <img src="http://forecast.izmiran.ru/IMG-DAT/mos1.png" alt="Индекс ИЗМИРАН, сутки">
+</div>
+
+<div class="block mySlides">
+  <h1>Вариации магнитного поля Земли и К-индекс за последние 3 дня (ИЗМИРАН)</h1>
+  <div class="block desc">
+  (Зелёный &ndash; спокойная обстановка, жёлтый &ndash; возмущённая, красный &ndash; магнитная буря)
+  </div>
+  <img src="http://forecast.izmiran.ru/IMG-DAT/MOS_3.png" alt="Индекс ИЗМИРАН, 3 дня">
+</div>
+
+<div class="mySlides">
+  <h1>Прогноз полярных сияний в северном полушарии Земли</h1>
+  <img src="http://services.swpc.noaa.gov/images/aurora-forecast-northern-hemisphere.jpg" alt="Aurora">
+  <div class="desc">Данные Национального управления океанических и атмосферных исследований США</div>
+</div>
+
+</div>
+
+<script>
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none"; 
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1} 
+  x[slideIndex-1].style.display = "block"; 
+  setTimeout(carousel, 10000); 
+}
+</script>
+
+</body>
+</html>

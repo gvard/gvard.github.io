@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  background-color: rgb(65, 61, 61);
+}
+
+.wrapper {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 0;
+}    
+.column {
+  font-size: 14px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  padding: 5px;
+  box-sizing: border-box;
+  vertical-align: top;
+}    
+.right {
+  width: 220px;
+}    
+.left {
+  margin-right: 10px;
+  width: calc(100% - 240px);
+}    
+.column p {
+  margin: 0;
+}    
+@media (max-width: 480px) {
+    .right {
+      width: 100%;
+      margin-top: 5px;
+    }
+    .left{
+      width: 100%;
+      margin: 0;
+    }
+}
+
+ul, ol {
+  margin-left: 25px;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.red {
+  color: red;
+  font-weight: bold;
+}

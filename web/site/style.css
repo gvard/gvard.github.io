@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: black;
+    font-size: 14pt;
+}
+.obj {
+    display: inline-block;
+}
+.img, .name, .size, .mass {
+    border: 1px #aaa solid;
+    min-width: 240px;
+}
+.img {
+  min-height: 240px;
+}
+.desc {
+    background-color: #ccc;
+}
+/* .mass {
+    display: none;
+} */
+img {
+  display: block;
+  border-radius: 50%;
+}
+nav ul {
+  background-color: blue;
+	}	
+nav ul li {
+	display: inline-block;
+	}
+nav a {
+    font-size: 16pt;
+	display: block;
+	padding: 0 10px;
+	color: white;
+	font-size: 16px;
+	line-height: 40px;
+	text-decoration: none;
+}
+nav a:hover { 
+  background-color: #566DD6;
+}

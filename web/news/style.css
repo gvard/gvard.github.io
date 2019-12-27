@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+	padding: 0;
+}
+body {
+    color: rgb(34, 0, 0);
+    background-color: rgb(65, 61, 61);
+    width: 100%;
+}
+footer, header {
+    display: inline-block;
+    font-size: 16pt;
+    color: white;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(38, 72, 224);
+}
+main {
+    width: 80%;
+    background-color: rgb(193, 210, 211);
+    border: 2px solid blue;
+    margin: auto;
+}
+div.arthead {
+    display: inline-block;
+    min-height: max-content;
+}
+article {
+    text-align: justify;
+    background-color: white;
+    border: 2px solid rgb(37, 24, 0);
+    font-size: 16pt;
+}
+p { /* Delete me! */
+    border: 2px solid rgb(233, 71, 198);
+    border-radius: 5px;
+    margin: 10px 20px 10px 20px;
+    padding: 4px;
+}
+img.ok {
+    float: left; 
+    margin: 0px 15px 15px 0px;
+}
+nav ul {
+    background-color: rgb(38, 72, 224);
+	}	
+nav ul li {
+	display:inline-block;
+	}
+nav a {
+	display: block;
+	padding: 0 10px;	
+	color: white;
+	font-size:16px;
+	line-height: 50px;
+	text-decoration: none;
+}
+nav a:hover { 
+    background-color: rgb(86, 109, 214);
+}
