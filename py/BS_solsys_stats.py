@@ -69,8 +69,6 @@ echo_jpl_stats = f"""<h2>Астероиды и кометы, измеренны�
 # """
 
 def cutbrack(txt):
-    return [f.split()[0] for f in txt.split("(")]
-
 def getastermoons(html):
     soup = BeautifulSoup(html, 'html.parser')
     lastupd = soup.findAll("center")[0].text.split("\n")[-1].split()
