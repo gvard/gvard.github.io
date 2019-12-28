@@ -1,7 +1,17 @@
-from bs4 import BeautifulSoup
 import pickle
 import urllib.request
-html = urllib.request.urlopen("http://simbad.u-strasbg.fr/simbad/").read()
+
+from bs4 import BeautifulSoup
+
+SIMBAD_URL = "http://simbad.u-strasbg.fr/simbad/"
+PICKLE_FILENAME = 'simbad_stats.pickle'
+
+def get_soup(url):
+    """get url, return BeautifulSoup object"""
+    html = urllib.request.urlopen(url).read()
+    return BeautifulSoup(html, 'html.parser')
+
+
 htmlz = '''<TABLE WIDTH="100%" BORDER="1" CELLPADDING="2">
     <TR>
      <TD ALIGN="CENTER" VALIGN="TOP" NOWRAP COLSPAN="2" BGCOLOR="#3264A0">
@@ -66,8 +76,7 @@ citations of objects in papers
     </TR>
    </TABLE>'''
 
-soup = BeautifulSoup(html, 'html.parser')
-#print(soup.prettify())
+soup = get_soup(SIMBAD_URL)
 results = soup.findAll("td", {"bgcolor" : "#3264A0"})
 for result in results:
     if result.text.strip() == "Statistics": #len(result.attrs) == 5
@@ -88,7 +97,7 @@ for i, td in enumerate(tds):
             simstats[simdate].append([tds[i-1].text.strip().replace(',', ''), tabstr])
 
 try:
-    with open('simbad_stats.pickle', 'rb') as handle:
+    with open(PICKLE_FILENAME, 'rb') as handle:
         simbstats_dict = pickle.load(handle)
 except Exception:
     simbstats_dict = {}
@@ -96,5 +105,5 @@ except Exception:
 if simdate not in simbstats_dict:
     simbstats_dict[simdate] = simstats[simdate]
 
-with open('simbad_stats.pickle', 'wb') as handle:
+with open(PICKLE_FILENAME, 'wb') as handle:
     pickle.dump(simbstats_dict, handle)
