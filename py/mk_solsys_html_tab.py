@@ -1,9 +1,9 @@
 import pickle
 import re
 import os
-from object_data import planets, dwarfplanets, comets, moons, mars_moons, \
-    jupiter_moons, saturn_moons, uranus_moons, neptune_moons, pluto_moons, \
-    asteroids
+from object_data import PLANETS, DWARFPLANETS, COMETS, MOONS, MARS_MOONS, \
+    JUPITER_MOONS, SATURN_MOONS, URANUS_MOONS, NEPTUNE_MOONS, PLUTO_MOONS, \
+    ASTEROIDS
 
 
 PICKLE_FILENAME = "solsysbod_dct.pickle"
@@ -125,17 +125,17 @@ def wrap_div(txt, classes):
 def which_moon(name):
     if name == 'Moon':
         return ' ea'
-    elif name in mars_moons:
+    elif name in MARS_MOONS:
         return ' ma'
-    elif name in jupiter_moons:
+    elif name in JUPITER_MOONS:
         return ' ju'
-    elif name in saturn_moons:
+    elif name in SATURN_MOONS:
         return ' sat'
-    elif name in uranus_moons:
+    elif name in URANUS_MOONS:
         return ' ur'
-    elif name in neptune_moons:
+    elif name in NEPTUNE_MOONS:
         return ' ne'
-    elif name in pluto_moons:
+    elif name in PLUTO_MOONS:
         return ' pl'
 
 with open(os.path.join(os.pardir, 'solarsystem', 'objects.html'), 'w', encoding="utf8") as handle:
@@ -152,18 +152,18 @@ with open(os.path.join(os.pardir, 'solarsystem', 'objects.html'), 'w', encoding=
         date_str = str(bodies_params_dct[objname].get('discovery_date'))
         txt_extr, txt_type, number, comet = extract_nam(objname)
         classes = ""
-        if objname in planets:
+        if objname in PLANETS:
             classes += ' pla he'
-        elif objname in moons:
+        elif objname in MOONS:
             classes += which_moon(objname)
             classes += ' moon'
         elif objname == "Sun":
             classes += ' star he'
-        elif objname in dwarfplanets:
+        elif objname in DWARFPLANETS:
             classes += ' dw he'
-        elif objname in asteroids:
+        elif objname in ASTEROIDS:
             classes += ' mab'
-        elif comet or objname in comets or "Halley" in txt_extr:
+        elif comet or objname in COMETS or "Halley" in txt_extr:
             classes += ' co'
             print("comet!", objname)
         div_img = mk_img(txt_extr, txt_type, number, comet)
