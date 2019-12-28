@@ -1,7 +1,11 @@
-from bs4 import BeautifulSoup
+"""Python script for genererating an html page
+with solar system statistics.
+"""
+
 #import pickle
 import urllib.request
 import os
+from bs4 import BeautifulSoup
 
 
 ECHO_URL = "https://echo.jpl.nasa.gov/asteroids/"
@@ -28,57 +32,51 @@ TAIL = """
 """
 
 
-def getecho(html):
-    soup = BeautifulSoup(html, 'html.parser')
+def get_soup(url):
+    """get url, return BeautifulSoup object"""
+    html = urllib.request.urlopen(url).read()
+    return BeautifulSoup(html, 'html.parser')
+
+def get_echo(soup):
+    """Parse html, get date of last page update,
+    statistics of radar-detected asteroids."""
     number = int(soup.findAll("h1")[0].text.split()[0])
     lastupd = soup.findAll("font", {"size" : "-1"})
     lastupdate = lastupd[0].text.split("\n")[-2].split()
-    yr, mon, day = int(lastupdate[2]), lastupdate[3], int(lastupdate[4])
+    last_update = (int(lastupdate[2]), lastupdate[3], int(lastupdate[4]))
     statstr = soup.findAll("th")[:4]
-    (mba, nea, co) = [int(f.text.strip().split()[0]) for f in statstr]
-    return number, (mba, nea, co), (yr, mon, day)
+    mba_nea_co = [int(f.text.strip().split()[0]) for f in statstr]
+    return number, mba_nea_co, last_update
 
 
-html = urllib.request.urlopen(ECHO_URL).read()
-number, (mba, nea, co), (yr, mon, day) = getecho(html)
-echo_jpl_stats = f"""<h2>Астероиды и кометы, измеренные при помощи радара</h2>
+soup = get_soup(ECHO_URL)
+NUMBER, (MBA, NEA, CO), (YR, MON, DAY) = get_echo(soup)
+ECHO_JPL_STATS = f"""<h2>Астероиды и кометы, измеренные при помощи радара</h2>
 <p><a href="{ECHO_URL}">Asteroid radar research</a>, NASA Jet Propulsion Laboratory, Caltech.</p>
-<p><b>{number} Radar-Detected Asteroids and Comets.</b></p><p>Последнее обновление: {day} {mon} {yr}.</p>
+<p><b>{NUMBER} Radar-Detected Asteroids and Comets.</b></p><p>Последнее обновление: {DAY} {MON} {YR}.</p>
 <ul>
-<li>{mba} астероидов главного пояса,
-<li>{nea} околоземных астероидов,
-<li>{co} комет.
+<li>{MBA} астероидов главного пояса,
+<li>{NEA} околоземных астероидов,
+<li>{CO} комет.
 </ul>"""
 
-#html = urllib.request.urlopen("http://www.johnstonsarchive.net/astro/radarasteroids.html").read()
-#html = urllib.request.urlopen("http://www.johnstonsarchive.net/astro/sssatellitedata.html").read()
-#html = urllib.request.urlopen("http://www.johnstonsarchive.net/astro/solar_system_phys_data.html").read()
-#html = urllib.request.urlopen("http://www.johnstonsarchive.net/astro/contactbinast.html").read()
+#RADAR_ASTEROIDS_URL = "http://www.johnstonsarchive.net/astro/radarasteroids.html"
+#SSS_DATA_URL = "http://www.johnstonsarchive.net/astro/sssatellitedata.html"
+#SSPHYS_URL = "http://www.johnstonsarchive.net/astro/solar_system_phys_data.html"
+#CONT_BIN_URL = "http://www.johnstonsarchive.net/astro/contactbinast.html"
 
-# htmlz = """<body>
-# <center>
-# <b><h3>Radar-detected asteroids with radar-measured parameters</h3></b>
-# compiled by Wm. Robert Johnston<br>
-# last updated 25 May 2019</p><p>
-# </center>
-
-# </p><p><hr></p><p>
-
-# The table below lists all asteroids detected by the NASA JPL asteroid radar program (from <a href=http://echo.jpl.nasa.gov/asteroids/PDS.asteroid.radar.history.html>this listing</a>), here ordered by permanent number and provisional designation.  It also lists selected radar-measured parameters.  Objects listed include 980 asteroids plus 60 secondary or tertiary components of multiple systems.  Diameter measurements or constraints are available for 376 objects (335 asteroids plus 41 additional components).
-# </p><p>
-# """
-
-def cutbrack(txt):
-def getastermoons(html):
-    soup = BeautifulSoup(html, 'html.parser')
+def get_astermoons(soup):
+    """Parse html, get date of last page update,
+    statistics of asteroids with moons."""
+    cutbrack = lambda txt: [f.split()[0] for f in txt.split("(")]
     lastupd = soup.findAll("center")[0].text.split("\n")[-1].split()
-    date = lastupd[2], lastupd[3], lastupd[-1]
+    last_update = (lastupd[2], lastupd[3], lastupd[-1])
     stats = soup.findAll("p")[3].text.split("\n")
     curcount = stats[1]
-    allast, kratnost = curcount.split(":")[1:3]
-    kratnost = [f.strip().split()[0] for f in kratnost.split(",")]
-    kratnost.append(curcount.split(":")[2].split(";")[1].strip().split()[0])
-    allast = int(allast.split()[0])
+    num_obj, multipl_str = curcount.split(":")[1:3]
+    multip_lst = [f.strip().split()[0] for f in multipl_str.split(",")]
+    multip_lst.append(curcount.split(":")[2].split(";")[1].strip().split()[0])
+    num_obj = int(num_obj.split()[0])
     nea = cutbrack(stats[3].strip(", \r"))
     mca = cutbrack(stats[4].strip(", \r"))
     mba = cutbrack(stats[5].strip(", \r"))
@@ -87,51 +85,57 @@ def getastermoons(html):
     tno = cutbrack(stats[7].strip(". \r"))
     tno.append(stats[7].split(",")[1].strip().split()[0])
     tno.append(stats[7].split(";")[1].strip().split()[2])
-    return date, (allast, kratnost), (nea, mca, mba, mba_dualcomet, jta, tno)
+    return last_update, (num_obj, multip_lst), (nea, mca, mba, mba_dualcomet, jta, tno)
 
 
-html = urllib.request.urlopen(JOHNSTON_ASTEROID_MOONS_URL).read()
-(day, mon, yr), (allast, kratnost), (nea, mca, mba, mba_dualcomet, jta, tno) = getastermoons(html)
+soup = get_soup(JOHNSTON_ASTEROID_MOONS_URL)
+(DAY, MON, YR), (NUM_OBJ, MULTIPLICITY), (NEA, MCA, MBA, MBA_DUALCOMET, JTA, TNO) = get_astermoons(soup)
 
-johnston_sat = f"""<h2>Астероиды со спутниками</h2> <p>by <a href="http://www.johnstonsarchive.net/astro/asteroidmoons.html">Wm. Robert Johnston</a>. Последнее обновление: {day} {mon} {yr}.</p>
-<p><b>{allast} астероидов и транснептуновых объектов со спутниками: {kratnost[0]} двойных, {kratnost[1]} тройных систем, {kratnost[2]} шестерная система (Плутон)); {kratnost[3]} компонентов всего:</b></p>
+JOHNSTON_SAT = f"""<h2>Астероиды со спутниками</h2>
+<p>by <a href="http://www.johnstonsarchive.net/astro/asteroidmoons.html">Wm.
+Robert Johnston</a>. Последнее обновление: {DAY} {MON} {YR}.</p>
+<p><b>{NUM_OBJ} астероидов и транснептуновых объектов со спутниками:
+{MULTIPLICITY[0]} двойных, {MULTIPLICITY[1]} тройных систем, {MULTIPLICITY[2]} шестерная система (Плутон));
+{MULTIPLICITY[3]} компонентов всего:</b></p>
 <ul>
-<li>{nea[0]} околоземных астероидов ({nea[1]} с двумя спутниками каждый).
-<li>{mca[0]} астероидов, пересекающих орбиту Марса ({mca[1]} с двумя спутниками).
-<li>{mba[0]} астероидов главного пояса ({mba[1]} с двумя спутниками каждый, {mba_dualcomet} binary with dual comet designation).
-<li>{jta} троянских астероидов Юпитера.
-<li>{tno[0]} транснептуновых объектов ({tno[1]} с двумя спутниками, {tno[2]} с пятью спутниками; count excludes {tno[3]} object with rings).</ul>"""
+<li>{NEA[0]} околоземных астероидов ({NEA[1]} с двумя спутниками каждый).
+<li>{MCA[0]} астероидов, пересекающих орбиту Марса ({MCA[1]} с двумя спутниками).
+<li>{MBA[0]} астероидов главного пояса ({MBA[1]} с двумя спутниками каждый,
+{MBA_DUALCOMET} binary with dual comet designation).
+<li>{JTA} троянских астероидов Юпитера.
+<li>{TNO[0]} транснептуновых объектов ({TNO[1]} с двумя спутниками,
+{TNO[2]} с пятью спутниками; count excludes {TNO[3]} object with rings).
+</ul>"""
 
 
-def getmpnames(html):
-    soup = BeautifulSoup(html, 'html.parser')
+def get_mp_names(soup):
+    """Get list of all minor planet names."""
     names_text = soup.findAll("pre")[0].text
     names = names_text.split('\n')
     return names
 
-def getmpcstats(html):
-    soup = BeautifulSoup(html, 'html.parser')
+def get_mpcstats(soup):
+    """Get minor planet canter statistics."""
     td_with_numbers = soup.findAll("td", {"class": "cj"})
-    observations = int(td_with_numbers[0].text)
-    (objects, numbered, unnumbered, comets) = [int(f.text.strip()) for f in td_with_numbers[1:5]]
-    return observations, (objects, numbered, unnumbered, comets)
+    observations_number = int(td_with_numbers[0].text)
+    mpc_stat_numbers = [int(f.text.strip()) for f in td_with_numbers[1:5]]
+    return observations_number, mpc_stat_numbers
 
 
-html = urllib.request.urlopen(MP_NAMES_URL).read()
-mpnames = getmpnames(html)
+soup = get_soup(MP_NAMES_URL)
+MP_NAMES = get_mp_names(soup)
 
-
-html = urllib.request.urlopen(MPC_URL).read()
-observations, (objects, numbered, unnumbered, comets) = getmpcstats(html)
-mpc_stats = f'''<h2>Статистика тел Солнечной системы</h2>
+soup = get_soup(MPC_URL)
+OBSERV_NUM, (OBJ_NUM, NUMBERED_NUM, UNNUMBERED_NUM, COMETS_NUM) = get_mpcstats(soup)
+MPC_STATS = f'''<h2>Статистика тел Солнечной системы</h2>
 <p><a href="https://minorplanetcenter.net/mpc/summary">Центра Малых планет</a></p>
 <ul>
-<li>{observations} наблюдений</li>
-<li>{objects} объектов всего</li>
-<li>{numbered} нумерованных малых планет</li>
-<li>{unnumbered} ненумерованных малых планет</li>
-<li>{comets} комет</li>
-<li>{len(mpnames)-2} <a href="{MP_NAMES_URL}">малых планет с именами</a></li>
+<li>{OBSERV_NUM} наблюдений</li>
+<li>{OBJ_NUM} объектов всего</li>
+<li>{NUMBERED_NUM} нумерованных малых планет</li>
+<li>{UNNUMBERED_NUM} ненумерованных малых планет</li>
+<li>{COMETS_NUM} комет</li>
+<li>{len(MP_NAMES)-2} <a href="{MP_NAMES_URL}">малых планет с именами</a></li>
 </ul>
 <p><a href="https://minorplanetcenter.net/iau/lists/t_tnos.html">Список транснептуновых объектов</a><br>
 Распределение малых планет, количество в зависимости от большой полуоси орбиты:<br>
@@ -142,25 +146,27 @@ mpc_stats = f'''<h2>Статистика тел Солнечной систем�
 '''
 
 
-def getssdtats(html):
-    soup = BeautifulSoup(html, 'html.parser')
+def get_ssdtats(soup):
+    """Get statistics from Solar System Dynamics page."""
     td_with_numbers = soup.findAll("td", {"align": "right"})
     satellites = int(td_with_numbers[1].text)
     return satellites
 
 
-html = urllib.request.urlopen(SSD_URL).read()
-satellites = getssdtats(html)
-ssd_stats = f'''<h2>Статистика тел Солнечной системы</h2> <p><a href="https://ssd.jpl.nasa.gov/?body_count">группы динамики Солнечной системы</a>.<br>
+soup = get_soup(SSD_URL)
+SATELLITES = get_ssdtats(soup)
+SSD_STATS = f'''<h2>Статистика тел Солнечной системы</h2>
+<p><a href="https://ssd.jpl.nasa.gov/?body_count">группы динамики Солнечной системы</a>.
+    <br>
 <ul>
-<li>{satellites} спутников планет (включая Луну и спутники Плутона)</li>
+<li>{SATELLITES} спутников планет (включая Луну и спутники Плутона)</li>
 </ul>
 '''
 
 with open(os.path.join(os.pardir, 'solarsystem', 'stats.html'), 'w', encoding="utf8") as handle:
-    print(HEAD + mpc_stats + ssd_stats + echo_jpl_stats + johnston_sat + TAIL, file=handle)
+    print(HEAD + MPC_STATS + SSD_STATS + ECHO_JPL_STATS + JOHNSTON_SAT + TAIL, file=handle)
 
-html_echo = """
+HTML_ECHO = """
 <ul>
 
 <font size="-1">
@@ -183,9 +189,25 @@ Summary of asteroid radar properties</A>
 NEA elongations from radar observations</A>
   <DT><A HREF="http://echo.jpl.nasa.gov/~lance/small.neas.html">
 Very small radar-detected NEAs</A>
-  <DT><A HREF="http://echo.jpl.nasa.gov/~lance/radar.nea.periods.html">
+  <DT><A HREF="http://echo.jpl.nasa.gov/~lance/radar.NEA.periods.html">
 Radar-detected NEAs: Rotation periods and upcoming optical apparitions</A>
-  <DT><A HREF="http://echo.jpl.nasa.gov/~lance/future.radar.nea.periods.html">
+  <DT><A HREF="http://echo.jpl.nasa.gov/~lance/future.radar.NEA.periods.html">
 Future NEA radar targets: Rotation periods and upcoming optical apparitions</A>
-
 </ul>"""
+
+#htmlz = """<body>
+# <center>
+# <b><h3>Radar-detected asteroids with radar-measured parameters</h3></b>
+# compiled by Wm. Robert Johnston<br>
+# last updated 25 May 2019</p><p>
+# </center>
+# </p><p><hr></p><p>
+# The table below lists all asteroids detected by the NASA JPL asteroid radar program
+#(from <a href=http://echo.jpl.nasa.gov/asteroids/PDS.asteroid.radar.history.html>this listing</a>),
+#here ordered by permanent number and provisional designation.
+#It also lists selected radar-measured parameters.
+#Objects listed include 980 asteroids plus 60 secondary or tertiary components of multiple systems.
+#Diameter measurements or constraints are available for 376 objects
+#(335 asteroids plus 41 additional components).
+# </p><p>
+# """
