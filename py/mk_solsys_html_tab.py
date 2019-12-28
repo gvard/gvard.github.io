@@ -168,7 +168,12 @@ with open(os.path.join(os.pardir, 'solarsystem', 'objects.html'), 'w', encoding=
             print("comet!", objname)
         div_img = mk_img(txt_extr, txt_type, number, comet)
         div_desc = mk_link(objname, txt_extr.replace('_', ' '))
-        divs_html = div_img + '\n    ' + div_desc + '\n    ' + mk_div(size_str, 'size') + '\n    ' + mk_div(mass_str, 'mass') + '\n    ' + mk_div(date_str, 'date') + '\n    ' + mk_div(period_str, 'period')
+        divs_html = f"""{div_img}
+    {div_desc}
+    {mk_div(size_str, 'size')}
+    {mk_div(mass_str, 'mass')}
+    {mk_div(date_str, 'date')}
+    {mk_div(period_str, 'period')}"""
         html_obj = wrap_div(divs_html, classes)
         print(html_obj, file=handle, end='')
     print(TAIL, file=handle)
