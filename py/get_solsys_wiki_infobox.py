@@ -1,7 +1,9 @@
-import wptools
 from datetime import datetime, date
 import pickle
-from object_data import nextnams, params
+
+import wptools
+
+from object_data import NEXTNAMS, PARAMS
 
 
 RESULT_PICKLE_FILENAME = "solsysbod_add_dct.pickle"
@@ -57,12 +59,12 @@ def parseDate(dateDisc):
     return dateProperDisc
 
 bodies_params_dct = {}
-for objname in nextnams:
+for objname in NEXTNAMS:
     page = getPage(objname)
     if page.get('infobox'):
         date_str = getDate(page)
         gparams = {'discovery_date': date_str}
-        for param in params:
+        for param in PARAMS:
             try:
                 gparams[param] = getParam(page, param)
             except AttributeError:

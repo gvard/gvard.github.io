@@ -1,5 +1,5 @@
 import pickle
-from object_data import bodies_size_ordered 
+from object_data import BODIES_SIZE_ORDERED
 
 
 PICKLE_FILENAME = "solsysbod_dct.pickle"
@@ -25,7 +25,7 @@ try:
 except Exception:
     bodies_params_dct = {}
 
-objects = dct_sort(bodies_size_ordered, bodies_params_dct)
+objects = dct_sort(BODIES_SIZE_ORDERED, bodies_params_dct)
 
 with open(PICKLE_RESULT_FILENAME, 'wb') as handle:
     pickle.dump(objects, handle)
