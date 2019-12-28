@@ -60,3 +60,8 @@ nav ul li a:hover {
   color: red;
   font-weight: bold;
 }
+
+.center {
+  text-align: center;
+  background: url("bg.gif");
+}
