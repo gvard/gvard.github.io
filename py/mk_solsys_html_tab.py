@@ -3,7 +3,7 @@ import re
 import os
 from object_data import PLANETS, DWARFPLANETS, COMETS, MOONS, MARS_MOONS, \
     JUPITER_MOONS, SATURN_MOONS, URANUS_MOONS, NEPTUNE_MOONS, PLUTO_MOONS, \
-    ASTEROIDS
+    ASTEROIDS, NEOS, BODIES_RU_NAMES
 
 
 PICKLE_FILENAME = "solsysbod_dct.pickle"
@@ -163,11 +163,17 @@ with open(os.path.join(os.pardir, 'solarsystem', 'objects.html'), 'w', encoding=
             classes += ' dw he'
         elif objname in ASTEROIDS:
             classes += ' mab'
+        elif objname in NEOS:
+            classes += ' neo'
         elif comet or objname in COMETS or "Halley" in txt_extr:
             classes += ' co'
             print("comet!", objname)
         div_img = mk_img(txt_extr, txt_type, number, comet)
-        div_desc = mk_link(objname, txt_extr.replace('_', ' '))
+        if BODIES_RU_NAMES.get(objname):
+            a_name = BODIES_RU_NAMES[objname]
+        else:
+            a_name = txt_extr.replace('_', ' ')
+        div_desc = mk_link(objname, a_name) # txt_extr.replace('_', ' ')
         divs_html = f"""{div_img}
     {div_desc}
     {mk_div(size_str, 'size')}
