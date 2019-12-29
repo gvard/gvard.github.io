@@ -34,7 +34,6 @@ function findDate() {
     }
   }
 // document.write(datetime);
-
 }
 function showHideByDate(mode) {
   const elems = getDivs('date');
@@ -66,11 +65,16 @@ function getSize(txt) {
 function getNames() {
   let objToSort = getDivs('obj');
   let objArr = [];
+  let objDct = {};
   for (let i = 0; i < objToSort.length; i++) {
-    let a = objToSort[i].getElementsByClassName('desc')[0].getElementsByTagName("a")[0].href.split("/");
-    objArr.push(a[a.length - 1]);
+    let a = objToSort[i].getElementsByClassName('desc')[0].getElementsByTagName("a")[0]
+    let objName = a.href.split("/");
+    let objRuName = a.text;
+    objDct[objName[objName.length - 1]] = objRuName;
+    objArr.push(objName[objName.length - 1]);
   }
   console.log(objArr);
+  console.log(objDct);
 }
 function toSort(classNam) {
   let objToSort = getDivs('obj');
