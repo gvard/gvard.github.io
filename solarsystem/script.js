@@ -70,8 +70,12 @@ function getNames() {
     let a = objToSort[i].getElementsByClassName('desc')[0].getElementsByTagName("a")[0]
     let objName = a.href.split("/");
     let objRuName = a.text;
-    objDct[objName[objName.length - 1]] = objRuName;
-    objArr.push(objName[objName.length - 1]);
+    if (objName.length == 6)
+      objName = objName[objName.length - 2] + "/" + objName[objName.length - 1]
+    else
+      objName = objName[objName.length - 1]
+    objDct[objName] = objRuName;
+    objArr.push(objName);
   }
   console.log(objArr);
   console.log(objDct);
