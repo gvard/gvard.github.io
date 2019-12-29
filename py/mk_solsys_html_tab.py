@@ -98,7 +98,7 @@ def mk_div(txt, typ):
     return f'<div class="{typ}">{txt}</div>'
 
 def mk_link(txt, txt_nam):
-    return f'<div class="desc"><a href="https://en.wikipedia.org/wiki/{txt}">{txt_nam}</a></div>'
+    return f'<div class="name"><a href="https://en.wikipedia.org/wiki/{txt}">{txt_nam}</a></div>'
 
 def mk_img(txt_extr, txt_type, number, comet, ext="jpg"):
     txt_nam = txt_extr.replace('_', '').replace(' ', '')
