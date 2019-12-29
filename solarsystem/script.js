@@ -67,7 +67,7 @@ function getNames() {
   let objArr = [];
   let objDct = {};
   for (let i = 0; i < objToSort.length; i++) {
-    let a = objToSort[i].getElementsByClassName('desc')[0].getElementsByTagName("a")[0]
+    let a = objToSort[i].getElementsByClassName('name')[0].getElementsByTagName("a")[0]
     let objName = a.href.split("/");
     let objRuName = a.text;
     if (objName.length == 6)
@@ -104,7 +104,7 @@ function hide() {
   messageBox.style.display = 'none';
 }
 function mkContents(obj) {
-  const desc = obj.getElementsByClassName("desc")[0].getElementsByTagName("a")[0].innerText;
+  const name = obj.getElementsByClassName("name")[0].getElementsByTagName("a")[0].innerText;
   const size = obj.getElementsByClassName("size")[0].innerText;
   const mass = obj.getElementsByClassName("mass")[0].innerText;
   const date = obj.getElementsByClassName("date")[0].innerText;
@@ -113,7 +113,7 @@ function mkContents(obj) {
   for (let objClassNam of obj.className.split(" "))
     if (objClassNam in objTypes)
       type = objTypes[objClassNam];
-  return `<p><b>${desc}</b></p><p>Тип: ${type}</p><p> Радиус: ${size}&nbsp;км</p><p>Масса: ${mass}&nbsp;кг</p><p>Дата открытия: ${date}</p>`;
+  return `<p><b>${name}</b></p><p>Тип: ${type}</p><p> Радиус: ${size}&nbsp;км</p><p>Масса: ${mass}&nbsp;кг</p><p>Дата открытия: ${date}</p>`;
 }
 function show(divImg) {
   const obj = divImg.parentElement;
