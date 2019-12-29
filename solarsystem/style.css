@@ -54,11 +54,11 @@ div.img {
     min-height: 100px;
     background-color: black;
 }
-div.desc, .date {
+div.name, .date {
     font-size: 0.9em;
     color: white;
 }
-.mass, .delta-v {
+.mass, .desc, .period, .delta-v {
     display: none;
     font-size: 0.78em;
     color: white;
@@ -71,20 +71,20 @@ section.comment {
     padding: 1em;
     text-align: justify;
 }
-.star > .desc {background-color: #ffe7c8;}
-.pla > .desc {background-color: white;}
-.neo > .desc {background-color: #FFC2E0;}
-.co > .desc {background-color: #c1f8f5;}
-.ea > .desc {background-color: white;}
-.mar > .desc {background-color: #f57c54;}
-.mab > .desc {background-color: #fcb;}
-.dw > .desc {background-color: #ffffff;}
-.ju > .desc {background-color: #ccffaa;}
-.sat > .desc {background-color: #fffcb1;}
-.ur > .desc {background-color: #a890ff;}
-.ne > .desc {background-color: #7b9ee9;}
-.pl > .desc {background-color: #f1e8ff;}
-.tno > .desc {background-color: #acdeff;}
+.star > .name {background-color: #ffe7c8;}
+.pla > .name {background-color: white;}
+.neo > .name {background-color: #FFC2E0;}
+.co > .name {background-color: #c1f8f5;}
+.ea > .name {background-color: white;}
+.mar > .name {background-color: #f57c54;}
+.mab > .name {background-color: #fcb;}
+.dw > .name {background-color: #ffffff;}
+.ju > .name {background-color: #ccffaa;}
+.sat > .name {background-color: #fffcb1;}
+.ur > .name {background-color: #a890ff;}
+.ne > .name {background-color: #7b9ee9;}
+.pl > .name {background-color: #f1e8ff;}
+.tno > .name {background-color: #acdeff;}
 
 ul, ol {
     margin-left: 0;
