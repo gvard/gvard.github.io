@@ -148,3 +148,32 @@ function calcSum(classNam) {
     console.log(`For ${j} elements sum of sizes is ${total} km`);
   }
 }
+function getToday() {
+  const currentdate = new Date();
+  const day = ("0" + currentdate.getDate()).slice(-2);
+  const month = ("0" + (currentdate.getMonth() + 1)).slice(-2);
+  return {daymon: `${day}.${month}`, month: month, year: currentdate.getFullYear()};
+}
+function findDate() {
+  const elems = document.getElementsByClassName('date');
+  const today = getToday();
+  const month = today.month;
+  gdaymon = today.daymon;
+  var objOfDay = [];
+  var objOfMonthDiv = document.getElementById('objOfMonth');
+  var objOfDayDiv = document.getElementById('objOfDay');
+  for (let i = 0; i < elems.length; i++) {
+    let daymon = elems[i].innerText.slice(0, 5);
+    let mon = elems[i].innerText.slice(3, 5);
+    let divName = elems[i].parentElement.getElementsByClassName('name')[0];
+    let objHtml = `${divName.innerHTML}. Дата открытия: ${elems[i].innerHTML}<br>`;
+    if (mon == today.month)
+      objOfMonthDiv.innerHTML += objHtml;
+    else if (gdaymon == daymon) {
+      objOfDayDiv.innerHTML += objHtml;
+      objOfDay.push(objHtml);
+    }
+  }
+  if (!objOfDay.length)
+    objOfDayDiv.style.display = 'none';
+}
