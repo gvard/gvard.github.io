@@ -169,7 +169,7 @@ function findDate() {
     let objHtml = `${divName.innerHTML}. Дата открытия: ${elems[i].innerHTML}<br>`;
     if (mon == today.month)
       objOfMonthDiv.innerHTML += objHtml;
-    else if (gdaymon == daymon) {
+    if (gdaymon == daymon) {
       objOfDayDiv.innerHTML += objHtml;
       objOfDay.push(objHtml);
     }
