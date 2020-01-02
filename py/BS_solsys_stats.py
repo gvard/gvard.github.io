@@ -2,12 +2,13 @@
 with solar system statistics.
 """
 
-#import pickle
+import pickle
 import urllib.request
 import os
 from bs4 import BeautifulSoup
 
 
+PICKLE_FILENAME = "radar_obj_names.pickle"
 ECHO_URL = "https://echo.jpl.nasa.gov/asteroids/"
 MPC_URL = "https://minorplanetcenter.net/mpc/summary"
 MP_NAMES_URL = "https://minorplanetcenter.net/iau/lists/MPNames.html"
@@ -46,13 +47,13 @@ def get_echo(soup):
     last_update = (int(lastupdate[2]), lastupdate[3], int(lastupdate[4]))
     statstr = soup.findAll("th")[:4]
     mba_nea_co = [int(f.text.strip().split()[0]) for f in statstr]
-    all_names = soup.findAll("b")
-    print(len(all_names)-1, number, sum(mba_nea_co))
-    return number, mba_nea_co, last_update
+    radar_obj_names = [f.text.strip() for f in soup.findAll("b")]
+    print(len(radar_obj_names)-1, number, sum(mba_nea_co))
+    return number, mba_nea_co, radar_obj_names, last_update
 
 
 soup = get_soup(ECHO_URL)
-NUMBER, (MBA, NEA, CO), (YR, MON, DAY) = get_echo(soup)
+NUMBER, (MBA, NEA, CO), RADAR_OBJ_NAMES, (YR, MON, DAY) = get_echo(soup)
 ECHO_JPL_STATS = f"""<h2>Астероиды и кометы, измеренные при помощи радара</h2>
 <p><a href="{ECHO_URL}">Asteroid radar research</a>, NASA Jet Propulsion Laboratory, Caltech.</p>
 <p><b>{NUMBER} Radar-Detected Asteroids and Comets.</b></p><p>Последнее обновление: {DAY} {MON} {YR}.</p>
@@ -62,6 +63,9 @@ ECHO_JPL_STATS = f"""<h2>Астероиды и кометы, измеренны�
 <li>{CO} комет.
 </ul>
 """
+
+with open(PICKLE_FILENAME, 'wb') as handle:
+    pickle.dump(RADAR_OBJ_NAMES, handle)
 
 #RADAR_ASTEROIDS_URL = "http://www.johnstonsarchive.net/astro/radarasteroids.html"
 #SSS_DATA_URL = "http://www.johnstonsarchive.net/astro/sssatellitedata.html"
