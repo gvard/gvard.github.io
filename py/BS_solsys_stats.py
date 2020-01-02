@@ -46,6 +46,8 @@ def get_echo(soup):
     last_update = (int(lastupdate[2]), lastupdate[3], int(lastupdate[4]))
     statstr = soup.findAll("th")[:4]
     mba_nea_co = [int(f.text.strip().split()[0]) for f in statstr]
+    all_names = soup.findAll("b")
+    print(len(all_names)-1, number, sum(mba_nea_co))
     return number, mba_nea_co, last_update
 
 
@@ -116,18 +118,24 @@ def get_mp_names(soup):
     return names
 
 def get_mpcstats(soup):
-    """Get minor planet canter statistics."""
+    """Get minor planet center statistics."""
     td_with_numbers = soup.findAll("td", {"class": "cj"})
-    observations_number = int(td_with_numbers[0].text)
-    mpc_stat_numbers = [int(f.text.strip()) for f in td_with_numbers[1:5]]
-    return observations_number, mpc_stat_numbers
+    #observations_number = int(td_with_numbers[0].text)
+    mpc_stat_numbers = [int(f.text) for f in td_with_numbers[:5]]
+    td_mono_numbers = soup.findAll("td", {"class": "rj-mono"})
+    mid_outer_numbers = [int(f.text) for f in td_mono_numbers[6:10]]
+    nea_numbers = [int(f.text) for f in td_mono_numbers[11:15]]
+    return mpc_stat_numbers, mid_outer_numbers, nea_numbers
 
 
 soup = get_soup(MP_NAMES_URL)
 MP_NAMES = get_mp_names(soup)
 
 soup = get_soup(MPC_URL)
-OBSERV_NUM, (OBJ_NUM, NUMBERED_NUM, UNNUMBERED_NUM, COMETS_NUM) = get_mpcstats(soup)
+MPC_STAT_NUMBERS, MID_OUTER_NUMBERS, NEA_NUMBERS = get_mpcstats(soup)
+OBSERV_NUM, OBJ_NUM, NUMBERED_NUM, UNNUMBERED_NUM, COMETS_NUM = MPC_STAT_NUMBERS
+MBA, HILDAS, JUP_TROJANS, DISTANT = MID_OUTER_NUMBERS
+NEA, NEA1KM, PHA, NEC = NEA_NUMBERS
 MPC_STATS = f'''<h2>Статистика тел Солнечной системы</h2>
 <p><a href="https://minorplanetcenter.net/mpc/summary">Центра Малых планет</a></p>
 <ul>
@@ -137,6 +145,8 @@ MPC_STATS = f'''<h2>Статистика тел Солнечной систем�
 <li>{UNNUMBERED_NUM} ненумерованных малых планет</li>
 <li>{COMETS_NUM} комет</li>
 <li>{len(MP_NAMES)-2} <a href="{MP_NAMES_URL}">малых планет с именами</a></li>
+<li>{MBA} астероидов основного пояса, {HILDAS} астероидов семейства Хильды, {JUP_TROJANS} троянцев Юпитера, {DISTANT} объектов за орбитой Юпитера</li>
+<li>{NEA} околоземных астероидов, из них {NEA1KM} больше 1 км, {PHA} потенциально опасных астероидов, {NEC} околоземных комет</li>
 </ul>
 <p><a href="https://minorplanetcenter.net/iau/lists/t_tnos.html">Список транснептуновых объектов</a><br>
 Распределение малых планет, количество в зависимости от большой полуоси орбиты:<br>
@@ -150,16 +160,21 @@ MPC_STATS = f'''<h2>Статистика тел Солнечной систем�
 def get_ssdtats(soup):
     """Get statistics from Solar System Dynamics page."""
     td_with_numbers = soup.findAll("td", {"align": "right"})
-    satellites = int(td_with_numbers[1].text)
-    return satellites
+    ssd_numbers = [int(f.text.replace(',', '')) for f in td_with_numbers[1:8]]
+    last_upd = soup.findAll("td", {"align": "left"})[-1].text
+    return ssd_numbers, last_upd
 
 
 soup = get_soup(SSD_URL)
-SATELLITES = get_ssdtats(soup)
+SSD_NUMBERS, LAST_UPD = get_ssdtats(soup)
+SATELLITES, COMETS, COM_NUM, COM_UNNUM, ASTEROIDS, AST_NUM, AST_UNNUM = SSD_NUMBERS
 SSD_STATS = f'''<h2>Статистика тел Солнечной системы</h2>
 <p><a href="https://ssd.jpl.nasa.gov/?body_count">группы динамики Солнечной системы</a>.
+Последнее обновление: {LAST_UPD}.
 <ul>
-<li>{SATELLITES} спутников планет (включая Луну и спутники Плутона)</li>
+<li>{SATELLITES} спутников планет (включая Луну и спутники Плутона);</li>
+<li>{COMETS} комет, {COM_NUM} numbered, {COM_UNNUM} unnumbered;</li>
+<li>{ASTEROIDS} астероидов, {AST_NUM} numbered, {AST_UNNUM} unnumbered.</li>
 </ul>
 '''
 
