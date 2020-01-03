@@ -52,6 +52,9 @@ function getMass(txt) {
     return 0;
   return txt.includes("±") ? Number(txt.substring(0, txt.indexOf("±")) + txt.substring(txt.indexOf("E"))) : Number(txt);
 }
+function txtMass(txt) {
+  return txt.includes("±") ? txt.substring(0, txt.indexOf("±")) + txt.substring(txt.indexOf("E")) : txt;
+}
 function getSize(txt) {
   let num = 0;
   if (txt.includes("±"))
@@ -62,20 +65,26 @@ function getSize(txt) {
     num = parseFloat(txt);
   return Number(num);
 }
-function getNames() {
-  let objToSort = getDivs('obj');
+function ObjParams() {
+  const objs = getDivs('obj');
   let objArr = [];
-  let objDct = {};
-  for (let i = 0; i < objToSort.length; i++) {
-    let a = objToSort[i].getElementsByClassName('name')[0].getElementsByTagName("a")[0]
-    let objName = a.href.split("/");
-    let objRuName = a.text;
-    if (objName.length == 6)
-      objName = objName[objName.length - 2] + "/" + objName[objName.length - 1]
-    else
-      objName = objName[objName.length - 1]
-    objDct[objName] = objRuName;
-    objArr.push(objName);
+  let objDct = [];
+  for (let i = 0; i < objs.length; i++) {
+    const classes = objs[i].className.replace('obj ','').split(' ');
+    const a = objs[i].getElementsByClassName('name')[0].getElementsByTagName("a")[0];
+    const imgAlt = objs[i].getElementsByClassName('img')[0].getElementsByTagName("img")[0].alt;
+    const date = objs[i].getElementsByClassName('date')[0].innerText;
+    const size = getSize(objs[i].getElementsByClassName('size')[0].innerText);
+    const mass = txtMass(objs[i].getElementsByClassName('mass')[0].innerText);
+    const objRuName = a.text;
+    // let objName = a.href.split("/");
+    // if (objName.length == 6)
+    //   objName = objName[objName.length - 2] + "/" + objName[objName.length - 1];
+    // else
+    //   objName = objName[objName.length - 1];
+    
+    objDct.push({'name': imgAlt, 'runame': objRuName, 'size': size, 'mass': mass, 'date': date, 'classes': classes});
+    objArr.push([imgAlt, objRuName, size, mass, date, classes]);
   }
   console.log(objArr);
   console.log(objDct);
