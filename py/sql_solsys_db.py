@@ -2,8 +2,7 @@
 WRT https://docs.sqlalchemy.org/en/13/orm/tutorial.html
 """
 
-
-from datetime import datetime
+import datetime
 from sqlalchemy import create_engine, Table, Column, Integer, String, Date, \
     BigInteger, Float, ForeignKey
 from sqlalchemy.orm import relationship
@@ -28,9 +27,29 @@ class Sobject(Base):
     mass = Column(String(15)) # BigInteger
     discoverdate = Column(Date)
     classes = relationship("Classes", back_populates="sobject")
+
     def __repr__(self):
         return "Obj names: (%s) %s /%s/, size=%s, mass=%s, date=%s" % (
                             self.anumber, self.name, self.runame, self.size, self.mass, self.discoverdate)
+
+    def __init__(self, anumber, name, runame, size, mass, discoverdate, classes):
+        if anumber:
+            self.anumber = anumber
+        self.name = name
+        if runame:
+            self.runame = runame
+        self.size = size
+        if mass:
+            self.mass = mass
+        if discoverdate and type(discoverdate) is str:
+            self.discoverdate = datetime.datetime.strptime(discoverdate, "%d.%m.%Y").date()
+        elif discoverdate and isinstance(discoverdate, datetime.date):
+            self.discoverdate = discoverdate
+        if type(classes) is str:
+            classes = classes.split()
+        self.classes = []
+        for cl in classes:
+            self.classes.append(Classes(clss=cl))
 
 class Classes(Base):
     __tablename__ = 'classes'
@@ -75,10 +94,10 @@ for obj in obj_data:
     if obj[4] == "None":
         date = None
     else:
-        date = datetime.strptime(obj[4], "%d.%m.%Y").date()
+        date = datetime.datetime.strptime(obj[4], "%d.%m.%Y").date()
     sobj = Sobject(anumber=num, name=name,
         runame=obj[1], size=obj[2], mass=str(mass),
-        discoverdate=date)
+        discoverdate=date, classes=[])
     for cl in obj[-1]:
         sobj.classes.append(Classes(clss=cl))
     session.add(sobj)
