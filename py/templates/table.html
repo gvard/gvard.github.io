@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flask SQLAlchemy table</title>
+</head>
+<body>
+  <h1>Таблица параметров тел Солнечной системы</h1>
+  <table>
+  <tr>
+    <th>Номер</th>
+    <th>Имя</th>
+    <th>По-русски</th>
+    <th>Радиус, км</th>
+    <th>Масса, кг</th>
+    <th>Классы</th>
+    <th>Дата открытия</th>
+  </tr>
+  <tbody>
+  {% for object in objects %}<tr>
+    <td>{{ object.anumber }}</td>
+    <td>{{ object.name }}</td>
+    <td>{{ object.runame }}</td>
+    <td>{{ object.size }}</td>
+    <td>{{ object.mass }}</td>
+    <td>{{ object.classes }}</td>
+    <td>{{ object.discoverdate }}</td>
+  </tr>{% endfor %}
+  </tbody>
+  </table>
+  <p><b>Всего {{ objects|length }} объектов.</b></p>
+</body>
+</html>
