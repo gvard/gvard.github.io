@@ -27,7 +27,7 @@ class Sobject(Base):
     size = Column(Float)
     mass = Column(String(15)) # BigInteger
     discoverdate = Column(Date)
-    children = relationship("Classes", back_populates="parent")
+    classes = relationship("Classes", back_populates="sobject")
     def __repr__(self):
         return "Obj names: (%s) %s /%s/, size=%s, mass=%s, date=%s" % (
                             self.anumber, self.name, self.runame, self.size, self.mass, self.discoverdate)
@@ -37,13 +37,13 @@ class Classes(Base):
     id = Column(Integer, primary_key=True)
     sobject_id = Column(Integer, ForeignKey('sobject.id'))
     clss = Column(String(10))
-    parent = relationship("Sobject", back_populates="classes")
+    sobject = relationship("Sobject", back_populates="classes")
 
     def __repr__(self):
-        return "Classes(%s)" % (self.clss)
+        return "%s" % (self.clss)
 
 
-Sobject.classes = relationship("Classes", order_by=Classes.id, back_populates="parent")
+Sobject.classes = relationship("Classes", order_by=Classes.id, back_populates="sobject")
 
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
@@ -65,7 +65,7 @@ def extr_name(txt):
         num = intnum(num)
     else:
         name = txt
-    return num, name
+    return num, name.strip()
 
 for obj in obj_data:
     num, name = extr_name(obj[0])
