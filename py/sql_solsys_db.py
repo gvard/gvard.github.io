@@ -83,7 +83,5 @@ for obj in obj_data:
         sobj.classes.append(Classes(clss=cl))
     session.add(sobj)
 
-session.commit()
-for o, c in session.query(Sobject, Classes).filter(Sobject.id == Classes.sobject_id).\
-            filter(Classes.clss == 'dw').all():
-    print(o, c)
+if __name__ == '__main__':
+    session.commit()
