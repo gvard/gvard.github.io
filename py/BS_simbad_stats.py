@@ -90,11 +90,12 @@ for i, td in enumerate(tds):
     if 'Simbad contains on' in td.text:
         simdate = td.i.text.strip()
         simstats[simdate] = []
-        print('Simbad contains on', simdate)
         continue
     for tabstr in strs:
         if tabstr == td.text.strip():
             simstats[simdate].append([tds[i-1].text.strip().replace(',', ''), tabstr])
+
+print('Simbad contains on', simdate, simstats[simdate])
 
 try:
     with open(PICKLE_FILENAME, 'rb') as handle:
@@ -104,6 +105,8 @@ except Exception:
 
 if simdate not in simbstats_dict:
     simbstats_dict[simdate] = simstats[simdate]
+
+print("Number of dates in picle file:", len(simbstats_dict))
 
 with open(PICKLE_FILENAME, 'wb') as handle:
     pickle.dump(simbstats_dict, handle)
