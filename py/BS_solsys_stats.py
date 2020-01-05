@@ -62,6 +62,9 @@ ECHO_JPL_STATS = f"""<h2>Астероиды и кометы, измеренны�
 <li>{NEA} околоземных астероидов,
 <li>{CO} комет.
 </ul>
+<a href="https://echo.jpl.nasa.gov/~lance/">Near-Earth Asteroid Files</a>:<br>
+<img src="https://echo.jpl.nasa.gov/~lance/radar_detected_neas_summary/nea.radar.history.jpg"><br>
+<img src="https://echo.jpl.nasa.gov/~lance/radar_detected_neas_summary/asteroid.radar.history.jpg"><br>
 """
 
 with open(PICKLE_FILENAME, 'wb') as handle:
@@ -101,7 +104,7 @@ soup = get_soup(JOHNSTON_ASTEROID_MOONS_URL)
 JOHNSTON_SAT = f"""<h2>Астероиды со спутниками</h2>
 <p>by <a href="http://www.johnstonsarchive.net/astro/asteroidmoons.html">Wm.
 Robert Johnston</a>. Последнее обновление: {DAY} {MON} {YR}.</p>
-<p><b>{NUM_OBJ} астероидов и транснептуновых объектов со спутниками:
+<p><b>{NUM_OBJ} <a href="https://en.wikipedia.org/wiki/Minor-planet_moon">астероидов и транснептуновых объектов со спутниками</a>:
 {MULTIPLICITY[0]} двойных, {MULTIPLICITY[1]} тройных систем, {MULTIPLICITY[2]} шестерная система (Плутон);
 {MULTIPLICITY[3]} компонентов всего:</b></p>
 <ul>
