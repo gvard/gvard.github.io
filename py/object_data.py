@@ -98,11 +98,13 @@ BODIES_RU_NAMES = {
   "Hyperion_(moon)": "Гиперион",
   "3_Juno": "Юнона",
   "16_Psyche": "Психея",
+  "324_Bamberga": "Бамберга",
   "7_Iris": "Ирида",
   "Phoebe_(moon)": "Феба",
   "Larissa_(moon)": "Ларисса",
   "6_Hebe": "Геба",
   "Janus_(moon)": "Янус",
+  "90_Antiope": "Антиопа",
   "15760_Albion": "Альбион",
   "Amalthea_(moon)": "Амальтея",
   "Puck_(moon)": "Пак",
@@ -135,6 +137,7 @@ BODIES_RU_NAMES = {
   "Styx_(moon)": "Стикс",
   "Daphnis_(moon)": "Дафнис",
   "Tempel_1": "Темпель 1",
+  "(53319)_1999_JM8": "1999 JM8",
   "3200_Phaethon": "Фаэтон",
   "19P/Borrelly": "Борелли",
   "2867_%C5%A0teins": "Штейнс",
@@ -142,6 +145,7 @@ BODIES_RU_NAMES = {
   "Pallene_(moon)": "Паллена",
   "81P/Wild": "Вилт 2",
   "67P/Churyumov–Gerasimenko": "комета Ч-Г",
+  "(285263)_1998_QE2": "1998 QE2",
   "4179_Toutatis": "Таутатис",
   "Methone_(moon)": "Мефона",
   "Polydeuces_(moon)": "Полидевк",
@@ -151,6 +155,9 @@ BODIES_RU_NAMES = {
   "66391_Moshup": "Мошап",
   "103P/Hartley": "Хартли 2",
   "(29075)_1950_DA": "1950 DA",
+  "P/2016_BA14": "P/2016 BA14",
+  "(163899)_2003_SD220": "2003 SD220",
+  "2017_YE5": "2017 YE5",
   "162173_Ryugu": "Рюгу",
   "2014_JO25": "2014 JO25",
   "65803_Didymos": "Дидим",
@@ -158,8 +165,11 @@ BODIES_RU_NAMES = {
   "2015_TB145": "2015 TB145",
   "101955_Bennu": "Бенну",
   "(436724)_2011_UW158": "2011 UW158",
+  "(33342)_1998_WT24": "1998 WT24",
   "25143_Itokawa": "Итокава",
   "99942_Apophis": "Апофис",
+  "2014_HQ124": "2014 HQ124",
+  "(357439)_2004_BL86": "2004 BL86",
   "2017_BQ6": "2017 BQ6"
 }
 
@@ -195,7 +205,8 @@ obj_data = [
     "None",
     [
       "pla",
-      "he"
+      "he",
+      "visited"
     ]
   ],
   [
@@ -206,7 +217,8 @@ obj_data = [
     "None",
     [
       "pla",
-      "he"
+      "he",
+      "visited"
     ]
   ],
   [
@@ -239,7 +251,8 @@ obj_data = [
     "None",
     [
       "pla",
-      "he"
+      "he",
+      "radar"
     ]
   ],
   [
@@ -262,7 +275,9 @@ obj_data = [
     "None",
     [
       "pla",
-      "he"
+      "he",
+      "radar",
+      "visited"
     ]
   ],
   [
@@ -287,7 +302,8 @@ obj_data = [
       "sat",
       "he",
       "moon",
-      "radar"
+      "radar",
+      "visited"
     ]
   ],
   [
@@ -299,7 +315,8 @@ obj_data = [
     [
       "pla",
       "he",
-      "radar"
+      "radar",
+      "visited"
     ]
   ],
   [
@@ -336,7 +353,8 @@ obj_data = [
       "ea",
       "he",
       "moon",
-      "radar"
+      "radar",
+      "visited"
     ]
   ],
   [
@@ -360,7 +378,8 @@ obj_data = [
     [
       "ne",
       "he",
-      "moon"
+      "moon",
+      "visited"
     ]
   ],
   [
@@ -371,7 +390,8 @@ obj_data = [
     "23.01.1930",
     [
       "dw",
-      "he"
+      "he",
+      "visited"
     ]
   ],
   [
@@ -478,7 +498,8 @@ obj_data = [
     [
       "pl",
       "he",
-      "moon"
+      "moon",
+      "visited"
     ]
   ],
   [
@@ -561,7 +582,8 @@ obj_data = [
     "01.01.1801",
     [
       "dw",
-      "he"
+      "he",
+      "visited"
     ]
   ],
   [
@@ -607,7 +629,8 @@ obj_data = [
     "2.59E20",
     "29.03.1807",
     [
-      "mab"
+      "mab",
+      "visited"
     ]
   ],
   [
@@ -710,7 +733,7 @@ obj_data = [
     "30.05.1903",
     [
       "mab",
-      "lowcontrast"
+      "highcontrast"
     ]
   ],
   [
@@ -741,6 +764,17 @@ obj_data = [
     112.5,
     "2.4E19",
     "17.03.1852",
+    [
+      "mab",
+      "highcontrast"
+    ]
+  ],
+  [
+    "(324) Bamberga",
+    "Бамберга",
+    112,
+    "1.1E19",
+    "25.02.1892",
     [
       "mab",
       "highcontrast"
@@ -787,7 +821,7 @@ obj_data = [
     "01.07.1847",
     [
       "mab",
-      "lowcontrast"
+      "highcontrast"
     ]
   ],
   [
@@ -799,6 +833,17 @@ obj_data = [
     [
       "sat",
       "moon"
+    ]
+  ],
+  [
+    "(90) Antiope",
+    "Антиопа",
+    84,
+    "8.3E17",
+    "01.10.1866",
+    [
+      "mab",
+      "highcontrast"
     ]
   ],
   [
@@ -854,7 +899,6 @@ obj_data = [
     "08.12.1845",
     [
       "mab",
-      "lowcontrast",
       "lightcurve"
     ]
   ],
@@ -887,7 +931,8 @@ obj_data = [
     "1.7E18",
     "15.11.1852",
     [
-      "mab"
+      "mab",
+      "visited"
     ]
   ],
   [
@@ -931,7 +976,8 @@ obj_data = [
     "1.03E17",
     "12.11.1885",
     [
-      "mab"
+      "mab",
+      "visited"
     ]
   ],
   [
@@ -986,7 +1032,8 @@ obj_data = [
     "1.25E16",
     "26.06.2014",
     [
-      "tno"
+      "tno",
+      "visited"
     ]
   ],
   [
@@ -996,7 +1043,8 @@ obj_data = [
     "42E15",
     "29.09.1884",
     [
-      "mab"
+      "mab",
+      "visited"
     ]
   ],
   [
@@ -1061,7 +1109,8 @@ obj_data = [
     "6.69E15",
     "13.08.1898",
     [
-      "neo"
+      "neo",
+      "visited"
     ]
   ],
   [
@@ -1107,7 +1156,8 @@ obj_data = [
     "30.07.1916",
     [
       "mab",
-      "innermb"
+      "innermb",
+      "visited"
     ]
   ],
   [
@@ -1117,7 +1167,8 @@ obj_data = [
     "2.2E14",
     "25.12.1758",
     [
-      "co"
+      "co",
+      "visited"
     ]
   ],
   [
@@ -1150,7 +1201,19 @@ obj_data = [
     "4.5E13",
     "03.04.1867",
     [
-      "co"
+      "co",
+      "visited"
+    ]
+  ],
+  [
+    "(53319) 1999 JM8",
+    "1999 JM8",
+    3,
+    "None",
+    "13.05.1999",
+    [
+      "neo",
+      "radar"
     ]
   ],
   [
@@ -1161,8 +1224,7 @@ obj_data = [
     "11.10.1983",
     [
       "neo",
-      "radar",
-      "lowcontrast"
+      "radar"
     ]
   ],
   [
@@ -1172,7 +1234,8 @@ obj_data = [
     "2E13",
     "28.12.1904",
     [
-      "co"
+      "co",
+      "visited"
     ]
   ],
   [
@@ -1182,7 +1245,8 @@ obj_data = [
     "None",
     "04.11.1969",
     [
-      "mab"
+      "mab",
+      "visited"
     ]
   ],
   [
@@ -1192,7 +1256,8 @@ obj_data = [
     "None",
     "23.03.1942",
     [
-      "mab"
+      "mab",
+      "visited"
     ]
   ],
   [
@@ -1214,7 +1279,8 @@ obj_data = [
     "2.3E13",
     "06.01.1978",
     [
-      "co"
+      "co",
+      "visited"
     ]
   ],
   [
@@ -1224,7 +1290,19 @@ obj_data = [
     "9.98E12",
     "20.09.1969",
     [
-      "co"
+      "co",
+      "visited"
+    ]
+  ],
+  [
+    "(285263) 1998 QE2",
+    "1998 QE2",
+    1.6,
+    "None",
+    "19.08.1998",
+    [
+      "neo",
+      "radar"
     ]
   ],
   [
@@ -1234,7 +1312,9 @@ obj_data = [
     "5.05E13",
     "04.01.1989",
     [
-      "neo"
+      "neo",
+      "radar",
+      "visited"
     ]
   ],
   [
@@ -1280,7 +1360,8 @@ obj_data = [
     "27.05.1992",
     [
       "mab",
-      "lowcontrast"
+      "lowcontrast",
+      "visited"
     ]
   ],
   [
@@ -1290,7 +1371,8 @@ obj_data = [
     "None",
     "28.08.1993",
     [
-      "mab"
+      "mab",
+      "visited"
     ]
   ],
   [
@@ -1312,7 +1394,8 @@ obj_data = [
     "15.03.1986",
     [
       "co",
-      "radar"
+      "radar",
+      "visited"
     ]
   ],
   [
@@ -1323,8 +1406,40 @@ obj_data = [
     "23.02.1950",
     [
       "neo",
-      "radar",
-      "lowcontrast"
+      "radar"
+    ]
+  ],
+  [
+    "P/2016 BA14",
+    "P/2016 BA14",
+    0.5,
+    "None",
+    "21.01.2016",
+    [
+      "co",
+      "radar"
+    ]
+  ],
+  [
+    "(163899) 2003 SD220",
+    "2003 SD220",
+    0.5,
+    "None",
+    "29.09.2003",
+    [
+      "neo",
+      "radar"
+    ]
+  ],
+  [
+    "2017 YE5",
+    "2017 YE5",
+    0.5,
+    "None",
+    "21.12.2017",
+    [
+      "neo",
+      "radar"
     ]
   ],
   [
@@ -1334,7 +1449,8 @@ obj_data = [
     "450E9",
     "10.05.1999",
     [
-      "neo"
+      "neo",
+      "visited"
     ]
   ],
   [
@@ -1345,8 +1461,7 @@ obj_data = [
     "05.05.2014",
     [
       "neo",
-      "radar",
-      "lowcontrast"
+      "radar"
     ]
   ],
   [
@@ -1358,7 +1473,6 @@ obj_data = [
     [
       "neo",
       "radar",
-      "lowcontrast",
       "lightcurve"
     ]
   ],
@@ -1382,8 +1496,7 @@ obj_data = [
     "10.10.2015",
     [
       "neo",
-      "radar",
-      "lowcontrast"
+      "radar"
     ]
   ],
   [
@@ -1393,7 +1506,8 @@ obj_data = [
     "7.329E10",
     "11.09.1999",
     [
-      "neo"
+      "neo",
+      "visited"
     ]
   ],
   [
@@ -1408,13 +1522,25 @@ obj_data = [
     ]
   ],
   [
+    "(33342) 1998 WT24",
+    "1998 WT24",
+    0.205,
+    "7.8E10",
+    "25.11.1998",
+    [
+      "neo",
+      "radar"
+    ]
+  ],
+  [
     "(25143) Itokawa",
     "Итокава",
     0.173,
     "3.51E10",
     "26.09.1998",
     [
-      "neo"
+      "neo",
+      "visited"
     ]
   ],
   [
@@ -1426,6 +1552,17 @@ obj_data = [
     [
       "neo",
       "lightcurve"
+    ]
+  ],
+  [
+    "2014 HQ124",
+    "2014 HQ124",
+    0.163,
+    "None",
+    "23.04.2014",
+    [
+      "neo",
+      "radar"
     ]
   ],
   [
@@ -1447,8 +1584,7 @@ obj_data = [
     "26.01.2017",
     [
       "neo",
-      "radar",
-      "lowcontrast"
+      "radar"
     ]
   ]
 ]
