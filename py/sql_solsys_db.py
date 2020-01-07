@@ -27,12 +27,13 @@ class Sobject(Base):
     mass = Column(String(15)) # BigInteger
     discoverdate = Column(Date)
     classes = relationship("Classes", back_populates="sobject")
+    filename = Column(String(16))
 
     def __repr__(self):
         return "Obj names: (%s) %s /%s/, size=%s, mass=%s, date=%s" % (
                             self.anumber, self.name, self.runame, self.size, self.mass, self.discoverdate)
 
-    def __init__(self, anumber, name, runame, size, mass, discoverdate, classes):
+    def __init__(self, anumber, name, runame, size, mass, discoverdate, classes, filename):
         if anumber:
             self.anumber = anumber
         self.name = name
@@ -50,6 +51,8 @@ class Sobject(Base):
         self.classes = []
         for cl in classes:
             self.classes.append(Classes(clss=cl))
+        if filename:
+            self.filename = filename
 
 class Classes(Base):
     __tablename__ = 'classes'
@@ -97,8 +100,8 @@ for obj in obj_data:
         date = datetime.datetime.strptime(obj[4], "%d.%m.%Y").date()
     sobj = Sobject(anumber=num, name=name,
         runame=obj[1], size=obj[2], mass=str(mass),
-        discoverdate=date, classes=[])
-    for cl in obj[-1]:
+        discoverdate=date, classes=[], filename=obj[-1])
+    for cl in obj[-2]:
         sobj.classes.append(Classes(clss=cl))
     session.add(sobj)
 
