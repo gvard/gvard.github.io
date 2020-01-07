@@ -72,7 +72,8 @@ function ObjParams() {
   for (let i = 0; i < objs.length; i++) {
     const classes = objs[i].className.replace('obj ','').split(' ');
     const a = objs[i].getElementsByClassName('name')[0].getElementsByTagName("a")[0];
-    const imgAlt = objs[i].getElementsByClassName('img')[0].getElementsByTagName("img")[0].alt;
+    const img = objs[i].getElementsByClassName('img')[0].getElementsByTagName("img")[0]
+    const imgPath = img.src.split('/'); 
     const date = objs[i].getElementsByClassName('date')[0].innerText;
     const size = getSize(objs[i].getElementsByClassName('size')[0].innerText);
     const mass = txtMass(objs[i].getElementsByClassName('mass')[0].innerText);
@@ -82,9 +83,8 @@ function ObjParams() {
     //   objName = objName[objName.length - 2] + "/" + objName[objName.length - 1];
     // else
     //   objName = objName[objName.length - 1];
-    
-    objDct.push({'name': imgAlt, 'runame': objRuName, 'size': size, 'mass': mass, 'date': date, 'classes': classes});
-    objArr.push([imgAlt, objRuName, size, mass, date, classes]);
+    objDct.push({'name': img.alt, 'runame': objRuName, 'size': size, 'mass': mass, 'date': date, 'classes': classes});
+    objArr.push([img.alt, objRuName, size, mass, date, classes, imgPath[imgPath.length - 1]]);
   }
   console.log(objArr);
   console.log(objDct);
