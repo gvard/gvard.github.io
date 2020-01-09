@@ -1,3 +1,4 @@
+const OBJTYPES = JSON.parse('{"star":"звезда", "pla":"планета", "neo":"околоземный астероид", "co":"ядро кометы", "ea":"спутник Земли", "mar":"спутник Марса", "mab":"астероид основного пояса", "dw":"карликовая планета", "ju":"спутник Юпитера", "sat":"спутник Сатурна", "ur":"спутник Урана", "ne":"спутник Нептуна", "pl":"спутник Плутона", "tno":"Трарснептуновый объект"}');
 function logger(mode, len) {
   let displayMode = '';
   if (mode == 'none')
@@ -112,17 +113,32 @@ function hide() {
   var messageBox = document.getElementById('messageBox');
   messageBox.style.display = 'none';
 }
+function mkPar(before, txt, after) {
+  return (txt == 'None') ? '' : `<p>${before}${txt}${after}</p>`;
+}
 function mkContents(obj) {
-  const name = obj.getElementsByClassName("name")[0].getElementsByTagName("a")[0].innerText;
-  const size = obj.getElementsByClassName("size")[0].innerText;
-  const mass = obj.getElementsByClassName("mass")[0].innerText;
-  const date = obj.getElementsByClassName("date")[0].innerText;
-  const objTypes = JSON.parse('{"star":"звезда", "pla":"планета", "neo":"околоземный астероид", "co":"ядро кометы", "ea":"спутник Земли", "mar":"спутник Марса", "mab":"астероид основного пояса", "dw":"карликовая планета", "ju":"спутник Юпитера", "sat":"спутник Сатурна", "ur":"спутник Урана", "ne":"спутник Нептуна", "pl":"спутник Плутона", "tno":"Трарснептуновый объект"}');
+  let name = obj.getElementsByClassName("name")[0].getElementsByTagName("a")[0].innerText;
+  name = mkPar('<b>', name, '</b>');
+  let size = obj.getElementsByClassName("size")[0].innerText;
+  size = mkPar('Радиус: ', size, '&nbsp;км');
+  let mass = obj.getElementsByClassName("mass")[0].innerText;
+  mass = mkPar('Масса: ', mass, '&nbsp;кг');
+  let date = obj.getElementsByClassName("date")[0].innerText;
+  date = mkPar('Дата открытия: ', date, '');
   let type = "";
   for (let objClassNam of obj.className.split(" "))
-    if (objClassNam in objTypes)
-      type = objTypes[objClassNam];
-  return `<p><b>${name}</b></p><p>Тип: ${type}</p><p> Радиус: ${size}&nbsp;км</p><p>Масса: ${mass}&nbsp;кг</p><p>Дата открытия: ${date}</p>`;
+    if (objClassNam in OBJTYPES)
+      type = OBJTYPES[objClassNam];
+  type = mkPar('Тип: ', type, '');
+  let deltaV = obj.getElementsByClassName("delta-v");
+  if (deltaV.length) {
+    deltaV = deltaV[0].innerText;
+    deltaV = mkPar('Δv: ', deltaV, '&nbsp;км/с');
+  }
+  else {
+    deltaV = "";
+  }
+  return `${name}${type}${size}${mass}${date}${deltaV}`;
 }
 function show(divImg) {
   const obj = divImg.parentElement;
