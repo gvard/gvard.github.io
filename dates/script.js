@@ -65,7 +65,6 @@ function carousel() {
   toShow[slideIndex-1].parentElement.style.display = "block"; 
   setTimeout(carousel, 6000); 
 }
-
 function findDate() {
   const elems = document.getElementsByClassName('date');
   let gyear = parseInt(document.getElementById("year").value);
@@ -74,7 +73,7 @@ function findDate() {
   var checkBox = document.getElementById("onlyMonth");
   if (checkBox.checked == true) {
     const month = today.month;
-    console.log("Show all december events", month);
+    console.log("Show events occured in month number", month);
   }
   if (!gdaymon)
     gdaymon = today.daymon;
