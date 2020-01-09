@@ -168,7 +168,7 @@ def get_ssdtats(soup):
     """Get statistics from Solar System Dynamics page."""
     td_with_numbers = soup.findAll("td", {"align": "right"})
     ssd_numbers = [int(f.text.replace(',', '')) for f in td_with_numbers[1:8]]
-    last_upd = soup.findAll("td", {"align": "left"})[-1].text
+    last_upd = soup.findAll("td", {"align": "left"})[-1].text.strip()
     return ssd_numbers, last_upd
 
 
