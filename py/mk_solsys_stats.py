@@ -3,11 +3,12 @@ with solar system statistics.
 """
 
 import pickle
-import urllib.request
 import os
-from bs4 import BeautifulSoup
+
+from beautifulsoup_supply import TAIL, mk_head, get_soup
 
 
+HEAD = mk_head("Статистика тел Солнечной системы")
 PICKLE_FILENAME = "radar_obj_names.pickle"
 ECHO_URL = "https://echo.jpl.nasa.gov/asteroids/"
 MPC_URL = "https://minorplanetcenter.net/mpc/summary"
@@ -16,27 +17,6 @@ SSD_URL = "https://ssd.jpl.nasa.gov/?body_count"
 JOHNSTON_ASTEROID_MOONS_URL = "http://www.johnstonsarchive.net/astro/asteroidmoons.html"
 JOHNSTON_SOLSYS_URL = "http://www.johnstonsarchive.net/astro/sslistnew.html"
 
-HEAD = f"""<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Статистика тел Солнечной системы</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-"""
-TAIL = """
-</body>
-</html>
-"""
-
-
-def get_soup(url):
-    """get url, return BeautifulSoup object"""
-    html = urllib.request.urlopen(url).read()
-    return BeautifulSoup(html, 'html.parser')
 
 def get_echo(soup):
     """Parse html, get date of last page update,
