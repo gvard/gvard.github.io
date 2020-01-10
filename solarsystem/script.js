@@ -8,7 +8,6 @@ function logger(mode, len) {
   console.log(`${displayMode} ${len} objects`);
 }
 function showHideThis(checkBox) { //, classNames
-  console.log(checkBox.checked, checkBox.value, checkBox.name);
   const elems = document.querySelectorAll(checkBox.name);
   var mode = 'none';
   if (checkBox.checked)
@@ -62,7 +61,6 @@ function txtMass(txt) {
 }
 function getDeltaV(txt) {
   if (txt.includes(">"))
-    console.log(txt, parseFloat(txt.substring(txt.indexOf(">")+1, txt.length)));
   return txt.includes(">") ? parseFloat(txt.substring(txt.indexOf(">")+1, txt.length)) : parseFloat(txt);
 }
 function getSize(txt) {
