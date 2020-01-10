@@ -7,8 +7,12 @@ function logger(mode, len) {
     displayMode = 'Show';
   console.log(`${displayMode} ${len} objects`);
 }
-function showHideThis(mode, classNam) {
-  const elems = document.querySelectorAll(classNam);
+function showHideThis(checkBox) { //, classNames
+  console.log(checkBox.checked, checkBox.value, checkBox.name);
+  const elems = document.querySelectorAll(checkBox.name);
+  var mode = 'none';
+  if (checkBox.checked)
+    mode = 'block';
   for (let i = 0; i < elems.length; i++)
     elems[i].style.display = mode;
   logger(mode, elems.length);
@@ -18,7 +22,7 @@ function getDivs(classNam) {
   return mainTab.getElementsByClassName(classNam);
 }
 function getDate(txt) {
-  if (txt == 'None')
+  if (!txt)
     return 0;
   return Number(txt.slice(6, 10));
 }
@@ -41,7 +45,7 @@ function showHideByDate(mode) {
   const yearForSort = parseInt(document.querySelector('#year').value);
   let j = 0;
   for (let i = 0; i < elems.length; i++) {
-    if (elems[i].innerText != 'None' && getDate(elems[i].innerText) > yearForSort) {
+    if (elems[i].innerText && getDate(elems[i].innerText) > yearForSort) {
       elems[i].parentElement.style.display = mode;
       j += 1;
     }
@@ -49,12 +53,17 @@ function showHideByDate(mode) {
   logger(mode, j)
 }
 function getMass(txt) {
-  if (txt == 'None')
+  if (!txt)
     return 0;
   return txt.includes("±") ? Number(txt.substring(0, txt.indexOf("±")) + txt.substring(txt.indexOf("E"))) : Number(txt);
 }
 function txtMass(txt) {
   return txt.includes("±") ? txt.substring(0, txt.indexOf("±")) + txt.substring(txt.indexOf("E")) : txt;
+}
+function getDeltaV(txt) {
+  if (txt.includes(">"))
+    console.log(txt, parseFloat(txt.substring(txt.indexOf(">")+1, txt.length)));
+  return txt.includes(">") ? parseFloat(txt.substring(txt.indexOf(">")+1, txt.length)) : parseFloat(txt);
 }
 function getSize(txt) {
   let num = 0;
@@ -99,6 +108,8 @@ function toSort(classNam) {
     var sortFunction = getDate;
   else if (classNam == 'size')
     var sortFunction = getSize;
+  else if (classNam == 'delta-v')
+    var sortFunction = getDeltaV;
   ArrToSort.sort(function(a, b) {
     let aord = sortFunction(a.getElementsByClassName(classNam)[0].innerText);
     let bord = sortFunction(b.getElementsByClassName(classNam)[0].innerText);
@@ -114,7 +125,7 @@ function hide() {
   messageBox.style.display = 'none';
 }
 function mkPar(before, txt, after) {
-  return (txt == 'None') ? '' : `<p>${before}${txt}${after}</p>`;
+  return (!txt) ? '' : `<p>${before}${txt}${after}</p>`;
 }
 function mkContents(obj) {
   let name = obj.getElementsByClassName("name")[0].getElementsByTagName("a")[0].innerText;
