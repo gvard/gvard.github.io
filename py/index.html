@@ -1,173 +1,74 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <title>Программирование на Python</title>
-    <link rel="stylesheet" href="github.css">
-    <script src="highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>Программирование на Python</title>
+  <link rel="stylesheet" href="github.css">
+  <script src="highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
-    <h1>gvard.github.io/py/</h1>
-    <h1>Программирование на Python</h1>
-    <pre><code>"Я помню чудное мгновенье...".replace("помню", "забыл")</code></pre>
+  <h1>gvard.github.io/py/</h1>
+  <h1>Программирование на Python</h1>
+  <p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">Скачать дистрибутив Python</a> третьей версии, установить, запустить среду разработки IDLE.</p>
 
-    <h2>Исследование статистики <a href="http://unicode.org/emoji/charts/full-emoji-list.html">эмодзи</a> (Яп. えもじ)</h2>
-    <p>в <a href="http://www.emojistats.org/">эмодзи-клавиатуре EmojiXpress</a> для iOS, instagram и <a href="http://emojitracker.com/">twitter</a>.</p>
-    <p><a href="https://www.instagram.com/explore/tags/%E2%9D%A4%EF%B8%8F/" target="_blank" rel="noopener noreferrer">Информация по тегу "Red Heart emoji" в Instagram</a>. Для сравнения: <a href="https://www.instagram.com/explore/tags/love/" target="_blank" rel="noopener noreferrer">тег love</a>.</p>
-            
-<p>Общее количество эмодзи в статистике EmojiXpress (emojistats.org) и Twitter (emojitracker.com) сохраним в переменные. Название и количество эмодзи запишем в виде словаря, затем в цикле узнаем соотношение количества самых популярных эмодзи и выведем статистику на экран:
-<pre><code><a href="http://emojitracker.com/api/stats">emostats_all = 1987.8</a>
-emostats = {'joy': 305,'heavy heart': 156.5, 'face kiss': 112.4,
-			'heart-shaped': 81.2, 'rolling': 43.5, 'loudly': 33.3,
-			'thumbs': 30.7, 'smiling': 29, 'kiss mark': 28.5,
-			'unamused': 7.3, 'black heart suit': 4.3, 'recycle': 0.0407
-			}
+<section>
+    <h2>Встроенные функции</h2>
+    <p><a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="noopener noreferrer">Список встроенных функций</a>, 68 штук.
+    У любой функции после имени есть скобки: (). В них через запятую перечисляются
+    <i>аргументы функции</i>. Любая функция имеет вывод, который можно записать
+    в <i>переменную</i> при помощи <i>оператора присваивания</i> =</p>
+  <ul>
+      <li>print() выводит на экран все аргументы. Вывод заканчивается переводом
+      на новую строку. Для отмены перевода надо написать аргумент end=""</li>
+      <li>input() ждет ввода пользователем строки. Нажатие клавиши Enter
+      завершает ввод пользователя и работу функции.</li>
+  </ul>
+</section>
 
-emoinst = {'joy': 8.916,'heavy heart': 33.623, 'face kiss': 5.793,
-		   'heart-shaped': 13.227, 'rolling': 1.314, 'loudly': 1.685,
-		   'thumbs': 4.353, 'smiling': 4.815, 'kiss mark': 3.26,
-		   'unamused': 0.253, 'black heart suit': 2.798, 'recycle': 0.0883
-			}
+<section>
+  <h2>Ключевые слова</h2>
+  <p>Ключевые слова нельзя использовать в качестве названий переменных!</p>
+  <pre><code class="py">False      await      else       import     pass
+None       break      except     in         raise
+True       class      finally    is         return
+and        continue   for        lambda     try
+as         def        from       nonlocal   while
+assert     del        global     not        with
+async      elif       if         or         yield</code></pre>
+</section>
 
-emotrack_all = 27294
-emotrack = {'joy': 2594, 'heavy heart': 1248, 'recycle': 965,
-			'heart-shaped': 939, 'loudly': 781, 'black heart suit': 733,
-			'smiling': 619, 'unamused': 494, 'face kiss': 466,
-			'kiss mark': 106, 'thumbs': 263.7, 'rolling': 0.00001
-			}
-			
-frac = round(emotrack_all/emostats_all, 2)
-print("Эмодзи в", frac, "раз больше в твиттере, чем в сообщениях, набранных пользователями iOS")
+<section>
+  <h2>Типы данных</h2>
+  <ul>
+    <li><b>Булево значение</b>: True или False. Функция преобразования <b>bool()</b>.
+    <b>Основные операции</b>: and, or, not, is, is not.</b></li>
+    <li><b>Численные данные</b>: целые (int), десятичные дроби (float), комплексные числа (complex). <b>Основные операции</b>: +, -, *, /, //, %, **, abs(), int(), float(), divmod(x, y), pow(x, y).</li>
+    <li><b>Последовательности</b>: список (list), кортеж (tuple), range.
+    <b>Основные операции над s</b>: in, not in, +, s * n, s[i], len(s), min(s), max(s), s.index(x), s.count(x).</li>
+    <li><b>Текст</b> (str). <b>Основные операции</b>: см. последовательности.
+    Дополнительно, операции со строками реализуются их <i>методами</i>.</li>
+    <li><b>Словарь</b> (dict). <b>Основные операции над d</b>: list(d), len(d), d[key], del d[key], key in d, iter(d), clear(), copy(), items(), keys(), pop(), reversed(), setdefault(), update(), values().</li>
+    <li><b>Множество</b> (set). <b>Основные операции</b>: некоторые математические операции, in, len() и другие. Множество не содержит информации о позициях элементов.</li>
+    <li><b>Бинарные типы данных</b>: bytes, bytearray, memoryview. <b>Основные операции</b>: см. последовательности.</li>          <li>А также модули, классы, функции, методы и другие объекты.</li>
+  </ul>
+</section>
+<p><i>Методы</i> строк пишутся через точку после строки или переменной,
+которая ее содержит:</p>
+<pre><code>"Я помню чудное мгновенье...".replace("помню", "забыл")</code></pre>
 
-for val in emotrack:
-    print(val, emostats[val], emoinst[val], emotrack[val])
-</code></pre>
-</p>
-<!-- <pre><code>names = {'joy': 'Слёзы радости', 'heavy heart': 'Сердце', 'recycle': 'Переработка',
-'heart-shaped': 'Глаза-сердца', 'loudly': 'Громко плачу', 'black heart suit': 'Червы',
-'smiling': 'Счастлив', 'unamused': 'Равнодушие', 'face kiss': 'Целую',
-'kiss mark': 'След от поцелуя', 'thumbs': 'Класс', 'rolling': 'Катаюсь от смеха'
-}
+<h2>Работа с данными</h2>
+<ul>
+  <li><a href="emoji/">Исследование статистики эмодзи</a>.</li>
+  <li><a href="oscar/">Исследование фильмов &ndash; победителей премии &laquo;Оскар&raquo;</a>.</li>
+  <li><a href="text/">Анализ текста</a>.</li>
+</ul>
 
-for name, count in emotrack.items():
-	if count and emostats.get(name):
-		rel = count/emostats.get(name)
-		print(names[name], round(rel, 1))
-	else:
-		print("track", emotrack.get(name), "stats", emostats.get(name))
-</code></pre> -->
-<p>Доступ к <a href="https://api.emojitracker.com/v1/rankings" target="_blank" rel="noopener noreferrer">данным emojitracker</a> по <a href="https://en.wikipedia.org/wiki/Application_programming_interface" target="_blank" rel="noopener noreferrer">API</a> (см. <a href="https://github.com/emojitracker/emojitrack-rest-api#rest-api-endpoints" target="_blank" rel="noopener noreferrer">github.com/emojitracker/emojitrack-rest-api</a>).<br>
-То есть, мы получаем статистику эмодзи с сайта emojitracker.com не через окно браузера в человекочитаемом виде, а через специально созданный интерфейс, API, в машиночитаемом виде.</p>
-<p>Для хранения данных используется формат <a href="https://ru.wikipedia.org/wiki/JSON" target="_blank" rel="noopener noreferrer">JSON</a>. Сохранение данных на диске для последующего использования называется <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F">сериализацией</a>.<br>
-Загружаем данные из файла:
-<pre><code>
-import json # подключение библиотеки для работы с файлами JSON
-# Открытие файла rankings.json в режиме чтения ('r') и в кодировке utf-8, работа с ним через переменную myfile:
-with open('rankings.json', 'r', encoding="utf-8") as myfile:
-    datastore = json.load(myfile)
-print(type(datastore), len(datastore))
+<h2>Задачи</h2>
 
-#Сохраняем в файл sample.json переменную emotrack:
-filename = "sample.json" # Переопределение переменной filename
-# Открытие файла sample.json в режиме записи ('w'), работа с ним через переменную f (для разнообразия, здесь уже не myfile):
-with open(filename, 'w') as f:
-    json.dump(emotrack, f)
-</code></pre>
-</p>
-<p><a href="https://medium.com/@mroth/why-the-emoji-recycling-symbol-is-taking-over-twitter-65ad4b18b04b" target="_blank" rel="noopener noreferrer">Статья-исследование про эмодзи "Переработка"</a></p>
-<p><a href="https://www.webfx.com/tools/emoji-cheat-sheet/" target="_blank" rel="noopener noreferrer">Emoji cheat sheet</a></p>
-
-
-<pre><code>
-#Название           | Год  | Рейтинг | Длина | Жанры | Бюджет | Сборы  |
-oscar_data = [
-['Зеленая книга', 2018, 8.323, 130, ['комедия', 'драма', 'биография'], 23, 321.7],
-['Форма воды', 2017, 6.914, 123, ['фантастика', 'драма'], 19.4, 195.243464],
-['Лунный свет', 2016, 6.151, 110, ['драма'], 1.5, 65.046687],
-['В центре внимания', 2015, 7.489, 129, ['драма', 'криминал', 'история'], 20.0, 88.346473],
-['Бёрдмэн', 2014, 7.604, 119, ['драма', 'комедия'], 18.0, 103.215094],
-['12 лет рабства', 2013, 7.71, 133, ['драма', 'биография', 'история'], 20.0, 178.371993],
-['Операция "Арго"', 2012, 7.517, 120, ['триллер', 'драма', 'биография'], 44.5, 232.324128],
-['Артист', 2011, 7.942, 96, ['драма', 'мелодрама', 'комедия'], 15.0, 133.432856],
-['Король говорит!', 2010, 7.977, 118, ['драма', 'биография', 'история'], 15.0, 414.211549],
-['Повелитель бури', 2008, 7.298, 126, ['триллер', 'драма', 'военный', 'история'], 15.0, 49.230772],
-['Миллионер из трущоб', 2008, 7.724, 120, ['драма', 'мелодрама'], 15.0, 377.910544],
-['Старикам тут не место', 2007, 7.726, 122, ['триллер', 'драма', 'криминал'], 25.0, 171.627166],
-['Отступники', 2006, 8.456, 151, ['триллер', 'драма', 'криминал'], 90.0, 289.847354],
-['Столкновение', 2004, 7.896, 108, ['триллер', 'драма', 'криминал'], 6.5, 98.410061],
-['Малышка на миллион', 2004, 8.075, 132, ['драма', 'спорт'], 30.0, 216.763646],
-['Властелин колец: Возвращение Короля', 2003, 8.617, 201, ['фэнтези', 'драма', 'приключения'], 94.0, 1119.110941],
-['Чикаго', 2002, 7.669, 113, ['мюзикл', 'комедия', 'криминал'], 45.0, 306.776732],
-['Игры разума', 2001, 8.557, 135, ['драма', 'биография', 'мелодрама'], 58.0, 313.542341],
-['Гладиатор', 2000, 8.585, 155, ['боевик', 'драма', 'приключения'], 103.0, 457.640427],
-['Красота по-американски', 1999, 7.965, 122, ['драма'], 15.0, 356.296601],
-['Влюбленный Шекспир', 1998, 7.452, 123, ['драма', 'мелодрама', 'комедия', 'история'], 25.0, 289.317794],
-['Титаник', 1997, 8.369, 194, ['драма', 'мелодрама'], 200.0, 2185.372302],
-['Английский пациент', 1996, 7.849, 155, ['драма', 'мелодрама', 'военный'], 27.0, 231.976425],
-['Храброе сердце', 1995, 8.283, 178, ['драма', 'военный', 'биография', 'история'], 72.0, 210.409945],
-['Форрест Гамп', 1994, 8.915, 142, ['драма', 'мелодрама'], 55.0, 677.386686],
-['Список Шиндлера', 1993, 8.819, 195, ['драма', 'биография', 'история'], 22.0, 321.265768],
-['Непрощенный', 1992, 7.858, 131, ['драма', 'вестерн'], 14.4, 159.157447],
-['Молчание ягнят', 1990, 8.335, 114, ['триллер', 'криминал', 'детектив', 'драма', 'ужасы'], 19.0, 272.742922],
-['Танцующий с волками', 1990, 8.112, 181, ['драма', 'приключения', 'вестерн'], 22.0, 424.208848],
-['Шофёр мисс Дэйзи', 1989, 7.645, 99, ['драма'], 7.5, 145.793296],
-['Человек дождя', 1988, 8.25, 133, ['драма'], 25.0, 354.825435],
-]
-
-print("Всего фильмов:", len(oscar_data))
-money = 0.
-for film in oscar_data:
-    money = money + film[-1]
-print("Общий бюджет, млн:", round(money, 1))
-print()
-
-# Сортировка по рейтингу:
-oscar_data.sort(key=lambda row: row[2], reverse=True)
-
-# Вывод отсортированной и отформатированной таблицы на экран:
-print("{:<35}".format("Название"), "{:<4}".format("Год"), end="")
-print("Рейтинг Длина Бюджет  Сборы Прибыль")
-print("---------------------------------------------------------------------------")
-# Выводим только первые 10 строк
-for film in oscar_data[:10]:
-    # Форматируем название и год
-    print("{:&lt;35} {:&lt;5}".format(film[0], film[1]), end=" ")
-    # Форматируем рейтинг
-    print("{:<.3f}  ".format(film[2]), end=" ")
-    # Форматируем длину
-    print("{:>3}".format(film[3]), end=" ")
-    # Форматируем бюджет, сборы и прибыль
-    print("{:>5.1f} {:>7.2f} {:>7.2f}".format(film[5], film[6], film[6]-film[5]))
-
-# Собираем жанры
-genres = [] # Копилка жанров
-for film in oscar_data: # Для каждого фильма
-    for genre in film[4]: # Для каждого жанра 
-        if genre not in genres: # Если жанр не в копилке жанров 
-            genres.append(genre) # Добавить в копилку жанров
-
-print(genres, len(genres))
-
-for genre in genres: # Для каждого жанра в копилке жанров
-    genres_count = 0 # Счетчик жанра создан и равен нулю
-    for film in oscar_data: # Для каждого фильма
-        if genre in film[4]: # Если жанр в жанрах фильма
-                genres_count += 1 # Добавь единицу в счеткик жанра
-    print("Количество фильмов с жанром", genre, genres_count)
-
-</code></pre>
-
-<p>
-<a href="https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D0%B0%D0%B9%D0%BD_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)" target="_blank" rel="noopener noreferrer">Куайн (quine)</a> &ndash; компьютерная программа, которая выдаёт на выходе точную копию своего исходного текста. Куайн на python:
-<pre><code>_='_=%r;print(_%%_)';print(_%_)
-</code></pre>
-</p>
-
-<hr>
 Входные и выходные данные:
 
 <pre><code>names = ["2867 Šteins", "2014 JO25", "486958 Arrokoth", "243 Ida"]
@@ -244,91 +145,6 @@ for color in a:
     # code here
     print(color)
 </code></pre>
-<hr>
-
-<p>Написать программу, которая принимает текст и выводит два слова: наиболее часто встречающееся и самое длинное.</p>
-<pre><code>
-text = """
-Однажды, в студёную зимнюю пору
-Я из лесу вышел; был сильный мороз.
-Гляжу, поднимается медленно в гору
-Лошадка, везущая хворосту воз.
-И, шествуя важно, в спокойствии чинном,
-Лошадку ведёт под уздцы мужичок
-В больших сапогах, в полушубке овчинном,
-В больших рукавицах... а сам с ноготок!
-«Здорово, парнище!» — «Ступай себе мимо!» —
-«Уж больно ты грозен, как я погляжу!
-Откуда дровишки?» — «Из лесу, вестимо,
-Отец, слышишь, рубит, а я отвожу».
-(В лесу раздавался топор дровосека.) —
-«А что, у отца-то большая семья?» —
-«Семья-то большая, да два человека
-Всего мужиков-то: отец мой да я...» —
-«Так вон оно что! А как звать тебя?» — «Власом». —
-«А кой тебе годик?» — «Шестой миновал...
-Ну, мёртвая!» — крикнул малюточка басом,
-Рванул под уздцы и быстрей зашагал...
-На эту картину так солнце светило,
-Ребёнок был так уморительно мал,
-Как будто всё это картонное было,
-Как будто бы в детский театр я попал.
-Но мальчик был мальчик живой, настоящий,
-И дровни, и хворост, и пегонький конь,
-И снег до окошек деревни лежащий,
-И зимнего солнца холодный огонь —
-Всё, всё настоящее русское было,
-С клеймом нелюдимой, мертвящей зимы,
-Что русской душе так мучительно мило,
-Что русские мысли вселяет в умы, —
-Те честные мысли, которым нет доли,
-Которым нет смерти — 
-В которых так много и злобы и боли,
-В которых так много любви!
-"""
-
-txtfile = open("ponedelx.txt")
-text = txtfile.read()
-txtfile.close()
-
-words = text.split()
-print(len(words)) # Вывести на экран количество слов
-print(len("".join(words))) # Вывести на экран количество символов
-wordsdict = {}
-for word in words:
-    pass
-    <!-- word = word.lower().strip('"').strip("(").strip("!").strip("«").rstrip("...»").strip(",")
-    if word not in wordsdict:
-        wordsdict[word] = 1
-    else:
-        wordsdict[word] = wordsdict[word] + 1 -->
-
-wordslist = sorted(wordsdict.items(), key=lambda x: x[1], reverse=True)
-print(wordslist)
-
-longest = ""
-# code here
-<!-- wordsfreq = []
-for word in wordsdict:
-    wordsfreq.append((word, wordsdict[word]))
-    if len(word) > len(longest):
-        longest = word
-        
-wordsfreq.sort(key=lambda row: row[1], reverse=True)
-print(wordsfreq == wordslist) -->
-
-dct = {}
-for word in wordsfreq:
-    dct.update({word[0]: word[1]})
-print(dct)
-</code></pre>
-<p><a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BA%D0%BE%D0%BD_%D0%A6%D0%B8%D0%BF%D1%84%D0%B0">Закон Ципфа</a> &ndash; эмпирическая закономерность распределения частоты слов естественного языка: если все слова языка (или просто достаточно длинного текста) упорядочить по убыванию частоты их использования, то частота n-го слова в таком списке окажется приблизительно обратно пропорциональной его порядковому номеру n.
-<a href="https://advego.com/text/seo/">Анализ текста онлайн</a>, <a
-href="https://www.ibm.com/developerworks/ru/library/l-python5/" target="_blank"
-rel="noopener noreferrer">Текстовая обработка в языке Python</a>, <a href="https://habr.com/en/post/60369/" target="_blank" rel="noopener noreferrer">Regexp и Python: извлечение токенов из текста</a>.
-</p>
-<p><a href="https://docs.python.org/3/library/textwrap.html" target="_blank"
-rel="noopener noreferrer">библиотека textwrap</a></p>
 <hr>
 
 <p>Напишите программу, которая по данному числу N от 1 до 9 выводит на экран N пингвинов. Изображение одного пингвина имеет размер 5 на 9 символов, между двумя соседними пингвинами также имеется пустой (из пробелов) столбец. Разрешается вывести пустой столбец после последнего пингвина.
@@ -428,6 +244,10 @@ print("Номер километра:", int(g))
 <p>Дано число n. С начала суток прошло n минут. Определите, сколько часов и минут будут показывать электронные часы в этот момент. Вводится число n - целое, положительное. Программа должна вывести два числа: количество часов (от 0 до 23) и количество минут (от 0 до 59). Учтите, что число n может быть больше, чем количество минут в сутках.</p>
 <hr>
 
+<p><a href="https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D0%B0%D0%B9%D0%BD_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)" target="_blank" rel="noopener noreferrer">Куайн (quine)</a> &ndash; компьютерная программа, которая выдаёт на выходе точную копию своего исходного текста. Куайн на python:
+</p>
+<pre><code>_='_=%r;print(_%%_)';print(_%_)</code></pre>
+    
 <!-- https://ailev.livejournal.com/1119503.html -->
 <p><a href="BS_simbad_stats.py" target="_blank" rel="noopener noreferrer">Загрузка html-страницы, нахождение нужных строк, сохранение результата на диск (сериализация)</a>.<br>
 <a href="BS_solsys_stats.py" target="_blank" rel="noopener noreferrer">Загрузка
