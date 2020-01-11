@@ -110,17 +110,19 @@ def get_mpcstats(soup):
     #observations_number = int(td_with_numbers[0].text)
     mpc_stat_numbers = [int(f.text) for f in td_with_numbers[:5]]
     td_mono_numbers = soup.findAll("td", {"class": "rj-mono"})
+    inner_numbers = [int(f.text) for f in td_mono_numbers[:6]]
     mid_outer_numbers = [int(f.text) for f in td_mono_numbers[6:10]]
     nea_numbers = [int(f.text) for f in td_mono_numbers[11:15]]
-    return mpc_stat_numbers, mid_outer_numbers, nea_numbers
+    return mpc_stat_numbers, inner_numbers, mid_outer_numbers, nea_numbers
 
 
 soup = get_soup(MP_NAMES_URL)
 MP_NAMES = get_mp_names(soup)
 
 soup = get_soup(MPC_URL)
-MPC_STAT_NUMBERS, MID_OUTER_NUMBERS, NEA_NUMBERS = get_mpcstats(soup)
+MPC_STAT_NUMBERS, INNER_NUMBERS, MID_OUTER_NUMBERS, NEA_NUMBERS = get_mpcstats(soup)
 OBSERV_NUM, OBJ_NUM, NUMBERED_NUM, UNNUMBERED_NUM, COMETS_NUM = MPC_STAT_NUMBERS
+ATIRAS, ATHENS, APOLLOS, AMORS, HUNGARIAS, MARS_CROSSERS = INNER_NUMBERS
 MBA, HILDAS, JUP_TROJANS, DISTANT = MID_OUTER_NUMBERS
 NEA, NEA1KM, PHA, NEC = NEA_NUMBERS
 MPC_STATS = f'''<h2>Статистика тел Солнечной системы</h2>
@@ -132,8 +134,9 @@ MPC_STATS = f'''<h2>Статистика тел Солнечной систем�
 <li>{UNNUMBERED_NUM} ненумерованных малых планет</li>
 <li>{COMETS_NUM} комет</li>
 <li>{len(MP_NAMES)-2} <a href="{MP_NAMES_URL}">малых планет с именами</a></li>
-<li>{MBA} астероидов основного пояса, {HILDAS} астероидов семейства Хильды, {JUP_TROJANS} троянцев Юпитера, {DISTANT} объектов за орбитой Юпитера</li>
-<li>{NEA} околоземных астероидов, из них {NEA1KM} больше 1 км, {PHA} потенциально опасных астероидов, {NEC} околоземных комет</li>
+<li>{ATIRAS} <a href="https://en.wikipedia.org/wiki/Atira_asteroid">Атир</a>, {ATHENS} <a href="https://en.wikipedia.org/wiki/Aten_asteroid">Атонов</a>, {APOLLOS} <a href="https://en.wikipedia.org/wiki/Apollo_asteroid">Аполлонов</a>, {AMORS} <a href="https://en.wikipedia.org/wiki/Amor_asteroid">Амуров</a>, {HUNGARIAS} <a href="https://en.wikipedia.org/wiki/Hungaria_asteroid">астероидов семейства Венгрии</a>, {MARS_CROSSERS} <a href="https://en.wikipedia.org/wiki/List_of_Mars-crossing_minor_planets">пересекающих орбиту Марса</a>;</li>
+<li>{MBA} астероидов основного пояса, {HILDAS} <a href="https://en.wikipedia.org/wiki/Hilda_asteroid">астероидов семейства Хильды</a>, {JUP_TROJANS} <a href="https://en.wikipedia.org/wiki/Jupiter_trojan">троянцев Юпитера</a>, {DISTANT} объектов за орбитой Юпитера;</li>
+<li>{NEA} <a href="https://en.wikipedia.org/wiki/Near-Earth_object#Near-Earth_asteroids">околоземных астероидов</a>, из них {NEA1KM} больше 1 км, {PHA} потенциально опасных астероидов, {NEC} <a href="https://en.wikipedia.org/wiki/Near-Earth_object#Near-Earth_comets">околоземных комет</a>.</li>
 </ul>
 <p><a href="https://minorplanetcenter.net/iau/lists/t_tnos.html">Список транснептуновых объектов</a><br>
 Распределение малых планет, количество в зависимости от большой полуоси орбиты:<br>
