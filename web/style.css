@@ -17,3 +17,10 @@ header {
 main {
     background-color: white;
 }
+
+.red {
+    color: red;
+    font-weight: bold;
+  }
+  
+  
