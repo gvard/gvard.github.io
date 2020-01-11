@@ -56,11 +56,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-.red {
-  color: red;
-  font-weight: bold;
-}
-
 .center {
   text-align: center;
   background: url("bg.gif");
