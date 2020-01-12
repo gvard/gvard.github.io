@@ -83,6 +83,30 @@ ps = soup.findAll("p")
 # Напечатать третий (первые два пустые) параграф про динозавров
 print(ps[0].text, ps[1].text, ps[2].text)</code></pre>
 
+Готовая программа:
+<pre><code>
+import urllib.request
+from bs4 import BeautifulSoup
+
+referat = ""
+URLS = ["https://en.wikipedia.org/wiki/Mercury_(planet)",
+        "https://en.wikipedia.org/wiki/Venus",
+        "https://en.wikipedia.org/wiki/Earth",
+        "https://en.wikipedia.org/wiki/Mars"]
+
+for url in URLS:
+    html = urllib.request.urlopen(url).read()
+    soup = BeautifulSoup(html, 'html.parser')
+    ps = soup.findAll("p")
+    s = ps[0].text + ps[1].text + ps[2].text
+    while "[" in s:
+        br1 = s.find("[")
+        br2 = s.find("]")
+        s = s[:br1]+s[br2+1:]
+    referat = referat + s.strip()
+
+print(referat)  
+</code></pre>
 
 
 <h2>Задачи</h2>
