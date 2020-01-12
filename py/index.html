@@ -81,7 +81,7 @@ soup = BeautifulSoup(html, 'html.parser')
 # Найти все параграфы
 ps = soup.findAll("p")
 # Напечатать третий (первые два пустые) параграф про динозавров
-print(ps[2])</code></pre>
+print(ps[0].text, ps[1].text, ps[2].text)</code></pre>
 
 
 
