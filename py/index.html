@@ -67,6 +67,11 @@ async      elif       if         or         yield</code></pre>
   <li><a href="text/">Анализ текста</a>.</li>
 </ul>
 
+<h2>Пишем реферат</h2>
+
+<p>Установка <a href="https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)" target="_blank" rel="noopener noreferrer">Beautiful Soup</a>:
+В командной строке выполнить команду pip install bs4</p>
+
 <pre><code>import urllib.request
 
 from bs4 import BeautifulSoup
@@ -76,16 +81,15 @@ URL = "https://en.wikipedia.org/wiki/Dinosaur"
 
 # Открыть и прочитать исходный код страницы по адресу URL
 html = urllib.request.urlopen(URL).read()
-# Перевести исходный код в набор списков
+# Перевести скачанную страницу в виде байтовой строки (bytes) в объект BeautifulSoup
 soup = BeautifulSoup(html, 'html.parser')
-# Найти все параграфы
+# Найти все параграфы - содержимое тегов p. ps - список.
 ps = soup.findAll("p")
-# Напечатать третий (первые два пустые) параграф про динозавров
+# Напечатать текст первых трех (первые два часто пустые) параграфов статьи.
 print(ps[0].text, ps[1].text, ps[2].text)</code></pre>
 
-Готовая программа:
-<pre><code>
-import urllib.request
+<p>Готовая программа:</p>
+<pre><code>import urllib.request
 from bs4 import BeautifulSoup
 
 referat = ""
@@ -105,7 +109,7 @@ for url in URLS:
         s = s[:br1]+s[br2+1:]
     referat = referat + s.strip()
 
-print(referat)  
+print(referat)
 </code></pre>
 
 
