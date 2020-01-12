@@ -67,6 +67,24 @@ async      elif       if         or         yield</code></pre>
   <li><a href="text/">Анализ текста</a>.</li>
 </ul>
 
+<pre><code>import urllib.request
+
+from bs4 import BeautifulSoup
+
+# Адрес страницы в Википедии
+URL = "https://en.wikipedia.org/wiki/Dinosaur"
+
+# Открыть и прочитать исходный код страницы по адресу URL
+html = urllib.request.urlopen(URL).read()
+# Перевести исходный код в набор списков
+soup = BeautifulSoup(html, 'html.parser')
+# Найти все параграфы
+ps = soup.findAll("p")
+# Напечатать третий (первые два пустые) параграф про динозавров
+print(ps[2])</code></pre>
+
+
+
 <h2>Задачи</h2>
 
 Входные и выходные данные:
