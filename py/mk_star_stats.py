@@ -34,7 +34,7 @@ soup = get_soup(SIMBAD_URL)
 SIMDATE, SIMSTAT = simbad_stats(soup)
 
 SIMBAD_HTML = f"""<p><a href="{SIMBAD_URL}">SIMBAD</a> <a href="https://en.wikipedia.org/wiki/SIMBAD">Astronomical Database</a> of objects beyond the Solar System &ndash; CDS (Strasbourg).<br>
-Последнее обновление <b>{SIMDATE}</b> содержит:.</p>
+Последнее обновление <b>{SIMDATE}</b> содержит:</p>
 <ul>
 <li>{SIMSTAT['objects']} объектов</li>
 <li>{SIMSTAT['identifiers']} идентификаторов</li>
