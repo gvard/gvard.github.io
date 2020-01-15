@@ -125,6 +125,17 @@ OBSERV_NUM, OBJ_NUM, NUMBERED_NUM, UNNUMBERED_NUM, COMETS_NUM = MPC_STAT_NUMBERS
 ATIRAS, ATHENS, APOLLOS, AMORS, HUNGARIAS, MARS_CROSSERS = INNER_NUMBERS
 MBA, HILDAS, JUP_TROJANS, DISTANT = MID_OUTER_NUMBERS
 NEA, NEA1KM, PHA, NEC = NEA_NUMBERS
+
+
+def get_ssnew(soup):
+    """Get Johnston's Archive ssnew statistics."""
+    ps = soup.findAll("p")
+    comets_note = soup.findAll("blockquote")[1].text.replace("\r", "<br>")
+    return ps[3].text.replace("\r", "<br>"), comets_note
+
+soup = get_soup(JOHNSTON_SOLSYS_URL)
+SSNEW, COMETS_NOTE = get_ssnew(soup)
+
 MPC_STATS = f'''<h2>Статистика тел Солнечной системы</h2>
 <p><a href="https://minorplanetcenter.net/mpc/summary">Центра Малых планет</a></p>
 <ul>
@@ -143,7 +154,10 @@ MPC_STATS = f'''<h2>Статистика тел Солнечной систем�
 <img alt="Distribution of the Minor Planets: Semimajor Axis" src="https://minorplanetcenter.net/iau/plot/OrbEls01.gif"><br>
 <a href="https://en.wikipedia.org/wiki/Kirkwood_gap" target="_blank" rel="noopener noreferrer"><img alt="Diagram showing inner, middle and outer main-belt asteroids" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Kirkwood_Gaps.svg/994px-Kirkwood_Gaps.svg.png"></a>
 </p><br>
-<a href="{JOHNSTON_SOLSYS_URL}">Альтернативная статистика Johnston's Archive</a>.
+<img src="nea_size_bin_chart.svg" alt="NEA size bin chart"><br>
+<a href="{JOHNSTON_SOLSYS_URL}">Альтернативная статистика Johnston's Archive</a>:
+{SSNEW}
+{COMETS_NOTE}
 '''
 
 
