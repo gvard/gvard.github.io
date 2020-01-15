@@ -81,7 +81,8 @@ URL = "http://gvard.github.io/py/"
 html_bytes = urllib.request.urlopen(URL)</code></pre>
 <p>Страница загрузится в виде последовательности байт. Мы можем разделить ее на
 отдельные строки, найти нужную последовательность байтов, перевести ее в строку:</p>
-<pre><code>title = html_byte_list[7].decode()
+<pre><code>html_byte_list = html_bytes.readlines()
+title = html_byte_list[7].decode()
 print(title)</code></pre>
 
 <p>Установка <a href="https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)" target="_blank" rel="noopener noreferrer">Beautiful Soup</a>:
