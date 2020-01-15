@@ -72,22 +72,24 @@ async      elif       if         or         yield</code></pre>
 <h2>Пишем реферат</h2>
 
 <p>Мы просматриваем web-страницы в web-браузере, например, Google Chrome.
-Страницы написаны на языке гипертекстовой разметки HTML, Hypertext Markup
-Language. Исходный код страницы можно просмотреть, нажав сочетание клавиш Ctrl+U.</p>
-<p>html-страницу можно загрузить, не открывая браузер. Будем использовать python
-и библиотеку urllib:</p>
+Исходный текст страниц написан на языке гипертекстовой разметки HTML, Hypertext Markup Language. Его можно просмотреть, нажав в браузере сочетание клавиш Ctrl+U.</p>
+<p>html-страницу можно загрузить, не открывая браузер. Будем использовать python и библиотеку urllib:</p>
 <pre><code>import urllib.request
-URL = "http://gvard.github.io/py/"
+URL = "https://gvard.github.io/py/"
 html_bytes = urllib.request.urlopen(URL)</code></pre>
 <p>Страница загрузится в виде последовательности байт. Мы можем разделить ее на
 отдельные строки, найти нужную последовательность байтов, перевести ее в строку:</p>
-<pre><code>html_byte_list = html_bytes.readlines()
+<pre><code class="py">html_byte_list = html_bytes.readlines()
 title = html_byte_list[7].decode()
-print(title)</code></pre>
+print(title)
+# '  &lt;title&gt;Программирование на Python&lt;title&gt;\r\n'</code></pre>
 
-<p>Установка <a href="https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)" target="_blank" rel="noopener noreferrer">Beautiful Soup</a>:
-В командной строке выполнить команду pip install bs4</p>
+<p>Искать нужные данные в последовательности байт довольно утомительно. Для этого лучше использовать специальные библиотеки, например,
+<a href="https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)" target="_blank" rel="noopener noreferrer">Beautiful Soup</a>.
+Установка библиотеки: в командной строке выполнить команду
+<pre><code>pip install bs4</code></pre>
 
+<p>Программа с использованием Beautiful Soup ищет на странице параграфы с текстом и печатает первые три на экран:</p>
 <pre><code>import urllib.request
 
 from bs4 import BeautifulSoup
@@ -104,6 +106,14 @@ ps = soup.findAll("p")
 # Напечатать текст первых трех (первые два часто пустые) параграфов статьи.
 print(ps[0].text, ps[1].text, ps[2].text)</code></pre>
 
+<p>Убираем из текста все ссылки:</p>
+<pre><code>text = ps[0].text + ps[1].text + ps[2].text
+while "[" in text:
+    br1 = s.find("[")
+    br2 = s.find("]") + 1
+    text = text[:br1] + text[br2:]
+
+print(text)</code></pre>
 
 <h2>Задачи</h2>
 
