@@ -71,6 +71,19 @@ async      elif       if         or         yield</code></pre>
 
 <h2>Пишем реферат</h2>
 
+<p>Мы просматриваем web-страницы в web-браузере, например, Google Chrome.
+Страницы написаны на языке гипертекстовой разметки HTML, Hypertext Markup
+Language. Исходный код страницы можно просмотреть, нажав сочетание клавиш Ctrl+U.</p>
+<p>html-страницу можно загрузить, не открывая браузер. Будем использовать python
+и библиотеку urllib:</p>
+<pre><code>import urllib.request
+URL = "http://gvard.github.io/py/"
+html_bytes = urllib.request.urlopen(URL)</code></pre>
+<p>Страница загрузится в виде последовательности байт. Мы можем разделить ее на
+отдельные строки, найти нужную последовательность байтов, перевести ее в строку:</p>
+<pre><code>title = html_byte_list[7].decode()
+print(title)</code></pre>
+
 <p>Установка <a href="https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)" target="_blank" rel="noopener noreferrer">Beautiful Soup</a>:
 В командной строке выполнить команду pip install bs4</p>
 
