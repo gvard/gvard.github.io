@@ -1,3 +1,5 @@
+"use strict";
+/*jshint esversion: 6 */
 function calc() {
   const a = parseFloat(document.querySelector('#val1').value);
   const b = parseFloat(document.querySelector('#val2').value);
