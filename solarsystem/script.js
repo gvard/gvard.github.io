@@ -9,7 +9,7 @@ function logger(mode, len) {
     displayMode = 'Hide';
   else if (mode.includes('block'))
     displayMode = 'Show';
-  console.log(`${displayMode} ${len} objects`);
+  console.log(displayMode, len, 'objects');
 }
 function showHideThis(checkBox) {
   const elems = document.querySelectorAll(checkBox.name);
@@ -137,7 +137,7 @@ function mkContents(obj) {
   else {
     deltaV = "";
   }
-  return `${name}${type}${size}${mass}${date}${deltaV}`;
+  return name + type + size + mass + date + deltaV;
 }
 function show(divImg) {
   const obj = divImg.parentElement;
