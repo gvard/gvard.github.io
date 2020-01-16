@@ -67,53 +67,8 @@ async      elif       if         or         yield</code></pre>
   <li><a href="emoji/">Исследование статистики эмодзи</a>.</li>
   <li><a href="oscar/">Исследование фильмов &ndash; победителей премии &laquo;Оскар&raquo;</a>.</li>
   <li><a href="text/">Анализ текста</a>.</li>
+  <li><a href="parse/">Синтаксический разбор</a>, извлечение информации из интернет-ресурсов.</li>
 </ul>
-
-<h2>Пишем реферат</h2>
-
-<p>Мы просматриваем web-страницы в web-браузере, например, Google Chrome.
-Исходный текст страниц написан на языке гипертекстовой разметки HTML, Hypertext Markup Language. Его можно просмотреть, нажав в браузере сочетание клавиш Ctrl+U.</p>
-<p>html-страницу можно загрузить, не открывая браузер. Будем использовать python и библиотеку urllib:</p>
-<pre><code>import urllib.request
-URL = "https://gvard.github.io/py/"
-html_bytes = urllib.request.urlopen(URL)</code></pre>
-<p>Страница загрузится в виде последовательности байт. Мы можем разделить ее на
-отдельные строки, найти нужную последовательность байтов, перевести ее в строку:</p>
-<pre><code class="py">html_byte_list = html_bytes.readlines()
-title = html_byte_list[7].decode()
-print(title)
-# '  &lt;title&gt;Программирование на Python&lt;title&gt;\r\n'</code></pre>
-
-<p>Искать нужные данные в последовательности байт довольно утомительно. Для этого лучше использовать специальные библиотеки, например,
-<a href="https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)" target="_blank" rel="noopener noreferrer">Beautiful Soup</a>.
-Установка библиотеки: в командной строке выполнить команду
-<pre><code>pip install bs4</code></pre>
-
-<p>Программа с использованием Beautiful Soup ищет на странице параграфы с текстом и печатает первые три на экран:</p>
-<pre><code>import urllib.request
-
-from bs4 import BeautifulSoup
-
-# Адрес страницы в Википедии
-URL = "https://en.wikipedia.org/wiki/Dinosaur"
-
-# Открыть и прочитать исходный код страницы по адресу URL
-html = urllib.request.urlopen(URL).read()
-# Перевести скачанную страницу в виде байтовой строки (bytes) в объект BeautifulSoup
-soup = BeautifulSoup(html, 'html.parser')
-# Найти все параграфы - содержимое тегов p. ps - список.
-ps = soup.findAll("p")
-# Напечатать текст первых трех (первые два часто пустые) параграфов статьи.
-print(ps[0].text, ps[1].text, ps[2].text)</code></pre>
-
-<p>Убираем из текста все ссылки:</p>
-<pre><code>text = ps[0].text + ps[1].text + ps[2].text
-while "[" in text:
-    br1 = s.find("[")
-    br2 = s.find("]") + 1
-    text = text[:br1] + text[br2:]
-
-print(text)</code></pre>
 
 <h2>Задачи</h2>
 
