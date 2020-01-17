@@ -6,7 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-from dates_data import events
+from dates_data import EVENTS
 
 SQLITE_DB_FILENAME = 'dates.sqlite'
 
@@ -58,7 +58,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 
-for event in events:
+for event in EVENTS:
     date = datetime.datetime.strptime(event[1], "%d.%m.%Y").date()
     imgs = []
     for img_url in event[3]:

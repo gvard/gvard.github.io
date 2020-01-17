@@ -95,3 +95,14 @@ function findDate() {
     elems[i].parentElement.style.display = vis;
   }
 }
+function makeArray() {
+  let arr = [];
+  const elems = document.getElementsByClassName('date');
+  for (let i = 0; i < elems.length; i += 1) {
+    let date = elems[i].innerText;
+    let desc = elems[i].parentElement.querySelector('.desc');
+    let img = desc.querySelector('img');
+    arr.push(["", date, desc.innerText.trim(), [img.src], ['tmp']]);
+  }
+  console.log(arr);
+}
