@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Flask SQLAlchemy table</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 <body>
   <h1>Таблица параметров тел Солнечной системы</h1>
@@ -16,6 +17,7 @@
     <th>Номер</th>
     <th>Имя</th>
     <th>По-русски</th>
+    <th>Это луна?</th>
     <th>Радиус, км</th>
     <th>Масса, кг</th>
     <th>Классы</th>
@@ -23,13 +25,14 @@
   </tr>
   <tbody>
   {% for object in objects %}<tr>
-    <td>{{ object.anumber }}</td>
+    <td>{% if object.anumber %}{{ object.anumber }}{% endif %}</td>
     <td>{{ object.name }}</td>
     <td>{{ object.runame }}</td>
+    <td>{{ object.is_moon }}</td>
     <td>{{ object.size }}</td>
-    <td>{{ object.mass }}</td>
-    <td>{{ object.classes }}</td>
-    <td>{{ object.discoverdate }}</td>
+    <td>{% if object.mass %}{{ object.mass }}{% endif %}</td>
+    <td>{% for class in object.classes %}{{ class }} {% endfor %}</td>
+    <td>{% if object.discoverdate %}{{ object.discoverdate.strftime("%d.%m.%Y") }}{% endif %} </td>
   </tr>{% endfor %}
   </tbody>
   </table>
