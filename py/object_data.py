@@ -9,11 +9,11 @@ MOONS = ['Ganymede_(moon)', 'Titan_(moon)', 'Callisto_(moon)', 'Io_(moon)', 'Moo
     'Iapetus_(moon)', 'Charon_(moon)', 'Umbriel_(moon)', 'Ariel_(moon)', 'Dione_(moon)', \
     'Tethys_(moon)', 'Enceladus_(moon)', 'Miranda_(moon)', 'Proteus_(moon)', 'Mimas_(moon)', \
     'Nereid_(moon)', 'Hyperion_(moon)', 'Phoebe_(moon)', 'Larissa_(moon)', 'Janus_(moon)', \
-    'Amalthea_(moon)', 'Puck_(moon)', 'Epimetheus_(moon)', 'Thebe_(moon)', 'Juliet_(moon)', \
-    'Prometheus_(moon)', 'Pandora_(moon)', 'Metis_(moon)', 'Hydra_(moon)', 'Nix_(moon)', \
-    'Helene_(moon)', 'Atlas_(moon)', 'Pan_(moon)', 'Telesto_(moon)', 'Phobos_(moon)', \
+    'Amalthea_(moon)', 'Puck_(moon)', 'Epimetheus_(moon)', 'Thebe_(moon)', 'Adrastea_(moon)', \
+    'Juliet_(moon)', 'Prometheus_(moon)', 'Pandora_(moon)', 'Metis_(moon)', 'Hydra_(moon)', \
+    'Nix_(moon)', 'Helene_(moon)', 'Atlas_(moon)', 'Pan_(moon)', 'Telesto_(moon)', 'Phobos_(moon)', \
     'Calypso_(moon)', 'Kerberos_(moon)', 'Deimos_(moon)', 'Styx_(moon)', 'Daphnis_(moon)', \
-    'Methone_(moon)', 'Polydeuces_(moon)']
+    'Methone_(moon)', 'Pallene_(moon)', 'Polydeuces_(moon)', "Aegaeon (moon)"]
 EARTH_MOONS = ['Moon']
 MARS_MOONS = ['Phobos_(moon)', 'Deimos_(moon)']
 JUPITER_MOONS = ['Io_(moon)', 'Europa_(moon)', 'Ganymede_(moon)', 'Callisto_(moon)', \
@@ -191,7 +191,7 @@ obj_data = [
     "Солнце",
     696342,
     "1.9885E30",
-    "None",
+    "",
     [
       "star",
       "he"
@@ -203,7 +203,7 @@ obj_data = [
     "Юпитер",
     69911,
     "1.898E27",
-    "None",
+    "",
     [
       "pla",
       "he",
@@ -216,7 +216,7 @@ obj_data = [
     "Сатурн",
     58232,
     "5.6834E26",
-    "None",
+    "",
     [
       "pla",
       "he",
@@ -253,7 +253,7 @@ obj_data = [
     "Земля",
     6371,
     "5.972E24",
-    "None",
+    "",
     [
       "pla",
       "he",
@@ -266,7 +266,7 @@ obj_data = [
     "Венера",
     6051.8,
     "4.8675E24",
-    "None",
+    "",
     [
       "pla",
       "he",
@@ -279,7 +279,7 @@ obj_data = [
     "Марс",
     3389.5,
     "6.4171E23",
-    "None",
+    "",
     [
       "pla",
       "he",
@@ -321,7 +321,7 @@ obj_data = [
     "Меркурий",
     2439.7,
     "3.3011E23",
-    "None",
+    "",
     [
       "pla",
       "he",
@@ -357,11 +357,11 @@ obj_data = [
     "Io.jpg"
   ],
   [
-    "Moon",
+    "Moon (moon)",
     "Луна",
     1737.1,
     "7.342E22",
-    "None",
+    "",
     [
       "ea",
       "he",
@@ -597,7 +597,7 @@ obj_data = [
     "(90377) Sedna",
     "Седна",
     497.5,
-    "None",
+    "",
     "14.11.2003",
     [
       "tno",
@@ -623,7 +623,7 @@ obj_data = [
     "(307261) 2002 MS4",
     "2002 MS4",
     467,
-    "None",
+    "",
     "18.06.2002",
     [
       "tno",
@@ -736,7 +736,7 @@ obj_data = [
     "Mimas (moon)",
     "Мимас",
     198.2,
-    "37.49E18",
+    "3.749E19",
     "17.09.1789",
     [
       "sat",
@@ -906,7 +906,7 @@ obj_data = [
     "(15760) Albion",
     "Альбион",
     84,
-    "None",
+    "",
     "30.08.1992",
     [
       "tno",
@@ -1065,7 +1065,7 @@ obj_data = [
     "Hydra (moon)",
     "Гидра",
     19.65,
-    "48E15",
+    "4.8E16",
     "15.05.2005",
     [
       "pl",
@@ -1077,7 +1077,7 @@ obj_data = [
     "Nix (moon)",
     "Никс",
     19.017,
-    "45E15",
+    "4.5E16",
     "15.05.2005",
     [
       "pl",
@@ -1161,7 +1161,7 @@ obj_data = [
     "Phobos (moon)",
     "Фобос",
     11.267,
-    "10.659E15",
+    "1.0659E16",
     "18.08.1877",
     [
       "mar",
@@ -1297,7 +1297,7 @@ obj_data = [
     "(53319) 1999 JM8",
     "1999 JM8",
     3,
-    "None",
+    "",
     "13.05.1999",
     [
       "neo",
@@ -1333,7 +1333,7 @@ obj_data = [
     "(2867) Šteins",
     "Штейнс",
     2.58,
-    "None",
+    "",
     "04.11.1969",
     [
       "mab",
@@ -1345,7 +1345,7 @@ obj_data = [
     "(5535) Annefrank",
     "Аннафранк",
     2.4,
-    "None",
+    "",
     "23.03.1942",
     [
       "mab",
@@ -1394,7 +1394,7 @@ obj_data = [
     "(285263) 1998 QE2",
     "1998 QE2",
     1.6,
-    "None",
+    "",
     "19.08.1998",
     [
       "neo",
@@ -1470,7 +1470,7 @@ obj_data = [
     "Dactyl",
     "Дактиль",
     0.7,
-    "None",
+    "",
     "28.08.1993",
     [
       "mab",
@@ -1482,7 +1482,7 @@ obj_data = [
     "(214869) 2007 PA8",
     "2007 PA8",
     0.69,
-    "None",
+    "",
     "09.08.2007",
     [
       "neo",
@@ -1507,7 +1507,7 @@ obj_data = [
     "103P/Hartley",
     "Хартли 2",
     0.57,
-    "300E9",
+    "3E11",
     "15.03.1986",
     [
       "co",
@@ -1532,7 +1532,7 @@ obj_data = [
     "P/2016 BA14",
     "P/2016 BA14",
     0.5,
-    "None",
+    "",
     "21.01.2016",
     [
       "co",
@@ -1544,7 +1544,7 @@ obj_data = [
     "(163899) 2003 SD220",
     "2003 SD220",
     0.5,
-    "None",
+    "",
     "29.09.2003",
     [
       "neo",
@@ -1556,7 +1556,7 @@ obj_data = [
     "2017 YE5",
     "2017 YE5",
     0.5,
-    "None",
+    "",
     "21.12.2017",
     [
       "neo",
@@ -1568,7 +1568,7 @@ obj_data = [
     "(162173) Ryugu",
     "Рюгу",
     0.432,
-    "450E9",
+    "4.5E11",
     "10.05.1999",
     [
       "neo",
@@ -1580,7 +1580,7 @@ obj_data = [
     "2014 JO25",
     "2014 JO25",
     0.4,
-    "None",
+    "",
     "05.05.2014",
     [
       "neo",
@@ -1605,7 +1605,7 @@ obj_data = [
     "Aegaeon (moon)",
     "Эгеон",
     0.33,
-    "None",
+    "",
     "03.03.2009",
     [
       "sat",
@@ -1618,7 +1618,7 @@ obj_data = [
     "2015 TB145",
     "2015 TB145",
     0.325,
-    "None",
+    "",
     "10.10.2015",
     [
       "neo",
@@ -1642,7 +1642,7 @@ obj_data = [
     "(436724) 2011 UW158",
     "2011 UW158",
     0.22,
-    "None",
+    "",
     "25.10.2011",
     [
       "neo",
@@ -1690,7 +1690,7 @@ obj_data = [
     "2014 HQ124",
     "2014 HQ124",
     0.163,
-    "None",
+    "",
     "23.04.2014",
     [
       "neo",
@@ -1702,7 +1702,7 @@ obj_data = [
     "(357439) 2004 BL86",
     "2004 BL86",
     0.15,
-    "None",
+    "",
     "30.01.2004",
     [
       "neo",
@@ -1714,7 +1714,7 @@ obj_data = [
     "2017 BQ6",
     "2017 BQ6",
     0.078,
-    "None",
+    "",
     "26.01.2017",
     [
       "neo",
