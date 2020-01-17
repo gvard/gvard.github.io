@@ -64,7 +64,10 @@ function carousel() {
   // let mon = elems[slideIndex].innerText.slice(3, 5);
   if (slideIndex > elems.length)
     slideIndex = 1;
-  toShow[slideIndex-1].parentElement.style.display = "block"; 
+  if (toShow.length != 0)
+    toShow[slideIndex-1].parentElement.style.display = "block"; 
+  else
+    document.body.innerHTML = "<h1>Нет дат за текущий месяц</h1>"
   setTimeout(carousel, 6000); 
 }
 function findDate() {
