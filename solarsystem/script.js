@@ -130,14 +130,16 @@ function mkContents(obj) {
       type = OBJTYPES[objClassNam];
   type = mkPar('Тип: ', type, '');
   let deltaV = obj.getElementsByClassName("delta-v");
-  if (deltaV.length) {
-    deltaV = deltaV[0].innerText;
-    deltaV = mkPar('Δv: ', deltaV, '&nbsp;км/с');
-  }
-  else {
+  if (deltaV.length)
+    deltaV = mkPar('Δv: ', deltaV[0].innerText, '&nbsp;км/с');
+  else
     deltaV = "";
-  }
-  return name + type + size + mass + date + deltaV;
+  let desc = obj.getElementsByClassName("desc");
+  if (desc.length)
+    desc = mkPar('', desc[0].innerText, '');
+  else
+    desc = "";
+  return name + type + size + mass + date + deltaV + desc;
 }
 function show(divImg) {
   const obj = divImg.parentElement;
