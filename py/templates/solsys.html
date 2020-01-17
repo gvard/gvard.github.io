@@ -5,138 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Солнечная система (Flask SQLAlchemy table)</title>
-  <style>
-  * {
-    margin: 0;
-    padding: 0;
-}
-body {
-    background: white;
-    color: black;
-}
-main {
-    font-size: 1em;
-}
-footer {
-    background-color: gray;
-    text-align: center;
-}
-
-section.tab {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1224px;
-    min-width: 408px;
-    margin: auto;
-    margin-bottom: 1em;
-}
-
-h1 {
-    text-align: center;
-    font-weight: bold;
-    font-size: large;
-}
-
-a:link {
-    color: blue;
-    background: transparent;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-img {
-    vertical-align: middle;
-}
-img.w {
-    width: auto;
-    max-width: 100%;
-}
-.obj {
-    border: 1px #aaa solid;
-    display: inline-block;
-    background-color: black;
-    min-width: 100px;
-}
-div.img {
-    min-height: 100px;
-    background-color: black;
-}
-div.name, .date {
-    font-size: 0.9em;
-    color: white;
-}
-.mass, .desc, .period, .delta-v {
-    display: none;
-    font-size: 0.78em;
-    color: white;
-}
-div.size {
-    font-size: 0.9em;
-    color: white;
-}
-section.comment {
-    padding: 1em;
-    text-align: justify;
-}
-.star > .name {background-color: #ffe7c8;}
-.pla > .name {background-color: white;}
-.neo > .name {background-color: #FFC2E0;}
-.co > .name {background-color: #c1f8f5;}
-.ea > .name {background-color: white;}
-.mar > .name {background-color: #f57c54;}
-.mab > .name {background-color: #fcb;}
-.dw > .name {background-color: #ffffff;}
-.ju > .name {background-color: #ccffaa;}
-.sat > .name {background-color: #fffcb1;}
-.ur > .name {background-color: #a890ff;}
-.ne > .name {background-color: #7b9ee9;}
-.pl > .name {background-color: #f1e8ff;}
-.tno > .name {background-color: #acdeff;}
-
-a:link{color:rgb(40, 40, 255)}
-a:visited {color: rgb(70, 70, 255);}
-#messageBox {
-    border-right: 1px solid #aaa;
-    border-bottom: 1px solid #aaa;
-	position: absolute;
-	width: fit-content;
-	height: fit-content;
-    z-index: 1;
-    color: #eee;
-	background-color: #000;
-    display: none;
-    padding: 5px;}
-#contents{
-	width: 100%;
-	height: auto;
-	z-index: 2;
-}
-  </style>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <link rel="shortcut icon"
-    href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
-<body>
+<body onload="findDate()">
+
 <div id="messageBox">
-    <div id="contents"></div>
+  <div id="contents"></div>
 </div>
 
 <main>
 <h1>&laquo;Семейный портрет&raquo; Солнечной системы</h1>
 
-<section class="tab main"></section>
-{% for object in objects %}<div class="obj {{ object.classes[0] }}">
-    <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="({{ object.anumber }}) {{ object.name }}" src="{{ object.filename }}"></div>
-    <div class="name"><a href="https://en.wikipedia.org/wiki/{{ object.name }}">{{ object.runame }}</a></div>
-    <div class="size">{{ object.size }}</div>
-    <div class="mass">{{ object.mass }}</div>
-    <div class="date">{{ object.discoverdate }}</div>
+<b>Пульт управления информацией:</b><br>
+<input type="checkbox" name=".size" value="block" checked onclick="showHideThis(this)">Радиус, 
+<input type="checkbox" name=".date" value="block" checked onclick="showHideThis(this)">Дата открытия, 
+<input type="checkbox" name=".mass" value="block" onclick="showHideThis(this)">Масса,
+<input type="checkbox" name=".delta-v" value="block" onchange="showHideThis(this)">Δv<br>
+<input type="checkbox" name=".highcontrast,.lightcurve" value="inline-block" checked onchange="showHideThis(this)">"восстановленное" изображение или модель<br>
+<input type="checkbox" name=".dot,.lowcontrast" value="inline-block" checked onchange="showHideThis(this)">Фото низкого разрешения или точечное<br>
+<input type="checkbox" name=".radar" value="inline-block" checked onchange="showHideThis(this)">Радарное изображение<br>
+<input type="checkbox" name=".he" value="inline-block" checked onchange="showHideThis(this)">"круглые" тела (в гидростатическом равновесии)<br>
+<input type="text" id="year" size="4" maxlength="4" value="1990">
+<button onclick="showHideByDate('none')">Скрыть объекты, открытые после указанного года</button>
+<button onclick="showHideByDate('inline-block')">Показать объекты, открытые после указанного года</button><br>
+<button onclick="toSort('date')">Сортировать по году открытия</button>
+<button onclick="toSort('size')">Сортировать по возрастанию размера</button>
+<button onclick="toSort('mass')">Сортировать по возрастанию массы</button>
+<button onclick="toSort('delta-v')">Сортировать по возрастанию Δv</button>
+    
+<section class="tab main">
+{% for object in objects %}<div class="obj{% for class in object.classes %} {{ class }}{% endfor %}">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="{% if object.anumber %}({{ object.anumber }}) {% endif %}{{ object.name }}{% if object.is_moon %} (moon){% endif %}" src="images/{{ object.filename }}"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/{{ object.name }}">{{ object.runame }}</a></div>
+  <div class="size">{{ object.size }}</div>
+  <div class="mass">{% if object.mass %}{{ object.mass }}{% endif %}</div>
+  <div class="date">{% if object.discoverdate %}{{ object.discoverdate.strftime("%d.%m.%Y") }}{% endif %}</div>
+  <div class="delta-v"></div>
 </div>{% endfor %}
-
-  <p><b>Всего {{ objects|length }} объектов.</b></p>
-
 </section>
+
+<p><b>Всего {{ objects|length }} объектов.</b></p>
+
+<section>
+<div id="objOfMonth">
+    <h2>Объекты месяца</h2>
+</div>
+<div id="objOfDay">
+    <h2>Объект дня</h2>
+</div>
+</section>
+  
 </main>
 </body>
 </html>
