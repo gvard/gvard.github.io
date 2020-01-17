@@ -3,8 +3,8 @@ WRT https://docs.sqlalchemy.org/en/13/orm/tutorial.html
 """
 
 import datetime
-from sqlalchemy import create_engine, Table, Column, Integer, String, Date, \
-    BigInteger, Float, ForeignKey
+from sqlalchemy import create_engine, Table, Column, ForeignKey, \
+    Integer, BigInteger, Float, String, Boolean, Date 
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -17,16 +17,28 @@ Base = declarative_base()
 engine = create_engine('sqlite:///'+SQLITE_DB_FILENAME, echo=True)
 
 
+class Classes(Base):
+    __tablename__ = 'classes'
+    id = Column(Integer, primary_key=True)
+    sobject_id = Column(Integer, ForeignKey('sobject.id'))
+    clss = Column(String(10))
+    sobject = relationship("Sobject", back_populates="classes")
+
+    def __repr__(self):
+        return "%s" % (self.clss)
+
+
 class Sobject(Base):
     __tablename__ = 'sobject'
     id = Column(Integer, primary_key=True)
     anumber = Column(Integer)
-    name = Column(String(16))
-    runame = Column(String(16))
+    name = Column(String(21))
+    runame = Column(String(20))
+    is_moon = Column(Boolean)
     size = Column(Float)
     mass = Column(String(15)) # BigInteger
     discoverdate = Column(Date)
-    classes = relationship("Classes", back_populates="sobject")
+    classes = relationship("Classes", order_by=Classes.id, back_populates="sobject")
     filename = Column(String(16))
 
     def __repr__(self):
@@ -54,18 +66,6 @@ class Sobject(Base):
         if filename:
             self.filename = filename
 
-class Classes(Base):
-    __tablename__ = 'classes'
-    id = Column(Integer, primary_key=True)
-    sobject_id = Column(Integer, ForeignKey('sobject.id'))
-    clss = Column(String(10))
-    sobject = relationship("Sobject", back_populates="classes")
-
-    def __repr__(self):
-        return "%s" % (self.clss)
-
-
-Sobject.classes = relationship("Classes", order_by=Classes.id, back_populates="sobject")
 
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
@@ -91,18 +91,18 @@ def extr_name(txt):
 
 for obj in obj_data:
     num, name = extr_name(obj[0])
-    mass = obj[3]
-    if mass == "None":
+    if not obj[3]:
         mass = None
-    if obj[4] == "None":
+    else:
+        mass = str(obj[3])
+    if not obj[4]:
         date = None
     else:
         date = datetime.datetime.strptime(obj[4], "%d.%m.%Y").date()
     sobj = Sobject(anumber=num, name=name,
-        runame=obj[1], size=obj[2], mass=str(mass),
-        discoverdate=date, classes=[], filename=obj[-1])
-    for cl in obj[-2]:
-        sobj.classes.append(Classes(clss=cl))
+        runame=obj[1], size=obj[2], mass=mass,
+        discoverdate=date, classes=obj[-2], filename=obj[-1])
+    sobj.is_moon = 'moon' in obj[-2]
     session.add(sobj)
 
 if __name__ == '__main__':
