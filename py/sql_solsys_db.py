@@ -16,16 +16,20 @@ SQLITE_DB_FILENAME = 'solsysobjs.db'
 Base = declarative_base()
 engine = create_engine('sqlite:///'+SQLITE_DB_FILENAME, echo=True)
 
+association_table = Table('association', Base.metadata,
+    Column('class_id', Integer, ForeignKey('class.id')),
+    Column('sobject_id', Integer, ForeignKey('sobject.id'))
+)
 
-class Classes(Base):
-    __tablename__ = 'classes'
+class Class(Base):
+    __tablename__ = 'class'
     id = Column(Integer, primary_key=True)
     sobject_id = Column(Integer, ForeignKey('sobject.id'))
-    clss = Column(String(10))
-    sobject = relationship("Sobject", back_populates="classes")
+    class_name = Column(String(10))
+    sobject = relationship("Sobject", secondary=association_table, back_populates="classes")
 
     def __repr__(self):
-        return "%s" % (self.clss)
+        return "%s" % (self.class_name)
 
 
 class Sobject(Base):
@@ -38,7 +42,7 @@ class Sobject(Base):
     size = Column(Float)
     mass = Column(String(15)) # BigInteger
     discoverdate = Column(Date)
-    classes = relationship("Classes", order_by=Classes.id, back_populates="sobject")
+    classes = relationship("Class", order_by=Class.id, secondary=association_table, back_populates="sobject")
     filename = Column(String(16))
 
     def __repr__(self):
@@ -62,7 +66,7 @@ class Sobject(Base):
             classes = classes.split()
         self.classes = []
         for cl in classes:
-            self.classes.append(Classes(clss=cl))
+            self.classes.append(Class(class_name=cl))
         if filename:
             self.filename = filename
 
