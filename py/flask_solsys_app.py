@@ -11,7 +11,7 @@ from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 from flask_sqlalchemy import SQLAlchemy
 
-from sql_solsys_db import Sobject, Classes
+from sql_solsys_db import Sobject, Class
 
 base_path = os.getcwd()
 path = os.path.abspath(os.path.join(base_path, os.pardir))
@@ -31,7 +31,7 @@ class SolSysModelView(ModelView):
 db = SQLAlchemy(app)
 admin = Admin(app, name='Админка', template_mode='bootstrap3')
 admin.add_view(SolSysModelView(Sobject, db.session))
-admin.add_view(SolSysModelView(Classes, db.session))
+admin.add_view(SolSysModelView(Class, db.session))
 
 @app.route('/')
 def show_all():
@@ -50,7 +50,8 @@ def new():
             flash('Пожалуйста, заполните форму!', 'error')
         else:
             sobject = Sobject(request.form['anumber'], request.form['name'], request.form['runame'], \
-                request.form['size'], request.form['mass'], request.form['discoverdate'], request.form['classes'])
+                request.form['size'], request.form['mass'], request.form['discoverdate'], \
+                request.form['classes'], request.form['filename'])
 
             db.session.add(sobject)
             db.session.commit()
