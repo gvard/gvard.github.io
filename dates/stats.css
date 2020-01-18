@@ -6,6 +6,9 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  text-shadow: black 1px 1px 0, black -1px -1px 0, 
+  black -1px 1px 0, black 1px -1px 0;
+  /* -webkit-text-stroke: .07em black; */
 }
 .container {
     display: flex;
