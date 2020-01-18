@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+  margin: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 17px;
+  color:#926239;
+  line-height: 1.6;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+  font-size: 50px;
+  line-height: 1.2;
+}
+h2 {
+    font-size: 30px;
+}
+ul>li {
+  font-size: 40px;
+}
+#solsysstats {
+  background-image: url('images/Saturn_Earth_size_comparison.jpg');
+  color: white;
+  justify-content: start;
+  align-items: flex-start;
+  text-align: left;
+}
+span.yellow {
+    color: rgb(255, 251, 2)
+}
+.show {
+  padding: 0 20px;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
