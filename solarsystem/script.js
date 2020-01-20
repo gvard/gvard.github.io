@@ -13,7 +13,7 @@ function logger(mode, len) {
 }
 function showHideThis(checkBox) {
   const elems = document.querySelectorAll(checkBox.name);
-  var mode = 'none';
+  let mode = 'none';
   if (checkBox.checked)
     mode = 'block';
   for (let i = 0; i < elems.length; i += 1)
@@ -21,7 +21,7 @@ function showHideThis(checkBox) {
   logger(mode, elems.length);
 }
 function getDivs(classNam) {
-  let mainTab = document.getElementsByClassName('tab main')[0];
+  const mainTab = document.getElementsByClassName('tab main')[0];
   return mainTab.getElementsByClassName(classNam);
 }
 function getDate(txt) {
@@ -31,7 +31,7 @@ function getDate(txt) {
 }
 function showHideByDate(mode) {
   const elems = getDivs('date');
-  const yearForSort = parseInt(document.querySelector('#year').value, 10);
+  const yearForSort = parseInt(document.getElementById('year').value, 10);
   let j = 0;
   for (let i = 0; i < elems.length; i += 1) {
     if (elems[i].innerText && getDate(elems[i].innerText) > yearForSort) {
@@ -103,7 +103,7 @@ function toSort(classNam) {
     let bord = sortFunction(b.getElementsByClassName(classNam)[0].innerText);
     return (aord > bord) ? 1 : -1;
   });
-  var parent = document.querySelector('.main');
+  let parent = document.getElementsByClassName('main')[0];
   parent.innerHTML = "";
   for (let i = 0, l = ArrToSort.length; i < l; i += 1)
     parent.appendChild(ArrToSort[i]);
@@ -143,10 +143,10 @@ function mkContents(obj) {
 }
 function show(divImg) {
   const obj = divImg.parentElement;
-  var contents = document.getElementById('contents');
+  let contents = document.getElementById('contents');
   contents.innerHTML = `${divImg.innerHTML}${mkContents(obj)}`;
   var messageBox = document.getElementById('messageBox');
-  var x, y;
+  let x, y;
   if (window.event) {
     x = window.event.clientX + document.documentElement.scrollLeft +
       document.body.scrollLeft;
@@ -187,14 +187,14 @@ function getToday() {
 function findDate() {
   const elems = document.getElementsByClassName('date');
   const today = getToday();
-  var objOfDay = [];
-  var objOfMonthDiv = document.getElementById('objOfMonth');
-  var objOfDayDiv = document.getElementById('objOfDay');
+  let objOfDay = [];
+  let objOfMonthDiv = document.getElementById('objOfMonth');
+  let objOfDayDiv = document.getElementById('objOfDay');
   for (let i = 0; i < elems.length; i += 1) {
     let daymon = elems[i].innerText.slice(0, 5);
-    let mon = elems[i].innerText.slice(3, 5);
-    let divName = elems[i].parentElement.getElementsByClassName('name')[0];
-    let objHtml = `${divName.innerHTML}. Дата открытия: ${elems[i].innerHTML}<br>`;
+    const mon = elems[i].innerText.slice(3, 5);
+    const divName = elems[i].parentElement.getElementsByClassName('name')[0];
+    const objHtml = `${divName.innerHTML}. Дата открытия: ${elems[i].innerHTML}<br>`;
     if (mon == today.month)
       objOfMonthDiv.innerHTML += objHtml;
     if (today.daymon == daymon) {
