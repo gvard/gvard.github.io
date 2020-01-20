@@ -12,9 +12,8 @@
 </head>
 <body>
   <h1>Анализ текста на python</h1>
-  <p>Написать программу, которая принимает текст и выводит два слова: наиболее часто встречающееся и самое длинное.</p>
-  <pre><code>text = """
-Однажды, в студёную зимнюю пору
+  <p><b>Задача:</b> написать программу, которая принимает текст и выводит два слова: наиболее часто встречающееся и самое длинное.</p>
+  <pre><code>TEXT = """Однажды, в студёную зимнюю пору
 Я из лесу вышел; был сильный мороз.
 Гляжу, поднимается медленно в гору
 Лошадка, везущая хворосту воз.
@@ -50,12 +49,24 @@
 Которым нет смерти — 
 В которых так много и злобы и боли,
 В которых так много любви!"""
+</code></pre>
+<p>Мы вставили текст прямо в программу, записав ее в переменную TEXT при помощи оператора присваивания =.
+Поскольку переменную с текстом изменять не планируется, ее следует считать константой и записывать название заглавными буквами.<br>
+При работе с большими объемами текстовой информации текст загружается из отдельного файла.
+Встроенная функция open() по умолчанию открывает файл по указанному имени и пути к нему в режиме чтения.
+Функция возвращает объект типа file, у которого есть методы open() и close().<br>
+При возникновении проблем с кодировкой ее можно указать при открытии файла.</p>
+<pre><code>txtfile = open("warandpeace.txt", encoding="utf-8")
+TEXT = txtfile.read()
+txtfile.close()</code></pre>
+<p>В третьей версии языка подобная операция делается с использованием ключевых слов <b>with</b> и <b>as</b>:</p>
 
-txtfile = open("ponedelx.txt")
-text = txtfile.read()
-txtfile.close()
-  
-words = text.split()
+<pre><code>with open("warandpeace.txt", encoding="utf-8") as txtfile:
+    TEXT = txtfile.read()
+</code></pre>
+<p>Количество слов легко подсчитать при помощи метода split().
+Количество символов &ndash; длина строки, полученной при сложении всех слов.</p>
+<pre><code>words = TEXT.split()
 print(len(words)) # Вывести на экран количество слов
 print(len("".join(words))) # Вывести на экран количество символов
 wordsdict = {}
@@ -65,17 +76,17 @@ for word in words:
         wordsdict[word] = 1
     else:
         wordsdict[word] = wordsdict[word] + 1
-  
+
 wordslist = sorted(wordsdict.items(), key=lambda x: x[1], reverse=True)
 print(wordslist)
-  
+
 longest = ""
 wordsfreq = []
 for word in wordsdict:
     wordsfreq.append((word, wordsdict[word]))
     if len(word) > len(longest):
         longest = word
-    
+
 wordsfreq.sort(key=lambda row: row[1], reverse=True)
 print(wordsfreq == wordslist)
 
@@ -83,16 +94,17 @@ dct = {}
 for word in wordsfreq:
     dct.update({word[0]: word[1]})
 print(dct)</code></pre>
-  <p><a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BA%D0%BE%D0%BD_%D0%A6%D0%B8%D0%BF%D1%84%D0%B0">Закон Ципфа</a> &ndash; эмпирическая закономерность распределения частоты слов естественного языка: если все слова языка (или просто достаточно длинного текста) упорядочить по убыванию частоты их использования, то частота n-го слова в таком списке окажется приблизительно обратно пропорциональной его порядковому номеру n.</p>
+
+  <p><a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BA%D0%BE%D0%BD_%D0%A6%D0%B8%D0%BF%D1%84%D0%B0" target="_blank" rel="noopener noreferrer">Закон Ципфа</a>
+    &ndash; эмпирическая закономерность распределения частоты слов естественного языка: если все слова языка (или просто достаточно длинного текста) упорядочить по убыванию частоты их использования, то частота n-го слова в таком списке окажется приблизительно обратно пропорциональной его порядковому номеру n.</p>
   <p>
-  <a href="https://advego.com/text/seo/">Анализ текста онлайн</a>, <a
-  href="https://www.ibm.com/developerworks/ru/library/l-python5/" target="_blank"
-  rel="noopener noreferrer">Текстовая обработка в языке Python</a>, <a href="https://habr.com/en/post/60369/" target="_blank" rel="noopener noreferrer">Regexp и Python: извлечение токенов из текста</a>.
+    <a href="https://advego.com/text/seo/" target="_blank" rel="noopener noreferrer">Анализ текста онлайн</a>,
+    <a href="https://www.ibm.com/developerworks/ru/library/l-python5/" target="_blank" rel="noopener noreferrer">Текстовая обработка в языке Python</a>,
+    <a href="https://habr.com/en/post/60369/" target="_blank" rel="noopener noreferrer">Regexp и Python: извлечение токенов из текста</a>.
   </p>
-  <p><a href="https://docs.python.org/3/library/textwrap.html" target="_blank"
-  rel="noopener noreferrer">библиотека textwrap</a></p>
+  <p><a href="https://docs.python.org/3/library/textwrap.html" target="_blank" rel="noopener noreferrer">библиотека textwrap</a></p>
   <p><a href="https://nlpub.mipt.ru/%D0%9E%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0" target="_blank" rel="noopener noreferrer">Обработка текста</a>,
-     <a href="https://proglib.io/p/fun-nlp/" target="_blank" rel="noopener noreferrer">NLP – это весело! Обработка естественного языка на Python</a>
+    <a href="https://proglib.io/p/fun-nlp/" target="_blank" rel="noopener noreferrer">NLP – это весело! Обработка естественного языка на Python</a>
   </p>
 </body>
 </html>
