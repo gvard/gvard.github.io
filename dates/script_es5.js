@@ -1,8 +1,8 @@
 'use strict';
 function WordNumberCase(number) {
-  const num = number >= 0 ? number : -number;
-  let m = num % 10;
-  let result;
+  var num = number >= 0 ? number : -number;
+  var m = num % 10;
+  var result;
   switch (m) {
     case 1:
       result = "год";
@@ -24,33 +24,33 @@ function WordNumberCase(number) {
   return result;
 }
 function showAll() {
-  const elems = document.getElementsByClassName('wrap');
-  for (let i = 0; i < elems.length; i += 1) {
+  var elems = document.getElementsByClassName('wrap');
+  for (var i = 0; i < elems.length; i += 1) {
     elems[i].style.display = 'block';
   }
 }
 function getToday() {
-  const currentdate = new Date();
-  const day = ("0" + currentdate.getDate()).slice(-2);
-  const month = ("0" + (currentdate.getMonth() + 1)).slice(-2);
-  return { daymon: `${day}.${month}`, month: month, year: currentdate.getFullYear() };
+  var currentdate = new Date();
+  var day = ("0" + currentdate.getDate()).slice(-2);
+  var month = ("0" + (currentdate.getMonth() + 1)).slice(-2);
+  return { daymon: day + "." + month, month: month, year: currentdate.getFullYear() };
 }
 function ago(elem, year, fullyear) {
-  let yearsAgo = elem.parentElement.getElementsByClassName('ago')[0];
-  const yr = fullyear - year;
+  var yearsAgo = elem.parentElement.getElementsByClassName('ago')[0];
+  var yr = fullyear - year;
   if (yr)
-    yearsAgo.innerText = `${yr} ${WordNumberCase(yr)} `;
+    yearsAgo.innerText = yr + " " + WordNumberCase(yr) + " ";
   else
-    yearsAgo.innerText = ``;
+    yearsAgo.innerText = "";
 }
 function carousel() {
   var slideIndex = 0;
-  let elems = document.getElementsByClassName("date");
-  const today = getToday();
-  let toShow = [];
-  for (let i = 0; i < elems.length; i += 1) {
-    let mon = elems[i].innerText.slice(3, 5);
-    let year = parseInt(elems[i].innerText.slice(6, 10), 10);
+  var elems = document.getElementsByClassName("date");
+  var today = getToday();
+  var toShow = [];
+  for (var i = 0; i < elems.length; i += 1) {
+    var mon = elems[i].innerText.slice(3, 5);
+    var year = parseInt(elems[i].innerText.slice(6, 10), 10);
     if (mon == today.month)
       toShow.push(elems[i]);
     ago(elems[i], year, today.year);
@@ -66,23 +66,23 @@ function carousel() {
   setTimeout(carousel, 6000);
 }
 function findDate() {
-  const elems = document.getElementsByClassName('date');
-  let gyear = parseInt(document.getElementById("year").value, 10);
-  let gdaymon = document.getElementById("daymon").value;
-  const today = getToday();
+  var elems = document.getElementsByClassName('date');
+  var gyear = parseInt(document.getElementById("year").value, 10);
+  var gdaymon = document.getElementById("daymon").value;
+  var today = getToday();
   var checkBox = document.getElementById("onlyMonth");
   if (checkBox.checked == true) {
-    const month = today.month;
+    var month = today.month;
     console.log("Show events occured in month number", month);
   }
   if (!gdaymon)
     gdaymon = today.daymon;
-  for (let i = 0; i < elems.length; i += 1) {
-    let daymon = elems[i].innerText.slice(0, 5);
-    let mon = elems[i].innerText.slice(3, 5);
-    let year = parseInt(elems[i].innerText.slice(6, 10), 10);
+  for (var i = 0; i < elems.length; i += 1) {
+    var daymon = elems[i].innerText.slice(0, 5);
+    var mon = elems[i].innerText.slice(3, 5);
+    var year = parseInt(elems[i].innerText.slice(6, 10), 10);
     ago(elems[i], year, today.year);
-    let vis = 'none';
+    var vis = 'none';
     if ((checkBox.checked && mon == today.month) ||
       (!checkBox.checked && gyear && gdaymon == daymon && gyear == year) ||
       (!checkBox.checked && !gyear && gdaymon == daymon))
@@ -91,12 +91,12 @@ function findDate() {
   }
 }
 function makeArray() {
-  let arr = [];
-  const elems = document.getElementsByClassName('date');
-  for (let i = 0; i < elems.length; i += 1) {
-    let date = elems[i].innerText;
-    let desc = elems[i].parentElement.querySelector('.desc');
-    let img = desc.querySelector('img');
+  var arr = [];
+  var elems = document.getElementsByClassName('date');
+  for (var i = 0; i < elems.length; i += 1) {
+    var date = elems[i].innerText;
+    var desc = elems[i].parentElement.querySelector('.desc');
+    var img = desc.querySelector('img');
     arr.push(["", date, desc.innerText.trim(), [img.src], ['tmp']]);
   }
   console.log(arr);

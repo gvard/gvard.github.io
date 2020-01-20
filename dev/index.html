@@ -52,7 +52,7 @@ console.log(screenWidth, screenHeight);</code></pre>
   const width = window.screen.width * window.devicePixelRatio;
   const height = window.screen.height * window.devicePixelRatio;
   const scrRes = `Width, height: ${screen.width} x ${screen.height}. Actual resolution with pixel ratio ${window.devicePixelRatio} is ${width} x ${height} pixels.`;
-  document.querySelector("#scr").innerHTML = scrRes;
+  document.getElementById("scr").innerHTML = scrRes;
   </script>
 </section>
 
@@ -98,8 +98,8 @@ null == undefined
 
 <section>
   <h2>Действие по выбору CheckBox</h2>
-  <input type="checkbox" name="flex-direction" value="column" onclick="changeDirection(this)"> Изменить направление<br>
-  <div id="flex-container">
+  <input type="checkbox" name="flexDirection" value="column" onclick="changeDirection(this)"> Изменить направление<br>
+  <div id="flexContainer">
     <div id="a">1</div>
     <div id="b">2</div>
     <div id="c">3</div>

@@ -1,8 +1,9 @@
 "use strict";
+/*jshint esversion: 6 */
 function calc() {
-  const a = parseFloat(document.getElementById('val1').value);
-  const b = parseFloat(document.getElementById('val2').value);
-  const act = document.getElementById('operator').value;
+  const a = parseFloat((<HTMLInputElement> document.getElementById('val1')).value);
+  const b = parseFloat((<HTMLInputElement> document.getElementById('val2')).value);
+  const act = (<HTMLInputElement> document.getElementById('operator')).value;
   let result;
   if (act == 'add')
     result = a + b;
@@ -16,7 +17,7 @@ function calc() {
   console.log('Числа:', a, b);
   console.log('Результат:', result);
 }
-function showHidePar(mode) {
+function showHidePar(mode: string) {
   const elems = document.querySelectorAll("p");
   for (let i = 0; i < elems.length; i += 1)
     elems[i].style.display = mode;
