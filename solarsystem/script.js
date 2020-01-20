@@ -50,7 +50,7 @@ function txtMass(txt) {
   return txt.includes("±") ? txt.substring(0, txt.indexOf("±")) + txt.substring(txt.indexOf("E")) : txt;
 }
 function getDeltaV(txt) {
-  return txt.includes(">") ? parseFloat(txt.substring(txt.indexOf(">")+1, txt.length)) : parseFloat(txt);
+  return txt.includes(">") ? parseFloat(txt.substring(txt.indexOf(">") + 1, txt.length)) : parseFloat(txt);
 }
 function getSize(txt) {
   let num = 0;
@@ -67,20 +67,20 @@ function ObjParams() {
   let objArr = [];
   let objDct = [];
   for (let i = 0; i < objs.length; i += 1) {
-    const classes = objs[i].className.replace('obj ','').split(' ');
-    const a = objs[i].getElementsByClassName('name')[0].getElementsByTagName("a")[0];
-    const img = objs[i].getElementsByClassName('img')[0].getElementsByTagName("img")[0];
-    const imgPath = img.src.split('/'); 
-    const date = objs[i].getElementsByClassName('date')[0].innerText;
-    const size = getSize(objs[i].getElementsByClassName('size')[0].innerText);
-    const mass = txtMass(objs[i].getElementsByClassName('mass')[0].innerText);
+    const classes = objs[i].className.replace('obj ', '').split(' ');
+    const a = objs[i].querySelector('.name').getElementsByTagName("a")[0];
+    const img = objs[i].querySelector('.img').getElementsByTagName("img")[0];
+    const imgPath = img.src.split('/');
+    const date = objs[i].querySelector('.date').innerText;
+    const size = getSize(objs[i].querySelector('.size').innerText);
+    const mass = txtMass(objs[i].querySelector('.mass').innerText);
     const objRuName = a.text;
     // let objName = a.href.split("/");
     // if (objName.length == 6)
     //   objName = objName[objName.length - 2] + "/" + objName[objName.length - 1];
     // else
     //   objName = objName[objName.length - 1];
-    objDct.push({'name': img.alt, 'runame': objRuName, 'size': size, 'mass': mass, 'date': date, 'classes': classes});
+    objDct.push({ 'name': img.alt, 'runame': objRuName, 'size': size, 'mass': mass, 'date': date, 'classes': classes });
     objArr.push([img.alt, objRuName, size, mass, date, classes, imgPath[imgPath.length - 1]]);
   }
   console.log(objArr);
@@ -98,12 +98,12 @@ function toSort(classNam) {
     sortFunction = getSize;
   else if (classNam == 'delta-v')
     sortFunction = getDeltaV;
-  ArrToSort.sort(function(a, b) {
+  ArrToSort.sort(function (a, b) {
     let aord = sortFunction(a.getElementsByClassName(classNam)[0].innerText);
     let bord = sortFunction(b.getElementsByClassName(classNam)[0].innerText);
     return (aord > bord) ? 1 : -1;
   });
-  var parent = document.getElementsByClassName('main')[0];
+  var parent = document.querySelector('.main');
   parent.innerHTML = "";
   for (let i = 0, l = ArrToSort.length; i < l; i += 1)
     parent.appendChild(ArrToSort[i]);
@@ -149,9 +149,9 @@ function show(divImg) {
   var x, y;
   if (window.event) {
     x = window.event.clientX + document.documentElement.scrollLeft +
-        document.body.scrollLeft;
+      document.body.scrollLeft;
     y = window.event.clientY + document.documentElement.scrollTop +
-        document.body.scrollTop;
+      document.body.scrollTop;
   }
   else {
     x = event.clientX + window.scrollX;
@@ -179,7 +179,7 @@ function getToday() {
   const currentdate = new Date();
   const day = ("0" + currentdate.getDate()).slice(-2);
   const month = ("0" + (currentdate.getMonth() + 1)).slice(-2);
-  return {daymon: `${day}.${month}`, month: month, year: currentdate.getFullYear()};
+  return { daymon: `${day}.${month}`, month: month, year: currentdate.getFullYear() };
 }
 /**
  * Find objects with discovery dates which equals current day and month values.
