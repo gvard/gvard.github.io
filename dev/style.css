@@ -1,11 +1,11 @@
-#flex-container {
+#flexContainer {
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
     background-color: grey;
 }
 
-#flex-container > div {
+#flexContainer > div {
     background-color: red;
     margin: 5px;
     padding: 5px;

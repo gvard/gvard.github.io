@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "removeComments": true,
+    // "strictNullChecks": true,
+    "outDir": "out",
+  },
+  "exclude": [
+    "out"
+  ]
+}
