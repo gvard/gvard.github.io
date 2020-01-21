@@ -34,7 +34,7 @@ PLUTO_MOONS = ['Charon_(moon)', 'Nix_(moon)', 'Hydra_(moon)', 'Kerberos_(moon)',
 TNOS = ["(225088)_2007_OR10", '50000_Quaoar', '90377_Sedna', '(307261)_2002_MS4', '90482_Orcus', \
     '120347_Salacia', '15760_Albion', '486958_Arrokoth']
 NEOS = ["433_Eros", "1566_Icarus", "1620_Geographos", "1627_Ivar", "1685_Toro", "3200_Phaethon", \
-    "4179_Toutatis", "4769_Castalia", "6489_Golevka", '25143_Itokawa', "(53319)_1999_JM8", \
+    "4179_Toutatis", "4769_Castalia", "6489_Golevka", '25143_Itokawa', "(29075)_1950_DA", "(53319)_1999_JM8", \
     "65803_Didymos", "99942_Apophis", "101955_Bennu", "(136617)_1994_CC", '162173_Ryugu', \
     "2014_JO25", "2014_HQ124", "2015_TB145", "2017_BQ6"]
 
