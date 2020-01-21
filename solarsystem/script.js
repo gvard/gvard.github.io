@@ -1,5 +1,4 @@
 'use strict';
-/*jshint esversion: 6 */
 const OBJTYPES = {
   star: "звезда", pla: "планета", neo: "околоземный астероид", co: "ядро кометы", ea: "спутник Земли", mar: "спутник Марса", mab: "астероид основного пояса", dw: "карликовая планета", ju: "спутник Юпитера", sat: "спутник Сатурна", ur: "спутник Урана", ne: "спутник Нептуна", pl: "спутник Плутона", tno: "Транснептуновый объект"
 };
@@ -21,7 +20,7 @@ function showHideThis(checkBox) {
   logger(mode, elems.length);
 }
 function getDivs(classNam) {
-  const mainTab = document.getElementsByClassName('tab main')[0];
+  const mainTab = document.getElementById('tab');
   return mainTab.getElementsByClassName(classNam);
 }
 function getDate(txt) {
@@ -75,11 +74,6 @@ function ObjParams() {
     const size = getSize(objs[i].querySelector('.size').innerText);
     const mass = txtMass(objs[i].querySelector('.mass').innerText);
     const objRuName = a.text;
-    // let objName = a.href.split("/");
-    // if (objName.length == 6)
-    //   objName = objName[objName.length - 2] + "/" + objName[objName.length - 1];
-    // else
-    //   objName = objName[objName.length - 1];
     objDct.push({ 'name': img.alt, 'runame': objRuName, 'size': size, 'mass': mass, 'date': date, 'classes': classes });
     objArr.push([img.alt, objRuName, size, mass, date, classes, imgPath[imgPath.length - 1]]);
   }
@@ -103,7 +97,7 @@ function toSort(classNam) {
     let bord = sortFunction(b.getElementsByClassName(classNam)[0].innerText);
     return (aord > bord) ? 1 : -1;
   });
-  let parent = document.getElementsByClassName('main')[0];
+  let parent = document.getElementById('tab');
   parent.innerHTML = "";
   for (let i = 0, l = ArrToSort.length; i < l; i += 1)
     parent.appendChild(ArrToSort[i]);
@@ -181,9 +175,6 @@ function getToday() {
   const month = ("0" + (currentdate.getMonth() + 1)).slice(-2);
   return { daymon: `${day}.${month}`, month: month, year: currentdate.getFullYear() };
 }
-/**
- * Find objects with discovery dates which equals current day and month values.
- */
 function findDate() {
   const elems = document.getElementsByClassName('date');
   const today = getToday();

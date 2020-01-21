@@ -21,7 +21,7 @@ function showHideThis(checkBox) {
   logger(mode, elems.length);
 }
 function getDivs(classNam: string) {
-  const mainTab = document.getElementsByClassName('tab main')[0];
+  const mainTab = document.getElementById('tab');
   return mainTab.getElementsByClassName(classNam);
 }
 function getDate(txt) {
@@ -103,7 +103,7 @@ function toSort(classNam) {
     let bord = sortFunction(b.getElementsByClassName(classNam)[0].innerText);
     return (aord > bord) ? 1 : -1;
   });
-  let parent = document.getElementsByClassName('main')[0];
+  let parent = document.getElementById('tab');
   parent.innerHTML = "";
   for (let i = 0, l = ArrToSort.length; i < l; i += 1)
     parent.appendChild(ArrToSort[i]);

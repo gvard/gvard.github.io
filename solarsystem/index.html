@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Солнечная система</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <script src="script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Солнечная система</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="favicon.png">
+<script src="script.js"></script>
 </head>
 <body onload="findDate()">
-
 <div id="messageBox">
-  <div id="contents"></div>
+<div id="contents"></div>
 </div>
 
-<main>
 <h1>&laquo;Семейный портрет&raquo; Солнечной системы</h1>
 
+<div class="cont">
 <b>Пульт управления информацией:</b><br>
 <input type="checkbox" name=".size" value="block" checked onclick="showHideThis(this)">Радиус, 
 <input type="checkbox" name=".date" value="block" checked onclick="showHideThis(this)">Дата открытия, 
@@ -28,14 +27,15 @@
 <input type="checkbox" name=".radar" value="inline-block" checked onchange="showHideThis(this)">Радарное изображение<br>
 <input type="checkbox" name=".he" value="inline-block" checked onchange="showHideThis(this)">"круглые" тела (в гидростатическом равновесии)<br>
 <input type="text" id="year" size="4" maxlength="4" value="1990">
-<button onclick="showHideByDate('none')">Скрыть объекты, открытые после указанного года</button>
-<button onclick="showHideByDate('inline-block')">Показать объекты, открытые после указанного года</button><br>
-<button onclick="toSort('date')">Сортировать по году открытия</button>
-<button onclick="toSort('size')">Сортировать по возрастанию размера</button>
-<button onclick="toSort('mass')">Сортировать по возрастанию массы</button>
-<button onclick="toSort('delta-v')">Сортировать по возрастанию Δv</button>
+<button type="button" onclick="showHideByDate('none')">Скрыть объекты, открытые после указанного года</button>
+<button type="button" onclick="showHideByDate('inline-block')">Показать объекты, открытые после указанного года</button><br>
+<button type="button" onclick="toSort('date')">Сортировать по году открытия</button>
+<button type="button" onclick="toSort('size')">Сортировать по возрастанию размера</button>
+<button type="button" onclick="toSort('mass')">Сортировать по возрастанию массы</button>
+<button type="button" onclick="toSort('delta-v')">Сортировать по возрастанию Δv</button>
+</div>
 
-<section class="tab main">
+<div id="tab">
 <div class="obj star he">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Sun" src="images/Sun.jpg"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/Sun">Солнце</a></div>
@@ -911,28 +911,28 @@
   <div class="delta-v">6.542</div>
   <!-- <div class="period">2.72 yr/992.1487</div> -->
 </div>
-</section>
+</div>
 
-<section>
-  <div id="objOfMonth">
-    <h2>Объекты месяца</h2>
-  </div>
-  <div id="objOfDay">
-    <h2>Объект дня</h2>
-  </div>
-</section>
+<div class="cont">
+<div id="objOfMonth">
+  <h2>Объекты месяца</h2>
+</div>
+<div id="objOfDay">
+  <h2>Объект дня</h2>
+</div>
+</div>
 
-<section class="comment">
-<p>
-Этот список тел Солнечной системы содержит:
+
+<div class="cont">
+<p>Этот список тел Солнечной системы содержит:</p>
 <ul>
   <li>Все известные тела в гидростатическом равновесии, то есть, имеющие близкую к сферической форму (39 штук)</li>
   <li>Все известные <a href="https://en.wikipedia.org/wiki/List_of_Solar_System_objects_  " target="_blank" rel="noopener noreferrer">тела c радиусом от 400 км и более</a> (36 штук)</li>
   <li>Все известные <a href="https://planetarynames.wr.usgs.gov/" target="_blank" rel="noopener noreferrer">тела с картой поверхности</a> (включая 11 астероидов, Цереру, Плутон и его спутники).</li>
   <li>Все <a href="https://en.wikipedia.org/wiki/List_of_minor_planets_and_comets_visited_by_spacecraft" target="_blank" rel="noopener noreferrer">тела, посещенные космическими аппаратами</a>,
     за исключением <a href="https://en.wikipedia.org/wiki/Category:Comets_visited_by_spacecraft">комет</a>
-    <a href="https://en.wikipedia.org/wiki/21P/Giacobini%E2%80%93Zinner" target="_blank" rel="noopener noreferrer">21P/Джакобини — Циннера</a>,
-    <a href="https://en.wikipedia.org/wiki/26P/Grigg%E2%80%93Skjellerup" target="_blank" rel="noopener noreferrer">26P/Григга — Скьеллерупа</a>,
+    <a href="https://en.wikipedia.org/wiki/21P/Giacobini%E2%80%93Zinner" target="_blank" rel="noopener noreferrer">21P/Джакобини &ndash; Циннера</a>,
+    <a href="https://en.wikipedia.org/wiki/26P/Grigg%E2%80%93Skjellerup" target="_blank" rel="noopener noreferrer">26P/Григга &ndash; Скьеллерупа</a>,
     <a href="https://en.wikipedia.org/wiki/C/2006_P1_(McNaught)#Ulysses_probe" target="_blank" rel="noopener noreferrer">C/2006 P1 (Макнота)</a>.</li>
   <li>Некоторые <a href="https://en.wikipedia.org/wiki/List_of_natural_satellites" target="_blank" rel="noopener noreferrer">спутники планет</a>
     (<a href="http://www.johnstonsarchive.net/astro/sssatellitedata.html" target="_blank" rel="noopener noreferrer">таблицы</a>
@@ -969,7 +969,7 @@
     КА <a href="https://en.wikipedia.org/wiki/Deep_Space_1">Deep Space 1</a> с расстояния 14000 км, хотя 29 июля 1999 года они сближались на расстояние всего лишь 26 км.
     Размеры этого астероида - 2.1×1×1 км, масса - 7.8 × 10<sup>15</sup> г (7.8 млрд тонн).
     Качество изображения &ndash; <a href="https://planetimages.blogspot.com/2009/09/ds-1-part-ii-cruise-and-braille.html">не лучшее</a>:<br>
-  <img src="images/braillepair.jpg" alt="" class="w">
+  <img src="images/braillepair.png" alt="" class="w">
   <li>Астероид <a href="https://en.wikipedia.org/wiki/25143_Itokawa">(25143) Итокава</a> был посещен японским КА "Хаябуса" в сентябре-ноябре 2005 года.
     После относительно успешного сбора проб вещества астероида на Землю была отправлена капсула с образцом. Она приземлилась в Австралии 13 июня 2010 года.
     Размеры астероида весьма скромные: 535×294×209 метров. Масса - 3.5×10<sup>13</sup> г (35 млн тонн).
@@ -982,17 +982,15 @@
   <li>Примерно 6% околоземных астероидов, как предполагается, яввляются <a href="https://en.wikipedia.org/wiki/Extinct_comet" target="_blank" rel="noopener noreferrer">выродившимися кометами</a>.</li>
 </ul>
 
-
 <p>На снимке ниже изображен коллаж из четырех снимков Нептуна, полученных КА Вояджер-2 24 августа 1989 года с паузами в 9 минут.
   Яркие точки &ndash; спутник <a href="https://en.wikipedia.org/wiki/Despina_(moon)" target="_blank" rel="noopener noreferrer">Деспина</a>
   в движении, отбрасывающий тень на поверхность Нептуна. Яркость Деспины для наглядности искусственно увеличена.
   Посмотрите на <a href="http://www.planetary.org/blogs/emily-lakdawalla/2009/2035.html">оригинальные изображения</a>!
   (<a href="http://www.astronet.ru/db/msg/1298738">Астрокартинка дня от 16.01.2014</a>).<br>
   Для справки: размеры Деспины - 180×148×128 км, а масса - 2.2×10<sup>18</sup> кг (2200 трлн тонн).<br>
-  <a href="http://solarsystem.nasa.gov/multimedia/display.cfm?Category=Planets&IM_ID=9023"><img src="images/Despina.jpg" alt="" class="w"></a>
+  <a href="https://solarsystem.nasa.gov/moons/neptune-moons/despina/by-the-numbers/" target="_blank" rel="noopener noreferrer"><img src="images/Despina.jpg" alt="" class="w"></a>
 </p>
-<p>
-  <a href="http://www.planetary.org/multimedia/space-images/small-bodies/asteroids-and-comets-color-2014.html">Сравнение масштабов астероидов и комет</a>:<br>
+<p><a href="http://www.planetary.org/multimedia/space-images/small-bodies/asteroids-and-comets-color-2014.html">Сравнение масштабов астероидов и комет</a>:<br>
   <a href="http://planetary.s3.amazonaws.com/assets/images/9-small-bodies/2015/20150313_asteroids_comets_sc_0-000-100_2015_color_lighter.png"><img class="w" src="images/20150313_asteroids_comets.jpg" alt=""></a><br>
   На этой картинке в масштабе изображены 17 из 18 астероидов, сфотографированные до августа 2014 года (не представлена Веста, которая заняла бы в масштабе три таких изображения).
   Кроме масштаба, также показано альбедо (характеристика отражательной способности поверхности) этих космических тел.
@@ -1024,9 +1022,8 @@
   <li><a href="https://en.wikipedia.org/wiki/List_of_minor-planet_groups" target="_blank" rel="noopener noreferrer">Список групп малых планет</a></li>
   <li><a href="https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_greatest_aphelion" target="_blank" rel="noopener noreferrer">Список тел Солнечной системы с наибольшими афелиями</a></li>
 </ul>
+</div>
 
-</section>
-</main>
 <footer>2013&ndash;2019 Википедия. Компиляция, код: Д.С. Насонов.</footer>
 </body>
 </html>
