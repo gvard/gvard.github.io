@@ -1,75 +1,79 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 body {
-    background: white;
-    color: black;
-}
-main {
-    font-size: 1em;
-}
+  background: white;
+  color: black;
+  font-size: 1em;}
 footer {
-    background-color: gray;
-    text-align: center;
+  background-color: gray;
+  text-align: center;
 }
-
-section.tab {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1224px;
-    min-width: 408px;
-    margin: auto;
-    margin-bottom: 1em;
+#tab {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1224px;
+  min-width: 408px;
+  margin: auto;
+  margin-bottom: 1em;
 }
-
 h1 {
-    text-align: center;
-    font-weight: bold;
-    font-size: large;
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
 }
-
 a:link {
-    color: blue;
-    background: transparent;
-    text-decoration: none;
+  color: blue;
+  background: transparent;
+  text-decoration: none;
 }
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 img {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 img.w {
-    width: auto;
-    max-width: 100%;
+  width: auto;
+  max-width: 100%;
 }
 .obj {
-    border: 1px #aaa solid;
-    display: inline-block;
-    background-color: black;
-    min-width: 100px;
+  border: 1px #aaa solid;
+  display: inline-block;
+  background-color: black;
+  min-width: 100px;
 }
 div.img {
-    min-height: 100px;
-    background-color: black;
+  min-height: 100px;
+  background-color: black;
 }
 div.name, .date {
-    font-size: 0.9em;
-    color: white;
+  font-size: 0.9em;
+  color: white;
 }
 .mass, .desc, .period, .delta-v {
-    display: none;
-    font-size: 0.78em;
-    color: white;
+  display: none;
+  font-size: 0.78em;
+  color: white;
 }
 div.size {
-    font-size: 0.9em;
-    color: white;
+  font-size: 0.9em;
+  color: white;
 }
-section.comment {
-    padding: 1em;
-    text-align: justify;
+.cont {
+  padding: 1em;
+}
+@media (max-width: 625px) {
+  .cont {
+    padding: 0;
+    padding-left: 0.5em;
+    padding-bottom: 0.4em;
+  }
+  div.name, .date {
+    font-size: 0.82em;
+    color: white;
+  }
 }
 .star > .name {background-color: #ffe7c8;}
 .pla > .name {background-color: white;}
@@ -87,31 +91,28 @@ section.comment {
 .tno > .name {background-color: #acdeff;}
 
 ul, ol {
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 35px;
-    margin-top: .05em;
-    margin-bottom: .8em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 35px;
+  margin-top: .05em;
+  margin-bottom: .8em;
 }
-/* For print
-a:link{color:black}
-a:visited{color:black}
-*/
 a:link{color:rgb(40, 40, 255)}
-a:visited {color: rgb(70, 70, 255);}
+a:visited {color: rgb(70, 70, 255)}
 #messageBox {
-    border-right: 1px solid #aaa;
-    border-bottom: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
 	position: absolute;
 	width: fit-content;
 	height: fit-content;
-    z-index: 1;
-    color: #eee;
+  z-index: 1;
+  color: #eee;
 	background-color: #000;
-    display: none;
-    padding: 5px;}
-#contents{
-	width: 100%;
-	height: auto;
-	z-index: 2;
+  display: none;
+  padding: 5px;
+}
+#contents {
+  width: 100%;
+  height: auto;
+  z-index: 2;
 }
