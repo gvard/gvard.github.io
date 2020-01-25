@@ -59,7 +59,9 @@ p {
   background:#926239;
   color:#fff;
 }
-
+p.left {
+  align-self: start;
+}
 /* #section-a {
   padding: 20px;
   background:#926239;
