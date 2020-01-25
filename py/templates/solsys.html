@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Солнечная система (Flask SQLAlchemy table)</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Солнечная система (Flask SQLAlchemy table)</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 <body onload="findDate()">
-
 <div id="messageBox">
-  <div id="contents"></div>
+<div id="contents"></div>
 </div>
 
-<main>
 <h1>&laquo;Семейный портрет&raquo; Солнечной системы</h1>
 
+<div class="cont">
 <b>Пульт управления информацией:</b><br>
+<input type="checkbox" name=".name" value="block" checked onclick="showHideThis(this)">Имя, 
 <input type="checkbox" name=".size" value="block" checked onclick="showHideThis(this)">Радиус, 
 <input type="checkbox" name=".date" value="block" checked onclick="showHideThis(this)">Дата открытия, 
 <input type="checkbox" name=".mass" value="block" onclick="showHideThis(this)">Масса,
@@ -28,35 +28,33 @@
 <input type="checkbox" name=".radar" value="inline-block" checked onchange="showHideThis(this)">Радарное изображение<br>
 <input type="checkbox" name=".he" value="inline-block" checked onchange="showHideThis(this)">"круглые" тела (в гидростатическом равновесии)<br>
 <input type="text" id="year" size="4" maxlength="4" value="1990">
-<button onclick="showHideByDate('none')">Скрыть объекты, открытые после указанного года</button>
-<button onclick="showHideByDate('inline-block')">Показать объекты, открытые после указанного года</button><br>
-<button onclick="toSort('date')">Сортировать по году открытия</button>
-<button onclick="toSort('size')">Сортировать по возрастанию размера</button>
-<button onclick="toSort('mass')">Сортировать по возрастанию массы</button>
-<button onclick="toSort('delta-v')">Сортировать по возрастанию Δv</button>
-    
-<section class="tab main">
+<button type="button" onclick="showHideByDate('none')">Скрыть объекты, открытые после указанного года</button>
+<button type="button" onclick="showHideByDate('inline-block')">Показать объекты, открытые после указанного года</button><br>
+<button type="button" onclick="toSort('date')">Сортировать по году открытия</button>
+<button type="button" onclick="toSort('size')">Сортировать по возрастанию размера</button>
+<button type="button" onclick="toSort('mass')">Сортировать по возрастанию массы</button>
+<button type="button" onclick="toSort('delta-v')">Сортировать по возрастанию Δv</button>
+</div>
+
+<div id="tab">
 {% for object in objects %}<div class="obj{% for class in object.classes %} {{ class }}{% endfor %}">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="{% if object.anumber %}({{ object.anumber }}) {% endif %}{{ object.name }}{% if object.is_moon %} (moon){% endif %}" src="images/{{ object.filename }}"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/{{ object.name }}">{{ object.runame }}</a></div>
   <div class="size">{{ object.size }}</div>
   <div class="mass">{% if object.mass %}{{ object.mass }}{% endif %}</div>
   <div class="date">{% if object.discoverdate %}{{ object.discoverdate.strftime("%d.%m.%Y") }}{% endif %}</div>
-  <div class="delta-v"></div>
+  <div class="delta-v">{% if object.deltaV %}{{ object.deltaV }}{% endif %}</div>
 </div>{% endfor %}
-</section>
-
+</div>
 <p><b>Всего {{ objects|length }} объектов.</b></p>
 
-<section>
+<div class="cont">
 <div id="objOfMonth">
-    <h2>Объекты месяца</h2>
+  <h2>Объекты месяца</h2>
 </div>
 <div id="objOfDay">
-    <h2>Объект дня</h2>
+  <h2>Объект дня</h2>
 </div>
-</section>
-  
-</main>
+</div>
 </body>
 </html>
