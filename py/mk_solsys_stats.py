@@ -8,7 +8,7 @@ import os
 from beautifulsoup_supply import TAIL, mk_head, get_soup
 
 
-HEAD = mk_head("Статистика тел Солнечной системы")
+HEAD = mk_head("Статистика тел Солнечной системы", script="") + "<body>\n"
 PICKLE_FILENAME = "radar_obj_names.pickle"
 ECHO_URL = "https://echo.jpl.nasa.gov/asteroids/"
 MPC_URL = "https://minorplanetcenter.net/mpc/summary"
@@ -95,7 +95,8 @@ Robert Johnston</a>. Последнее обновление: {DAY} {MON} {YR}.<
 <li>{JTA} троянских астероидов Юпитера.
 <li>{TNO[0]} транснептуновых объектов ({TNO[1]} с двумя спутниками,
 {TNO[2]} с пятью спутниками; count excludes {TNO[3]} object with rings).
-</ul>"""
+</ul>
+"""
 
 
 def get_mp_names(soup):
@@ -130,11 +131,20 @@ NEA, NEA1KM, PHA, NEC = NEA_NUMBERS
 def get_ssnew(soup):
     """Get Johnston's Archive ssnew statistics."""
     ps = soup.findAll("p")
+    man_made = ps[-4].text.strip()
+    upd = ps[-1].text.split("\r\n")[2]
     comets_note = soup.findAll("blockquote")[1].text.replace("\r", "<br>")
-    return ps[3].text.replace("\r", "<br>"), comets_note
+    comets_note = f"<small>{ps[9].text.strip()}</small><br>{ps[-3].text}{comets_note}"
+    ssnew = ps[3].text.split("\r")[3:-1]
+    ssnew = [x.split(":")[1] for x in ssnew]
+    return upd, ssnew, comets_note, man_made
 
 soup = get_soup(JOHNSTON_SOLSYS_URL)
-SSNEW, COMETS_NOTE = get_ssnew(soup)
+
+UPD, (ASTER_SSNEW, OUTER_SSO, COMETS_SSNEW), COMETS_NOTE, MAN_MADE = get_ssnew(soup)
+COM_ALL = COMETS_SSNEW.split("(")
+COMETS_ALL = int(COM_ALL[0].replace(",", ""))
+COMNUM, PROVDES, NODESIGNAT = COM_ALL[1].split(", ")
 
 MPC_STATS = f'''<h2>Статистика тел Солнечной системы</h2>
 <p><a href="https://minorplanetcenter.net/mpc/summary">Центра Малых планет</a></p>
@@ -155,8 +165,13 @@ MPC_STATS = f'''<h2>Статистика тел Солнечной систем�
 <a href="https://en.wikipedia.org/wiki/Kirkwood_gap" target="_blank" rel="noopener noreferrer"><img alt="Diagram showing inner, middle and outer main-belt asteroids" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Kirkwood_Gaps.svg/994px-Kirkwood_Gaps.svg.png"></a>
 </p><br>
 <img src="nea_size_bin_chart.svg" alt="NEA size bin chart"><br>
-<a href="{JOHNSTON_SOLSYS_URL}">Альтернативная статистика Johnston's Archive</a>:
-{SSNEW}
+<a href="{JOHNSTON_SOLSYS_URL}">Альтернативная статистика Johnston's Archive</a>, {UPD}:
+<ul>
+<li>Астероидов*: {ASTER_SSNEW},</li>
+<li>Объектов внешней Солнечной системы*: {OUTER_SSO},</li>
+<li>Комет**: {COMETS_ALL} ({COMNUM.split()[0]} numbered**, {PROVDES.split()[0]} with provisional designations, {NODESIGNAT.split()[0]} without official designations).</li>
+<li>Искусственных объектов: {MAN_MADE}</li>
+</ul>
 {COMETS_NOTE}
 '''
 
@@ -185,48 +200,23 @@ SSD_STATS = f'''<h2>Статистика тел Солнечной систем�
 with open(os.path.join(os.pardir, 'solarsystem', 'stats.html'), 'w', encoding="utf8") as handle:
     print(HEAD + MPC_STATS + SSD_STATS + ECHO_JPL_STATS + JOHNSTON_SAT + TAIL, file=handle)
 
-HTML_ECHO = """
-<ul>
 
-<font size="-1">
-(This web site is primarily a data-organization and communications tool
-that supports ongoing research by JPL scientists and our colleagues.)
-<p>
-Last update: 2019 December 17
-</font><p>
-
-Also see:
-  <DT><A HREF="PDS.asteroid.radar.history.html">
-CHRONOLOGICAL HISTORY OF ASTEROID RADAR DETECTIONS (TABLE)</A> 
-  <DT><A HREF="http://echo.jpl.nasa.gov/~lance/Radar_detected_neas.html">
-Chronological history of asteroid radar detections (graphs)</A>
-  <DT><A HREF="asteroid_radar_highlights.txt">
-Asteroid radar highlights</A>
-  <DT><A HREF="http://echo.jpl.nasa.gov/~lance/asteroid_radar_properties.html">
-Summary of asteroid radar properties</A>
-  <DT><A HREF="http://echo.jpl.nasa.gov/~lance/nea_elongations.html">
-NEA elongations from radar observations</A>
-  <DT><A HREF="http://echo.jpl.nasa.gov/~lance/small.neas.html">
-Very small radar-detected NEAs</A>
-  <DT><A HREF="http://echo.jpl.nasa.gov/~lance/radar.NEA.periods.html">
-Radar-detected NEAs: Rotation periods and upcoming optical apparitions</A>
-  <DT><A HREF="http://echo.jpl.nasa.gov/~lance/future.radar.NEA.periods.html">
-Future NEA radar targets: Rotation periods and upcoming optical apparitions</A>
-</ul>"""
-
-#htmlz = """<body>
-# <center>
-# <b><h3>Radar-detected asteroids with radar-measured parameters</h3></b>
-# compiled by Wm. Robert Johnston<br>
-# last updated 25 May 2019</p><p>
-# </center>
-# </p><p><hr></p><p>
-# The table below lists all asteroids detected by the NASA JPL asteroid radar program
-#(from <a href=http://echo.jpl.nasa.gov/asteroids/PDS.asteroid.radar.history.html>this listing</a>),
-#here ordered by permanent number and provisional designation.
-#It also lists selected radar-measured parameters.
-#Objects listed include 980 asteroids plus 60 secondary or tertiary components of multiple systems.
-#Diameter measurements or constraints are available for 376 objects
-#(335 asteroids plus 41 additional components).
-# </p><p>
-# """
+HEAD = mk_head("Статистика Солнечной системы", style="stats.css")
+BODY = f"""<body onload="mkHeader()">
+  <div id="solsysstats" class="container show">
+    <h1 id="header"></h1>
+    <div class="list">
+    <ul>
+      <li>В Солнечной системе <span class="yellow">8</span> планет</li>
+      <li><span class="yellow">{SATELLITES}</span> спутников планет</li>
+      <li>Более <span class="yellow">{str(COMETS_NUM/1000)[:-2]+'00'}</span> комет</li>
+      <li>Более <span class="yellow">{str(MBA + NEA)[:-3]+'.000'}</span> астероидов</li>
+      <li>Только <span class="yellow">{str((len(MP_NAMES)-2)/1000)}</span> имеют имена</li>
+    </ul>
+  </div>
+  <div class="footer">
+    <h2>Центр Астрономического и космического образования</h2>
+  </div>
+"""
+with open(os.path.join(os.pardir, 'dates', 'stats.html'), 'w', encoding="utf8") as handle:
+    print(HEAD + BODY + TAIL, file=handle)

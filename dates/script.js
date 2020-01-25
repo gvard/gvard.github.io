@@ -35,6 +35,18 @@ function getToday() {
   const month = ("0" + (currentdate.getMonth() + 1)).slice(-2);
   return { daymon: `${day}.${month}`, month: month, year: currentdate.getFullYear() };
 }
+function getStrToday() {
+  const currentdate = new Date();
+  const day = ("0" + currentdate.getDate()).slice(-2);
+  const month = currentdate.getMonth() + 1;
+  let monthName = { 1: "января", 2: "февраля", 3: "марта", 4: "апреля", 5: "мая",
+    6: "июня", 7: "июля", 8: "августа", 9: "сентября", 10: "октября", 11: "ноября", 12: "декабря" }[month];
+  return `${day} ${monthName} ${currentdate.getFullYear()}`;
+}
+function mkHeader() {
+  let header = document.getElementById('header');
+  header.innerHTML = getStrToday();
+}
 function ago(elem, year, fullyear) {
   let yearsAgo = elem.parentElement.getElementsByClassName('ago')[0];
   const yr = fullyear - year;
