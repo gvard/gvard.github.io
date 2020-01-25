@@ -51,7 +51,7 @@ def new():
         else:
             sobject = Sobject(request.form['anumber'], request.form['name'], request.form['runame'], \
                 request.form['size'], request.form['mass'], request.form['discoverdate'], \
-                request.form['classes'], request.form['filename'])
+                request.form['classes'], request.form['filename'], request.form['deltaV'])
 
             db.session.add(sobject)
             db.session.commit()

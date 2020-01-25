@@ -67,15 +67,16 @@ function ObjParams() {
   let objDct = [];
   for (let i = 0; i < objs.length; i += 1) {
     const classes = objs[i].className.replace('obj ', '').split(' ');
-    const a = objs[i].querySelector('.name').getElementsByTagName("a")[0];
-    const img = objs[i].querySelector('.img').getElementsByTagName("img")[0];
+    const a = objs[i].getElementsByClassName('name')[0].getElementsByTagName("a")[0];
+    const img = objs[i].getElementsByClassName('img')[0].getElementsByTagName("img")[0];
     const imgPath = img.src.split('/');
-    const date = objs[i].querySelector('.date').innerText;
-    const size = getSize(objs[i].querySelector('.size').innerText);
-    const mass = txtMass(objs[i].querySelector('.mass').innerText);
+    const date = objs[i].getElementsByClassName('date')[0].innerText;
+    const size = getSize(objs[i].getElementsByClassName('size')[0].innerText);
+    const mass = txtMass(objs[i].getElementsByClassName('mass')[0].innerText);
+    const deltaV = getDeltaV(objs[i].getElementsByClassName('delta-v')[0].innerText);
     const objRuName = a.text;
     objDct.push({ 'name': img.alt, 'runame': objRuName, 'size': size, 'mass': mass, 'date': date, 'classes': classes });
-    objArr.push([img.alt, objRuName, size, mass, date, classes, imgPath[imgPath.length - 1]]);
+    objArr.push([img.alt, objRuName, size, mass, date, deltaV, classes, imgPath[imgPath.length - 1]]);
   }
   console.log(objArr);
   console.log(objDct);

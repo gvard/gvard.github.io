@@ -20,6 +20,7 @@
     <th>Это луна?</th>
     <th>Радиус, км</th>
     <th>Масса, кг</th>
+    <th>ΔV, км/с</th>
     <th>Классы</th>
     <th>Дата открытия</th>
     <th>Название файла картинки</th>
@@ -32,6 +33,7 @@
     <td>{{ object.is_moon }}</td>
     <td>{{ object.size }}</td>
     <td>{% if object.mass %}{{ object.mass }}{% endif %}</td>
+    <td>{% if object.deltaV %}{{ object.deltaV }}{% endif %}</td>
     <td>{% for class in object.classes %}{{ class }} {% endfor %}</td>
     <td>{% if object.discoverdate %}{{ object.discoverdate.strftime("%d.%m.%Y") }}{% endif %}</td>
     <td>{{ object.filename }}</td>
