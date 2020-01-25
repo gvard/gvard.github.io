@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 17px;
   color:#926239;
@@ -10,53 +9,50 @@ body {
   black -1px 1px 0, black 1px -1px 0;
   /* -webkit-text-stroke: .07em black; */
 }
-.container {
-    display: flex;
-    flex-direction: column;
+#solsysstats {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  height: 100vh;
+  background-image: url('images/Saturn_Earth_size_comparison.jpg');
+  background-size: cover;
+  background-position: center;
+  justify-content: space-between;
+  color: white;
+  text-align: left;
+  align-items: stretch;
 }
 h1 {
   font-size: 50px;
   line-height: 1.2;
 }
 h2 {
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: normal;
 }
 ul>li {
   font-size: 40px;
 }
-#solsysstats {
-  background-image: url('images/Saturn_Earth_size_comparison.jpg');
-  color: white;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-}
 ul {
     margin: 0 auto;    
 }
-.header {
+#header {
   margin: 0 auto;
   margin-top: 0;
   margin-bottom: 50px;
   order: 0;
+  /* align-self: start; */
+}
+.list {
+  margin-left: 10%;
 }
 .footer {
     margin: 0 auto;
     margin-top: 30px;
     margin-bottom: 0;
     order: 4;
+    align-self: end;
 }
-span.yellow {
+.yellow {
   color: rgb(255, 251, 2)
-}
-.show {
-  padding: 0 20px;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: flex-start;
-  justify-content: center;
 }

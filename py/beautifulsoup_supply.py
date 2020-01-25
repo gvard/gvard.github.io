@@ -10,19 +10,20 @@ HEAD_HEAD = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 """
-HEAD_TAIL = """
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+HEAD_TAIL = """</head>
 """
 
-TAIL = """
-</body>
-</html>
-"""
+TAIL = """</body>
+</html>"""
 
-def mk_head(title):
-    return HEAD_HEAD + f"  <title>{title}</title>" + HEAD_TAIL
+def mk_head(title, style="style.css", script="script.js"):
+    STYLE = ""
+    if style:
+        STYLE = f'  <link rel="stylesheet" href="{style}">\n'
+    SCRIPT = ""
+    if script:
+        SCRIPT = f'  <script src="{script}"></script>\n'
+    return HEAD_HEAD + f'  <title>{title}</title>\n' + STYLE + SCRIPT + HEAD_TAIL
 
 def get_soup(url):
     """get url, return BeautifulSoup object."""
