@@ -165,15 +165,17 @@ plt.show()
 </ol>
 </p>
 <pre><code>from random import randrange
+
 h, a, b = [float(_) for _ in input("h, a, b через пробел: ").split()]
 if a &lt;= b:
-    a, b = [float(_) for _ in input("Еще раз! a, b, a&gt;b: ").split()]
+    h, a, b = [float(_) for _ in input("Еще раз! h, a, b, a&gt;b: ").split()]
 days, x = 0, 0
 while x &lt; h:
-    x += a
-    x -= b
+    wind = randrange(-100, 100)/50
+    x += (a + wind)
+    x -= (b + wind)
     days += 1
-    print(round(x, 2), h)
+    print(round(x, 2), wind, h)
 print("Улитка доползет на", days, "день")
 </code></pre>
 <hr>
