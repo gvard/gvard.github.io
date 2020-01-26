@@ -13,7 +13,7 @@ body {
   padding: 5px;
   box-sizing: border-box;
   font-size: 0;
-}    
+}
 .column {
   font-size: 14px;
   display: inline-block;
@@ -22,17 +22,17 @@ body {
   padding: 5px;
   box-sizing: border-box;
   vertical-align: top;
-}    
+}
 .right {
   width: 220px;
-}    
+}
 .left {
   margin-right: 10px;
   width: calc(100% - 240px);
-}    
+}
 .column p {
   margin: 0;
-}    
+}
 @media (max-width: 480px) {
   .right {
     width: 100%;
