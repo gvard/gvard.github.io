@@ -70,7 +70,7 @@ function ObjParams() {
     const classes = objs[i].className.replace('obj ','').split(' ');
     const a = objs[i].getElementsByClassName('name')[0].getElementsByTagName("a")[0];
     const img = objs[i].getElementsByClassName('img')[0].getElementsByTagName("img")[0];
-    const imgPath = img.src.split('/'); 
+    const imgPath = img.src.split('/');
     const date = (<HTMLElement> objs[i].getElementsByClassName('date')[0]).innerText;
     const size = getSize((<HTMLElement> objs[i].getElementsByClassName('size')[0]).innerText);
     const mass = txtMass((<HTMLElement> objs[i].getElementsByClassName('mass')[0]).innerText);
