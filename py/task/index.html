@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>Программирование: задачи</title>
+  <link rel="stylesheet" href="../github.css">
+  <script src="../highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+Входные и выходные данные:
+<pre><code>names = ["2867 Šteins", "2014 JO25", "486958 Arrokoth", "243 Ida"]
+filenames = ["Steins.jpg", "2014JO25.jpg", "Arrokoth.jpg", "Ida.jpg"]
+
+ar = "486958 Arrokoth"
+ar.split()
+# ['486958', 'Arrokoth']
+splitted = ar.split()
+splitted[0]
+# '486958'
+int(splitted[0])
+# 486958
+int(splitted[0]) > 1950
+# True
+int(splitted[0]) &lt; 2020
+# False
+int(splitted[0]) > 1950 and int(splitted[0]) &lt; 2020
+# False
+
+splitted = '2014 JO25'.split()
+strnumber = splitted[0]
+number = int(strnumber)
+int(number) > 1950 and int(number) &lt; 2020
+# True
+
+filename = "Steins.jpg".split(".")
+# ['Steins', 'jpg']
+if filename[1] == "jpg":
+    print("Это картинка! Запускаем фотошоп...")
+</code></pre>
+<ol>
+  <li>Отделить номер или год от названия</li>
+  <li>Определить, год это или номер: если число между 1950 и 2020, то это год, иначе номер.</li>
+  <li>Создать имя файла, которое содержит год+имя или просто имя, потому что номер отброшен. Имя не должно содержать пробелы!</li>
+</ol>
+<hr>
+<p>Проверка на палиндром:</p>
+<pre><code>rawwords = input()
+words = rawwords.lower().replace(" ", "")
+ispalindrom = words == words[::-1] 
+print(ispalindrom)
+</code></pre>
+<hr>
+<p>При заданном целом числе n посчитайте n + nn + nnn.</p>
+<pre><code>
+a = input("Введите число: ")
+b = input("Сколько раз умножать число: ")
+kopilka = 0
+for count in range(int(b)):
+    print(a * (count + 1))
+    kopilka = kopilka + int(a * (count + 1))
+print(kopilka)
+</code></pre>
+<hr>
+  
+<p>Длина Московской кольцевой автомобильной дороги — 109 километров. Байкер Вася
+  стартует с нулевого километра МКАД и едет со скоростью v километров в час. На какой
+  отметке он остановится через t часов?</p>
+<pre><code>MKAD = 108.9
+KAD = 142.15
+road = KAD
+v = float(input("v, км/ч: "))
+t = float(input("t, ч: "))
+s = v * t
+x = s // road
+g = s - x * road
+if g - round(g):
+    g += 1
+print("Номер километра:", int(g))
+</code></pre>
+
+<p>Напишите программу, которая по данному числу N от 1 до 9 выводит на экран N пингвинов. Изображение одного пингвина имеет размер 5 на 9 символов, между двумя соседними пингвинами также имеется пустой (из пробелов) столбец. Разрешается вывести пустой столбец после последнего пингвина.
+</p>
+<pre><code>
+   _~_       _~_       _~_    
+  (o o)     (o o)     (o o)   
+ /  V  \   /  V  \   /  V  \  
+/(  _  )\ /(  _  )\ /(  _  )\ 
+  ^^ ^^     ^^ ^^     ^^ ^^   </code></pre>
+
+<p>Напишите программу, которая сажает на линию от 1 до 6 <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B4%D0%B5%D1%81%D1%8C_%D0%B1%D1%8B%D0%BB_%D0%9A%D0%B8%D0%BB%D1%80%D0%BE%D0%B9">Килроев</a>.
+</p>
+<pre><code>
+kilroy = """
+                                                  ,,,
+                                                 (. .)
+----------------------------------------------ooO-(_)-Ooo---
+"""
+a = int(input("Введите количество Килроев: "))
+</code></pre>
+<!-- k1 = "    ,,,     "
+k2 = "   (. .)    "
+k3 = "ooO-(_)-Ooo-"
+lenk = len(k3)
+lenl = 74
+print("Длина Килроя:", lenk)
+print("Длина линейки:", lenl)
+print(" "*(lenl-a*lenk) + k1*a)
+print(" "*(lenl-a*lenk) + k2*a)
+print("-"*(lenl-a*lenk) + k3*a) -->
+
+</body>
+</html>
