@@ -169,15 +169,23 @@ plt.show()
 h, a, b = [float(_) for _ in input("h, a, b через пробел: ").split()]
 if a &lt;= b:
     h, a, b = [float(_) for _ in input("Еще раз! h, a, b, a&gt;b: ").split()]
-days, x = 0, 0
+a = a / 24
+b = b / 24
+hours, x = 0, 0
+life = 800
 while x &lt; h:
-    wind = randrange(-100, 100)/50
+    wind = randrange(-100, 100)/50/24
     x += (a + wind)
     x -= (b + wind)
-    days += 1
-    print(round(x, 2), wind, h)
-print("Улитка доползет на", days, "день")
-</code></pre>
+    hours += 1
+    print(round(x, 2), round(wind, 2), h)
+    if hours &gt;= life:
+        print("Улитка скончалась")
+        break
+
+days = hours // 24
+hours = hours % 24
+print("Улитка доползет на", days, "день", hours, "час")</code></pre>
 <hr>
 <p>В некоторой школе занятия начинаются в 9:00. Продолжительность урока — 45 минут, после 1-го, 3-го, 5-го и т.д. уроков перемена 5 минут, а после 2-го, 4-го, 6-го и т.д. — 15 минут.<br>
 Дан номер урока (число от 1 до 10). Определите, когда заканчивается указанный урок.<br>
