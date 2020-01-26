@@ -1,6 +1,5 @@
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 17px;
   color:#926239;
   line-height: 1.6;
   margin: 0;
@@ -12,34 +11,34 @@ body {
 #solsysstats {
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
   height: 100vh;
   background-image: url('images/Saturn_Earth_size_comparison.jpg');
   background-size: cover;
   background-position: center;
   justify-content: space-between;
   color: white;
-  text-align: left;
   align-items: stretch;
 }
 h1 {
-  font-size: 50px;
+  padding-top: 0.15em;
+  padding-bottom: 0.5em;
+  font-size: 3em;
   line-height: 1.2;
 }
 h2 {
-    font-size: 25px;
-    font-weight: normal;
+  font-size: 1.45em;
+  font-weight: normal;
 }
 ul>li {
-  font-size: 40px;
+  font-size: 2.6em;
 }
 ul {
-    margin: 0 auto;    
+  margin: 0 auto;    
 }
 #header {
   margin: 0 auto;
   margin-top: 0;
-  margin-bottom: 50px;
+  margin-bottom: 0.em;
   order: 0;
   /* align-self: start; */
 }
@@ -47,12 +46,21 @@ ul {
   margin-left: 10%;
 }
 .footer {
-    margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 0;
-    order: 4;
-    align-self: end;
+  margin: 0 auto;
+  margin-top: 0.8em;
+  margin-bottom: 0;
+  order: 4;
+  align-self: end;
 }
 .yellow {
   color: rgb(255, 251, 2)
+}
+@media (max-width: 490px) {
+ul, h1, h2 {
+  margin: 0;
+  padding: 0;
+}
+.list {
+  margin-left: default;
+}
 }
