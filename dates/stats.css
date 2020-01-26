@@ -1,6 +1,5 @@
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  color:#926239;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -23,7 +22,6 @@ h1 {
   padding-top: 0.15em;
   padding-bottom: 0.5em;
   font-size: 3em;
-  line-height: 1.2;
 }
 h2 {
   font-size: 1.45em;
@@ -33,7 +31,7 @@ ul>li {
   font-size: 2.6em;
 }
 ul {
-  margin: 0 auto;    
+  margin: 0 auto;
 }
 #header {
   margin: 0 auto;
@@ -59,6 +57,13 @@ ul {
 ul, h1, h2 {
   margin: 0;
   padding: 0;
+  line-height: 1.4;
+}
+ul>li {
+  font-size: 2.4em;
+}
+h1 {
+  font-size: 2.5em;
 }
 .list {
   margin-left: default;
