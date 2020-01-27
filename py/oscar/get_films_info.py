@@ -1,3 +1,6 @@
+"""Iterate over movie names, get kinopoisk.ru page for each of them, parse page
+via BeautifulSoup, pickle resulting data as list of lists."""
+
 import os
 import pickle
 
