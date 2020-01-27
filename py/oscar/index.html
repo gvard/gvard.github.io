@@ -17,7 +17,7 @@
   с 1940-х годов известная как «О́скар» (англ. Oscar), — американская кинопремия, созданная в 1929 году и традиционно вручаемая деятелям киноискусства за их вклад в создание кинофильмов.
   </p>
   <p>На премию «<a href="https://en.wikipedia.org/wiki/Academy_Award_for_Best_Picture" target="_blank" rel="noopener noreferrer">лучший фильм</a>»
-  номинируются художественные фильмы длительностью 40 минут и более, в которых не менее 75 % фраз произносится на английском языке. Для прочих фильмов предусмотрена категории «Лучший фильм на иностранном языке», «Лучший художественный короткометражный фильм» и другие. 
+  номинируются художественные фильмы длительностью 40 минут и более, в которых не менее 75 % фраз произносится на английском языке. Для прочих фильмов предусмотрена категории «Лучший фильм на иностранном языке», «Лучший художественный короткометражный фильм» и другие.
   </p>
   <p>Данные с сайта <a href="https://www.kinopoisk.ru/top/lists/17/" target="_blank" rel="noopener noreferrer">Кинопоиск</a>:</p>
   <pre><code>#Название           | Год  | Рейтинг | Длина | Жанры | Бюджет | Сборы  |
@@ -56,6 +56,9 @@ oscar_data = [
 ]
 
 print("Всего фильмов:", len(oscar_data))</code></pre>
+<p>
+<a href="https://github.com/ramusus/kinopoiskpy" target="_blank" rel="noopener noreferrer">Kinopoiskpy</a>, pythonic API to kinopoisk.ru website. Установка: pip install kinopoiskpy.<br>
+<a href="get_films_info.py">Программа по сбору информации о фильмах</a>. Входные данные (названия фильмов) вводятся вручную.</p>
 <h2>Считаем общий бюджет</h2>
 <pre><code>money = 0.
 for film in oscar_data:
@@ -87,8 +90,8 @@ for film in oscar_data[:10]:
 <pre><code># Собираем жанры
 genres = [] # Копилка жанров
 for film in oscar_data: # Для каждого фильма
-    for genre in film[4]: # Для каждого жанра 
-        if genre not in genres: # Если жанр не в копилке жанров 
+    for genre in film[4]: # Для каждого жанра
+        if genre not in genres: # Если жанр не в копилке жанров
             genres.append(genre) # Добавить в копилку жанров
 
 print(genres, len(genres))
