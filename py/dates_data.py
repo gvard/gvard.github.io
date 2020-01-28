@@ -10,13 +10,13 @@ EVENTS = [
   ]
 ],
 [
-  "Открыта обсерватория Маунт-Вилсон",
+  "Начало создания обсерватории Маунт-Вилсон",
   "20.12.1904",
-  "назад была открыта американская обсерватория Маунт-Вилсон (Mt. Wilson Observatory).",
+  'назад Джордж Эллери Хейл получил одобрение на создание солнечной обсерватории Маунт-Вилсон (Mt. Wilson Solar Observatory). Слово "солнечная" в названии было убрано после завершения 100-дюймового телескопа в 1917 году.',
   ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/PSM_V74_D518_Steel_building_and_60_inch_reflector.png/640px-PSM_V74_D518_Steel_building_and_60_inch_reflector.png"
   ],
   [],
-  ["tmp", "observatory"
+  ["telescope", "observatory", "solar observatory", "Mt. Wilson"
   ]
 ],
 [
