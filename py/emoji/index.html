@@ -18,23 +18,23 @@
   <p>Общее количество эмодзи в статистике EmojiXpress (emojistats.org) и Twitter (emojitracker.com) сохраним в переменные. Название и количество эмодзи запишем в виде словаря, затем в цикле узнаем соотношение количества самых популярных эмодзи и выведем статистику на экран:
 <pre><code><a href="http://emojitracker.com/api/stats">emostats_all = 1987.8</a>
 emostats = {'joy': 305,'heavy heart': 156.5, 'face kiss': 112.4,
-			'heart-shaped': 81.2, 'rolling': 43.5, 'loudly': 33.3,
-			'thumbs': 30.7, 'smiling': 29, 'kiss mark': 28.5,
-			'unamused': 7.3, 'black heart suit': 4.3, 'recycle': 0.0407
-			}
+    'heart-shaped': 81.2, 'rolling': 43.5, 'loudly': 33.3,
+    'thumbs': 30.7, 'smiling': 29, 'kiss mark': 28.5,
+    'unamused': 7.3, 'black heart suit': 4.3, 'recycle': 0.0407
+    }
 
 emoinst = {'joy': 8.916,'heavy heart': 33.623, 'face kiss': 5.793,
-		   'heart-shaped': 13.227, 'rolling': 1.314, 'loudly': 1.685,
-		   'thumbs': 4.353, 'smiling': 4.815, 'kiss mark': 3.26,
-		   'unamused': 0.253, 'black heart suit': 2.798, 'recycle': 0.0883
-			}
+    'heart-shaped': 13.227, 'rolling': 1.314, 'loudly': 1.685,
+    'thumbs': 4.353, 'smiling': 4.815, 'kiss mark': 3.26,
+    'unamused': 0.253, 'black heart suit': 2.798, 'recycle': 0.0883
+    }
 
 emotrack_all = 27294
 emotrack = {'joy': 2594, 'heavy heart': 1248, 'recycle': 965,
-			'heart-shaped': 939, 'loudly': 781, 'black heart suit': 733,
-			'smiling': 619, 'unamused': 494, 'face kiss': 466,
-			'kiss mark': 106, 'thumbs': 263.7, 'rolling': 0.00001
-			}
+    'heart-shaped': 939, 'loudly': 781, 'black heart suit': 733,
+    'smiling': 619, 'unamused': 494, 'face kiss': 466,
+    'kiss mark': 106, 'thumbs': 263.7, 'rolling': 0.00001
+    }
 
 frac = round(emotrack_all/emostats_all, 2)
 print("Эмодзи в", frac, "раз больше в твиттере, чем в сообщениях, набранных пользователями iOS")
@@ -43,19 +43,19 @@ for val in emotrack:
     print(val, emostats[val], emoinst[val], emotrack[val])
 </code></pre>
 </p>
-<!-- <pre><code>names = {'joy': 'Слёзы радости', 'heavy heart': 'Сердце', 'recycle': 'Переработка',
+<pre><code>names = {'joy': 'Слёзы радости', 'heavy heart': 'Сердце', 'recycle': 'Переработка',
 'heart-shaped': 'Глаза-сердца', 'loudly': 'Громко плачу', 'black heart suit': 'Червы',
 'smiling': 'Счастлив', 'unamused': 'Равнодушие', 'face kiss': 'Целую',
 'kiss mark': 'След от поцелуя', 'thumbs': 'Класс', 'rolling': 'Катаюсь от смеха'
 }
 
 for name, count in emotrack.items():
-	if count and emostats.get(name):
-		rel = count/emostats.get(name)
-		print(names[name], round(rel, 1))
-	else:
-		print("track", emotrack.get(name), "stats", emostats.get(name))
-</code></pre> -->
+    if count and emostats.get(name):
+        rel = count/emostats.get(name)
+        print(names[name], round(rel, 1))
+    else:
+        print("track", emotrack.get(name), "stats", emostats.get(name))
+</code></pre>
 <p>Доступ к <a href="https://api.emojitracker.com/v1/rankings" target="_blank" rel="noopener noreferrer">данным emojitracker</a> по <a href="https://en.wikipedia.org/wiki/Application_programming_interface" target="_blank" rel="noopener noreferrer">API</a> (см. <a href="https://github.com/emojitracker/emojitrack-rest-api#rest-api-endpoints" target="_blank" rel="noopener noreferrer">github.com/emojitracker/emojitrack-rest-api</a>).<br>
 То есть, мы получаем статистику эмодзи с сайта emojitracker.com не через окно браузера в человекочитаемом виде, а через специально созданный интерфейс, API, в машиночитаемом виде.</p>
 <p>Для хранения данных используется формат <a href="https://ru.wikipedia.org/wiki/JSON" target="_blank" rel="noopener noreferrer">JSON</a>. Сохранение данных на диске для последующего использования называется <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F">сериализацией</a>.<br>
