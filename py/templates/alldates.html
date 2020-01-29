@@ -20,15 +20,16 @@
     <li>Описание, начинающееся со слов вида " назад произошло...". Число прошедших лет и слово "год/года/лет" будет вставлено автоматически.</li>
   </ul>
   </div>
-    
+
   <h1>Что произошло сегодня?</h1>
-            
+
 {% for event in events %}<div class="wrap">
   <div class="name">{{ event.name }}</div>
   <div class="tags">Теги: {% for tag in event.tags %} {{ tag.tag }}{% endfor %}</div>
   <div class="date">{% if event.date %}{{ event.date.strftime("%d.%m.%Y") }}{% endif %}</div>
   <div class="desc">
-    {% for img in event.imgs %}<img src="{{ img.img_url }}" alt="">
+    {% for img in event.imgs %}{% if img.img_url %}<img src="{{ img.img_url }}" alt="">{% endif %}
+    {% if img.img_filename %}<img src="img/{{ img.img_filename }}" alt="">{% endif %}
     {% endfor %}
     <p><span class="ago"></span> {{ event.text }}</p>
   </div>
@@ -39,17 +40,17 @@
 </div>
 
 <div class="column right">
-  <h2>Выбор даты</h2>
-  День и месяц формата дд.мм,<br>год формата гггг:<br>
-  <input type="text" id="daymon" size="4" maxlength="5" value=""> <input type="text" id="year" size="4" maxlength="4" value="">
-  <br><input type="checkbox" id="onlyMonth" onclick="findDate()"> За текущий месяц<br>
-  <button onclick="findDate()">Что произошло в эту дату?</button>
-  <button onclick="showAll()">Показать все события</button>
-  <ul>
-    <li>При пустом поле даты выводятся события текущей даты</li>
-    <li>При пустом поле года выводятся все события заданной даты</li>
-  </ul>
-  <br>
+<h2>Выбор даты</h2>
+День и месяц формата дд.мм,<br>год формата гггг:<br>
+<input type="text" id="daymon" size="4" maxlength="5" value="" placeholder="29.02"> <input type="text" id="year" size="4" maxlength="4" value="" placeholder="1984">
+<br><input type="checkbox" id="onlyMonth" checked onclick="findDate()"> За текущий месяц<br>
+<button onclick="findDate()">Что произошло в эту дату?</button>
+<button onclick="showAll()">Показать все события</button>
+<ul>
+  <li>При пустом поле даты выводятся события текущей даты</li>
+  <li>При пустом поле года выводятся все события заданной даты</li>
+</ul>
+<br>
 </div>
 
 </div>

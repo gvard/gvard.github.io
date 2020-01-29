@@ -1,6 +1,6 @@
 import datetime
 from sqlalchemy import create_engine, Table, Column, ForeignKey, \
-    Integer, BigInteger, Float, String, Boolean, Date 
+    Integer, BigInteger, Float, String, Boolean, Date
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -29,7 +29,8 @@ class Img(Base):
     __tablename__ = 'imgs'
     id = Column(Integer, primary_key=True)
     event_id = Column(Integer, ForeignKey('event.id'))
-    img_url = Column(String(19))
+    img_url = Column(String)
+    img_filename = Column(String(19))
     event = relationship("Event", back_populates="imgs")
 
     def __repr__(self):
@@ -63,8 +64,10 @@ for event in EVENTS:
     imgs = []
     for img_url in event[3]:
         imgs.append(Img(img_url=img_url))
+    for img_filename in event[4]:
+        imgs.append(Img(img_filename=img_filename))
     tags = []
-    for tag in event[4]:
+    for tag in event[5]:
         tags.append(Tag(tag=tag))
     imgs
     event_obj = Event(date=date, name=event[0], text=event[2], imgs=imgs, tags=tags)
