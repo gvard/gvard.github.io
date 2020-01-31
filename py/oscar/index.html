@@ -103,21 +103,23 @@ for genre in genres: # Для каждого жанра в копилке жан
     print("Количество фильмов с жанром", genre, genres_count)
 </code></pre>
 
-<p>Данные с сайта <a href="https://www.kinopoisk.ru/top/lists/" target="_blank" rel="noopener noreferrer">Кинопоиск</a>,
+<p>Данные с сайта <a href="https://www.kinopoisk.ru/top/lists/" target="_blank" rel="noopener noreferrer">КиноПоиск</a>,
 <abbr title="With Respect To">WRT</abbr> <a href="https://praktikum.yandex.ru/" target="_blank" rel="noopener noreferrer">Яндекс Практикум</a>.<br>
-    
+
 <h2>Ссылки:</h2>
 <ul>
-    <li><a href="https://github.com/ramusus/kinopoiskpy" target="_blank" rel="noopener noreferrer">Kinopoiskpy</a>, pythonic API to kinopoisk.ru website. Установка: pip install kinopoiskpy</li>
-    <li>Данные по самым кассовым фильмам: <a href="https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW" target="_blank" rel="noopener noreferrer">Box Office Mojo. Top Lifetime Grosses</a></li>
+  <li><a href="https://github.com/ramusus/kinopoiskpy" target="_blank" rel="noopener noreferrer">Kinopoiskpy</a>, pythonic API to kinopoisk.ru website. Установка: pip install kinopoiskpy</li>
+  <li>Данные по самым кассовым фильмам: <a href="https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW" target="_blank" rel="noopener noreferrer">Box Office Mojo. Top Lifetime Grosses</a></li>
+  <li><a href="https://www.kinopoisk.ru/top/lists/50/" target="_blank" rel="noopener noreferrer">США: Самые кассовые фильмы</a> (КиноПоиск)</li>
 </ul>
 
-<p><a href="get_films_info.py">Программа по сбору информации о фильмах</a>.</p>
+<p>Программы: <a href="get_films_list.py">по сбору названий и id на странице списка фильмов</a>,
+  <a href="get_films_info.py">по сбору информации о фильмах</a>.</p>
 <hr>
 
 <a href="https://www.kinopoisk.ru/top/lists/17/" target="_blank" rel="noopener noreferrer">Лауреаты «Оскара» за лучший фильм</a>:
 <pre><code># Title, Название, Год, (Рейтинг Кол-во голосов), (Рейтинг IMDb Кол-во голосов IMDb), Длина (мин.), Жанры, Бюджет ($), Сборы, мир ($)
-oscar_data = [    
+oscar_data = [
 ['Green Book', 'Зеленая книга', 2018, (8.326, 180818), (8.2, 282871), 130, ['комедия', 'драма', 'биография'], 23000000, 321752656],
 ['The Shape of Water', 'Форма воды', 2017, (6.885, 90741), (7.3, 335235), 123, ['фантастика', 'драма'], 19400000, 195243464],
 ['Moonlight', 'Лунный свет', 2016, (6.162, 32593), (7.4, 244548), 110, ['драма'], 1500000, 65046687],
@@ -210,7 +212,7 @@ oscar_data = [
 ['The Broadway Melody', 'Бродвейская мелодия 1929-го года', 1929, (5.873, 643), (5.7, 6019), 100, ['мюзикл', 'драма', 'мелодрама'], 379000, None],
 ['Wings', 'Крылья', 1927, (6.996, 959), (7.5, 10534), 144, ['боевик', 'драма', 'мелодрама', 'военный'], 2000000, None]
 ]</code></pre>
-<a href="https://www.kinopoisk.ru/top/lists/52/" target="_blank" rel="noopener noreferrer">Мир: Самые кассовые фильмы</a>:  
+<a href="https://www.kinopoisk.ru/top/lists/52/" target="_blank" rel="noopener noreferrer">Мир: Самые кассовые фильмы</a>:
 <pre><code>profit_world = [
 ['Avatar', 'Аватар', 2009, (7.94, 389438), (7.8, 1075551), 162, ['фантастика', 'боевик', 'драма', 'приключения'], 237000000, 2743856300],
 ['Avengers: Endgame', 'Мстители: Финал', 2019, (7.6, 148535), (8.5, 653426), 181, ['фантастика', 'боевик', 'драма', 'приключения'], 356000000, 2797800564],

@@ -6,31 +6,18 @@ import pickle
 
 from kinopoisk.movie import Movie
 
+from oscar_data import OSCAR_FILMS, PROFIT_WORLD, PROFIT_USA_INFL_CORR
 
-PICKLE_FILENAME = 'oscar_kinopoisk_2.pickle'
-OSCAR_FILM_NAMES = ['Green Book','The Shape of Water', 'Moonlight', 'Spotlight', 'Бёрдмэн', '12 Years a Slave',
-    'Argo', 'The Artist', "The King's Speech", 'The Hurt Locker', 'Slumdog Millionaire', 'No Country for Old Men',
-    'The Departed', 'Crash', 'Million Dollar Baby', 'The Lord of the Rings: The Return of the King', 'Chicago',
-    'A Beautiful Mind', 'Gladiator', 'American Beauty', 'Shakespeare in Love', 'Titanic', 'The English Patient',
-    'Braveheart', 'Forrest Gump', "Schindler's List", 'Unforgiven', 'The Silence of the Lambs', 'Dances with Wolves',
-    'Driving Miss Daisy', 'Rain Man', 'The Last Emperor', 'Platoon', 'Out of Africa', 'Amadeus', 'Terms of Endearment',
-    'Gandhi', 'Chariots of Fire', 'Ordinary People', 'Kramer vs. Kramer', 'The Deer Hunter', 'Annie Hall', 'Rocky',
-    "One Flew Over the Cuckoo's Nest", 'The Godfather: Part II', 'The Sting', 'The Godfather', 'The French Connection',
-    'Patton', 'Midnight Cowboy', 'Oliver!', 'In the Heat of the Night', 'A Man for All Seasons', 'The Sound of Music',
-    'My Fair Lady', 'Tom Jones', 'Lawrence of Arabia', 'West Side Story', 'The Apartment', 'Ben-Hur', 'Gigi',
-    'The Bridge on the River Kwai', 'Around the World in 80 Days', 'Marty', 'On the Waterfront',
-    'From Here to Eternity', 'The Greatest Show on Earth', 'An American in Paris', 'All About Eve',
-    "All the King's Men", 'Hamlet', "Gentleman's Agreement", "The Best Years of Our Lives", "The Lost Weekend",
-    "Going My Way", "Casablanca", "Mrs. Miniver", "How Green Was My Valley", "Rebecca", "Gone with the Wind",
-    "You Can't Take It with You", "The Life of Emile Zola", "The Great Ziegfeld", "Mutiny on the Bounty",
-    "It Happened One Night", "Cavalcade", "Grand Hotel", "Cimarron", "All Quiet on the Western Front",
-    "The Broadway Melody", "Wings"]
+
+# PICKLE_FILENAME = 'kinopoisk_oscar.pickle'
+# PICKLE_FILENAME = 'kinopoisk_profit_world.pickle'
+PICKLE_FILENAME = 'kinopoisk_profit_usa_infl_corr.pickle'
 
 oscar_list = []
-for movie_name in OSCAR_FILM_NAMES:
-    movie = Movie.objects.search(movie_name)[0]
+for movie_id in PROFIT_USA_INFL_CORR:
+    movie = Movie(id=movie_id)
     movie.get_content('main_page')
-    oscar_list.append([movie.title_en, movie.title, movie.year, (movie.rating, movie.votes), (movie.imdb_rating, movie.imdb_votes), movie.runtime, movie.genres, movie.budget, movie.profit_world])
+    oscar_list.append([movie.id, movie.title_en, movie.title, movie.year, (movie.rating, movie.votes), (movie.imdb_rating, movie.imdb_votes), movie.runtime, movie.genres, movie.budget, movie.profit_world, movie.profit_russia, movie.profit_usa, movie.marketing, movie.directors, movie.producers, movie.screenwriters, movie.countries, movie.operators])
     print(oscar_list[-1])
 
 with open(PICKLE_FILENAME, 'wb') as handle:
