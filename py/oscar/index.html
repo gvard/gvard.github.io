@@ -18,8 +18,6 @@
 <p>На премию «<a href="https://en.wikipedia.org/wiki/Academy_Award_for_Best_Picture" target="_blank" rel="noopener noreferrer">лучший фильм</a>»
 номинируются художественные фильмы длительностью 40 минут и более, в которых не менее 75 % фраз произносится на английском языке. Для прочих фильмов предусмотрена категории «Лучший фильм на иностранном языке», «Лучший художественный короткометражный фильм» и другие.<br>
 (c) Википедия.</p>
-<p>Данные с сайта <a href="https://www.kinopoisk.ru/top/lists/17/" target="_blank" rel="noopener noreferrer">Кинопоиск</a>,
-<abbr title="With Respect To">WRT</abbr> <a href="https://praktikum.yandex.ru/" target="_blank" rel="noopener noreferrer">Яндекс Практикум</a>.<br>
 <b>Полную выборку от 27&ndash;28 января 2020-го, данные самых кассовых фильмов и скрипт для сбора данных см. ниже.</b></p>
 
 <pre><code># Название | Год  | Рейтинг | Длина (мин.) | Жанры | Бюджет ($, млн.) | Сборы ($, млн.)
@@ -72,7 +70,7 @@ print("Общий бюджет, млн:", round(money, 1))
 oscar_data.sort(key=lambda row: row[2], reverse=True)
 
 # Вывод заголовков:
-print("{:<35}".format("Название"), "{:&lt;4}".format("Год"), end="")
+print("{:&lt;35}".format("Название"), "{:&lt;4}".format("Год"), end="")
 print("Рейтинг Длина Бюджет  Сборы Прибыль")
 print("-" * 75)
 
@@ -102,12 +100,22 @@ for genre in genres: # Для каждого жанра в копилке жан
     for film in oscar_data: # Для каждого фильма
         if genre in film[4]: # Если жанр в жанрах фильма
                 genres_count += 1 # Добавь единицу в счеткик жанра
-    print("Количество фильмов с жанром", genre, genres_count)</code></pre>
+    print("Количество фильмов с жанром", genre, genres_count)
+</code></pre>
 
-<p><a href="https://github.com/ramusus/kinopoiskpy" target="_blank" rel="noopener noreferrer">Kinopoiskpy</a>, pythonic API to kinopoisk.ru website. Установка: pip install kinopoiskpy<br>
-<a href="get_films_info.py">Программа по сбору информации о фильмах</a>.<br>
-Данные по самым кассовым фильмам: <a href="https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW" target="_blank" rel="noopener noreferrer">Box Office Mojo. Top Lifetime Grosses</a></p>
+<p>Данные с сайта <a href="https://www.kinopoisk.ru/top/lists/" target="_blank" rel="noopener noreferrer">Кинопоиск</a>,
+<abbr title="With Respect To">WRT</abbr> <a href="https://praktikum.yandex.ru/" target="_blank" rel="noopener noreferrer">Яндекс Практикум</a>.<br>
+    
+<h2>Ссылки:</h2>
+<ul>
+    <li><a href="https://github.com/ramusus/kinopoiskpy" target="_blank" rel="noopener noreferrer">Kinopoiskpy</a>, pythonic API to kinopoisk.ru website. Установка: pip install kinopoiskpy</li>
+    <li>Данные по самым кассовым фильмам: <a href="https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW" target="_blank" rel="noopener noreferrer">Box Office Mojo. Top Lifetime Grosses</a></li>
+</ul>
 
+<p><a href="get_films_info.py">Программа по сбору информации о фильмах</a>.</p>
+<hr>
+
+<a href="https://www.kinopoisk.ru/top/lists/17/" target="_blank" rel="noopener noreferrer">Лауреаты «Оскара» за лучший фильм</a>:
 <pre><code># Title, Название, Год, (Рейтинг Кол-во голосов), (Рейтинг IMDb Кол-во голосов IMDb), Длина (мин.), Жанры, Бюджет ($), Сборы, мир ($)
 oscar_data = [    
 ['Green Book', 'Зеленая книга', 2018, (8.326, 180818), (8.2, 282871), 130, ['комедия', 'драма', 'биография'], 23000000, 321752656],
@@ -234,7 +242,6 @@ oscar_data = [
 ['Star Wars: Episode V - The Empire Strikes Back', 'Звёздные войны: Эпизод 5 – Империя наносит ответный удар', 1980, (8.127, 163832), (8.7, 1096937), 124, ['фантастика', 'боевик', 'фэнтези', 'приключения'], 18000000, 400083259],
 ['Ben-Hur', 'Бен-Гур', 1959, (8.071, 13874), (8.1, 207632), 212, ['драма', 'история', 'приключения'], 15000000, 164000000],
 ['Avatar', 'Аватар', 2009, (7.94, 389438), (7.8, 1075551), 162, ['фантастика', 'боевик', 'драма', 'приключения'], 237000000, 2743856300],
-]
-</code></pre>
+]</code></pre>
 </body>
 </html>
