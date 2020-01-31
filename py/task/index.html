@@ -11,6 +11,17 @@
   <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
+  <p>Составить список, который состоит из элементов, общих для этих двух списков:</p>
+<pre><code>a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+# b = [a for a in range(56)]
+c = []
+for number in a:
+    if number in b and number not in c:
+        c.append(number)
+print(c)
+</code></pre>
+
 Входные и выходные данные:
 <pre><code>names = ["2867 Šteins", "2014 JO25", "486958 Arrokoth", "243 Ida"]
 filenames = ["Steins.jpg", "2014JO25.jpg", "Arrokoth.jpg", "Ida.jpg"]
@@ -47,10 +58,63 @@ if filename[1] == "jpg":
   <li>Создать имя файла, которое содержит год+имя или просто имя, потому что номер отброшен. Имя не должно содержать пробелы!</li>
 </ol>
 <hr>
+
+<p>Напишите программу, которая принимает два списка и выводит все элементы первого, которых нет во втором.</p>
+<pre><code>
+a = ['White', 'Black', 'Red', 'Purple', 'Magenta']
+b = ['Red', 'Green', 'Blue', 'Cyan', 'Magenta']
+for color in a:
+    # code here
+    print(color)
+</code></pre>
+<hr>
+
+
+
+Объединить списки в один список:
+<pre><code>
+a = [10, 20]
+b = [30, 40]
+c = [50, 60]
+</code></pre>
+
+Объединить словари в один словарь:
+<pre><code>
+dic1 = {1:10, 2:20}
+dic2 = {3:30, 4:40}
+dic3 = {5:50, 6:60}
+</code></pre>
+
+Программа сближающихся случайных чисел:<br>
+Установка matplotlib в командном интерпретаторе cmd: pip install matplotlib
+<pre><code>from random import random, randrange
+from matplotlib import pyplot as plt
+
+a, b = 1000, 3000
+j = 0
+c, d = [], []
+e, f = 1, 9000000
+while abs(a - b) > 1:
+    a = randrange(e, f)
+    b = randrange(e, f)
+    e = min(a, b)
+    f = max(a, b)
+    j += 1
+    c.append(j)
+    d.append(abs(a - b))
+    print("j", j, abs(a - b))
+
+plt.plot(d, c, 'o')
+plt.grid()
+plt.show()
+</code></pre>
+
+
+
 <p>Проверка на палиндром:</p>
 <pre><code>rawwords = input()
 words = rawwords.lower().replace(" ", "")
-ispalindrom = words == words[::-1] 
+ispalindrom = words == words[::-1]
 print(ispalindrom)
 </code></pre>
 <hr>
@@ -65,7 +129,7 @@ for count in range(int(b)):
 print(kopilka)
 </code></pre>
 <hr>
-  
+
 <p>Длина Московской кольцевой автомобильной дороги — 109 километров. Байкер Вася
   стартует с нулевого километра МКАД и едет со скоростью v километров в час. На какой
   отметке он остановится через t часов?</p>
@@ -85,10 +149,10 @@ print("Номер километра:", int(g))
 <p>Напишите программу, которая по данному числу N от 1 до 9 выводит на экран N пингвинов. Изображение одного пингвина имеет размер 5 на 9 символов, между двумя соседними пингвинами также имеется пустой (из пробелов) столбец. Разрешается вывести пустой столбец после последнего пингвина.
 </p>
 <pre><code>
-   _~_       _~_       _~_    
-  (o o)     (o o)     (o o)   
- /  V  \   /  V  \   /  V  \  
-/(  _  )\ /(  _  )\ /(  _  )\ 
+   _~_       _~_       _~_
+  (o o)     (o o)     (o o)
+ /  V  \   /  V  \   /  V  \
+/(  _  )\ /(  _  )\ /(  _  )\
   ^^ ^^     ^^ ^^     ^^ ^^   </code></pre>
 
 <p>Напишите программу, которая сажает на линию от 1 до 6 <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B4%D0%B5%D1%81%D1%8C_%D0%B1%D1%8B%D0%BB_%D0%9A%D0%B8%D0%BB%D1%80%D0%BE%D0%B9">Килроев</a>.
