@@ -3,7 +3,7 @@ import os
 from beautifulsoup_supply import TAIL, mk_head, get_soup
 
 
-HEAD = mk_head("Космонавтика: статистика")
+HEAD = mk_head("Космонавтика: статистика", script="") + "<body>\n"
 N2YO_URL = "https://www.n2yo.com/"
 SPACEFLIGHT_URL = "https://www.worldspaceflight.com/bios/stats.php"
 SPACEFLIGHT1_URL = "https://www.worldspaceflight.com/bios/stats1.php"

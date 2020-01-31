@@ -4,7 +4,7 @@ import pickle
 from beautifulsoup_supply import TAIL, mk_head, get_soup
 
 
-HEAD = mk_head("Статистика звездных каталогов")
+HEAD = mk_head("Статистика звездных каталогов", script="") + "<body>\n"
 WDS_URL = "http://cdsarc.u-strasbg.fr/viz-bin/ReadMe/B/wds?format=html"
 SIMBAD_URL = "http://simbad.u-strasbg.fr/simbad/"
 PICKLE_FILENAME = 'simbad_stats.pickle'
