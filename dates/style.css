@@ -12,7 +12,7 @@ p {
   display: none;
 }
 .desc > img {
-  max-width: 480px;
+  max-width: 520px;
 }
 .wrapper {
   max-width: 1980px;
@@ -37,10 +37,28 @@ p {
   padding-right: 20px;
   width: calc(100% - 230px);
 }
-@media (max-width: 760px) {
+@media (max-width: 758px) {
   * {
     margin: 0;
     padding: 0;
+  }
+  .desc > img {
+    max-width: 425px;
+  }
+  .right {
+    width: 100%;
+  }
+  .left {
+    width: 100%;
+  }
+}
+@media (max-width: 423px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .desc > img {
+    max-width: 390px;
   }
   .right {
     width: 100%;
