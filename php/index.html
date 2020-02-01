@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PHP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Формы и их обработка на PHP</h1>
+<p>
+  Тег <b>&lt;form action="action.php" method="post"&gt;</b> отправит данные на
+  обработку скрипту action.php после нажатия на кнопку, созданную элементом формы
+  <b>&lt;input type="submit"&gt;</b><br>
+  Исходный код форм можно посмотреть при помощи сочетания клавиш Ctrl+U.<br>
+</p>
+
+<form action="action.php" method="post">
+  Название тега, который является корневым элементом: <input type="text" name="name" placeholder="html"><br>
+  В каком году создана всемирная сеть WWW? <input type="text" name="year" placeholder="1990"><br>
+  Какой тег лишний?
+  <select name="tag1">
+    <option value="div">div</option>
+    <option value="img" selected>img</option>
+    <option value="p">p</option>
+    <option value="h1">h1</option>
+  </select><br>
+  Какой тег является строчным?<br>
+  <input type="radio" name="tag2" value="p">p<br>
+  <input type="radio" name="tag2" value="span">span<br>
+  <input type="radio" name="tag2" value="div" checked>div<br>
+  <input type="radio" name="tag2" value="div">h1<br>
+  Название или адрес картинки: <input type="text" name="imgurl" placeholder="../bg.gif"><br>
+  <input type="checkbox" id="checker" name="checker" checked> Я согласен с условиями обработки данных<br>
+  <textarea name="msg" rows="10" cols="30">Поле для отправки сообщения. Писать сюда.</textarea><br>
+<input type="submit" value="Отправить">
+</form>
+
+<p><b>Код php в файле action.php:</b></p>
+<pre><code>Главный тег: &lt;?php echo htmlspecialchars($_POST['name']); ?&gt;.
+Лишний тег: &lt;?php echo $_POST['tag1']; ?&gt;
+Строчный тег: &lt;?php echo $_POST['tag2']; ?&gt;
+
+&lt;?php if ((int)$_POST['year'] == 1990): ?&gt;
+Год создания WWW &ndash; &lt;?php echo (int)$_POST['year']; ?&gt;.
+&lt;?php else: ?&gt;
+  Нет, год создания WWW &ndash; не &lt;?php echo (int)$_POST['year']; ?&gt;.
+&lt;?php endif; ?&gt;
+
+Сообщение: &lt;?php echo htmlspecialchars($_POST['msg']); ?&gt;
+Согласился с условиями?
+&lt;?php
+if ( isset($_POST['checker']) )
+{
+  echo "Да";
+} else {
+  echo "Нет";
+} ?&gt;
+</code></pre>
+
+<h2>Ссылки</h2>
+<ul>
+  <li><a href="https://www.php.net/manual/ru/features.commandline.webserver.php" target="_blank" rel="noopener noreferrer">Встроенный веб-сервер</a></li>
+  <li><a href="https://www.php.net/manual/ru/langref.php" target="_blank" rel="noopener noreferrer">Справочник языка</a></li>
+  <li><a href="https://www.php.net/manual/ru/language.basic-syntax.phptags.php" target="_blank" rel="noopener noreferrer">Теги PHP</a></li>
+  <li><a href="https://www.php.net/manual/ru/language.basic-syntax.phpmode.php" target="_blank" rel="noopener noreferrer">Изолирование от HTML</a></li>
+  <li><a href="https://www.php.net/manual/ru/language.basic-syntax.instruction-separation.php" target="_blank" rel="noopener noreferrer">Разделение инструкций</a></li>
+  <li><a href="https://www.php.net/manual/ru/language.basic-syntax.comments.php" target="_blank" rel="noopener noreferrer">Комментарии</a></li>
+  <li><a href="https://www.php.net/manual/ru/faq.using.php" target="_blank" rel="noopener noreferrer">Использование PHP</a> (FAQ)</li>
+  <li><a href="https://www.php.net/manual/ru/language.operators.precedence.php" target="_blank" rel="noopener noreferrer">Приоритет оператора</a>, важно для and/or</li>
+</ul>
+</body>
+</html>
