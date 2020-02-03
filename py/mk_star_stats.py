@@ -13,7 +13,7 @@ SIMBAD_LST = ['objects', 'identifiers', 'bibliographic references', 'citations o
 
 
 def simbad_stats(soup):
-    tdsbg = soup.findAll("td", {"bgcolor" : "#3264A0"})
+    tdsbg = soup.findAll("td", {"bgcolor": "#3264A0"})
     for tdbg in tdsbg:
         if tdbg.text.strip() == "Statistics": #len(result.attrs) == 5
             tbody = tdbg.parent.parent

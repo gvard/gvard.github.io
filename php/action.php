@@ -26,5 +26,29 @@
 } else {
   echo "Нет";
 } ?>
+
+
+<?php
+$empty = $post = array();
+foreach ($_POST as $varname => $varvalue) {
+    if (empty($varvalue)) {
+        $empty[$varname] = $varvalue;
+    } else {
+        $post[$varname] = $varvalue;
+    }
+}
+
+print "<pre>";
+if (empty($empty)) {
+    print "В POST не было пустых значений, вот что там было:\n";
+    var_dump($post);
+} else {
+    print "Пришло " . count($empty) . " пустых значений\n";
+    print "Всего отправлено:\n"; var_dump($post);
+    print "Пустых:\n"; var_dump($empty);
+    exit;
+}
+?>
+
 </body>
 </html>
