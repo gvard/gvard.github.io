@@ -1,5 +1,6 @@
 import os
 import pickle
+import urllib.request
 
 from beautifulsoup_supply import TAIL, mk_head, get_soup
 
@@ -11,6 +12,10 @@ PICKLE_FILENAME = 'simbad_stats.pickle'
 HTML_FILENAME = os.path.join(os.pardir, 'stars', 'stats.html')
 SIMBAD_LST = ['objects', 'identifiers', 'bibliographic references', 'citations of objects in papers']
 
+def cds_readme_stats(url):
+    html = urllib.request.urlopen(url).readlines()
+    last_line = str(html[-23]).split()[2:5]
+    return last_line[0], int(last_line[2])
 
 def simbad_stats(soup):
     tdsbg = soup.findAll("td", {"bgcolor": "#3264A0"})
@@ -29,6 +34,10 @@ def simbad_stats(soup):
                 simbstats_dct[tabstr] = int(tds[i-1].text.strip().replace(',', ''))
     return simdate, simbstats_dct
 
+
+WDS_DATE, WDS_NUM = cds_readme_stats(WDS_URL)
+CDS_HTML = f"""<p>The <a href="{WDS_URL}">Washington Visual Double Star Catalog</a> (WDS) update on {WDS_DATE} {WDS_NUM} binaries.</p>
+"""
 
 soup = get_soup(SIMBAD_URL)
 SIMDATE, SIMSTAT = simbad_stats(soup)
@@ -58,4 +67,4 @@ with open(PICKLE_FILENAME, 'wb') as handle:
     pickle.dump(simbstats_dict, handle)
 
 with open(HTML_FILENAME, 'w', encoding="utf8") as handle:
-    print(HEAD + SIMBAD_HTML + TAIL, file=handle)
+    print(HEAD + SIMBAD_HTML + CDS_HTML + TAIL, file=handle)
