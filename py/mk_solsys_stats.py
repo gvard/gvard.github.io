@@ -22,7 +22,7 @@ def get_echo(soup):
     """Parse html, get date of last page update,
     statistics of radar-detected asteroids."""
     number = int(soup.findAll("h1")[0].text.split()[0])
-    lastupd = soup.findAll("font", {"size" : "-1"})
+    lastupd = soup.findAll("font", {"size": "-1"})
     lastupdate = lastupd[0].text.split("\n")[-2].split()
     last_update = (int(lastupdate[2]), lastupdate[3], int(lastupdate[4]))
     statstr = soup.findAll("th")[:4]
@@ -102,8 +102,9 @@ Robert Johnston</a>. Последнее обновление: {DAY} {MON} {YR}.<
 def get_mp_names(soup):
     """Get list of all minor planet names."""
     names_text = soup.findAll("pre")[0].text
+    names_upd_date = soup.find("p").text.split('.')[2].split()[5:]
     names = names_text.split('\n')
-    return names
+    return names, names_upd_date
 
 def get_mpcstats(soup):
     """Get minor planet center statistics."""
@@ -118,7 +119,7 @@ def get_mpcstats(soup):
 
 
 soup = get_soup(MP_NAMES_URL)
-MP_NAMES = get_mp_names(soup)
+MP_NAMES, NAMES_UPD_DATE = get_mp_names(soup)
 
 soup = get_soup(MPC_URL)
 MPC_STAT_NUMBERS, INNER_NUMBERS, MID_OUTER_NUMBERS, NEA_NUMBERS = get_mpcstats(soup)
@@ -151,10 +152,10 @@ MPC_STATS = f'''<h2>Статистика тел Солнечной систем�
 <ul>
 <li>{OBSERV_NUM} наблюдений</li>
 <li>{OBJ_NUM} объектов всего</li>
-<li>{NUMBERED_NUM} нумерованных малых планет</li>
+<li>Более {NUMBERED_NUM} <a href="https://minorplanetcenter.net/iau/lists/NumberedMPs.html">нумерованных</a> малых планет</li>
 <li>{UNNUMBERED_NUM} ненумерованных малых планет</li>
 <li>{COMETS_NUM} комет</li>
-<li>{len(MP_NAMES)-2} <a href="{MP_NAMES_URL}">малых планет с именами</a></li>
+<li>Более {len(MP_NAMES)-2} <a href="{MP_NAMES_URL}">малых планет с именами</a> (последнее обновление списка: {" ".join(NAMES_UPD_DATE)})</li>
 <li>{ATIRAS} <a href="https://en.wikipedia.org/wiki/Atira_asteroid">Атир</a>, {ATHENS} <a href="https://en.wikipedia.org/wiki/Aten_asteroid">Атонов</a>, {APOLLOS} <a href="https://en.wikipedia.org/wiki/Apollo_asteroid">Аполлонов</a>, {AMORS} <a href="https://en.wikipedia.org/wiki/Amor_asteroid">Амуров</a>, {HUNGARIAS} <a href="https://en.wikipedia.org/wiki/Hungaria_asteroid">астероидов семейства Венгрии</a>, {MARS_CROSSERS} <a href="https://en.wikipedia.org/wiki/List_of_Mars-crossing_minor_planets">пересекающих орбиту Марса</a>;</li>
 <li>{MBA} астероидов основного пояса, {HILDAS} <a href="https://en.wikipedia.org/wiki/Hilda_asteroid">астероидов семейства Хильды</a>, {JUP_TROJANS} <a href="https://en.wikipedia.org/wiki/Jupiter_trojan">троянцев Юпитера</a>, {DISTANT} объектов за орбитой Юпитера;</li>
 <li>{NEA} <a href="https://en.wikipedia.org/wiki/Near-Earth_object#Near-Earth_asteroids">околоземных астероидов</a>, из них {NEA1KM} больше 1 км, {PHA} потенциально опасных астероидов, {NEC} <a href="https://en.wikipedia.org/wiki/Near-Earth_object#Near-Earth_comets">околоземных комет</a>.</li>
