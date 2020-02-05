@@ -22,7 +22,13 @@ for number in a:
 print(c)
 </code></pre>
 
-Входные и выходные данные:
+<h2>Входные и выходные данные</h2>
+<p>Дан список имен объектов Солнечной системы.</p>
+<ol>
+  <li>Отделить номер или год от названия</li>
+  <li>Определить, год это или номер: если число между 1950 и 2020, то это год, иначе номер.</li>
+  <li>Создать имя файла, которое содержит год+имя или просто имя, потому что номер отброшен. Имя не должно содержать пробелы!</li>
+</ol>
 <pre><code>names = ["2867 Šteins", "2014 JO25", "486958 Arrokoth", "243 Ida"]
 filenames = ["Steins.jpg", "2014JO25.jpg", "Arrokoth.jpg", "Ida.jpg"]
 
@@ -52,40 +58,35 @@ filename = "Steins.jpg".split(".")
 if filename[1] == "jpg":
     print("Это картинка! Запускаем фотошоп...")
 </code></pre>
-<ol>
-  <li>Отделить номер или год от названия</li>
-  <li>Определить, год это или номер: если число между 1950 и 2020, то это год, иначе номер.</li>
-  <li>Создать имя файла, которое содержит год+имя или просто имя, потому что номер отброшен. Имя не должно содержать пробелы!</li>
-</ol>
 <hr>
 
 <p>Напишите программу, которая принимает два списка и выводит все элементы первого, которых нет во втором.</p>
-<pre><code>
-a = ['White', 'Black', 'Red', 'Purple', 'Magenta']
+<pre><code>a = ['White', 'Black', 'Red', 'Purple', 'Magenta']
 b = ['Red', 'Green', 'Blue', 'Cyan', 'Magenta']
 for color in a:
     # code here
     print(color)
 </code></pre>
+Или:
+<pre><code>print(set(a) - set(b))</code></pre>
+
 <hr>
 
-
-
 Объединить списки в один список:
-<pre><code>
-a = [10, 20]
+<pre><code>a = [10, 20]
 b = [30, 40]
 c = [50, 60]
+d = a + b + c
 </code></pre>
 
 Объединить словари в один словарь:
-<pre><code>
-dic1 = {1:10, 2:20}
+<pre><code>dic1 = {1:10, 2:20}
 dic2 = {3:30, 4:40}
 dic3 = {5:50, 6:60}
+dic1.update(dic2)
 </code></pre>
 
-Программа сближающихся случайных чисел:<br>
+Программа сближающихся случайных чисел<br>
 Установка matplotlib в командном интерпретаторе cmd: pip install matplotlib
 <pre><code>from random import random, randrange
 from matplotlib import pyplot as plt
@@ -110,7 +111,6 @@ plt.show()
 </code></pre>
 
 
-
 <p>Проверка на палиндром:</p>
 <pre><code>rawwords = input()
 words = rawwords.lower().replace(" ", "")
@@ -118,9 +118,9 @@ ispalindrom = words == words[::-1]
 print(ispalindrom)
 </code></pre>
 <hr>
-<p>При заданном целом числе n посчитайте n + nn + nnn.</p>
-<pre><code>
-a = input("Введите число: ")
+<p>При заданном целом числе n посчитайте n + nn + nnn<br>
+Обобщить для n от 1 до 9.</p>
+<pre><code>a = input("Введите число: ")
 b = input("Сколько раз умножать число: ")
 kopilka = 0
 for count in range(int(b)):
@@ -157,8 +157,7 @@ print("Номер километра:", int(g))
 
 <p>Напишите программу, которая сажает на линию от 1 до 6 <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B4%D0%B5%D1%81%D1%8C_%D0%B1%D1%8B%D0%BB_%D0%9A%D0%B8%D0%BB%D1%80%D0%BE%D0%B9">Килроев</a>.
 </p>
-<pre><code>
-kilroy = """
+<pre><code>kilroy = """
                                                   ,,,
                                                  (. .)
 ----------------------------------------------ooO-(_)-Ooo---

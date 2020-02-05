@@ -3,15 +3,15 @@ import urllib.request
 from bs4 import BeautifulSoup
 
 
-def remove_brackets(BRACKETS, text):
-    while BRACKETS[0] in text and BRACKETS[1] in text:
-        br1 = text.find(BRACKETS[0])
-        br2 = text.find(BRACKETS[1])
+def remove_brackets(brackets, text):
+    while brackets[0] in text and brackets[1] in text:
+        br1 = text.find(brackets[0])
+        br2 = text.find(brackets[1])
         text = text[:br1]+text[br2+1:]
     return text
 
 
-swiss = """Дю Белле. Сонеты.
+TEXT = """Дю Белле. Сонеты.
 (Швейцария)
 Есть все - леса, озера тут,
 Но горы им всего дороже.
@@ -24,7 +24,7 @@ swiss = """Дю Белле. Сонеты.
 И песни дикие (орут)."""
 
 BRACKETS = ("(", ")")
-print(remove_brackets(BRACKETS, swiss))
+print(remove_brackets(BRACKETS, TEXT))
 URLS = ["https://en.wikipedia.org/wiki/Mercury_(planet)",
         "https://en.wikipedia.org/wiki/Venus",
         "https://en.wikipedia.org/wiki/Earth",
@@ -38,6 +38,6 @@ for URL in URLS:
     ps = soup.findAll("p")
     text = ps[0].text.strip() + ps[1].text.strip() + ps[2].text + '\n'
     text = remove_brackets(BRACKETS, text)
-    referat = referat + text
+    referat += text
 
 print(referat)
