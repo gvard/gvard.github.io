@@ -12,10 +12,41 @@ PICKLE_FILENAME = 'simbad_stats.pickle'
 HTML_FILENAME = os.path.join(os.pardir, 'stars', 'stats.html')
 SIMBAD_LST = ['objects', 'identifiers', 'bibliographic references', 'citations of objects in papers']
 
+
 def cds_readme_stats(url):
     html = urllib.request.urlopen(url).readlines()
     last_line = str(html[-23]).split()[2:5]
     return last_line[0], int(last_line[2])
+
+def get_snstats(soup, end=23):
+    pre = soup.find('pre').text
+    return pre.splitlines()[1:end]
+
+def get_sn_count(txt):
+    """Get Supernova total count"""
+    return int(txt[0].split()[4])
+
+
+snurls = []
+for year in range(1996, 1999):
+    snstats_year = f'http://rochesterastronomy.com/snimages/snstats{year}.html'
+    snurls.append((year, snstats_year))
+snurls.append((1999, 'http://rochesterastronomy.com/snimages/sn1999/snstats.html'))
+for year in range(2000, 2021):
+    snstats_year = f'http://rochesterastronomy.com/sn{year}/snstats.html'
+    snurls.append((year, snstats_year))
+snurls.append(('all', 'http://rochesterastronomy.com/snimages/snstatsall.html'))
+
+snstats = {}
+for (year, snstats_url) in snurls:
+    print(year, snstats_url)
+    soup = get_soup(snstats_url)
+    snstats[year] = get_snstats(soup)
+
+PICKLE_SN_FILENAME = 'snstats.pickle'
+with open(PICKLE_SN_FILENAME, 'wb') as handle:
+    pickle.dump(snstats, handle)
+
 
 def simbad_stats(soup):
     tdsbg = soup.findAll("td", {"bgcolor": "#3264A0"})
