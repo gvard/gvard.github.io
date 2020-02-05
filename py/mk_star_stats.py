@@ -8,6 +8,7 @@ from beautifulsoup_supply import TAIL, mk_head, get_soup
 HEAD = mk_head("Статистика звездных каталогов", script="") + "<body>\n"
 WDS_URL = "http://cdsarc.u-strasbg.fr/viz-bin/ReadMe/B/wds?format=html"
 SIMBAD_URL = "http://simbad.u-strasbg.fr/simbad/"
+SNIMAGES_URL = "http://rochesterastronomy.com/snimages/"
 PICKLE_FILENAME = 'simbad_stats.pickle'
 HTML_FILENAME = os.path.join(os.pardir, 'stars', 'stats.html')
 SIMBAD_LST = ['objects', 'identifiers', 'bibliographic references', 'citations of objects in papers']
@@ -26,28 +27,6 @@ def get_sn_count(txt):
     """Get Supernova total count"""
     return int(txt[0].split()[4])
 
-
-snurls = []
-for year in range(1996, 1999):
-    snstats_year = f'http://rochesterastronomy.com/snimages/snstats{year}.html'
-    snurls.append((year, snstats_year))
-snurls.append((1999, 'http://rochesterastronomy.com/snimages/sn1999/snstats.html'))
-for year in range(2000, 2021):
-    snstats_year = f'http://rochesterastronomy.com/sn{year}/snstats.html'
-    snurls.append((year, snstats_year))
-snurls.append(('all', 'http://rochesterastronomy.com/snimages/snstatsall.html'))
-
-snstats = {}
-for (year, snstats_url) in snurls:
-    print(year, snstats_url)
-    soup = get_soup(snstats_url)
-    snstats[year] = get_snstats(soup)
-
-PICKLE_SN_FILENAME = 'snstats.pickle'
-with open(PICKLE_SN_FILENAME, 'wb') as handle:
-    pickle.dump(snstats, handle)
-
-
 def simbad_stats(soup):
     tdsbg = soup.findAll("td", {"bgcolor": "#3264A0"})
     for tdbg in tdsbg:
@@ -64,6 +43,44 @@ def simbad_stats(soup):
             if tabstr == td.text.strip():
                 simbstats_dct[tabstr] = int(tds[i-1].text.strip().replace(',', ''))
     return simdate, simbstats_dct
+
+
+snurls = []
+for year in range(1996, 1999):
+    snstats_year = f'{SNIMAGES_URL}snstats{year}.html'
+    snurls.append((year, snstats_year))
+snurls.append((1999, f'{SNIMAGES_URL}sn1999/snstats.html'))
+
+for year in range(2000, 2021):
+    snstats_year = f'http://rochesterastronomy.com/sn{year}/snstats.html'
+    snurls.append((year, snstats_year))
+snurls.append(('all', f'{SNIMAGES_URL}snstatsall.html'))
+
+snstats = {}
+snstats_txt = f"""<h2><a href="{SNIMAGES_URL}">Статистика вспышек сверхновых</a>:</h2>
+<ul>
+"""
+for (year, snstats_url) in snurls:
+    soup = get_soup(snstats_url)
+    snstats[year] = get_snstats(soup)
+    sn_num = get_sn_count(snstats[year])
+    if year != "all":
+        snstats_txt += f"<li>За {year} год открыто {sn_num} сверхновых</li>\n"
+
+snstats_txt += f"""</ul>
+<p>Всего открыто {sn_num} сверхновых.</p>
+"""
+
+PICKLE_SN_FILENAME = 'snstats.pickle'
+with open(PICKLE_SN_FILENAME, 'rb') as handle:
+    snstats_prev = pickle.load(handle)
+
+for year in snstats_prev:
+     if snstats[year] != snstats_prev[year]:
+         print(snstats_prev[year], snstats[year])
+
+with open(PICKLE_SN_FILENAME, 'wb') as handle:
+    pickle.dump(snstats, handle)
 
 
 WDS_DATE, WDS_NUM = cds_readme_stats(WDS_URL)
@@ -98,4 +115,4 @@ with open(PICKLE_FILENAME, 'wb') as handle:
     pickle.dump(simbstats_dict, handle)
 
 with open(HTML_FILENAME, 'w', encoding="utf8") as handle:
-    print(HEAD + SIMBAD_HTML + CDS_HTML + TAIL, file=handle)
+    print(HEAD + SIMBAD_HTML + CDS_HTML + snstats_txt + TAIL, file=handle)
