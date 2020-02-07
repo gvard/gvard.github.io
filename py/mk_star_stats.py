@@ -9,6 +9,7 @@ HEAD = mk_head("Статистика звездных каталогов", scrip
 WDS_URL = "http://cdsarc.u-strasbg.fr/viz-bin/ReadMe/B/wds?format=html"
 SIMBAD_URL = "http://simbad.u-strasbg.fr/simbad/"
 SNIMAGES_URL = "http://rochesterastronomy.com/snimages/"
+SNIMAGES_SNOTHER_URL = "http://rochesterastronomy.com/snimages/snother.html"
 PICKLE_FILENAME = 'simbad_stats.pickle'
 HTML_FILENAME = os.path.join(os.pardir, 'stars', 'stats.html')
 SIMBAD_LST = ['objects', 'identifiers', 'bibliographic references', 'citations of objects in papers']
@@ -46,6 +47,7 @@ def simbad_stats(soup):
 
 
 snurls = []
+snurls.append((1995, f"{SNIMAGES_URL}snstatsother.html"))
 for year in range(1996, 1999):
     snstats_year = f'{SNIMAGES_URL}snstats{year}.html'
     snurls.append((year, snstats_year))
@@ -57,18 +59,23 @@ for year in range(2000, 2021):
 snurls.append(('all', f'{SNIMAGES_URL}snstatsall.html'))
 
 snstats = {}
-snstats_txt = f"""<h2><a href="{SNIMAGES_URL}">Статистика вспышек сверхновых</a>:</h2>
+snstats_txt = f"""<hr><h2><a href="{SNIMAGES_URL}">Статистика вспышек сверхновых</a>:</h2>
+<p><a href="{SNIMAGES_SNOTHER_URL}">Сверхновые до 1996 года</a>.</p>
 <ul>
 """
+all_sn_count = 0
 for (year, snstats_url) in snurls:
     soup = get_soup(snstats_url)
     snstats[year] = get_snstats(soup)
     sn_num = get_sn_count(snstats[year])
-    if year != "all":
-        snstats_txt += f"<li>За {year} год открыто {sn_num} сверхновых</li>\n"
+    all_sn_count += sn_num
+    if year == 1995:
+        snstats_txt += f"<li>До {year + 1} года открыто <b>{sn_num}</b> сверхновых</li>\n"
+    elif year != "all":
+        snstats_txt += f"<li>За {year} год открыто <b>{sn_num}</b> сверхновых, всего к концу года открыто <b>{all_sn_count}</b></li>\n"
 
 snstats_txt += f"""</ul>
-<p>Всего открыто {sn_num} сверхновых.</p>
+<a href="{SNIMAGES_URL}snstatsall.html">Всего открыто</a> <b>{sn_num}</b> сверхновых.</p>
 """
 
 PICKLE_SN_FILENAME = 'snstats.pickle'
@@ -76,8 +83,8 @@ with open(PICKLE_SN_FILENAME, 'rb') as handle:
     snstats_prev = pickle.load(handle)
 
 for year in snstats_prev:
-     if snstats[year] != snstats_prev[year]:
-         print(snstats_prev[year], snstats[year])
+     if snstats.get(year) != snstats_prev.get(year):
+         print(snstats_prev.get(year), snstats.get(year))
 
 with open(PICKLE_SN_FILENAME, 'wb') as handle:
     pickle.dump(snstats, handle)
