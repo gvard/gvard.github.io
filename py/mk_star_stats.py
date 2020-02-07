@@ -10,6 +10,8 @@ WDS_URL = "http://cdsarc.u-strasbg.fr/viz-bin/ReadMe/B/wds?format=html"
 SIMBAD_URL = "http://simbad.u-strasbg.fr/simbad/"
 SNIMAGES_URL = "http://rochesterastronomy.com/snimages/"
 SNIMAGES_SNOTHER_URL = "http://rochesterastronomy.com/snimages/snother.html"
+TNS_URL = "https://wis-tns.weizmann.ac.il"
+TNS_STATS_URL = TNS_URL + "/stats-maps"
 PICKLE_FILENAME = 'simbad_stats.pickle'
 HTML_FILENAME = os.path.join(os.pardir, 'stars', 'stats.html')
 SIMBAD_LST = ['objects', 'identifiers', 'bibliographic references', 'citations of objects in papers']
@@ -26,7 +28,14 @@ def get_snstats(soup, end=23):
 
 def get_sn_count(txt):
     """Get Supernova total count"""
-    return int(txt[0].split()[4])
+    return int(txt[0].split()[4]), int(txt[1].split()[0]), int(txt[5].split()[0])
+
+def get_tns(soup):
+    all_stat_num = soup.findAll('div', {"class": "stat-item-right"})
+    all_transient = int(all_stat_num[0].text)
+    classified = int(all_stat_num[2].text)
+    spectra = int(all_stat_num[3].text)
+    return all_transient, classified, spectra
 
 def simbad_stats(soup):
     tdsbg = soup.findAll("td", {"bgcolor": "#3264A0"})
@@ -63,19 +72,32 @@ snstats_txt = f"""<hr><h2><a href="{SNIMAGES_URL}">Статистика вспы
 <p><a href="{SNIMAGES_SNOTHER_URL}">Сверхновые до 1996 года</a>.</p>
 <ul>
 """
-all_sn_count = 0
+all_sn_count, sn_amateur_count = 0, 0
 for (year, snstats_url) in snurls:
     soup = get_soup(snstats_url)
     snstats[year] = get_snstats(soup)
-    sn_num = get_sn_count(snstats[year])
+    sn_num, sn_cbat, sn_amateur = get_sn_count(snstats[year])
     all_sn_count += sn_num
+    sn_amateur_count += sn_amateur
     if year == 1995:
         snstats_txt += f"<li>До {year + 1} года открыто <b>{sn_num}</b> сверхновых</li>\n"
     elif year != "all":
-        snstats_txt += f"<li>За {year} год открыто <b>{sn_num}</b> сверхновых, всего к концу года открыто <b>{all_sn_count}</b></li>\n"
+        snstats_txt += f"<li>За {year} год открыто <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b> &ndash; любителями. Всего к концу года открыто <b>{all_sn_count}</b></li>\n"
+
+
+soup = get_soup(TNS_STATS_URL)
+all_transient, classified, spectra = get_tns(soup)
 
 snstats_txt += f"""</ul>
-<a href="{SNIMAGES_URL}snstatsall.html">Всего открыто</a> <b>{sn_num}</b> сверхновых.</p>
+<a href="{SNIMAGES_URL}snstatsall.html" target="_blank" rel="noopener noreferrer">Всего открыто</a> <b>{sn_num}</b> сверхновых, <b>{sn_amateur_count}</b>  &ndash; любителями.</p>
+
+<h2><a href="TNS_URL">Transient Name Server</a></h2>
+<a href="{TNS_STATS_URL}" target="_blank" rel="noopener noreferrer">статистика</a>:<br>
+<ul>
+<li>Всего транзиентов с 01.01.2016: {all_transient}</li>
+<li>Сверхновых классифицировано: {classified}</li>
+<li>Всего спектров: {spectra}</li>
+</ul>
 """
 
 PICKLE_SN_FILENAME = 'snstats.pickle'
@@ -90,9 +112,9 @@ with open(PICKLE_SN_FILENAME, 'wb') as handle:
     pickle.dump(snstats, handle)
 
 
-WDS_DATE, WDS_NUM = cds_readme_stats(WDS_URL)
-CDS_HTML = f"""<p>The <a href="{WDS_URL}">Washington Visual Double Star Catalog</a> (WDS) update on {WDS_DATE} {WDS_NUM} binaries.</p>
-"""
+# WDS_DATE, WDS_NUM = cds_readme_stats(WDS_URL)
+# CDS_HTML = f"""<p>The <a href="{WDS_URL}">Washington Visual Double Star Catalog</a> (WDS) update on {WDS_DATE} {WDS_NUM} binaries.</p>
+# """
 
 soup = get_soup(SIMBAD_URL)
 SIMDATE, SIMSTAT = simbad_stats(soup)
@@ -122,4 +144,4 @@ with open(PICKLE_FILENAME, 'wb') as handle:
     pickle.dump(simbstats_dict, handle)
 
 with open(HTML_FILENAME, 'w', encoding="utf8") as handle:
-    print(HEAD + SIMBAD_HTML + CDS_HTML + snstats_txt + TAIL, file=handle)
+    print(HEAD + SIMBAD_HTML + snstats_txt + TAIL, file=handle)
