@@ -14,9 +14,9 @@
   <div id="contents"></div>
 </div>
 
-<main>
 <h1>Звезды не как точки</h1>
 
+<div class="cont">
 <button onclick="showHideThis('none','.size')">Скрыть радиусы</button>
 <button onclick="showHideThis('block','.size')">Показать радиусы</button>
 <button onclick="showHideThis('none','.mass')">Скрыть массу</button>
@@ -25,11 +25,12 @@
 <button onclick="showHideThis('block','.class')">Показать спектральный класс</button>
 <button onclick="toSort('size')">Сортировать по возрастанию размера</button>
 <!-- <button onclick="toSort('mass')">Сортировать по возрастанию массы</button> -->
+</div>
 
-<section class="tab main">
+<div id="tab">
 <div class="obj sg">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><a href="#"><img alt="" src="images/Betelgeuse.jpg"></a></div>
-  <div class="desc"><a href="https://en.wikipedia.org/wiki/Betelgeuse" title="Betelgeuse">Бетельгейзе</a></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Betelgeuse" title="Betelgeuse">Бетельгейзе</a></div>
   <div class="angular">50</div>
   <div class="size">887</div>
   <div class="mass">11.6</div>
@@ -37,7 +38,7 @@
   <div class="temp">3590</div>
 </div><div class="obj sg">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><a href="#"><img alt="" src="images/Antares.jpg"></a></div>
-  <div class="desc"><a href="https://en.wikipedia.org/wiki/Antares" title="Antares">Антарес</a></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Antares" title="Antares">Антарес</a></div>
   <div class="angular">37-41</div>
   <div class="size">680–800</div>
   <div class="mass">11–14.3</div>
@@ -45,46 +46,67 @@
   <div class="temp">3660</div>
 </div><div class="obj agb">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><a href="#"><img alt="" src="images/Pi1Gruis.jpg"></a></div>
-  <div class="desc"><a href="https://en.wikipedia.org/wiki/Pi1_Gruis" title="">π1 Gruis</a></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Pi1_Gruis" title="">π1 Gruis</a></div>
   <div class="angular">18.4</div>
   <div class="size">350</div>
   <div class="mass">1.5</div>
   <div class="class">S5,7: (~M5)</div>
   <div class="temp">3100</div>
 </div>
+</div>
 
-</section>
-
-<section class="comment">
+<div class="cont">
 <p>Этот список звезд содержит:</p>
 <ul>
   <li>Звезды из <a href="https://en.wikipedia.org/wiki/List_of_stars_with_resolved_images" target="_blank" rel="noopener noreferrer">списка разрешенных звезд</a></li>
 </ul>
 
+<p><a href="stats.html">Статистика звездных каталогов</a> (файл создается автоматически),
+  <a href="cat/">звездные каталоги в картинках</a>.
+</p>
+
 <p>А также:<br>
 Близкие звезды<br>
-<img src="images/nearest8pc.png" width="600" alt=""><br>
+<img src="images/nearest8pc.png" alt=""><br>
 Гиганты и сверхгиганты<br>
-<img src="images/biggest_angular.jpg" width="1000" alt=""><br>
+<img src="images/biggest_angular.jpg" alt=""><br>
 Быстро вращающиеся звезды<br>
 <a href="http://www.chara.gsu.edu/science-highlights/rapid-rotators" target="_blank" rel="noopener noreferrer"><img src="http://www.chara.gsu.edu/files/images/rapid_rotator_crop.png" alt=""></a>
 </p>
 
-<p>А также: <a href="stats.html">Статистика звездных каталогов</a> (файл создается автоматически),
-<a href="cat/">звездные каталоги в картинках</a>.</p><br>
 
 <p>Замечания:</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Betelgeuse" target="_blank" rel="noopener noreferrer">Бетельгейзе</a>
 &ndash; первая звезда, угловой диаметр которой измерен методом интерферометрии. Измерения были проведены 13 декабря 1920 года.</li>
+<li><a href="https://en.wikipedia.org/wiki/Eta_Carinae" target="_blank" rel="noopener noreferrer">Эта Киля</a>.</li>
 </ul>
 
 <p>Дополнительные источники:</p>
-  <ul>
+<ul>
   <li><a href="https://www.iau.org/public/themes/naming_stars/" target="_blank" rel="noopener noreferrer">Список утвержденных МАС имен звезд</a>, 336 имен. Дополнительно, 112 имен, данных в рамках компании <a href="http://www.nameexoworlds.iau.org/final-results" target="_blank" rel="noopener noreferrer">NameExoWorlds</a>.</li>
-  </ul>
-</section>
-</main>
+  <li><a href="https://en.wikipedia.org/wiki/Hypergiant" target="_blank" rel="noopener noreferrer">Hypergiant</a>,
+    <a href="https://en.wikipedia.org/wiki/Eddington_luminosity" target="_blank" rel="noopener noreferrer">Eddington luminosity</a>. Observations of massive stars show a clear upper limit to their luminosity, termed the Humphreys–Davidson limit after the researchers who first wrote about it.<br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Lbv.png/1024px-Lbv.png" alt="">
+  </li>
+  <li><a href="https://en.wikipedia.org/wiki/Hayashi_limit" target="_blank" rel="noopener noreferrer">Hayashi limit</a> is a constraint upon the maximum radius of a star for a given mass</li>
+  <li><a href="https://en.wikipedia.org/wiki/List_of_most_massive_stars" target="_blank" rel="noopener noreferrer">List of most massive stars</a>,
+    <a href="https://en.wikipedia.org/wiki/List_of_largest_stars" target="_blank" rel="noopener noreferrer">List of largest stars</a>,
+    <a href="https://en.wikipedia.org/wiki/List_of_most_luminous_stars" target="_blank" rel="noopener noreferrer">List of most luminous stars</a>.
+  </li>
+  <li><a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank" rel="noopener noreferrer">NASA Exoplanet Archive</a> (4116 confirmed planets),
+    <a href="http://exoplanet.eu/" target="_blank" rel="noopener noreferrer">The Extrasolar Planets Encyclopaedia</a> (4177 planets / 3098 planetary systems / 679 multiple planet systems),
+    <a href="http://exoplanets.org/" target="_blank" rel="noopener noreferrer">Exoplanet Orbit Database | Exoplanet Data Explorer</a> (3262 confirmed planets).</li>
+  <li><a href="https://en.wikipedia.org/wiki/White_dwarf#Nearest" target="_blank" rel="noopener noreferrer">White Dwarfs</a> within 25 Light Years,
+    <a href="https://en.wikipedia.org/wiki/List_of_white_dwarfs" target="_blank" rel="noopener noreferrer">List of white dwarfs</a>.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Tolman%E2%80%93Oppenheimer%E2%80%93Volkoff_limit#List_of_most_massive_neutron_stars" target="_blank" rel="noopener noreferrer">Tolman–Oppenheimer–Volkoff limit</a>, List of most massive neutron stars, List of least massive black holes.
+    <a href="https://en.wikipedia.org/wiki/Quark_star" target="_blank" rel="noopener noreferrer">Quark star</a>.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Radio-quiet_neutron_star" target="_blank" rel="noopener noreferrer">Radio-quiet neutron star</a>,
+    <a href="https://en.wikipedia.org/wiki/The_Magnificent_Seven_(neutron_stars)" target="_blank" rel="noopener noreferrer">Великолепная семёрка</a> нейтронных звезд,
+    <a href="https://en.wikipedia.org/wiki/Calvera_(X-ray_source)" target="_blank" rel="noopener noreferrer">Калвера (нейтронная звезда)</a>.
+  </li>
+</ul>
+</div>
 <footer>2019 Википедия. Компиляция, код: Д.С. Насонов.</footer>
 </body>
 </html>
