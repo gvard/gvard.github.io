@@ -6,9 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>PHP</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="https://www.php.net/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <h1>Формы и их обработка на PHP</h1>
+<h1>Формы и их обработка на PHP</h1>
+
+<h2>Запуск веб-сервера</h2>
+<pre><code>php -S localhost:8000</code></pre>
+
+<h2>Метод POST</h2>
 <p>
   Тег <b>&lt;form action="action.php" method="post"&gt;</b> отправит данные на
   обработку скрипту action.php после нажатия на кнопку, созданную элементом формы
@@ -31,7 +37,7 @@
   <input type="radio" name="tag2" value="span">span<br>
   <input type="radio" name="tag2" value="div" checked>div<br>
   <input type="radio" name="tag2" value="div">h1<br>
-  Название или адрес картинки: <input type="text" name="imgurl" placeholder="../bg.gif"><br>
+  Название или адрес картинки: <input type="text" name="imgurl" value="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"><br>
   <input type="checkbox" id="checker" name="checker" checked> Я согласен с условиями обработки данных<br>
   <textarea name="msg" rows="10" cols="30">Поле для отправки сообщения. Писать сюда.</textarea><br>
 <input type="submit" value="Отправить">
@@ -59,9 +65,30 @@ if ( isset($_POST['checker']) )
 } ?&gt;
 </code></pre>
 
-<h3>Запуск веб-сервера</h3>
-<pre><code>php -S localhost:8000
-</code></pre>
+<h2>Метод GET</h2>
+<p>Тег <b>&lt;form action="action-get.php" method="get"&gt;</b> отправит данные на обработку скрипту action.php после нажатия на кнопку.</p>
+
+<form action="action-get.php" method= "get">
+  Название тега, который является корневым элементом: <input type="text" name="name" value="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"><br>
+  В каком году создана всемирная сеть WWW? <input type="text" name="year" placeholder="1990"><br>
+  Какой тег лишний?
+  <select name="tag1">
+    <option value="div">div</option>
+    <option value="img" selected>img</option>
+    <option value="p">p</option>
+    <option value="h1">h1</option>
+  </select><br>
+  Какой тег является строчным?<br>
+  <input type="radio" name="tag2" value="p">p<br>
+  <input type="radio" name="tag2" value="span">span<br>
+  <input type="radio" name="tag2" value="div" checked>div<br>
+  <input type="radio" name="tag2" value="div">h1<br>
+  Название или адрес картинки: <input type="text" name="imgurl" placeholder="../bg.gif"><br>
+  <input type="checkbox" id="checker" name="checker" checked> Я согласен с условиями обработки данных<br>
+  <textarea name="msg" rows="10" cols="30">Поле для отправки сообщения. Писать сюда.</textarea><br>
+<input type="submit" value="Отправить">
+</form>
+
 <h2>Ссылки</h2>
 <ul>
   <li><a href="https://www.php.net/manual/ru/features.commandline.webserver.php" target="_blank" rel="noopener noreferrer">Встроенный веб-сервер</a></li>
