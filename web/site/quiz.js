@@ -34,16 +34,16 @@ function submitQuiz() {
 
 // print correct answers only if wrong (calls correctAnswer function)
     if (answerScore('q1') === 0) {
-        document.getElementById('Правильный ответ №1').innerHTML = correctAnswer('correctString1', 1);
+        document.getElementById('correctAnswer1').innerHTML = correctAnswer('correctString1', 1);
     }
     if (answerScore('q2') === 0) {
-        document.getElementById('Правильный ответ №2').innerHTML = correctAnswer('correctString2', 2);
+        document.getElementById('correctAnswer2').innerHTML = correctAnswer('correctString2', 2);
     }
     if (answerScore('q3') === 0) {
-        document.getElementById('Правильный ответ №3').innerHTML = correctAnswer('correctString3', 3);
+        document.getElementById('correctAnswer3').innerHTML = correctAnswer('correctString3', 3);
     }
     if (answerScore('q4') === 0) {
-        document.getElementById('Правильный ответ №4').innerHTML = correctAnswer('correctString4', 4);
+        document.getElementById('correctAnswer4').innerHTML = correctAnswer('correctString4', 4);
     }
 
 // calculate "possible score" integer
