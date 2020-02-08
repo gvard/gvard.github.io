@@ -16,7 +16,7 @@ EVENTS = [
   ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/PSM_V74_D518_Steel_building_and_60_inch_reflector.png/640px-PSM_V74_D518_Steel_building_and_60_inch_reflector.png"
   ],
   [],
-  ["telescope", "observatory", "solar observatory", "Mt. Wilson"
+  ["astro", "telescope", "observatory", "solar observatory", "Mt. Wilson"
   ]
 ],
 [
@@ -67,6 +67,26 @@ EVENTS = [
   ],
   [],
   ["birthday", "astro"
+  ]
+],
+[
+  "первый свет на 5-метровом телескопе Хейла",
+  "26.01.1949",
+  "назад был получен первый свет на 5.1-метровом телескопе имени Джорджа Хейла. До введения в строй Большого Телескопа Азимутального на Северном Кавказе в 1975 году он оставался крупнейшим в мире.",
+  ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/P200_Dome_Open.jpg/1024px-P200_Dome_Open.jpg"
+  ],
+  [],
+  ["first light", "astro", "telescope"
+  ]
+],
+[
+  "первый свет на Большом Канарском телескопе",
+  "13.07.2007",
+  "назад получен первый свет на Большом Канарском телескопе &ndash; The Gran Telescopio Canarias. С момента постройки GTC является крупнейшим телескопом в мире, но уступает по площади зеркал комплексу Большого бинокулярного телескопа.",
+  ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Grantelescopio.jpg/640px-Grantelescopio.jpg"
+  ],
+  [],
+  ["first light", "astro", "telescope"
   ]
 ],
 [
@@ -126,7 +146,7 @@ EVENTS = [
   [],
   ["26.12.(4).jpg"
   ],
-  ["космонавтика",
+  ["космонавтика", "spacecraft", "space station"
   ]
 ],
 [
@@ -180,6 +200,26 @@ EVENTS = [
   ]
 ],
 [
+  "Запуск шаттла Индевор в рамках миссии STS-99",
+  "11.02.2000",
+  "назад в рамках миссии STS-99 c мыса Канаверал стартовал шаттл Индевор. Главная цель &ndash; создание цифровой модели высот Земли с помощью радарной топографической съёмки. Полученная цифровая модель охватила 80% земной суши (от 56° ю. ш. до 60° с. ш.) и являлась наиболее полной до 2009 года. Общая проолжительность миссии &ndash 11 дней 5 часов 39 минут.",
+  ["https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Space_Shuttle_Endeavour_launches_on_STS-99.jpg/606px-Space_Shuttle_Endeavour_launches_on_STS-99.jpg"
+  ],
+  [],
+  ["космонавтика", "launch", "launch vehicle", "human spaceflight", "spaceflight", "space shuttle",
+  ]
+],
+[
+  "Запуск шаттла Индевор в рамках миссии STS-130",
+  "08.02.2010",
+  "назад в миссии STS-130 c мыса Канаверал стартовал шаттл Индевор. Основная цель &ndash; доставка и установка модулей «Транквилити» («Спокойствие») и «Купол». Миссия завершилась успешной посадкой 22.02.2010. Общая проолжительность миссии &ndash 13 дней 18 часов 6 минут.",
+  ["https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/STS-130_launching_1.jpg/504px-STS-130_launching_1.jpg"
+  ],
+  [],
+  ["космонавтика", "launch", "launch vehicle", "human spaceflight", "spaceflight", "space shuttle", "ISS", "МКС"
+  ]
+],
+[
   "первый запуск ракеты-носителя Falcon 9",
   "04.06.2010",
   "назад состоялся первый запуск ракеты-носителя Falcon 9 среднего класса компании США SpaceX. По своим характеристикам ракета схожа с советским, а затем российским носителем Протон-К.",
@@ -210,26 +250,6 @@ EVENTS = [
   ]
 ],
 [
-  "первый свет на 5-метровом телескопе Хейла",
-  "26.01.1949",
-  "назад был получен первый свет на 5.1-метровом телескопе имени Джорджа Хейла. До введения в строй Большого Телескопа Азимутального на Северном Кавказе в 1975 году он оставался крупнейшим в мире.",
-  ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/P200_Dome_Open.jpg/1024px-P200_Dome_Open.jpg"
-  ],
-  [],
-  ["first light", "astro", "telescope"
-  ]
-],
-[
-  "первый свет на Большом Канарском телескопе",
-  "13.07.2007",
-  "получен первый свет на Большом Канарском телескопе &ndash; The Gran Telescopio Canarias. С момента постройки GTC является крупнейшим телескопом в мире, но уступает по площади зеркал комплексу Большого бинокулярного телескопа.",
-  ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Grantelescopio.jpg/640px-Grantelescopio.jpg"
-  ],
-  [],
-  ["first light", "astro", "telescope"
-  ]
-],
-[
   "международный день гражданской авиации",
   "07.12.1944",
   "назад была подписана конвенция о международной гражданской авиации. С 1994 года седьмого декабря отмечается международный день гражданской авиации.",
@@ -246,7 +266,7 @@ EVENTS = [
   ["https://upload.wikimedia.org/wikipedia/en/a/a2/Baumgartner_RBSjump.jpg"
   ],
   [],
-  ["parachuting", "stratospheric jump"
+  ["parachuting", "stratospheric jump", "stratosphere baloon"
   ]
 ],
 [
