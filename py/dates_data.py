@@ -377,5 +377,14 @@ EVENTS = [
   [],
   ["it", "history", "operation system", "design", "linux"
   ]
+],
+[
+  "Анонсирован JavaScript",
+  "04.12.1995",
+  "назад корпорация Netscape Communications и компания Sun Microsystems представили язык программирования JavaScript. Название указывало на дополняющую, по отношению к языку Java, роль. Автором JavaScript был один из сооснователей проекта Mozilla Брендан Айк.",
+  [],
+  ["Brendan_Eich_JS.jpg"],
+  ["it", "history", "operation system", "design", "linux"
+  ]
 ]
 ]
