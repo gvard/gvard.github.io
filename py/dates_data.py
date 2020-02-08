@@ -358,5 +358,15 @@ EVENTS = [
   [],
   ["it", "history", "programming", "программирование", "games"
   ]
+],
+[
+  "Вышла первая публичная версия ядра Linux",
+  "17.09.1991",
+  "назад вышла первая публичная версия ядра Linux: 0.01. Анонс был опубликован Линусом Торвальдсом 25 августа, именно эта дата считается рождением операционной системы.",
+  ["https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/500px-Tux.svg.png"
+  ],
+  [],
+  ["it", "history", "operation system", "design", "linux"
+  ]
 ]
 ]
