@@ -4,24 +4,24 @@ Educational web pages.
 
 Простой список:
 ```html
-    <nav>
-        <ul>
-                <li>
-                    <a href="http://">Ссылка 1</a>
-                </li>                
-                <li><a href="http://">Ссылка 2</a></li>
-                <li><a href="http://">Ссылка 3</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li>
+        <a href="http://">Ссылка 1</a>
+      </li>
+      <li><a href="http://">Ссылка 2</a></li>
+      <li><a href="http://">Ссылка 3</a></li>
+    </ul>
+  </nav>
 ```
 
 ```css
 nav ul {
   background-color: blue;
-	}	
+}
 nav ul li {
 	display:inline-block;
-	}
+}
 nav a {
 	display: block;
 	padding: 0 10px;
@@ -30,7 +30,7 @@ nav a {
 	line-height: 40px;
 	text-decoration: none;
 }
-nav a:hover { 
+nav a:hover {
   background-color: #566DD6;
 }
 ```
