@@ -191,12 +191,14 @@ if not death:
 <pre><code>def get_step():
     vals = input("Шаг вида 'a1 a2': ").split()
     step = [vals[0][0], int(vals[0][1]), vals[1][0], int(vals[1][1])]
+    if step[0] == step[2] and step[1] == step[3]:
+        print("Ход не засчитан: одинаковые клетки!")
     return step
 
 def trans_to_numbers(a1, a2):
     """Translate from letters to numbers"""
     trans = {'a': 1, 'b': 2, 'c': 3, 'd': 4,
-            'e': 5, 'f': 6, 'g': 7, 'h': 8}
+             'e': 5, 'f': 6, 'g': 7, 'h': 8}
     return trans[a1], trans[a2]
 
 def rook(a1, b1, a2, b2):
@@ -218,15 +220,36 @@ def knight(a1, b1, a2, b2):
 
 def bishop(a1, b1, a2, b2):
     """Слон"""
+    if abs(a1 - a2) == abs(b1 - b2):
+        step = True
+    else:
+        step = False
+    return step
 
 def queen(a1, b1, a2, b2):
     """Ферзь"""
+    if abs(a1 - a2) == abs(b1 - b2) or \
+      (a1 == a2 and b1 != b2) or (b1 == b2 and a1 != a2):
+        step = True
+    else:
+        step = False
+    return step
 
-def king():
+def king(a1, b1, a2, b2):
     """Король"""
+    if (abs(a1 - a2) in (0, 1) and abs(b1 - b2) in (0, 1):
+        step = True
+    else:
+        step = False
+    return step
 
-def pawn():
+def pawn(a1, b1, a2, b2):
     """Пешка"""
+    if (b1 = 2 and b2 in (3, 4)) or (b1 = 7 and b2 in (5, 6)):
+        step = True
+    else:
+        step = False
+    return step
 
 a1, b1, a2, b2 = get_step()
 print(a1, b1, a2, b2)
@@ -234,6 +257,14 @@ a1, a2 = trans_to_numbers(a1, a2)
 step = rook(a1, b1, a2, b2)
 print(step)
 step = knight(a1, b1, a2, b2)
+print(step)
+step = bishop(a1, b1, a2, b2)
+print(step)
+step = queen(a1, b1, a2, b2)
+print(step)
+step = king(a1, b1, a2, b2)
+print(step)
+step = pawn(a1, b1, a2, b2)
 print(step)
 </code></pre>
 
