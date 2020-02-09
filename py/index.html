@@ -203,7 +203,8 @@ def trans_to_numbers(a1, a2):
 
 def rook(a1, b1, a2, b2):
     """Ладья"""
-    if (a1 == a2 and b1 != b2) or (b1 == b2 and a1 != a2):
+    if (a1 == a2 and b1 != b2) or \
+       (b1 == b2 and a1 != a2):
         step = True
     else:
         step = False
@@ -229,7 +230,8 @@ def bishop(a1, b1, a2, b2):
 def queen(a1, b1, a2, b2):
     """Ферзь"""
     if abs(a1 - a2) == abs(b1 - b2) or \
-      (a1 == a2 and b1 != b2) or (b1 == b2 and a1 != a2):
+       (a1 == a2 and b1 != b2) or \
+       (b1 == b2 and a1 != a2):
         step = True
     else:
         step = False
@@ -237,7 +239,8 @@ def queen(a1, b1, a2, b2):
 
 def king(a1, b1, a2, b2):
     """Король"""
-    if (abs(a1 - a2) in (0, 1) and abs(b1 - b2) in (0, 1):
+    if abs(a1 - a2) in (0, 1) and \
+       abs(b1 - b2) in (0, 1):
         step = True
     else:
         step = False
@@ -245,7 +248,8 @@ def king(a1, b1, a2, b2):
 
 def pawn(a1, b1, a2, b2):
     """Пешка"""
-    if (b1 = 2 and b2 in (3, 4)) or (b1 = 7 and b2 in (5, 6)):
+    if (b1 == 2 and b2 in (3, 4)) or \
+       (b1 == 7 and b2 in (5, 6)):
         step = True
     else:
         step = False
@@ -255,17 +259,17 @@ a1, b1, a2, b2 = get_step()
 print(a1, b1, a2, b2)
 a1, a2 = trans_to_numbers(a1, a2)
 step = rook(a1, b1, a2, b2)
-print(step)
+print("Ладья", step)
 step = knight(a1, b1, a2, b2)
-print(step)
+print("Конь", step)
 step = bishop(a1, b1, a2, b2)
-print(step)
+print("Слон", step)
 step = queen(a1, b1, a2, b2)
-print(step)
+print("Ферзь", step)
 step = king(a1, b1, a2, b2)
-print(step)
+print("Король", step)
 step = pawn(a1, b1, a2, b2)
-print(step)
+print("Пешка", step)
 </code></pre>
 
 <hr>
