@@ -51,8 +51,7 @@ input.quizSubmit[type="submit"] {
   width:95px;
   border: 1px solid #5E5E5E;
   border-radius:5px;
-  
-  }
+}
 input.quizSubmit[type="submit"]:hover {
   color: #ffffff;
   background: #680f11;
@@ -69,7 +68,6 @@ table {
 .submitter {
   width:85px;
 }
-
 .hide {
   display:none;
 }
