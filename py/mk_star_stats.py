@@ -80,23 +80,39 @@ for (year, snstats_url) in snurls:
     all_sn_count += sn_num
     sn_amateur_count += sn_amateur
     if year == 1995:
-        snstats_txt += f"<li>До {year + 1} года открыто <b>{sn_num}</b> сверхновых</li>\n"
+        snstats_txt += f"<li>До {year + 1} года открыто <b>{sn_num}</b> сверхновых, <b>{sn_amateur_count}</b> &ndash; любителями.</li>\n"
     elif year != "all":
-        snstats_txt += f"<li>За {year} год открыто <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b> &ndash; любителями. Всего к концу года открыто <b>{all_sn_count}</b></li>\n"
+        snstats_txt += f"<li>За {year} год открыто <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b> &ndash; любителями. Всего к концу года открыто <b>{all_sn_count}</b>, <b>{sn_amateur_count}</b> &ndash; любителями.</li>\n"
 
 
 soup = get_soup(TNS_STATS_URL)
 all_transient, classified, spectra = get_tns(soup)
 
 snstats_txt += f"""</ul>
-<a href="{SNIMAGES_URL}snstatsall.html" target="_blank" rel="noopener noreferrer">Всего открыто</a> <b>{sn_num}</b> сверхновых, <b>{sn_amateur_count}</b>  &ndash; любителями.</p>
+<a href="{SNIMAGES_URL}snstatsall.html" target="_blank" rel="noopener noreferrer">Всего открыто</a> <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b>  &ndash; любителями.</p>
 
 <h2><a href="TNS_URL">Transient Name Server</a></h2>
 <a href="{TNS_STATS_URL}" target="_blank" rel="noopener noreferrer">статистика</a>:<br>
 <ul>
-<li>Всего транзиентов с 01.01.2016: {all_transient}</li>
-<li>Сверхновых классифицировано: {classified}</li>
-<li>Всего спектров: {spectra}</li>
+<li>Всего транзиентов с 01.01.2016: <b>{all_transient}</b></li>
+<li>Сверхновых классифицировано: <b>{classified}</b></li>
+<li>Всего спектров: <b>{spectra}</b></li>
+</ul>
+
+<h2>Ссылки</h2>
+<ul>
+<li><a href="http://rochesterastronomy.com/snimages/archives.html" target="_blank" rel="noopener noreferrer">Bright Supernova &ndash; Archives</a>,
+  <a href="https://en.wikipedia.org/wiki/List_of_supernovae" target="_blank" rel="noopener noreferrer">List of supernovae</a> wiki page.</li>
+<li><a href="http://ishivvers.com/maps/sne" target="_blank" rel="noopener noreferrer">A History of Supernova Discovery</a>: анимация.</li>
+<li><a href="https://en.wikipedia.org/wiki/SN_1885A" target="_blank" rel="noopener noreferrer">SN 1885A (S And)</a> в M31, открыта 17.08.1885, блеск в пике <b>5.85</b> (21.08.1985).</li>
+<li><a href="https://en.wikipedia.org/wiki/SN_1972E" target="_blank" rel="noopener noreferrer">SN 1972E</a> в NGC 5253, открыта (06)13.05.1972, блеск в пике ~<b>8.5</b>.</li>
+<li><a href="https://en.wikipedia.org/wiki/SN_1987A" target="_blank" rel="noopener noreferrer">SN 1987A</a> в Большом Магеллановом Облаке, открыта в ночь 23&ndash;24.02.1987, блеск в пике <b>2.9</b> (10.05.1987).
+  <a href="http://rochesterastronomy.com/snimages/sn1987a.html" target="_blank" rel="noopener noreferrer">Страница на rochesterastronomy.com/snimages/</a></li>
+<li><a href="https://en.wikipedia.org/wiki/SN_2011fe" target="_blank" rel="noopener noreferrer">SN 2011fe</a>, в M101, открыта 24.08.2011 по снимкам 22 и 23 августа 2011. Блеск в пике <b>9.9</b> (13.09.2011).</li>
+<li><a href="http://www.rochesterastronomy.org/snimages/lbvlist.html" target="_blank" rel="noopener noreferrer">List of supernova impostors</a> &ndash; LBV's (Luminous Blue Variables), <a href="https://en.wikipedia.org/wiki/Luminous_blue_variable">Luminous blue variable</a> wiki page.</li>
+<li><a href="https://sne.space/statistics/" target="_blank" rel="noopener noreferrer">The Open Supernova Catalog</a>.
+  The catalog includes metadata for 58,901 supernovae with 595,032 individual photometric detections and 22,472 individual spectra.<br>
+  372 <a href="https://sne.space/statistics/host-galaxies/" target="_blank" rel="noopener noreferrer">SNe in Milky Way</a>, 322 SNe in M83, 214 SNe in M33, 162 SNe in M31, 153 SNe in NGC 2403, 103 SNe in NGC 4214.</li>
 </ul>
 """
 
@@ -119,7 +135,7 @@ with open(PICKLE_SN_FILENAME, 'wb') as handle:
 soup = get_soup(SIMBAD_URL)
 SIMDATE, SIMSTAT = simbad_stats(soup)
 
-SIMBAD_HTML = f"""<p><a href="{SIMBAD_URL}">SIMBAD</a> <a href="https://en.wikipedia.org/wiki/SIMBAD">Astronomical Database</a> of objects beyond the Solar System &ndash; CDS (Strasbourg).<br>
+SIMBAD_HTML = f"""<hr><p><a href="{SIMBAD_URL}">SIMBAD</a> <a href="https://en.wikipedia.org/wiki/SIMBAD">Astronomical Database</a> of objects beyond the Solar System &ndash; CDS (Strasbourg).<br>
 Последнее обновление <b>{SIMDATE}</b> содержит:</p>
 <ul>
 <li>{SIMSTAT['objects']} объектов</li>
@@ -144,4 +160,4 @@ with open(PICKLE_FILENAME, 'wb') as handle:
     pickle.dump(simbstats_dict, handle)
 
 with open(HTML_FILENAME, 'w', encoding="utf8") as handle:
-    print(HEAD + SIMBAD_HTML + snstats_txt + TAIL, file=handle)
+    print(HEAD + snstats_txt + SIMBAD_HTML + TAIL, file=handle)
