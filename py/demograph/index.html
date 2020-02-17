@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Демография</title>
+  <link rel="stylesheet" href="../github.css">
+  <script src="../highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <p><a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BC%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F" target="_blank" rel="noopener noreferrer">Демография</a> &ndash;
+  наука о закономерностях воспроизводства населения, о зависимости его характера от социально-экономических и природных условий, миграции, изучающая численность, территориальное размещение и состав населения, их изменения, причины и следствия этих изменений и дающая рекомендации по их улучшению.</p>
+<p><a href="https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population" target="_blank" rel="noopener noreferrer">List of countries and dependencies by population</a>,
+<a href="https://www.worldometers.info/world-population/" target="_blank" rel="noopener noreferrer">Население Земли</a>,<br>
+<a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D1%81%D1%82%D1%80%D0%B0%D0%BD_%D0%BF%D0%BE_%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8E_%D1%80%D0%BE%D0%B6%D0%B4%D0%B0%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D0%B8" target="_blank" rel="noopener noreferrer">Список стран по уровню рождаемости</a>,
+<a href="https://en.wikipedia.org/wiki/List_of_sovereign_states_and_dependent_territories_by_birth_rate" target="_blank" rel="noopener noreferrer">List of sovereign states and dependent territories by birth rate</a>,
+<a href="" target="_blank" rel="noopener noreferrer"></a></p>
+  <h2>Демография мира</h2>
+<p>Список стран по населению:</p>
+<pre><code>demo_data = [
+[1, "China", 1_401_376_760, 18.0, "17 Feb 2020",],
+[2, "India", 1_358_740_950, 17.5, "17 Feb 2020",],
+[3, "United States", 329_300_074, 4.24, "17 Feb 2020",],
+[4, "Indonesia", 266_911_900, 3.44, "1 Jul 2019",],
+[5, "Pakistan", 218_653_520, 2.82, "17 Feb 2020",],
+[6, "Brazil", 211_138_128, 2.72, "17 Feb 2020",],
+[7, "Nigeria", 200_963_599, 2.59, "1 Jul 2019",],
+[8, "Bangladesh", 168_118_750, 2.16, "17 Feb 2020",],
+[9, "Russia", 146_745_098, 1.89, "1 Jan 2020",],
+[10, "Mexico", 126_577_691, 1.63, "1 Jul 2019",],
+[11, "Japan", 126_020_000, 1.62, "1 Jan 2020",],
+[12, "Philippines", 108_288_508, 1.39, "17 Feb 2020",],
+[13, "Egypt", 100_028_878, 1.29, "17 Feb 2020",],
+[14, "Ethiopia", 98_665_000, 1.27, "1 Jul 2019",],
+[15, "Vietnam", 96_208_984, 1.24, "1 Apr 2019",],
+[16, "DR Congo", 86_790_567, 1.12, "1 Jul 2019",],
+[17, "Iran", 83_208_295, 1.07, "17 Feb 2020",],
+[18, "Turkey", 83_154_997, 1.07, "31 Dec 2019",],
+[19, "Germany", 83_149_300, 1.07, "30 Sep 2019",],
+[20, "France", 67_064_000, 0.864, "1 Jan 2020",],
+[21, "Thailand", 66_471_167, 0.856, "17 Feb 2020",],
+[22, "United Kingdom", 66_435_600, 0.856, "30 Jun 2018",],
+[23, "Italy", 60_247_214, 0.776, "30 Sep 2019",],
+[24, "South Africa", 58_775_022, 0.757, "1 Jul 2019",],
+[25, "Tanzania", 55_890_747, 0.720, "1 Jul 2019",],
+[26, "Myanmar", 54_339_766, 0.700, "1 Jul 2019",],
+[27, "South Korea", 51_811_167, 0.667, "1 Jul 2019",],
+[28, "Colombia", 49_395_678, 0.636, "30 Jun 2019",],
+[29, "Kenya", 47_564_296, 0.612, "31 Aug 2019",],
+[30, "Spain", 47_100_396, 0.607, "1 Jul 2019",],
+[31, "Argentina", 44_938_712, 0.579, "1 Jul 2019",],
+[32, "Algeria", 43_000_000, 0.554, "1 Jan 2019",],
+[33, "Sudan", 42_274_565, 0.544, "17 Feb 2020",],
+[34, "Ukraine", 41_922_670, 0.540, "1 Dec 2019",],
+[35, "Uganda", 40_299_300, 0.519, "1 Jul 2019",],
+[36, "Iraq", 39_127_900, 0.504, "1 Jul 2019",],
+[37, "Poland", 38_386_000, 0.494, "30 Jun 2019",]
+]
+</code></pre>
+  <h2>Демография России</h2>
+  <p>На 1 января 2020 года, по оценке Росстата, в России <a href="https://www.vedomosti.ru/economics/news/2020/01/24/821403-rosstat" target="_blank" rel="noopener noreferrer">было</a> 146 745 098 постоянных жителей.</p>
+  <h2>Демография США</h2>
+  <p><a href="https://en.wikipedia.org/wiki/Demographics_of_the_United_States" target="_blank" rel="noopener noreferrer">Demographics of the United States</a>.<br>
+  The United States is the third-most populous country in the world, with an estimated population of 329,227,746 as of January 28, 2020.</p>
+<p><a href="https://en.wikipedia.org/wiki/Demographic_history_of_the_United_States" target="_blank" rel="noopener noreferrer">Demographic history of the United States</a>: In 1900, when the U.S. population was 76 million, there were 66.8 million Whites in the United States, representing 88% of the total population, 8.8 million Black Americans, with about 90% of them still living in Southern states, and slightly more than 500,000 Hispanics.</p>
+<p><a href="https://en.wikipedia.org/wiki/List_of_metropolitan_statistical_areas" target="_blank" rel="noopener noreferrer">List of metropolitan statistical areas</a></p>
+
+<h3>Портрет жителя США</h3>
+<p>Латиноамериканцы США: 56_510_571, из них мексиканцев 35_709_528 (2017), 59_763_631 (18.3%), White: 234_370_202 (73.0%), Black or African American: 40_610_815 (12.7%).<br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/CensusViewer_US_2010_Census_Latino_Population_as_Heatmap_by_Census_Tract.jpg/640px-CensusViewer_US_2010_Census_Latino_Population_as_Heatmap_by_Census_Tract.jpg" alt=""></p>
+<p>Религия: 48.9% протестанты, 23.0% католики, 18.2% неверующие.</p>
+</body>
+</html>
