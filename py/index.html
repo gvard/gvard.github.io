@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="github.css">
   <script src="highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
+  <script src="script.js"></script>
 </head>
 <body>
   <h1>gvard.github.io/py/</h1>
@@ -135,7 +136,7 @@ async      elif       if         or         yield</code></pre>
     стоит задача найти самый быстрый вид улиток из сотни тысяч уже известных. Провести чемпионат улиток, посчитав результаты с точностью до долей часа. Скорость сползания и заползания задать случайными числами.</li>
 </ol>
 </p>
-<pre><code>from random import randrange
+<pre><code id="snail">from random import randrange
 
 h, a, b = [float(l) for l in input("h, a, b через пробел: ").split()]
 while a &lt;= b:
@@ -162,6 +163,7 @@ if not death:
     hours = hours % 24
     print("Улитка доползет на", days, "день", hours, "час")
 </code></pre>
+<button onclick="copyCode('snail')">Скопировать код</button>
 
 
 <hr>
