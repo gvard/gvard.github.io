@@ -1,5 +1,6 @@
-var RANDUSR_URL = 'https://randomuser.me/api/';
-var REQRES_URL = 'https://reqres.in/api/products/3';
+const RANDUSR_URL = 'https://randomuser.me/api/';
+const REQRES_URL = 'https://reqres.in/api/products/3';
+const SW_URL = 'https://swapi.co/api/people/1/';
 
 function appendUsers(usersArray) {
   for (let i = 0; i < usersArray.results.length; i += 1) {
@@ -49,10 +50,17 @@ function showRes(res) {
   q.innerHTML = res.data.year;
   q.style.color = res.data.color;
 }
+function showLuke(res) {
+  let q = document.getElementById("sp");
+  q.innerHTML = `Имя: ${res.name}, рост: ${res.height}, вес: ${res.mass}, дата рождения: ${res.height}, цвет волос: ${res.hair_color}`;
+}
 function loadUsers(gender, num) {
   let url = RANDUSR_URL + `?results=${num}&gender=${gender}&email=emeline.leclercq@example.com`;
   loadReq(url, appendUsers);
 }
 function loadReqRes() {
   loadReq(REQRES_URL, showRes);
+}
+function loadSW() {
+  loadReq(SW_URL, showLuke);
 }
