@@ -3,6 +3,7 @@ import pickle
 import urllib.request
 
 from beautifulsoup_supply import TAIL, mk_head, get_soup
+from plot_supply import plot_bar
 
 
 HEAD = mk_head("Статистика звездных каталогов", script="") + "<body>\n"
@@ -72,6 +73,7 @@ snstats_txt = f"""<hr><h2><a href="{SNIMAGES_URL}">Статистика вспы
 <p><a href="{SNIMAGES_SNOTHER_URL}">Сверхновые до 1996 года</a>.</p>
 <ul>
 """
+years, sns = [], []
 all_sn_count, sn_amateur_count = 0, 0
 for (year, snstats_url) in snurls:
     soup = get_soup(snstats_url)
@@ -81,15 +83,32 @@ for (year, snstats_url) in snurls:
     sn_amateur_count += sn_amateur
     if year == 1995:
         snstats_txt += f"<li>До {year + 1} года открыто <b>{sn_num}</b> сверхновых, <b>{sn_amateur_count}</b> &ndash; любителями.</li>\n"
+        years.append(year)
+        sns.append(sn_num)
     elif year != "all":
         snstats_txt += f"<li>За {year} год открыто <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b> &ndash; любителями. Всего к концу года открыто <b>{all_sn_count}</b>, <b>{sn_amateur_count}</b> &ndash; любителями.</li>\n"
+        years.append(year)
+        sns.append(sn_num)
 
+labels = ('Статистика открытий сверхновых по годам', 'Год', 'Открытий СН за год')
+tmp_filename = 'snstats_plot_.svg'
+filename = 'snstats_plot.svg'
+stars_dir = os.path.join(os.pardir, 'stars')
+py_dir = os.path.join(os.pardir, 'py')
+tmp_pth = os.path.join(stars_dir, tmp_filename)
+pth = os.path.join(os.pardir, 'stars', filename)
+xlim = (1994.5, 2020.5)
+plot_bar(years, sns, labels, tmp_pth, xlim)
+os.chdir(stars_dir)
+os.system(f'scour -i {tmp_filename} -o {filename} --enable-viewboxing --enable-id-stripping --enable-comment-stripping --shorten-ids --indent=none')
+os.chdir(py_dir)
 
 soup = get_soup(TNS_STATS_URL)
 all_transient, classified, spectra = get_tns(soup)
 
 snstats_txt += f"""</ul>
 <a href="{SNIMAGES_URL}snstatsall.html" target="_blank" rel="noopener noreferrer">Всего открыто</a> <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b>  &ndash; любителями.</p>
+<br><img src="snstats_plot.svg">
 
 <h2><a href="TNS_URL">Transient Name Server</a></h2>
 <a href="{TNS_STATS_URL}" target="_blank" rel="noopener noreferrer">статистика</a>:<br>
