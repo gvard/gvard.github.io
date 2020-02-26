@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os
 
 from beautifulsoup_supply import TAIL, mk_head, get_soup
@@ -21,7 +23,7 @@ def get_nanosats(soup):
 
 soup = get_soup(NANOSATS_URL)
 DATE, LIS = get_nanosats(soup)
-NANOSATS_HTML = f"""<h2>Наноспутники</h2>
+NANOSATS_HTML = f"""<h2><a href="https://en.wikipedia.org/wiki/Small_satellite#Nanosatellites" target="_blank" rel="noopener noreferrer">Наноспутники</a></h2>
 <p><a href="{NANOSATS_URL}">База данных наноспутников</a> &ndash; до 10 кг для нестандартных типов и до 27U (30&ndash;40 кг) для
 <a href="https://www.nanosats.eu/cubesat">кубсатов</a>. Последнее обновление: {DATE}.</p>
 <ul>
