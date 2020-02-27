@@ -4,16 +4,19 @@ with solar system statistics.
 
 import pickle
 import os
+import json
+import urllib.request
 
 from beautifulsoup_supply import TAIL, mk_head, get_soup
 
 
-HEAD = mk_head("Статистика тел Солнечной системы", script="") + "<body>\n"
+HEAD = mk_head("Статистика тел Солнечной системы", script="nea_size_bin_chart.js") + "<body>\n"
 PICKLE_FILENAME = "radar_obj_names.pickle"
 ECHO_URL = "https://echo.jpl.nasa.gov/asteroids/"
 MPC_URL = "https://minorplanetcenter.net/mpc/summary"
 MP_NAMES_URL = "https://minorplanetcenter.net/iau/lists/MPNames.html"
 SSD_URL = "https://ssd.jpl.nasa.gov/?body_count"
+NEO_SIZE_BIN_URL = 'https://cneos.jpl.nasa.gov/stats/size_bin.json'
 JOHNSTON_ASTEROID_MOONS_URL = "http://www.johnstonsarchive.net/astro/asteroidmoons.html"
 JOHNSTON_SOLSYS_URL = "http://www.johnstonsarchive.net/astro/sslistnew.html"
 
@@ -147,6 +150,11 @@ COM_ALL = COMETS_SSNEW.split("(")
 COMETS_ALL = int(COM_ALL[0].replace(",", ""))
 COMNUM, PROVDES, NODESIGNAT = COM_ALL[1].split(", ")
 
+neo_size_bin_obj = urllib.request.urlopen(NEO_SIZE_BIN_URL)
+neo_size_bin = json.load(neo_size_bin_obj)
+NEO_DATE, NEO_DATA = neo_size_bin.get('dataDate'), neo_size_bin.get('data')
+NEO_DATEDATA = '{ "dataDate": "' + NEO_DATE + '", "data": ' + str(NEO_DATA) + ' }'
+
 MPC_STATS = f'''<h2>Статистика тел Солнечной системы</h2>
 <p><a href="https://minorplanetcenter.net/mpc/summary">Центра Малых планет</a></p>
 <ul>
@@ -165,7 +173,13 @@ MPC_STATS = f'''<h2>Статистика тел Солнечной систем�
 <img alt="Distribution of the Minor Planets: Semimajor Axis" src="https://minorplanetcenter.net/iau/plot/OrbEls01.gif"><br>
 <a href="https://en.wikipedia.org/wiki/Kirkwood_gap" target="_blank" rel="noopener noreferrer"><img alt="Diagram showing inner, middle and outer main-belt asteroids" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Kirkwood_Gaps.svg/994px-Kirkwood_Gaps.svg.png"></a>
 </p><br>
-<img src="nea_size_bin_chart.svg" alt="NEA size bin chart"><br>
+<div id="nea_size_bin_chart" style="width:600px; height:400px;"></div>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://cneos.jpl.nasa.gov/js/vendor/highcharts/highcharts.js"></script>
+  <script src="https://cneos.jpl.nasa.gov/js/vendor/highcharts/exporting.js"></script>
+  <script src="https://cneos.jpl.nasa.gov/js/vendor/highcharts/themes/grid.js"></script>
+  <script>mkChart({NEO_DATEDATA});</script>
+<br>
 <a href="{JOHNSTON_SOLSYS_URL}">Альтернативная статистика Johnston's Archive</a>, {UPD}:
 <ul>
 <li>Астероидов*: {ASTER_SSNEW},</li>
