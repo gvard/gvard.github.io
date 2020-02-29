@@ -78,6 +78,16 @@ console.log(screenWidth, screenHeight);</code></pre>
 // true
 NaN == NaN
 // false
+isNaN(NaN)
+// true
+isNaN('foo')
+// true
+Number.isNaN('foo')
+// false
+typeof NaN === "number"
+// true
+typeof null === 'object'
+// true
 true ? 1 : 2
 // 1
 false ? 1 : 2
@@ -92,10 +102,63 @@ null == 0
 // false
 null == undefined
 // true
+0 == " \t\r\n "
+// true
+"" != "0"
+// true
 
 // Присваивание значения переменной:
 var ლ_ಠ益ಠ_ლ = 42;
 console.log(ლ_ಠ益ಠ_ლ);</code></pre>
+</section>
+
+<section>
+<h2><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords" target="_blank" rel="noopener noreferrer">Ключевые слова</a></h2>
+<pre><code class="js" style="column-count: 4;">break
+case
+catch
+class
+const
+continue
+debugger
+default
+delete
+do
+else
+export
+extends
+finally
+for
+function
+if
+import
+in
+instanceof
+new
+return
+super
+switch
+this
+throw
+try
+typeof
+var
+void
+while
+with
+yield
+implements
+interface
+let
+package
+private
+protected
+public
+static
+await
+null
+true
+false</code></pre>
 </section>
 
 <section>
@@ -174,6 +237,7 @@ console.log(ლ_ಠ益ಠ_ლ);</code></pre>
   <li><a href="https://stackoverflow.com/a/43351469" target="_blank" rel="noopener noreferrer">How to round float numbers in javascript</a>,
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Number/toPrecision" target="_blank" rel="noopener noreferrer">Number.prototype.toPrecision()</a></li>
   <li><a href="https://en.wikipedia.org/wiki/Help:Sorting" target="_blank" rel="noopener noreferrer">Сортировка таблиц в википедии</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features" target="_blank" rel="noopener noreferrer">JS Deprecated and obsolete features</a>,</li>
   <li><a href="https://learn.jquery.com/jquery-ui/getting-started/" target="_blank" rel="noopener noreferrer">Getting Started with jQuery UI</a></li>
   <li><a href="https://www.freecodecamp.org/news/the-10-github-repos-people-mention-the-most-in-freecodecamps-main-chat-room-189750600fa4/" target="_blank" rel="noopener noreferrer">freeCodeCamp/freeCodeCamp</a> and other GitHub repos</li>
   <li><a href="https://habr.com/ru/post/483118/" target="_blank" rel="noopener noreferrer">Что добавят в JavaScript уже в 2020 году</a></li>
