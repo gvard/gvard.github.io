@@ -17,6 +17,7 @@ MPC_URL = "https://minorplanetcenter.net/mpc/summary"
 MP_NAMES_URL = "https://minorplanetcenter.net/iau/lists/MPNames.html"
 SSD_URL = "https://ssd.jpl.nasa.gov/?body_count"
 NEO_SIZE_BIN_URL = 'https://cneos.jpl.nasa.gov/stats/size_bin.json'
+NEOS_STATS_URL = 'https://cneos.jpl.nasa.gov/stats/totals.html'
 JOHNSTON_ASTEROID_MOONS_URL = "http://www.johnstonsarchive.net/astro/asteroidmoons.html"
 JOHNSTON_SOLSYS_URL = "http://www.johnstonsarchive.net/astro/sslistnew.html"
 
@@ -168,7 +169,7 @@ MPC_STATS = f'''<h2>Статистика тел Солнечной систем�
 <li>{MBA} астероидов основного пояса, {HILDAS} <a href="https://en.wikipedia.org/wiki/Hilda_asteroid">астероидов семейства Хильды</a>, {JUP_TROJANS} <a href="https://en.wikipedia.org/wiki/Jupiter_trojan">троянцев Юпитера</a>, {DISTANT} объектов за орбитой Юпитера;</li>
 <li>{NEA} <a href="https://en.wikipedia.org/wiki/Near-Earth_object#Near-Earth_asteroids">околоземных астероидов</a>, из них {NEA1KM} больше 1 км, {PHA} потенциально опасных астероидов, {NEC} <a href="https://en.wikipedia.org/wiki/Near-Earth_object#Near-Earth_comets">околоземных комет</a>.</li>
 </ul>
-<p><b>Всего в статистике околоземных астероидов от {NEO_DATE}: {sum(NEO_DATA)}</b></p><br>
+<p><b>Всего в <a href="{NEOS_STATS_URL}" target="_blank" rel="noopener noreferrer">статистике околоземных астероидов</a> от {NEO_DATE}: {sum(NEO_DATA)}</b></p><br>
 <div id="nea_size_bin_chart" style="width:600px; height:400px;"></div>
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://cneos.jpl.nasa.gov/js/vendor/highcharts/highcharts.js"></script>
