@@ -172,7 +172,8 @@ MPC_STATS = f'''<h2>Статистика тел Солнечной систем�
 Распределение малых планет, количество в зависимости от большой полуоси орбиты:<br>
 <img alt="Distribution of the Minor Planets: Semimajor Axis" src="https://minorplanetcenter.net/iau/plot/OrbEls01.gif"><br>
 <a href="https://en.wikipedia.org/wiki/Kirkwood_gap" target="_blank" rel="noopener noreferrer"><img alt="Diagram showing inner, middle and outer main-belt asteroids" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Kirkwood_Gaps.svg/994px-Kirkwood_Gaps.svg.png"></a>
-</p><br>
+</p>
+<p><b>Всего в статистике околоземных астероидов от {NEO_DATE}: {sum(NEO_DATA)}</b></p><br>
 <div id="nea_size_bin_chart" style="width:600px; height:400px;"></div>
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://cneos.jpl.nasa.gov/js/vendor/highcharts/highcharts.js"></script>
