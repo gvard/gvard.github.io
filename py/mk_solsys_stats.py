@@ -46,8 +46,8 @@ ECHO_JPL_STATS = f"""<h2>Астероиды и кометы, измеренны�
 <li>{CO} комет.
 </ul>
 <a href="https://echo.jpl.nasa.gov/~lance/">Near-Earth Asteroid Files</a>:<br>
-<img src="https://echo.jpl.nasa.gov/~lance/radar_detected_neas_summary/nea.radar.history.jpg"><br>
-<img src="https://echo.jpl.nasa.gov/~lance/radar_detected_neas_summary/asteroid.radar.history.jpg"><br>
+<img src="https://echo.jpl.nasa.gov/~lance/radar_detected_neas_summary/nea.radar.history.jpg" alt=""><br>
+<img src="https://echo.jpl.nasa.gov/~lance/radar_detected_neas_summary/asteroid.radar.history.jpg" alt=""><br>
 """
 
 with open(PICKLE_FILENAME, 'wb') as handle:
@@ -168,11 +168,6 @@ MPC_STATS = f'''<h2>Статистика тел Солнечной систем�
 <li>{MBA} астероидов основного пояса, {HILDAS} <a href="https://en.wikipedia.org/wiki/Hilda_asteroid">астероидов семейства Хильды</a>, {JUP_TROJANS} <a href="https://en.wikipedia.org/wiki/Jupiter_trojan">троянцев Юпитера</a>, {DISTANT} объектов за орбитой Юпитера;</li>
 <li>{NEA} <a href="https://en.wikipedia.org/wiki/Near-Earth_object#Near-Earth_asteroids">околоземных астероидов</a>, из них {NEA1KM} больше 1 км, {PHA} потенциально опасных астероидов, {NEC} <a href="https://en.wikipedia.org/wiki/Near-Earth_object#Near-Earth_comets">околоземных комет</a>.</li>
 </ul>
-<p><a href="https://minorplanetcenter.net/iau/lists/t_tnos.html">Список транснептуновых объектов</a><br>
-Распределение малых планет, количество в зависимости от большой полуоси орбиты:<br>
-<img alt="Distribution of the Minor Planets: Semimajor Axis" src="https://minorplanetcenter.net/iau/plot/OrbEls01.gif"><br>
-<a href="https://en.wikipedia.org/wiki/Kirkwood_gap" target="_blank" rel="noopener noreferrer"><img alt="Diagram showing inner, middle and outer main-belt asteroids" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Kirkwood_Gaps.svg/994px-Kirkwood_Gaps.svg.png"></a>
-</p>
 <p><b>Всего в статистике околоземных астероидов от {NEO_DATE}: {sum(NEO_DATA)}</b></p><br>
 <div id="nea_size_bin_chart" style="width:600px; height:400px;"></div>
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -181,6 +176,12 @@ MPC_STATS = f'''<h2>Статистика тел Солнечной систем�
   <script src="https://cneos.jpl.nasa.gov/js/vendor/highcharts/themes/grid.js"></script>
   <script>mkChart({NEO_DATEDATA});</script>
 <br>
+<p>Распределение малых планет, количество в зависимости от большой полуоси орбиты:<br>
+<img src="https://minorplanetcenter.net/iau/plot/OrbEls01.gif" alt="Distribution of the Minor Planets: Semimajor Axis"><br>
+<a href="https://en.wikipedia.org/wiki/Kirkwood_gap" target="_blank" rel="noopener noreferrer">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Kirkwood_Gaps.svg/994px-Kirkwood_Gaps.svg.png" alt="Diagram showing inner, middle and outer main-belt asteroids"></a>
+</p>
+<p><a href="https://minorplanetcenter.net/iau/lists/t_tnos.html">Список транснептуновых объектов</a></p><br>
 <a href="{JOHNSTON_SOLSYS_URL}">Альтернативная статистика Johnston's Archive</a>, {UPD}:
 <ul>
 <li>Астероидов*: {ASTER_SSNEW},</li>
@@ -205,7 +206,7 @@ SSD_NUMBERS, LAST_UPD = get_ssdtats(soup)
 SATELLITES, COMETS, COM_NUM, COM_UNNUM, ASTEROIDS, AST_NUM, AST_UNNUM = SSD_NUMBERS
 SSD_STATS = f'''<h2>Статистика тел Солнечной системы</h2>
 <p><a href="https://ssd.jpl.nasa.gov/?body_count">группы динамики Солнечной системы</a>.
-Последнее обновление: {LAST_UPD}.
+Последнее обновление: {LAST_UPD}.</p>
 <ul>
 <li>{SATELLITES} спутников планет (включая Луну и спутники Плутона);</li>
 <li>{COMETS} комет, {COM_NUM} numbered, {COM_UNNUM} unnumbered;</li>

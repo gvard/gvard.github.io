@@ -31,7 +31,7 @@ URANUS_MOONS = ['Ariel_(moon)', 'Umbriel_(moon)', 'Titania_(moon)', 'Oberon_(moo
 NEPTUNE_MOONS = ['Triton_(moon)', 'Nereid_(moon)', 'Naiad_(moon)', 'Thalassa_(moon)',
     'Despina_(moon)', 'Galatea_(moon)', 'Larissa_(moon)', 'Proteus_(moon)']
 PLUTO_MOONS = ['Charon_(moon)', 'Nix_(moon)', 'Hydra_(moon)', 'Kerberos_(moon)', 'Styx_(moon)']
-TNOS = ["(225088)_2007_OR10", '50000_Quaoar', '90377_Sedna', '(307261)_2002_MS4', '90482_Orcus',
+TNOS = ["225088_Gonggong", '50000_Quaoar', '90377_Sedna', '(307261)_2002_MS4', '90482_Orcus',
     '120347_Salacia', '15760_Albion', '486958_Arrokoth']
 NEOS = ["433_Eros", "1566_Icarus", "1620_Geographos", "1627_Ivar", "1685_Toro", "3200_Phaethon",
     "4179_Toutatis", "4769_Castalia", "6489_Golevka", '25143_Itokawa', "(29075)_1950_DA", "(53319)_1999_JM8",
@@ -46,7 +46,7 @@ ASTEROIDS = ["2_Pallas", "3_Juno", "4_Vesta", "5_Astraea", "6_Hebe", "7_Iris", "
 
 ALLBODIES = ['Sun'] + PLANETS + DWARFPLANETS + COMETS + MOONS + TNOS + NEOS + ASTEROIDS
 
-BODIES_SIZE_ORDERED = ["Sun", "Jupiter", "Saturn", "Uranus", "Neptune", "Earth", "Venus", "Mars", "Ganymede_(moon)", "Titan_(moon)", "Mercury_(planet)", "Callisto_(moon)", "Io_(moon)", "Moon", "Europa_(moon)", "Triton_(moon)", "Pluto", "Eris_(dwarf_planet)", "Haumea_(dwarf_planet)", "Titania_(moon)", "Rhea_(moon)", "Oberon_(moon)", "Iapetus_(moon)", "Makemake_(dwarf_planet)", "(225088)_2007_OR10", "Charon_(moon)", "Umbriel_(moon)", "Ariel_(moon)", "Dione_(moon)", "50000_Quaoar", "Tethys_(moon)", "90377_Sedna", "Ceres_(dwarf_planet)", "(307261)_2002_MS4", "90482_Orcus", "120347_Salacia", "4_Vesta", "2_Pallas", "Enceladus_(moon)", "Miranda_(moon)", "10_Hygiea", "Proteus_(moon)", "Mimas_(moon)", "Nereid_(moon)", "704_Interamnia", "511_Davida", "Hyperion_(moon)", "3_Juno", "16_Psyche", "7_Iris", "Phoebe_(moon)", "Larissa_(moon)", "6_Hebe", "Janus_(moon)", "15760_Albion", "Amalthea_(moon)", "Puck_(moon)", "8_Flora", "5_Astraea", "Epimetheus_(moon)", "Thebe_(moon)", "21_Lutetia", "Juliet_(moon)", "Prometheus_(moon)", "Pandora_(moon)", "253_Mathilde", "Metis_(moon)", "Hydra_(moon)", "Nix_(moon)", "Helene_(moon)", "486958_Arrokoth", "243_Ida", "Atlas_(moon)", "Pan_(moon)", "Telesto_(moon)", "Phobos_(moon)", "Calypso_(moon)", "433_Eros", 'Adrastea_(moon)', "Kerberos_(moon)", "Deimos_(moon)", "951_Gaspra", "Halley's_Comet", "Styx_(moon)", "Daphnis_(moon)", "Tempel_1", "3200_Phaethon", "19P/Borrelly", "2867_Šteins", "5535_Annefrank", 'Pallene_(moon)', "81P/Wild", "67P/Churyumov–Gerasimenko", "4179_Toutatis", "Methone_(moon)", "Polydeuces_(moon)", "1620_Geographos", "9969_Braille", "Dactyl", "66391_Moshup", "103P/Hartley", "(29075)_1950_DA", "162173_Ryugu", "2014_JO25", "65803_Didymos", "Aegaeon_(moon)", "2015_TB145", "101955_Bennu", "(436724)_2011_UW158", "25143_Itokawa", "99942_Apophis", "2017_BQ6"]
+BODIES_SIZE_ORDERED = ["Sun", "Jupiter", "Saturn", "Uranus", "Neptune", "Earth", "Venus", "Mars", "Ganymede_(moon)", "Titan_(moon)", "Mercury_(planet)", "Callisto_(moon)", "Io_(moon)", "Moon", "Europa_(moon)", "Triton_(moon)", "Pluto", "Eris_(dwarf_planet)", "Haumea_(dwarf_planet)", "Titania_(moon)", "Rhea_(moon)", "Oberon_(moon)", "Iapetus_(moon)", "Makemake_(dwarf_planet)", "225088_Gonggong", "Charon_(moon)", "Umbriel_(moon)", "Ariel_(moon)", "Dione_(moon)", "50000_Quaoar", "Tethys_(moon)", "90377_Sedna", "Ceres_(dwarf_planet)", "(307261)_2002_MS4", "90482_Orcus", "120347_Salacia", "4_Vesta", "2_Pallas", "Enceladus_(moon)", "Miranda_(moon)", "10_Hygiea", "Proteus_(moon)", "Mimas_(moon)", "Nereid_(moon)", "704_Interamnia", "511_Davida", "Hyperion_(moon)", "3_Juno", "16_Psyche", "7_Iris", "Phoebe_(moon)", "Larissa_(moon)", "6_Hebe", "Janus_(moon)", "15760_Albion", "Amalthea_(moon)", "Puck_(moon)", "8_Flora", "5_Astraea", "Epimetheus_(moon)", "Thebe_(moon)", "21_Lutetia", "Juliet_(moon)", "Prometheus_(moon)", "Pandora_(moon)", "253_Mathilde", "Metis_(moon)", "Hydra_(moon)", "Nix_(moon)", "Helene_(moon)", "486958_Arrokoth", "243_Ida", "Atlas_(moon)", "Pan_(moon)", "Telesto_(moon)", "Phobos_(moon)", "Calypso_(moon)", "433_Eros", 'Adrastea_(moon)', "Kerberos_(moon)", "Deimos_(moon)", "951_Gaspra", "Halley's_Comet", "Styx_(moon)", "Daphnis_(moon)", "Tempel_1", "3200_Phaethon", "19P/Borrelly", "2867_Šteins", "5535_Annefrank", 'Pallene_(moon)', "81P/Wild", "67P/Churyumov–Gerasimenko", "4179_Toutatis", "Methone_(moon)", "Polydeuces_(moon)", "1620_Geographos", "9969_Braille", "Dactyl", "66391_Moshup", "103P/Hartley", "(29075)_1950_DA", "162173_Ryugu", "2014_JO25", "65803_Didymos", "Aegaeon_(moon)", "2015_TB145", "101955_Bennu", "(436724)_2011_UW158", "25143_Itokawa", "99942_Apophis", "2017_BQ6"]
 
 BODIES_RU_NAMES = {
   "Sun": "Солнце",
@@ -73,7 +73,7 @@ BODIES_RU_NAMES = {
   "Oberon_(moon)": "Оберон",
   "Iapetus_(moon)": "Япет",
   "Makemake_(dwarf_planet)": "Макемаке",
-  "(225088)_2007_OR10": "2007 OR10",
+  "225088_Gonggong": "Гун-гун",
   "Charon_(moon)": "Харон",
   "Umbriel_(moon)": "Умбриэль",
   "Ariel_(moon)": "Ариэль",
@@ -526,8 +526,8 @@ obj_data = [
     "Makemake.jpg"
   ],
   [
-    "(225088) 2007 OR10",
-    "2007 OR10",
+    "225088_Gonggong",
+    "Гун-гун",
     615,
     "1.75E21",
     "17.07.2007",
@@ -537,7 +537,7 @@ obj_data = [
       "dot",
       "he"
     ],
-    "2007OR10.jpg"
+    "Gonggong.jpg"
   ],
   [
     "Charon (moon)",
