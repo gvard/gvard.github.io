@@ -1,9 +1,7 @@
-PLANETS = ['Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Earth', 'Venus', 'Mars',
-    'Mercury_(planet)']
-DWARFPLANETS = ['Haumea', 'Makemake', "Ceres_(dwarf_planet)",
-    "Pluto", "Eris_(dwarf_planet)"]
+PLANETS = ['Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Earth', 'Venus', 'Mars', 'Mercury_(planet)']
+DWARFPLANETS = ['Haumea', 'Makemake', "Ceres_(dwarf_planet)", "Pluto", "Eris_(dwarf_planet)"]
 COMETS = ["Halley's_Comet", 'Tempel_1', '19P/Borrelly', '81P/Wild', '103P/Hartley',
-    "67P/Churyumov–Gerasimenko", "26P/Grigg–Skjellerup", "21P/Giacobini–Zinner"] # 1P/Halley
+    "67P/Churyumov–Gerasimenko", "26P/Grigg–Skjellerup", "21P/Giacobini–Zinner"]
 MOONS = ['Ganymede_(moon)', 'Titan_(moon)', 'Callisto_(moon)', 'Io_(moon)', 'Moon',
     'Europa_(moon)', 'Triton_(moon)', 'Titania_(moon)', 'Rhea_(moon)', 'Oberon_(moon)',
     'Iapetus_(moon)', 'Charon_(moon)', 'Umbriel_(moon)', 'Ariel_(moon)', 'Dione_(moon)',
@@ -13,7 +11,7 @@ MOONS = ['Ganymede_(moon)', 'Titan_(moon)', 'Callisto_(moon)', 'Io_(moon)', 'Moo
     'Juliet_(moon)', 'Prometheus_(moon)', 'Pandora_(moon)', 'Metis_(moon)', 'Hydra_(moon)',
     'Nix_(moon)', 'Helene_(moon)', 'Atlas_(moon)', 'Pan_(moon)', 'Telesto_(moon)', 'Phobos_(moon)',
     'Calypso_(moon)', 'Kerberos_(moon)', 'Deimos_(moon)', 'Styx_(moon)', 'Daphnis_(moon)',
-    'Methone_(moon)', 'Pallene_(moon)', 'Polydeuces_(moon)', "Aegaeon (moon)"]
+    'Methone_(moon)', 'Pallene_(moon)', 'Polydeuces_(moon)', "Aegaeon_(moon)"]
 EARTH_MOONS = ['Moon']
 MARS_MOONS = ['Phobos_(moon)', 'Deimos_(moon)']
 JUPITER_MOONS = ['Io_(moon)', 'Europa_(moon)', 'Ganymede_(moon)', 'Callisto_(moon)',
@@ -181,8 +179,9 @@ PARAMS = ['named_after', 'mp_category', 'observation_arc', 'semimajor', 'period'
     'satellites', 'mean_diameter', 'surface_area', 'volume', 'mass', 'density', 'rotation',
         'abs_magnitude', 'mean_radius', 'rot_velocity', 'magnitude', 'angular_size']
 
-STARS = ["Betelgeuse", "Antares", "Altair", "Vega", "Alderamin", "Regulus", "Algol",
-    "Zeta Andromedae", "R_Doradus", "Mira", "T_Leporis", "Pi1_Gruis"]
+STARS = ["Betelgeuse", "R_Doradus", "Mira", "Antares", "Pi1_Gruis", "Alpha_Centauri", "T_Leporis",
+    "Altair", "Zeta_Andromedae", "Epsilon_Aurigae", "Alpha_Cephei", "Regulus", "Algol", "Vega",
+    "Proxima_Centauri"]
 STARS_PARAMS = ["radius", "mass", "temperature", "gravity", "luminosity", "age_myr"]
 
 obj_data = [
