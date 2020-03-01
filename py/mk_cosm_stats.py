@@ -1,16 +1,19 @@
 # -*- coding: utf-8 -*-
 
 import os
+import json
+import urllib.request
 
 from beautifulsoup_supply import TAIL, mk_head, get_soup
 
-
+DEBUG = False
 HEAD = mk_head("Космонавтика: статистика", script="") + "<body>\n"
 N2YO_URL = "https://www.n2yo.com/"
 SPACEFLIGHT_URL = "https://www.worldspaceflight.com/bios/stats.php"
 SPACEFLIGHT1_URL = "https://www.worldspaceflight.com/bios/stats1.php"
 CURRENTLY_IN_SPACE_URL = "https://www.worldspaceflight.com/bios/currentlyinspace.php"
 NANOSATS_URL = "https://www.nanosats.eu/"
+ASTROS_URL = 'http://api.open-notify.org/astros.json'
 
 
 def get_n2yo(soup):
@@ -50,6 +53,16 @@ def get_spaceflight(soup):
 
 soup = get_soup(SPACEFLIGHT_URL)
 MANYR_NUM, USAF_NUM, FAI_NUM, COSMONAUT_NUM = get_spaceflight(soup)
+
+astros_obj = urllib.request.urlopen(ASTROS_URL)
+astros = json.load(astros_obj)
+if DEBUG:
+    print('URL:', astros_obj.geturl(), 'HTTP code:', astros_obj.getcode())
+
+ASTROS_LST = astros.get('people')
+ASTROS_STR = ", ".join([astr.get('name') for astr in ASTROS_LST])
+
+COSM_NUM = 3
 SPACEFLIGHT_HTML = f"""<h2>Пилотируемая космонавтика</h2>
 <p><a href="{SPACEFLIGHT_URL}">Статистика</a> <a href="{SPACEFLIGHT1_URL}">пилотируемой космонавтики</a>
 <ul>
@@ -60,6 +73,7 @@ SPACEFLIGHT_HTML = f"""<h2>Пилотируемая космонавтика</h2
 <li>Людей, побывавших в космосе (согласно классификации ВВС США, при высоте полета более 80 км 467 м)
 &ndash; <b>{USAF_NUM}</b></li>
 <li>Время, проведенное людьми в космосе &ndash; свыше <b>{MANYR_NUM}</b> человеко-лет.</li>
+<li>В космосе <b>{len(ASTROS_LST)}</b> космонавта: {ASTROS_STR}.</li>
 </ul>
 """
 
