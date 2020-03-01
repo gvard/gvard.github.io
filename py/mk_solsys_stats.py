@@ -10,6 +10,7 @@ import urllib.request
 from beautifulsoup_supply import TAIL, mk_head, get_soup
 
 
+DEBUG = False
 HEAD = mk_head("Статистика тел Солнечной системы", script="nea_size_bin_chart.js") + "<body>\n"
 PICKLE_FILENAME = "radar_obj_names.pickle"
 ECHO_URL = "https://echo.jpl.nasa.gov/asteroids/"
@@ -22,7 +23,7 @@ JOHNSTON_ASTEROID_MOONS_URL = "http://www.johnstonsarchive.net/astro/asteroidmoo
 JOHNSTON_SOLSYS_URL = "http://www.johnstonsarchive.net/astro/sslistnew.html"
 
 
-def get_echo(soup):
+def get_echo(soup, debug=False):
     """Parse html, get date of last page update,
     statistics of radar-detected asteroids."""
     number = int(soup.findAll("h1")[0].text.split()[0])
@@ -32,12 +33,13 @@ def get_echo(soup):
     statstr = soup.findAll("th")[:4]
     mba_nea_co = [int(f.text.strip().split()[0]) for f in statstr]
     radar_obj_names = [f.text.strip() for f in soup.findAll("b")]
-    print(len(radar_obj_names)-1, number, sum(mba_nea_co))
+    if debug:
+        print(len(radar_obj_names)-1, number, sum(mba_nea_co))
     return number, mba_nea_co, radar_obj_names, last_update
 
 
 soup = get_soup(ECHO_URL)
-NUMBER, (MBA, NEA, CO), RADAR_OBJ_NAMES, (YR, MON, DAY) = get_echo(soup)
+NUMBER, (MBA, NEA, CO), RADAR_OBJ_NAMES, (YR, MON, DAY) = get_echo(soup, debug=DEBUG)
 ECHO_JPL_STATS = f"""<h2>Астероиды и кометы, измеренные при помощи радара</h2>
 <p><a href="{ECHO_URL}">Asteroid radar research</a>, NASA Jet Propulsion Laboratory, Caltech.</p>
 <p><b>{NUMBER} Radar-Detected Asteroids and Comets.</b></p><p>Последнее обновление: {DAY} {MON} {YR}.</p>
@@ -152,6 +154,8 @@ COMETS_ALL = int(COM_ALL[0].replace(",", ""))
 COMNUM, PROVDES, NODESIGNAT = COM_ALL[1].split(", ")
 
 neo_size_bin_obj = urllib.request.urlopen(NEO_SIZE_BIN_URL)
+if DEBUG:
+    print(neo_size_bin_obj.info())
 neo_size_bin = json.load(neo_size_bin_obj)
 NEO_DATE, NEO_DATA = neo_size_bin.get('dataDate'), neo_size_bin.get('data')
 NEO_DATEDATA = '{ "dataDate": "' + NEO_DATE + '", "data": ' + str(NEO_DATA) + ' }'
