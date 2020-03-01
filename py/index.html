@@ -82,6 +82,19 @@ async      elif       if         or         yield</code></pre>
   <li><a href="parse/">Синтаксический разбор</a>, извлечение информации из интернет-ресурсов.</li>
 </ul>
 
+<h2>Получаем данные при помощи открытого API</h2>
+<pre><code>import json
+import urllib.request
+
+
+URL = 'http://api.open-notify.org/astros.json'
+astros_json = urllib.request.urlopen(URL)
+astros = json.load(astros_json)
+ASTROS = astros.get('people')
+print('на орбите', len(ASTROS), 'космонавта:')
+for astr in ASTROS:
+    print(astr.get('name'))
+</code></pre>
 <h2 id="task">Задачи</h2>
 <a href="task/">Решенные задачи</a>
 <hr>
