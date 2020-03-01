@@ -3,7 +3,7 @@ import pickle
 import urllib.request
 
 from beautifulsoup_supply import TAIL, mk_head, get_soup
-from plot_supply import plot_bar
+from plot_supply import plot_bar, optimize_svg
 
 
 HEAD = mk_head("Статистика звездных каталогов", script="") + "<body>\n"
@@ -94,14 +94,11 @@ labels = ('Статистика открытий сверхновых по го�
 tmp_filename = 'snstats_plot_.svg'
 filename = 'snstats_plot.svg'
 stars_dir = os.path.join(os.pardir, 'stars')
-py_dir = os.path.join(os.pardir, 'py')
 tmp_pth = os.path.join(stars_dir, tmp_filename)
-pth = os.path.join(os.pardir, 'stars', filename)
+pth = os.path.join(stars_dir, filename)
 xlim = (1994.5, 2020.5)
 plot_bar(years, sns, labels, tmp_pth, xlim)
-os.chdir(stars_dir)
-os.system(f'scour -i {tmp_filename} -o {filename} --enable-viewboxing --enable-id-stripping --enable-comment-stripping --shorten-ids --indent=none')
-os.chdir(py_dir)
+optimize_svg(tmp_pth, pth)
 
 soup = get_soup(TNS_STATS_URL)
 all_transient, classified, spectra = get_tns(soup)

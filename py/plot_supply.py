@@ -1,3 +1,4 @@
+from scour import scour
 import matplotlib.pyplot as plt
 
 
@@ -25,3 +26,18 @@ def plot_bar(xes, data, labels, pth, xlim, width=0.8, dpi=60):
     plt.xlim(xlim[0], xlim[1])
     plt.subplots_adjust(left=0.07, bottom=0.06, right=0.97, top=0.96)
     plt.savefig(pth)
+
+
+def optimize_svg(tmp_pth, pth):
+    inputfile = open(tmp_pth, 'rb')
+    outputfile = open(pth, 'wb')
+    options = scour.generateDefaultOptions()
+    options.enable_viewboxing = True
+    options.strip_comments = True
+    options.strip_ids = True
+    options.remove_metadata = True
+    options.indent_type = 'none'
+    options.shorten_ids = True
+    scour.start(options, inputfile, outputfile)
+    inputfile.close()
+    outputfile.close()
