@@ -4,6 +4,7 @@ const SW_URL = 'https://swapi.co/api/people/1/';
 const TZ_URL = 'http://api.timezonedb.com/v2.1/get-time-zone?key=7QR5BE7L232Z&format=json&by=zone&zone=Europe/Moscow';
 const YANDEX_TIME_URL = 'https://yandex.com/time/sync.json?geo=213';
 const CORS_ANYWHERE_URL = 'https://cors-anywhere.herokuapp.com/';
+const EXCHANGE_URL = 'https://api.exchangerate-api.com/v4/latest/USD';
 
 function appendUsers(usersArray) {
   for (let i = 0; i < usersArray.results.length; i += 1) {
@@ -84,6 +85,10 @@ function showLuke(res) {
   let q = document.getElementById("sp");
   q.innerHTML = 'Имя: ' + res.name + ', рост: ' + res.height + ', вес: ' + res.mass + ', дата рождения: ' + res.height + ', цвет волос: ' + res.hair_color;
 }
+function showExchangeRate(res) {
+  let q = document.getElementById("sp");
+  q.innerHTML = res.rates.RUB;
+}
 function loadUsers(gender, num) {
   let url = RANDUSR_URL + '?results=' + num + '&gender=' + gender + '&email=emeline.leclercq@example.com';
   loadReq(url, appendUsers);
@@ -99,4 +104,7 @@ function loadTZ() {
 }
 function loadYndexTime() {
   loadReq(CORS_ANYWHERE_URL + YANDEX_TIME_URL, showYandexTime);
+}
+function exchange() {
+  loadReq(EXCHANGE_URL, showExchangeRate);
 }
