@@ -179,9 +179,9 @@ PARAMS = ['named_after', 'mp_category', 'observation_arc', 'semimajor', 'period'
     'satellites', 'mean_diameter', 'surface_area', 'volume', 'mass', 'density', 'rotation',
         'abs_magnitude', 'mean_radius', 'rot_velocity', 'magnitude', 'angular_size']
 
-STARS = ["Betelgeuse", "R_Doradus", "Mira", "Antares", "Pi1_Gruis", "Alpha_Centauri", "T_Leporis",
-    "Altair", "Zeta_Andromedae", "Epsilon_Aurigae", "Alpha_Cephei", "Regulus", "Algol", "Vega",
-    "Proxima_Centauri"]
+STARS = ["R_Doradus", "Betelgeuse", "W_Hydrae", "Mira", "Antares", "Pi1_Gruis", "Alpha_Centauri",
+    "T_Leporis", "Altair", "Vega", "Zeta_Andromedae", "Epsilon_Aurigae", "Alpha_Cephei", "Regulus",
+    "Alpha_Ophiuchi", "Beta_Cassiopeiae", "Algol", "Proxima_Centauri"]
 STARS_PARAMS = ["radius", "mass", "temperature", "gravity", "luminosity", "age_myr"]
 
 obj_data = [
