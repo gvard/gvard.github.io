@@ -8,6 +8,7 @@
   <meta name="description" content="Дмитрий Насонов: астрономия и астрофизика,web-дизайн, программирование.">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
+  <script src="dev/request/script.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -21,9 +22,15 @@
       <a href="stars/stats.html">статистика звездных каталогов и транзиентов</a>,
       <a href="cosm/stats.html">космонавтика в цифрах</a> (страницы создаются автоматически).<br>
     И еще много интересного по ссылкам.</p>
+    <p>
+      <button onclick="mkReq('apod')">Показать астрономическую картинку дня</button> &ndash; NASA APOD.
+      (<a href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA APIs</a>, см.
+      страницу <a href="dev/request/">JavaScript: запрос, ответ</a>).<br>
+      <span id="sp">&nbsp;</span>
+    </p><br>
     <h2>К занятиям по web-дизайну:</h2>
     <ul>
-      <li><a href="dev/request/">JavaScript: загрузка данных</a></li>
+      <li><a href="dev/request/">JavaScript: загрузка данных</a> (запрос, ответ)</li>
       <li><a href="https://codepen.io/gvardovich/pen/NWPJwqQ" target="_blank" rel="noopener noreferrer">Форма</a>,
         <b><a href="https://almucantar.000webhostapp.com/php/" target="_blank" rel="noopener noreferrer">Страница с использованием php</a></b>,
         <a href="https://almucantar.000webhostapp.com/php/readbook.php" target="_blank" rel="noopener noreferrer">Простая гостевая книга</a></li>
