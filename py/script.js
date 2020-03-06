@@ -1,3 +1,4 @@
+'use strict';
 function copyCode(textId) {
   const copiedText = document.getElementById(textId).innerText;
   let txtAr = document.createElement("textArea");

@@ -1,3 +1,4 @@
+'use strict';
 // scripts here:
 // https://www.sitepoint.com/simple-javascript-quiz/
 // https://codepen.io/harrysadlermusic/pen/DihjK

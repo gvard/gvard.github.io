@@ -1,3 +1,4 @@
+'use strict';
 const RANDUSR_URL = 'https://randomuser.me/api/';
 const TZ_URL = 'http://api.timezonedb.com/v2.1/get-time-zone?key=7QR5BE7L232Z&format=json&by=zone&zone=Europe/Moscow';
 const APOD_URL = 'https://api.nasa.gov/planetary/apod?api_key=eZgjB1gdPqQDKOz5gh4hCvJy6A1oq22reiKFD3GI';
@@ -5,7 +6,7 @@ const YANDEX_TIME_URL = 'https://yandex.com/time/sync.json?geo=213';
 const CORS_ANYWHERE_URL = 'https://cors-anywhere.herokuapp.com/';
 
 function createCORSRequest(method, url) {
-  var xhr = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest();
   if ("withCredentials" in xhr) {
     // Check if the XMLHttpRequest object has a "withCredentials" property.
     // "withCredentials" only exists on XMLHTTPRequest2 objects.
@@ -42,12 +43,6 @@ function appendUsers(usersArray, _) {
   }
   document.body.appendChild(document.createElement('br'));
 }
-// function parseHttpHeaders(httpHeaders) {
-//   return httpHeaders.split("\n")
-//    .map(x=>x.split(/: */,2))
-//    .filter(x=>x[0])
-//    .reduce((ac, x)=>{ac[x[0]] = x[1];return ac;}, {});
-// }
 function loadReq(URL, goFunc) {
   let request = createCORSRequest('GET', URL);
   if (!request)
@@ -56,9 +51,9 @@ function loadReq(URL, goFunc) {
   request.onload = function() { // onreadystatechange
     console.log("status, headers:", request.status, request.getAllResponseHeaders());
     // console.log("responseText:", request.responseText)
-    elmToShowInfo = document.getElementById("sp");
+    const elmToShowInfo = document.getElementById("sp");
     if (request.status >= 200 && request.status < 400) {
-      let res = JSON.parse(request.response);
+      const res = JSON.parse(request.response);
       console.log('Parsed JSON response:', res);
       goFunc(res, elmToShowInfo);
     } else {
@@ -82,18 +77,18 @@ function showLuke(res, q) {
   q.innerHTML = 'Имя: ' + res.name + ', рост: ' + res.height + ', вес: ' + res.mass + ', дата рождения: ' + res.birth_year + ', цвет волос: ' + res.hair_color;
 }
 function showLatestSpaceXFlight(res, q) {
-  localDateTime = new Date(res.launch_date_unix * 1000);
+  const localDateTime = new Date(res.launch_date_unix * 1000);
   q.innerHTML = 'Flight number: ' + res.flight_number + ', название миссии: ' + res.mission_name + '.<br>Дата и время запуска: ' + res.launch_date_utc  + '(UTC), московское время: ' + localDateTime + ',<br>Ракета: ' + res.rocket.rocket_name + '.<br>Эмблема:<br><img src="' + res.links.mission_patch_small + '" alt=""><br><a href="' + res.links.reddit_campaign + '">Подробно на reddit</a>, <a href="' + res.links.wikipedia + '">на википедии</a>.<br>Подробности на английском: ' + res.details;
 }
 function showAPOD(res, q) {
   q.innerHTML = '<br><b>' + res.date + ', ' + res.title + '</b><br><a href="' + res.hdurl + '"><img alt="" src="' + res.url + '"></a><br>' + res.explanation;
 }
 function loadUsers(gender, num) {
-  let url = RANDUSR_URL + '?results=' + num + '&gender=' + gender + '&email=emeline.leclercq@example.com';
+  const url = RANDUSR_URL + '?results=' + num + '&gender=' + gender + '&email=emeline.leclercq@example.com';
   loadReq(url, appendUsers);
 }
 function mkReq(reqName) {
-  let reqNames = {
+  const reqNames = {
     TZ: {URL: TZ_URL, func: showTime},
     yandexTime: {URL: CORS_ANYWHERE_URL + YANDEX_TIME_URL, func: showYandexTime},
     reqRes: {URL: 'https://reqres.in/api/products/3', func: showReqRes},
