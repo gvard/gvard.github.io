@@ -35,12 +35,22 @@
       <a href="https://cors-anywhere.herokuapp.com/" target="_blank" rel="noopener noreferrer">This API enables cross-origin requests to anywhere</a>,
       <a href="https://stackoverflow.com/a/46774307" target="_blank" rel="noopener noreferrer">ответ на stackoverflow.com</a>.</li>
   </ul>
-  <span id="sp">&nbsp;</span><br>
-  <button onclick="loadReqRes()">GET products/3</button>
-  <button onclick="loadSW()">Узнать все о Скайоукере</button>
-  <button onclick="exchange()">Узнать курс доллара к рублю</button>
-  Узнать точное время: <button onclick="loadTZ()">в Москве (timezonedb.com)</button>
-  <button onclick="loadYndexTime()">в Москве (yandex.com)</button>
+  <b>Request (запрос)</b>:<br>
+  Узнать точное время: <button onclick="mkReq('TZ')">в Москве (timezonedb.com)</button>
+  <button onclick="mkReq('yandexTime')">в Москве (yandex.com)</button><br>
+  <button onclick="mkReq('reqRes')">GET products/3</button>
+  (<a href="https://reqres.in/api/products/3" target="_blank" rel="noopener noreferrer">ссылка</a>)<br>
+  <button onclick="mkReq('starWars')">Узнать все о Скайоукере</button>
+  (<a href="https://swapi.co/api/people/1/" target="_blank" rel="noopener noreferrer">ссылка</a>)<br>
+  <button onclick="mkReq('exchange')">Узнать курс доллара к рублю</button>
+  (<a href="https://api.exchangerate-api.com/v4/latest/USD" target="_blank" rel="noopener noreferrer">ссылка</a>)<br>
+  <button onclick="mkReq('spaceX')">Последний запуск SpaceX</button>
+  (<a href="https://api.spacexdata.com/v3/launches/latest" target="_blank" rel="noopener noreferrer">ссылка</a>,
+  <a href="https://github.com/r-spacex/SpaceX-API" target="_blank" rel="noopener noreferrer">описание на гитхабе</a>)<br>
+  <button onclick="mkReq('apod')">Астрономическая картинка дня</button> &ndash; NASA APOD.
+  (<a href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA APIs</a>)
+  <br>
+  <p><b>Response (ответ)</b>: <span id="sp">&nbsp;</span></p><br>
   <button onclick="loadUsers('male', 6)">Загрузить мужиков</button>
   <button onclick="loadUsers('female', 6)">Загрузить женщин</button><br>
 </body>
