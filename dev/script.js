@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 function calc() {
   const a = parseFloat(document.getElementById('val1').value);
   const b = parseFloat(document.getElementById('val2').value);
