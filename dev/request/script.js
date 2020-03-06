@@ -86,7 +86,7 @@ function showLatestSpaceXFlight(res, q) {
   q.innerHTML = 'Flight number: ' + res.flight_number + ', название миссии: ' + res.mission_name + '.<br>Дата и время запуска: ' + res.launch_date_utc  + '(UTC), московское время: ' + localDateTime + ',<br>Ракета: ' + res.rocket.rocket_name + '.<br>Эмблема:<br><img src="' + res.links.mission_patch_small + '" alt=""><br><a href="' + res.links.reddit_campaign + '">Подробно на reddit</a>, <a href="' + res.links.wikipedia + '">на википедии</a>.<br>Подробности на английском: ' + res.details;
 }
 function showAPOD(res, q) {
-  q.innerHTML = '<br><b>' + res.title + '</b><br><a href="' + res.hdurl + '"><img alt="" src="' + res.url + '"></a><br>' + res.explanation;
+  q.innerHTML = '<br><b>' + res.date + ', ' + res.title + '</b><br><a href="' + res.hdurl + '"><img alt="" src="' + res.url + '"></a><br>' + res.explanation;
 }
 function loadUsers(gender, num) {
   let url = RANDUSR_URL + '?results=' + num + '&gender=' + gender + '&email=emeline.leclercq@example.com';
