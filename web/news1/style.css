@@ -1,26 +1,23 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color: darkkhaki;
-    font-size: 14pt;
+  margin: 0;
+  padding: 0;
+  background-color: darkkhaki;
+  font-size: 14pt;
 }
-
 header, footer {
-    width: 100%;
-    background-color: whitesmoke;
+  width: 100%;
+  background-color: whitesmoke;
 
 }
-
 article{
-    border: 3px dashed grey;
-    text-align: justify;
-    width: 60%;
-    /* width: 740px; */
-    padding: 20pt;
-    margin: auto;
-    background-color: whitesmoke;
+  border: 3px dashed grey;
+  text-align: justify;
+  width: 60%;
+  /* width: 740px; */
+  padding: 20pt;
+  margin: auto;
+  background-color: whitesmoke;
 }
-
 h1{
-    margin: 0;
+  margin: 0;
 }

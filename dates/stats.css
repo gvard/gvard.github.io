@@ -54,18 +54,18 @@ ul {
   color: rgb(255, 251, 2)
 }
 @media (max-width: 490px) {
-ul, h1, h2 {
-  margin: 0;
-  padding: 0;
-  line-height: 1.4;
-}
-ul>li {
-  font-size: 2.4em;
-}
-h1 {
-  font-size: 2.5em;
-}
-.list {
-  margin-left: default;
-}
+  ul, h1, h2 {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+  }
+  ul>li {
+    font-size: 2.4em;
+  }
+  h1 {
+    font-size: 2.5em;
+  }
+  .list {
+    margin-left: default;
+  }
 }

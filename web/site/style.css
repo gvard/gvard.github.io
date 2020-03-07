@@ -26,16 +26,16 @@ nav ul {
   background-color: blue;
 }
 nav ul li {
-	display: inline-block;
+  display: inline-block;
 }
 nav a {
   font-size: 16pt;
-	display: block;
-	padding: 0 10px;
-	color: white;
-	font-size: 16px;
-	line-height: 40px;
-	text-decoration: none;
+  display: block;
+  padding: 0 10px;
+  color: white;
+  font-size: 16px;
+  line-height: 40px;
+  text-decoration: none;
 }
 nav a:hover {
   background-color: #566DD6;
