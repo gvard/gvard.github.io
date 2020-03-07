@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 body {
   margin: 0;
@@ -68,26 +68,21 @@ p.left {
   color:#fff;
   text-align: center;
 }
-
 #section-b{
   padding: 20px;
   background:#f4f4f4;
   text-align: center;
 }
-
 #section-c{
   display:flex;
 }
-
 #section-c div{
   padding:20px;
 }
-
 #section-c .box-1, #section-c .box-3{
   background:#926239;
   color:#fff;
 }
-
 #section-c .box-2{
   background:#f9f9f9;
 } */
