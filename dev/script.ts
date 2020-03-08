@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 /*jshint esversion: 6 */
 function calc() {
   const a = parseFloat((<HTMLInputElement> document.getElementById('val1')).value);
