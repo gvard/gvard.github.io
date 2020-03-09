@@ -179,9 +179,17 @@ PARAMS = ['named_after', 'mp_category', 'observation_arc', 'semimajor', 'period'
     'satellites', 'mean_diameter', 'surface_area', 'volume', 'mass', 'density', 'rotation',
         'abs_magnitude', 'mean_radius', 'rot_velocity', 'magnitude', 'angular_size']
 
-STARS = ["R_Doradus", "Betelgeuse", "W_Hydrae", "Mira", "Antares", "Pi1_Gruis", "Alpha_Centauri",
-    "T_Leporis", "Altair", "Vega", "Zeta_Andromedae", "Epsilon_Aurigae", "Alpha_Cephei", "Regulus",
-    "Alpha_Ophiuchi", "Beta_Cassiopeiae", "Algol", "Proxima_Centauri"]
+STARS = ["R_Doradus", "VY_Canis_Majoris", "Betelgeuse", "W_Hydrae", "R_Hydrae", "Mira", "Antares", "Pi1_Gruis",
+    "Aldebaran", "Gacrux", "Mu_Cephei", "Beta_Pegasi", "W_Cygni", "Chi_Cygni", "Rho_Persei", "Mu_Geminorum",
+    "Beta_Andromedae", "Zeta_Librae", "Eta_Sagittarii", "Delta2_Lyrae", "Lambda_Velorum", "Tau4_Eridani",
+    "Delta_Virginis", "Sigma_Librae", "Delta_Ophiuchi", "Gamma_Draconis", "119_Tauri", "Omicron1_Orionis",
+    "Beta_Ursae_Minoris", "62_Sagittarii", "Delta_Apodis", "Capella", "Psi_Phoenicis", "RR_Ursae_Minoris",
+    "TX_Piscium", "U_Orionis", "Pi_Aurigae", "Alphard", "Gamma_Eridani", "Alpha_Trianguli_Australis",
+    "Gamma_Hydri", "Mu_Ursae_Majoris", "Lambda_Aquarii", "Alpha_Lyncis", "Iota_Aurigae", "Epsilon_Pegasi",
+    "Gamma_Reticuli", "T_Ceti", "W_Orionis", "R_Sculptoris", "Alpha_Centauri", "T_Leporis", "Altair",
+    "Vega", "Zeta_Andromedae", "Epsilon_Aurigae", "Alpha_Cephei", "Regulus", "Alpha_Herculis", "Arcturus",
+    "Alpha_Ophiuchi", "R_Cancri", "Beta_Cassiopeiae", "R_Cassiopeiae", "Algol", "Proxima_Centauri",
+    "Alpha_Ceti", "R_Leonis", "Theta_Apodis", "Delta_Sagittae"]
 STARS_PARAMS = ["radius", "mass", "temperature", "gravity", "luminosity", "age_myr"]
 
 obj_data = [
