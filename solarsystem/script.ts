@@ -155,8 +155,8 @@ function show(divImg) {
         document.body.scrollTop;
   }
   else {
-    x =  (<any> event).clientX + window.scrollX;
-    y =  (<any> event).clientY + window.scrollY;
+    x =  (<MouseEvent> event).clientX + window.scrollX;
+    y =  (<MouseEvent> event).clientY + window.scrollY;
   }
   x -= 2;
   y += 15;
