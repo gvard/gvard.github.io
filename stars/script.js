@@ -1,7 +1,9 @@
 'use strict';
 /*jshint esversion: 6 */
 const OBJTYPES = {
-  star: "звезда"
+  star: "звезда",
+  sg: "Сверхгигант",
+  agb: "Звезда асимптотической ветви гигантов"
 };
 function logger(mode, len) {
   let displayMode = '';
