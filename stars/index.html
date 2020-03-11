@@ -17,14 +17,14 @@
 <h1>Звезды не как точки</h1>
 
 <div class="cont">
-<button onclick="showHideThis('none','.size')">Скрыть радиусы</button>
-<button onclick="showHideThis('block','.size')">Показать радиусы</button>
-<button onclick="showHideThis('none','.mass')">Скрыть массу</button>
-<button onclick="showHideThis('block','.mass')">Показать массу</button>
-<button onclick="showHideThis('none','.class')">Скрыть спектральный класс</button>
-<button onclick="showHideThis('block','.class')">Показать спектральный класс</button>
-<button onclick="toSort('size')">Сортировать по возрастанию размера</button>
-<!-- <button onclick="toSort('mass')">Сортировать по возрастанию массы</button> -->
+  <input type="checkbox" name=".name" value="block" checked onclick="showHideThis(this)">Имя,
+  <input type="checkbox" name=".angular" value="block" onclick="showHideThis(this)">Угловой диаметр,
+  <input type="checkbox" name=".size" value="block" checked onclick="showHideThis(this)">Радиус,
+  <input type="checkbox" name=".mass" value="block" onclick="showHideThis(this)">Масса,
+  <input type="checkbox" name=".class" value="block" checked onclick="showHideThis(this)">Спектральный класс,
+  <input type="checkbox" name=".temp" value="block" checked onclick="showHideThis(this)">Эффективная температура.<br>
+  Сортировать: <button onclick="toSort('size')">по возрастанию размера</button>
+  <button onclick="toSort('mass')">по возрастанию массы</button>
 </div>
 
 <div id="tab">
@@ -41,17 +41,57 @@
   <div class="name"><a href="https://en.wikipedia.org/wiki/Antares" title="Antares">Антарес</a></div>
   <div class="angular">37-41</div>
   <div class="size">680–800</div>
-  <div class="mass">11–14.3</div>
+  <div class="mass">12.65</div>
   <div class="class">M1.5 Iab-Ib</div>
   <div class="temp">3660</div>
+</div><div class="obj ">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><a href="#"><img alt="" src="images/R_Doradus.jpg"></a></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/R_Doradus" title="">R Золотой Рыбы</a></div>
+  <div class="angular"></div>
+  <div class="size"></div>
+  <div class="mass"></div>
+  <div class="class"></div>
+  <div class="temp"></div>
+</div><div class="obj ">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><a href="#"><img alt="" src="images/W_Hydrae.jpg"></a></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/W_Hydrae" title="">W Гидры</a></div>
+  <div class="angular"></div>
+  <div class="size">229–560</div>
+  <div class="mass"></div>
+  <div class="class">M7.5IIIe</div>
+  <div class="temp">2500–3129</div>
+</div><div class="obj ">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><a href="#"><img alt="" src="images/Mira.jpg"></a></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Mira" title="">Мира</a></div>
+  <div class="angular"></div>
+  <div class="size"></div>
+  <div class="mass"></div>
+  <div class="class"></div>
+  <div class="temp"></div>
 </div><div class="obj agb">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><a href="#"><img alt="" src="images/Pi1Gruis.jpg"></a></div>
-  <div class="name"><a href="https://en.wikipedia.org/wiki/Pi1_Gruis" title="">π1 Gruis</a></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Pi1_Gruis" title="">π1 Журавля</a></div>
   <div class="angular">18.4</div>
   <div class="size">350</div>
   <div class="mass">1.5</div>
   <div class="class">S5,7: (~M5)</div>
   <div class="temp">3100</div>
+</div><div class="obj ">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><a href="#"><img alt="" src="images/T_Leporis.jpg"></a></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/T_Leporis" title="">T Зайца</a></div>
+  <div class="angular"></div>
+  <div class="size"></div>
+  <div class="mass"></div>
+  <div class="class"></div>
+  <div class="temp"></div>
+</div><div class="obj rot">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><a href="#"><img alt="" src="images/Altair.jpg"></a></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Altair" title="">Альтаир</a></div>
+  <div class="angular">3</div>
+  <div class="size">1.63–2.03</div>
+  <div class="mass">1.79</div>
+  <div class="class">A7 V</div>
+  <div class="temp">6900–8500</div>
 </div>
 </div>
 
