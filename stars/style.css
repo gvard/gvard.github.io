@@ -53,7 +53,7 @@ div.desc, .date, .class, .temp {
   font-size: 0.9em;
   color: white;
 }
-.mass, .angular, .desc {
+.mass, .angular, .desc, .mag, .jmag {
   display: none;
   font-size: 0.78em;
   color: white;
