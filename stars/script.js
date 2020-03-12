@@ -126,6 +126,8 @@ function mkContents(obj) {
   spClass = mkPar('Спектральный класс: ', spClass, '');
   let temp = obj.getElementsByClassName("temp")[0].innerText;
   temp = mkPar('Температура: ', temp, '&nbsp;K');
+  let mag = obj.getElementsByClassName("mag")[0].innerText;
+  mag = mkPar('Звездная величина (V): ', mag, '<sup>m</sup>');
 
   let type = "";
   for (let objClassNam of obj.className.split(" "))
@@ -137,7 +139,7 @@ function mkContents(obj) {
     desc = mkPar('', desc[0].innerText, '');
   else
     desc = "";
-  return name + type + angular + size + mass + spClass + temp + desc;
+  return name + type + angular + size + mass + spClass + temp + mag + desc;
 }
 
 function show(divImg) {
