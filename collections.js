@@ -59,3 +59,35 @@ function hide() {
   messageBox.style.display = 'none';
 }
 const mkPar = (before, txt, after) => (!txt) ? '' : `<p>${before}${txt}${after}</p>`;
+function mkType(className, OBJTYPES) {
+  let type = "";
+  for (let objClassNam of className.split(" ")) {
+    if (objClassNam in OBJTYPES) {
+      type += OBJTYPES[objClassNam] + ", ";
+    }
+  }
+  return type.replace(/,\s*$/, "");
+}
+function toShow(contentToShow) {
+  let contents = document.getElementById('contents');
+  contents.innerHTML = contentToShow;
+  let messageBox = document.getElementById('messageBox');
+  let x, y;
+  if (window.event) {
+    x = window.event.clientX + document.documentElement.scrollLeft +
+      document.body.scrollLeft;
+    y = window.event.clientY + document.documentElement.scrollTop +
+      document.body.scrollTop;
+  } else {
+    x = event.clientX + window.scrollX;
+    y = event.clientY + window.scrollY;
+  }
+  x -= 2;
+  y += 15;
+  if (screen.width - x < 200 / window.devicePixelRatio) {
+    x -= 180 / window.devicePixelRatio;
+  }
+  messageBox.style.left = x + "px";
+  messageBox.style.top = y + "px";
+  messageBox.style.display = "block";
+}
