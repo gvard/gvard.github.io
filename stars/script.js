@@ -1,9 +1,7 @@
 'use strict';
 /*jshint esversion: 6 */
 const OBJTYPES = {
-  star: "звезда",
-  sg: "Сверхгигант",
-  mira: "Мирида",
+  sg: "Сверхгигант", mira: "Мирида",
   deltaSct: "Переменная типа дельты Щита",
   agb: "Звезда асимптотической ветви гигантов",
   algol: "Затменная переменная типа Алголя",
@@ -35,29 +33,16 @@ function getDivs(classNam) {
   return mainTab.getElementsByClassName(classNam);
 }
 function getDate(txt) {
-  if (txt == 'None')
+  if (!txt)
     return 0;
   return Number(txt.slice(6, 10));
 }
-function findDate() {
-  const currentdate = new Date();
-  const day = ("0" + currentdate.getDate()).slice(-2);
-  const month = ("0" + (currentdate.getMonth() + 1)).slice(-2);
-  const today = `${day}.${month}`;
-  const elems = document.getElementsByClassName('date');
-  for (let i = 0; i < elems.length; i++) {
-    let daymon = elems[i].innerText.slice(0, 5);
-    if (today == daymon) {
-      console.log(today, daymon);
-    }
-  }
-}
 function showHideByDate(mode) {
   const elems = getDivs('date');
-  const yearForSort = parseInt(document.getElementById('year').value);
+  const yearForSort = parseInt(document.getElementById('year').value, 10);
   let j = 0;
-  for (let i = 0; i < elems.length; i++) {
-    if (elems[i].innerText != 'None' && getDate(elems[i].innerText) > yearForSort) {
+  for (let i = 0; i < elems.length; i += 1) {
+    if (elems[i].innerText && getDate(elems[i].innerText) > yearForSort) {
       elems[i].parentElement.style.display = mode;
       j += 1;
     }
@@ -69,6 +54,9 @@ function getMass(txt) {
     return 0;
   return txt.includes("±") ? Number(txt.substring(0, txt.indexOf("±")) + txt.substring(txt.indexOf("E"))) : Number(txt);
 }
+function txtMass(txt) {
+  return txt.includes("±") ? txt.substring(0, txt.indexOf("±")) + txt.substring(txt.indexOf("E")) : txt;
+}
 function getSize(txt) {
   let num = 0;
   if (txt.includes("±"))
@@ -79,14 +67,23 @@ function getSize(txt) {
     num = parseFloat(txt);
   return Number(num);
 }
-function getNames() {
-  let objToSort = getDivs('obj');
+function ObjParams() {
+  const objs = getDivs('obj');
   let objArr = [];
-  for (let i = 0; i < objToSort.length; i++) {
-    let a = objToSort[i].getElementsByClassName('desc')[0].getElementsByTagName("a")[0].href.split("/");
-    objArr.push(a[a.length - 1]);
+  let objDct = [];
+  for (let i = 0; i < objs.length; i += 1) {
+    const classes = objs[i].className.replace('obj ', '').split(' ');
+    const a = objs[i].getElementsByClassName('name')[0].getElementsByTagName("a")[0];
+    const objRuName = a.text;
+    const img = objs[i].getElementsByClassName('img')[0].getElementsByTagName("img")[0];
+    const imgPath = img.src.split('/');
+    const size = getSize(objs[i].getElementsByClassName('size')[0].innerText);
+    const mass = txtMass(objs[i].getElementsByClassName('mass')[0].innerText);
+    objDct.push({ 'name': img.alt, 'runame': objRuName, 'size': size, 'mass': mass, 'classes': classes });
+    objArr.push([img.alt, objRuName, size, mass, classes, imgPath[imgPath.length - 1]]);
   }
   console.log(objArr);
+  console.log(objDct);
 }
 function toSort(classNam) {
   let objToSort = getDivs('obj');
@@ -128,7 +125,6 @@ function mkContents(obj) {
   temp = mkPar('Температура: ', temp, '&nbsp;K');
   let mag = obj.getElementsByClassName("mag")[0].innerText;
   mag = mkPar('Звездная величина (V): ', mag, '<sup>m</sup>');
-
   let type = "";
   for (let objClassNam of obj.className.split(" "))
     if (objClassNam in OBJTYPES)
@@ -141,7 +137,6 @@ function mkContents(obj) {
     desc = "";
   return name + type + angular + size + mass + spClass + temp + mag + desc;
 }
-
 function show(divImg) {
   const obj = divImg.parentElement;
   let contents = document.getElementById('contents');
@@ -170,7 +165,7 @@ function calcSum(classNam) {
   const elems = document.getElementsByClassName(classNam);
   let total = 0;
   let j = 0;
-  for (let i = 0; i < elems.length; i++) {
+  for (let i = 0; i < elems.length; i += 1) {
     j += 1;
     total += getSize(elems[i].innerText);
     console.log(`For ${j} elements sum of sizes is ${total} km`);
