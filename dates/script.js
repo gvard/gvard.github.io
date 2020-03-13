@@ -56,7 +56,7 @@ function ago(elem, year, fullyear) {
     yearsAgo.innerText = ``;
 }
 function carousel() {
-  var slideIndex = 0;
+  let slideIndex = 0;
   let elems = document.getElementsByClassName("date");
   const today = getToday();
   let toShow = [];
@@ -82,7 +82,7 @@ function findDate() {
   let gyear = parseInt(document.getElementById("year").value, 10);
   let gdaymon = document.getElementById("daymon").value;
   const today = getToday();
-  var checkBox = document.getElementById("onlyMonth");
+  const checkBox = document.getElementById("onlyMonth");
   if (checkBox.checked == true) {
     const month = today.month;
     console.log("Show events occured in month number", month);

@@ -4,7 +4,7 @@ function WordNumberCase(number) {
   const num = number >= 0 ? number : -number;
   let m = num % 10;
   let result: string;
-  switch(m) {
+  switch (m) {
     case 1:
       result = "год";
       break;
@@ -35,7 +35,7 @@ function getToday() {
   const currentdate = new Date();
   const day = ("0" + currentdate.getDate()).slice(-2);
   const month = ("0" + (currentdate.getMonth() + 1)).slice(-2);
-  return {daymon: `${day}.${month}`, month: month, year: currentdate.getFullYear()};
+  return { daymon: `${day}.${month}`, month: month, year: currentdate.getFullYear() };
 }
 function getStrToday() {
   const currentdate = new Date();
@@ -58,7 +58,7 @@ function ago(elem, year, fullyear) {
     yearsAgo.innerText = ``;
 }
 function carousel() {
-  var slideIndex = 0;
+  let slideIndex = 0;
   let elems = document.getElementsByClassName("date");
   const today = getToday();
   let toShow = [];
@@ -76,17 +76,17 @@ function carousel() {
   if (slideIndex > elems.length)
     slideIndex = 1;
   if (toShow.length != 0)
-    toShow[slideIndex-1].parentElement.style.display = "block"; 
+    toShow[slideIndex - 1].parentElement.style.display = "block";
   else
-    document.body.innerHTML = "<h1>Нет дат за текущий месяц</h1>"
-  setTimeout(carousel, 6000); 
+    document.body.innerHTML = "<h1>Нет дат за текущий месяц</h1>";
+  setTimeout(carousel, 6000);
 }
 function findDate() {
   const elems = document.getElementsByClassName('date');
   let gyear = parseInt((<HTMLInputElement> document.getElementById("year")).value, 10);
   let gdaymon = (<HTMLInputElement> document.getElementById("daymon")).value;
   const today = getToday();
-  var checkBox = <HTMLInputElement> document.getElementById("onlyMonth");
+  const checkBox = <HTMLInputElement> document.getElementById("onlyMonth");
   if (checkBox.checked == true) {
     const month = today.month;
     console.log("Show events occured in month number", month);
