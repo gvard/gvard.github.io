@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 /*jshint esversion: 6 */
 const OBJTYPES = {
   sg: "Сверхгигант", mira: "Мирида",
@@ -7,66 +7,6 @@ const OBJTYPES = {
   algol: "Затменная переменная типа Алголя",
   rot: "Быстро вращающаяся звезда"
 };
-function logger(mode, len) {
-  let displayMode = '';
-  if (mode == 'none') {
-    displayMode = 'Hide';
-  }
-  else if (mode.includes('block')) {
-    displayMode = 'Show';
-  }
-  console.log(displayMode, len, 'objects');
-}
-function showHideThis(checkBox) {
-  const elems = document.querySelectorAll(checkBox.name);
-  let mode = 'none';
-  if (checkBox.checked) {
-    mode = 'block';
-  }
-  for (let i = 0; i < elems.length; i += 1) {
-    elems[i].style.display = mode;
-  }
-  logger(mode, elems.length);
-}
-function getDivs(classNam) {
-  const mainTab = document.getElementById('tab');
-  return mainTab.getElementsByClassName(classNam);
-}
-function getDate(txt) {
-  if (!txt)
-    return 0;
-  return Number(txt.slice(6, 10));
-}
-function showHideByDate(mode) {
-  const elems = getDivs('date');
-  const yearForSort = parseInt(document.getElementById('year').value, 10);
-  let j = 0;
-  for (let i = 0; i < elems.length; i += 1) {
-    if (elems[i].innerText && getDate(elems[i].innerText) > yearForSort) {
-      elems[i].parentElement.style.display = mode;
-      j += 1;
-    }
-  }
-  logger(mode, j);
-}
-function getMass(txt) {
-  if (!txt)
-    return 0;
-  return txt.includes("±") ? Number(txt.substring(0, txt.indexOf("±")) + txt.substring(txt.indexOf("E"))) : Number(txt);
-}
-function txtMass(txt) {
-  return txt.includes("±") ? txt.substring(0, txt.indexOf("±")) + txt.substring(txt.indexOf("E")) : txt;
-}
-function getSize(txt) {
-  let num = 0;
-  if (txt.includes("±"))
-    num = parseFloat(txt.substring(0, txt.indexOf("±")));
-  else if (txt.includes("−"))
-    num = parseFloat(txt.substring(0, txt.indexOf("−")));
-  else
-    num = parseFloat(txt);
-  return Number(num);
-}
 function ObjParams() {
   const objs = getDivs('obj');
   let objArr = [];
@@ -86,29 +26,12 @@ function ObjParams() {
   console.log(objDct);
 }
 function toSort(classNam) {
-  let objToSort = getDivs('obj');
-  let ArrToSort = Array.prototype.slice.call(objToSort, 0);
   let sortFunction;
   if (classNam == 'mass')
     sortFunction = getMass;
   else if (classNam == 'size')
     sortFunction = getSize;
-  ArrToSort.sort(function (a, b) {
-    let aord = sortFunction(a.getElementsByClassName(classNam)[0].innerText);
-    let bord = sortFunction(b.getElementsByClassName(classNam)[0].innerText);
-    return (aord > bord) ? 1 : -1;
-  });
-  let parent = document.getElementById('tab');
-  parent.innerHTML = "";
-  for (let i = 0, l = ArrToSort.length; i < l; i += 1)
-    parent.appendChild(ArrToSort[i]);
-}
-function hide() {
-  let messageBox = document.getElementById('messageBox');
-  messageBox.style.display = 'none';
-}
-function mkPar(before, txt, after) {
-  return (!txt) ? '' : `<p>${before}${txt}${after}</p>`;
+  doSort(sortFunction, classNam);
 }
 function mkContents(obj) {
   let name = obj.getElementsByClassName("name")[0].getElementsByTagName("a")[0].innerText;
@@ -145,29 +68,19 @@ function show(divImg) {
   let x, y;
   if (window.event) {
     x = window.event.clientX + document.documentElement.scrollLeft +
-        document.body.scrollLeft;
+      document.body.scrollLeft;
     y = window.event.clientY + document.documentElement.scrollTop +
-        document.body.scrollTop;
-  }
-  else {
+      document.body.scrollTop;
+  } else {
     x = event.clientX + window.scrollX;
     y = event.clientY + window.scrollY;
   }
   x -= 2;
   y += 15;
-  if (screen.width - x < 200 / window.devicePixelRatio)
+  if (screen.width - x < 200 / window.devicePixelRatio) {
     x -= 180 / window.devicePixelRatio;
+  }
   messageBox.style.left = x + "px";
   messageBox.style.top = y + "px";
   messageBox.style.display = "block";
-}
-function calcSum(classNam) {
-  const elems = document.getElementsByClassName(classNam);
-  let total = 0;
-  let j = 0;
-  for (let i = 0; i < elems.length; i += 1) {
-    j += 1;
-    total += getSize(elems[i].innerText);
-    console.log(`For ${j} elements sum of sizes is ${total} km`);
-  }
 }
