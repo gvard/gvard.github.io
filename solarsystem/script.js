@@ -55,7 +55,8 @@ function toSort(classNam) {
     sortFunction = getDeltaV;
   doSort(sortFunction, classNam);
 }
-function mkContents(obj) {
+function show(divImg) {
+  const obj = divImg.parentElement;
   let name = obj.getElementsByClassName("name")[0].getElementsByTagName("a")[0].innerText;
   name = mkPar('<b>', name, '</b>');
   let size = obj.getElementsByClassName("size")[0].innerText;
@@ -70,41 +71,15 @@ function mkContents(obj) {
   } else {
     deltaV = "";
   }
-  let type = "";
-  for (let objClassNam of obj.className.split(" "))
-    if (objClassNam in OBJTYPES)
-      type = OBJTYPES[objClassNam];
-  type = mkPar('Тип: ', type, '');
+  let type = mkType(obj.className, OBJTYPES);
+  type = mkPar('Типы: ', type, '');
   let desc = obj.getElementsByClassName("desc");
   if (desc.length)
     desc = mkPar('', desc[0].innerText, '');
   else
     desc = "";
-  return name + type + size + mass + date + deltaV + desc;
-}
-function show(divImg) {
-  const obj = divImg.parentElement;
-  let contents = document.getElementById('contents');
-  contents.innerHTML = `${divImg.innerHTML}${mkContents(obj)}`;
-  let messageBox = document.getElementById('messageBox');
-  let x, y;
-  if (window.event) {
-    x = window.event.clientX + document.documentElement.scrollLeft +
-      document.body.scrollLeft;
-    y = window.event.clientY + document.documentElement.scrollTop +
-      document.body.scrollTop;
-  } else {
-    x = event.clientX + window.scrollX;
-    y = event.clientY + window.scrollY;
-  }
-  x -= 2;
-  y += 15;
-  if (screen.width - x < 200 / window.devicePixelRatio) {
-    x -= 180 / window.devicePixelRatio;
-  }
-  messageBox.style.left = x + "px";
-  messageBox.style.top = y + "px";
-  messageBox.style.display = "block";
+  const contentToShow = divImg.innerHTML + name + type + size + mass + date + deltaV + desc;
+  toShow(contentToShow);
 }
 function getToday() {
   const currentdate = new Date();
