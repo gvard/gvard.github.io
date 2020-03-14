@@ -60,10 +60,11 @@ function show(divImg) {
   let type = mkType(obj.className, OBJTYPES);
   type = mkPar('Типы: ', type, '');
   let desc = obj.getElementsByClassName("desc");
-  if (desc.length)
+  if (desc.length) {
     desc = mkPar('', desc[0].innerText, '');
-  else
+  } else {
     desc = "";
+  }
   const contentToShow = divImg.innerHTML + name + type + angular + size + mass + spClass + temp + mag + desc;
   toShow(contentToShow);
 }
