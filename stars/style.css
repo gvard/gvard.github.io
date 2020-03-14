@@ -49,8 +49,8 @@ div.img {
   min-height: 100px;
   background-color: black;
 }
-div.desc, .date, .class, .temp {
-  font-size: 0.9em;
+div.desc, .class, .temp {
+  font-size: 0.89em;
   color: white;
 }
 .mass, .angular, .desc, .mag, .jmag {
