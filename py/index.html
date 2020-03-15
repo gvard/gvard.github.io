@@ -210,6 +210,30 @@ if not death:
   <li>Перевести число из записи римскими цифрами в целое десятичное число</li>
   <li>Написать заданный год римскими цифрами</li>
 </ul>
+<pre><code>a = int(input("Введите число от 1 до 3999"))
+  mil, sot = divmod(a, 1000)
+  sot, dec = divmod(sot, 100)
+  dec, ed = divmod(dec, 10)
+
+  def roman(num, romans=("I", "V", "X")):
+      A = romans[0]
+      B = romans[1]
+      C = romans[2]
+      if num in(0, 1, 2, 3):
+          r = A * num
+      if num == 4:
+          r = A + B
+      if num in (5, 6, 7, 8):
+          fiv, ed = divmod(num, 5)
+          r = B * fiv + A * ed
+      if num == 9:
+          r = A + C
+      return r
+  print("M"*mil, end="")
+  print(roman(sot, romans=("C", "D", "M")), end="")
+  print(roman(dec, romans=("X", "L", "C")), end="")
+  print(roman(ed))
+  </code></pre>
 
 <hr>
 <h3>Шахматы</h3>
