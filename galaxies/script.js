@@ -1,7 +1,13 @@
 "use strict";
 /*jshint esversion: 6 */
 const OBJTYPES = {
-dE: "Карликовая эллиптическая галактика"
+  dE: "Карликовая эллиптическая галактика",
+  SBm: "Магелланова спиральная галактика с баром",
+  SB: "Спиральная галактика с баром",
+  SA: "Спиральная галактика без бара",
+  Im: "Неправильная галактика",
+  MWsat: "Галактика - спутник Млечного пути",
+  M31sat: "Галактика - спутник M31"
 };
 function toSort(classNam) {
   let sortFunction;
@@ -18,13 +24,13 @@ function show(divImg) {
   let angular = obj.getElementsByClassName("angular")[0].innerText;
   angular = mkPar('Угловые размеры: ', angular, '&nbsp;');
   let size = obj.getElementsByClassName("size")[0].innerText;
-  size = mkPar('Радиус: ', size, '&nbsp;pc');
-  let mass = obj.getElementsByClassName("mass")[0].innerText;
+  size = mkPar('Диаметр: ', size, '&nbsp;kpc');
+  let mass = obj.getElementsByClassName("mass")[0].innerHTML;
   mass = mkPar('Масса: ', mass, '&nbsp;M<sub>☉</sub>');
   let gType = obj.getElementsByClassName("class")[0].innerText;
   gType = mkPar('Морфологический тип: ', gType, '');
   let dist = obj.getElementsByClassName("dist")[0].innerText;
-  dist = mkPar('Расстояние: ', mass, '&nbsp;kpc');
+  dist = mkPar('Расстояние: ', dist, '&nbsp;kpc');
   let type = mkType(obj.className, OBJTYPES);
   type = mkPar('Типы: ', type, '');
   let desc = obj.getElementsByClassName("desc");
