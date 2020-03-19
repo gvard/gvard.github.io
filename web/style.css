@@ -4,6 +4,7 @@
 }
 body {
   margin-left: 1em;
+  margin-right: 2em;
   font-size: 1.5em;
 }
 h1, h2, h3 {
@@ -11,9 +12,14 @@ h1, h2, h3 {
   margin-bottom: 0.4em;
 }
 ul, ol {
-  margin-left: 25px;
+  margin-left: 20px;
 }
 .red {
   color: red;
   font-weight: bold;
+}
+@media (max-width: 600px) {
+  body {
+    margin: 0 0 0 0.8em;
+  }
 }
