@@ -1,14 +1,17 @@
-body {
-  margin: 10px;
-  padding: 10px;
-  background-color: white;
-}
-h1 {
+* {
   margin: 0;
+  padding: 0;
 }
-header {
-  width: 100%;
-  background-color: white;
+body {
+  margin-left: 1em;
+  font-size: 1.5em;
+}
+h1, h2, h3 {
+  margin-top: 0.55em;
+  margin-bottom: 0.4em;
+}
+ul, ol {
+  margin-left: 25px;
 }
 .red {
   color: red;
