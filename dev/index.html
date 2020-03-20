@@ -7,6 +7,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>JavaScript: веб-разработка</title>
   <link rel="stylesheet" href="github.css">
+  <link rel="stylesheet" href="../compact.css">
   <link rel="stylesheet" href="style.css">
   <script src="highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
@@ -18,41 +19,38 @@
       $("p").hide();
     });
   });
-
   localStorage.setItem('myCat', 'Tom');
   let cat = localStorage.getItem('myCat');
   console.log(window.localStorage, cat);
   </script>
 </head>
 <body>
+<nav class="menu">
+  <ul>
+    <li><a href="../">Главная</a></li>
+    <li><a href="#useful">Полезности</a></li>
+    <li><a href="../php/">Практика PHP</a></li>
+    <li><a href="request/">API: запрос, ответ</a></li>
+  </ul>
+</nav>
 
-<h1>Web-разработка</h1>
+
+<h2>gvard.github.io/dev/</h2>
 <p>Сетевые технологии дают возможность разделить интерфейс и внутреннюю логику программ.
-Поэтому разделяют программы на стороне клиента, front-end и на стороне сервера, back-end.<br>
+Поэтому разделяют программы на стороне клиента, <a href="https://en.wikipedia.org/wiki/Front_and_back_ends" target="_blank" rel="noopener noreferrer">front end</a> и на стороне сервера, back end.<br>
 Для первого программируют, в основном, на языке JavaScript, для второго выбор достаточно широкий.
 Это может быть язык общего назначения, например, Python, так и специализирванный
 язык, например <a href="https://www.php.net/FAQ.php" target="_blank" rel="noopener noreferrer">PHP</a>.<br>
-<a href="https://en.wikipedia.org/wiki/Programming_languages_used_in_most_popular_websites" target="_blank" rel="noopener noreferrer">Programming languages used in most popular websites</a>.</p>
+</p>
+  <a href="https://en.wikipedia.org/wiki/Programming_languages_used_in_most_popular_websites" target="_blank" rel="noopener noreferrer">Programming languages used in most popular websites</a>
 
-<ul>
-  <li><a href="../php/">Практика PHP</a>.</li>
-  <li><a href="request/">API: запрос, ответ</a>.</li>
-</ul>
-
-<h2>Практика JavaScript</h2>
-<p><a href="https://learn.javascript.ru/" target="_blank" rel="noopener noreferrer">Современный учебник JavaScript</a></p>
 
 <section>
-  <h2>Hello World в консоли, размер экрана, вывод текущей даты и времени</h2>
+  <h3>Hello World в консоли</h2>
   <p>При открытом окне браузера, нажать F12. Справа или снизу откроется окно,
   выбрать консоль (console). В командной строке консоли можно вводить команды.
   Это командный интерпретатор языка JavaScript.</p>
-  <pre><code class="js">console.log('Hello Moscow! Page title:', document.title);
-var screenWidth = window.screen.width * window.devicePixelRatio;
-var screenHeight = window.screen.height * window.devicePixelRatio;
-console.log(screenWidth, screenHeight);</code></pre>
-<p><a href="https://habr.com/en/company/ruvds/blog/429552/" target="_blank" rel="noopener noreferrer">Руководство по JavaScript, часть 1: первая программа, особенности языка, стандарты</a>.</p>
-
+  <h3>Разрешение экрана, время:</h3>
   <div id="scr"></div>
   <script>
   console.log('Hello Moscow! Page title:', document.title);
@@ -68,6 +66,13 @@ console.log(screenWidth, screenHeight);</code></pre>
   const scrRes = `Width, height: ${screen.width} x ${screen.height}. Actual resolution with pixel ratio ${window.devicePixelRatio} is ${width} x ${height} pixels.`;
   document.getElementById("scr").innerHTML = scrRes;
   </script>
+  <h3>Код</h3>
+  <pre><code class="js">console.log('Hello Moscow! Page title:', document.title);
+var screenWidth = window.screen.width * window.devicePixelRatio;
+var screenHeight = window.screen.height * window.devicePixelRatio;
+console.log(screenWidth, screenHeight);</code></pre>
+<p><a href="https://learn.javascript.ru/" target="_blank" rel="noopener noreferrer">Современный учебник JavaScript</a> //
+  <a href="https://habr.com/en/company/ruvds/blog/429552/" target="_blank" rel="noopener noreferrer">Руководство по JavaScript, часть 1: первая программа, особенности языка, стандарты</a>.</p>
 </section>
 
 <section>
@@ -201,8 +206,6 @@ false</code></pre>
   <p><a href="game/">Страница с играми на JavaScript и библиотеке jQuery</a></p>
 </section>
 
-<p><a href="http://youmightnotneedjquery.com/" target="_blank" rel="noopener noreferrer">You might not need jQuery</a>, примеры с учетом версии Internet Explorer.</p>
-
 <section>
   <h2>Видимость элементов (свойство display)</h2>
   <p>Lorem ipsum, <em>dolor</em> sit amet consectetur adipisicing elit. Animi tempore nostrum autem magnam culpa quis quos suscipit natus tempora. Impedit eaque necessitatibus enim, alias dolorum amet facere natus?</p>
@@ -216,7 +219,8 @@ false</code></pre>
   <button onclick="showHidePar('inline')">Сделать параграфы строчными</button>
 </section>
 
-<section><h2>Полезности</h2>
+<section>
+<h2 id="useful">Полезности</h2>
   <ul>
     <li><a href="https://mothereff.in/" target="_blank" rel="noopener noreferrer">Web developer tools</a>:
     <a href="https://mothereff.in/js-variables" target="_blank" rel="noopener noreferrer">JS variable name validator</a>,
@@ -231,6 +235,7 @@ false</code></pre>
     <li><a href="http://beautifytools.com/" target="_blank" rel="noopener noreferrer">Online tools and utilities</a></li>
     <li><a href="https://habr.com/en/company/ruvds/blog/429556/" target="_blank" rel="noopener noreferrer">Руководство по JavaScript, часть 2: стиль кода и структура программ</a>,
       <a href="https://habr.com/en/company/ruvds/blog/428173/" target="_blank" rel="noopener noreferrer">Prettier, ESLint, Husky, Lint-Staged и EditorConfig: инструменты для написания аккуратного кода</a></li>
+    <li><a href="http://youmightnotneedjquery.com/" target="_blank" rel="noopener noreferrer">Возможно, вам не нужен jQuery</a>: примеры с учетом версии Internet Explorer.</li>
   </ul>
 </section>
 
