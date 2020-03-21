@@ -1,19 +1,16 @@
-h1{
+.amatic {
   font-family: 'Amatic SC', cursive;
-}
-p.marck, pre {
-  font-family: 'Marck Script', cursive;
+  white-space: pre;
   font-size: 1.5em;
 }
-p.calis {
-  font-family: 'Calistoga', cursive;
+.marck {
+  font-family: 'Marck Script', cursive;
+  font-size: 1.5em;
+  white-space: pre;
 }
-p.dance {
-  font-family: 'Dancing Script', cursive;
-}
-p.odibee {
-  font-family: 'Odibee Sans', cursive;
-}
-p.caveat {
-  font-family: 'Caveat', cursive;
-}
+.calis {font-family: 'Calistoga', cursive; white-space: pre;}
+.dance {font-family: 'Dancing Script', cursive; white-space: pre;}
+.odibee {font-family: 'Odibee Sans', cursive; white-space: pre;}
+.caveat {font-family: 'Caveat', cursive; white-space: pre;}
+.nunito {font-family: 'Nunito', sans-serif; white-space: pre;}
+.mono {font-family: 'Courier New', Courier, monospace}
