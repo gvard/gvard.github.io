@@ -20,26 +20,58 @@
   </nav>
 <h1>Шрифты: основные характеристики</h1>
 <ul>
-  <li><b>начертание</b>: прямой, <i>курсивный</i></li>
-  <li><b>насыщенность</b>: светлый, <b>полужирный</b>, <span style="font-weight: bolder">жирный</span></li>
-  <li><b>ширина</b>: нормальный, <span style="font-stretch: condensed">узкий</span>, широкий, <span style="font-family: Courier, monospace">шрифт фиксированной ширины</span></li>
-  <li><b>размер</b> (кегль) &ndash; высота литер шрифта.</li>
+  <li><b>начертание</b>: прямой, <i>курсивный</i> (свойство <b>font-style</b>)</li>
+  <li><b>насыщенность</b>: светлый, <b>полужирный</b>, <span style="font-weight: bolder">жирный</span> (свойство <b>font-weight</b>)</li>
+  <li><b>ширина</b>: нормальный, <span style="font-stretch: condensed">узкий</span>, широкий (свойство <b>font-stretch</b>), <span style="font-family: Courier, monospace">шрифт фиксированной ширины</span> (моноширинный)</li>
+  <li><b>размер</b> (кегль) &ndash; высота литер шрифта (свойства <b>font-size, font-size-adjust</b>)</li>
   <li><b>наличие (serif) или отсутствие (sans-serif) <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%81%D0%B5%D1%87%D0%BA%D0%B8" target="_blank" rel="noopener noreferrer">засечек</a></b> на концах линий. Это группы шрифтов <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D1%82%D0%B8%D0%BA%D0%B2%D0%B0" target="_blank" rel="noopener noreferrer">Антиква</a>, с засечками и <a href="https://en.wikipedia.org/wiki/Sans-serif" target="_blank" rel="noopener noreferrer">Гротеск</a>, без засечек:<br>
     <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Serif_and_sans-serif_03.svg" alt="">
   </li>
 </ul>
 
-<h3>Шрифты с засечками, или антиква (serif):</h3>
-  <span style="font-family: Georgia, serif; font-size: 1.5rem">Times Georgia</span> (шрифт Georgia)<br>
-  <span style="font-family: 'Times New Roman', Times, serif; font-size: 1.5rem">Times Georgia</span> (шрифт Times New Roman)
+<h2>Семейства шрифтов (свойство font-family)</h2>
+<dl>
+<dd>Шрифты с засечками, или антиква (font-family: serif):</dd>
+<dt>
+  <ul>
+    <li><span style="font-family: Georgia, serif; font-size: 1.5rem">Times Georgia</span> (шрифт Georgia)</li>
+    <li><span style="font-family: 'Times New Roman', Times, serif; font-size: 1.5rem">Times Georgia</span> (шрифт Times New Roman)</li>
+  </ul>
+</dt>
+<dd>Шрифты без засечек, рубленые шрифты, или гротески (font-family: sans-serif)</dd>
+<dt>
+  <ul>
+    <li><span style="font-family: Arial, Helvetica, sans-serif; font-size: 1.5rem">Arial, Helvetica</span></li>
+    <li><span style="font-family: Tahoma, Geneva, sans-serif; font-size: 1.5rem">Tahoma, Geneva</span></li>
+  </ul>
+</dt>
+<dd>Моноширинные шрифты, когда все знаки имеют одинаковую ширину (font-family: monospace)</dd>
+<dt>
+  <ul>
+    <li><span style="font-family: 'Courier New', Courier, monospace; font-size: 1.5rem">Courier New, Courier</span></li>
+    <li><span style="font-family: 'Lucida Console', Monaco, monospace; font-size: 1.5rem">Lucida Console, Monaco</span></li>
+  </ul>
+</dt>
+<dd>Шрифты, имитирующие почерк (font-family: cursive)</dd>
+<dt>
+  <ul>
+    <li><span style="font-family: 'Comic Sans MS', Comic Sans, cursive; font-size: 1.5rem">Comic Sans MS, Comic Sans, <i>cursive</i></span></li>
+    <li><span style="font-family: 'Bradley Hand', cursive; font-size: 1.5rem">Bradley Hand, <i>cursive</i></span></li>
+  </ul>
+</dt>
+<dd>Декоративные шрифты, для названий и т.д. (font-family: fantasy)</dd>
+<dt>
+  <ul>
+    <li><span style="font-family: Impact, fantasy; font-size: 1.5rem">Impact, fantasy</span></li>
+    <li><span style="font-family: Luminari, fantasy; font-size: 1.5rem">Luminari, fantasy</span></li>
+  </ul>
+</dt>
+</dl>
+<p><a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp" target="_blank" rel="noopener noreferrer">Распространенные шрифты: примеры</a>.</p>
+<p><a href="https://www.w3.org/Style/Examples/007/fonts.ru.html" target="_blank" rel="noopener noreferrer">Семейства и стили шрифтов</a> на сайте Консорциума Всемирной паутины (по-русски).</p>
+<p><a href="https://html5book.ru/css-shrifty/" target="_blank" rel="noopener noreferrer">Шрифт в CSS</a>.</p>
 
-<h3>Рубленые шрифты, или гротески (sans-serif):</h3>
-<span style="font-family: Arial, Helvetica, sans-serif; font-size: 1.5rem">Arial, Helvetica</span><br>
-<span style="font-family: Tahoma, Geneva, sans-serif; font-size: 1.5rem">Tahoma, Geneva</span>
-
-<p><a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp" target="_blank" rel="noopener noreferrer">Распространенные шрифты: примеры</a></p>
-
-<h2 id="units">Какие единицы измерения CSS существуют</h2>
+<h1 id="units">Какие единицы измерения CSS существуют</h1>
 <ul>
   <li><b>%</b>, процент.</li>
   <li><b>cm</b>, сантиметр.</li>
