@@ -1,0 +1,43 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  text-align: center;
+  font-weight: normal;
+  margin: 0 auto;
+  padding-top: 0.15em;
+  padding-bottom: 0.5em;
+  font-size: 5em;
+}
+ol > li {
+  font-size: 4rem;
+  padding-left: 20px;
+  margin-left: 60px;
+}
+div {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  color: white;
+  align-items: stretch;
+  height: 100vh;
+  background: linear-gradient(black,
+  #000003 21.3%,
+  #000110 29.2%,
+  #02021c, 37.0%,
+  #0b0726 40%,
+  #0c122b 43%,
+  #16132f 44.9%,
+  #221e38 52.8%,
+  #32334a 60.6%,
+  #413e56 68.5%,
+  #4d4b61 76.4%,
+  #565368 84.3%,
+  #5d5f6e 92.1%,
+  #636176 100%
+  );
+}
