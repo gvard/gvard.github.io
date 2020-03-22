@@ -28,10 +28,10 @@
 <path d="m631.72 507.6h23.926v-58.088h-23.926z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m661.62 507.6h23.926v-101.51h-23.926z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m691.53 507.6h23.926v-212.73h-23.926z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m721.44 507.6h23.926v-226.14h-23.926z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m721.44 507.6h23.926v-226.2h-23.926z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m751.35 507.6h23.926v-223.22h-23.926z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m781.26 507.6h23.926v-462.86h-23.926z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m811.16 507.6h23.926v-96.12h-23.926z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m811.16 507.6h23.926v-99.487h-23.926z" clip-path="url(#a)" fill="#1f77b4"/>
 <defs>
 <path id="b" d="m0 0v3.5" stroke="#000" stroke-width=".8"/>
 </defs>
@@ -136,10 +136,10 @@
 <text transform="rotate(-0 643.68 444.43)" x="643.68" y="444.432605" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1984</text>
 <text transform="rotate(-0 673.59 401.01)" x="673.587692" y="401.013214" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">3467</text>
 <text transform="rotate(-0 703.5 289.79)" x="703.495385" y="289.785794" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7266</text>
-<text transform="rotate(-0 733.4 276.38)" x="733.403077" y="276.376434" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7724</text>
+<text transform="rotate(-0 733.4 276.32)" x="733.403077" y="276.317878" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7726</text>
 <text transform="rotate(-0 763.31 279.3)" x="763.310769" y="279.304242" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7624</text>
 <text transform="rotate(-0 793.22 39.663)" x="793.218462" y="39.66317" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">15809</text>
-<text transform="rotate(-0 823.13 406.4)" x="823.126154" y="406.400381" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">3283</text>
+<text transform="rotate(-0 823.13 403.03)" x="823.126154" y="403.033402" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">3398</text>
 <text transform="rotate(-0 449.28 15.6)" x="449.28" y="15.6" font-family="DejaVu Sans" font-size="22px" text-anchor="middle">Статистика открытий сверхновых по годам</text>
 <defs>
 <clipPath id="a">
