@@ -13,7 +13,8 @@ SNIMAGES_URL = "http://rochesterastronomy.com/snimages/"
 SNIMAGES_SNOTHER_URL = "http://rochesterastronomy.com/snimages/snother.html"
 TNS_URL = "https://wis-tns.weizmann.ac.il"
 TNS_STATS_URL = TNS_URL + "/stats-maps"
-PICKLE_FILENAME = 'simbad_stats.pickle'
+PICKLE_SIMB_FILENAME = 'simbad_stats.pickle'
+PICKLE_SN_FILENAME = 'snstats.pickle'
 HTML_FILENAME = os.path.join(os.pardir, 'stars', 'stats.html')
 SIMBAD_LST = ['objects', 'identifiers', 'bibliographic references', 'citations of objects in papers']
 
@@ -99,7 +100,7 @@ pth = os.path.join(stars_dir, filename)
 xlim = (1994.5, 2020.5)
 plot_bar(years, sns, labels, tmp_pth, xlim)
 optimize_svg(tmp_pth, pth)
-
+os.remove(tmp_pth)
 soup = get_soup(TNS_STATS_URL)
 all_transient, classified, spectra = get_tns(soup)
 
@@ -132,17 +133,18 @@ snstats_txt += f"""</ul>
 </ul>
 """
 
-PICKLE_SN_FILENAME = 'snstats.pickle'
-with open(PICKLE_SN_FILENAME, 'rb') as handle:
-    snstats_prev = pickle.load(handle)
+try:
+    with open(PICKLE_SN_FILENAME, 'rb') as handle:
+        snstats_prev = pickle.load(handle)
 
-for year in snstats_prev:
-     if snstats.get(year) != snstats_prev.get(year):
-         print(snstats_prev.get(year), snstats.get(year))
+    for year in snstats_prev:
+        if snstats.get(year) != snstats_prev.get(year):
+            print(snstats_prev.get(year), snstats.get(year))
 
-with open(PICKLE_SN_FILENAME, 'wb') as handle:
-    pickle.dump(snstats, handle)
-
+    with open(PICKLE_SN_FILENAME, 'wb') as handle:
+        pickle.dump(snstats, handle)
+except FileNotFoundError:
+    print("File", PICKLE_SN_FILENAME, "not found, continue")
 
 # WDS_DATE, WDS_NUM = cds_readme_stats(WDS_URL)
 # CDS_HTML = f"""<p>The <a href="{WDS_URL}">Washington Visual Double Star Catalog</a> (WDS) update on {WDS_DATE} {WDS_NUM} binaries.</p>
@@ -162,9 +164,10 @@ SIMBAD_HTML = f"""<hr><p><a href="{SIMBAD_URL}">SIMBAD</a> <a href="https://en.w
 """
 
 try:
-    with open(PICKLE_FILENAME, 'rb') as handle:
+    with open(PICKLE_SIMB_FILENAME, 'rb') as handle:
         simbstats_dict = pickle.load(handle)
-except Exception:
+except FileNotFoundError:
+    print("File", PICKLE_SIMB_FILENAME, "not found, continue")
     simbstats_dict = {}
 
 if SIMDATE not in simbstats_dict:
@@ -172,7 +175,7 @@ if SIMDATE not in simbstats_dict:
 
 print("Number of dates in pickle file:", len(simbstats_dict))
 
-with open(PICKLE_FILENAME, 'wb') as handle:
+with open(PICKLE_SIMB_FILENAME, 'wb') as handle:
     pickle.dump(simbstats_dict, handle)
 
 with open(HTML_FILENAME, 'w', encoding="utf8") as handle:

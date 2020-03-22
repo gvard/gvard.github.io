@@ -12,7 +12,7 @@ from beautifulsoup_supply import TAIL, mk_head, get_soup
 
 DEBUG = False
 HEAD = mk_head("Статистика тел Солнечной системы", script="nea_size_bin_chart.js") + "<body>\n"
-PICKLE_FILENAME = "radar_obj_names.pickle"
+PICKLE_RADAR_FILENAME = "radar_obj_names.pickle"
 ECHO_URL = "https://echo.jpl.nasa.gov/asteroids/"
 MPC_URL = "https://minorplanetcenter.net/mpc/summary"
 MP_NAMES_URL = "https://minorplanetcenter.net/iau/lists/MPNames.html"
@@ -53,8 +53,11 @@ ECHO_JPL_STATS = f"""<h2>Астероиды и кометы, измеренны�
 <img src="https://echo.jpl.nasa.gov/~lance/radar_detected_neas_summary/asteroid.radar.history.jpg" alt=""><br>
 """
 
-with open(PICKLE_FILENAME, 'wb') as handle:
-    pickle.dump(RADAR_OBJ_NAMES, handle)
+try:
+    with open(PICKLE_RADAR_FILENAME, 'wb') as handle:
+        pickle.dump(RADAR_OBJ_NAMES, handle)
+except FileNotFoundError:
+    print("File", PICKLE_RADAR_FILENAME, "not found, continue")
 
 #RADAR_ASTEROIDS_URL = "http://www.johnstonsarchive.net/astro/radarasteroids.html"
 #SSS_DATA_URL = "http://www.johnstonsarchive.net/astro/sssatellitedata.html"
