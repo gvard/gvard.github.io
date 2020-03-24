@@ -11,16 +11,17 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-image: url('images/Saturn_Earth_size_comparison.jpg');
-  background-size: cover;
-  background-position: center;
+  background-color: black;
+  background-image: url('../images/back.jpg');
+  background-repeat: no-repeat;
+  background-position: bottom;
   justify-content: space-between;
   color: white;
   align-items: stretch;
 }
 h1 {
   padding-top: 0.15em;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.2em;
   font-size: 3em;
 }
 h2 {
@@ -36,14 +37,14 @@ ul {
 #header {
   margin: 0 auto;
   margin-top: 0;
-  margin-bottom: 0.em;
+  margin-bottom: 0;
   order: 0;
-  /* align-self: start; */
 }
 .list {
-  margin-left: 10%;
+  margin-left: 4%;
 }
 .footer {
+  color: rgb(162, 162, 201);
   margin: 0 auto;
   margin-top: 0.8em;
   margin-bottom: 0;
