@@ -226,7 +226,7 @@ with open(os.path.join(os.pardir, 'solarsystem', 'stats.html'), 'w', encoding="u
     print(HEAD + MPC_STATS + SSD_STATS + ECHO_JPL_STATS + JOHNSTON_SAT + TAIL, file=handle)
 
 
-HEAD = mk_head("Статистика Солнечной системы", style="stats.css")
+HEAD = mk_head("Статистика Солнечной системы", style="stats.css", script="../../stats.js")
 BODY = f"""<body onload="mkHeader()">
   <div id="solsysstats" class="container show">
     <h1 id="header"></h1>
@@ -243,5 +243,5 @@ BODY = f"""<body onload="mkHeader()">
     <h2>Центр Астрономического и космического образования</h2>
   </div>
 """
-with open(os.path.join(os.pardir, 'dates', 'stats.html'), 'w', encoding="utf8") as handle:
+with open(os.path.join(os.pardir, 'solarsystem', 'stats', 'index.html'), 'w', encoding="utf8") as handle:
     print(HEAD + BODY + TAIL, file=handle)

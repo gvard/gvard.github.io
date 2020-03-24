@@ -56,15 +56,14 @@ function ago(elem, year, fullyear) {
     yearsAgo.innerText = ``;
 }
 function carousel() {
-  let slideIndex = 0;
+  // let slideIndex = 0;
   let elems = document.getElementsByClassName("date");
   const today = getToday();
   let toShow = [];
   for (let i = 0; i < elems.length; i += 1) {
-    let mon = elems[i].innerText.slice(3, 5);
+    // let mon = elems[i].innerText.slice(3, 5);
     let year = parseInt(elems[i].innerText.slice(6, 10), 10);
-    if (mon == today.month)
-      toShow.push(elems[i]);
+    toShow.push(elems[i]);
     ago(elems[i], year, today.year);
     elems[i].parentElement.style.display = "none";
   }
@@ -74,8 +73,8 @@ function carousel() {
   if (toShow.length != 0)
     toShow[slideIndex - 1].parentElement.style.display = "block";
   else
-    document.body.innerHTML = "<h1>Нет дат за текущий месяц</h1>";
-  setTimeout(carousel, 6000);
+    document.body.innerHTML = "<h1>Нет дат в текущем наборе событий</h1>";
+  setTimeout(carousel, 3500);
 }
 function findDate() {
   const elems = document.getElementsByClassName('date');
