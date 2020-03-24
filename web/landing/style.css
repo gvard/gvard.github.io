@@ -14,26 +14,26 @@ h1 {
   line-height: 1.2;
 }
 p {
-  font-size:20px;
+  font-size: 20px;
 }
 #showone {
-  background-image: url('beachshowcase.jpg');
+  background-image: url('http://almucantar.000webhostapp.com/web/landing/beachshowcase.jpg');
 }
 #showtwo {
-  background-image: url('city-dawn-sunset-skyline.jpg');
+  background-image: url('http://almucantar.000webhostapp.com/web/landing/city-dawn-sunset-skyline.jpg');
   color: white;
   align-items: flex-end;
   justify-content: start;
 }
 #showthree {
-  background-image: url("bird-s-eye-view-of-pine-trees.jpg");
+  background-image: url("http://almucantar.000webhostapp.com/web/landing/bird-s-eye-view-of-pine-trees.jpg");
   color: rgb(77, 180, 77);
   align-items: flex-start;
   text-align: left;
   justify-content: start;
 }
 #showfour {
-  background-image: url("photo-of-building-on-top-of-rocks.jpg");
+  background-image: url("http://almucantar.000webhostapp.com/web/landing/photo-of-building-on-top-of-rocks.jpg");
 }
 .show {
   padding: 0 20px;
