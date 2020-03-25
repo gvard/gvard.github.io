@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>urllib.request, API</title>
+  <link rel="stylesheet" href="../github.css">
+  <link rel="stylesheet" href="../../compact.css">
+  <script src="../highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<h1>Запросы при помощи urllib.request и json. Практика запросов при помощи открытых API</h1>
+<h2>Постановка задачи</h2>
+<ul>
+  <li><a href="https://ru.wikipedia.org/wiki/API" target="_blank" rel="noopener noreferrer">API</a>, от application programming interface, [эй-пи-ай] – программный интерфейс приложения, описание способов (набор классов, процедур, функций, структур или констант), которыми одна компьютерная программа может взаимодействовать с другой программой.</li>
+  <li><b>Задача: написать программу, которая будет получать данные по сети от другой программы, а именно web-сервера.</b></li>
+</ul>
+<h2>Инструменты</h2>
+  <li><a href="https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D0%B0%D1%8F_%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B0_Python">Стандартная библиотека Python</a> содержит модуль <a href="https://docs.python.org/3/library/urllib.request.html" target="_blank" rel="noopener noreferrer">urllib.request</a>. urllib – это модуль Python, который можно использовать для открытия <a href="https://ru.wikipedia.org/wiki/URL" target="_blank" rel="noopener noreferrer">URL-адресов</a>, проще – файлов по сети. Он определяет функции и классы для обработки URL-адресов.</li>
+  <li>Точка в urllib.request – это разделитель названия модуля и его части. На уровне файловой системы urllib – директория (папка), request – файл <a href="https://github.com/python/cpython/blob/3.8/Lib/urllib/request.py" target="_blank" rel="noopener noreferrer">request.py</a>, содержащий код на языке Python.</li>
+  <li>Для использования urllib.request необходимо в начале программы написать
+  <pre><code>import urllib.request</code></pre>
+  <b>То есть, мы как бы добавляем в программу код, уже написанный другими программистами.</b>
+  </li>
+  <li>Для получения данных по сети используют функцию urllib.request.urlopen(). Функция принимает в качестве аргумента URL-адрес и возвращает данные в виде последовательности байтов (бинарный тип данных). Использование urllib.request.urlopen() описано на странице <a href="../parse/">пишем реферат</a>.</li>
+  <li>В случае запросов по API используется формат данных <a href="https://ru.wikipedia.org/wiki/JSON" target="_blank" rel="noopener noreferrer">JSON</a> [джейсэн]. Для перевода данных, полученных функцией urllib.request.urlopen(), в стандартные типы языка Python – <b>список и словарь</b>, используют библиотеку json и ее функцию load(). Ее тоже надо импортировать в самом начале программы.</li>
+</ul>
+
+<h2>Пример: космонавты</h2>
+<ul>
+  <li><a href="http://api.open-notify.org/astros.json" target="_blank" rel="noopener noreferrer">Ссылка на данные</a></li>
+  <li><a href="http://open-notify.org/Open-Notify-API/People-In-Space/" target="_blank" rel="noopener noreferrer">Официальное описание</a></li>
+</ul>
+<p>Результат запроса:</p>
+<pre><code>{
+  "people":
+  [
+    {
+      "craft": "ISS", "name": "Andrew Morgan"
+    },
+    {
+      "craft": "ISS", "name": "Oleg Skripochka"
+    },
+    {
+      "craft": "ISS", "name": "Jessica Meir"
+    }
+  ],
+  "message": "success",
+  "number": 3
+}</code></pre>
+
+<h3>Упаковка данных</h3>
+<p>Данные надо упаковывать в структуры. <i>Это как почтовая посылка: в картонную коробку мы кладем несколько вещей, каждая в полиэтиленовом пакете.</i><br>
+  Как упакованы данные на языке стандартных типов Python:</p>
+<ul>
+  <li>Внешняя упаковка – словарь, фигурные скобки. В нем три ключа: строки "people" (люди в космосе), "message" (сообщение об успешности передачи данных), "number" (количество людей в космосе).</li>
+  <li>Значение по ключу "people" – список, квадратные скобки. В списке еще три словаря: данные о каждом космонавте.</li>
+  <li>Внутренняя упаковка: словарь, фигурные скобки. В нем два ключа: "craft" – космический корабль и "name" – имя космонавта.</li>
+</ul>
+<p>&laquo;Прочитаем&raquo; данные:<br>
+<ol>
+  <li>сообщение успешно (success) передано,</li>
+  <li>в космосе 3 космонавта,</li>
+  <li>люди (people) в космосе – это: Andrew Morgan, Олег Скрипочка и Jessica Meir, все на МКС (ISS).</li>
+</ol>
+
+<p><b>Программа для получения информации и ее печати на экране:</b></p>
+<pre><code>import json
+import urllib.request
+
+
+URL = 'http://api.open-notify.org/astros.json'
+astros_json_bin = urllib.request.urlopen(URL)
+astros = json.load(astros_json_bin)
+ASTROS = astros.get('people')
+print('на орбите', astros.get('number'), 'космонавта:')
+for astr in ASTROS:
+    print(astr.get('name'))
+</code></pre>
+<p><b>Использовано:</b></p>
+<ul>
+  <li>функция urllib.request.urlopen()</li>
+  <li>функция json.load()</li>
+  <li>Метод словаря get(). Можно использовать прямое обращение к словарю по ключу: astr['name'].</li>
+</ul>
+
+<h2>Задание: время пролетов <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B6%D0%B4%D1%83%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F_%D0%BA%D0%BE%D1%81%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F" target="_blank" rel="noopener noreferrer">МКС</a> (почти) над Москвой</h2>
+<ul>
+  <li><a href="http://api.open-notify.org/iss-pass.json?lat=55.751244&lon=37.618423" target="_blank" rel="noopener noreferrer">Ссылка на данные</a></li>
+  <li><a href="http://open-notify.org/Open-Notify-API/ISS-Pass-Times/" target="_blank" rel="noopener noreferrer">Официальное описание</a></li>
+</ul>
+<p>Результат запроса:</p>
+<pre><code>{
+  "message": "success",
+  "request": {
+    "altitude": 100,
+    "datetime": 1585145742,
+    "latitude": 55.751244,
+    "longitude": 37.618423,
+    "passes": 5
+  },
+  "response": [
+    {
+      "duration": 530,
+      "risetime": 1585148072
+    },
+    {
+      "duration": 625,
+      "risetime": 1585153788
+    },
+    {
+      "duration": 640,
+      "risetime": 1585159565
+    },
+    {
+      "duration": 615,
+      "risetime": 1585165359
+    },
+    {
+      "duration": 481,
+      "risetime": 1585171182
+    }
+  ]
+}</code></pre>
+
+<p><b>Задача: получить данные о времени пролетов МКС на небе Москвы. Напечатать на экране:</b></p>
+<ol>
+  <li>Сколько пролетов МКС содержится в ответе на запрос</li>
+  <li>Для каждого пролета МКС: время восхода (risetime), длительность (duration), заход <b>в человекочитаемом виде</b>.</li>
+</ol>
+<p><b>Для перевода <a href="https://ru.wikipedia.org/wiki/Unix-%D0%B2%D1%80%D0%B5%D0%BC%D1%8F" target="_blank" rel="noopener noreferrer">unix time</a> в понятные человеку день, месяц, год и часы, минуты, секунды используют библиотеку <a href="https://docs.python.org/3/library/time.html" target="_blank" rel="noopener noreferrer">time</a>, функцию ctime:</b></p>
+<pre><code>>>> time.ctime(1585153788)
+'Wed Mar 25 19:29:48 2020'</code></pre>
+
+Начало программы, которую требуется дописать:
+<pre><code>import json
+import urllib.request
+import time
+
+URL = 'http://api.open-notify.org/iss-pass.json?lat=55.751244&lon=37.618423'
+iss_pass_json_bin = urllib.request.urlopen(URL)
+iss_pass = json.load(iss_pass_json_bin)
+</code></pre>
+
+<p>МКС на вечернем небе – самое яркое тело на небе после Солнца и Луны:<br>
+<img src="https://www.abc.net.au/news/image/9771974-3x2-940x627.jpg" alt=""></p>
+
+<h2>Бонус: курс доллара</h2>
+<p><a href="https://api.exchangerate-api.com/v4/latest/USD" target="_blank" rel="noopener noreferrer">Ссылка на данные</a>.</p>
+<p>Результат запроса:</p>
+<pre><code>{
+"base": "USD", "date": "2020-03-25", "time_last_updated": 1585094645,
+"rates": {
+    "USD":1, "AED":3.67194, "ARS":63.782963, "AUD":1.689614,
+    "BGN":1.803148, "BRL":5.100792, "BSD":1, "CAD":1.446787,
+    "CHF":0.977568, "CLP":860.840598, "CNY":7.0736, "COP":4100.333333,
+    "CZK":25.65441, "DKK":6.895422, "DOP":54.019448, "EGP":15.761852,
+    "EUR":0.92466, "FJD":2.357417, "GBP":0.852776, "GTQ":7.674421,
+    "HKD":7.754263, "HRK":7.017643, "HUF":324.992634, "IDR":16550.000184,
+    "ILS":3.64491, "INR":76.090264, "ISK":139.995445, "JPY":110.89439,
+    "KRW":1245.64532, "KZT":446.150259, "MXN":24.873806, "MYR":4.434908,
+    "NOK":11.084183, "NZD":1.724957, "PAB":1, "PEN":3.526802,
+    "PHP":51.135164, "PKR":157.994495, "PLN":4.257353, "PYG":6623.615385,
+    "RON":4.470324, <b>"RUB":78.849559</b>, "SAR":3.753237, "SEK":10.19446,
+    "SGD":1.449219, "THB":32.782756, "TRY":6.480904, "TWD":30.240127,
+    "UAH":27.592197, "UYU":44.568841, "ZAR":17.59029
+  }
+}
+</code></pre>
+</body>
+</html>

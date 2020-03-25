@@ -19,6 +19,7 @@
     <li><a href="../">Главная</a></li>
     <li><a href="#data">Работа с данными</a></li>
     <li><a href="#task">Задачи</a></li>
+    <li><a href="api/">API</a></li>
     <li><a href="pygame/">Pygame и turtle</a></li>
     <li><a href="../programming/">Информатика и программирование</a></li>
   </ul>
@@ -109,19 +110,8 @@ async      elif       if         or         yield</code></pre>
 </ul>
 
 <h2>Запросы при помощи urllib.request и json. Практика запросов при помощи открытых API</h2>
-<a href="https://api.exchangerate-api.com/v4/latest/USD" target="_blank" rel="noopener noreferrer">Курс доллара</a> (доступ по API).
-<pre><code>import json
-import urllib.request
+Материалы, задачи и решения &ndash; на <a href="api/">отдельной странице</a>.
 
-
-URL = 'http://api.open-notify.org/astros.json'
-astros_json = urllib.request.urlopen(URL)
-astros = json.load(astros_json)
-ASTROS = astros.get('people')
-print('на орбите', len(ASTROS), 'космонавта:')
-for astr in ASTROS:
-    print(astr.get('name'))
-</code></pre>
 
 <h2 id="task">Задачи</h2>
 <a href="task/">Решенные задачи</a>
