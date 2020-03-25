@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -147,7 +146,7 @@ iss_pass = json.load(iss_pass_json_bin)
 <p>МКС на вечернем небе – самое яркое тело на небе после Солнца и Луны:<br>
 <img src="https://www.abc.net.au/news/image/9771974-3x2-940x627.jpg" alt=""></p>
 
-<h2>Бонус: курс доллара</h2>
+<h2>Бонусная задача: курс доллара</h2>
 <p><a href="https://api.exchangerate-api.com/v4/latest/USD" target="_blank" rel="noopener noreferrer">Ссылка на данные</a>.</p>
 <p>Результат запроса:</p>
 <pre><code>{
@@ -167,7 +166,15 @@ iss_pass = json.load(iss_pass_json_bin)
     "SGD":1.449219, "THB":32.782756, "TRY":6.480904, "TWD":30.240127,
     "UAH":27.592197, "UYU":44.568841, "ZAR":17.59029
   }
-}
+}</code></pre>
+
+Начало программы, которую требуется дописать:
+<pre><code>import json
+import urllib.request
+
+URL = 'https://api.exchangerate-api.com/v4/latest/USD'
+exchangerate_json_bin = urllib.request.urlopen(URL)
+exchangerate = json.load(exchangerate_json_bin)
 </code></pre>
 </body>
 </html>
