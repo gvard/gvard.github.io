@@ -146,6 +146,71 @@ iss_pass = json.load(iss_pass_json_bin)
 <p>МКС на вечернем небе – самое яркое тело на небе после Солнца и Луны:<br>
 <img src="https://www.abc.net.au/news/image/9771974-3x2-940x627.jpg" alt=""></p>
 
+
+<h2>Точное время</h2>
+<p><a href="https://yandex.com/time/sync.json?geo=213" target="_blank" rel="noopener noreferrer">Ссылка на данные</a> (Яндекс).</p>
+<p>Результат запроса:</p>
+<pre><code>{
+  "time": 1585172540959,
+  "clocks": {
+    "213": {
+      "id": 213,
+      "name": "Москва",
+      "offset": 10800000,
+      "offsetString": "UTC+3:00",
+      "showSunriseSunset": true,
+      "sunrise": "06:15",
+      "sunset": "18:55",
+      "isNight": true,
+      "skyColor": "#00050f",
+      "weather": {
+        "temp": 4,
+        "icon": "skc-n",
+        "link": "https://yandex.ru/pogoda/moscow"
+      },
+      "parents": [
+        {
+          "id": 225,
+          "name": "Россия"
+        }
+      ]
+    }
+  }
+}</code></pre>
+<p><b>Задача: получить точное время и сравнить его с временем компьютера, на котором запускается программа.<br>
+Напечатать на экране:</b></p>
+<ol>
+  <li>точную дату и время,</li>
+  <li>разницу в минутах и секундах с временем компьютера</b>.</li>
+  <li>&laquo;на пятерку&raquo;: напечатать время рассвета и заката.</li>
+</ol>
+
+<p><b>Точное время доступно по ключу "time" и представляет собой unix time, но
+<u>в миллисекундах</u></b>.<br>
+То есть, для получения результата в функцию time.ctime() надо передать значение,
+поделенное на 1000.<br>
+Для получения времени рассвета и заката надо извлекать вложенные данные подобно матрешке:
+сначала обратиться к данным по ключу "clocks", потом по ключу "213" (код Москвы),
+потом у результата этой операции обратиться по ключам "sunrise" и "sunset".<br>
+А еще это напоминает сказку про Кощея бессмертного:</p>
+<pre><code>>>> сказка = {"дуб": {"сундук": {"заяц": {"утка": {"яйцо": "игла, смерть Кощея"}}}}}
+>>> сказка.get("дуб")
+{'сундук': {'заяц': {'утка': {'яйцо': 'игла, смерть Кощея'}}}}
+>>> сказка.get("дуб").get("сундук")
+{'заяц': {'утка': {'яйцо': 'игла, смерть Кощея'}}}</code></pre>
+
+Начало программы, которую требуется дописать:
+<pre><code>import json
+import urllib.request
+import time
+
+URL = 'https://yandex.com/time/sync.json?geo=213'
+time_json_bin = urllib.request.urlopen(URL)
+time_data = json.load(time_json_bin)
+</code></pre>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Ivan_Bilibin_Koshchey.jpg/640px-Ivan_Bilibin_Koshchey.jpg" alt="">
+
+
 <h2>Бонусная задача: курс доллара</h2>
 <p><a href="https://api.exchangerate-api.com/v4/latest/USD" target="_blank" rel="noopener noreferrer">Ссылка на данные</a>.</p>
 <p>Результат запроса:</p>
@@ -176,5 +241,6 @@ URL = 'https://api.exchangerate-api.com/v4/latest/USD'
 exchangerate_json_bin = urllib.request.urlopen(URL)
 exchangerate = json.load(exchangerate_json_bin)
 </code></pre>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/BilleteiNTER_II.jpg/640px-BilleteiNTER_II.jpg" alt="">
 </body>
 </html>
