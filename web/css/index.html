@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Свойства css</title>
+  <link rel="stylesheet" href="../../compact.css">
+</head>
+<body>
+<nav class="menu">
+  <ul>
+    <li><a href="../">Главная</a></li>
+  </ul>
+</nav>
+
+<p>В современной версии стандарта HTML5 практически все оформление страницы делается при помощи каскадных листов стилей,
+  <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank" rel="noopener noreferrer">CSS</a>.
+  Команда CSS состоит из селектора и соответствующих ему свойств:<br>
+  <img src="../css.png" alt="Иллюстрация из Большая книга CSS3. Д. Макфарлард." style="margin: 20px">
+</p>
+<p>Файлы с расширением .css подключаются к html-документу при помощи следующей строки <b>внутри</b> тега &lt;head&gt;:
+</p><pre>&lt;link rel="stylesheet" href="style.css"&gt;</pre>
+
+<p>Селектором css может быть тег html. Свойства будут применены ко всем одноименным тегам на странице. Также, селектором может быть название определенного класса. Свойства селектора <b>*</b> будут применены ко всем тегам на странице.</p>
+<p>Свойства css записываются в фигурных скобках после определенного селектора. Ниже для удобства свойства разбиты на несколько категорий.</p>
+
+<h2>Все свойства CSS</h2>
+  <p><a href="https://www.web4college.com/css-play/" target="_blank" rel="noopener noreferrer">Список 300+ CSS-свойств</a>,
+    <a href="https://docs.google.com/spreadsheets/d/1cyvzKuuPe6ejysLh3qeHfdpa_7TOJk7l6IYiH1X6Y88/" target="_blank" rel="noopener noreferrer">Таблица css-свойств</a>.</p>
+
+<h2>Фон – background</h2>
+
+<ul>
+  <li>background-color: white; Задает цвет фона.</li>
+  <li>background: white url("image.jpg") no-repeat 50% 0; Общее свойство, описывающее фон страницы.</li>
+</ul>
+<h2>Размеры, ширина, высота – width, height</h2>
+<ul>
+  <li>width: 100px;</li>
+  <li>min-width: 100px;</li>
+  <li>max-width: 100px;</li>
+  <li>height: 100px;</li>
+  <li>min-height: 100px;</li>
+  <li>max-height: 100px;</li>
+</ul>
+<p>В чем задаются значения? В <a href="https://www.w3.org/TR/css3-values/#absolute-lengths" target="_blank" rel="noopener noreferrer">абсолютных</a> и <a href="https://www.w3.org/TR/css3-values/#relative-lengths" target="_blank" rel="noopener noreferrer">относительных</a> единицах.</p>
+<h2>Цвет – color</h2>
+<ul>
+  <li>color: green;</li>
+</ul>
+<h2>Рамка – border</h2>
+<ul>
+  <li>border: 2px dashed blue;</li>
+  <li>border-radius: 5px;</li>
+</ul>
+<h2>Шрифт – font</h2>
+<a href="https://html5book.ru/css-shrifty/" target="_blank" rel="noopener noreferrer">Шрифт в CSS</a> с картинками.
+<ul>
+  <li>font-family: arial sans-serif;<br>
+    <a href="https://en.wikipedia.org/wiki/Sans-serif" target="_blank" rel="noopener noreferrer">Гротеск</a>: sans – без + serif – <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%81%D0%B5%D1%87%D0%BA%D0%B8" target="_blank" rel="noopener noreferrer">засечек</a>. <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D1%82%D0%B8%D0%BA%D0%B2%D0%B0" target="_blank" rel="noopener noreferrer">Антиква</a>, serif – с засечками:<br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Serif_and_sans-serif_03.svg" alt=""></li>
+  <li>font-size: 16pt;</li>
+</ul>
+<p><a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp" target="_blank" rel="noopener noreferrer">CSS Web Safe Font Combinations</a>,
+  <a href="https://habr.com/ru/post/188484/" target="_blank" rel="noopener noreferrer">Мобильная типографика</a></p>
+<h2>Текст – text</h2>
+<ul>
+  <li>text-align: justify; (left, right, center)</li>
+  <li>text-decoration: underline;</li>
+  <li>line-height: 20pt;</li>
+</ul>
+<h2>Поля – margin и padding</h2>
+<ul>
+  <li>margin: 0 auto; (внешнее поле, маргиналии)</li>
+  <li>padding: 20px; (внутреннее поле)</li>
+</ul>
+<h2>Положение и видимость</h2>
+<ul>
+  <li>display: block; (inline, inline-block, none)</li>
+  <li>position: relative; (absolute)</li>
+  <li>float: right; (left)</li>
+  <li>object-fit: cover; (contain, scale-down. Для тегов img и video)</li>
+  <li><a href="https://html5book.ru/svoystva-object-fit-i-object-position/" target="_blank" rel="noopener noreferrer">object-position</a>: 50% 50%;</li>
+  <li>overflow-y: scroll;</li>
+</ul>
+<h2>Горизонтальное и вертикальное выравнивание</h2>
+<p><a href="https://flaviocopes.com/css-centering/" target="_blank" rel="noopener
+  noreferrer">Центрирование в css</a>
+  <a href="https://www.w3schools.com/csS/css_align.asp" target="_blank"
+  rel="noopener noreferrer">выравнивание в css</a>
+</p>
+
+<h2><a href="https://www.w3schools.com/csS/css3_flexbox.asp" target="_blank" rel="noopener noreferrer">Flexbox</a></h2>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank" rel="noopener noreferrer">Basic concepts of flexbox</a>
+
+<h2>Остальное</h2>
+<ul>
+  <li>list-style: none; (применяется для скрытия буллетов у ненумерованных списков)</li>
+</ul>
+<p>Применение свойств классов к <a href="https://codepen.io/gvardovich/pen/zYYoOWV" target="_blank" rel="noopener noreferrer">простому html-коду</a>:<br>
+  <img src="../codepen.png" alt=""></p>
+<p>Полезные ссылки: <a href="https://css-tricks.com/" target="_blank" rel="noopener
+noreferrer">css-tricks</a>,
+  <a href="https://www.w3schools.com/cssref/css_default_values.asp" target="_blank" rel="noopener noreferrer">CSS Default Values Reference</a>,
+  <a href="https://html5book.ru/gorizontalnoe-menu/" target="_blank" rel="noopener noreferrer">горизонтальное меню</a>,
+  <a href="http://htmlbook.ru/css/position" target="_blank" rel="noopener noreferrer">position</a> (Устанавливает способ позиционирования элемента относительно окна браузера или других объектов на веб-странице).</p>
+</body>
+</html>
