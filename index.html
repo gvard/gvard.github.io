@@ -16,32 +16,38 @@
   <div class="column left">
 
     <h1>gvard.github.io</h1>
-    <p><a href="https://time100.ru/fun" target="_blank" rel="noopener noreferrer">Точное московское время онлайн</a>,
-    <a href="https://yandex.com/time/sync.json?geo=213" target="_blank" rel="noopener noreferrer">API точного времени Yandex</a>.</p><br>
-    <p><a href="solarsystem/stats/">Краткая</a> и <a href="solarsystem/stats.html">полная</a> статистика Солнечной системы;
-      <a href="stars/stats.html">статистика звездных каталогов и транзиентов</a>;<br>
-      <a href="cosm/stats/">пилотируемая космонавтика: кратко</a>, <a href="cosm/stats.html">космонавтика в цифрах</a> (страницы создаются автоматически).<br>
-    И еще много интересного по ссылкам.</p>
+    <p><a href="https://time100.ru/fun" target="_blank" rel="noopener noreferrer">Точное московское время онлайн</a></p>
+    <h2>Программирование автоматизирует работу. Web-дизайн делает результат красивым:</h2>
+    <ul>
+      <li><a href="solarsystem/stats/">Солнечная система в цифрах</a></li>
+      <li><a href="cosm/stats/">Пилотируемая космонавтика в цифрах</a></li>
+    </ul>
+    <p>Эти страницы обновляются запуском программы.</p>
+    <p>Больше цифр:</p>
+      <ul>
+        <li><a href="solarsystem/stats.html">Статистика Солнечной системы</a></li>
+        <li><a href="cosm/stats.html">Космонавтика в цифрах</a></li>
+        <li><a href="stars/stats.html">Статистика звездных каталогов и транзиентов</a></li>
+      </ul>
     <p>
       <button onclick="mkReq('apod')">Показать астрономическую картинку дня</button> &ndash; NASA APOD,
-      <a href="http://www.astronet.ru/db/apod.html" target="_blank" rel="noopener
-      noreferrer">на русском</a>
+      <a href="http://www.astronet.ru/db/apod.html" target="_blank" rel="noopener noreferrer">на русском</a>
       (<a href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA APIs</a>, см.
       страницу <a href="dev/request/">JavaScript: запрос, ответ</a>).<br>
       <span id="sp">&nbsp;</span>
-    </p><br>
+    </p>
+    <p style="color:red; font-weight: bold">Занятия кружков проводятся в дистанционной форме, связь по электронной почте!</p>
 
-    <span style="color:red; font-weight: bold">Занятия проводятся в дистанционной форме, связь по электронной почте!</span>
     <h2>К занятиям по программированию:</h2>
     <ul>
       <li><a href="py/api/">Запросы при помощи urllib.request и json</a></li>
-      <li><a href="py/pygame/">&laquo;Черепашья графика&raquo; turtle</a>: рисование при помощи алгоритма. Графический интерфейс.</li>
+      <li><a href="py/turtle/">&laquo;Черепашья графика&raquo; turtle</a>: рисование при помощи алгоритма. Графический интерфейс.</li>
     </ul>
 
     <h2>К занятиям по web-дизайну:</h2>
     <ul>
       <li><b><a href="web/task/index.html#fonts">Задание к 30 марта: шрифты и работа с текстом.</a></b></li>
-      <li><b><a href="web/index.html#questions">Вопросы на знание Web-дизайна</a></b>.</li>
+      <li><b><a href="web/check/">Вопросы на знание Web-дизайна</a></b>.</li>
       <li><b><a href="web/tools/">Как работать: инструменты web-дизайнера</a></b>. Браузер, текстовый редактор, хостинг, валидаторы.</li>
       <li><b><a href="web/fonts/">Шрифты</a></b>: основные свойства, <b>единицы измерения в CSS</b>, подключение внешних шрифтов с fonts.google.com</li>
       <li><a href="web/structure.html">Как выглядит семантическая разметка</a> (памятка по структуре документа).</li>
@@ -51,16 +57,13 @@
         (например, <a href="https://www.pexels.com/ru-ru/collections/galaxy-stars-zq2v8xq/" target="_blank" rel="noopener noreferrer">Galaxy & Stars</a>,
         <a href="https://www.pexels.com/ru-ru/collections/abstract-art-4cxqlt3/" target="_blank" rel="noopener noreferrer">Abstract Art</a>).<br>
         <b>Гифки</b>: <a href="https://giphy.com/" target="_blank" rel="noopener noreferrer">giphy.com</a>.</li>
-      <li><a href="https://codepen.io/gvardovich/pen/KKwRXWx" target="_blank" rel="noopener noreferrer">Flex-direction и checkBox</a>,
-        <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer">Введение во Flexbox</a>.</li>
       <li><a href="dev/request/">JavaScript: загрузка данных</a> (запрос, ответ)</li>
-      <li><a href="https://codepen.io/gvardovich/pen/NWPJwqQ" target="_blank" rel="noopener noreferrer">Форма</a>,
-        <b><a href="https://almucantar.000webhostapp.com/php/" target="_blank" rel="noopener noreferrer">Страница с использованием php</a></b>,
-        <a href="https://almucantar.000webhostapp.com/php/readbook.php" target="_blank" rel="noopener noreferrer">Простая гостевая книга</a></li>
+      <li><b><a href="php/">Страница php</a>,
+        <a href="https://almucantar.000webhostapp.com/php/" target="_blank" rel="noopener noreferrer">на almucantar.000webhostapp.com (php-код работает)</a></b>.
+        <a href="https://almucantar.000webhostapp.com/php/readbook.php" target="_blank" rel="noopener noreferrer">Простая гостевая книга</a>.</li>
     </ul>
     <br>
-    <p>Страницы, сделанные на занятиях, критерии их оценки и подробное описание &ndash;
-      на странице <a href="web/index.html#works">Web-дизайн</a>.</p>
+    <p>Страницы, сделанные на занятиях, критерии их оценки и подробное описание &ndash; на странице <a href="web/index.html#works">Web-дизайн</a>.</p>
 
     <p>Просмотреть и скачать исходные файлы можно на
     <a href="https://github.com/gvard/gvard.github.io" target="_blank" rel="noopener noreferrer">странице репозитория github</a>.<br>
@@ -90,9 +93,7 @@
     <li><a href="me/">Об авторе</a></li>
   </ul>
   </nav>
-
 </div>
-
 </div>
 </body>
 </html>
