@@ -2,9 +2,7 @@
   margin: 0;
   padding: 0;
 }
-body {
-  background-color: rgb(65, 61, 61);
-}
+body {background-color: #3e3e3e;}
 img {
   max-width: 100%;
   height: auto;
@@ -32,9 +30,7 @@ img {
   margin-right: 10px;
   width: calc(100% - 240px);
 }
-.column p {
-  margin: 0;
-}
+.column p {margin: 0.5em 0 0.5em 0;}
 @media (max-width: 480px) {
   .right {
     width: 100%;
@@ -45,15 +41,9 @@ img {
     margin: 0;
   }
 }
-ul, ol {
-  margin-left: 25px;
-}
-nav ul li a {
-  text-decoration: none;
-}
-nav ul li a:hover {
-  text-decoration: underline;
-}
+ul, ol {margin-left: 25px;}
+nav ul li a {text-decoration: none;}
+nav ul li a:hover {text-decoration: underline;}
 .center {
   text-align: center;
   background: url("bg.gif");
