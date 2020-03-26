@@ -182,7 +182,7 @@ iss_pass = json.load(iss_pass_json_bin)
 <ol>
   <li>точную дату и время,</li>
   <li>разницу в минутах и секундах с временем компьютера</b>.</li>
-  <li>&laquo;на пятерку&raquo;: напечатать время рассвета и заката.</li>
+  <li>&laquo;На пятерку&raquo;: напечатать время рассвета и заката.</li>
 </ol>
 
 <p><b>Точное время доступно по ключу "time" и представляет собой unix time, но
@@ -194,8 +194,10 @@ iss_pass = json.load(iss_pass_json_bin)
 потом у результата этой операции обратиться по ключам "sunrise" и "sunset".</p>
 <p>А еще это напоминает сказку про <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%89%D0%B5%D0%B9" target="_blank" rel="noopener noreferrer">Кощея бессмертного</a>:</p>
 <pre><code>>>> сказка = {"дуб": {"сундук": {"заяц": {"утка": {"яйцо": "игла, смерть Кощея"}}}}}
+# Сказка сказывается
 >>> сказка.get("дуб")
 {'сундук': {'заяц': {'утка': {'яйцо': 'игла, смерть Кощея'}}}}
+# Дело делается
 >>> сказка.get("дуб").get("сундук")
 {'заяц': {'утка': {'яйцо': 'игла, смерть Кощея'}}}</code></pre>
 
@@ -250,5 +252,7 @@ exchangerate_json_bin = urllib.request.urlopen(URL)
 exchangerate = json.load(exchangerate_json_bin)
 </code></pre>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/BilleteiNTER_II.jpg/640px-BilleteiNTER_II.jpg" alt="">
+
+<h2>Для самостоятельного изучения: <a href="../../dev/request/">справочная информация, примеры открытых API</a></h2>
 </body>
 </html>
