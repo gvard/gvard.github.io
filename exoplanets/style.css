@@ -1,0 +1,22 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+div.desc, .class, .temp {
+  font-size: 0.89em;
+  color: white;
+}
+.mass, .age, .desc, .mag, .dist, .number {
+  display: none;
+  font-size: 0.78em;
+  color: white;
+}
+@media (max-width: 625px) {
+  .name {
+    font-size: 0.82em;
+    color: white;
+  }
+  img {
+    max-width: 100%;
+  }
+}
