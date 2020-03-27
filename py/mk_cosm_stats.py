@@ -79,3 +79,23 @@ SPACEFLIGHT_HTML = f"""<h2>Пилотируемая космонавтика</h2
 
 with open(os.path.join(os.pardir, 'cosm', 'stats.html'), 'w', encoding="utf8") as handle:
     print(HEAD + SPACEFLIGHT_HTML + N2_STATS_HTML + NANOSATS_HTML + TAIL, file=handle)
+
+HEAD = mk_head("Космонавтика: статистика", style="stats.css", script="../../stats.js")
+BODY = f"""<body onload="mkHeader()">
+  <div id="stats" class="container show">
+    <h1 id="header"></h1>
+    <div class="list">
+    <ul>
+      <li>Совершили орбитальный полет и&nbsp;они космонавты: <span class="yellow">{COSMONAUT_NUM}</span></li>
+      <li>Побывали в космосе и&nbsp;они астронавты: <span class="yellow">{FAI_NUM}</span></li>
+      <li>Побывали в космосе, на высоте более 80 467&nbsp;м: <span class="yellow">{USAF_NUM}</span></li>
+      <li>Люди провели в космосе свыше <span class="yellow">{MANYR_NUM}</span> человеко-лет</li>
+      <li>Сейчас в космосе <span class="yellow">{len(ASTROS_LST)}</span> космонавта</li>
+    </ul>
+  </div>
+  <div id="footer">
+    <h2>Центр Астрономического и&nbsp;космического образования</h2>
+  </div>
+"""
+with open(os.path.join(os.pardir, 'cosm', 'stats', 'index.html'), 'w', encoding="utf8") as handle:
+    print(HEAD + BODY + TAIL, file=handle)
