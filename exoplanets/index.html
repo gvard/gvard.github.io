@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Экзопланеты</title>
+  <link rel="stylesheet" href="../collections.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../collections.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+<nav class="menu">
+<ul>
+  <li>Коллекции:</li>
+  <li><a href="../solarsystem/">Солнечная система</a></li>
+  <li><a href="../stars/">Звезды</a></li>
+  <li><a href="../galaxies/">Галактики</a></li>
+</ul>
+</nav>
+
+<div id="messageBox">
+  <div id="contents"></div>
+</div>
+
+<h1>Экзопланеты и родительские звезды</h1>
+
+<div class="cont">
+  <input type="checkbox" name=".name" value="block" checked onclick="showHideThis(this)">Имя
+  <input type="checkbox" name=".animation" value="block" checked onclick="showHideThis(this)">С анимированными картинками.<br>
+</div>
+
+<div id="tab">
+<div class="obj imaged animation">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/HR_8799.gif"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/HR_8799" title="V342 Peg">HR 8799</a></div>
+  <div class="info_field number">4</div>
+  <div class="info_field dist">39.4 ± 1.0</div>
+  <div class="info_field size">1.5 ± 0.3</div>
+  <div class="info_field mass">1.56</div>
+  <div class="info_field class">A5V</div>
+  <div class="info_field age">0.06</div>
+  <div class="info_field temp">7430±75</div>
+  <div class="info_field mag">5.96</div>
+</div>
+</div>
+
+<div class="cont">
+<h2>Ссылки</h2>
+<ul>
+  <li><a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank" rel="noopener noreferrer">NASA Exoplanet Archive</a> (4116 confirmed planets),
+  </li><li><a href="http://exoplanet.eu/" target="_blank" rel="noopener noreferrer">The Extrasolar Planets Encyclopaedia</a> (4177 planets / 3098 planetary systems / 679 multiple planet systems),
+  </li><li><a href="http://exoplanets.org/" target="_blank" rel="noopener noreferrer">Exoplanet Orbit Database | Exoplanet Data Explorer</a> (3262 confirmed planets).
+  </li><li><a href="https://en.wikipedia.org/wiki/List_of_directly_imaged_exoplanets" target="_blank" rel="noopener noreferrer">List of directly imaged exoplanets</a></li>
+</ul>
+</div>
+<footer>2020 Википедия. Компиляция, код: Д.С. Насонов.</footer>
+</body>
+</html>
