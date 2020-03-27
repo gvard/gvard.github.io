@@ -228,7 +228,7 @@ with open(os.path.join(os.pardir, 'solarsystem', 'stats.html'), 'w', encoding="u
 
 HEAD = mk_head("Статистика Солнечной системы", style="stats.css", script="../../stats.js")
 BODY = f"""<body onload="mkHeader()">
-  <div id="solsysstats" class="container show">
+  <div id="stats" class="container show">
     <h1 id="header"></h1>
     <div class="list">
     <ul>
@@ -239,8 +239,8 @@ BODY = f"""<body onload="mkHeader()">
       <li>Только <span class="yellow">{str((len(MP_NAMES)-2)/1000)}</span> имеют имена</li>
     </ul>
   </div>
-  <div class="footer">
-    <h2>Центр Астрономического и космического образования</h2>
+  <div id="footer">
+    <h2>Центр Астрономического и&nbsp;космического образования</h2>
   </div>
 """
 with open(os.path.join(os.pardir, 'solarsystem', 'stats', 'index.html'), 'w', encoding="utf8") as handle:
