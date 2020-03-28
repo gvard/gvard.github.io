@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,6 @@
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="quiz.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="quiz.js"></script>
 </head>
 <body>
@@ -21,9 +20,9 @@
 </ul>
 </nav>
 
-  <h2 class="quizHeader">Тест на знание html!</h2>
+<h2 class="quizHeader">Тест на знание HTML!</h2>
 
-  <table style="width:583px">
+<table style="width:580px">
   <tr>
   <td>
     <div>
@@ -104,23 +103,17 @@
     </div>
   </td>
   </tr>
-  </table>
+</table>
 <br>
 <div class="submitter">
-<input class="quizSubmit" id="submitButton" onClick="submitQuiz()" type="submit" value="Проверить" size="9">
+  <input class="quizSubmit" id="submitButton" onClick="submitQuiz()" type="submit" value="Проверить" size="9">
 </div>
-
 <!--show only wrong answers on submit-->
-  <div class="quizAnswers" id="correctAnswer1"></div>
-  <div class="quizAnswers" id="correctAnswer2"></div>
-  <div class="quizAnswers" id="correctAnswer3"></div>
-  <div class="quizAnswers" id="correctAnswer4"></div>
-
+<div class="quizAnswers" id="correctAnswer1"></div>
+<div class="quizAnswers" id="correctAnswer2"></div>
+<div class="quizAnswers" id="correctAnswer3"></div>
+<div class="quizAnswers" id="correctAnswer4"></div>
 <!--show score upon submit-->
-  <div>
-    <h2 class="quizScore" id="userScore"></h2>
-  </div>
-</div>
-
+<h2 class="quizScore" id="userScore"></h2>
 </body>
 </html>
