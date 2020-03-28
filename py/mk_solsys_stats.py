@@ -228,20 +228,21 @@ with open(os.path.join(os.pardir, 'solarsystem', 'stats.html'), 'w', encoding="u
 
 HEAD = mk_head("Статистика Солнечной системы", style="stats.css", script="../../stats.js")
 BODY = f"""<body onload="mkHeader()">
-  <div id="stats" class="container show">
-    <h1 id="header"></h1>
-    <div class="list">
-    <ul>
-      <li>В Солнечной системе <span class="yellow">8</span> планет</li>
-      <li><span class="yellow">{SATELLITES}</span> спутников планет</li>
-      <li>Более <span class="yellow">{str(COMETS_NUM)[:-2]+'00'}</span> комет</li>
-      <li>Более <span class="yellow">{str(MBA + NEA)[:-4]+'0.000'}</span> астероидов</li>
-      <li>Только <span class="yellow">{str((len(MP_NAMES)-2)/1000)}</span> имеют имена</li>
-    </ul>
+<div id="stats" class="container show">
+  <h1 id="header"></h1>
+  <div class="list">
+  <ul>
+    <li>В Солнечной системе <span class="yellow">8</span> планет</li>
+    <li><span class="yellow">{SATELLITES}</span> спутников планет</li>
+    <li>Более <span class="yellow">{str(COMETS_NUM)[:-2]+'00'}</span> комет</li>
+    <li>Более <span class="yellow">{str(MBA + NEA)[:-4]+'0.000'}</span> астероидов</li>
+    <li>Только <span class="yellow">{str((len(MP_NAMES)-2)/1000)}</span> имеют имена</li>
+  </ul>
   </div>
   <div id="footer">
     <h2>Центр Астрономического и&nbsp;космического образования</h2>
   </div>
+</div>
 """
 with open(os.path.join(os.pardir, 'solarsystem', 'stats', 'index.html'), 'w', encoding="utf8") as handle:
     print(HEAD + BODY + TAIL, file=handle)
