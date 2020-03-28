@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Тест на зание HTML</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="quiz.css">
   <script src="quiz.js"></script>
@@ -20,100 +20,98 @@
 </ul>
 </nav>
 
-<h2 class="quizHeader">Тест на знание HTML!</h2>
+<h2>Тест на знание HTML!</h2>
 
-<table style="width:580px">
-  <tr>
-  <td>
-    <div>
-      <p class="question">1. Какой тег самый главный?</p>
-
-      <ul>
-      <input class="answer" type="radio" name="q1" value="1">
-      <label id="correctString1">html</label>
-      <br>
-      <input class="answer" type="radio" name="q1" value="0">
-      <label>head</label>
-      <br>
-      <input class="answer" type="radio" name="q1" value="0">
-      <label>body</label>
-      <br>
-      <input class="answer" type="radio" name="q1" value="0">
-      <label>http</label>
-      </ul>
-    </div>
-  </td>
-  <td>
-    <div>
-      <p class="question">2. Какой тег лишний?</p>
-
-      <ul>
-      <input class="answer" type="radio" name="q2" value="0">
-      <label>div</label>
-      <br>
-      <input class="answer" type="radio" name="q2" value="1">
-      <label id="correctString2">img</label>
-      <br>
-      <input class="answer" type="radio" name="q2" value="0">
-      <label>p</label>
-      <br>
-      <input class="answer" type="radio" name="q2" value="0">
-      <label>h1</label>
-      </ul>
-    </div>
-  </td>
-  </tr>
-  <tr>
-  <td>
-    <div>
-      <p class="question">3. Какой тег является строчным?</p>
-
-      <ul>
-      <input class="answer" type="radio" name="q3" value="0">
-      <label>p</label>
-      <br>
-      <input class="answer" type="radio" name="q3" value="1">
-      <label id="correctString3">span</label>
-      <br>
-      <input class="answer" type="radio" name="q3" value="0">
-      <label>h1</label>
-      <br>
-      <input class="answer" type="radio" name="q3" value="0">
-      <label>div</label>
-      </ul>
-    </div>
-  </td>
-  <td>
-    <div>
-      <p class="question">4. Какой тег является блочным?</p>
-
-      <ul>
-      <input class="answer" type="radio" name="q4" value="0">
-      <label>img</label>
-      <br>
-      <input class="answer" type="radio" name="q4" value="1">
-      <label id="correctString4">div</label>
-      <br>
-      <input class="answer" type="radio" name="q4" value="0">
-      <label>i</label>
-      <br>
-      <input class="answer" type="radio" name="q4" value="0">
-      <label>a</label>
-      </ul>
-    </div>
-  </td>
-  </tr>
-</table>
-<br>
-<div class="submitter">
-  <input class="quizSubmit" id="submitButton" onClick="submitQuiz()" type="submit" value="Проверить" size="9">
+<div class="container testfield">
+<div class="testitem">
+<p class="question">1. Какой тег самый главный?</p>
+<ol>
+  <li>
+    <input class="answer" type="radio" name="q1" value="1" id="a11">
+    <label for="a11" id="correctString1">html</label>
+  </li><li>
+    <input class="answer" type="radio" name="q1" value="0" id="a12">
+    <label for="a12">head</label>
+  </li><li>
+    <input class="answer" type="radio" name="q1" value="0" id="a13">
+    <label for="a13">body</label>
+  </li><li>
+    <input class="answer" type="radio" name="q1" value="0" id="a14">
+    <label for="a14">http</label>
+  </li>
+</ol>
 </div>
-<!--show only wrong answers on submit-->
-<div class="quizAnswers" id="correctAnswer1"></div>
-<div class="quizAnswers" id="correctAnswer2"></div>
-<div class="quizAnswers" id="correctAnswer3"></div>
-<div class="quizAnswers" id="correctAnswer4"></div>
-<!--show score upon submit-->
-<h2 class="quizScore" id="userScore"></h2>
+
+<div class="testitem">
+<p class="question">2. Какой тег лишний?</p>
+<ol>
+  <li>
+    <input class="answer" type="radio" name="q2" value="0" id="a21">
+    <label for="a21">div</label>
+  </li><li>
+    <input class="answer" type="radio" name="q2" value="1" id="a22">
+    <label for="a22" id="correctString2">img</label>
+  </li><li>
+    <input class="answer" type="radio" name="q2" value="0" id="a23">
+    <label for="a23">p</label>
+  </li><li>
+    <input class="answer" type="radio" name="q2" value="0" id="a24">
+    <label for="a24">h1</label>
+  </li>
+</ol>
+</div>
+
+<div class="testitem">
+<p class="question">3. Какой тег является строчным?</p>
+<ol>
+  <li>
+    <input class="answer" type="radio" name="q3" value="0" id="a31">
+    <label for="a31">p</label>
+  </li><li>
+    <input class="answer" type="radio" name="q3" value="1" id="a32">
+    <label for="a32" id="correctString3">span</label>
+  </li><li>
+    <input class="answer" type="radio" name="q3" value="0" id="a33">
+    <label for="a33">h1</label>
+  </li><li>
+    <input class="answer" type="radio" name="q3" value="0" id="a34">
+    <label for="a34">div</label>
+  </li>
+</ol>
+</div>
+
+<div class="testitem">
+<p class="question">4. Какой тег является блочным?</p>
+<ol>
+  <li>
+    <input class="answer" type="radio" name="q4" value="0" id="a41">
+    <label for="a41">img</label>
+  </li><li>
+    <input class="answer" type="radio" name="q4" value="1" id="a42">
+    <label for="a42" id="correctString4">div</label>
+  </li><li>
+    <input class="answer" type="radio" name="q4" value="0" id="a43">
+    <label for="a43">i</label>
+  </li><li>
+    <input class="answer" type="radio" name="q4" value="0" id="a44">
+    <label for="a44">a</label>
+  </li>
+</ol>
+</div>
+</div>
+
+<br>
+<div class="testfield">
+  <div class="btn">
+    <input class="quizSubmit" id="submitButton" onClick="submitQuiz()" type="submit" value="Проверить" size="9">
+  </div>
+  <!--Для правильных ответов-->
+  <div class="quizAnswers" id="correctAnswer1"></div>
+  <div class="quizAnswers" id="correctAnswer2"></div>
+  <div class="quizAnswers" id="correctAnswer3"></div>
+  <div class="quizAnswers" id="correctAnswer4"></div>
+  <!--Для вывода результата-->
+  <h2 class="quizScore" id="userScore">&nbsp;</h2>
+</div>
 </body>
 </html>

@@ -4,11 +4,9 @@
 // https://codepen.io/harrysadlermusic/pen/DihjK
 function submitQuiz() {
   console.log('submitted');
-
   // get each answer score
   function answerScore(qName) {
     const radiosNo = document.getElementsByName(qName);
-
     for (let i = 0, length = radiosNo.length; i < length; i++) {
       if (radiosNo[i].checked) {
       // do something with radiosNo
@@ -21,16 +19,14 @@ function submitQuiz() {
     return answerValue;
   }
   // calc score with answerScore function
-  var calcScore = (answerScore('q1') + answerScore('q2') + answerScore('q3') + answerScore('q4'));
+  let calcScore = (answerScore('q1') + answerScore('q2') + answerScore('q3') + answerScore('q4'));
   console.log("CalcScore: " + calcScore); // it works!
-
   // function to return correct answer string
   function correctAnswer(correctStringNo, qNumber) {
     console.log("qNumber: " + qNumber);  // logs 1,2,3,4 after called below
     return ("Правильный ответ &ndash; #" + qNumber + ": &nbsp;<strong>" +
       (document.getElementById(correctStringNo).innerHTML) + "</strong>");
   }
-
   // print correct answers only if wrong (calls correctAnswer function)
   if (answerScore('q1') === 0) {
     document.getElementById('correctAnswer1').innerHTML = correctAnswer('correctString1', 1);
@@ -44,10 +40,8 @@ function submitQuiz() {
   if (answerScore('q4') === 0) {
     document.getElementById('correctAnswer4').innerHTML = correctAnswer('correctString4', 4);
   }
-
   // calculate "possible score" integer
-  let questionCountArray = document.getElementsByClassName('question');
-
+  const questionCountArray = document.getElementsByClassName('question');
   let questionCounter = 0;
   for (let i = 0, length = questionCountArray.length; i < length; i++) {
     questionCounter++;
@@ -55,15 +49,14 @@ function submitQuiz() {
 
   // show score as "score/possible score"
   let showScore = "Результат: " + calcScore +"/" + questionCounter;
-  // if 4/4, "perfect score!"
+  // if 4/4:
   if (calcScore === questionCounter) {
-    showScore = showScore + "&nbsp; <strong>Отличный результат!</strong>"
+    showScore += "&nbsp; <strong>Отличный результат!</strong>"
   };
   document.getElementById('userScore').innerHTML = showScore;
 }
-
-$(document).ready(function() {
-  document.getElementById('submitButton').click(function() {
-    $(this).classList.add('hide');
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('submitButton').addEventListener('click', function() {
+    this.classList.add('hide');
   });
 });
