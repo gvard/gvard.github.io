@@ -3,7 +3,10 @@ body {
   padding: 0;
   color: white;
   background-color: black;
-  font-size: 14pt;
+  font-size: 1.1em;
+}
+main {
+  padding: 20px;
 }
 .obj {
   display: inline-block;
@@ -15,25 +18,24 @@ body {
 .img {
   min-height: 240px;
 }
-.desc {
-  background-color: #ccc;
-}
 img {
   display: block;
+}
+img.avatar {
   border-radius: 50%;
 }
 nav ul {
+  margin: 0;
   background-color: blue;
 }
 nav ul li {
   display: inline-block;
 }
 nav a {
-  font-size: 16pt;
   display: block;
   padding: 0 10px;
   color: white;
-  font-size: 16px;
+  font-size: 1.1em;
   line-height: 40px;
   text-decoration: none;
 }
