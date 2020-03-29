@@ -255,5 +255,21 @@ exchangerate = json.load(exchangerate_json_bin)
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/BilleteiNTER_II.jpg/640px-BilleteiNTER_II.jpg" alt="">
 
 <h2>Для самостоятельного изучения: <a href="../../dev/request/">справочная информация, примеры открытых API</a></h2>
+
+<h2>Решение проблем</h2>
+<p>Если подключение по сети отсутствует, использовать данные из раздела &laquo;Результат запроса&raquo;. Программа для задачи &laquo;Космонавты&raquo;:</p>
+<pre><code>DATA = {"people":[
+  {"craft": "ISS", "name": "Andrew Morgan"},
+  {"craft": "ISS", "name": "Oleg Skripochka"},
+  {"craft": "ISS", "name": "Jessica Meir"}],
+"message": "success", "number": 3}
+print(DATA)
+print("Число космонавтов на орбите:", DATA.get("number"))
+print("Первый космонавт:", DATA.get("people")[0].get("name"))
+PEOPLE = DATA.get("people")
+print("Второй космонавт:", PEOPLE[1].get("name"))
+for person in PEOPLE:
+    print(person.get("name"))
+</code></pre>
 </body>
 </html>
