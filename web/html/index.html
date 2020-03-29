@@ -10,14 +10,30 @@
 <body>
 <nav class="menu">
   <ul>
-    <li><a href="../">Главная</a></li>
+    <li><a href="../">Web-дизайн</a></li>
   </ul>
 </nav>
+<h1>Как устроен HTML</h1>
+<div class="container">
+<div class="blocks">
+<ul class="txt">
+  <li>HTML – Язык гипертекстовой разметки. Как у любого языка, у HTML есть <i>грамматика и словарь</i>. Слова этого словаря записываются в &lt;угловых&gt; скобках и называются тегами.</li>
+  <li>Теги используются для указания начала и конца элемента разметки, то есть, обычно <b>теги используются парами</b>. К конечному элементу пары тегов добавляют «/». Так отмечают начало и конец параграфа, или абзаца: <b>&lt;p&gt;</b>Текст параграфа<b>&lt;/p&gt;</b>. Парный тег – это <b>контейнер</b>.
+    Если начало и конец элемента совпадают, используют <b>одиночные теги</b>. Примеры одиночных тегов: &lt;br&gt;, &lt;img&gt;.</li>
+  <li>У любой HTML-страницы есть <b>основные теги</b>, задающие структуру, &laquo;скелет&raquo; всего документа. Даже если не написать некоторые из них в файле, браузер автоматически добавит недостающие элементы базовой разметки.</li>
+  <li>Теги HTML-документа выстраиваются в дерево зависимостей – <b><a href="https://ru.wikipedia.org/wiki/Document_Object_Model" target="_blank" rel="noopener noreferrer">Document Object Model</a>, DOM</b>.</li>
+</ul>
+</div>
+<div class="blocks">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/464px-DOM-model.svg.png" alt="">
+</div>
+</div>
 
 <ol>
-<li><b>Структура и инструкции для построения html-документа</b>
+<li><b>Структура и инструкции для построения HTML-документа:</b>
   <ul>
-    <li><a href="https://www.w3schools.com/tags/tag_html.asp" target="_blank" rel="noopener noreferrer">html</a>. Мы должны сказать браузеру, что это html-документ!</li>
+    <li><b>&lt;!DOCTYPE&gt;</b>. Указывается в первой строке документа и означает: <b>&laquo;Этот документ написан на HTML5&raquo;. Не представлен в дереве документа DOM.</b> <a href="https://www.w3schools.com/tags/tag_doctype.asp" target="_blank" rel="noopener noreferrer">Описание на w3schools.com</a>. </li>
+    <li><a href="https://www.w3schools.com/tags/tag_html.asp" target="_blank" rel="noopener noreferrer">html</a>. Главный тег, сообщает браузеру, что это HTML-документ. Находится в основании дерева DOM и он – <b>корневой элемент</b>.</li>
     <li><a href="https://www.w3schools.com/tags/tag_head.asp" target="_blank" rel="noopener noreferrer">head</a>. Не всю информацию надо показывать на странице. Служебная информация - в &laquo;голове&raquo;!</li>
     <li><a href="https://www.w3schools.com/tags/tag_title.asp" target="_blank" rel="noopener noreferrer">title</a>,
       <a href="https://www.w3schools.com/tags/tag_link.asp" target="_blank" rel="noopener noreferrer">link</a>. Краткий заголовок и ссылки на внешние файлы (иконка, стилевой файл) определяются в head.</li>
