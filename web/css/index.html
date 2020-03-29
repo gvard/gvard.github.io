@@ -4,26 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Свойства css</title>
+  <title>CSS: cвойства</title>
   <link rel="stylesheet" href="../../compact.css">
 </head>
 <body>
 <nav class="menu">
   <ul>
-    <li><a href="../">Главная</a></li>
+    <li><a href="../">Web-дизайн</a></li>
+    <li><a href="#default">Стили по умолчанию</a></li>
   </ul>
 </nav>
-
+<h1>Оформление Web-страниц</h1>
 <p>В современной версии стандарта HTML5 практически все оформление страницы делается при помощи каскадных листов стилей,
   <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank" rel="noopener noreferrer">CSS</a>.
   Команда CSS состоит из селектора и соответствующих ему свойств:<br>
   <img src="../css.png" alt="Иллюстрация из Большая книга CSS3. Д. Макфарлард." style="margin: 20px">
 </p>
 <p>Файлы с расширением .css подключаются к html-документу при помощи следующей строки <b>внутри</b> тега &lt;head&gt;:
-</p><pre>&lt;link rel="stylesheet" href="style.css"&gt;</pre>
+</p><pre><b>&lt;link rel="stylesheet" href="style.css"&gt;</b></pre>
 
 <p>Селектором css может быть тег html. Свойства будут применены ко всем одноименным тегам на странице. Также, селектором может быть название определенного класса. Свойства селектора <b>*</b> будут применены ко всем тегам на странице.</p>
 <p>Свойства css записываются в фигурных скобках после определенного селектора. Ниже для удобства свойства разбиты на несколько категорий.</p>
+
+<h2 id="default">Стили по умолчанию</h2>
+<p><a href="https://htmlacademy.ru/courses/307/run/11" target="_blank" rel="noopener noreferrer">Стили по умолчанию</a>,
+  <a href="https://www.w3schools.com/cssref/css_default_values.asp" target="_blank" rel="noopener noreferrer">список</a></p>
 
 <h2>Все свойства CSS</h2>
   <p><a href="https://www.web4college.com/css-play/" target="_blank" rel="noopener noreferrer">Список 300+ CSS-свойств</a>,
@@ -44,16 +49,21 @@
   <li>min-height: 100px;</li>
   <li>max-height: 100px;</li>
 </ul>
-<p>В чем задаются значения? В <a href="https://www.w3.org/TR/css3-values/#absolute-lengths" target="_blank" rel="noopener noreferrer">абсолютных</a> и <a href="https://www.w3.org/TR/css3-values/#relative-lengths" target="_blank" rel="noopener noreferrer">относительных</a> единицах.</p>
+<p>В чем задаются значения? В <a href="https://www.w3.org/TR/css3-values/#absolute-lengths" target="_blank" rel="noopener noreferrer">абсолютных</a>
+  и <a href="https://www.w3.org/TR/css3-values/#relative-lengths" target="_blank" rel="noopener noreferrer">относительных</a> единицах.<br>
+  <b><a href="../fonts/index.html#units">Единицы измерения</a></b></p>
+
 <h2>Цвет – color</h2>
 <ul>
   <li>color: green;</li>
 </ul>
+
 <h2>Рамка – border</h2>
 <ul>
   <li>border: 2px dashed blue;</li>
   <li>border-radius: 5px;</li>
 </ul>
+
 <h2>Шрифт – font</h2>
 <a href="https://html5book.ru/css-shrifty/" target="_blank" rel="noopener noreferrer">Шрифт в CSS</a> с картинками.
 <ul>
@@ -98,12 +108,27 @@
 <ul>
   <li>list-style: none; (применяется для скрытия буллетов у ненумерованных списков)</li>
 </ul>
+
+<h2 id="geometry">Геометрия в CSS</h2>
+<ul>
+  <li><a href="https://codepen.io/gvardovich/pen/LYYempB" target="_blank" rel="noopener noreferrer">Прямоугольник</a></li>
+  <li><a href="https://codepen.io/vitaliy_kirenkov/pen/qBBPqxm" target="_blank" rel="noopener noreferrer">Треугольники</a></li>
+  <li><a href="https://cloudfour.com/thinks/css-circles/" target="_blank" rel="noopener noreferrer">Круги</a></li>
+</ul>
+
 <p>Применение свойств классов к <a href="https://codepen.io/gvardovich/pen/zYYoOWV" target="_blank" rel="noopener noreferrer">простому html-коду</a>:<br>
   <img src="../codepen.png" alt=""></p>
-<p>Полезные ссылки: <a href="https://css-tricks.com/" target="_blank" rel="noopener
-noreferrer">css-tricks</a>,
-  <a href="https://www.w3schools.com/cssref/css_default_values.asp" target="_blank" rel="noopener noreferrer">CSS Default Values Reference</a>,
-  <a href="https://html5book.ru/gorizontalnoe-menu/" target="_blank" rel="noopener noreferrer">горизонтальное меню</a>,
-  <a href="http://htmlbook.ru/css/position" target="_blank" rel="noopener noreferrer">position</a> (Устанавливает способ позиционирования элемента относительно окна браузера или других объектов на веб-странице).</p>
+
+<h2 id="links">Ссылки:</h2>
+<ul>
+  <li><a href="http://tpverstak.ru/css-selectors/" target="_blank" rel="noopener noreferrer">Наглядно о CSS селекторах</a></li>
+  <li><a href="https://html5book.ru/css-colors/" target="_blank" rel="noopener noreferrer">CSS-цвета</a>: основные ключевые слова, числовые значения цвета<br>
+    Если цвет &ndash; это слово, но не ключевое: <a href="https://stackoverflow.com/questions/8318911/why-does-html-think-chucknorris-is-a-color" target="_blank" rel="noopener noreferrer">Почему chucknorris - это красный цвет, а chucknorr - желтый?</a>
+    <a href="https://mothereff.in/bgcolor" target="_blank" rel="noopener noreferrer">Проверить</a>.</li>
+  <li><a href="https://css-tricks.com/" target="_blank" rel="noopener noreferrer">css-tricks</a>,</li>
+  <li><a href="https://www.w3schools.com/cssref/css_default_values.asp" target="_blank" rel="noopener noreferrer">CSS Default Values Reference</a>,</li>
+  <li><a href="https://html5book.ru/gorizontalnoe-menu/" target="_blank" rel="noopener noreferrer">горизонтальное меню</a>,</li>
+  <li><a href="http://htmlbook.ru/css/position" target="_blank" rel="noopener noreferrer">position</a> (Устанавливает способ позиционирования элемента относительно окна браузера или других объектов на веб-странице).</li>
+</ul>
 </body>
 </html>

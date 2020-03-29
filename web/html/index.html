@@ -4,24 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Теги html</title>
+  <title>HTML: теги</title>
   <link rel="stylesheet" href="../../compact.css">
 </head>
 <body>
 <nav class="menu">
   <ul>
     <li><a href="../">Web-дизайн</a></li>
+    <li><a href="#tags">Теги</a></li>
+    <li><a href="#entity">Спецсимволы</a></li>
   </ul>
 </nav>
 <h1>Как устроен HTML</h1>
 <div class="container">
 <div class="blocks">
 <ul class="txt">
-  <li>HTML – Язык гипертекстовой разметки. Как у любого языка, у HTML есть <i>грамматика и словарь</i>. Слова этого словаря записываются в &lt;угловых&gt; скобках и называются тегами.</li>
-  <li>Теги используются для указания начала и конца элемента разметки, то есть, обычно <b>теги используются парами</b>. К конечному элементу пары тегов добавляют «/». Так отмечают начало и конец параграфа, или абзаца: <b>&lt;p&gt;</b>Текст параграфа<b>&lt;/p&gt;</b>. Парный тег – это <b>контейнер</b>.
+  <li>HTML – Язык <a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D1%82%D0%B5%D0%BA%D1%81%D1%82" target="_blank" rel="noopener noreferrer"> гипертекстовой</a> разметки, <a href="https://ru.wikipedia.org/wiki/HTML" target="_blank" rel="noopener noreferrer">HyperText Markup Language</a>. Как у любого языка, у HTML есть <i>грамматика и словарь</i>. Слова этого словаря записываются в &lt;угловых&gt; скобках и называются тегами.</li>
+  <li>Теги используются для указания начала и конца элемента разметки, то есть, обычно <b>теги используются парами</b>.
+    К конечному элементу пары тегов добавляют «/». Так отмечают начало и конец параграфа, или абзаца: <b>&lt;p&gt;</b>Текст параграфа<b>&lt;/p&gt;</b>. Парный тег – это <b>контейнер</b>.
     Если начало и конец элемента совпадают, используют <b>одиночные теги</b>. Примеры одиночных тегов: &lt;br&gt;, &lt;img&gt;.</li>
-  <li>У любой HTML-страницы есть <b>основные теги</b>, задающие структуру, &laquo;скелет&raquo; всего документа. Даже если не написать некоторые из них в файле, браузер автоматически добавит недостающие элементы базовой разметки.</li>
-  <li>Теги HTML-документа выстраиваются в дерево зависимостей – <b><a href="https://ru.wikipedia.org/wiki/Document_Object_Model" target="_blank" rel="noopener noreferrer">Document Object Model</a>, DOM</b>.</li>
+  <li>Для парных тегов работает <b>принцип вложенности</b>: вложенный тег (потомок) должен целиком находиться внутри тега предка, наподобие матрешки.
+      Ситуация типа &lt;i&gt;&lt;b&gt;&lt;/i&gt;&lt;/b&gt; недопустима!</li>
+  <li>У любой HTML-страницы есть <b>основные теги</b>, задающие структуру, &laquo;скелет&raquo; всего документа.
+    Даже если не написать некоторые из них в файле, браузер автоматически добавит недостающие элементы базовой разметки.</li>
+  <li>Теги HTML-документа выстраиваются в дерево зависимостей – <b><a href="https://ru.wikipedia.org/wiki/Document_Object_Model" target="_blank" rel="noopener noreferrer">Document Object Model</a>, DOM</b>. К положению элемента в DOM привязываются <i>стили</i> (CSS) и <i>скрипты</i> (JavaScript).</li>
 </ul>
 </div>
 <div class="blocks">
@@ -29,6 +35,20 @@
 </div>
 </div>
 
+<h2>Базовая разметка</h2>
+<pre><code>&lt;!DOCTYPE html>
+&lt;html lang="ru">
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;title>Заголовок&lt;/title>
+&lt;/head>
+&lt;body>
+  &lt;!-- Основное содержимое -->
+&lt;/body>
+&lt;/html>
+</code></pre>
+
+<h2 id="tags">Основные теги</h2>
 <ol>
 <li><b>Структура и инструкции для построения HTML-документа:</b>
   <ul>
@@ -64,9 +84,24 @@
 </ol>
 
 <h2>А можно все теги HTML?</h2>
-<p><b><a href="https://www.html-5-tutorial.com/all-html-tags.htm" target="_blank" rel="noopener noreferrer">Все теги HTML</a></b>. Серым цветом отмечены устаревшие теги.</p>
+<ul>
+  <li><b><a href="https://www.html-5-tutorial.com/all-html-tags.htm" target="_blank" rel="noopener noreferrer">Все теги HTML</a></b>, их 115&ndash;120. Серым цветом отмечены устаревшие теги.</li>
+  <li><a href="https://eastmanreference.com/complete-list-of-html-tags" target="_blank" rel="noopener noreferrer">Полный список тегов HTML</a>.</li>
+  <li><a href="https://www.templatemonster.com/blog/periodic-table-of-html-tags-infographics/" target="_blank" rel="noopener noreferrer">Периодическая таблица тегов HTML</a>.</li>
+</ul>
 
-<h2>Чем заполняют макеты?</h2>
+<h2 id="entity">Спецсимволы HTML</h2>
+<ul>
+  <li><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%BD%D0%B5%D0%BC%D0%BE%D0%BD%D0%B8%D0%BA%D0%B8_%D0%B2_HTML" target="_blank" rel="noopener noreferrer">Спецсимволы HTML</a>:</li>
+  <li><a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D1%80%D0%B0%D0%B7%D1%80%D1%8B%D0%B2%D0%BD%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B1%D0%B5%D0%BB" target="_blank" rel="noopener noreferrer">неразрывный пробел</a>,</li>
+  <li>меньше &lt; и больше &gt;,</li>
+  <li>короткое &ndash; и длинное &mdash; тире,</li>
+  <li>двойные угловые <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B2%D1%8B%D1%87%D0%BA%D0%B8" target="_blank" rel="noopener noreferrer">кавычки</a>, или французские кавычки, или «ёлочки»,</li>
+  <li><a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BC%D0%BF%D0%B5%D1%80%D1%81%D0%B0%D0%BD%D0%B4" target="_blank" rel="noopener noreferrer">амперсанд</a> &amp;,</li>
+  <li><a href="https://ru.wikipedia.org/wiki/%D0%97%D0%BD%D0%B0%D0%BA_%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%B0%D0%B9%D1%82%D0%B0" target="_blank" rel="noopener noreferrer">копирайт</a> &copy;.</li>
+</ul>
+
+<h2 id="lorem">Чем заполняют макеты?</h2>
 <p><b>Этим:</b> <a href="https://ru.wikipedia.org/wiki/Lorem_ipsum" target="_blank" rel="noopener noreferrer">Lorem ipsum</a>, <em>dolor</em> sit amet consectetur adipisicing elit. Animi <b>tempore</b> nostrum autem magnam culpa quis quos suscipit natus tempora.
   Impedit eaque necessitatibus enim, alias dolorum amet facere natus? Temporibus quas fugit ad dolorem, alias autem minima?
   Corporis eius laborum dicta, soluta, aliquid recusandae aperiam et, officia architecto tempora excepturi natus.</p>
