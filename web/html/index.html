@@ -11,6 +11,8 @@
 <nav class="menu">
   <ul>
     <li><a href="../">Web-дизайн</a></li>
+    <li><a href="#template">Шаблон</a></li>
+    <li><a href="#attributes">Атрибуты</a></li>
     <li><a href="#tags">Теги</a></li>
     <li><a href="#entity">Спецсимволы</a></li>
     <li><a href="#lorem">Lorem ipsum</a></li>
@@ -20,24 +22,15 @@
 <div class="container">
 <div class="blocks">
 <ul class="txt">
-  <li>HTML – Язык <a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D1%82%D0%B5%D0%BA%D1%81%D1%82" target="_blank" rel="noopener noreferrer"> гипертекстовой</a> разметки, <a href="https://ru.wikipedia.org/wiki/HTML" target="_blank" rel="noopener noreferrer">HyperText Markup Language</a>. Как у любого языка, у HTML есть <i>грамматика и словарь</i>. Слова этого словаря записываются в &lt;угловых&gt; скобках и называются тегами.</li>
+  <li>HTML – Язык <a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D1%82%D0%B5%D0%BA%D1%81%D1%82" target="_blank" rel="noopener noreferrer"> гипертекстовой</a> разметки, <a href="https://ru.wikipedia.org/wiki/HTML" target="_blank" rel="noopener noreferrer">HyperText Markup Language</a>. Как у любого языка, у HTML есть <i>грамматика и словарь</i>. Слова этого словаря записываются в &lt;угловых&gt; скобках и называются элементами, или тегами.</li>
   <li>Теги используются для указания начала и конца элемента разметки, то есть, обычно <b>теги используются парами</b>.
     К конечному элементу пары тегов добавляют «/». Так отмечают начало и конец параграфа, или абзаца: <b>&lt;p&gt;</b>Текст параграфа<b>&lt;/p&gt;</b>. Парный тег – это <b>контейнер</b>.
     Если начало и конец элемента совпадают, используют <b>одиночные теги</b>. Примеры одиночных тегов: &lt;br&gt;, &lt;img&gt;.</li>
   <li>Для парных тегов работает <b>принцип вложенности</b>: вложенный тег (потомок) должен целиком находиться внутри тега предка, наподобие матрешки.
       Ситуация типа &lt;i&gt;&lt;b&gt;&lt;/i&gt;&lt;/b&gt; недопустима!</li>
-  <li>У тегов могут быть <i>атрибуты</i> для управления содержимым. Они записываются внутри угловых скобок тега через пробел. Некоторые атрибуты тегов заданы стандартом по умолчанию. Надо знать:
-    <ul>
-      <li>У атрибутов бывают типы: текст, число, путь к файлу и т.д.</li>
-      <li>Существуют глобальные атрибуты: <a href="https://www.w3schools.com/tags/ref_standardattributes.asp" target="_blank" rel="noopener noreferrer">список</a>. Важно: class определяет класс, значение – имена классов; style – стили, значение – код CSS; id – идентификатор, значение – уникальный идентификатор; title – дополнительная информация в виде всплывающей подсказки, значение – текст.</li>
-      <li>Значение атрибута заключается в кавычки ""</li>
-      <li>Порядок атрибутов в любом теге не имеет значения</li>
-    </ul>
-    Пример: атрибут src типа "путь к файлу" у изображения
-    <pre><code><b>&lt;img src="path/to/example.jpg"&gt;</b></code></pre>
-  </li>
   <li>У любой HTML-страницы есть <b>основные теги</b>, задающие структуру, &laquo;скелет&raquo; всего документа.
-    Даже если не написать некоторые из них в файле, браузер автоматически добавит недостающие элементы базовой разметки.</li>
+    Это <b>&lt;html&gt;</b>, <b>&lt;head&gt;</b>, <b>&lt;body&gt;</b>.
+    Если их нет в html-файле, браузер автоматически добавит недостающие элементы базовой разметки.</li>
   <li>Теги HTML-документа выстраиваются в дерево зависимостей – <b><a href="https://ru.wikipedia.org/wiki/Document_Object_Model" target="_blank" rel="noopener noreferrer">Document Object Model</a>, DOM</b>. К положению элемента в DOM привязываются <i>стили</i> (CSS) и <i>скрипты</i> (JavaScript).</li>
 </ul>
 </div>
@@ -46,7 +39,7 @@
 </div>
 </div>
 
-<h2>Базовая разметка</h2>
+<h2 id="template">Шаблон HTML-страницы</h2>
 <pre><code>&lt;!DOCTYPE html>
 &lt;html lang="ru">
 &lt;head>
@@ -59,47 +52,70 @@
 &lt;/html>
 </code></pre>
 
+<h2 id="attributes">Атрибуты</h2>
+<ul class="txt">
+  <li>У тегов могут быть <i>атрибуты</i> для управления содержимым. Они записываются внутри угловых скобок тега через пробел. Значение атрибута всегда заключается в кавычки ("")</li>
+  <li>У атрибутов есть <b>типы</b>: текст, число, путь к файлу и т.д.</li>
+  <li>Некоторые атрибуты тегов заданы в стандарте HTML по умолчанию.</li>
+  <li>Порядок следования атрибутов не важен</li>
+</ul>
+<p>Пример: одиночный тег <b>&lt;img&gt;</b> имеет <b>обязательные</b> атрибуты <b>src</b> типа "путь к файлу" и <b>alt</b> типа "текст"</p>
+<pre><code><b>&lt;img src="path/to/example.jpg" alt="Alternate text"&gt;</b></code></pre>
+
+<p>Существуют <b>глобальные атрибуты</b>, их можно применять ко всем тегам: <a href="https://www.w3schools.com/tags/ref_standardattributes.asp" target="_blank" rel="noopener noreferrer">список глобальных атрибутов</a>.</p>
+<p><b>Некоторые глобальные атрибуты</b>:</p>
+<ul>
+  <li><b>class</b> определяет класс, значение – имена классов;</li>
+  <li><b>id</b> – идентификатор, значение – <b>уникальный</b> идентификатор;</li>
+  <li><b>style</b> – стили, значение – код CSS;</li>
+  <li><b>hidden</b> – скрывает элемент, но не удаляет его из DOM. Аналогично применению стиля <b>display: none</b>;</li>
+  <li><b>title</b> – дополнительная информация в виде всплывающей подсказки, значение – текст.</li>
+</ul>
+
 <h2 id="tags">Основные теги</h2>
 <ol>
 <li><b>Структура и инструкции для построения HTML-документа:</b>
   <ul>
-    <li><b><a href="https://www.w3schools.com/tags/tag_doctype.asp" target="_blank" rel="noopener noreferrer">&lt;!DOCTYPE&gt;</a></b>. Указывается в первой строке документа и означает: <b>&laquo;Этот документ написан на HTML5&raquo;. Не представлен в дереве документа DOM</b>. </li>
-    <li><a href="https://www.w3schools.com/tags/tag_html.asp" target="_blank" rel="noopener noreferrer">html</a>. Главный тег, сообщает браузеру, что это HTML-документ. Находится в основании дерева DOM и он – <b>корневой элемент</b>.</li>
-    <li><a href="https://www.w3schools.com/tags/tag_head.asp" target="_blank" rel="noopener noreferrer">head</a>. Не всю информацию надо показывать на странице. Служебная информация - в &laquo;голове&raquo; документа!</li>
-    <li><a href="https://www.w3schools.com/tags/tag_title.asp" target="_blank" rel="noopener noreferrer">title</a>,
-      <a href="https://www.w3schools.com/tags/tag_link.asp" target="_blank" rel="noopener noreferrer">link</a>. Краткий заголовок и ссылки на внешние файлы (иконка, стилевой файл), определяются в head.</li>
-    <li><a href="https://www.w3schools.com/tags/tag_body.asp" target="_blank" rel="noopener noreferrer">body</a>. Все видимое содержимое &ndash; в &laquo;теле&raquo; страницы.</li>
+    <li><b><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Doctype" target="_blank" rel="noopener noreferrer">&lt;!DOCTYPE&gt;</a></b>. Указывается в первой строке документа и означает: <b>&laquo;Этот документ написан на HTML5&raquo;. Не представлен в дереве документа DOM</b>. </li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/html" target="_blank" rel="noopener noreferrer">html</a>. Главный тег, сообщает браузеру, что это HTML-документ. Находится в основании дерева DOM и он – <b>корневой элемент</b>, или элемент верхнего уровня.</li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/head" target="_blank" rel="noopener noreferrer">head</a>. Не всю информацию надо показывать на странице. Служебная информация – в &laquo;голове&raquo; документа.</li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/title" target="_blank" rel="noopener noreferrer">title</a>,
+      <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B0" target="_blank" rel="noopener noreferrer">link</a>. Служебная информация: краткий заголовок и ссылки на внешние файлы (иконка, стилевой файл). Определяются в head.</li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/meta" target="_blank" rel="noopener noreferrer">meta</a>. Любая информация о мета-данных, которая не может быть представлена другими, ориентированными на мета-данные, HTML элементами. Например, кодировка страницы.</li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/body" target="_blank" rel="noopener noreferrer">body</a>. Все видимое в окне, вкладке браузера содержимое &ndash; в &laquo;теле&raquo; страницы.</li>
     <li><a href="https://www.w3schools.com/tags/tag_comment.asp" target="_blank" rel="noopener noreferrer">комментарии</a>: &lt;!-- игнорируется при построении страницы -->.</li>
   </ul>
-  <p><a href="../structure.html">Страница со структурой</a></p>
 </li><li><b>Основная разметка</b>
   <ul>
-    <li><a href="https://www.w3schools.com/tags/tag_hn.asp" target="_blank" rel="noopener noreferrer">Заголовки h1-h6</a>. Почти у любого текста есть заголовок.</li>
-    <li><a href="https://www.w3schools.com/tags/tag_p.asp" target="_blank" rel="noopener noreferrer">p</a> и
-      <a href="https://www.w3schools.com/tags/tag_br.asp" target="_blank" rel="noopener noreferrer">br</a>. Параграф и принудительный перенос на новую строку. Заголовки <u>нельзя</u> вкладывать в параграфы!</li>
-    <li><a href="https://www.w3schools.com/tags/tag_hr.asp" target="_blank" rel="noopener noreferrer">hr</a>. Разделитель содержимого.</li>
-    <li><a href="https://www.w3schools.com/tags/tag_img.asp" target="_blank" rel="noopener noreferrer">img</a>. Картинка.</li>
-    <li><a href="https://www.w3schools.com/tags/tag_a.asp" target="_blank" rel="noopener noreferrer">a</a>. Ссылка.</li>
-    <li><a href="https://www.w3schools.com/tags/tag_ul.asp" target="_blank" rel="noopener noreferrer">ul</a>. Ненумерованный список.</li>
-  </ul>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/Heading_Elements" target="_blank" rel="noopener noreferrer">Заголовки h1-h6</a>. Заголовки и подзаголовки улучшают читаемость текста.</li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/p" target="_blank" rel="noopener noreferrer">p</a> и
+      <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/br" target="_blank" rel="noopener noreferrer">br</a>. Параграф и принудительный перенос на новую строку. Заголовки <u>нельзя</u> вкладывать в параграфы!</li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/hr" target="_blank" rel="noopener noreferrer">hr</a>. Разделитель содержимого, горизонтальная линия.</li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/img" target="_blank" rel="noopener noreferrer">img</a>. Картинка, изображение. В обязательном атрибуте src указывается путь к файлу или его URL. Распространенные форматы изображений: jpeg, png, svg.</li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/ul" target="_blank" rel="noopener noreferrer">ul</a> и
+      <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/ol" target="_blank" rel="noopener noreferrer">ol</a>,
+      <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/li" target="_blank" rel="noopener noreferrer">li</a>: ненумерованный и нумерованный списки, элемент списка.</li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/a" target="_blank" rel="noopener noreferrer">a</a>. Ссылка.</li>
+    </ul>
 </li><li><b>Семантическая разметка</b>
   <ul>
-    <li><a href="https://www.w3schools.com/tags/tag_header.asp" target="_blank" rel="noopener noreferrer">header</a>. &laquo;Шапка&raquo; страницы.</li>
-    <li><a href="https://www.w3schools.com/tags/tag_footer.asp" target="_blank" rel="noopener noreferrer">footer</a> &laquo;Подвал&raquo; страницы.</li>
-    <li><a href="https://www.w3schools.com/tags/tag_main.asp" target="_blank" rel="noopener noreferrer">main</a>. Основное содержимое страницы.</li>
-    <li><a href="https://www.w3schools.com/tags/tag_section.asp" target="_blank" rel="noopener noreferrer">section</a>. Раздел, секция.</li>
-    <li><a href="https://www.w3schools.com/tags/tag_article.asp" target="_blank" rel="noopener noreferrer">article</a>. Статья.</li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/header" target="_blank" rel="noopener noreferrer">header</a>. &laquo;Шапка&raquo; страницы. <b>Не путать с head!</b></li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/footer" target="_blank" rel="noopener noreferrer">footer</a> &laquo;Подвал&raquo; страницы.</li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/main" target="_blank" rel="noopener noreferrer">main</a>. Основное содержимое страницы.</li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/section" target="_blank" rel="noopener noreferrer">section</a>. Раздел, секция.</li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/article" target="_blank" rel="noopener noreferrer">article</a>. Статья.</li>
   </ul>
-  <p>Семантические теги по свойствам повторяют тег <a href="https://www.w3schools.com/tags/tag_div.asp" target="_blank" rel="noopener noreferrer">div</a>.</p>
+  <p>Семантические теги по свойствам повторяют тег <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/div" target="_blank" rel="noopener noreferrer">div</a>.</p>
+  <p><a href="../structure.html">Структура страницы с семантической разметкой</a></p>
 </li>
 </ol>
 
-<h2>А можно все теги HTML?</h2>
-<ul>
-  <li><b><a href="https://www.html-5-tutorial.com/all-html-tags.htm" target="_blank" rel="noopener noreferrer">Все теги HTML</a></b>, их 115&ndash;120. Серым цветом отмечены устаревшие теги.</li>
-  <li><a href="https://eastmanreference.com/complete-list-of-html-tags" target="_blank" rel="noopener noreferrer">Полный список тегов HTML</a>.</li>
-  <li><a href="https://www.templatemonster.com/blog/periodic-table-of-html-tags-infographics/" target="_blank" rel="noopener noreferrer">Периодическая таблица тегов HTML</a>.</li>
-</ul>
+<h2>Сколько всего тегов HTML?</h2>
+<p>Их 115&ndash;120, примерно как в <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B8%D0%BE%D0%B4%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%85%D0%B8%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2" target="_blank" rel="noopener noreferrer">периодической системе химических элементов</a> – таблице Менделеева:</p>
+<img src="periodic-table-html-tags.png" alt=""><br>
+<p>Источник: <a href="https://www.templatemonster.com/blog/periodic-table-of-html-tags-infographics/" target="_blank" rel="noopener noreferrer">templatemonster.com</a>.</p>
+<p><b><a href="https://www.html-5-tutorial.com/all-html-tags.htm" target="_blank" rel="noopener noreferrer">Все теги HTML</a></b>,
+  <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element" target="_blank" rel="noopener noreferrer">С описанием на русском языке</a>. Серым цветом отмечены устаревшие теги. Еще: <a href="https://eastmanreference.com/complete-list-of-html-tags" target="_blank" rel="noopener noreferrer">Полный список тегов HTML</a>.</p>
 
 <h2 id="entity">Спецсимволы HTML</h2>
 <p><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%BD%D0%B5%D0%BC%D0%BE%D0%BD%D0%B8%D0%BA%D0%B8_%D0%B2_HTML" target="_blank" rel="noopener noreferrer">Спецсимволы</a> &ndash; запоминающиеся (мнемонические) обозначения символов вида <b>&amp;слово;</b>. Они входят в стандарт HTML.</p>
