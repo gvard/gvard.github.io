@@ -37,18 +37,22 @@ p {
   padding-right: 20px;
   width: calc(100% - 230px);
 }
-@media (max-width: 758px) {
+@media (max-width: 800px) {
   * {
     margin: 0;
     padding: 0;
   }
+  .wrapper {
+    padding: 0;
+  }
   .desc > img {
-    max-width: 425px;
+    max-width: 100%;
   }
   .right {
     width: 100%;
   }
   .left {
+    padding: 5px;
     width: 100%;
   }
 }
@@ -56,9 +60,6 @@ p {
   * {
     margin: 0;
     padding: 0;
-  }
-  .desc > img {
-    max-width: 390px;
   }
   .right {
     width: 100%;
