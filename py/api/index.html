@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../../compact.css">
   <script src="../highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
+  <script>function show(showId) {document.getElementById(showId).style.display = 'block';}</script>
 </head>
 <body>
 <h1>Запросы при помощи urllib.request и json. Практика запросов при помощи открытых API</h1>
@@ -144,12 +145,34 @@ iss_pass_json_bin = urllib.request.urlopen(URL)
 iss_pass = json.load(iss_pass_json_bin)
 </code></pre>
 
+<h2>Решение</h2>
+<button type="button" onclick="show('iss-solved')">Показать решение</button>
+<pre id=iss-solved style="display:none"><code>import json
+import urllib.request
+import time
+
+URL = 'http://api.open-notify.org/iss-pass.json?lat=55.751244&lon=37.618423'
+iss_pass_json_bin = urllib.request.urlopen(URL)
+iss_pass = json.load(iss_pass_json_bin)
+print("Всего пролетов", iss_pass.get("request").get("passes"))
+print("Всего пролетов", len(iss_pass.get("response")))
+# Для каждого пролета в ответе на запрос:
+for issps in iss_pass.get("response"):
+    rise = issps.get("risetime")
+    dur = issps.get("duration")
+    print("Начало пролета", time.ctime(rise))
+    print("Конец пролета", time.ctime(rise+dur))
+</code></pre><br><br>
+
+
 <p>МКС на вечернем небе – самое яркое тело на небе после Солнца и Луны:<br>
 <img src="https://www.abc.net.au/news/image/9771974-3x2-940x627.jpg" alt=""></p>
 
 
 <h2>Точное время</h2>
-<p><a href="https://yandex.com/time/sync.json?geo=213" target="_blank" rel="noopener noreferrer">Ссылка на данные</a> (Яндекс).<br>
+<p><a href="https://yandex.com/time/sync.json?geo=213" target="_blank"
+rel="noopener noreferrer">Ссылка на данные</a>
+(<a href="https://yandex.ru/time/" target="_blank" rel="noopener noreferrer">Яндекс.Время</a>).<br>
 Результат запроса:</p>
 <pre><code>{
   "time": 1585172540959,
@@ -186,10 +209,12 @@ iss_pass = json.load(iss_pass_json_bin)
   <li>&laquo;На пятерку&raquo;: напечатать время рассвета и заката.</li>
 </ol>
 
-<p><b>Точное время доступно по ключу "time" и представляет собой unix time, но
-<u>в миллисекундах</u></b>.<br>
-То есть, для получения результата в функцию time.ctime() надо передать значение,
+<p><b>Точное время доступно по ключу "time" и представляет собой
+  <a href="https://ru.wikipedia.org/wiki/Unix-%D0%B2%D1%80%D0%B5%D0%BC%D1%8F" target="_blank" rel="noopener noreferrer">unix time</a>, но
+  <u>в миллисекундах</u></b>.<br>
+  То есть, для получения результата в функцию time.ctime() надо передать значение,
 поделенное на 1000.</p>
+<p><b>Для получения времени компьютера надо выполнить time.time() без параметров</b></p>
 <p>Для получения времени рассвета и заката надо извлекать вложенные данные подобно матрешке:
 сначала обратиться к данным по ключу "clocks", потом по ключу "213" (код Москвы),
 потом у результата этой операции обратиться по ключам "sunrise" и "sunset".</p>
@@ -211,6 +236,25 @@ URL = 'https://yandex.com/time/sync.json?geo=213'
 time_json_bin = urllib.request.urlopen(URL)
 time_data = json.load(time_json_bin)
 </code></pre>
+
+<h2>Решение</h2>
+<button type="button" onclick="show('time-solved')">Показать решение</button>
+<pre id=time-solved style="display:none"><code>import json
+import urllib.request
+import time
+
+URL = 'https://yandex.com/time/sync.json?geo=213'
+time_json_bin = urllib.request.urlopen(URL)
+time_data = json.load(time_json_bin)
+# Время в миллисекундах с 1970 года поделили на 1000, получили секунды
+tyme_now = time_data.get("time") / 1000
+print(time.ctime(tyme_now))
+# Разница Яндекс.времени и времени компьютера, в секундах
+print(tyme_now - time.time())
+print(time_data.get("clocks").get("213").get("sunrise"))
+print(time_data.get("clocks").get("213").get("sunset"))
+</code></pre><br><br>
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Ivan_Bilibin_Koshchey.jpg/640px-Ivan_Bilibin_Koshchey.jpg" alt="">
 
 
@@ -243,7 +287,7 @@ time_data = json.load(time_json_bin)
   <li>курс рубля к евро ("EUR")</li>
   <li>курс рубля к самой дешевой и самой дорогой валюте из представленных</li>
 </ul>
-<p>Для того, чтобы узнать курс рубля к одной из представленных валют, надо вычислить отношение курса рубля к курсу выбранной валюты.</p>
+<p>Для того, чтобы узнать, сколько рублей стоит валюта, надо вычислить отношение курса рубля к курсу выбранной валюты.</p>
 Начало программы, которую требуется дописать:
 <pre><code>import json
 import urllib.request
@@ -252,6 +296,36 @@ URL = 'https://api.exchangerate-api.com/v4/latest/USD'
 exchangerate_json_bin = urllib.request.urlopen(URL)
 exchangerate = json.load(exchangerate_json_bin)
 </code></pre>
+
+<h2>Решение</h2>
+<button type="button" onclick="show('bank-solved')">Показать решение</button>
+<pre id=bank-solved style="display:none"><code>import json
+import urllib.request
+
+URL = 'https://api.exchangerate-api.com/v4/latest/USD'
+exchangerate_json_bin = urllib.request.urlopen(URL)
+exchangerate = json.load(exchangerate_json_bin)
+print("1 доллар стоит", exchangerate.get("rates").get("RUB"), "рублей")
+
+currencies = exchangerate.get("rates")
+RUB = currencies.get("RUB")
+EUR = currencies.get("EUR")
+print("1 евро стоит", round(RUB/EUR, 2), "рублей")
+
+kopilka = []
+# Для каждого <b>названия</b> валюты в списке валют:
+for currency in currencies:
+    # Добавляем в копилку (название валюты, отношение <b>курса</b> рубля к курсу валюты)
+    kopilka.append((currency, RUB/currencies.get(currency)))
+# Сортируем копилку по ключу, который - вторая колонка, т.е. курсы валют
+kopilka.sort(key=lambda row: row[1])
+# печатаем курс самой дешевой валюты - Индонезийская рупия
+print(kopilka[0])
+#>>> ('IDR', 0.004854)
+# печатаем курс самой дорогой валюты - Фунт стерлингов
+print(kopilka[-1])
+#>>> ('GBP', 98.704728)
+</code></pre><br><br>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/BilleteiNTER_II.jpg/640px-BilleteiNTER_II.jpg" alt="">
 
 <h2>Для самостоятельного изучения: <a href="../../dev/request/">справочная информация, примеры открытых API</a></h2>
