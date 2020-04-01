@@ -18,31 +18,163 @@
   <a href="https://docs.python.org/3/library/turtle.html" target="_blank" rel="noopener noreferrer">turtle</a> –
   принцип организации библиотеки графического вывода, построенный на метафоре Черепахи, воображаемого роботоподобного устройства, которое перемещается по экрану или бумаге и поворачивается в заданных направлениях, при этом оставляя (или, по выбору, не оставляя) за собой нарисованный след заданного цвета и ширины.</p>
   <p>Проще: <b>черепашка ползает по экрану и рисует. Мы управляем черепашкой на плоскости при помощи программы.</b></p>
-<p>Положение на плоскости определяется двумя числами, x и y:</p>
-<img src="https://files.realpython.com/media/Turtle_EDIT_Graph.790c213ce0ba.jpg" width="480" alt="">
 
 <h2>Начало работы. Движения</h2>
 <p>В первой строке небходимо добавить:</p>
 <pre><code>import turtle</code></pre>
-<p>Двидение черепашки осуществляется командами</p>
-<pre><code>right(100)
-forward(100)
-left(90)
-backward(100)</code></pre>
+<p>Мы командуем черепашкой простыми словами на английском языке.
+left, right – поворот налево и направо, forward и backward – движение вперед и назад.
+  В программе каждое действие – вызов функции из модуля turtle. Простая программа:</p>
+<pre><code>import turtle
+
+turtle.right(90)
+turtle.forward(100)
+turtle.left(90)
+turtle.backward(100)
+</code></pre><br>
 <img src="https://files.realpython.com/media/Update_-_Moving_Turtle_VIDEO_GIF.61623cf40fed.gif" alt="">
+<p><b>Что произошло</b>:</p>
+<ul>
+  <li>Поворот направо на 90 градусов</li>
+  <li>Движение вперед на 100 шагов (пикселей)</li>
+  <li>Поворот налево на 90 градусов</li>
+  <li>Движение назад на 100 шагов</li>
+</ul>
+
+<p>Не похоже на черепашку, это ползающая стрелка! Исправим это:</p>
+<pre><code>import turtle
+turtle.shape("turtle")
+turtle.fd(100)
+turtle.exitonclick()
+</code></pre><br>
+<img src="turtle.png" alt=""><br>
+<p>Отлично! Теперь это черепашка, пусть и монохромная.
+  Дополнительно, функция exitonclick() позволяет закрыть окно и завершить выполнение программы кликом мышкой по окну.<br>
+  А еще можно использовать сокращенные названия функций: fd(100) вместо forward(100),
+rt вместо right, lt вместо left, bk вместо backward.</p>
 
 <h2>Геометрические фигуры</h2>
-<pre><code>
-
-</code></pre>
-<img src="https://michael0x2a.com/_assets/media/turtle-examples/line.5efc.png" alt="">
+<p>Рисуем простые геометрические фигуры:</p>
+<ul>
+  <li>Прямая: просто движение вперед</li>
+  <li>Квадрат: вперед, поворот на 90 градусов и так 4 раза. Повторение команд – значит, можно выполнить их в цикле for!</li>
+  <li>Пятиконечная звезда: вперед, поворот на 144 градусов и так 5 раз.</li>
+</ul>
+<p>Если мы хотим выполнить инструкции n раз, мы пишем их в цикле</p>
+<pre><code>for i in range(n):</code></pre>
+<p>Далее идут инструкции с отступом в 4 пробела. Код с отступами – <i>тело цикла</i>.
+  Когда цикл завершается, отступы больше не ставятся.</p>
+<p><b>Рисуем квадрат:</b></p>
+<pre><code>import turtle
+square = turtle.Turtle()
+square.shape("turtle")
+for i in range(4):
+    square.forward(100)
+    square.right(90)
+turtle.exitonclick()
+</code></pre><br>
 <img src="https://michael0x2a.com/_assets/media/turtle-examples/square.2836.png" alt="">
+<p>Скучно рисовать одинокие фигуры. Поэтому мы приготовились рисовать сразу несколько и теперь создаем отдельный <i>экземпляр класса</i> Turtle для каждой фигуры.
+Так мы можем менять цвет линии и другие параметры отдельно для каждой фигуры.
+Потом, когда мы захотим дорисовать или изменить параметры фигуры, у нее будут сохранены старые параметры.
+Их не надо будет устанавливать заново, как это было бы без отдельных экземпляров класса для каждой фигуры.</p>
+<p>Звезда рисуется также:</p>
 <img src="https://michael0x2a.com/_assets/media/turtle-examples/star.8cc6.png" alt="">
+<p><b>Самостоятельно:</b></p>
+<ul>
+  <li>нарисуйте пятиконечную звезду</li>
+  <li>квадрат и звезду в одной программе, на одном графическом поле, но с разными экземплярами класса Turtle</li>
+  <li>Восьмиконечную звезду (угол поворота 135 градусов)</li>
+  <li>Фигуру из анимации в начале страницы</li>
+</ul>
+
+<h2>Изменяем параметры во время движения</h2>
+<p>При отрисовке простых фигур черепашка возвращалась в исходную точку и программа останавливалась, ожидая, когда будет закрыто окно.
+Если в цикле продолжить рисоовать по прежним инструкциям, фигура будет нарисована заново по уже нарисованным контурам.
+А если ввести дополнительный угол поворота?</p>
+<pre><code>import turtle
+
+square = turtle.Turtle()
+square.shape("turtle")
+square.color('red', 'green')
+square.begin_fill()
+for j in range(3):
+    square.left(20)
+    for i in range(4):
+        square.forward(100)
+        square.left(90)
+
+square.end_fill()
+turtle.exitonclick()
+</code></pre>
+<img src="turtle_fill.png" alt="">
+<p>Мы также добавили:</p>
+<ul>
+  <li>color('red', 'green') определяет цвет линии и цвет заполнения. Черепашка теперь зеленая!</li>
+  <li>begin_fill() и end_fill() обозначают начало и конец заполнения</li>
+</ul>
+
+<h3>Больше программирования!</h3>
+<p>Напишем обобщенную программу рисования выпуклых равносторонних многоугольников.
+  num_sides – количество граней, side_length – длина грани, angle – угол поворота.
+</p>
+<pre><code>import turtle
+
+polygon = turtle.Turtle()
+num_sides = 6
+side_length = 100
+angle = 360.0 / num_sides
+
+for i in range(num_sides):
+    polygon.forward(side_length)
+    polygon.right(angle)
+
+turtle.exitonclick()
+</code></pre>
+<img src="https://michael0x2a.com/_assets/media/turtle-examples/polygon.080a.png" alt="">
+
+<p>Что будет, если на каждом шаге увеличивать длину пути? В первый день 10 шагов, в второй – 20, далее 30, 40 и так до 200:</p>
+<pre><code>import turtle
+
+spiral = turtle.Turtle()
+for i in range(20):
+    spiral.forward(i * 10)
+    spiral.right(144)
+turtle.exitonclick()
+</code></pre>
 <img src="https://michael0x2a.com/_assets/media/turtle-examples/spiraling-star.346f.png" alt="">
+
+<h2>Координаты на плоскости</h2>
+<p>Положение на плоскости определяется двумя числами, x и y:</p>
+<img src="https://files.realpython.com/media/Turtle_EDIT_Graph.790c213ce0ba.jpg" width="480" alt="">
+<p>Черепашку в программе можно перемещать функцией goto(x, y). x и y – числа, или переменные.
+  goto(0, 0) переместит черепашку в начало координат.</p>
+<pre><code>import turtle
+
+spiral = turtle.Turtle()
+for i in range(20):
+    spiral.fd(i * 10)
+    spiral.rt(144)
+    spiral.goto(0,0)
+turtle.exitonclick()
+</code></pre>
+<p>Вместо звезды-спирали мы получили 5 линий, расходящихся из точки начала координат.</p>
+
+<p><b>Самостоятельно:</b></p>
+<ul>
+  <li>Используя код из примеров и функцию goto(), нарисовать галерею из 10 или
+  более многоугольников на одном поле. Для каждой фигуры создать отдельный
+  экземпляр класса turtle.Turtle().</li>
+  <li>Нарисованные многоугольники закрасить разными цветами. Пробуйте
+  <a href="https://colorscheme.ru/html-colors.html" target="_blank" rel="noopener noreferrer">стандартные цвета или их шестнадцатиричное представление из таблицы</a>.
+  <b>Не забудьте кавычки вокруг  названия или кода цвета!</b></li>
+</ul>
+
 <!-- <li>Графический интерфейс средствами библиотеки turtle.</li> -->
 
 <h2>Ссылки</h2>
 <ul>
+  <li><a href="https://opentechschool.github.io/python-beginners/en/simple_drawing.html" target="_blank" rel="noopener noreferrer">Simple drawing with turtle</a></li>
   <li><a href="http://technikes.com/turtle-graphics-in-python/" target="_blank" rel="noopener noreferrer">Turtle Graphics in Python</a></li>
   <li><a href="https://realpython.com/beginners-guide-python-turtle/" target="_blank" rel="noopener noreferrer">The Beginner's Guide to Python Turtle</a></li>
   <li><a href="https://michael0x2a.com/blog/turtle-examples" target="_blank" rel="noopener noreferrer">Turtle examples</a></li>
