@@ -2,6 +2,7 @@
 /*jshint esversion: 6 */
 const OBJTYPES = {
   imaged: "Метод прямого наблюдения",
+  GDor: "Переменная типа γ Золотой Рыбы",
 };
 function ObjParams() {
   const objs = getDivs('obj');
