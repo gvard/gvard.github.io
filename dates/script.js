@@ -108,7 +108,11 @@ function makeArray() {
     let date = elems[i].innerText;
     let desc = elems[i].parentElement.querySelector('.desc');
     let img = desc.querySelector('img');
-    arr.push(["", date, desc.innerText.trim(), [img.src], ['tmp']]);
+    if (img.src.indexOf('http') != -1) {
+      arr.push(["", date, desc.innerText.trim(), [img.src], [], ['tmp']]);
+    } else {
+      arr.push(["", date, desc.innerText.trim(), [], [img.src], ['tmp']]);
+    }
   }
   console.log(arr);
 }
