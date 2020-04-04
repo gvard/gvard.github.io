@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Flask SQLAlchemy table</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='solarsystem/favicon.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='collections.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='solarsystem/style.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='solarsystem/favicon.png') }}">
+  <script src="{{ url_for('static', filename='solarsystem/script.js') }}"></script>
 </head>
 <body>
   <h1>Таблица параметров тел Солнечной системы</h1>
@@ -23,7 +25,7 @@
     <th>ΔV, км/с</th>
     <th>Классы</th>
     <th>Дата открытия</th>
-    <th>Название файла картинки</th>
+    <th>Картинка, название файла</th>
   </tr>
   <tbody>
   {% for object in objects %}<tr>
@@ -36,7 +38,7 @@
     <td>{% if object.deltaV %}{{ object.deltaV }}{% endif %}</td>
     <td>{% for class in object.classes %}{{ class }} {% endfor %}</td>
     <td>{% if object.discoverdate %}{{ object.discoverdate.strftime("%d.%m.%Y") }}{% endif %}</td>
-    <td>{{ object.filename }}</td>
+    <td><img src="solarsystem/images/{{ object.filename }}" alt=""> {{ object.filename }}</td>
   </tr>{% endfor %}
   </tbody>
   </table>
