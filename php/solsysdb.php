@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>PHP table</title>
+  <title>Солнечная система: таблица PHP SQlite</title>
   <link rel="stylesheet" href="../solarsystem/style.css">
   <link rel="icon" type="image/png" href="../solarsystem/favicon.png">
   <script src="../solarsystem/script.js"></script>
@@ -28,6 +28,7 @@
 $file_db = new PDO('sqlite:../py/solsysobjs.db');
 $db = null;
 $rezult = $file_db->query('SELECT * FROM sobject');
+
 foreach ($rezult as $result) {
   echo "<td>";
   if (!empty($result['anumber']))
