@@ -31,7 +31,7 @@
   <li>внешние стили, подключаются тегом &lt;link&gt; в голове документа, т.е. <b>внутри</b> тега &lt;head&gt;:
 <pre><code><b>&lt;link rel="stylesheet" href="style.css"></b></code></pre>
   </li>
-  <li>внутренние стили, внутри тега &lt;style></li>
+  <li>внутренние стили, внутри тега &lt;style> (a &lt;style> – внутри тега &lt;head> документа html)</li>
   <li>встроенные стили, как значение атрибута style:
 <pre><code>&lt;p style="display:none"></code></pre>
   </li>
@@ -46,15 +46,27 @@
 <p>Свойства предков могут наследоваться потомками.</p>
 
 <h2>Виды селекторов</h2>
-<p>Селектор – от to select: выбирать, отбирать.</p>
-<ul>
-  <li>универсальный (*): Выбирает все элементы (теги) на странице;</li>
-  <li>элемент: выбирает все элементы (теги) с указанным именем;</li>
-  <li>класс (class): выбирает все элементы (теги) с указанным классом (в атрибуте class);</li>
-  <li>идентификатор (id): выбирает элемент (тег) с указанным уникальным идентификатором (атрибут id);</li>
-  <li>потомок;</li>
-  <li>дочерний селектор.</li>
-</ul>
+<p>Селектор – от to select: выбирать, отбирать. Чаще всего используются первые шесть.</p>
+<ol>
+  <li><b>универсальный (*)</b>: Выбирает все элементы (теги) на странице;</li>
+  <li><b>элемент</b>: выбирает все элементы (теги) с указанным именем;</li>
+  <li><b>класс (class)</b>: выбирает все элементы (теги) с указанным классом (в атрибуте class);</li>
+  <li><b>идентификатор (id)</b>: выбирает элемент (тег) с указанным уникальным идентификатором (атрибут id);</li>
+  <li><b>вложенные селекторы</b>, запись через пробел;</li>
+  <li><b>дочерний селектор</b>, должен располагаться непосредственно внутри родительского элемента. Записывается через <b>></b>.
+  Также используются <b>дочерние псевдоклассы</b> :first-child, :last-child,
+  :only-child, :nth-child (odd), :nth-child (even) и др.</li>
+  <li><b>Соседние селекторы</b>: i <b>+</b> b. Стиль применяется к тегу b, соседнему по оотношению к i.</li>
+  <li><b>Родственные селекторы</b>: i <b>~</b> b. Стили применяются ко всем близлежащим элементам.</li>
+  <li><b>Селекторы атрибутов</b>: стили приименяются, если задан атрибут тега. Например: q[title]</li>
+  <li><b>[атрибут="значение"]</b> устанавливает стиль для элемента в том случае, если задано определённое значение указанного атрибута. Пример: a[target="_blank"]</li>
+  <li><b>[атрибут~="значение"]</b> Стиль применяется в том случае, если у атрибута имеется указанное значение или оно входит в список значений, разделяемых пробелом. Пример: [class~="block"]</li>
+  <li><b>[атрибут|="значение"]</b> Стиль применяется к элементам, у которых атрибут начинается с указанного значения или с фрагмента значения, после которого идет дефис.
+  Пример: div[class|="block"] применится к &lt;div class="<b>block-menu-item</b>"></li>
+  <li><b>[атрибут^="значение"]</b> стиль применяются ко всем элементам, у которых значение атрибута начинается с указанного текста.  Пример: a[href^="http://"]</li>
+  <li><b>[атрибут$="значение"]</b> стиль применяются ко всем элементам, у которых значение атрибута оканчивается указанным текстом. Пример: a[href$=".ru"]</li>
+  <li><b>[атрибут*="значение"]</b> определяет, что значение атрибута содержит указанный текст. Пример: [href*="000webhost"]</li>
+</ol>
 <p>Свойства селектора будут применены ко всем выбранным элементам (тегам) на странице.</p>
 <p>Ниже для удобства свойства разбиты на несколько категорий.</p>
 
@@ -74,12 +86,12 @@
 </ul>
 <h2>Размеры, ширина, высота – width, height</h2>
 <ul>
-  <li>width: 100px;</li>
-  <li>min-width: 100px;</li>
-  <li>max-width: 100px;</li>
-  <li>height: 100px;</li>
-  <li>min-height: 100px;</li>
-  <li>max-height: 100px;</li>
+  <li>ширина, width: 100px;</li>
+  <li>минимальная ширина, min-width: 100px;</li>
+  <li>максимальная ширина, max-width: 100px;</li>
+  <li>высота, height: 100px;</li>
+  <li>минимальная высота, min-height: 100px;</li>
+  <li>касимальная высота, max-height: 100px;</li>
 </ul>
 <p>В чем задаются значения? В <a href="https://www.w3.org/TR/css3-values/#absolute-lengths" target="_blank" rel="noopener noreferrer">абсолютных</a>
   и <a href="https://www.w3.org/TR/css3-values/#relative-lengths" target="_blank" rel="noopener noreferrer">относительных</a> единицах.<br>
@@ -92,11 +104,13 @@
 
 <h2>Рамка – border</h2>
 <ul>
-  <li>border: 2px dashed blue;</li>
-  <li>border-radius: 5px;</li>
+  <li>рамка, обобщенное правило. border: 2px dashed blue;</li>
+  <li>радиус скругления рамки. border-radius: 5px;</li>
+  <li>Скруглить квадрат до круга – border-radius: 50%;</li>
 </ul>
 
 <h2>Шрифт – font</h2>
+<p><b><a href="../fonts/">Отдельная страница про шрифты и их свойства</a></b>.</p>
 <a href="https://html5book.ru/css-shrifty/" target="_blank" rel="noopener noreferrer">Шрифт в CSS</a> с картинками.
 <ul>
   <li>font-family: arial sans-serif;<br>
@@ -107,19 +121,22 @@
 <p><a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp" target="_blank" rel="noopener noreferrer">CSS Web Safe Font Combinations</a>,
   <a href="https://habr.com/ru/post/188484/" target="_blank" rel="noopener noreferrer">Мобильная типографика</a></p>
 <h2>Текст – text</h2>
+<p><b><a href="../text/">Отдельная страница про свойства текста</a></b>.</p>
 <ul>
   <li>text-align: justify; (left, right, center)</li>
   <li>text-decoration: underline;</li>
   <li>line-height: 20pt;</li>
 </ul>
 <h2>Поля – margin и padding</h2>
+<p>Поля страницы можно инспектировать в браузере по нажатию F12, вкладка Elements</p>
 <ul>
   <li>margin: 0 auto; (внешнее поле, маргиналии)</li>
   <li>padding: 20px; (внутреннее поле)</li>
 </ul>
 <h2>Положение и видимость</h2>
 <ul>
-  <li>display: block; (inline, inline-block, none)</li>
+  <li>display: block; (inline, inline-block, none). display: none используется
+  для скрытия элемента со страницы.</li>
   <li>position: relative; (absolute)</li>
   <li>float: right; (left)</li>
   <li>object-fit: cover; (contain, scale-down. Для тегов img и video)</li>
@@ -127,6 +144,11 @@
   <li>overflow-y: scroll;</li>
 </ul>
 <h2>Горизонтальное и вертикальное выравнивание</h2>
+<ul>
+  <li>Центрирование блочного элемента: { margin: 0 auto; width: 50%; }</li>
+  <li>Центрирование строчного элемента: text-align: center;</li>
+  <li>Центрировать горизонтально и вертикально: #mysection { display: flex; align-items: center justify-content: center; }</li>
+</ul>
 <p><a href="https://flaviocopes.com/css-centering/" target="_blank" rel="noopener
   noreferrer">Центрирование в css</a>
   <a href="https://www.w3schools.com/csS/css_align.asp" target="_blank"

@@ -14,20 +14,73 @@
   </ul>
 </nav>
 <h1>CSS и HTML: cвойства изображений</h1>
+<p>Изображение в HTML вставляется тегом img:</p>
+<pre><code>&lt;img src="image.png" alt="Замещающий текст"></code></pre>
+<p>img – одиночный тег. У него 2 обязательных атрибута: src типа путь к файлу и alt типа текст.</p>
+<p>Распространенные форматы изображений: jpeg, png (не имеет стандартной иконки), svg, <a href="https://ru.wikipedia.org/wiki/WebP" target="_blank" rel="noopener noreferrer">webp</a>:<br>
+<a href="https://jpeg.org/" target="_blank" rel="noopener noreferrer"><img src="https://jpeg.org/images/jpeg-logo.png" height="90" alt=""></a>
+<a href="https://www.w3.org/Graphics/SVG/" target="_blank" rel="noopener noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/0/02/SVG_logo.svg" height="90" alt=""></a>
+<img src="https://upload.wikimedia.org/wikipedia/en/e/e4/Webp-logo-wordmark.svg" height="90" alt=""></p>
+<p>Изображения бывают растровые и векторные. Растровые состоят из квадратных пикселей.
+  Векорные – из кривых и других графических примитивов, правил их построения в изображение.
+  svg – векторный формат.</p>
+<p>Изображение в HTML – по умолчанию строчный блок (display: inline-block;). Это значит, что картинка в тексте воспринимается браузером как элемент текста.</p>
 
-<h2>Размеры, ширина, высота – width, height</h2>
+<h2>Свойства изображений</h2>
+
+<h3>Размеры, ширина, высота – width, height</h3>
 <ul>
-  <li>width: 100px;</li>
-  <li>min-width: 100px;</li>
-  <li>max-width: 100%;</li>
-  <li>height: 100px;</li>
-  <li>min-height: 100px;</li>
-  <li>max-height: 100%;</li>
+  <li>ширина, width: 100px;</li>
+  <li>минимальная ширина, min-width: 100px;</li>
+  <li>максимальная ширина, max-width: 100px;</li>
+  <li>высота, height: 100px;</li>
+  <li>минимальная высота, min-height: 100px;</li>
+  <li>касимальная высота, max-height: 100px;</li>
 </ul>
+
+<h3>Отступы, поля – margin и padding</h3>
+<p>Поля страницы можно инспектировать в браузере по нажатию F12, вкладка Elements</p>
+<ul>
+  <li>margin: 0; (внешнее поле, маргиналии)</li>
+  <li>padding: 20px; (внутренний отступ)</li>
+</ul>
+
+<h3>Рамка – border</h3>
+<ul>
+  <li>рамка, обобщенное правило. border: 2px dashed blue;</li>
+  <li>радиус скругления рамки. border-radius: 5px;</li>
+  <li>Скруглить квадрат до круга – border-radius: 50%; Пример: <a href="../site/me.html">аватарка</a></li>
+</ul>
+
+
+<h2>Картинка на фоне – background</h2>
+Свойство background обобщает ряд свойств:
+<ul>
+  <li>background-image устанавливает картинку на фоне по ее url-адресу</li>
+  <li>background-position (top center, right top и т.д.)</li>
+  <li>background-size (cover, значения 200px 200px)</li>
+  <li>background-repeat (значения: repeat-x no-repeat repeat-y)</li>
+  <li>background-attachment Поведение фона при скроллинге (значения: scroll, fixed, local)</li>
+  <li>background-origin Опредеяет, где отрисовывать фон (значения: border-box, padding-box, content-box, inherit)</li>
+  <li>background-clip (значения: border-box по умолчанию, padding-box, content-box, inherit)
+    <a href="https://css-tricks.com/almanac/properties/b/background-clip/" target="_blank" rel="noopener noreferrer">Примеры</a>.</li>
+  <li>background-color (цвет фона)</li>
+</ul>
+<p><b>Примеры:</b></p>
+<ul>
+  <li>background: white url("image.jpg") no-repeat 50% 0; Общее свойство, описывающее фон страницы.</li>
+  <li>background: url(/media/blog/example_image_1.jpg) center no-repeat;</li>
+</ul>
+<p><b>Живые примеры:</b></p>
+<a href="../../solarsystem/stats/">Солнечная система: статистика</a> (background-size: cover;
+ background-position: center;)<br>
+<a href="../../cosm/stats/">Статистика пилотируемой космонавтики</a> (background-repeat: no-repeat;
+background-position: bottom; background-color: black;)
 
 <h2 id="links">Ссылки:</h2>
 <ul>
-  <li><a href="" target="_blank" rel="noopener noreferrer"></a></li>
+  <li><a href="https://mattweb.ru/moj-blog/html-verstka/item/164-5-css-svojstv-dlyz-izobrazhenij-kotorye-vam-neobhodimo-znat" target="_blank" rel="noopener noreferrer">5 CSS свойств для изображений, которые вам необходимо знать</a></li>
+  <li><a href="https://css-tricks.com/almanac/properties/b/background/" target="_blank" rel="noopener noreferrer">css-tricks.com: background</a></li>
 </ul>
 </body>
 </html>
