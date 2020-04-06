@@ -15,7 +15,7 @@
 
 {% for event in events %}<div class="wrap">
   <div class="name">{{ event.name }}</div>
-  <div class="tags">Теги: {% for tag in event.tags %} {{ tag.tag }}{% endfor %}</div>
+  <div class="tags">Теги: {% for tag in event.tags %}{{ tag.tag }} {% endfor %}</div>
   <div class="date">{% if event.date %}{{ event.date.strftime("%d.%m.%Y") }}{% endif %}</div>
   <div class="desc">
     {% for img in event.imgs %}{% if img.img_url %}<img src="{{ img.img_url }}" alt="">{% endif %}
