@@ -207,7 +207,66 @@ turtle.exitonclick()
   <li>clear() очищает холст от нарисованного</li>
   <li>reset() очищает холст и возвращает курсор в начало координат</li>
 </ul>
-<!-- <li>Графический интерфейс средствами библиотеки turtle.</li> -->
+
+<h3>Пример двух рисунков – экземпляров класса Turtle() – на одном полотне</h3>
+<pre><code>import turtle
+
+turtle.title("Turtle User interface")
+button = turtle.Turtle()
+button.pencolor("purple")
+button.fillcolor("orange")
+button.shape("circle")
+button.pensize(5)
+button.fd(150)
+button.speed(10)
+button.begin_fill()
+button.circle(90)
+button.end_fill()
+button.rt(20)
+
+n=10
+t = turtle.Turtle()
+while n <= 40:
+    t.circle(n)
+    n += 10
+
+turtle.exitonclick()
+</code></pre>
+
+
+<h2>Графический интерфейс средствами библиотеки turtle.</h2>
+<pre><code>import turtle
+
+wndow = turtle.Screen()
+wndow.title("Screen & Button")
+wndow.setup(500,500)
+
+btn1 = turtle.Turtle()
+btn1.hideturtle()
+for i in range(2):
+    btn1.fd(80)
+    btn1.left(90)
+    btn1.fd(30)
+    btn1.left(90)
+btn1.penup()
+btn1.goto(11,7)
+btn1.write("Push me", font=("Arial", 12, "normal"))
+
+def btnclick(x, y):
+    if 0&lt;x&lt;80 and 0&lt;y&lt;30:
+        print("Кнопка нажата!")
+        btn1.clear()
+        ball = turtle.Turtle()
+        turtle.fillcolor("orange")
+        turtle.pencolor("purple")
+        turtle.shape("circle")
+
+turtle.listen()
+turtle.onscreenclick(btnclick, 1)
+</code></pre>
+
+
+
 
 <h2>Ссылки</h2>
 <ul>
