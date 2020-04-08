@@ -13,16 +13,15 @@
 <div class="column left">
 <h1>Что произошло сегодня?</h1>
 
-{% for event in events %}<div class="wrap">
-  <div class="name">{{ event.name }}</div>
-  <div class="tags">Теги: {% for tag in event.tags %}{{ tag.tag }} {% endfor %}</div>
-  <div class="date">{% if event.date %}{{ event.date.strftime("%d.%m.%Y") }}{% endif %}</div>
-  <div class="desc">
-    {% for img in event.imgs %}{% if img.img_url %}<img src="{{ img.img_url }}" alt="">{% endif %}
-    {% if img.img_filename %}<img src="images/{{ img.img_filename }}" alt="">{% endif %}
-    {% endfor %}
-    <p><span class="ago"></span> {{ event.text }}</p>
-  </div>
+{% for event in events %}
+<div class="wrap">
+<div class="slug">{{ event.name }}</div>
+<div class="tags">Теги: {% for tag in event.tags %}{{ tag.tag }} {% endfor %}</div>
+<div class="date">{% if event.date %}{{ event.date.strftime("%d.%m.%Y") }}{% endif %}</div>
+<div class="img">{% for img in event.imgs %}{% if img.img_url %}<img src="{{ img.img_url }}" alt="">{% endif %} {% if img.img_filename %}<img src="images/{{ img.img_filename }}" alt="">{% endif %} {% endfor %}</div>
+<div class="desc">
+  <p><span class="ago"></span> {{ event.text }}</p>
+</div>
 </div>{% endfor %}
 
 <p><b>Всего {{ events|length }} событий.</b></p>
@@ -49,6 +48,8 @@
   <li><a href="https://en.wikipedia.org/wiki/Portal:Internet" target="_blank" rel="noopener noreferrer">Portal:Internet</a></li>
   <li><a href="https://en.wikipedia.org/wiki/Portal:Free_and_open-source_software" target="_blank" rel="noopener noreferrer">Portal:Free and open-source software</a></li>
   <li><a href="https://en.wikipedia.org/wiki/Portal:Electronics" target="_blank" rel="noopener noreferrer">Portal:Electronics</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/List_of_Solar_System_probes" target="_blank" rel="noopener noreferrer">List of Solar System probes</a>,
+    <a href="https://en.wikipedia.org/wiki/List_of_lunar_probes" target="_blank" rel="noopener noreferrer">List of lunar probes</a></li>
 </ul>
 </div>
 

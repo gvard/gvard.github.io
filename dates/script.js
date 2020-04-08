@@ -105,13 +105,17 @@ function makeArray() {
   let arr = [];
   const elems = document.getElementsByClassName('date');
   for (let i = 0; i < elems.length; i += 1) {
+    let slug = elems[i].parentElement.querySelector('.slug').innerText;
+    let tags = elems[i].parentElement.querySelector('.tags').innerText.substring(6,).split(/\s*,\s*/);
     let date = elems[i].innerText;
     let desc = elems[i].parentElement.querySelector('.desc');
-    let img = desc.querySelector('img');
+    let descContent = desc.innerHTML.trim();
+    let img = elems[i].parentElement.querySelector('.img').getElementsByTagName('img')[0];
+    console.log(img.src);
     if (img.src.indexOf('http') != -1) {
-      arr.push(["", date, desc.innerText.trim(), [img.src], [], ['tmp']]);
+      arr.push([slug, date, descContent, [img.src], [], [tags]]);
     } else {
-      arr.push(["", date, desc.innerText.trim(), [], [img.src], ['tmp']]);
+      arr.push([slug, date, descContent, [], [img.src], [tags]]);
     }
   }
   console.log(arr);
