@@ -6,7 +6,7 @@ EVENTS = [
   ["https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Tycho_Brahe.JPG/324px-Tycho_Brahe.JPG"
   ],
   [],
-  ["birthday", "astro", "XVII"
+  ["birthday", "astro", "XVI", "XVII"
   ]
 ],
 [
@@ -16,7 +16,7 @@ EVENTS = [
   ["https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Johannes_Kepler_1610.jpg/437px-Johannes_Kepler_1610.jpg"
   ],
   [],
-  ["birthday", "astro"
+  ["birthday", "astro", "XVI"
   ]
 ],
 [
@@ -107,7 +107,7 @@ EVENTS = [
   ["https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mariner_2.jpg/598px-Mariner_2.jpg"
   ],
   [],
-  ["космонавтика", "satellite"
+  ["космонавтика", "satellite", "МП"
   ]
 ],
 [
@@ -117,7 +117,7 @@ EVENTS = [
   ["http://www.iki.rssi.ru/images/venera/vega1.jpg"
   ],
   [],
-  ["космонавтика", "satellite"
+  ["космонавтика", "satellite", "МП"
   ]
 ],
 [
@@ -127,7 +127,7 @@ EVENTS = [
   ["https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Pioneer-6-9.jpg/487px-Pioneer-6-9.jpg"
   ],
   [],
-  ["космонавтика", "satellite"
+  ["космонавтика", "satellite", "МП"
   ]
 ],
 [
@@ -137,7 +137,7 @@ EVENTS = [
   ["https://images.squarespace-cdn.com/content/v1/5bae83bb7eb88c7ec37bdf3a/1569349226108-KYUO8IX371WFG161XRIS/ke17ZwdGBToddI8pDm48kOEPH9J_ZN1hY82cp9oDqjgUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKc2dT1vKWB-ohu5EOEIHEDB--eGrzaeqU6wjmaKOa8oYSlB6fTiLoglhuOqG1ndv_e/earthrise_web-1170x600.jpg"
   ],
   [],
-  ["космонавтика", "human spaceflight", "spaceflight", "spacecraft", "moon", "Apollo"
+  ["космонавтика", "human spaceflight", "ПК", "spaceflight", "spacecraft", "moon", "Apollo"
   ]
 ],
 [
@@ -147,7 +147,7 @@ EVENTS = [
   [],
   ["26.12.(4).jpg"
   ],
-  ["космонавтика", "spacecraft", "space station"
+  ["космонавтика", "spacecraft", "ПК", "space station"
   ]
 ],
 [
@@ -157,7 +157,7 @@ EVENTS = [
   ["https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/480px-The_Earth_seen_from_Apollo_17.jpg"
   ],
   [],
-  ["космонавтика", "human spaceflight", "spaceflight", "spacecraft", "moon", "Apollo"
+  ["космонавтика", "human spaceflight", "ПК", "spaceflight", "spacecraft", "moon", "Apollo"
   ]
 ],
 [
@@ -167,7 +167,7 @@ EVENTS = [
   ["https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/NASA_Apollo_17_Lunar_Roving_Vehicle.jpg/480px-NASA_Apollo_17_Lunar_Roving_Vehicle.jpg"
   ],
   [],
-  ["космонавтика", "human spaceflight", "spaceflight", "spacecraft", "moon", "Apollo"
+  ["космонавтика", "human spaceflight", "ПК", "spaceflight", "spacecraft", "moon", "Apollo"
   ]
 ],
 [
@@ -177,7 +177,7 @@ EVENTS = [
   ["https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Apollo_17_Cernan_on_moon.jpg/465px-Apollo_17_Cernan_on_moon.jpg"
   ],
   [],
-  ["космонавтика", "human spaceflight", "spaceflight", "spacecraft", "moon", "Apollo"
+  ["космонавтика", "human spaceflight", "ПК", "spaceflight", "spacecraft", "moon", "Apollo"
   ]
 ],
 [
@@ -187,7 +187,7 @@ EVENTS = [
   ["https://www.laspace.ru/upload/medialibrary/adc/adc3a9cba39a41f7b91a2f8bd0139dd4.jpg"
   ],
   [],
-  ["космонавтика", "spaceflight", "spacecraft", "landing", "Венера", "Venus"
+  ["космонавтика", "spaceflight", "spacecraft", "МП", "landing", "Венера", "Venus"
   ]
 ],
 [
@@ -197,7 +197,7 @@ EVENTS = [
   ["https://upload.wikimedia.org/wikipedia/en/8/82/Salyut7.jpg"
   ],
   [],
-  ["космонавтика", "spaceflight", "spacecraft", "landing", "Венера", "Venus"
+  ["космонавтика", "spaceflight", "spacecraft", "landing", "ПК", "Венера", "Venus"
   ]
 ],
 [
@@ -207,7 +207,7 @@ EVENTS = [
   ["https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Artwork_Galileo-Io-Jupiter.JPG/597px-Artwork_Galileo-Io-Jupiter.JPG"
   ],
   [],
-  ["космонавтика", "spaceflight", "spacecraft"
+  ["космонавтика", "spaceflight", "spacecraft", "МП"
   ]
 ],
 [
@@ -217,7 +217,7 @@ EVENTS = [
   ["https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Space_Shuttle_Endeavour_launches_on_STS-99.jpg/606px-Space_Shuttle_Endeavour_launches_on_STS-99.jpg"
   ],
   [],
-  ["космонавтика", "launch", "launch vehicle", "human spaceflight", "spaceflight", "space shuttle",
+  ["космонавтика", "launch", "launch vehicle", "human spaceflight", "ПК", "spaceflight", "space shuttle"
   ]
 ],
 [
@@ -227,7 +227,7 @@ EVENTS = [
   ["https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/STS-130_launching_1.jpg/504px-STS-130_launching_1.jpg"
   ],
   [],
-  ["космонавтика", "launch", "launch vehicle", "human spaceflight", "spaceflight", "space shuttle", "ISS", "МКС"
+  ["космонавтика", "launch", "launch vehicle", "ПК", "human spaceflight", "spaceflight", "space shuttle", "ISS", "МКС"
   ]
 ],
 [
@@ -247,7 +247,7 @@ EVENTS = [
   ["https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/STS-135_landing_cropped.jpg/1024px-STS-135_landing_cropped.jpg"
   ],
   [],
-  ["космонавтика", "spaceflight", "space shuttle"
+  ["космонавтика", "spaceflight", "space shuttle", "ПК"
   ]
 ],
 [
@@ -277,7 +277,7 @@ EVENTS = [
   ["https://upload.wikimedia.org/wikipedia/commons/3/36/ASTERIA_CubeSat_space_telescope.jpg"
   ],
   [],
-  ["космонавтика", "launch", "cubesat"
+  ["космонавтика", "launch", "cubesat", "science"
   ]
 ],
 [
@@ -297,7 +297,7 @@ EVENTS = [
   ["https://upload.wikimedia.org/wikipedia/en/a/a2/Baumgartner_RBSjump.jpg"
   ],
   [],
-  ["parachuting", "stratospheric jump", "stratosphere baloon"
+  ["record", "parachuting", "stratospheric jump", "stratosphere baloon"
   ]
 ],
 [
@@ -308,7 +308,7 @@ EVENTS = [
     "https://nplus1.ru/images/2020/02/10/7f009f3a81c9e582fd0d19398dc35edb.jpg"
   ],
   [],
-  ["aviation"
+  ["aviation", "record"
   ]
 ],
 [
@@ -365,9 +365,9 @@ EVENTS = [
   "Основана Apple Computer Company",
   "01.04.1976",
   "назад Стивом Джобсом, Стивом Возняком и Рональдом Уэйном была основана Apple Computer Company.",
-  [],
-  ["Jobs-Wozniak_photo_20100127.jpg"
+  ["https://image.cnbcfm.com/api/v1/image/100932798-128279719-1.jpg"
   ],
+  [],
   ["it", "history"
   ]
 ],
@@ -418,7 +418,7 @@ EVENTS = [
   [],
   ["James_Gosling.jpg"
   ],
-  ["it", "programming", "программирование", "history",
+  ["it", "programming", "программирование", "history", "Java"
   ]
 ],
 [
@@ -428,7 +428,7 @@ EVENTS = [
   [],
   ["Brendan_Eich_JS.jpg"
   ],
-  ["it", "history", "programming", "программирование", "netscape", "sun"
+  ["it", "history", "programming", "программирование", "netscape", "Sun", "JavaScript"
   ]
 ],
 [
@@ -438,7 +438,7 @@ EVENTS = [
   ["https://gvanrossum.github.io/images/DO6GvRlo.gif"
   ],
   [],
-  ["it", "history", "programming", "программирование",
+  ["it", "history", "programming", "программирование", "Python"
   ]
 ],
 [

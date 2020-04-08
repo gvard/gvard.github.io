@@ -113,9 +113,9 @@ function makeArray() {
     let img = elems[i].parentElement.querySelector('.img').getElementsByTagName('img')[0];
     console.log(img.src);
     if (img.src.indexOf('http') != -1) {
-      arr.push([slug, date, descContent, [img.src], [], [tags]]);
+      arr.push([slug, date, descContent, [img.src], [], tags]);
     } else {
-      arr.push([slug, date, descContent, [], [img.src], [tags]]);
+      arr.push([slug, date, descContent, [], [img.src], tags]);
     }
   }
   console.log(arr);
