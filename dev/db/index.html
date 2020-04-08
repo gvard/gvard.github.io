@@ -51,13 +51,23 @@
   <li><b>Python Flask + SQAlchemy + SQlite</b>: <a href="../../py/flask_solsys_app.py">Коллекция: Солнечная система</a>.<br>
     Для создания актуальной <a href="../../py/solsysobjs.db">базы данных</a> (данные из файла <b><a href="../../py/object_data.py">object_data.py</a></b>) запустить скрипт <b><a href="../../py/sql_solsys_db.py">sql_solsys_db.py</a></b></li>
   <li><b>Python Flask + SQAlchemy + SQlite</b>: <a href="../../py/flask_dates_app.py">Знаменательные даты</a>.<br>
-    Для создания актуальной <a href="../../py/dates.sqlite">базы данных</a> (данные из файла <b><a href="../../py/dates_data.py">dates_data.py</a></b>) запустить скрипт <b><a href="../../py/sql_dates_db.py">sql_dates_db.py</a></b></li>
+    Для создания актуальной <a href="../../py/dates.sqlite">базы данных</a> (данные из файла <b><a href="../../py/dates_data.py">dates_data.py</a></b>) удалить dates.sqlite, запустить скрипт <b><a href="../../py/sql_dates_db.py">sql_dates_db.py</a></b>, затем запустить приложение:</li>
 </ul>
-<p>Для работы необходимо установить Flask:</p>
+<pre><code>python .\sql_dates_db.py
+python .\flask_dates_app.py
+* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+</code></pre>
+<p><b>Если dates_data.py не изменялся, базу пересоздавать не надо!</b><br>
+  Для работы необходимо установить Flask:</p>
 <pre><code><a href="https://pypi.org/project/Flask/" target="_blank" rel="noopener noreferrer">pip install flask</a>
 <a href="https://pypi.org/project/Flask-Admin/" target="_blank" rel="noopener noreferrer">pip install Flask-Admin</a>
 <a href="https://pypi.org/project/Flask-SQLAlchemy/" target="_blank" rel="noopener noreferrer">pip install Flask-SQLAlchemy</a>
 </code></pre>
+<p><b>Ссылки работают, когда приложение Flask запущено:</b></p>
+<ul>
+  <li><a href="http://127.0.0.1:5000/">Знаменательные даты</a>, приложение Flask;</li>
+  <li><a href="http://127.0.0.1:5000/admin/">Знаменательные даты, админка</a>.</li>
+</ul>
 
 <h2>Ссылки</h2>
 <ul>
