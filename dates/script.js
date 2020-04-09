@@ -109,13 +109,13 @@ function makeArray() {
     let tags = elems[i].parentElement.querySelector('.tags').innerText.substring(6,).split(/\s*,\s*/);
     let date = elems[i].innerText;
     let desc = elems[i].parentElement.querySelector('.desc');
-    let descContent = desc.innerHTML.trim();
+    let descContent = desc.innerHTML.trim().substring(29,).slice(0, -4);
     let img = elems[i].parentElement.querySelector('.img').getElementsByTagName('img')[0];
     console.log(img.src);
     if (img.src.indexOf('http') != -1) {
       arr.push([slug, date, descContent, [img.src], [], tags]);
     } else {
-      arr.push([slug, date, descContent, [], [img.src], tags]);
+      arr.push([slug, date, descContent, [], [img.src.substring(img.src.lastIndexOf('/')+1)], tags]);
     }
   }
   console.log(arr);
