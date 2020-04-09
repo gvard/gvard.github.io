@@ -27,7 +27,7 @@ def get_nanosats(soup):
 soup = get_soup(NANOSATS_URL)
 DATE, LIS = get_nanosats(soup)
 NANOSATS_HTML = f"""<h2><a href="https://en.wikipedia.org/wiki/Small_satellite#Nanosatellites" target="_blank" rel="noopener noreferrer">Наноспутники</a></h2>
-<p><a href="{NANOSATS_URL}">База данных наноспутников</a> &ndash; до 10 кг для нестандартных типов и до 27U (30&ndash;40 кг) для
+<p><a href="{NANOSATS_URL}">База данных наноспутников</a> – до 10 кг для нестандартных типов и до 27U (30–40 кг) для
 <a href="https://www.nanosats.eu/cubesat">кубсатов</a>. Последнее обновление: {DATE}.</p>
 <ul>
 """
@@ -67,13 +67,13 @@ SPACEFLIGHT_HTML = f"""<h2>Пилотируемая космонавтика</h2
 <p><a href="{SPACEFLIGHT_URL}">Статистика</a> <a href="{SPACEFLIGHT1_URL}">пилотируемой космонавтики</a>
 <ul>
 <li>Космонавтов (людей, побывавших в космосе и совершивших орбитальный полет)
-&ndash; <b>{COSMONAUT_NUM}</b></li>
+– <b>{COSMONAUT_NUM}</b></li>
 <li>Людей, побывавших в космосе (согласно определению Международной федерации аэронавтики, при высоте полета более 100 км)
-&ndash; <b>{FAI_NUM}</b></li>
+– <b>{FAI_NUM}</b></li>
 <li>Людей, побывавших в космосе (согласно классификации ВВС США, при высоте полета более 80 км 467 м)
-&ndash; <b>{USAF_NUM}</b></li>
-<li>Время, проведенное людьми в космосе &ndash; свыше <b>{MANYR_NUM}</b> человеко-лет.</li>
-<li>В космосе <b>{len(ASTROS_LST)}</b> космонавта: {ASTROS_STR}.</li>
+– <b>{USAF_NUM}</b></li>
+<li>Время, проведенное людьми в космосе – свыше <b>{MANYR_NUM}</b> человеко-лет.</li>
+<li>В космосе <b>{len(ASTROS_LST)}</b> космонавтов: {ASTROS_STR}.</li>
 </ul>
 """
 
@@ -90,7 +90,7 @@ BODY = f"""<body onload="mkHeader()">
     <li>Побывали в космосе и&nbsp;они астронавты: <span class="yellow">{FAI_NUM}</span></li>
     <li>Побывали в космосе, на высоте более 80 467&nbsp;м: <span class="yellow">{USAF_NUM}</span></li>
     <li>Люди провели в космосе свыше <span class="yellow">{MANYR_NUM}</span> человеко-лет</li>
-    <li>Сейчас в космосе <span class="yellow">{len(ASTROS_LST)}</span> космонавта</li>
+    <li>Сейчас в космосе <span class="yellow">{len(ASTROS_LST)}</span> космонавтов</li>
   </ul>
   </div>
   <div id="footer">
