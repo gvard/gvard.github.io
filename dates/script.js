@@ -111,7 +111,6 @@ function makeArray() {
     let desc = elems[i].parentElement.querySelector('.desc');
     let descContent = desc.innerHTML.trim().substring(29,).slice(0, -4);
     let img = elems[i].parentElement.querySelector('.img').getElementsByTagName('img')[0];
-    console.log(img.src);
     if (img.src.indexOf('http') != -1) {
       arr.push([slug, date, descContent, [img.src], [], tags]);
     } else {
