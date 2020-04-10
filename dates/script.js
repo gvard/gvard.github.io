@@ -23,11 +23,20 @@ function WordNumberCase(number) {
   }
   return result;
 }
-function showAll() {
+
+function showByTag() {
   const elems = document.getElementsByClassName('wrap');
+  const tagVal = document.getElementById("tag").value;
+  let j = 0;
   for (let i = 0; i < elems.length; i += 1) {
-    elems[i].style.display = 'block';
+    let vis = 'none';
+    if (elems[i].classList.contains(tagVal)) {
+      vis = 'block';
+      j += 1;
+    }
+    elems[i].style.display = vis;
   }
+  console.log("Select", j, "events");
 }
 function getToday() {
   const currentdate = new Date();
@@ -55,8 +64,13 @@ function ago(elem, year, fullyear) {
   else
     yearsAgo.innerText = ``;
 }
+function goCarousel() {
+  document.getElementsByClassName('right')[0].style.display = 'none';
+  document.getElementsByClassName('left')[0].style.width = '100%';
+  var slideIndex = 0;
+  carousel();
+}
 function carousel() {
-  // let slideIndex = 0;
   let elems = document.getElementsByClassName("date");
   const today = getToday();
   let toShow = [];
@@ -76,30 +90,34 @@ function carousel() {
     document.body.innerHTML = "<h1>Нет дат в текущем наборе событий</h1>";
   setTimeout(carousel, 3500);
 }
-function findDate() {
+function findDates() {
   const elems = document.getElementsByClassName('date');
-  let gyear = parseInt(document.getElementById("year").value, 10);
-  let gdaymon = document.getElementById("daymon").value;
+  const gyear = document.getElementById("year");
+  const gdaymon = document.getElementById("daymon");
   const today = getToday();
-  const checkBox = document.getElementById("onlyMonth");
-  if (checkBox.checked == true) {
-    const month = today.month;
-    console.log("Show events occured in month number", month);
-  }
-  if (!gdaymon)
-    gdaymon = today.daymon;
+  const chckToday = document.getElementById("today");
+  const chckYr = document.getElementById("thisYear");
+  if (chckToday.checked) gdaymon.value = today.daymon;
+  if (chckYr.checked) gyear.value = today.year;
+  let j = 0;
   for (let i = 0; i < elems.length; i += 1) {
     let daymon = elems[i].innerText.slice(0, 5);
     let mon = elems[i].innerText.slice(3, 5);
     let year = parseInt(elems[i].innerText.slice(6, 10), 10);
     ago(elems[i], year, today.year);
     let vis = 'none';
-    if ((checkBox.checked && mon == today.month) ||
-      (!checkBox.checked && gyear && gdaymon == daymon && gyear == year) ||
-      (!checkBox.checked && !gyear && gdaymon == daymon))
-      vis = 'block';
+    if ((gdaymon.value.indexOf(".") == -1 && mon == gdaymon.value) ||
+      (gyear.value == year && gdaymon.value == daymon) ||
+      (!gyear.value && gdaymon.value == daymon) ||
+      (gyear.value == year && !gdaymon.value) ||
+      (!gyear.value && !gdaymon.value))
+      {
+        vis = 'block';
+        j += 1;
+      }
     elems[i].parentElement.style.display = vis;
   }
+  console.log("Select", j, "events");
 }
 function makeArray() {
   let arr = [];
@@ -119,3 +137,12 @@ function makeArray() {
   }
   console.log(arr);
 }
+var slideIndex = 0;
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('caro').addEventListener('click', function() {
+    document.getElementsByClassName('right')[0].style.display = 'none';
+    document.getElementById('foot').style.display = 'none';
+    document.getElementsByClassName('left')[0].style.width = '100%';
+    carousel();
+  });
+});
