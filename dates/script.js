@@ -23,7 +23,6 @@ function WordNumberCase(number) {
   }
   return result;
 }
-
 function showByTag() {
   const elems = document.getElementsByClassName('wrap');
   const tagVal = document.getElementById("tag").value;
@@ -64,14 +63,9 @@ function ago(elem, year, fullyear) {
   else
     yearsAgo.innerText = ``;
 }
-function goCarousel() {
-  document.getElementsByClassName('right')[0].style.display = 'none';
-  document.getElementsByClassName('left')[0].style.width = '100%';
-  var slideIndex = 0;
-  carousel();
-}
 function carousel() {
-  let elems = document.getElementsByClassName("date");
+  const elems = document.getElementsByClassName("date");
+  const tmout = document.getElementById("tmout");
   const today = getToday();
   let toShow = [];
   for (let i = 0; i < elems.length; i += 1) {
@@ -88,7 +82,7 @@ function carousel() {
     toShow[slideIndex - 1].parentElement.style.display = "block";
   else
     document.body.innerHTML = "<h1>Нет дат в текущем наборе событий</h1>";
-  setTimeout(carousel, 3500);
+  setTimeout(carousel, tmout.value);
 }
 function findDates() {
   const elems = document.getElementsByClassName('date');

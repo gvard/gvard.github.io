@@ -852,9 +852,11 @@
 
 <div class="column right">
 <h2>Знаменательные даты</h2>
-<button id="caro">Слайд-шоу</button><br><br>
+<button id="caro">Слайд-шоу</button>
+Пауза <input type="text" id="tmout" size="4" maxlength="5" value="4000" style="width: 2.2rem"> мс<br><br>
 <b>Выборка: дата, месяц, год</b><br>
-<input type="text" id="daymon" size="4" maxlength="5" value="" placeholder="29.02"> <input type="text" id="year" size="4" maxlength="4" value="" placeholder="1984"><br>
+<input type="text" id="daymon" size="4" maxlength="5" value="" placeholder="29.02">
+<input type="text" id="year" size="4" maxlength="4" value="" placeholder="1984"><br>
 <input type="checkbox" id="today">Сегодня
 <input type="checkbox" id="thisYear">Этот год<br>
 <button onclick="findDates()">Показать события</button>
@@ -864,7 +866,7 @@
 <li>Пустое поле года – события заданной даты</li>
 </ul>
 <hr>
-Тег <input type="text" id="tag" size="7" maxlength="15" value="" placeholder="venus">
+Тег <input type="text" id="tag" size="9" maxlength="18" value="" placeholder="venus" style="width: 4rem">
 <button onclick="showByTag()">Показать</button><br>
 astro, cosmo, manned, photo, moon и&nbsp;т.д.
 </div>
