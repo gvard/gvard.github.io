@@ -23,45 +23,36 @@ function WordNumberCase(number) {
   }
   return result;
 }
-function showByTag() {
-  const elems = document.getElementsByClassName('wrap');
-  const tagVal = document.getElementById("tag").value;
-  let j = 0;
-  for (let i = 0; i < elems.length; i += 1) {
-    let vis = 'none';
-    if (elems[i].classList.contains(tagVal)) {
-      vis = 'block';
-      j += 1;
-    }
-    elems[i].style.display = vis;
-  }
-  console.log("Select", j, "events");
-}
 function getToday() {
   const currentdate = new Date();
   const day = ("0" + currentdate.getDate()).slice(-2);
   const month = ("0" + (currentdate.getMonth() + 1)).slice(-2);
   return { daymon: `${day}.${month}`, month: month, year: currentdate.getFullYear() };
 }
-function getStrToday() {
-  const currentdate = new Date();
-  const day = ("0" + currentdate.getDate()).slice(-2);
-  const month = currentdate.getMonth() + 1;
-  let monthName = { 1: "января", 2: "февраля", 3: "марта", 4: "апреля", 5: "мая",
-    6: "июня", 7: "июля", 8: "августа", 9: "сентября", 10: "октября", 11: "ноября", 12: "декабря" }[month];
-  return `${day} ${monthName} ${currentdate.getFullYear()}`;
-}
-function mkHeader() {
-  let header = document.getElementById('header');
-  header.innerHTML = getStrToday();
-}
-function ago(elem, year, fullyear) {
-  let yearsAgo = elem.parentElement.getElementsByClassName('ago')[0];
-  const yr = fullyear - year;
+function ago(elem, yr) {
+  const yearsAgo = elem.parentElement.getElementsByClassName('ago')[0];
   if (yr)
     yearsAgo.innerText = `${yr} ${WordNumberCase(yr)} `;
   else
     yearsAgo.innerText = ``;
+}
+function showByTag() {
+  const elems = document.getElementsByClassName('wrap');
+  const tagVal = document.getElementById("tag").value;
+  const today = getToday();
+  let j = 0;
+  for (let i = 0; i < elems.length; i += 1) {
+    let vis = 'none';
+    if (elems[i].classList.contains(tagVal)) {
+      const elmDate = elems[i].getElementsByClassName('date')[0]
+      let year = parseInt(elmDate.innerText.slice(6, 10), 10);
+      ago(elmDate, today.year - year);
+      vis = 'block';
+      j += 1;
+    }
+    elems[i].style.display = vis;
+  }
+  console.log("Select", j, "events");
 }
 function carousel() {
   const elems = document.getElementsByClassName("date");
@@ -72,7 +63,7 @@ function carousel() {
     // let mon = elems[i].innerText.slice(3, 5);
     let year = parseInt(elems[i].innerText.slice(6, 10), 10);
     toShow.push(elems[i]);
-    ago(elems[i], year, today.year);
+    ago(elems[i], today.year - year);
     elems[i].parentElement.style.display = "none";
   }
   slideIndex += 1;
@@ -98,7 +89,7 @@ function findDates() {
     let daymon = elems[i].innerText.slice(0, 5);
     let mon = elems[i].innerText.slice(3, 5);
     let year = parseInt(elems[i].innerText.slice(6, 10), 10);
-    ago(elems[i], year, today.year);
+    ago(elems[i], today.year - year);
     let vis = 'none';
     if ((gdaymon.value.indexOf(".") == -1 && mon == gdaymon.value) ||
       (gyear.value == year && gdaymon.value == daymon) ||
@@ -135,7 +126,7 @@ var slideIndex = 0;
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('caro').addEventListener('click', function() {
     document.getElementsByClassName('right')[0].style.display = 'none';
-    document.getElementById('foot').style.display = 'none';
+    document.getElementById('head').style.display = 'none';
     document.getElementsByClassName('left')[0].style.width = '100%';
     carousel();
   });

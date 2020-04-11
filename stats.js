@@ -1,7 +1,4 @@
-function mkHeader() {
-  let header = document.getElementById('header');
-  header.innerHTML = getStrToday();
-}
+'use strict';
 function getStrToday() {
   const currentdate = new Date();
   const day = ("0" + currentdate.getDate()).slice(-2);
@@ -10,3 +7,4 @@ function getStrToday() {
     6: "июня", 7: "июля", 8: "августа", 9: "сентября", 10: "октября", 11: "ноября", 12: "декабря" }[month];
   return `${day} ${monthName} ${currentdate.getFullYear()}`;
 }
+const mkHeader = () => { document.getElementById('header').innerHTML = getStrToday() }
