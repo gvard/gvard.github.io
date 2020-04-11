@@ -29,13 +29,7 @@ function getToday() {
   const month = ("0" + (currentdate.getMonth() + 1)).slice(-2);
   return { daymon: `${day}.${month}`, month: month, year: currentdate.getFullYear() };
 }
-function ago(elem, yr) {
-  const yearsAgo = elem.parentElement.getElementsByClassName('ago')[0];
-  if (yr)
-    yearsAgo.innerText = `${yr} ${WordNumberCase(yr)} `;
-  else
-    yearsAgo.innerText = ``;
-}
+const setAgo = (elmAgo, yr) => { if (yr) elmAgo.innerText = `${yr} ${WordNumberCase(yr)} `;};
 function showByTag() {
   const elems = document.getElementsByClassName('wrap');
   const tagVal = document.getElementById("tag").value;
@@ -44,9 +38,10 @@ function showByTag() {
   for (let i = 0; i < elems.length; i += 1) {
     let vis = 'none';
     if (elems[i].classList.contains(tagVal)) {
-      const elmDate = elems[i].getElementsByClassName('date')[0]
-      let year = parseInt(elmDate.innerText.slice(6, 10), 10);
-      ago(elmDate, today.year - year);
+      const elmDate = elems[i].getElementsByClassName('date')[0];
+      const year = parseInt(elmDate.innerText.slice(6, 10), 10);
+      const elmAgo = elmDate.parentElement.getElementsByClassName('ago')[0];
+      setAgo(elmAgo, today.year - year);
       vis = 'block';
       j += 1;
     }
@@ -60,10 +55,10 @@ function carousel() {
   const today = getToday();
   let toShow = [];
   for (let i = 0; i < elems.length; i += 1) {
-    // let mon = elems[i].innerText.slice(3, 5);
-    let year = parseInt(elems[i].innerText.slice(6, 10), 10);
+    const year = parseInt(elems[i].innerText.slice(6, 10), 10);
+    const elmAgo = elems[i].parentElement.getElementsByClassName('ago')[0];
+    setAgo(elmAgo, today.year - year);
     toShow.push(elems[i]);
-    ago(elems[i], today.year - year);
     elems[i].parentElement.style.display = "none";
   }
   slideIndex += 1;
@@ -89,7 +84,6 @@ function findDates() {
     let daymon = elems[i].innerText.slice(0, 5);
     let mon = elems[i].innerText.slice(3, 5);
     let year = parseInt(elems[i].innerText.slice(6, 10), 10);
-    ago(elems[i], today.year - year);
     let vis = 'none';
     if ((gdaymon.value.indexOf(".") == -1 && mon == gdaymon.value) ||
       (gyear.value == year && gdaymon.value == daymon) ||
@@ -97,6 +91,8 @@ function findDates() {
       (gyear.value == year && !gdaymon.value) ||
       (!gyear.value && !gdaymon.value))
       {
+        const elmAgo = elems[i].parentElement.getElementsByClassName('ago')[0];
+        setAgo(elmAgo, today.year - year);
         vis = 'block';
         j += 1;
       }
