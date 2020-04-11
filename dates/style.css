@@ -4,9 +4,13 @@ p {font-size: 1.3em;}
   font-size: 1.5em;
   font-weight: bold;
 }
-.wrap {display: none;}
+.wrap {
+  display: none;
+  height: 100vh;
+  padding: 0 30px;
+}
 ul {
-  padding-left: 15px;
+  padding: 0 10px 0 15px;
   margin-bottom: 0;
 }
 img {
@@ -14,8 +18,20 @@ img {
   max-height: 750px;
 }
 .tags {display: none;}
-.slug {font-size: 1.4rem;}
+.slug {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.desc {
+  font-size: 1.2rem;
+}
+.blocks {
+  display: inline-block;
+  margin-bottom: 0 0.3rem 0.3rem 0.3rem;
+}
 .wrapper {
+  display: flex;
+  flex-direction: row;
   max-width: 1980px;
   padding: 5px;
   box-sizing: border-box;
@@ -45,6 +61,7 @@ img {
   }
   .wrapper {
     padding: 0;
+    flex-direction: column;
   }
   img {
     max-width: 100%;
@@ -52,6 +69,7 @@ img {
   }
   .right {
     width: 100%;
+    order: -1;
   }
   .left {
     padding: 5px;
@@ -59,6 +77,9 @@ img {
   }
 }
 @media (max-width: 423px) {
+  .blocks {
+    display: block;
+  }
   * {
     margin: 0;
     padding: 0;

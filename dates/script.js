@@ -77,12 +77,14 @@ const hideAll = () => {document.querySelectorAll('.wrap').forEach((el) => { el.s
 const showAll = (elems) => { elems.forEach((el) => { el.style.display = 'block';});};
 function showByTag() {
   hideAll();
+  document.getElementById('head').style.display = 'none';
   const tag = document.getElementById("tag").value;
   const elems = getSlidesByTag(tag);
   showAll(elems);
 }
 function showByDate() {
   hideAll();
+  document.getElementById('head').style.display = 'none';
   const elems = getSlidesByDate();
   console.log(elems.length);
   showAll(elems);
