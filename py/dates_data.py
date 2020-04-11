@@ -214,10 +214,10 @@ EVENTS = [
 "Запущен первый американский искусственный спутник Земли",
 "01.02.1958",
 "назад был запущен первый американский искусственный спутник Земли «Explorer-1»",
-["https://upload.wikimedia.org/wikipedia/commons/7/73/Explorer1.jpg"
+["https://www.nasa.gov/sites/default/files/thumbnails/image/explorer1_victory.jpg"
 ],
 [],
-["космонавтика", "satellite"
+["космонавтика", "satellite", "photo"
 ]
 ],
 [

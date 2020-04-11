@@ -63,6 +63,9 @@ img {
     padding: 0;
     flex-direction: column;
   }
+  .wrap {
+    padding: 3px;
+  }
   img {
     max-width: 100%;
     max-height: 100%;
