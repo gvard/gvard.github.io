@@ -8,10 +8,13 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
-<body onload="findDate()">
+<body>
 <div class="wrapper">
 <div class="column left">
-<h1>Что произошло сегодня?</h1>
+<div id="head">
+<h1>Этапы большого пути: тематические презентации</h1>
+<!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Soviet_Union-1965-Stamp-0.12._Cosmonautics_Day.jpg/342px-Soviet_Union-1965-Stamp-0.12._Cosmonautics_Day.jpg" alt=""><br> -->
+</div>
 
 {% for event in events %}
 <div class="wrap">
@@ -19,54 +22,36 @@
 <div class="tags">Теги: {% for tag in event.tags %}{{ tag.tag }} {% endfor %}</div>
 <div class="date">{% if event.date %}{{ event.date.strftime("%d.%m.%Y") }}{% endif %}</div>
 <div class="img">{% for img in event.imgs %}{% if img.img_url %}<img src="{{ img.img_url }}" alt="">{% endif %} {% if img.img_filename %}<img src="images/{{ img.img_filename }}" alt="">{% endif %} {% endfor %}</div>
-<div class="desc">
-  <p><span class="ago"></span> {{ event.text }}</p>
-</div>
+<div class="desc"><span class="ago"></span> {{ event.text }}</div>
 </div>{% endfor %}
 
 <p><b>Всего {{ events|length }} событий.</b></p>
-<hr>
-<div class="desc">Для наполнения материалом страницы дат необходимо соблюдать последовательность блоков и их формат:
-  <ul>
-    <li>Указание для тематического рубрикатора, одно из слов: Астрономия, Космонавтика, Авиация, Физика, Информатика.</li>
-    <li>Даты вида дд.мм.гггг на отдельной строке.</li>
-    <li>Изображение или ссылка на изображение из (англоязычной) википедии.</li>
-    <li>Описание, начинающееся со слов вида " назад произошло...". Число прошедших лет и слово "год/года/лет" будет вставлено автоматически.</li>
-  </ul>
-</div>
-<h2>Ссылки</h2>
-<ul>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Astronomy" target="_blank" rel="noopener noreferrer">Portal:Astronomy</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Solar_System" target="_blank" rel="noopener noreferrer">Portal:Solar System</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Spaceflight" target="_blank" rel="noopener noreferrer">Portal:Spaceflight</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Outer_space" target="_blank" rel="noopener noreferrer">Portal:Outer space</a>,
-    <a href="https://en.wikipedia.org/wiki/Space_exploration" target="_blank" rel="noopener noreferrer">Space exploration</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Earth_sciences" target="_blank" rel="noopener noreferrer">Portal:Earth sciences</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Aviation" target="_blank" rel="noopener noreferrer">Portal:Aviation</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Computer_programming" target="_blank" rel="noopener noreferrer">Portal:Computer programming</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Technology" target="_blank" rel="noopener noreferrer">Portal:Technology</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Internet" target="_blank" rel="noopener noreferrer">Portal:Internet</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Free_and_open-source_software" target="_blank" rel="noopener noreferrer">Portal:Free and open-source software</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Electronics" target="_blank" rel="noopener noreferrer">Portal:Electronics</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/List_of_Solar_System_probes" target="_blank" rel="noopener noreferrer">List of Solar System probes</a>,
-    <a href="https://en.wikipedia.org/wiki/List_of_lunar_probes" target="_blank" rel="noopener noreferrer">List of lunar probes</a></li>
-</ul>
 </div>
 
 <div class="column right">
-<h2>Выбор даты</h2>
-День и месяц формата дд.мм,<br>год формата гггг:<br>
-<input type="text" id="daymon" size="4" maxlength="5" value="" placeholder="29.02"> <input type="text" id="year" size="4" maxlength="4" value="" placeholder="1984">
-<br><input type="checkbox" id="onlyMonth" checked onclick="findDate()"> За текущий месяц<br>
-<button onclick="findDate()">Что произошло в эту дату?</button>
-<button onclick="showAll()">Показать все события</button>
+<div class="blocks">
+<b>Выборка: дата, месяц, год</b><br>
+<input type="text" id="daymon" size="4" maxlength="5" value="" placeholder="29.02">
+<input type="text" id="year" size="4" maxlength="4" value="" placeholder="1984"><br>
+<input type="checkbox" id="today">Сегодня
+<input type="checkbox" id="thisYear">Этот год<br>
+<button onclick="showByDate()">Лента</button>
+<button onclick="slidesByDate()">Слайд-шоу</button>
 <ul>
-  <li>При пустом поле даты выводятся события текущей даты</li>
-  <li>При пустом поле года выводятся все события заданной даты</li>
+<li>День.месяц – дд.мм или мм</li>
+<li>Год – гггг</li>
+<li>Пустое поле года – события заданной даты</li>
 </ul>
-<br>
 </div>
-
+<div class="blocks">
+Тег <input type="text" id="tag" size="9" maxlength="18" value="" placeholder="venus" style="width: 4rem"><br>
+<button onclick="showByTag()">Лента</button>
+<button onclick="slidesByTag()">Слайд-шоу</button>
+<br>
+astro, cosmo, photo, moon и&nbsp;т.д.<br><br>
+Пауза слайд-шоу <input type="text" id="tmout" size="4" maxlength="5" value="4500" style="width: 2.2rem"> мс<br>
+</div>
+</div>
 </div>
 </body>
 </html>
