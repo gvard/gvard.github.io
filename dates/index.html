@@ -8,9 +8,12 @@
 <link rel="stylesheet" href="style.css">
 <script src="script.js"></script>
 </head>
-<body onload="findDates()">
+<body>
 <div class="wrapper">
 <div class="column left">
+<div id="head">
+<h1>Этапы большого пути</h1>
+</div>
 
 <div class="wrap astro people">
 <div class="slug">Родился Николай Коперник</div>
@@ -817,37 +820,6 @@
 </div>
 </div>
 
-<div id="foot">
-<hr>
-<p><b><a href="it/">События из мира IT</a> – на отдельной странице</b></p>
-Формат:
-<ul>
-  <li>Тематические теги</li>
-  <li>Дата вида дд.мм.гггг в &lt;div class="date">.</li>
-  <li>Ссылка на изображение из внешнего источника (википедии).</li>
-  <li>Описание, начинающееся со слов вида " назад произошло...". Число прошедших
-  лет и слово "год/года/лет" будет вставлено автоматически (для текущего года не
-  вставляется).</li>
-</ul>
-
-<h2>Ссылки</h2>
-<ul>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Astronomy" target="_blank" rel="noopener noreferrer">Portal:Astronomy</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Solar_System" target="_blank" rel="noopener noreferrer">Portal:Solar System</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Spaceflight" target="_blank" rel="noopener noreferrer">Portal:Spaceflight</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Outer_space" target="_blank" rel="noopener noreferrer">Portal:Outer space</a>,
-    <a href="https://en.wikipedia.org/wiki/Space_exploration" target="_blank" rel="noopener noreferrer">Space exploration</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Earth_sciences" target="_blank" rel="noopener noreferrer">Portal:Earth sciences</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Aviation" target="_blank" rel="noopener noreferrer">Portal:Aviation</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Computer_programming" target="_blank" rel="noopener noreferrer">Portal:Computer programming</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Technology" target="_blank" rel="noopener noreferrer">Portal:Technology</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Internet" target="_blank" rel="noopener noreferrer">Portal:Internet</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Free_and_open-source_software" target="_blank" rel="noopener noreferrer">Portal:Free and open-source software</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Portal:Electronics" target="_blank" rel="noopener noreferrer">Portal:Electronics</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/List_of_Solar_System_probes" target="_blank" rel="noopener noreferrer">List of Solar System probes</a>,
-  <a href="https://en.wikipedia.org/wiki/List_of_lunar_probes" target="_blank" rel="noopener noreferrer">List of lunar probes</a></li>
-</ul>
-</div>
 </div>
 
 <div class="column right">
@@ -860,7 +832,7 @@
 <input type="checkbox" id="today">Сегодня
 <input type="checkbox" id="thisYear">Этот год<br>
 <button onclick="findDates()">Показать события</button>
-<ul style="padding-left: 15px; margin-bottom: 0;">
+<ul>
 <li>День.месяц – дд.мм или мм</li>
 <li>Год – гггг</li>
 <li>Пустое поле года – события заданной даты</li>
@@ -869,8 +841,11 @@
 Тег <input type="text" id="tag" size="9" maxlength="18" value="" placeholder="venus" style="width: 4rem">
 <button onclick="showByTag()">Показать</button><br>
 astro, cosmo, manned, photo, moon и&nbsp;т.д.
+<ul>
+<li><b><a href="it/">События из мира IT</a></b></li>
+<li><b><a href="about/">Ссылки, формат</a></b></li>
+</ul>
 </div>
-
 </div>
 </body>
 </html>

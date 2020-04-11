@@ -1,15 +1,13 @@
-body {
-  background-color: black;
-}
-p {
-  font-size: 1.3em;
-}
+body {background-color: black;}
+p {font-size: 1.3em;}
 .date {
   font-size: 1.5em;
   font-weight: bold;
 }
-.wrap {
-  display: none;
+.wrap {display: none;}
+ul {
+  padding-left: 15px;
+  margin-bottom: 0;
 }
 img {
   max-width: 100%;
