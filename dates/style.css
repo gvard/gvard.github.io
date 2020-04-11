@@ -6,7 +6,6 @@ p {font-size: 1.3em;}
 }
 .wrap {
   display: none;
-  height: 100vh;
   padding: 0 30px;
 }
 ul {
@@ -15,7 +14,7 @@ ul {
 }
 img {
   max-width: 100%;
-  max-height: 750px;
+  max-height: calc(100%-100px);
 }
 .tags {display: none;}
 .slug {
@@ -24,6 +23,7 @@ img {
 }
 .desc {
   font-size: 1.2rem;
+  margin-bottom: 70px;
 }
 .blocks {
   display: inline-block;
