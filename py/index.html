@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <title>Python: практико-ориентированное рограммирование</title>
-  <link rel="stylesheet" href="github.css">
-  <link rel="stylesheet" href="../compact.css">
-  <script src="highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <script src="script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<title>Python: практико-ориентированное рограммирование</title>
+<link rel="stylesheet" href="github.css">
+<link rel="stylesheet" href="../compact.css">
+<script src="highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="script.js"></script>
 </head>
 <body>
 
 <nav class="menu">
-  <ul>
-    <li><a href="../">Главная</a></li>
-    <li><a href="#data">Работа с данными</a></li>
-    <li><a href="#task">Задачи</a></li>
-    <li><a href="api/">API</a></li>
-    <li><a href="pygame/">Pygame и turtle</a></li>
-    <li><a href="../programming/">Информатика и программирование</a></li>
-  </ul>
+<ul>
+<li><a href="../">Главная</a></li>
+<li><a href="#data">Работа с данными</a></li>
+<li><a href="#task">Задачи</a></li>
+<li><a href="api/">API</a></li>
+<li><a href="pygame/">Pygame и turtle</a></li>
+<li><a href="../programming/">Информатика и программирование</a></li>
+</ul>
 </nav>
 
 <h2>gvard.github.io/py/</h2>
@@ -35,22 +35,20 @@
 <h2>Python третьей версии</h2>
 <p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">Скачать дистрибутив Python</a> третьей версии, установить, запустить среду разработки IDLE.</p>
 
-
-
 <section>
-  <h2>Встроенные функции</h2>
-  <p><a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="noopener noreferrer">Список встроенных функций</a>, примерно 70.
-    У любой функции после имени есть скобки: (). В них через запятую перечисляются <i>аргументы функции</i>. Любая функция имеет вывод, который можно записать в <i>переменную</i> при помощи <i>оператора присваивания</i> =</p>
-  <ul>
-    <li>print() выводит на экран все аргументы. Вывод заканчивается переводом на новую строку. Для отмены перевода надо написать аргумент end=""</li>
-    <li>input() ждет ввода пользователем строки. Нажатие клавиши Enter завершает ввод пользователя и работу функции.</li>
-  </ul>
+<h2>Встроенные функции</h2>
+<p><a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="noopener noreferrer">Список встроенных функций</a>, примерно 70.
+  У любой функции после имени есть скобки: (). В них через запятую перечисляются <i>аргументы функции</i>. Любая функция имеет вывод, который можно записать в <i>переменную</i> при помощи <i>оператора присваивания</i> =</p>
+<ul>
+  <li>print() выводит на экран все аргументы. Вывод заканчивается переводом на новую строку. Для отмены перевода надо написать аргумент end=""</li>
+  <li>input() ждет ввода пользователем строки. Нажатие клавиши Enter завершает ввод пользователя и работу функции.</li>
+</ul>
 </section>
 
 <section>
-  <h2>Ключевые слова</h2>
-  <p>Ключевые слова нельзя использовать в качестве названий переменных!</p>
-  <pre><code class="py">False      await      else       import     pass
+<h2>Ключевые слова</h2>
+<p>Ключевые слова нельзя использовать в качестве названий переменных!</p>
+<pre><code class="py">False      await      else       import     pass
 None       break      except     in         raise
 True       class      finally    is         return
 and        continue   for        lambda     try
@@ -60,7 +58,7 @@ async      elif       if         or         yield</code></pre>
 </section>
 
 <section>
-  <h2>Операторы</h2>
+<h2>Операторы</h2>
 <pre><code class="py">+       -       *       **      /       //      %      @
 &lt;&lt;      &gt;&gt;      &amp;       |       ^       ~       :=
 &lt;       &gt;       &lt;=      &gt;=      ==      !=
@@ -68,25 +66,26 @@ async      elif       if         or         yield</code></pre>
 </section>
 
 <section>
-  <h2>Неиспользуемые (кроме елемента строк) символы</h2>
-  <pre><code>$       ?       `</code></pre>
+<h2>Неиспользуемые (кроме елемента строк) символы</h2>
+<pre><code>$       ?       `</code></pre>
 </section>
+
 <section>
-  <h2>Типы данных</h2>
-  <ul>
-    <li><b>Булево значение</b>: True или False. Функция преобразования <b>bool()</b>.
-      <b>Основные операции</b>: and, or, not, is, is not.</li>
-    <li><b>Численные данные</b>: целые (int), десятичные дроби (float), комплексные числа (complex). <b>Основные операции</b>: +, -, *, /, //, %, **, abs(), int(), float(), divmod(x, y), pow(x, y).</li>
-    <li><b>Последовательности</b>: список (list), кортеж (tuple), range.
-      <b>Основные операции над s</b>: in, not in, +, s * n, s[i], len(s), min(s), max(s), s.index(x), s.count(x).</li>
-    <li><b>Текст</b> (str). <b>Основные операции</b>: см. последовательности.
-      Дополнительно, операции со строками реализуются их <i>методами</i>.</li>
-    <li><b>Словарь</b> (dict). <b>Основные операции над d</b>: list(d), len(d), d[key], del d[key], key in d, iter(d), clear(), copy(), items(), keys(), pop(), reversed(), setdefault(), update(), values().</li>
-    <li><b>Множество</b> (set). <b>Основные операции</b>: некоторые математические операции, in, len() и другие. Множество не содержит информации о позициях элементов.</li>
-    <li><b>Бинарные типы данных</b>: bytes (неизменяемый), bytearray (изменяемый), memoryview. <b>Основные операции</b>: см. последовательности.
-      Преобразование в строку: b'\xd0\'.decode('utf-8')</li>
-    <li>А также модули, классы, функции, методы и другие объекты.</li>
-  </ul>
+<h2>Типы данных</h2>
+<ul>
+  <li><b>Булево значение</b>: True или False. Функция преобразования <b>bool()</b>.
+    <b>Основные операции</b>: and, or, not, is, is not.</li>
+  <li><b>Численные данные</b>: целые (int), десятичные дроби (float), комплексные числа (complex). <b>Основные операции</b>: +, -, *, /, //, %, **, abs(), int(), float(), divmod(x, y), pow(x, y).</li>
+  <li><b>Последовательности</b>: список (list), кортеж (tuple), range.
+    <b>Основные операции над s</b>: in, not in, +, s * n, s[i], len(s), min(s), max(s), s.index(x), s.count(x).</li>
+  <li><b>Текст</b> (str). <b>Основные операции</b>: см. последовательности.
+    Дополнительно, операции со строками реализуются их <i>методами</i>.</li>
+  <li><b>Словарь</b> (dict). <b>Основные операции над d</b>: list(d), len(d), d[key], del d[key], key in d, iter(d), clear(), copy(), items(), keys(), pop(), reversed(), setdefault(), update(), values().</li>
+  <li><b>Множество</b> (set). <b>Основные операции</b>: некоторые математические операции, in, len() и другие. Множество не содержит информации о позициях элементов.</li>
+  <li><b>Бинарные типы данных</b>: bytes (неизменяемый), bytearray (изменяемый), memoryview. <b>Основные операции</b>: см. последовательности.
+    Преобразование в строку: b'\xd0\'.decode('utf-8')</li>
+  <li>А также модули, классы, функции, методы и другие объекты.</li>
+</ul>
 </section>
 <p><i>Методы</i> строк пишутся через точку после строки или переменной,
 которая ее содержит:</p>
@@ -94,11 +93,11 @@ async      elif       if         or         yield</code></pre>
 
 <h2 id="data">Работа с данными</h2>
 <ul>
-  <li><a href="demograph/">Демография</a>.</li>
-  <li><a href="emoji/">Исследование статистики эмодзи</a>.</li>
-  <li><a href="oscar/">Исследование фильмов &ndash; победителей премии &laquo;Оскар&raquo;</a>.</li>
-  <li><a href="text/">Анализ текста</a>.</li>
-  <li><a href="parse/">Синтаксический разбор</a>, извлечение информации из интернет-ресурсов.</li>
+<li><a href="demograph/">Демография</a>.</li>
+<li><a href="emoji/">Исследование статистики эмодзи</a>.</li>
+<li><a href="oscar/">Исследование фильмов &ndash; победителей премии &laquo;Оскар&raquo;</a>.</li>
+<li><a href="text/">Анализ текста</a>.</li>
+<li><a href="parse/">Синтаксический разбор</a>, извлечение информации из интернет-ресурсов.</li>
 </ul>
 <h3>И еще немного данных</h3>
 <ul>
@@ -111,7 +110,6 @@ async      elif       if         or         yield</code></pre>
 
 <h2>Запросы при помощи urllib.request и json. Практика запросов при помощи открытых API</h2>
 Материалы, задачи и решения &ndash; на <a href="api/">отдельной странице</a>.
-
 
 <h2 id="task">Задачи</h2>
 <a href="task/">Решенные задачи</a>
@@ -149,11 +147,9 @@ async      elif       if         or         yield</code></pre>
 </p>
 <hr>
 <h3>Улитка на склоне</h3>
-<blockquote>
-<pre>Тихо, тихо ползи,
+<blockquote><pre>Тихо, тихо ползи,
 Улитка, по склону Фудзи
-Вверх, до самых высот!</pre>
-</blockquote>
+Вверх, до самых высот!</pre></blockquote>
 Кобаяси Исса (перевод В.Марковой)
 <blockquote>
 <pre>«О, Улитка! Взбираясь к вершине Фудзи, можешь не торопиться... Там на вершине Фудзи улиток полно и так»</pre>
