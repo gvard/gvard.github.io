@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: url("bg.gif");
+  background: url("../bg.png");
 }
 div {
   text-align: center;
