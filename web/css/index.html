@@ -102,13 +102,6 @@
   <li>color: green;</li>
 </ul>
 
-<h2>Рамка – border</h2>
-<ul>
-  <li>рамка, обобщенное правило. border: 2px dashed blue;</li>
-  <li>радиус скругления рамки. border-radius: 5px;</li>
-  <li>Скруглить квадрат до круга – border-radius: 50%;</li>
-</ul>
-
 <h2>Шрифт – font</h2>
 <p><b><a href="../fonts/">Отдельная страница про шрифты и их свойства</a></b>.</p>
 <a href="https://html5book.ru/css-shrifty/" target="_blank" rel="noopener noreferrer">Шрифт в CSS</a> с картинками.
@@ -127,10 +120,56 @@
   <li>text-decoration: underline;</li>
   <li>line-height: 20pt;</li>
 </ul>
+
+<h2>Блочная модель</h2>
+<p>Любой блочный элемент состоит из четырех составляющих:</p>
+<ul>
+  <li>Основой блока выступает его <b>контент</b>: текст, изображения и т.д. Контент имеет 2 размера:  ширина (задается свойством <b>width</b>) и высота (<b>height</b>);</li>
+  <li>вокруг контента идет внутреннее поле (<b>padding</b>), создающее пустое пространство от контента до внутреннего края границ;</li>
+  <li>затем идут границы (<b>border</b>).</li>
+  <li>Завершают блок внешние отступы (<b>margin</b>, от «<a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D0%B3%D0%B8%D0%BD%D0%B0%D0%BB%D0%B8%D0%B8" target="_blank" rel="noopener noreferrer">маргиналии</a>»), пустое пространство от внешнего края границ.</li>
+</ul>
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Boxmodell-detail.png" alt="">
+<p>Похоже на матрешки: <b>поменять местами контент, padding, border и margin невозможно!</b></p>
+<img src="http://htmlbook.ru/files/images/layout2/3-02.jpg" alt="">
+
+<p>Каждая составляющая, кроме контента, может иметь различные размеры с каждой
+из четырех сторон.<br>
+<b>Часто задаются по часовой стрелке: top, right, bottom, left</b>.<br>
+Таким образом, <b>блочный макет страницы с контентом описывается максимум 14
+размерами</b>. Если толщина рамки со всех сторон одинаковая, параметров&nbsp;11.</p>
+<img src="http://htmlbook.ru/files/images/layout2/3-06.png" alt="">
+
+<h2>Схлопывание отступов</h2>
+<p>У блочных элементов, расположенных рядом друг с другом по вертикали, отступы не суммируются, а объединяются между собой. Само схлопывание действует на два и более блока (один может быть вложен внутрь другого) с отступами сверху или снизу, при этом примыкающие отступы комбинируются в один.
+<b>Этот эффект работает только для блоков, у которых не заданы поля и границы. Для отступов слева и справа схлопывание никогда не применяется.</b></p>
+<p><b>Зачем?</b> Для корректного отображения текста: расстояние между абзацами (тег &lt;p>) без схлопывания увеличится в два раза, тогда как верхний отступ первого абзаца и нижний отступ последнего абзаца останутся неизменными. Схлопывание гарантирует, что расстояние в абзацах везде будет одинаковым.</p>
+<p><b><a
+href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing"
+target="_blank" rel="noopener noreferrer">Схлопывание внешних отступов</a>: полное описание и примеры</b></p>
+
+<h2>box-sizing</h2>
+<p>Свойство box-sizing применяется для изменения алгоритма расчета ширины и высоты элемента; чтобы свойства width и height задавали размеры не контента, а размеры блока.</p>
+<ul>
+  <li>box-sizing: content-box; свойства width и height задают ширину и высоту контента и не включают в себя значения отступов, полей и границ.</li>
+  <li>box-sizing: border-box; Свойства width и height включают в себя значения полей и границ, но не отступов (margin).</li>
+  <li>box-sizing: padding-box; Свойства width и height включают в себя значения полей, но не отступов (margin) и границ (border).</li>
+  <li>box-sizing: inherit; Наследует значение родителя.</li>
+</ul>
+
+<h2>Рамка – border</h2>
+<p>У рамки есть дополнительные свойства: тип линии, скругление и т.д. Примеры:</p>
+<ul>
+  <li>обобщенное правило. <b>border</b>: 2px dashed blue;</li>
+  <li>радиус скругления рамки. <b>border-radius</b>: 5px;</li>
+  <li>Скруглить квадрат до круга – border-radius: 50%; <a href="../site/me.html">пример</a>.</li>
+  <li><b>border-collapse</b>: collapse (separate, inherit); Устанавливает, как отображать границы вокруг ячеек таблицы. Это свойство играет роль, когда для ячеек установлена рамка, тогда в месте стыка ячеек получится линия двойной толщины. При значении collapse линия между ячейками отображается только одна.</li>
+</ul>
+
 <h2>Поля – margin и padding</h2>
 <p>Поля страницы можно инспектировать в браузере по нажатию F12, вкладка Elements</p>
 <ul>
-  <li>margin: 0 auto; (внешнее поле, маргиналии)</li>
+  <li>margin: 0 auto; (внешнее поле) Так заданное поле центрирует блок</li>
   <li>padding: 20px; (внутреннее поле)</li>
 </ul>
 <h2>Положение и видимость</h2>
@@ -170,11 +209,24 @@
   <li><a href="https://cloudfour.com/thinks/css-circles/" target="_blank" rel="noopener noreferrer">Круги</a></li>
 </ul>
 
+<h2>Альтернативы CSS?</h2>
+<p><a href="https://en.wikipedia.org/wiki/Comparison_of_stylesheet_languages" target="_blank" rel="noopener noreferrer">Сравнение стилевых языков</a>.
+Существует <a href="https://ru.wikipedia.org/wiki/XSL" target="_blank" rel="noopener noreferrer">XSL</a> (eXtensible Stylesheet Language) – семейство рекомендаций консорциума W3C, описывающее языки преобразования и визуализации XML-документов. Состоит из трех частей:</p>
+<ul>
+  <li>XSL Transformations (XSLT) – язык преобразования XML-документов.</li>
+  <li>XSL Formatting Objects (XSL-FO) – язык разметки типографских макетов и иных предпечатных материалов.</li>
+  <li>XPath – язык путей и выражений, используемый в том числе и в XSLT для доступа к отдельным частям XML-документа.</li>
+</ul>
+<p>Языком, лежащим в основе XSL, является XML, а это означает, что XSL более гибок, универсален. Почти не используется в вебе, потому что более сложен и требует более строгого подхода.
+<b>Дизайнеры и верстальщики всего мира сделали все, чтобы технологии, основанные на XML, не стали рабочими стандартами веба</b>. Что, конечно, не избавило от недостатков HTML и CSS. В итоге имеем постоянно и стихийно меняющиеся технологии разных версий, по-разному поддерживаемые разными браузерами.
+<b>Хороший дизайнер должен учитывать особенности поддержки технологий разными версиями разных браузеров</b>. С прекращением поддержки старых версий операционной системы Windows и ростом популярности мобильных технологий ситуация улучшилась, но пока еще далека от идеала.</p>
+
 <p>Применение свойств классов к <a href="https://codepen.io/gvardovich/pen/zYYoOWV" target="_blank" rel="noopener noreferrer">простому html-коду</a>:<br>
   <img src="../codepen.png" alt=""></p>
 
 <h2 id="links">Ссылки:</h2>
 <ul>
+  <li><a href="https://en.wikipedia.org/wiki/CSS_box_model" target="_blank" rel="noopener noreferrer">CSS box model</a></li>
   <li><a href="http://tpverstak.ru/css-selectors/" target="_blank" rel="noopener noreferrer">Наглядно о CSS селекторах</a></li>
   <li><a href="https://html5book.ru/css-colors/" target="_blank" rel="noopener noreferrer">CSS-цвета</a>: основные ключевые слова, числовые значения цвета<br>
     Если цвет &ndash; это слово, но не ключевое: <a href="https://stackoverflow.com/questions/8318911/why-does-html-think-chucknorris-is-a-color" target="_blank" rel="noopener noreferrer">Почему chucknorris - это красный цвет, а chucknorr - желтый?</a>
