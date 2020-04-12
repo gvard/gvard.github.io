@@ -75,10 +75,11 @@ function getSlidesByTag(tag) {
 }
 const hideAll = () => {document.querySelectorAll('.wrap').forEach((el) => { el.style.display = 'none';});};
 const showAll = (elems) => { elems.forEach((el) => { el.style.display = 'block';});};
-function showByTag() {
+function showByTag(tag) {
   hideAll();
   document.getElementById('head').style.display = 'none';
-  const tag = document.getElementById("tag").value;
+  if (!tag)
+    tag = document.getElementById("tag").value;
   const elems = getSlidesByTag(tag);
   showAll(elems);
 }
