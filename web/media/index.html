@@ -4,17 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>медиа-запросы</title>
+  <link rel="stylesheet" href="../../github.css">
   <link rel="stylesheet" href="../../compact.css">
+  <script src="../../dev/highlight.pack.js"></script>
 </head>
 <body>
-<h1>Использование медиа-запросов</h1>
+<h1>Адаптивный веб-дизайн</h1>
 <p>HTML-страница может отображаться на устройствах с очень разными экранами.
-Поэтому нужно управлять видом страницы в зависимости от параметров экрана, точнее – свойств окна браузера как программного объекта.</p>
+Поэтому нужно управлять видом страницы в зависимости от параметров экрана, точнее – <b>свойств окна браузера</b> как программного объекта.</p>
 
+<h2>Определение</h2>
+<p>Adaptive Web Design – дизайн веб-страниц, обеспечивающий правильное отображение сайта на различных устройствах и динамически подстраивающийся под заданные размеры <b>окна браузера</b>.</p>
+<p><b>Главное: не нужно создавать отдельные версии веб-сайта для отдельных видов
+устройств. Одна страница может одинаково хорошо смотреться на смартфоне, планшете, ноутбуке,
+телевизоре, <s>кофеварке</s>, при печати.</b></p>
 
+<h2>Свойства объекта window</h2>
+<p>Окно браузера, в котором отображается страница, имеет размеры, измеряемые в пикселях.
+Размеры могут изменяться во время просмотра страницы: пользователь может уменьшить окно, перевернуть устройство в портретную/альбомную ориентацию, изменить масштаб.</p>
+<p><b>Параметры экрана сейчас</b>:</p>
+<div id="scr" style="max-width: 900px; padding: 10px; border: 2px solid grey;"></div>
+<script>
+hljs.initHighlightingOnLoad();
+const ww = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+const wh = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
+const width = window.screen.width * window.devicePixelRatio;
+const height = window.screen.height * window.devicePixelRatio;
+const scrRes = `Ширина, высота: <b>${screen.width} x ${screen.height}</b>. Реальное разрешение с pixel ratio <b>${window.devicePixelRatio}</b> – <b>${width} x ${height}</b> пикселей. Внутренние размеры окна: <b>${ww} x ${wh}</b>. Доступные размеры: <b>${window.screen.availWidth} x ${window.screen.availHeight}</b>`;
+document.getElementById("scr").innerHTML = scrRes;
+</script>
+
+<p><b>Свойства в коде JavaScript</b>:</p>
+<ul>
+  <li><b><a href="https://developer.mozilla.org/ru/docs/Web/API/Window/devicePixelRatio" target="_blank" rel="noopener noreferrer">window.devicePixelRatio</a></b>: отношение разрешения дисплея текущего устройства в физических пикселях к разрешению в логических (CSS) пикселях. Также это значение можно интерпретировать как отношение размера одного физического пикселя к размеру одного логического (CSS) пикселя.
+  Свойство связано с тем, что различные экраны имеют различные размеры пикселей и <i>плотность пикселей</i></li>
+  <li><b>window.innerWidth</b>: ширина области содержимого окна браузера, включая, если есть, вертикальный скроллбар</li>
+  <li><b>window.innerHeight</b>: высота области содержимого окна браузера, включая, если есть, горизонтальный скроллбар</li>
+  <li><b>window.screen.width</b>: ширина</li>
+  <li><b>window.screen.height</b>: высота</li>
+  <li><b>window.screen.availWidth</b>: доступная ширина</li>
+  <li><b>window.screen.availHeight</b>: доступная высота<br>
+    <img src="https://media.prod.mdn.mozit.cloud/attachments/2017/07/28/15243/976e5f07954d5eb64d22c31a6c1c04dc/availHeight-diagram.svg" height="300" alt="">
+  </li>
+</ul>
+
+<h2>Использование медиа-запросов</h2>
+<p><b>Медиазапросы</b> используются в тех случаях, когда нужно применить разные CSS-стили, для разных устройств по типу отображения (например: для принтера, монитора или смартфона), а также конкретных характеристик устройства  (например: ширины окна просмотра браузера), или внешней среды (например: внешнее освещение). Учитывая огромное количество подключаемых к интернету устройств, медиазапросы являются очень важным инструментом при создании веб-сайтов и приложений, которые будут правильно работать на всех доступных устройствах.</p>
+
+<p>В общем случае медиа-запрос состоит из ключевого слова, описывающего тип устройства (необязательный параметр) и выражения, проверяющего характеристики данного устройства. Из всех характеристик чаще всего проверяется ширина устройства width. Медиа-запрос является логическим выражением, которое возвращает истину или ложь.</p>
+
+<h2>Ширина экрана</h2>
+<p>Наиболее частое использование медиа-запросов – установить стили в зависимости от ширины экрана.
+В коде CSS написать:</p>
+<pre><code>@media (max-width: 600px) {
+  /* CSS-стили */;
+}
+</code></pre>
+<p>Стили этого запроса будут применяться при ширине области просмотра не более 600 пикселей.</p>
+<pre><code>@media (min-width: 600px) and (max-width: 800px) {
+  div.right {
+    width: 100%;
+  }
+}
+</code></pre>
+<p>Стиль этого запроса (ширина элемента div с классом right равна 100% от родительского элемента) будут применяться для всех устройств при ширине области
+просмотра от 600px до 800px включительно.</p>
 
 <h2>Ссылки</h2>
 <ul>
+  <li><a href="https://ru.wikipedia.org/wiki/%D0%90%D0%B4%D0%B0%D0%BF%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9_%D0%B2%D0%B5%D0%B1-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD" target="_blank" rel="noopener noreferrer">Адаптивный веб-дизайн</a></li>
   <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Media_Queries/Using_media_queries" target="_blank" rel="noopener noreferrer">Использование медиа-запросов</a></li>
   <li><a href="https://en.wikipedia.org/wiki/Media_queries" target="_blank" rel="noopener noreferrer">Media queries</a></li>
 </ul>

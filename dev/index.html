@@ -34,22 +34,21 @@
 </nav>
 
 <h2>gvard.github.io/dev/</h2>
-
-<section style="max-width: 900px; padding: 10px; border: 2px solid grey;">
-<h3 style="margin-top: 0;">Разрешение экрана, время:</h3>
-<div id="scr"></div>
-<script>
-const currDate = new Date();
+<script>const currDate = new Date();
 const day = ("0" + currDate.getDate()).slice(-2);
 const month = ("0" + (currDate.getMonth() + 1)).slice(-2);
 const dateTime = day + "." + month + "." + currDate.getFullYear() +
   " @ " + currDate.getHours() + ":" + currDate.getMinutes() + ":" + currDate.getSeconds();
-document.write("Последнее обновление страницы: " + dateTime);
+document.write("Последнее обновление страницы: " + dateTime);</script>
+<section style="max-width: 900px; padding: 10px; border: 2px solid grey;">
+<h3 style="margin-top: 0;">Разрешение экрана, время:</h3>
+<div id="scr"></div>
+<script>
 const ww = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 const wh = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
 const width = window.screen.width * window.devicePixelRatio;
 const height = window.screen.height * window.devicePixelRatio;
-const scrRes = `Ширина, высота: <b>${screen.width} x ${screen.height}</b>. Реальное разрешение с pixel ratio <b>${window.devicePixelRatio}</b> – <b>${width} x ${height}</b> пикселей. Внутренние размеры окна: <b>${ww} x ${wh}</b>.`;
+const scrRes = `Ширина, высота: <b>${screen.width} x ${screen.height}</b>. Реальное разрешение с pixel ratio <b>${window.devicePixelRatio}</b> – <b>${width} x ${height}</b> пикселей. Внутренние размеры окна: <b>${ww} x ${wh}</b>. Доступные размеры: <b>${window.screen.availWidth} x ${window.screen.availHeight}</b>`;
 document.getElementById("scr").innerHTML = scrRes;
 </script>
 </section>
@@ -58,6 +57,7 @@ document.getElementById("scr").innerHTML = scrRes;
 const height = window.screen.height * window.devicePixelRatio;
 const ww = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 const wh = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
+const availDims = `Доступные размеры: ${window.screen.availWidth} x ${window.screen.availHeight}`;
 </code></pre>
 
 <h2>Окно браузера: объект window</h2>
