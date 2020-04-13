@@ -850,7 +850,7 @@
 <div class="blocks">
 <b>Выборка: дата, месяц, год</b><br>
 <input type="text" id="daymon" size="4" maxlength="5" value="" placeholder="29.02">
-<input type="text" id="year" size="4" maxlength="4" value="" placeholder="1984"><br>
+<input type="number" placeholder="1984" min="900" max="2020" step="1" id="year"><br>
 <input type="checkbox" id="today">Сегодня
 <input type="checkbox" id="thisYear">Этот год<br>
 <button onclick="showByDate()">Лента</button>
