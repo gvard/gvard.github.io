@@ -10,14 +10,17 @@
   <link rel="stylesheet" href="../compact.css">
   <link rel="stylesheet" href="style.css">
   <script src="highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
   <script src="script.js"></script>
   <script>
+  hljs.initHighlightingOnLoad();
   console.log('Hello Moscow! Page title:', document.title);
   localStorage.setItem('myCat', 'Tom');
   let cat = localStorage.getItem('myCat');
   console.log(window.localStorage, cat);
   function show(showId) {document.getElementById(showId).style.display = 'block';}
+  var openedWindow;
+  function openWindow() { openedWindow = window.open('https://ya.ru') }
+  function closeOpenedWindow() { openedWindow.close() }
   </script>
 </head>
 <body>
@@ -56,6 +59,10 @@ const height = window.screen.height * window.devicePixelRatio;
 const ww = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 const wh = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
 </code></pre>
+
+<h2>Окно браузера: объект window</h2>
+<p>window – программный интерфейс для работы с окном браузера. Например, можно в JavaScript-коде на странице использовать метод window.open() для открытия нового окна и window.close() для закрытия открытого окна:</p>
+<button onclick="openWindow()">открыть окно</button> <button onclick="closeOpenedWindow()">закрыть открытое окно</button>
 
 <h2>Основы</h2>
 <ul>
@@ -278,6 +285,9 @@ false</code></pre>
   <li><a href="https://www.dunebook.com/15-best-javascript-syntax-highlighting-libraries/">15 javascript syntax highlighting libraries</a></li>
   <li><a href="https://habr.com/ru/company/netologyru/blog/454900/" target="_blank" rel="noopener noreferrer">Как сделать веб-формы на сайте удобными и безопасными: инструменты разработки и конструкторы</a></li>
   <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="noopener noreferrer">Стрелочные функции</a></li>
+  <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Window" target="_blank" rel="noopener noreferrer">Window</a></li>
+  <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Window/devicePixelRatio" target="_blank" rel="noopener noreferrer">Window.devicePixelRatio</a>, свойство глобального объекта window</li>
+  <li><a href="https://developer.mozilla.org/ru/docs/Web/API/document" target="_blank" rel="noopener noreferrer">объект document</a>. Интерфейс документа служит точкой входа для получения содержимого веб-страницы (всего DOM-дерева)</li>
 </ul>
 </body>
 </html>

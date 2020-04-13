@@ -90,8 +90,8 @@
     <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/Heading_Elements" target="_blank" rel="noopener noreferrer">Заголовки h1-h6</a>. Заголовки и подзаголовки улучшают читаемость текста.</li>
     <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/p" target="_blank" rel="noopener noreferrer">p</a> и
       <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/br" target="_blank" rel="noopener noreferrer">br</a>. Параграф и принудительный перенос на новую строку. Заголовки <u>нельзя</u> вкладывать в параграфы!</li>
-    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/hr" target="_blank" rel="noopener noreferrer">hr</a>. Разделитель содержимого, горизонтальная линия.</li>
-    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/img" target="_blank" rel="noopener noreferrer">img</a>. Картинка, изображение. В обязательном атрибуте src указывается путь к файлу или его URL. Распространенные форматы изображений: jpeg, png, svg, <a href="https://ru.wikipedia.org/wiki/WebP" target="_blank" rel="noopener noreferrer">webp</a>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/hr" target="_blank" rel="noopener noreferrer">hr</a>. Разделитель содержимого, горизонтальная линия (display: block).</li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/img" target="_blank" rel="noopener noreferrer">img</a>. Картинка, изображение (display: inline-block). В обязательном атрибуте src указывается путь к файлу или его URL. Распространенные форматы изображений: jpeg, png, svg, <a href="https://ru.wikipedia.org/wiki/WebP" target="_blank" rel="noopener noreferrer">webp</a>
       (<a href="https://upload.wikimedia.org/wikipedia/commons/b/b2/Vulphere_WebP_OTAGROOVE_demonstration_2.webp" target="_blank" rel="noopener noreferrer">пример webp</a>):<br>
     <a href="https://jpeg.org/" target="_blank" rel="noopener noreferrer"><img src="https://jpeg.org/images/jpeg-logo.png" height="90" alt=""></a>
     <a href="https://www.w3.org/Graphics/SVG/" target="_blank" rel="noopener noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/0/02/SVG_logo.svg" height="90" alt=""></a>
@@ -99,9 +99,16 @@
     </li>
     <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/ul" target="_blank" rel="noopener noreferrer">ul</a> и
       <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/ol" target="_blank" rel="noopener noreferrer">ol</a>,
-      <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/li" target="_blank" rel="noopener noreferrer">li</a>: ненумерованный и нумерованный списки, элемент списка.</li>
+      <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/li" target="_blank" rel="noopener noreferrer">li</a>: ненумерованный и нумерованный списки, элемент списка (display: list-item).</li>
     <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/a" target="_blank" rel="noopener noreferrer">a</a>. Ссылка.</li>
-    </ul>
+    <li>Стилистически выделенные строчные элементы:
+      <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/b" target="_blank" rel="noopener noreferrer">b</a> (<b>полужирный</b>, font-weight: bold),
+      <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/i" target="_blank" rel="noopener noreferrer">i</a> (<i>курсив</i>, font-style: italic),
+      <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/u" target="_blank" rel="noopener noreferrer">u</a> (<u>подчеркнутый</u>, text-decoration: underline).
+      <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/s" target="_blank" rel="noopener noreferrer">s</a> (<s>перечеркнутый</s>, text-decoration: line-through).
+    </li>
+    <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/sub" target="_blank" rel="noopener noreferrer">sub</a> (vertical-align: sub; font-size: smaller;), <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/sup" target="_blank" rel="noopener noreferrer">sup</a> (vertical-align: super; font-size: smaller;</li>
+  </ul>
 </li><li><b>Семантическая разметка</b>
   <ul>
     <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/header" target="_blank" rel="noopener noreferrer">header</a>. &laquo;Шапка&raquo; страницы. <b>Не путать с head!</b></li>
