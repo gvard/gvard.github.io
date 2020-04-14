@@ -293,6 +293,7 @@ def btnclick(x, y):
 
 turtle.listen()
 turtle.onscreenclick(btnclick, 1)
+turtle.done()
 </code></pre>
 
 <p><b>Что произошло:</b></p>
@@ -321,6 +322,29 @@ print(randrange(30, 200)) # например, случайное целое чи
   </li>
 </li>
 
+<h3>Уточнения</h3>
+<ul>
+  <li>Чтобы окно не закрывалось сразу, мы использовали turtle.exitonclick().
+  Теперь, когда клик обрабатывается функцией, пишем в конце turtle.done().</li>
+  <li>функция exit() самостоятельная, это не команда turtle. Писать turtle.exit() неверно.</li>
+  <li>Случайная фигура – это любая фигура, при рисовании которой используются случайные числа. Например:
+  <pre><code>from random import randrange
+    circle = turtle.Turtle()
+    circle.circle(randrange(36, 89))
+  </code></pre>
+  Но есть и второй вариант: случайное число будет индексом списка и укажет на одну из заранее подготовленных неслучайных фигур:
+  <pre><code>from random import randrange
+    figures = ['circle', 'rectangle', 'triangle']
+  choice = figures[randrange(0, 3)] # случайный индекс от 0 до 2 даст одно из трех слов списка
+  </code></pre>
+  Таким приемом можно случайно выбирать цвета фигур. Функция choice делает тоже самое изящнее:
+  <pre><code>from random import randrange, choice
+    colors = ['red', 'green', 'blue']
+    color = colors[randrange(0, 3)]
+    another_color = choice(colors)
+  </code></pre>
+</li>
+</ul>
 <h2>Ссылки</h2>
 <ul>
   <li><a href="https://opentechschool.github.io/python-beginners/en/simple_drawing.html" target="_blank" rel="noopener noreferrer">Simple drawing with turtle</a></li>
