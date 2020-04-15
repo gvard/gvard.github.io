@@ -422,6 +422,101 @@ turtle.done()</code></pre>
 <li>Скорость движения (у нас пока 10 пикселей за раз) сделать переменной</li>
 </ul>
 
+<h2>Соединяем все вместе</h2>
+<p>У нас уже есть кнопка с текстом и обработчик клика мышкой. Соединим все в одну программу:</p>
+<pre><code>import turtle
+
+wndow = turtle.Screen()
+wndow.title("Circle game")
+wndow.setup(500, 500)
+
+btn1 = turtle.Turtle()
+btn1.hideturtle()
+for i in range(2):
+    btn1.fd(80)
+    btn1.left(90)
+    btn1.fd(30)
+    btn1.left(90)
+btn1.penup()
+btn1.goto(4, 5)
+btn1.write("Start!", font=("Arial", 12, "normal"))
+
+circ = turtle.Turtle()
+circ.hideturtle()
+circ.shape("circle")
+circ.color("orange")
+
+def btnclick(x, y):
+    if 0&lt;x&lt;80 and 0&lt;y&lt;30:
+        btn1.clear()
+        circ.showturtle()
+        circ.penup()
+
+turtle.listen()
+turtle.onscreenclick(btnclick, 1)
+turtle.onkeypress(lambda: circ.sety(circ.ycor() + 10), 'Up')
+turtle.done()</code></pre>
+<p>Есть стартовый экран, управляемый с клавиатуры персонаж... Добавим препятствие, и уже почти готова игра!</p>
+<pre><code>import turtle
+
+wndow = turtle.Screen()
+wndow.title("Circle game")
+wndow.setup(500, 500)
+
+btn1 = turtle.Turtle()
+btn1.hideturtle()
+for i in range(2):
+    btn1.fd(80)
+    btn1.left(90)
+    btn1.fd(30)
+    btn1.left(90)
+btn1.penup()
+btn1.goto(4, 5)
+btn1.write("Start!", font=("Arial", 12, "normal"))
+
+circ = turtle.Turtle()
+circ.hideturtle()
+circ.shape("circle")
+circ.color("orange")
+
+sq = turtle.Turtle()
+sq.hideturtle()
+sq.penup()
+sq.setposition(-20, 70)
+
+def btnclick(x, y):
+  if 0&lt;x&lt;80 and 0&lt;y&lt;30:
+      btn1.clear()
+      circ.showturtle()
+      circ.penup()
+      sq.pendown()
+      print("sq position:", sq.xcor(), sq.ycor())
+      for i in range(4):
+          sq.fd(40)
+          sq.rt(90)
+
+def up():
+    y = circ.ycor() + 10
+    circ.sety(y)
+    if -20&lt;circ.xcor()&lt;20 and 30&lt;circ.ycor()&lt;70:
+        circ.hideturtle()
+        sq.clear()
+        circ.write("Game over!", font=("Arial", 12, "bold"))
+
+turtle.listen()
+turtle.onscreenclick(btnclick, 1)
+turtle.onkeypress(up, 'Up')
+turtle.done()
+</code></pre>
+
+<h3>Самостоятельно:</h3>
+<ul>
+<li>Нарисовать фигуры, которые надо обойти герою игры. Это может быть простой лабиринт!</li>
+<li>Написать условное выражение (если координаты circ больше заданных величин), при котором наступает победа, и игра заканчивается. Это может быть выход из лабиринта!</li>
+<li>В программе должно быть реализовано движение во все 4 стороны. Можно использзовать стрелки, можно – клавиши WASD. Также можно реализовать движение по диагонали, когда за один ход изменяются обе координаты.</li>
+</ul>
+
+
 <h2>Ссылки</h2>
 <ul>
   <li><a href="https://opentechschool.github.io/python-beginners/en/simple_drawing.html" target="_blank" rel="noopener noreferrer">Simple drawing with turtle</a></li>
