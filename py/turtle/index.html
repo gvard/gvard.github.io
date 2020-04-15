@@ -233,7 +233,7 @@ circ.end_fill()
 
 n = 10
 t = turtle.Turtle()
-while n <= 50:
+while n &lt;= 50:
     t.circle(n)
     n += 10
 
@@ -324,11 +324,11 @@ turtle.done()
 <ul>
   <li>Нарисовать вторую кнопку (не изменяя первую!), сделать обработчик нажатия: при клике программа завершается, выполняется функция exit()</li>
   <li>При нажатии на первую кнопку появляется случайная фигура: при рисовании фигуры использовать random:
-    <pre><code>from random import randrange
-print(randrange(30, 200)) # например, случайное целое число от 30 до 200
-    </code></pre>
+<pre><code>from random import randrange
+print(randrange(30, 201)) # случайное целое число от 30 до 200
+</code></pre>
   </li>
-</li>
+</ul>
 
 <h3>Уточнения</h3>
 <ul>
@@ -336,21 +336,21 @@ print(randrange(30, 200)) # например, случайное целое чи
   Теперь, когда клик обрабатывается функцией, пишем в конце turtle.done().</li>
   <li>функция exit() самостоятельная, это не команда turtle. Писать turtle.exit() неверно.</li>
   <li>Случайная фигура – это любая фигура, при рисовании которой используются случайные числа. Например:
-  <pre><code>from random import randrange
-    circle = turtle.Turtle()
-    circle.circle(randrange(36, 89))
-  </code></pre>
+<pre><code>from random import randrange
+circle = turtle.Turtle()
+circle.circle(randrange(36, 91))
+</code></pre>
   Но есть и второй вариант: случайное число будет индексом списка и укажет на одну из заранее подготовленных неслучайных фигур:
-  <pre><code>from random import randrange
-    figures = ['circle', 'rectangle', 'triangle']
-  choice = figures[randrange(0, 3)] # случайный индекс от 0 до 2 даст одно из трех слов списка
-  </code></pre>
+<pre><code>from random import randrange
+figures = ['circle', 'rectangle', 'triangle']
+choice = figures[randrange(0, 3)] # случайный индекс от 0 до 2 даст одно из трех слов списка
+</code></pre>
   Таким приемом можно случайно выбирать цвета фигур. Функция choice делает тоже самое изящнее:
-  <pre><code>from random import randrange, choice
-    colors = ['red', 'green', 'blue']
-    color = colors[randrange(0, 3)]
-    another_color = choice(colors)
-  </code></pre>
+<pre><code>from random import randrange, choice
+colors = ['red', 'green', 'blue']
+color = colors[randrange(0, 3)]
+another_color = choice(colors)
+</code></pre>
 </li>
 </ul>
 <h2>Ссылки</h2>
