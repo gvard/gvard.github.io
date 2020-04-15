@@ -10,6 +10,14 @@
   <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
+<nav class="menu">
+<ul>
+  <li><a href="../">Python: главная</a></li>
+  <li><a href="#geometry">Геометрия</a></li>
+  <li><a href="#coord">Координаты</a></li>
+  <li><a href="#gui">Графический интерфейс</a></li>
+</ul>
+</nav>
 <h2>&laquo;Черепашья графика&raquo; при помощи turtle. Рисование при помощи алгоритма.</h2>
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Turtle-animation.gif" alt="">
@@ -53,7 +61,7 @@ turtle.exitonclick()
   А еще можно использовать сокращенные названия функций: fd(100) вместо forward(100),
 rt вместо right, lt вместо left, bk вместо backward.</p>
 
-<h2>Геометрические фигуры</h2>
+<h2 id="geometry">Геометрические фигуры</h2>
 <p>Рисуем простые геометрические фигуры:</p>
 <ul>
   <li>Прямая: просто движение вперед</li>
@@ -145,7 +153,7 @@ turtle.exitonclick()
 </code></pre>
 <img src="https://michael0x2a.com/_assets/media/turtle-examples/spiraling-star.346f.png" alt="">
 
-<h2>Координаты на плоскости</h2>
+<h2 id="coord">Координаты на плоскости</h2>
 <p>Положение на плоскости определяется двумя числами, x и y:</p>
 <img src="https://files.realpython.com/media/Turtle_EDIT_Graph.790c213ce0ba.jpg" width="480" alt="">
 <p>Черепашку в программе можно перемещать функцией goto(x, y). x и y – числа, или переменные.
@@ -263,7 +271,7 @@ turtle.exitonclick()
   <li>Программирование с использованием классов и их экземпляров будем называть <b>объектно-ориентированным программированием, ООП</b>. объектно-ориентированный подход необходим при построении <a href="https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F" target="_blank" rel="noopener noreferrer">графического интерфейса пользователя, GUI</a>.</li>
 </ul>
 
-<h2>Графический интерфейс средствами библиотеки turtle.</h2>
+<h2 id="gui">Графический интерфейс средствами библиотеки turtle.</h2>
 <p>Нарисуем прямоугольник и сделаем его кнопкой: при нажатии кнопка исчезает и появляется круг:</p>
 <pre><code>import turtle
 
