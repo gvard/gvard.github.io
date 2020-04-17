@@ -1,6 +1,6 @@
 'use strict';
 function mkChart(jdata) {
-  var options = {
+  const options = {
   chart: {
     type: 'column',
     renderTo: 'nea_size_bin_chart'
@@ -23,7 +23,7 @@ function mkChart(jdata) {
     series: {
       animation: {
         enabled: true,
-        duration: 500
+        duration: 100
       }
     },
     column: {
@@ -34,7 +34,7 @@ function mkChart(jdata) {
         inside: false,
         crop: false,
         overflow: 'none',
-        // textShadow: ''  is needed to avoid duplicate label on export
+        // textShadow: '' is needed to avoid duplicate label on export
         style: { textShadow: '', textStyle: 'bold' }
       }
     }
@@ -66,5 +66,5 @@ function mkChart(jdata) {
   };
   options.subtitle.text = 'Total per Size Bin (as of <b>' + jdata.dataDate + '</b>)';
   options.series[0].data = jdata.data;
-  var chart = new Highcharts.Chart(options);
+  const chart = new Highcharts.Chart(options);
 }
