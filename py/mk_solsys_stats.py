@@ -161,7 +161,6 @@ if DEBUG:
     print(neo_size_bin_obj.info())
 neo_size_bin = json.load(neo_size_bin_obj)
 NEO_DATE, NEO_DATA = neo_size_bin.get('dataDate'), neo_size_bin.get('data')
-NEO_DATEDATA = '{ "dataDate": "' + NEO_DATE + '", "data": ' + str(NEO_DATA) + ' }'
 
 MPC_STATS = f'''<h2>Статистика тел Солнечной системы</h2>
 <p><a href="https://minorplanetcenter.net/mpc/summary">Центра Малых планет</a></p>
@@ -182,7 +181,7 @@ MPC_STATS = f'''<h2>Статистика тел Солнечной систем�
 <script src="https://cneos.jpl.nasa.gov/js/vendor/highcharts/highcharts.js"></script>
 <script src="https://cneos.jpl.nasa.gov/js/vendor/highcharts/exporting.js"></script>
 <script src="https://cneos.jpl.nasa.gov/js/vendor/highcharts/themes/grid.js"></script>
-<script>mkChart({NEO_DATEDATA});</script>
+<script>mkChart()</script>
 <br>
 <p>Распределение малых планет, количество в зависимости от большой полуоси орбиты:<br>
 <img src="https://minorplanetcenter.net/iau/plot/OrbEls01.gif" alt="Distribution of the Minor Planets: Semimajor Axis"><br>

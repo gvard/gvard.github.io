@@ -1,5 +1,12 @@
 'use strict';
-function mkChart(jdata) {
+function mkChart() {
+  const NEO_SIZE_URL = 'https://cneos.jpl.nasa.gov/stats/size_bin.json';
+  const URL = 'https://json2jsonp.com/?url=' + NEO_SIZE_URL + '&callback=mkNEASizeBinChart';
+  const s = document.createElement("script");
+  s.src = URL;
+  document.head.appendChild(s);
+}
+function mkNEASizeBinChart(jdata) {
   const options = {
   chart: {
     type: 'column',
