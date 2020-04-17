@@ -143,8 +143,8 @@ def get_ssnew(soup):
     ps = soup.findAll("p")
     man_made = ps[-4].text.strip()
     upd = ps[-1].text.split("\r\n")[2]
-    comets_note = soup.findAll("blockquote")[1].text.replace("\r", "<br>")
-    comets_note = f"<small>{ps[9].text.strip()}</small><br>{ps[-3].text}{comets_note}"
+    comets_note = soup.findAll("blockquote")[1].text.strip()
+    comets_note = f"<small>{ps[9].text.strip()}</small><br>\n{ps[-3].text.strip()}<br>\n{comets_note}"
     ssnew = ps[3].text.split("\r")[3:-1]
     ssnew = [x.split(":")[1] for x in ssnew]
     return upd, ssnew, comets_note, man_made
@@ -178,11 +178,11 @@ MPC_STATS = f'''<h2>Статистика тел Солнечной систем�
 </ul>
 <p><b>Всего в <a href="{NEOS_STATS_URL}" target="_blank" rel="noopener noreferrer">статистике околоземных астероидов</a> от {NEO_DATE}: {sum(NEO_DATA)}</b></p><br>
 <div id="nea_size_bin_chart" style="width:600px; height:400px;"></div>
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="https://cneos.jpl.nasa.gov/js/vendor/highcharts/highcharts.js"></script>
-  <script src="https://cneos.jpl.nasa.gov/js/vendor/highcharts/exporting.js"></script>
-  <script src="https://cneos.jpl.nasa.gov/js/vendor/highcharts/themes/grid.js"></script>
-  <script>mkChart({NEO_DATEDATA});</script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://cneos.jpl.nasa.gov/js/vendor/highcharts/highcharts.js"></script>
+<script src="https://cneos.jpl.nasa.gov/js/vendor/highcharts/exporting.js"></script>
+<script src="https://cneos.jpl.nasa.gov/js/vendor/highcharts/themes/grid.js"></script>
+<script>mkChart({NEO_DATEDATA});</script>
 <br>
 <p>Распределение малых планет, количество в зависимости от большой полуоси орбиты:<br>
 <img src="https://minorplanetcenter.net/iau/plot/OrbEls01.gif" alt="Distribution of the Minor Planets: Semimajor Axis"><br>
