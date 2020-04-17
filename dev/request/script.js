@@ -80,6 +80,12 @@ function showLatestSpaceXFlight(res, q) {
   const localDateTime = new Date(res.launch_date_unix * 1000);
   q.innerHTML = 'Flight number: ' + res.flight_number + ', название миссии: ' + res.mission_name + '.<br>Дата и время запуска: ' + res.launch_date_utc  + '(UTC), московское время: ' + localDateTime + ',<br>Ракета: ' + res.rocket.rocket_name + '.<br>Эмблема:<br><img src="' + res.links.mission_patch_small + '" alt=""><br><a href="' + res.links.reddit_campaign + '">Подробно на reddit</a>, <a href="' + res.links.wikipedia + '">на википедии</a>.<br>Подробности на английском: ' + res.details;
 }
+function showAstros(res, q) {
+  let strRepr = ": ";
+  for (let i = 0; i < res.people.length; i += 1)
+    strRepr += res.people[i].name + ', '
+  q.innerHTML = res.number + strRepr.slice(0, -2);
+}
 function showAPOD(res, q) {
   let media = "";
   if (res.media_type === "video") {
@@ -101,6 +107,7 @@ function mkReq(reqName) {
     starWars: {URL: 'https://swapi.co/api/people/1/', func: showLuke},
     exchange: {URL: 'https://api.exchangerate-api.com/v4/latest/USD', func: function (res, q) { q.innerHTML = res.rates.RUB; }},
     spaceX: {URL: 'https://api.spacexdata.com/v3/launches/latest', func: showLatestSpaceXFlight},
+    astros: {URL: 'http://api.open-notify.org/astros.json', func: showAstros},
     apod: {URL: APOD_URL, func: showAPOD}
   };
   loadReq(reqNames[reqName].URL, reqNames[reqName].func);
