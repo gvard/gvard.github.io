@@ -30,7 +30,8 @@
     <p><button onclick="mkReq('apod')">Показать астрономическую картинку дня</button> &ndash; NASA APOD,
       <a href="http://www.astronet.ru/db/apod.html" target="_blank" rel="noopener noreferrer">на русском</a>
       (<a href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA APIs</a>, см. страницу <a href="dev/request/">JavaScript: запрос, ответ</a>).</p>
-    <button onclick="loadDates()">Показать ближайшие даты</button> см. <a href="dates/">знаменательные даты</a>, <a href="solarsystem/">Солнечная система</a>.
+    <button onclick="loadDates()">Показать ближайшие даты</button> за <input type="number" value="28" min="1" max="365" step="5" id="days" style="width: 2.7rem"> дней
+    (см. <a href="dates/">знаменательные даты</a>, <a href="solarsystem/">Солнечная система</a>)
     <div id="sp">&nbsp;</div>
     <p style="color:red; font-weight: bold">Занятия кружков проводятся в дистанционной форме, связь по электронной почте!</p>
     <h2>К занятиям по <a href="py/">программированию</a>:</h2>

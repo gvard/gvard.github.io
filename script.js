@@ -80,7 +80,7 @@ function appendContent(daymon, deltaYr, datada, div) {
   div.appendChild(desc);
 }
 function showDates(res, q) {
-  const deltaDays = 28;
+  const deltaDays = document.getElementById("days").value;
   q.innerHTML = "Годовщины на ближайшие " + deltaDays + " дней:";
   const div = document.createElement('div');
   q.appendChild(div);
