@@ -6,6 +6,7 @@ function ObjParams() {
   const objs = getDivs('obj');
   let objArr = [];
   let objDct = [];
+  let datesObj = {};
   for (let i = 0; i < objs.length; i += 1) {
     const classes = objs[i].className.replace('obj ', '').split(' ');
     const a = objs[i].getElementsByClassName('name')[0].getElementsByTagName("a")[0];
@@ -16,9 +17,13 @@ function ObjParams() {
     const mass = txtMass(objs[i].getElementsByClassName('mass')[0].innerText);
     const date = objs[i].getElementsByClassName('date')[0].innerText;
     const deltaV = getDeltaV(objs[i].getElementsByClassName('delta-v')[0].innerText);
+    if (!datesObj[date.slice(0, -5)])
+      datesObj[date.slice(0, -5)] = [];
+    datesObj[date.slice(0, -5)].push({ 'year': date.slice(6, 10), 'name': objRuName,  'img': imgPath[imgPath.length - 1], 'url': a.href });
     objDct.push({ 'name': img.alt, 'runame': objRuName, 'size': size, 'mass': mass, 'date': date, 'classes': classes });
     objArr.push([img.alt, objRuName, size, mass, date, deltaV, classes, imgPath[imgPath.length - 1]]);
   }
+  console.log(datesObj);
   console.log(objArr);
   console.log(objDct);
 }
