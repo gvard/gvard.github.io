@@ -17,9 +17,17 @@ function ObjParams() {
     const mass = txtMass(objs[i].getElementsByClassName('mass')[0].innerText);
     const date = objs[i].getElementsByClassName('date')[0].innerText;
     const deltaV = getDeltaV(objs[i].getElementsByClassName('delta-v')[0].innerText);
+    const type = mkType(objs[i].className, OBJTYPES);
+    let otkrWord = "Открыт ";
+    if (type.includes("ланета") || type.includes("комет"))
+      otkrWord = "Открыта "
+    const slug = otkrWord + type + ' ' + objRuName;
+    let desc = "";
+    if (objs[i].getElementsByClassName('desc')[0])
+      desc = objs[i].getElementsByClassName('desc')[0].innerText;
     if (!datesObj[date.slice(0, -5)])
       datesObj[date.slice(0, -5)] = [];
-    datesObj[date.slice(0, -5)].push({ 'year': date.slice(6, 10), 'name': objRuName,  'img': imgPath[imgPath.length - 1], 'url': a.href });
+    datesObj[date.slice(0, -5)].push({ 'year': date.slice(6, 10), 'slug': slug, 'img': 'solarsystem/images/' + imgPath[imgPath.length - 1], 'desc': desc });
     objDct.push({ 'name': img.alt, 'runame': objRuName, 'size': size, 'mass': mass, 'date': date, 'classes': classes });
     objArr.push([img.alt, objRuName, size, mass, date, deltaV, classes, imgPath[imgPath.length - 1]]);
   }
@@ -112,14 +120,4 @@ function findDate() {
   }
   if (!objOfDay.length)
     objOfDayDiv.style.display = 'none';
-}
-function calcSum(classNam) {
-  const elems = document.getElementsByClassName(classNam);
-  let total = 0;
-  let j = 0;
-  for (let i = 0; i < elems.length; i += 1) {
-    j += 1;
-    total += getSize(elems[i].innerText);
-    console.log(`For ${j} elements sum of sizes is ${total} km`);
-  }
 }

@@ -121,19 +121,34 @@ function slidesByTag(tag) {
 }
 function makeArray() {
   let arr = [];
+  let datesObj = {};
   const elems = document.getElementsByClassName('date');
   for (let i = 0; i < elems.length; i += 1) {
     let slug = elems[i].parentElement.querySelector('.slug').innerText;
     let tags = elems[i].parentElement.querySelector('.tags').innerText.substring(6,).split(/\s*,\s*/);
     let date = elems[i].innerText;
     let desc = elems[i].parentElement.querySelector('.desc');
-    let descContent = desc.innerHTML.trim().substring(26,);
+    let descContent = desc.innerText.trim();
     let img = elems[i].parentElement.querySelector('.img').getElementsByTagName('img')[0];
+    if (!datesObj[date.slice(0, -5)])
+      datesObj[date.slice(0, -5)] = [];
+    datesObj[date.slice(0, -5)].push({ 'year': date.slice(6, 10), 'slug': slug,  'img': img.src, 'desc': descContent });
     if (img.src.indexOf('http') != -1) {
       arr.push([slug, date, descContent, [img.src], [], tags]);
     } else {
       arr.push([slug, date, descContent, [], [img.src.substring(img.src.lastIndexOf('/')+1)], tags]);
     }
   }
-  console.log(arr);
+  console.log(datesObj);
+}
+function mergeDataSets(data, dataToAdd) {
+  for (let daymon in dataToAdd) {
+    if (daymon in data) {
+      for (let dat of dataToAdd[daymon])
+      data[daymon].push(dat);
+    } else {
+      data[daymon] = dataToAdd[daymon];
+    }
+  }
+  console.log(data);
 }

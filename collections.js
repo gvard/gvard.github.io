@@ -29,7 +29,7 @@ function getMass(txt) {
   }
   return txt.includes("±") ? Number(txt.substring(0, txt.indexOf("±")) + txt.substring(txt.indexOf("E"))) : Number(txt);
 }
-const txtMass = (txt) => txt.includes("±") ? txt.substring(0, txt.indexOf("±")) + txt.substring(txt.indexOf("E")) : txt;
+const txtMass = txt => txt.includes("±") ? txt.substring(0, txt.indexOf("±")) + txt.substring(txt.indexOf("E")) : txt;
 function getSize(txt) {
   let num = 0;
   if (txt.includes("±")) {
