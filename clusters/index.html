@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Звездные скопления</title>
+  <link rel="stylesheet" href="../collections.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <script src="../collections.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+<nav class="menu">
+<ul>
+  <li>Коллекции:</li>
+  <li><a href="../solarsystem/">Солнечная система</a></li>
+  <li><a href="../stars/">Звезды</a></li>
+  <li><a href="../galaxies/">Галактики</a></li>
+  <li><a href="../exoplanets/">Экзопланеты</a></li>
+</ul>
+</nav>
+
+<div id="messageBox">
+  <div id="contents"></div>
+</div>
+
+<h1>Звездные скопления</h1>
+
+<div class="cont">
+  <input type="checkbox" name=".name" value="block" checked onclick="showHideThis(this)">Имя,
+  <input type="checkbox" name=".angular" value="block" checked onclick="showHideThis(this)">Угловые размеры,
+  <input type="checkbox" name=".dist" value="block" checked onclick="showHideThis(this)">Расстояние,
+  <input type="checkbox" name=".mass" value="block" checked onclick="showHideThis(this)">Масса,
+  <input type="checkbox" name=".age" value="block" checked onclick="showHideThis(this)">Возраст,
+  <input type="checkbox" name=".mag" value="block" checked onclick="showHideThis(this)">Звездная величина.
+</div>
+
+<div id="tab">
+<div class="obj gc">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/Omega_Centauri.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Omega_Centauri" title="Omega Centauri">Омега Центавра</a></div>
+  <div class="info_field angular">36′.3</div>
+  <div class="info_field dist">4.84 ± 0.34</div>
+  <div class="info_field mass">4.05 ± 0.1 × 10<sup>6</sup></div>
+  <div class="info_field age">11.52</div>
+  <div class="info_field mag">3.9</div>
+</div><div class="obj gc">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/47_Tucanae.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/47_Tucanae" title="47 Tucanae">47 Тукана</a></div>
+  <div class="info_field angular">30′.9</div>
+  <div class="info_field dist">4.0 ± 0.35</div>
+  <div class="info_field mass">7.00 × 10<sup>5</sup></div>
+  <div class="info_field age">13.06</div>
+  <div class="info_field mag">4.09</div>
+</div>
+</div>
+
+<div class="cont">
+<h2>Ссылки</h2>
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Globular_cluster" target="_blank" rel="noopener noreferrer">Шаровое звёздное скопление</a>,
+  <a href="https://en.wikipedia.org/wiki/List_of_globular_clusters" target="_blank" rel="noopener noreferrer">Список шаровых звёздных скоплений</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Nuclear_star_cluster" target="_blank" rel="noopener noreferrer">Nuclear star cluster</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Open_cluster" target="_blank" rel="noopener noreferrer">Рассеянное звёздное скопление</a></li>
+</ul>
+</div>
+<footer>2020 Википедия. Компиляция, код: Д.С. Насонов.</footer>
+</body>
+</html>

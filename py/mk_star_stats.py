@@ -108,7 +108,7 @@ snstats_txt += f"""</ul>
 <p><a href="{SNIMAGES_URL}snstatsall.html" target="_blank" rel="noopener noreferrer">Всего открыто</a> <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b> &ndash; любителями.</p>
 <br><img src="snstats_plot.svg" alt="">
 
-<h2><a href="TNS_URL">Transient Name Server</a></h2>
+<h2><a href="{TNS_URL}">Transient Name Server</a></h2>
 <a href="{TNS_STATS_URL}" target="_blank" rel="noopener noreferrer">статистика</a>:<br>
 <ul>
 <li>Всего транзиентов с 01.01.2016: <b>{all_transient}</b></li>
