@@ -6,44 +6,86 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>API: запрос, ответ</title>
   <script src="script.js"></script>
+  <link rel="stylesheet" href="../../compact.css">
 </head>
 <body>
+<nav class="menu">
+  <ul>
+    <li><a href="../">Web-разработка</a></li>
+    <li><a href="#serialization">Сериализация</a></li>
+    <li><a href="#links">Ссылки</a></li>
+    <li><a href="#examples">Примеры</a></li>
+  </ul>
+</nav>
 <h1>API: запрос, ответ. JSON. Методы POST и GET</h1>
-<h2>Сериализация</h2>
+<h2>Протоколы и методы</h2>
+<p>Данные надо сохранять и передавать. Для этих целей разработаны форматы данных и
+  <a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB_%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%87%D0%B8_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85" target="_blank" rel="noopener noreferrer">протоколы их передачи</a>.
+  Главные протоколы сети интернет – протокол управления передачей (TCP, Transmission Control Protocol) и интернет-протокол (IP), поэтому говорят о сетевой модели передачи данных <a href="https://ru.wikipedia.org/wiki/TCP/IP" target="_blank" rel="noopener noreferrer">TCP/IP</a>.</p>
+<p>Главный протокол <a href="https://ru.wikipedia.org/wiki/%D0%92%D1%81%D0%B5%D0%BC%D0%B8%D1%80%D0%BD%D0%B0%D1%8F_%D0%BF%D0%B0%D1%83%D1%82%D0%B8%D0%BD%D0%B0" target="_blank" rel="noopener noreferrer">Всемирной паутины</a> – <a href="https://ru.wikipedia.org/wiki/HTTP" target="_blank" rel="noopener noreferrer">HTTP</a> (HyperText Transfer Protocol – «протокол передачи гипертекста») и его расширение <a href="https://ru.wikipedia.org/wiki/HTTPS" target="_blank" rel="noopener noreferrer">HTTPS</a> (HyperText Transfer Protocol Secure).
+  В 2020 году в основных браузерах уже есть поддержка третьей версии протокола <a href="https://en.wikipedia.org/wiki/HTTP/3" target="_blank" rel="noopener noreferrer">HTTP/3</a> или Hypertext Transfer Protocol (HTTP) over QUIC.</p>
+
+<p>Каждое HTTP-сообщение (request message) состоит из частей, передаваемых в указанном порядке:</p>
+<ul>
+  <li><b>Строка запроса</b> (request line), например: <code>GET /images/logo.png HTTP/1.1</code></li>
+  <li><b>Заголовки</b> (<a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Request_fields" target="_blank" rel="noopener noreferrer">request header fields</a>), например: <code>Accept-Language: en</code>. В версии HTTP/1.1 обязателен только заголовок Host.</li>
+  <li><b>Пустая строка</b>: два символа, CRLF, <a href="https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82_%D0%BA%D0%B0%D1%80%D0%B5%D1%82%D0%BA%D0%B8" target="_blank" rel="noopener noreferrer">возврат каретки</a> и <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8" target="_blank" rel="noopener noreferrer">перевод строки</a></li>
+  <li>Необязательное <b>тело сообщения</b> (message body) – непосредственно данные сообщения.</li>
+</ul>
+<h3>Основные методы запроса (request methods)</h3>
+<ul>
+  <li><b>GET</b></li>
+  <li><b>POST</b></li>
+  <li><b>PUT</b></li>
+  <li><b>DELETE</b></li>
+</ul>
+<h3>Пример ответа (response) сервера</h3>
+<pre><code>Date: Sun, 10 Oct 2010 23:26:07 GMT
+Server: Apache/2.2.8 (Ubuntu) mod_ssl/2.2.8 OpenSSL/0.9.8g
+Last-Modified: Sun, 26 Sep 2010 22:04:35 GMT
+ETag: "45b6-834-49130cc1182c0"
+Accept-Ranges: bytes
+Content-Length: 12
+Connection: close
+Content-Type: text/html
+
+Hello world!</code></pre>
+
+<h2 id="serialization">Сериализация</h2>
 <p><a href="https://en.wikipedia.org/wiki/Serialization" target="_blank" rel="noopener noreferrer">Сериализация</a> – процесс перевода структур данных или состояния объекта в формат, который может быть сохранен или передан и восстановлен позже. Распространенные форматы:</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/JSON_vector_logo.svg" height="90" alt="">
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/CsvDelimited001.svg" height="90" alt="">
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/XML.svg" height="90" alt="">
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/SGML.svg" height="90" alt="">
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/JSON_vector_logo.svg" height="90" alt="">
 <ul>
-  <li><a href="https://en.wikipedia.org/wiki/Comma-separated_values" target="_blank" rel="noopener noreferrer">Comma-separated values</a> (CSV)</li>
-  <li><a href="https://en.wikipedia.org/wiki/XML" target="_blank" rel="noopener noreferrer">Extensible Markup Language</a> (XML).</li>
-  <li><a href="https://ru.wikipedia.org/wiki/JSON" target="_blank" rel="noopener noreferrer">JavaScript Object Notation</a> (JSON). Для строк &ndash; только двойные кавычки.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Comma-separated_values" target="_blank" rel="noopener noreferrer">Comma-separated values</a> (CSV, разделённые запятыми значения)</li>
+  <li><a href="https://en.wikipedia.org/wiki/XML" target="_blank" rel="noopener noreferrer">Extensible Markup Language</a> (XML, расширяемый язык разметки), произошел от
+    <a href="https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language" target="_blank" rel="noopener noreferrer">Standard Generalized Markup Language</a> (SGML, стандартный обобщённый язык разметки)</li>
+  <li><a href="https://ru.wikipedia.org/wiki/JSON" target="_blank" rel="noopener noreferrer">JavaScript Object Notation</a> (JSON). Для строк – только двойные кавычки!</li>
   <li><a href="https://en.wikipedia.org/wiki/BSON" target="_blank" rel="noopener noreferrer">BSON</a>,
     [bee · sahn], short for Bin­ary JSON, is a <a href="http://bsonspec.org/" target="_blank" rel="noopener noreferrer">bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments</a>. Like JSON, BSON sup­ports the em­bed­ding of doc­u­ments and ar­rays with­in oth­er doc­u­ments and ar­rays. BSON also con­tains ex­ten­sions that al­low rep­res­ent­a­tion of data types that are not part of the JSON spec.
-
     BSON can be com­pared to bin­ary inter­change for­mats, like Proto­col Buf­fers. BSON is more "schema-less" than Proto­col Buf­fers, which can give it an ad­vant­age in flex­ib­il­ity but also a slight dis­ad­vant­age in space ef­fi­ciency (BSON has over­head for field names with­in the seri­al­ized data).</li>
   <li><a href="https://en.wikipedia.org/wiki/Protocol_Buffers" target="_blank" rel="noopener noreferrer">Protocol Buffers (Protobuf)</a></li>
   <li><a href="https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats" target="_blank" rel="noopener noreferrer">Comparison of data-serialization formats</a>,
     <a href="https://en.wikipedia.org/wiki/Category:Data_serialization_formats" target="_blank" rel="noopener noreferrer">Category:Data serialization formats</a>.</li>
 </ul>
 
-<h2>Ссылки</h2>
+<h2 id="links">Ссылки</h2>
 <ul>
-  <li><b><a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%8B/JSON" target="_blank" rel="noopener noreferrer">Работа с JSON</a></b></li>
+  <li><a href="https://ru.wikipedia.org/wiki/JSON" target="_blank" rel="noopener noreferrer">JSON</a>, JavaScript Object Notation; <b><a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%8B/JSON" target="_blank" rel="noopener noreferrer">Работа с JSON</a></b></li>
   <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener noreferrer">XMLHttpRequest</a>,
     <a href="https://developer.mozilla.org/ru/docs/Web/API/Fetch_API" target="_blank" rel="noopener noreferrer">Fetch API</a></li>
-  <li><a href="https://ru.wikipedia.org/wiki/JSON" target="_blank" rel="noopener noreferrer">JSON</a>, JavaScript Object Notation</li>
   <li><a href="https://ru.wikipedia.org/wiki/URI" target="_blank" rel="noopener noreferrer">Uniform Resource Identifier</a>,
     <a href="https://en.wikipedia.org/wiki/List_of_URI_schemes" target="_blank" rel="noopener noreferrer">List of URI schemes</a>:
     file://, ftp://, git://, https://, magnet:, mailto:, ssh://, view-source: и т.д.</li>
-  <li><a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods" target="_blank" rel="noopener noreferrer">Hypertext Transfer Protocol: методы</a> GET, HEAD, POST и др.
+  <li><a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods" target="_blank" rel="noopener noreferrer">Hypertext Transfer Protocol: методы</a>,
     <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods" target="_blank" rel="noopener noreferrer">HTTP request methods</a>,
-    <a href="https://ru.wikipedia.org/wiki/HTTP#%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B" target="_blank" rel="noopener noreferrer">HTTP методы</a></li>
-    <li><a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes" target="_blank" rel="noopener noreferrer">Список кодов состояния HTTP</a>,
+    <a href="https://ru.wikipedia.org/wiki/HTTP#%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B" target="_blank" rel="noopener noreferrer">HTTP методы</a>,
+    <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Methods" target="_blank" rel="noopener noreferrer">Методы HTTP запроса</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes" target="_blank" rel="noopener noreferrer">Список кодов состояния HTTP</a>,
       <a href="https://httpstat.us/" target="_blank" rel="noopener noreferrer">httpstat.us</a>,
       a super simple service for generating different HTTP codes.</li>
-    <li><a href="https://en.wikipedia.org/wiki/HTTP/2" target="_blank" rel="noopener noreferrer">Спецификация HTTP/2.0</a> опубликована 14.05.2015.
+  <li><a href="https://en.wikipedia.org/wiki/HTTP/2" target="_blank" rel="noopener noreferrer">Спецификация HTTP/2.0</a> опубликована 14.05.2015.
     <a href="https://en.wikipedia.org/wiki/HTTP/2#Differences_from_HTTP_1.1" target="_blank" rel="noopener noreferrer">HTTP/2: differences from HTTP 1.1</a></li>
   <li><a href="https://developer.mozilla.org/ru/docs/Web/API" target="_blank" rel="noopener noreferrer">Web APIs</a> (статьи частично на русском)</li>
   <li><a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank" rel="noopener noreferrer">Representational state transfer</a> –
@@ -58,14 +100,15 @@
     <a href="https://reqres.in/" target="_blank" rel="noopener noreferrer">REQ| RES REST-API</a>,
     <a href="https://randomuser.me/" target="_blank" rel="noopener noreferrer">Random User Generator</a>. Like Lorem Ipsum, but for people.<br>
     <a href="https://taniarascia.github.io/sandbox/ghibli/" target="_blank" rel="noopener noreferrer">Ghibli App</a>.
-    <a href="http://javascript.ru/forum/showthread.php?p=436963" target="_blank" rel="noopener noreferrer">Вопрос про API службы точного времени</a>.
-  </li>
+    <a href="http://javascript.ru/forum/showthread.php?p=436963" target="_blank" rel="noopener noreferrer">Вопрос про API службы точного времени</a>.</li>
   <li><a href="https://en.wikipedia.org/wiki/Special:ApiSandbox" target="_blank" rel="noopener noreferrer">MediaWiki API sandbox</a></li>
   <li><a href="https://habr.com/en/post/483202/" target="_blank" rel="noopener noreferrer">Введение в REST API – RESTful веб-сервисы</a>,
     <a href="https://habr.com/en/post/447322/" target="_blank" rel="noopener noreferrer">Принципы построения REST JSON API</a>,<br>
     <a href="https://habr.com/en/post/427601/" target="_blank" rel="noopener noreferrer">5+1 случай, когда спецификация REST API играет огромную роль</a>,<br>
     <a href="https://habr.com/en/post/276731/" target="_blank" rel="noopener noreferrer">Полноценный REST API для перфекционистов</a>:
     <a href="https://docs.python-eve.org/en/stable/index.html" target="_blank" rel="noopener noreferrer">Eve. The Simple Way to REST</a>.</li>
+  <li><a href="https://habr.com/ru/post/50147/" target="_blank" rel="noopener noreferrer">Типы HTTP-запросов и философия REST</a></li>
+  <li><a href="http://www.restapitutorial.ru/lessons/httpmethods.html" target="_blank" rel="noopener noreferrer">Использование HTTP методов для создания RESTful сервисов</a></li>
   <li><a href="https://requests.readthedocs.io/en/master/user/quickstart/" target="_blank" rel="noopener noreferrer">Requests</a> quickstart,
     <a href="https://python-scripts.com/requests" target="_blank" rel="noopener noreferrer">Requests в Python</a> – примеры.</li>
   <li><a href="https://www.html5rocks.com/en/tutorials/cors/" target="_blank" rel="noopener noreferrer">Using CORS</a>,
@@ -73,7 +116,7 @@
     <a href="https://stackoverflow.com/a/46774307" target="_blank" rel="noopener noreferrer">ответ на stackoverflow.com</a>.</li>
 </ul>
 
-<h2>Примеры</h2>
+<h2 id="examples">Примеры</h2>
 <b>Request (запрос)</b>:<br>
   Узнать точное время: <button onclick="mkReq('TZ')">в Москве (timezonedb)</button>
   (<a href="https://timezonedb.com/api" target="_blank" rel="noopener noreferrer">описание</a>)
@@ -92,7 +135,7 @@
   <button onclick="mkReq('spaceX')">Последний запуск SpaceX</button>
   (<a href="https://api.spacexdata.com/v3/launches/latest" target="_blank" rel="noopener noreferrer">ссылка</a>,
   <a href="https://github.com/r-spacex/SpaceX-API" target="_blank" rel="noopener noreferrer">описание на гитхабе</a>)<br>
-  <button onclick="mkReq('apod')">Астрономическая картинка дня</button> &ndash; NASA APOD
+  <button onclick="mkReq('apod')">Астрономическая картинка дня</button> – NASA APOD
   (<a href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA APIs</a>),
   <a href="http://www.astronet.ru/db/apod.html" target="_blank" rel="noopener noreferrer">на русском</a>.<br>
   <button onclick="loadUsers('male', 6)">Загрузить мужиков</button>
