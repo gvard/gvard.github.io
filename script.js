@@ -97,6 +97,9 @@ function showDates(res, q) {
     }
   }
 }
-function loadDates() {
-  loadReq('https://gvard.github.io/dates/astrocosm.json', showDates);
+function loadDates(list) {
+  let URL = 'https://gvard.github.io/dates/';
+  if (list == "AC") URL += 'astrocosm.json';
+  else if (list == "IT") URL += 'it.json';
+  loadReq(URL, showDates);
 }
