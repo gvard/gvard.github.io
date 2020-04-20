@@ -98,8 +98,8 @@ turtle.exitonclick()
   <li>Восьмиконечную звезду (угол поворота 135 градусов).</li>
   <li>Фигуру из анимации в начале страницы.</li>
 </ol>
-<h2>Решение №1</h2>
-<button type="button" onclick="show('figures1')">Показать решение №1</button>
+<h2>Решения</h2>
+<button type="button" onclick="show('figures1')">Квадрат и звезда</button>
 <pre id="figures1" style="display:none"><code>import turtle
 square = turtle.Turtle()
 for i in range(4):
@@ -113,12 +113,23 @@ for i in range(5):
 
 turtle.exitonclick()
 </code></pre>
-<button type="button" onclick="show('figures2')">Показать решение №2</button>
-<pre id="figures2" style="display:none"><code>star = turtle.Turtle()
+<button type="button" onclick="show('figures2')">8-конечная звезда</button>
+<pre id="figures2" style="display:none"><code>import turtle
+star = turtle.Turtle()
 star.hideturtle()
 for i in range(8):
     star.forward(100)
     star.right(135)
+turtle.exitonclick()
+</code></pre>
+<button type="button" onclick="show('figures3')">9-конечная звезда</button>
+<pre id="figures3" style="display:none"><code>import turtle
+nineang = turtle.Turtle()
+for i in range(9):
+    nineang.forward(100)
+    nineang.left(140)
+    nineang.forward(100)
+    nineang.right(100)
 turtle.exitonclick()
 </code></pre>
 
