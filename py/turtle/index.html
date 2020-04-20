@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="../../github.css">
   <link rel="stylesheet" href="../../compact.css">
   <script src="../highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <script>hljs.initHighlightingOnLoad();
+  function show(showId) {document.getElementById(showId).style.display = 'block';}</script>
 </head>
 <body>
 <nav class="menu">
@@ -91,12 +92,35 @@ turtle.exitonclick()
 <img src="https://michael0x2a.com/_assets/media/turtle-examples/star.8cc6.png" alt="">
 
 <h3>Самостоятельно:</h3>
-<ul>
-  <li>Нарисуйте пятиконечную звезду.</li>
+<ol>
+  <li>Нарисуйте пятиконечную звезду (угол поворота 144 градуса).</li>
   <li>Квадрат и звезду в одной программе, на одном графическом поле, но с разными экземплярами класса Turtle.</li>
   <li>Восьмиконечную звезду (угол поворота 135 градусов).</li>
   <li>Фигуру из анимации в начале страницы.</li>
-</ul>
+</ol>
+<h2>Решение №1</h2>
+<button type="button" onclick="show('figures1')">Показать решение №1</button>
+<pre id="figures1" style="display:none"><code>import turtle
+square = turtle.Turtle()
+for i in range(4):
+    square.forward(100)
+    square.right(90)
+
+starf = turtle.Turtle()
+for i in range(5):
+    starf.forward(100)
+    starf.right(144)
+
+turtle.exitonclick()
+</code></pre>
+<button type="button" onclick="show('figures2')">Показать решение №2</button>
+<pre id="figures2" style="display:none"><code>star = turtle.Turtle()
+star.hideturtle()
+for i in range(8):
+    star.forward(100)
+    star.right(135)
+turtle.exitonclick()
+</code></pre>
 
 <h2>Изменяем параметры во время движения</h2>
 <p>При отрисовке простых фигур черепашка возвращалась в исходную точку, и программа останавливалась, ожидая, когда будет закрыто окно.
