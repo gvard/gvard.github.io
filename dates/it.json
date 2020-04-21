@@ -1,95 +1,111 @@
 {"11.05": [{
 "year": "1930",
 "slug": "Родился Эдсгер Вибе Дейкстра",
+"tags": "people birthday programming",
 "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Edsger_Wybe_Dijkstra.jpg/360px-Edsger_Wybe_Dijkstra.jpg",
 "desc": "назад родился Эдсгер Вибе Дейкстра – нидерландский ученый, труды которого  оказали влияние на развитие информатики и информационных технологий; один из разработчиков концепции структурного программирования. Автор статьи «О вреде оператора GoTo», опубликованной в марте 1968 года."
 }],
 "16.05": [{
 "year": "1938",
 "slug": "Родился Айвен Сазерленд",
+"tags": "people birthday programming",
 "img": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Ivan_Sutherland_at_CHM.jpg",
 "desc": "назад родился Айвен Сазерленд – американский ученый в области информатики и пионер интернета, известный как «отец компьютерной графики». Получил премию Тьюринга в 1988 году за создание «Sketchpad», прообраз современного графического интерфейса систем автоматизированного проектирования."
 }],
 "09.09": [{
 "year": "1941",
 "slug": "Родился Деннис Ритчи",
+"tags": "people birthday programming",
 "img": "https://upload.wikimedia.org/wikipedia/commons/2/23/Dennis_Ritchie_2011.jpg",
 "desc": "назад родился Деннис Макалистэйр Ритчи – американский компьютерный специалист, известен по участию в создании языков программирования B, C, участию в разработке операционных систем Multics и Unix."
 }, {
 "year": "1947",
 "slug": "Найден первый в истории баг",
+"tags": "bug history birthday programming",
 "img": "https://upload.wikimedia.org/wikipedia/commons/8/8a/H96566k.jpg",
 "desc": "назад операторами электромеханического компьютера Harvard Mark II был найден первый в истории баг – моль в реле. В это время с компьютером работала пионер в программировании Грейс Хоппер."
 }],
 "24.02": [{
 "year": "1955",
 "slug": "Родился Стив Джобс",
+"tags": "apple people birthday it design",
 "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Steve_Jobs_Headshot_2010-CROP2.jpg/375px-Steve_Jobs_Headshot_2010-CROP2.jpg",
 "desc": "назад родился Стивен Пол (Стив) Джобс, предприниматель, промышленный дизайнер и сооснователь корпорации Apple."
 }],
 "02.12": [{
 "year": "1960",
 "slug": "Родился Андерс Хейлсберг",
+"tags": "people birthday programming",
 "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Anders_Hejlsberg.jpg/440px-Anders_Hejlsberg.jpg",
 "desc": "назад родился Андерс Хейлсберг, датский инженер-программист, создатель Turbo Pascal и главный архитектор Delphi, ключевой разработчик C# и TypeScript."
 }],
 "01.04": [{
 "year": "1976",
 "slug": "Основана Apple Computer Company",
+"tags": "apple it history",
 "img": "https://image.cnbcfm.com/api/v1/image/100932798-128279719-1.jpg",
 "desc": "назад Стивом Джобсом, Стивом Возняком и Рональдом Уэйном была основана Apple Computer Company."
 }],
 "07.12": [{
 "year": "1978",
 "slug": "Сделана фотография команды Microsoft",
+"tags": "microsoft it history",
 "img": "http://ic.pics.livejournal.com/matveychev_oleg/27303223/4331761/4331761_original.jpg",
 "desc": "назад была сделана фотография команды Microsoft. Найдите Билла Гейтса!"
 }],
 "24.01": [{
 "year": "1984",
 "slug": "В продажу поступил Apple Macintosh",
+"tags": "apple it history design Macintosh",
 "img": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Macintosh_128k_transparency.png",
 "desc": "назад в продажу поступил компьютер Apple Macintosh."
 }],
 "06.06": [{
 "year": "1984",
 "slug": "Вышел Тетрис",
+"tags": "game history programming",
 "img": "https://cs6.pikabu.ru/post_img/big/2014/06/06/11/1402078970_102983514.jpg",
 "desc": "назад советским программистом Алексеем Пажитновым представлена игра «Тетрис». В это время Пажитнов работал в Вычислительном центре Академии наук СССР."
 }],
 "17.09": [{
 "year": "1991",
 "slug": "Вышла первая публичная версия ядра Linux",
+"tags": "linux OS history it programming opensource",
 "img": "https://149366088.v2.pressablecdn.com/wp-content/uploads/2018/08/linus-torvalds-in-the-90s.jpg",
 "desc": "назад вышла первая публичная версия ядра Linux: 0.01. Анонс был опубликован Линусом Торвальдсом 25 августа, именно эта дата считается рождением операционной системы."
 }],
 "23.05": [{
 "year": "1995",
 "slug": "Релиз языка Java",
+"tags": "lang java it programming history",
 "img": "http://almucantar.000webhostapp.com/dates/images/James_Gosling.jpg",
 "desc": "назад был выпущен первый публичный релиз объектно-ориентированного языка общего назначения Java. Основным автором языка считается Джеймс Гослинг."
 }],
 "04.12": [{
 "year": "1995",
 "slug": "Анонсирован JavaScript",
+"tags": "lang javascript it history programming Netscape Sun",
 "img": "http://almucantar.000webhostapp.com/dates/images/Brendan_Eich_JS.jpg",
 "desc": "назад корпорация Netscape Communications и компания Sun Microsystems представили язык программирования JavaScript. Название указывало на дополняющую, по отношению к языку Java, роль. Автором JavaScript был один из сооснователей проекта Mozilla Брендан Айк."
 }],
 "16.10": [{
 "year": "2000",
 "slug": "Релиз Python 2.0",
+"tags": "lang it history programming python",
 "img": "https://gvanrossum.github.io/images/DO6GvRlo.gif",
 "desc": "назад была выпущена версия 2.0 языка программирования Python. Создателем и великодушным пожизненным диктатором (до 12.07.2018) является Гвидо Ван Россум. Поддержка линейки версии 2 прекращена 01.01.2020, но последняя версия 2.7.18 выйдет в апреле 2020-го."
 }],
 "26.08": [{
 "year": "2005",
 "slug": "Создана страница The Million Dollar Homepage",
+"tags": "web it history",
 "img": "http://almucantar.000webhostapp.com/dates/images/milliondollarhomepage.png",
 "desc": "назад была создана страница The Million Dollar Homepage, ставшая интернет-феноменом."
 }],
 "09.01": [{
 "year": "2007",
 "slug": "Стив Джобс анонсировал iPhone",
+"tags": "apple it history iphone",
 "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Steve_Jobs_presents_iPhone.jpg/1024px-Steve_Jobs_presents_iPhone.jpg",
 "desc": "назад на конференции Macworld Expo Стив Джобс анонсировал iPhone."
 }]}
