@@ -1,4 +1,5 @@
 import datetime
+import json
 from sqlalchemy import create_engine, Table, Column, ForeignKey, \
     Integer, BigInteger, Float, String, Boolean, Date
 from sqlalchemy.orm import relationship
@@ -6,8 +7,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-from dates_data import EVENTS
-
+DATES_JSON_FILENAME = 'astrocosm.json'
+DATES_JSON_PTH = '../dates/'
 SQLITE_DB_FILENAME = 'dates.sqlite'
 
 Base = declarative_base()
@@ -58,21 +59,24 @@ Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
 
+with open(DATES_JSON_PTH + DATES_JSON_FILENAME, 'rb') as JSON_BIN:
+    EVENTS = json.load(JSON_BIN)
 
-for event in EVENTS:
-    date = datetime.datetime.strptime(event[1], "%d.%m.%Y").date()
-    imgs = []
-    for img_url in event[3]:
-        imgs.append(Img(img_url=img_url))
-    for img_filename in event[4]:
-        imgs.append(Img(img_filename=img_filename))
-    tags = []
-    for tag in event[5]:
-        tags.append(Tag(tag=tag))
-    imgs
-    event_obj = Event(date=date, name=event[0], text=event[2], imgs=imgs, tags=tags)
-
-    session.add(event_obj)
+for event_daymon in EVENTS.keys():
+    for event in EVENTS[event_daymon]:
+        date = datetime.datetime.strptime(event_daymon + '.' + event['year'], "%d.%m.%Y").date()
+        imgs = []
+        if 'http' in event['img']:
+            imgs.append(Img(img_url=event['img']))
+        else:
+            imgs.append(Img(img_filename=event['img']))
+        tags = []
+        event_tags = event.get('tags')
+        if event_tags:
+            for tag in event_tags.split():
+                tags.append(Tag(tag=tag))
+        event_obj = Event(date=date, name=event['slug'], text=event['desc'], imgs=imgs, tags=tags)
+        session.add(event_obj)
 
 if __name__ == '__main__':
     session.commit()
