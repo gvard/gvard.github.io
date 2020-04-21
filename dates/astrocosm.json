@@ -147,6 +147,13 @@
 "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Luna_sample_return_and_Lunokhod_lunar_rover_models.jpg/1024px-Luna_sample_return_and_Lunokhod_lunar_rover_models.jpg",
 "desc": "назад запущена АМС «Луна-20». АМС совершила мягкую посадку, произвела бурение и забор грунта в Море Изобилия. Затем 55 г. грунта были доставлены на Землю."
 }],
+"18.02": [{
+"year": "1930",
+"slug": "Открытие Плутона",
+"tags": "astro discovery solsys dwarwplanet Pluto",
+"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Pluto_in_True_Color_-_High-Res.jpg/768px-Pluto_in_True_Color_-_High-Res.jpg",
+"desc": "назад американским астрономом Клайдом Томбо открыта карликовая планета Плутон. Со дня своего открытия в 1930 и до 2006 года Плутон считался девятой планетой Солнечной системы. Плутон и его крупнейший спутник Харон, открытый в 1978 году, часто рассматриваются как двойная планета, поскольку барицентр их системы находится вне обоих объектов."
+}],
 "09.03": [{
 "year": "1934",
 "slug": "Родился Юрий Алексеевич Гагарин",
@@ -175,7 +182,7 @@
 }, {
 "year": "2015",
 "slug": "КА «Dawn» вышел на орбиту вокруг Цереры",
-"tags": "cosmo solsys АМС asteroid Ceres Dawn",
+"tags": "cosmo solsys АМС asteroid dwarfplanet Ceres Dawn",
 "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Dawn_Flight_Configuration_2.jpg/1005px-Dawn_Flight_Configuration_2.jpg",
 "desc": "назад КА «Dawn» прибыл к карликовой планете Церера."
 }],
@@ -268,8 +275,8 @@
 }, {
 "year": "1959",
 "slug": "Запущена АМС «Луна-3»",
-"tags": "cosmo launch АМС first photo",
-"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Luna_3_moon.jpg/998px-Luna_3_moon.jpg",
+"tags": "cosmo launch АМС first moon",
+"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Luna-3_%28Memorial_Museum_of_Astronautics%29.JPG/1024px-Luna-3_%28Memorial_Museum_of_Astronautics%29.JPG",
 "desc": "назад запущена советская автоматическая межпланетная станция «Луна-3», с борта которой 7 октября сделана первая в истории фотография обратной стороны Луны."
 }],
 "03.11": [{
@@ -315,6 +322,13 @@
 "img": "solarsystem/images/Nix.jpg",
 "desc": ""
 }],
+"02.01": [{
+"year": "1959",
+"slug": "Запущена АМС «Луна-1»",
+"tags": "cosmo launch АМС first moon",
+"img": "https://upload.wikimedia.org/wikipedia/commons/c/cc/RIAN_archive_510848_Interplanetary_station_Luna_1_-_blacked.jpg",
+"desc": "назад запущена советская автоматическая межпланетная станция «Луна-1». Это первый в мире космический аппарат, достигший второй космической скорости, преодолевший притяжение Земли и ставший искусственным спутником Солнца."
+}],
 "03.03": [{
 "year": "1959",
 "slug": "Запущена АМС «Пионер-4» – первая американская АМС, выведенная на гелиоцентрическую орбиту",
@@ -326,6 +340,20 @@
 "slug": "Открыт спутник Сатурна Эгеон",
 "img": "solarsystem/images/Aegaeon.jpg",
 "desc": ""
+}],
+"12.09": [{
+"year": "1959",
+"slug": "Запущена АМС «Луна-2»",
+"tags": "cosmo launch АМС first moon",
+"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Kansas_Cosmosphere_Luna_2_Pennant_2013.JPG/1024px-Kansas_Cosmosphere_Luna_2_Pennant_2013.JPG",
+"desc": "назад запущена советская автоматическая межпланетная станция «Луна-2». 13 (14) сентября 1959 года она впервые в мире достигла поверхности Луны в районе Моря Дождей. «Луна-2» несла два вымпела – шара диаметром 150 и 90 мм, составленных из 72 пятиугольников. Одним из основных научных достижений миссии было прямое измерение солнечного ветра."
+}],
+"07.10": [{
+"year": "1959",
+"slug": "АМС «Луна-3» впервые сфотографировала обратную сторону Луны",
+"tags": "cosmo launch АМС first photo moon",
+"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Luna_3_moon.jpg/998px-Luna_3_moon.jpg",
+"desc": "назад с борта АМС «Луна-3», была сделана первая в истории фотография обратной стороны Луны. 27 октября 1959 года это изображение появилось на первой полосе газеты «Правда»."
 }],
 "11.01": [{
 "year": "1960",
@@ -419,12 +447,19 @@
 "img": "solarsystem/images/Annefrank.jpg",
 "desc": "Фото астероида было получено КА Stardust 02.11.2002 с расстояния 3 км."
 }],
+"18.07": [{
+"year": "1965",
+"slug": "",
+"tags": "cosmo АМС луна moon",
+"img": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Zond_2.jpg",
+"desc": "назад к Луне была запущена АМС Зонд-3. Через 34 часа она прошла вблизи Луны на расстоянии 9219 км и затем вышла на гелиоцентрическую орбиту. Сделанные во время полёта снимки Луны в целях проверки работы системы дальней связи для отработки техники дальних космических полётов были переданы с расстояний до 153.5 млн км. По фотографиям ГАИШ МГУ был выпущен «Атлас обратной стороны Луны»."
+}],
 "16.12": [{
 "year": "1965",
 "slug": "На орбиту выведена АМС «Пионер-6»",
-"tags": "cosmo АМС launch",
+"tags": "cosmo АМС launch sun US",
 "img": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Pioneer-6-9.jpg",
-"desc": "назад на гелиоцентрическую орбиту выведена автоматическая межпланетная станция «Пионер-6». Целью аппаратов «Пионер» было изучение солнечной плазмы, микрометеоритных потоков, космических лучей, магнитных возмущений, солнечного ветра, физики частиц."
+"desc": "назад на гелиоцентрическую орбиту выведена АМС «Пионер-6». Целью аппаратов «Пионер» было изучение солнечной плазмы, микрометеоритных потоков, космических лучей, магнитных возмущений, солнечного ветра, физики частиц. 08.12.2000 к 35-летию миссии от аппарата была успешно получена телеметрия. Таким образом, на тот момент АМС была самым долгоживущим действующим космическим аппаратом."
 }],
 "03.02": [{
 "year": "1966",
@@ -477,6 +512,20 @@
 "tags": "cosmo moon ПК Apollo photo US",
 "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Apollo_11_bootprint.jpg/763px-Apollo_11_bootprint.jpg",
 "desc": "назад в день высадки экипажа лунного модуля миссии Аполлон-11 Базз Олдрин сфотографировал свой след на лунном реголите."
+}],
+"10.11": [{
+"year": "1970",
+"slug": "Запущена АМС «Луна-17» с «Луноходом-1»",
+"tags": "cosmo АМС moon launch",
+"img": "https://upload.wikimedia.org/wikipedia/commons/b/bd/The_Soviet_Union_1971_CPA_3986_stamp_%28Luna_17_Module_on_Moon%29.jpg",
+"desc": "назад была запущена советская АМС «Луна-17» с планетоходом «Луноход-1» на борту."
+}],
+"17.11": [{
+"year": "1970",
+"slug": "АМС «Луна-17» с «Луноходом-1» достигли поверхности Луны",
+"tags": "cosmo АМС moon landing",
+"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Soviet_moonrover.JPG/1280px-Soviet_moonrover.JPG",
+"desc": "назад АМС «Луна-17» с планетоходом «Луноход-1» на борту достигли поверхности Луны в Море Дождей. За 10 месяцев работы на поверхности Луны «Луноход-1» проехал 10540 м, передал на Землю 211 лунных панорам и 25 тысяч фотографий. 8 марта 1971 года операторы «Лунохода-1» в честь праздника дважды «нарисовали» на Луне колёсами цифру «8»."
 }],
 "07.12": [{
 "year": "1972",
@@ -637,11 +686,6 @@
 "tags": "cosmo АМС Pioneer US",
 "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/An_artist%27s_impression_of_a_Pioneer_spacecraft_on_its_way_to_interstellar_space.jpg/930px-An_artist%27s_impression_of_a_Pioneer_spacecraft_on_its_way_to_interstellar_space.jpg",
 "desc": "назад получен последний сигнал от АМС «Пионер-10»"
-}, {
-"year": "1930",
-"slug": "Открыта карликовая планета Плутон",
-"img": "solarsystem/images/Pluto.jpg",
-"desc": ""
 }],
 "12.01": [{
 "year": "2005",
