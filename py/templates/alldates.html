@@ -5,23 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Знаменательные даты (Flask SQLAlchemy app)</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='dates/style.css') }}">
+  <script src="{{ url_for('static', filename='dates/script.js') }}"></script>
 </head>
 <body>
 <div class="wrapper">
 <div class="column left">
 <div id="head">
 <h1>Этапы большого пути: тематические презентации</h1>
-<!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Soviet_Union-1965-Stamp-0.12._Cosmonautics_Day.jpg/342px-Soviet_Union-1965-Stamp-0.12._Cosmonautics_Day.jpg" alt=""><br> -->
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Sozdatelyam-sputnika.jpg/480px-Sozdatelyam-sputnika.jpg" alt=""><br>
+<button onclick="slidesByTag('first')">Покорение космоса</button> <button onclick="showByTag('first')">Покорение космоса (лента)</button><br>
+<button onclick="slidesByTag('photo')">Знаменитые фото</button> <button onclick="showByTag('photo')">Знаменитые фото (лента)</button><br>
+<button onclick="slidesByTag('venus')">Венера</button><br>
 </div>
 
 {% for event in events %}
-<div class="wrap">
+<div class="wrap{% for tag in event.tags %} {{ tag.tag }}{% endfor %}">
 <div class="slug">{{ event.name }}</div>
-<div class="tags">Теги: {% for tag in event.tags %}{{ tag.tag }} {% endfor %}</div>
 <div class="date">{% if event.date %}{{ event.date.strftime("%d.%m.%Y") }}{% endif %}</div>
-<div class="img">{% for img in event.imgs %}{% if img.img_url %}<img src="{{ img.img_url }}" alt="">{% endif %} {% if img.img_filename %}<img src="images/{{ img.img_filename }}" alt="">{% endif %} {% endfor %}</div>
+<div class="img">{% for img in event.imgs %}{% if img.img_url %}<img src="{{ img.img_url }}" alt="">{% endif %}{% if img.img_filename %}<img src="{{ img.img_filename }}" alt="">{% endif %}{% endfor %}</div>
 <div class="desc"><span class="ago"></span> {{ event.text }}</div>
 </div>{% endfor %}
 
