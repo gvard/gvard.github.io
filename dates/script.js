@@ -65,6 +65,7 @@ function getSlidesByTag(tag) {
   let toShow = [];
   if (!tag) tag = 'wrap';
   const elems = document.getElementsByClassName(tag);
+  console.log("Всего слайдов:", elems.length);
   for (let i = 0; i < elems.length; i += 1) {
     const year = parseInt(elems[i].getElementsByClassName("date")[0].innerText.slice(6, 10), 10);
     const elmAgo = elems[i].getElementsByClassName('ago')[0];
