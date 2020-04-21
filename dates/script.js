@@ -125,14 +125,14 @@ function makeArray() {
   const elems = document.getElementsByClassName('date');
   for (let i = 0; i < elems.length; i += 1) {
     let slug = elems[i].parentElement.querySelector('.slug').innerText;
-    let tags = elems[i].parentElement.querySelector('.tags').innerText.substring(6,).split(/\s*,\s*/);
+    let tags = elems[i].parentElement.className.substring(5,);
     let date = elems[i].innerText;
     let desc = elems[i].parentElement.querySelector('.desc');
     let descContent = desc.innerText.trim();
     let img = elems[i].parentElement.querySelector('.img').getElementsByTagName('img')[0];
     if (!datesObj[date.slice(0, -5)])
       datesObj[date.slice(0, -5)] = [];
-    datesObj[date.slice(0, -5)].push({ 'year': date.slice(6, 10), 'slug': slug,  'img': img.src, 'desc': descContent });
+    datesObj[date.slice(0, -5)].push({ 'year': date.slice(6, 10), 'slug': slug, 'tags': tags, 'img': img.src, 'desc': descContent });
     if (img.src.indexOf('http') != -1) {
       arr.push([slug, date, descContent, [img.src], [], tags]);
     } else {
