@@ -80,14 +80,19 @@ function appendContent(daymon, deltaYr, datada, div) {
   div.appendChild(desc);
 }
 function showDates(res, q) {
-  const deltaDays = document.getElementById("days").value;
+  let deltaDays = document.getElementById("days").value;
+  let neg = 1;
+  if (deltaDays < 0) {
+    deltaDays = -deltaDays;
+    neg = -1;
+  }
   q.innerHTML = "Годовщины на ближайшие " + deltaDays + " дней:";
   const div = document.createElement('div');
   q.appendChild(div);
   const currentDate = new Date();
   for (let i = 0; i < deltaDays; i += 1) {
     const curDate = new Date(currentDate);
-    curDate.setDate(curDate.getDate() + i);
+    curDate.setDate(curDate.getDate() + neg * i);
     const data = getDates(curDate);
     if (data.daymon in res) {
       for (let datada of res[data.daymon]) {
