@@ -138,6 +138,7 @@
 }, {
 "year": "1758",
 "slug": "Открыта комета Галлея",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Halley.jpg",
 "desc": ""
 }],
@@ -221,6 +222,7 @@
 }, {
 "year": "2017",
 "slug": "Открыт околоземный астероид 2017 BQ6",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/2017BQ6.gif",
 "desc": ""
 }],
@@ -246,6 +248,7 @@
 }, {
 "year": "1950",
 "slug": "Открыт околоземный астероид 1950 DA",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/1950DA.gif",
 "desc": "Имеет вероятность столкновения с Землей в 2880 году."
 }],
@@ -265,11 +268,13 @@
 }, {
 "year": "1851",
 "slug": "Открыт спутник Урана Умбриэль",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Umbriel.jpg",
 "desc": ""
 }, {
 "year": "1851",
 "slug": "Открыт спутник Урана Ариэль",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Ariel.jpg",
 "desc": ""
 }],
@@ -321,11 +326,13 @@
 }, {
 "year": "2005",
 "slug": "Открыт спутник Плутона Гидра",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Hydra.jpg",
 "desc": ""
 }, {
 "year": "2005",
 "slug": "Открыт спутник Плутона Никс",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Nix.jpg",
 "desc": ""
 }],
@@ -345,6 +352,7 @@
 }, {
 "year": "2009",
 "slug": "Открыт спутник Сатурна Эгеон",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Aegaeon.jpg",
 "desc": ""
 }],
@@ -371,11 +379,13 @@
 }, {
 "year": "1787",
 "slug": "Открыт спутник Урана Титания",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Titania.jpg",
 "desc": ""
 }, {
 "year": "1787",
 "slug": "Открыт спутник Урана Оберон",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Oberon.jpg",
 "desc": ""
 }],
@@ -388,6 +398,7 @@
 }, {
 "year": "1655",
 "slug": "Открыт спутник Сатурна Титан",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Titan.jpg",
 "desc": ""
 }],
@@ -400,6 +411,7 @@
 }, {
 "year": "1849",
 "slug": "Открыт астероид Гигея",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Hygiea.jpg",
 "desc": "4-й (по объему и массе) астероид Солнечной системы. Имеет близкую к сферической форму и может быть кандидатом в карликовые планеты."
 }],
@@ -419,6 +431,7 @@
 }, {
 "year": "1989",
 "slug": "Открыт спутник Нептуна Протей",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Proteus.jpg",
 "desc": ""
 }],
@@ -451,6 +464,7 @@
 }, {
 "year": "1942",
 "slug": "Открыт астероид Аннафранк",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Annefrank.jpg",
 "desc": "Фото астероида было получено КА Stardust 02.11.2002 с расстояния 3 км."
 }],
@@ -503,6 +517,7 @@
 }, {
 "year": "1980",
 "slug": "Открыт спутник Сатурна Елена",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Helene.jpg",
 "desc": ""
 }],
@@ -639,6 +654,7 @@
 }, {
 "year": "1979",
 "slug": "Открыт спутник Юпитера Фива",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Thebe.jpg",
 "desc": ""
 }],
@@ -665,6 +681,7 @@
 }, {
 "year": "1979",
 "slug": "Открыт спутник Юпитера Метида",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Metis_moon.jpg",
 "desc": ""
 }],
@@ -773,563 +790,660 @@
 "13.03": [{
 "year": "1781",
 "slug": "Открыта планета Уран",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Uranus.jpg",
 "desc": "Название планеты устоялось лишь спустя 70 лет после открытия. Среди предложений было имя Нептун."
 }, {
 "year": "1610",
 "slug": "Открыт спутник Юпитера Ганимед",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Ganymede.jpg",
 "desc": ""
 }, {
 "year": "1610",
 "slug": "Открыт спутник Юпитера Каллисто",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Callisto.jpg",
 "desc": ""
 }, {
 "year": "1610",
 "slug": "Открыт спутник Юпитера Ио",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Io.jpg",
 "desc": ""
 }, {
 "year": "1610",
 "slug": "Открыт спутник Юпитера Европа",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Europa_moon.jpg",
 "desc": ""
 }, {
 "year": "1980",
 "slug": "Открыт спутник Сатурна Калипсо",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Calypso.jpg",
 "desc": ""
 }],
 "23.09": [{
 "year": "1846",
 "slug": "Открыта планета Нептун",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Neptune.jpg",
 "desc": ""
 }],
 "10.10": [{
 "year": "1846",
 "slug": "Открыт спутник Нептуна Тритон",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Triton.jpg",
 "desc": ""
 }, {
 "year": "2015",
 "slug": "Открыт околоземный астероид 2015 TB145",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/2015TB145.gif",
 "desc": ""
 }],
 "21.10": [{
 "year": "2003",
 "slug": "Открыта карликовая планета Эрида",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Eris.jpg",
 "desc": ""
 }],
 "28.12": [{
 "year": "2004",
 "slug": "Открыта карликовая планета Хаумеа",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Haumea.jpg",
 "desc": ""
 }, {
 "year": "1904",
 "slug": "Открыта комета Борелли",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Borrelly.jpg",
 "desc": ""
 }],
 "23.12": [{
 "year": "1672",
 "slug": "Открыт спутник Сатурна Рея",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Rhea.jpg",
 "desc": ""
 }],
 "25.10": [{
 "year": "1671",
 "slug": "Открыт спутник Сатурна Япет",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Iapetus.jpg",
 "desc": ""
 }, {
 "year": "2011",
 "slug": "Открыт околоземный астероид 2011 UW158",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/2011UW158.gif",
 "desc": ""
 }],
 "31.03": [{
 "year": "2005",
 "slug": "Открыта карликовая планета Макемаке",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Makemake.jpg",
 "desc": ""
 }],
 "17.07": [{
 "year": "2007",
 "slug": "Открыт транснептуновый объект Гун-гун",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Gonggong.jpg",
 "desc": "Был крупнейшим телом Солнечной системы без названия до 05.02.2020. В 2019 году находился в 88 а.е. от Солнца и продолжает удаляться со скоростью 1.1 км/с. Имеет спутник Сянлю."
 }],
 "13.04": [{
 "year": "1978",
 "slug": "Открыт спутник Плутона Харон",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Charon.jpg",
 "desc": ""
 }],
 "21.03": [{
 "year": "1684",
 "slug": "Открыт спутник Сатурна Диона",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Dione.jpg",
 "desc": ""
 }, {
 "year": "1684",
 "slug": "Открыт спутник Сатурна Тефия",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Tethys.jpg",
 "desc": ""
 }],
 "05.06": [{
 "year": "2002",
 "slug": "Открыт транснептуновый объект Квавар",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Quaoar.jpg",
 "desc": "Кьюбивано, кандидат в карликовые планеты. Имеет спутник Вейвот"
 }],
 "14.11": [{
 "year": "2003",
 "slug": "Открыт транснептуновый объект Седна",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Sedna.jpg",
 "desc": ""
 }],
 "18.06": [{
 "year": "2002",
 "slug": "Открыт транснептуновый объект 2002 MS4",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/2002MS4.jpg",
 "desc": "Из наблюдений покрытия звезд в 2019 году получены оценки размера: 842 на 688 км"
 }],
 "17.02": [{
 "year": "2004",
 "slug": "Открыт транснептуновый объект Орк",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Orcus.jpg",
 "desc": ""
 }, {
 "year": "1994",
 "slug": "Открыт астероид Дактиль",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Dactyl.jpg",
 "desc": "Спутник астероида Ида, обнаружен 17.02.1994 на снимках АМС Галилео от 28 августа 1993 г. Стал первым прямым доказательством существования лун у астероидов."
 }],
 "22.09": [{
 "year": "2004",
 "slug": "Открыт транснептуновый объект Салация",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Salacia.jpg",
 "desc": ""
 }],
 "29.03": [{
 "year": "1807",
 "slug": "Открыт астероид Веста",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Vesta.jpg",
 "desc": ""
 }],
 "28.03": [{
 "year": "1802",
 "slug": "Открыт астероид Паллада",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Pallas.jpg",
 "desc": "Это третий по массе астероид Солнечной системы: 7% от массы пояса астероидов."
 }],
 "28.08": [{
 "year": "1789",
 "slug": "Открыт спутник Сатурна Энцелад",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Enceladus.jpg",
 "desc": ""
 }],
 "16.02": [{
 "year": "1948",
 "slug": "Открыт спутник Урана Миранда",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Miranda.jpg",
 "desc": ""
 }],
 "17.09": [{
 "year": "1789",
 "slug": "Открыт спутник Сатурна Мимас",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Mimas.jpg",
 "desc": ""
 }],
 "01.05": [{
 "year": "1949",
 "slug": "Открыт спутник Нептуна Нереида",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Nereid.jpg",
 "desc": ""
 }, {
 "year": "2005",
 "slug": "Открыт спутник Сатурна Дафнис",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Daphnis.jpg",
 "desc": ""
 }],
 "02.10": [{
 "year": "1910",
 "slug": "Открыт астероид Интерамния",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Interamnia.jpg",
 "desc": ""
 }],
 "30.05": [{
 "year": "1903",
 "slug": "Открыт астероид Давида",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Davida.jpg",
 "desc": ""
 }],
 "16.09": [{
 "year": "1848",
 "slug": "Открыт спутник Сатурна Гиперион",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Hyperion.jpg",
 "desc": ""
 }],
 "01.09": [{
 "year": "1804",
 "slug": "Открыт астероид Юнона",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Juno.jpg",
 "desc": ""
 }],
 "17.03": [{
 "year": "1852",
 "slug": "Открыт астероид Психея",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Psyche.jpg",
 "desc": ""
 }],
 "25.02": [{
 "year": "1892",
 "slug": "Открыт астероид Бамберга",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Bamberga.jpg",
 "desc": ""
 }],
 "13.08": [{
 "year": "1847",
 "slug": "Открыт астероид Ирида",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Iris.jpg",
 "desc": ""
 }, {
 "year": "1898",
 "slug": "Открыт околоземный астероид Эрос",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Eros.jpg",
 "desc": ""
 }],
 "16.08": [{
 "year": "1898",
 "slug": "Открыт спутник Сатурна Феба",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Phoebe.jpg",
 "desc": ""
 }],
 "24.05": [{
 "year": "1981",
 "slug": "Открыт спутник Нептуна Ларисса",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Larissa.jpg",
 "desc": ""
 }],
 "01.07": [{
 "year": "1847",
 "slug": "Открыт астероид Геба",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Hebe.jpg",
 "desc": ""
 }],
 "01.10": [{
 "year": "1866",
 "slug": "Открыт астероид Антиопа",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Antiope.jpg",
 "desc": ""
 }, {
 "year": "1980",
 "slug": "Открыт спутник Сатурна Прометей",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Prometheus.jpg",
 "desc": ""
 }, {
 "year": "1980",
 "slug": "Открыт спутник Сатурна Пандора",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Pandora.jpg",
 "desc": ""
 }, {
 "year": "1980",
 "slug": "Открыт спутник Сатурна Атлас",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Atlas.jpg",
 "desc": ""
 }],
 "30.08": [{
 "year": "1992",
 "slug": "Открыт транснептуновый объект Альбион",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Albion.jpg",
 "desc": "Первый транснептуновый объект, открытый после Плутона и Харона. Дал название классическим объектам пояса Койпера – кьюбивано"
 }],
 "09.09": [{
 "year": "1892",
 "slug": "Открыт спутник Юпитера Амальтея",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Amalthea.jpg",
 "desc": ""
 }],
 "30.12": [{
 "year": "1985",
 "slug": "Открыт спутник Урана Пак",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Puck.jpg",
 "desc": ""
 }],
 "02.08": [{
 "year": "1989",
 "slug": "Открыт спутник Нептуна Деспина",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Despina.jpg",
 "desc": ""
 }],
 "18.10": [{
 "year": "1847",
 "slug": "Открыт астероид Флора",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Flora.jpg",
 "desc": ""
 }],
 "08.12": [{
 "year": "1845",
 "slug": "Открыт астероид Астрея",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Astraea.jpg",
 "desc": ""
 }],
 "18.12": [{
 "year": "1966",
 "slug": "Открыт спутник Сатурна Эпиметей",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Epimetheus.jpg",
 "desc": ""
 }],
 "15.11": [{
 "year": "1852",
 "slug": "Открыт астероид Лютеция",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Lutetia.jpg",
 "desc": ""
 }],
 "03.01": [{
 "year": "1986",
 "slug": "Открыт спутник Урана Джульетта",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Juliet.jpg",
 "desc": ""
 }],
 "12.11": [{
 "year": "1885",
 "slug": "Открыт астероид Матильда",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Mathilde.jpg",
 "desc": ""
 }],
 "26.06": [{
 "year": "2014",
 "slug": "Открыт транснептуновый объект Аррокот",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Arrokoth.jpg",
 "desc": ""
 }, {
 "year": "2012",
 "slug": "Открыт спутник Плутона Стикс",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Styx.jpg",
 "desc": ""
 }],
 "29.09": [{
 "year": "1884",
 "slug": "Открыт астероид Ида",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Ida.jpg",
 "desc": ""
 }, {
 "year": "2003",
 "slug": "Открыт околоземный астероид 2003 SD220",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/2003SD220.jpg",
 "desc": ""
 }],
 "16.07": [{
 "year": "1990",
 "slug": "Открыт спутник Сатурна Пан",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Pan.jpg",
 "desc": ""
 }],
 "08.04": [{
 "year": "1980",
 "slug": "Открыт спутник Сатурна Телесто",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Telesto.jpg",
 "desc": ""
 }],
 "18.08": [{
 "year": "1877",
 "slug": "Открыт спутник Марса Фобос",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Phobos.jpg",
 "desc": ""
 }],
 "08.07": [{
 "year": "1979",
 "slug": "Открыт спутник Юпитера Адрастея",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Adrastea.jpg",
 "desc": ""
 }],
 "28.06": [{
 "year": "2011",
 "slug": "Открыт спутник Плутона Кербер",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Kerberos.jpg",
 "desc": ""
 }],
 "12.08": [{
 "year": "1877",
 "slug": "Открыт спутник Марса Деймос",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Deimos.jpg",
 "desc": ""
 }],
 "30.07": [{
 "year": "1916",
 "slug": "Открыт астероид Гаспра",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Gaspra.jpg",
 "desc": "Первый посещенный космическим аппаратом (Галилео) астероид. Был посещен 29.10.1991, фото сделаны с расстояния 5300 км на скорости 8 км/с."
 }],
 "03.04": [{
 "year": "1867",
 "slug": "Открыта комета 9P/Темпеля (Темпель 1)",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Tempel1.jpg",
 "desc": ""
 }],
 "13.05": [{
 "year": "1999",
 "slug": "Открыт околоземный астероид 1999 JM8",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/1999JM8.jpg",
 "desc": ""
 }],
 "11.10": [{
 "year": "1983",
 "slug": "Открыт околоземный астероид Фаэтон",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Phaethon.gif",
 "desc": ""
 }],
 "04.11": [{
 "year": "1969",
 "slug": "Открыт астероид Штейнс",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Steins.jpg",
 "desc": ""
 }],
 "06.01": [{
 "year": "1978",
 "slug": "Открыт спутник Сатурна Паллена",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Pallene.jpg",
 "desc": ""
 }, {
 "year": "1978",
 "slug": "Открыта комета Вилт 2",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Wild.jpg",
 "desc": "КА Stardust сблизился с ядром кометы 02.01.2004 с относительной скоростью 6.1 км/с. Фото сделано с расстояния 237 км."
 }],
 "20.09": [{
 "year": "1969",
 "slug": "Открыта комета комета 67P/Чурюмова – Герасименко",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/ChuryumovGerasimenko.jpg",
 "desc": "Первые подробные фото получены КА Rosetta в промежуток 1–6 августа 2014 г."
 }],
 "19.08": [{
 "year": "1998",
 "slug": "Открыт околоземный астероид 1998 QE2",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/1998QE2.jpg",
 "desc": ""
 }],
 "04.01": [{
 "year": "1989",
 "slug": "Открыт околоземный астероид Таутатис",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Toutatis.jpg",
 "desc": ""
 }],
 "01.06": [{
 "year": "2004",
 "slug": "Открыт спутник Сатурна Мефона",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Methone.jpg",
 "desc": ""
 }, {
 "year": "2004",
 "slug": "Открыт спутник Сатурна Полидевк",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Polydeuces.jpg",
 "desc": ""
 }],
 "09.05": [{
 "year": "2002",
 "slug": "Открыт астероид 132524 APL",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/APL.jpg",
 "desc": ""
 }],
 "14.09": [{
 "year": "1951",
 "slug": "Открыт околоземный астероид Географ",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Geographos.jpg",
 "desc": ""
 }],
 "27.05": [{
 "year": "1992",
 "slug": "Открыт астероид Брайль",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Braille.jpg",
 "desc": ""
 }],
 "09.08": [{
 "year": "2007",
 "slug": "Открыт околоземный астероид 2007 PA8",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/2007PA8.jpg",
 "desc": ""
 }],
 "20.05": [{
 "year": "1999",
 "slug": "Открыт околоземный астероид Мошап",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Moshup.jpg",
 "desc": ""
 }],
 "15.03": [{
 "year": "1986",
 "slug": "Открыта комета Хартли 2",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Hartley.jpg",
 "desc": ""
 }],
 "21.01": [{
 "year": "2016",
 "slug": "Открыта комета P/2016 BA14",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/P2016BA14.jpg",
 "desc": ""
 }],
 "21.12": [{
 "year": "2017",
 "slug": "Открыт околоземный астероид 2017 YE5",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/2017YE5.jpg",
 "desc": ""
 }],
 "10.05": [{
 "year": "1999",
 "slug": "Открыт околоземный астероид Рюгу",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Ryugu.jpg",
 "desc": "назад открыт потенциально опасный астероид Рюгу. Миссия Hayabusa2 прибыла к астероиду 27.06.2018."
 }],
 "05.05": [{
 "year": "2014",
 "slug": "Открыт околоземный астероид 2014 JO25",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/2014JO25.gif",
 "desc": ""
 }],
 "11.04": [{
 "year": "1996",
 "slug": "Открыт околоземный астероид Дидим",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Didymos.jpg",
 "desc": "Цель миссии DART. Старт запланирован на 2021 г."
 }],
 "11.09": [{
 "year": "1999",
 "slug": "Открыт околоземный астероид Бенну",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Bennu.jpg",
 "desc": "Имеет высокую вероятность столкновения с Землей в 2175–2199 гг. 03.12.2018 к астероиду приблизился КА OSIRIS-REx."
 }],
 "25.11": [{
 "year": "1998",
 "slug": "Открыт околоземный астероид 1998 WT24",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/1998WT24.jpg",
 "desc": ""
 }],
 "26.09": [{
 "year": "1998",
 "slug": "Открыт околоземный астероид Итокава",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Itokawa.jpg",
 "desc": "Посещен миссией Хаябуса в октябре 2005 г. Капсула с ~1500 частицами астероида (почти все менее 10 мкм) приземлилась в Австралии 13.06.2010"
 }],
 "19.06": [{
 "year": "2004",
 "slug": "Открыт околоземный астероид Апофис",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/Apophis.jpg",
 "desc": "Имеет вероятность столкновения с Землей в 2060–2105 гг. До 2013 г. вероятность столкновения была сильно переоценена."
 }],
 "23.04": [{
 "year": "2014",
 "slug": "Открыт околоземный астероид 2014 HQ124",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/2014HQ124.jpg",
 "desc": ""
 }],
 "30.01": [{
 "year": "2004",
 "slug": "Открыт околоземный астероид 2004 BL86",
+"tags": "astro discovery solsys",
 "img": "solarsystem/images/2004BL86.gif",
 "desc": ""
 }]}

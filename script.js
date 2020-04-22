@@ -90,21 +90,25 @@ function showDates(res, q) {
   const div = document.createElement('div');
   q.appendChild(div);
   const currentDate = new Date();
+  const tag = document.getElementById("tag").value;
+  const isTag = Boolean(tag);
   for (let i = 0; i < deltaDays; i += 1) {
     const curDate = new Date(currentDate);
     curDate.setDate(curDate.getDate() + neg * i);
     const data = getDates(curDate);
     if (data.daymon in res) {
       for (let datada of res[data.daymon]) {
-        let deltaYr = currentDate.getFullYear() - datada.year;
-        appendContent(data.daymon, deltaYr, datada, div);
+        if (!isTag || (isTag && datada.hasOwnProperty('tags') && datada.tags.includes(tag)) ) {
+          let deltaYr = currentDate.getFullYear() - datada.year;
+          appendContent(data.daymon, deltaYr, datada, div);
+        }
       }
     }
   }
 }
-function loadDates(list) {
+function loadDates(listName) {
   let URL = 'https://gvard.github.io/dates/';
-  if (list == "AC") URL += 'astrocosm.json';
-  else if (list == "IT") URL += 'it.json';
+  if (listName == "AC") URL += 'astrocosm.json';
+  else if (listName == "IT") URL += 'it.json';
   loadReq(URL, showDates);
 }
