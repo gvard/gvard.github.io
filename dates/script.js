@@ -63,8 +63,10 @@ function getSlidesByDate() {
 function getSlidesByTag(tag) {
   const today = getToday();
   let toShow = [];
-  if (!tag) tag = 'wrap';
-  const elems = document.getElementsByClassName(tag);
+  let qSelector = '.left > div';
+  if (tag)
+    qSelector += "." + tag;
+  const elems = document.querySelectorAll(qSelector);
   console.log("Всего слайдов:", elems.length);
   for (let i = 0; i < elems.length; i += 1) {
     const year = parseInt(elems[i].getElementsByClassName("date")[0].innerText.slice(6, 10), 10);
@@ -74,7 +76,7 @@ function getSlidesByTag(tag) {
   }
   return toShow;
 }
-const hideAll = () => {document.querySelectorAll('.wrap').forEach(el => el.style.display = 'none');};
+const hideAll = () => {document.querySelectorAll('.left > div').forEach(el => el.style.display = 'none');};
 const showAll = elems => { elems.forEach(el => el.style.display = 'block');};
 function showByTag(tag) {
   hideAll();

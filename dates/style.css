@@ -4,9 +4,9 @@ p {font-size: 1.3em;}
   font-size: 1.5em;
   font-weight: bold;
 }
-.wrap {
+.left > div {
   display: none;
-  padding: 0 30px;
+  padding: 0 10px;
 }
 ul {
   padding: 0 10px 0 15px;
@@ -63,7 +63,7 @@ img {
     padding: 0;
     flex-direction: column;
   }
-  .wrap {
+  .left > div {
     padding: 3px;
   }
   img {
