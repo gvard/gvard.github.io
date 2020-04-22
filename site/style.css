@@ -31,6 +31,9 @@ nav ul {
 nav ul li {
   display: inline-block;
 }
+a {
+  color: rgb(91, 168, 194);
+}
 nav a {
   display: block;
   padding: 0 10px;
