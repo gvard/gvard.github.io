@@ -239,6 +239,164 @@ turtle.exitonclick()
     из <a href="https://colorscheme.ru/html-colors.html" target="_blank" rel="noopener noreferrer">таблицы</a>.
     <b>Не забудьте кавычки вокруг названия или кода цвета!</b></li>
 </ul>
+<h2>Решения</h2>
+<button type="button" onclick="show('manyfigures')">Несколько закрашенных фигур</button>
+<ul id="manyfigures" style="display:none">
+  <li>У нас есть два варианта нарисовать несколько фигур: используя отдельные классы и не используя их. Рассмотрим оба варианта.</li>
+  <li>Без классов:
+    <pre><code>import turtle
+
+turtle.hideturtle()
+turtle.speed(10)
+
+turtle.color('red')
+turtle.begin_fill()
+for i in range(4):
+    turtle.forward(100)
+    turtle.right(90)
+turtle.end_fill()
+
+turtle.penup()
+turtle.goto(200, 200)
+turtle.pendown()
+
+turtle.color('green')
+turtle.begin_fill()
+for i in range(5):
+    turtle.forward(100)
+    turtle.rt(144)
+turtle.end_fill()
+
+turtle.penup()
+turtle.goto(-200, -200)
+turtle.pendown()
+
+turtle.color('blue')
+turtle.begin_fill()
+for i in range(8):
+    turtle.forward(100)
+    turtle.right(135)
+turtle.end_fill()
+
+turtle.penup()
+turtle.goto(200, -200)
+turtle.pendown()
+
+turtle.color('cyan')
+turtle.begin_fill()
+for i in range(3):
+    turtle.forward(100)
+    turtle.lt(120)
+turtle.end_fill()
+
+turtle.penup()
+turtle.goto(-200, 200)
+turtle.pendown()
+
+turtle.color('magenta')
+turtle.begin_fill()
+for i in range(9):
+    turtle.forward(30)
+    turtle.right(140)
+    turtle.forward(30)
+    turtle.left(100)
+turtle.end_fill()
+
+turtle.exitonclick()</code></pre></li>
+  <li>Получается довольно многословно. С классами (начало):
+    <pre><code>import turtle
+
+square = turtle.Turtle()
+square.hideturtle()
+square.color('red')
+square.speed(10)
+square.begin_fill()
+for i in range(4):
+    square.forward(100)
+    square.right(90)
+square.end_fill()
+square.penup()</code></pre></li>
+  <li>Так еще многословнее. Зачем нам понадобилось писаль для каждой фигуры отдельный класс? Для того, чтобы подготовиться к написанию программы с помощью функций, которые помогут обобщить и сократить наш код.<br>
+    Создадим функции, используя написанную ранее обобщенную программу рисования выпуклых равносторонних многоугольников. Функция prepare() делаеи все приготовления для рисования: переходит в нужную
+  точку холста, устанавливает нужный цвет и дает команду заполнять цветом.
+    У функции три <i>входных параметра</i>: координаты по осям X, Y и кодовое слово цвета.<br>
+    Функция draw_polygon() - наш старый знакомый, так мы рисуем выпуклый многоугольник.
+    У функции два входных параметра: количество граней и длина грани.
+    <pre><code>import turtle
+
+def prepare(x, y, color):
+    turtle.penup()
+    turtle.goto(x, y)
+    turtle.pendown()
+    turtle.color(color)
+    turtle.begin_fill()
+
+def draw_polygon(num_sides, side_length):
+    angle = 360.0 / num_sides
+    for i in range(num_sides):
+        turtle.forward(side_length)
+        turtle.right(angle)
+
+turtle.hideturtle()
+turtle.speed(10)
+
+prepare(0, 0, 'red')
+draw_polygon(3, 100)
+turtle.end_fill()
+
+prepare(200, 200, 'green')
+draw_polygon(4, 100)
+turtle.end_fill()
+
+prepare(-200, -200, 'blue')
+draw_polygon(5, 100)
+turtle.end_fill()
+
+prepare(200, -200, 'cyan')
+draw_polygon(6, 100)
+turtle.end_fill()
+
+prepare(-200, 200, 'magenta')
+draw_polygon(7, 100)
+turtle.end_fill()
+
+turtle.exitonclick()</code></pre></li>
+  <li>Получилось существенно сократить программу, и она стала более читаемой. Но повторяющиеся действия
+  остались. Значит, есть еще работа для программиста!
+  Будем рисовать все 5 фигур в цикле. Для этого все параметры соберем в списки,
+  а внутри цикла будем брать значение параметра по индексу (номеру - 1) в
+  списке. Теперь всего 22 строки кода:
+    <pre><code>import turtle
+
+def prepare(x, y, color):
+    turtle.penup()
+    turtle.goto(x, y)
+    turtle.pendown()
+    turtle.color(color)
+    turtle.begin_fill()
+
+def draw_polygon(num_sides, side_length):
+    angle = 360.0 / num_sides
+    for i in range(num_sides):
+        turtle.forward(side_length)
+        turtle.right(angle)
+    turtle.end_fill()
+
+
+turtle.hideturtle()
+turtle.speed(10)
+
+colors = ['red', 'green', 'blue', 'cyan', 'magenta']
+xcoords = [0, 200, -200, 200, -200]
+ycoords = [0, 200, -200, -200, 200]
+for i in range(5):
+    prepare(xcoords[i], ycoords[i], colors[i])
+    draw_polygon(i+3, 100)
+
+turtle.exitonclick()</code></pre></li>
+<li>Получились фигуры разного размера. <b>Самостоятельно</b>: Задать переменной внутри цикла длину грани так, чтобы фигуры казались (или являлись) равновеликими.</li>
+</ul>
+
 <h2>Другие полезные функции:</h2>
 <ul>
   <li>turtle.setup(800, 400) устанавливает размеры окна в 800 на 400 пикселей</li>
@@ -548,9 +706,37 @@ turtle.done()
 <ul>
 <li>Нарисовать фигуры, которые надо обойти герою игры. Это может быть простой лабиринт!</li>
 <li>Написать условное выражение (если координаты circ больше заданных величин), при котором наступает победа, и игра заканчивается. Это может быть выход из лабиринта!</li>
-<li>В программе должно быть реализовано движение во все 4 стороны. Можно использзовать стрелки, можно – клавиши WASD. Также можно реализовать движение по диагонали, когда за один ход изменяются обе координаты.</li>
+<li>В программе должно быть реализовано движение во все 4 стороны. Можно использовать стрелки, можно – клавиши WASD. Также можно реализовать движение по диагонали, когда за один ход изменяются обе координаты.</li>
 </ul>
 
+<h2>Подсказки</h2>
+<button type="button" onclick="show('cheat')">Показать</button>
+<ul id="cheat" style="display: none">
+  <li>Движение во все 4 стороны:
+    <pre><code>import turtle
+
+circ = turtle.Turtle()
+circ.shape("circle")
+circ.color("orange")
+circ.penup()
+turtle.listen()
+
+turtle.onkeypress(lambda: circ.setx(circ.xcor() + 10), 'Right')
+turtle.onkeypress(lambda: circ.setx(circ.xcor() - 10), 'Left')
+turtle.onkeypress(lambda: circ.sety(circ.ycor() + 10), 'Up')
+turtle.onkeypress(lambda: circ.sety(circ.ycor() - 10), 'Down')
+turtle.done()</code></pre></li>
+  <li>В одной программе может быть сколько угодно обработчиков нажатия клавиши. Просто перечисляем (в примере по нажатию запускается функция up()):
+    <pre><code>turtle.onkeypress(up, 'Up') # движение вверх по кнопке вверх
+turtle.onkeypress(up, 'w') # движение вверх по кнопке w​
+turtle.onkeypress(up, 'W') # движение​ вверх по W (w с нажатой Shift или CapsLock)</code></pre></li>
+  <li>Для движения по диагонали создаем функцию, в которой соединяем движение по вертикали и горизонтали:
+    <pre><code>def upright():
+    x = circ.xcor() + 10
+    y = circ.ycor() + 10
+    circ.setx(x)
+    circ.sety(y)</code></pre></li>
+</ul>
 
 <h2>Ссылки</h2>
 <ul>
