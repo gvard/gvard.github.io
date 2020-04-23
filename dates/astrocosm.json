@@ -259,6 +259,13 @@
 "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Grantelescopio.jpg/1024px-Grantelescopio.jpg",
 "desc": "назад получен первый свет на Большом Канарском телескопе – The Gran Telescopio Canarias. С момента постройки GTC является крупнейшим телескопом в мире, но уступает по площади зеркал комплексу Большого бинокулярного телескопа."
 }],
+"13.06": [{
+"year": "2012",
+"slug": "Запуск космической обсерватории NuSTAR",
+"tags": "astro cosmo telescope observatory",
+"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/NuStar_1.jpg/1024px-NuStar_1.jpg",
+"desc": "назад запущена космическая рентгеновская обсерватория НАСА Nuclear Spectroscopic Telescope Array (NuSTAR)."
+}],
 "24.10": [{
 "year": "1946",
 "slug": "Получена первая фотография Земли из космоса",
@@ -277,6 +284,13 @@
 "tags": "astro discovery solsys",
 "img": "solarsystem/images/Ariel.jpg",
 "desc": ""
+}],
+"14.06": [{
+"year": "1949",
+"slug": "В космосе побывала макак-резус Альберт II",
+"tags": "cosmo launch first animals US",
+"img": "https://upload.wikimedia.org/wikipedia/commons/8/80/Albert_II_V2_launch.jpg",
+"desc": "назад была запущена рокета V-2 №47 с макаком-резусом на борту. Достигнув высоты в 134 км, Альберт второй стал первой обезьяной, побывавшей в космосе."
 }],
 "04.10": [{
 "year": "1957",
@@ -422,6 +436,19 @@
 "img": "https://msk.kprf.ru/wp-content/uploads/2016/08/274256306.jpg",
 "desc": "назад, с космодрома Байконур запущен космический корабль серии «Восток». Пилотом-космонавтом был Герман Степанович Титов, самый молодой космонавт в истории. «Восток-2» имел отличия от первого «Востока»: была доработана радиосвязь, заменена телевизионная система. Телеметрию дополнила коротковолновая система «Сигнал». «Восток-2» находился в полёте 25 часов 11 минут."
 }],
+"18.10": [{
+"year": "1963",
+"slug": "Франция запустила в космос кошку",
+"tags": "cosmo animals first France",
+"img": "https://upload.wikimedia.org/wikipedia/en/e/e0/Felicette%2C_spacecat.jpg",
+"desc": "назад с космодрома Хаммагир в Алжире на геофизической ракете Véronique была запущена кошка Фелисетт. Ракета достигла высоты 152 км. Полет длился 13 минут, из которых 5 минут Фелисетт находилась в невесомости."
+}, {
+"year": "1847",
+"slug": "Открыт астероид Флора",
+"tags": "astro discovery solsys",
+"img": "solarsystem/images/Flora.jpg",
+"desc": ""
+}],
 "16.06": [{
 "year": "1963",
 "slug": "Валентина Владимировна Терешкова – первая в мире женщина-космонавт",
@@ -496,6 +523,12 @@
 "desc": "назад состоялся первый полет российского космонавта на американском космическом корабле: в миссии STS-60 шаттла Discovery принял участие Сергей Крикалёв. Совершив 130 витков и пролетев 5.486.215 километров, 11 февраля 1994 года корабль Discovery совершил посадку в космическом центре имени Кеннеди (штат Флорида). Продолжительность полёта составила 8 сут. 7 ч 09 минут 22 с."
 }],
 "22.02": [{
+"year": "1961",
+"slug": "Франция стала третьей страной, запустившей животное в космос",
+"tags": "cosmo launch animals first France",
+"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Fus%C3%A9e_VERONIQUE_%288727147868%29.jpg/386px-Fus%C3%A9e_VERONIQUE_%288727147868%29.jpg",
+"desc": "назад Франция запустила крысу Гектора на ракете Véronique, став третьей строной, запускавшую животных в космос."
+}, {
 "year": "1966",
 "slug": "Запущен КА «Космос 110» с собаками Ветерок и Уголек на борту",
 "tags": "cosmo sat dogs medbio",
@@ -519,6 +552,19 @@
 "slug": "Открыт спутник Сатурна Елена",
 "tags": "astro discovery solsys",
 "img": "solarsystem/images/Helene.jpg",
+"desc": ""
+}],
+"14.09": [{
+"year": "1968",
+"slug": "Запуск АМС «Зонд-5»",
+"tags": "cosmo АМС animals first",
+"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Soviet_Union_1969_CPA_3733_stamp_%28Zond_5%29.png/640px-The_Soviet_Union_1969_CPA_3733_stamp_%28Zond_5%29.png",
+"desc": "назад, 15 сентября в 00:42 по московскому времени, запущена АМС «Зонд-5». На борту находились две среднеазиатские черепахи, мухи дрозофилы, мучные черви, бактерии (культура кишечной палочки) и растения. Животные и растения успешно пережили полет. Впервые совершен облёт Луны с возвращением на Землю, а также впервые в советской космической программе был выполнен успешный вход спускаемого аппарата в атмосферу Земли со второй космической скоростью."
+}, {
+"year": "1951",
+"slug": "Открыт околоземный астероид Географ",
+"tags": "astro discovery solsys",
+"img": "solarsystem/images/Geographos.jpg",
 "desc": ""
 }],
 "24.12": [{
@@ -765,6 +811,13 @@
 "tags": "cosmo launch falcon9 spacex landing US",
 "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/ORBCOMM-2_%2823282658734%29.jpg/512px-ORBCOMM-2_%2823282658734%29.jpg",
 "desc": "назад, 21 декабря около 17-40 по местному времени, была произведена вертикальная посадка первой ступени ракеты-носителя Falcon 9. В августе 2016 ступень была установлена на территории штаб-квартиры SpaceX в Хоторне, штат Калифорния."
+}],
+"08.09": [{
+"year": "2016",
+"slug": "Запуск АМС OSIRIS-REx к астероиду Бенну",
+"tags": "cosmo launch asteroid АМС NASA US",
+"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/OSIRIS-REx_artist_rendetion.jpg/576px-OSIRIS-REx_artist_rendetion.jpg",
+"desc": "назад запущена АМС Origins Spectral Interpretation Resource Identification Security Regolith Explorer (OSIRIS-REx). Миссия – доставка образцов грунта с астероида (101955) Бенну."
 }],
 "14.08": [{
 "year": "2017",
@@ -1136,13 +1189,6 @@
 "img": "solarsystem/images/Despina.jpg",
 "desc": ""
 }],
-"18.10": [{
-"year": "1847",
-"slug": "Открыт астероид Флора",
-"tags": "astro discovery solsys",
-"img": "solarsystem/images/Flora.jpg",
-"desc": ""
-}],
 "08.12": [{
 "year": "1845",
 "slug": "Открыт астероид Астрея",
@@ -1333,13 +1379,6 @@
 "slug": "Открыт астероид 132524 APL",
 "tags": "astro discovery solsys",
 "img": "solarsystem/images/APL.jpg",
-"desc": ""
-}],
-"14.09": [{
-"year": "1951",
-"slug": "Открыт околоземный астероид Географ",
-"tags": "astro discovery solsys",
-"img": "solarsystem/images/Geographos.jpg",
 "desc": ""
 }],
 "27.05": [{

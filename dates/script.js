@@ -128,7 +128,7 @@ function makeArray() {
   const elems = document.getElementsByClassName('date');
   for (let i = 0; i < elems.length; i += 1) {
     let slug = elems[i].parentElement.querySelector('.slug').innerText;
-    let tags = elems[i].parentElement.className.substring(5,);
+    let tags = elems[i].parentElement.className;
     let date = elems[i].innerText;
     let desc = elems[i].parentElement.querySelector('.desc');
     let descContent = desc.innerText.trim();
