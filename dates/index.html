@@ -8,14 +8,15 @@
 <link rel="stylesheet" href="style.css">
 <script src="script.js"></script>
 </head>
-<body>
+<body onload="makeArray()">
 <div class="wrapper">
 <div class="column left">
 <section id="head">
 <h1>Этапы большого пути: тематические презентации</h1>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Sozdatelyam-sputnika.jpg/480px-Sozdatelyam-sputnika.jpg" alt=""><br>
-<button onclick="slidesByTag('first')">Покорение космоса</button> <button onclick="showByTag('first')">Покорение космоса (лента)</button><br>
-<button onclick="slidesByTag('photo')">Знаменитые фото</button> <button onclick="showByTag('photo')">Знаменитые фото (лента)</button><br><br>
+<button onclick="slidesByTag('first')">Покорение космоса (слайды)</button> <button onclick="showByTag('first')">Покорение космоса</button><br>
+<button onclick="slidesByTag('photo')">Знаменитые фото (слайды)</button> <button onclick="showByTag('photo')">Знаменитые фото</button><br>
+<button onclick="showByTag('animals')">Животные в космосе</button><br><br>
 Теги: <button onclick="showByTag('АМС')">Автоматическая межпланетная станция</button><br>
 <button onclick="showByTag('moon')">Луна</button> <button onclick="showByTag('venus')">Венера</button>
 <button onclick="showByTag('mars')">Марс</button> <button onclick="showByTag('jupiter')">Юпитер</button>
@@ -184,6 +185,13 @@
 <div class="desc"><span class="ago"></span> назад получен первый свет на Большом Канарском телескопе – The Gran Telescopio Canarias. С момента постройки GTC является крупнейшим телескопом в мире, но уступает по площади зеркал комплексу Большого бинокулярного телескопа.</div>
 </div>
 
+<div class="astro cosmo telescope observatory">
+<div class="slug">Запуск космической обсерватории NuSTAR</div>
+<div class="date">13.06.2012</div>
+<div class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/NuStar_1.jpg/1024px-NuStar_1.jpg" alt=""></div>
+<div class="desc"><span class="ago"></span> назад запущена космическая рентгеновская обсерватория НАСА Nuclear Spectroscopic Telescope Array (NuSTAR).</div>
+</div>
+
 <div class="astro meteorite RU">
 <div class="slug">Падение Челябинского метеорита</div>
 <div class="date">15.02.2013</div>
@@ -198,6 +206,13 @@
 <div class="slug">Получена первая фотография Земли из космоса</div>
 <div class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/First_photo_from_space.jpg/759px-First_photo_from_space.jpg" alt=""></div>
 <div class="desc"><span class="ago"></span> назад была получена первая фотография Земли из космоса. Модифицированная ракета V-2 №13 была запущена с территории Нью-Мексико, США и достигла высоты в 105 км. С 1946 по 1950 было камерами, установленными на V-2, сделано более 1000 фотографий с высот до 160 км.</div>
+</div>
+
+<div class="cosmo launch first animals US">
+<div class="date">14.06.1949</div>
+<div class="slug">В космосе побывала макак-резус Альберт II</div>
+<div class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Albert_II_V2_launch.jpg" alt=""></div>
+<div class="desc"><span class="ago"></span> назад была запущена рокета V-2 №47 с макаком-резусом на борту. Достигнув высоты в 134 км, Альберт второй стал первой обезьяной, побывавшей в космосе.</div>
 </div>
 
 <div class="cosmo launch sat first">
@@ -285,6 +300,13 @@
 <div class="desc"><span class="ago"></span> назад была запущена АМС «Венера-1», впервые пролетевшая на близком расстоянии от Венеры – 100&nbsp;000 км.</div>
 </div>
 
+<div class="cosmo launch animals first France">
+<div class="date">22.02.1961</div>
+<div class="slug">Франция стала третьей страной, запустившей животное в космос</div>
+<div class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Fus%C3%A9e_VERONIQUE_%288727147868%29.jpg/386px-Fus%C3%A9e_VERONIQUE_%288727147868%29.jpg" alt=""></div>
+<div class="desc"><span class="ago"></span> назад Франция запустила крысу Гектора на ракете Véronique, став третьей строной, запускавшую животных в космос.</div>
+</div>
+
 <div class="cosmo launch ПК first">
 <div class="date">09.03.1961</div>
 <div class="slug">Выведен на орбиту Четвертый космический корабль-спутник</div>
@@ -318,6 +340,13 @@
 <div class="slug">Маринер-2 стал первой межпланетной миссией</div>
 <div class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mariner_2.jpg/957px-Mariner_2.jpg" alt=""></div>
 <div class="desc"><span class="ago"></span> назад аппарат NASA Маринер-2 стал первой межпланетной миссией, пролетев на расстоянии 34&nbsp;833 км от поверхности Венеры.</div>
+</div>
+
+<div class="cosmo animals first France">
+<div class="date">18.10.1963</div>
+<div class="slug">Франция запустила в космос кошку</div>
+<div class="img"><img src="https://upload.wikimedia.org/wikipedia/en/e/e0/Felicette%2C_spacecat.jpg" alt=""></div>
+<div class="desc"><span class="ago"></span> назад с космодрома Хаммагир в Алжире на геофизической ракете Véronique была запущена кошка Фелисетт. Ракета достигла высоты 152 км. Полет длился 13 минут, из которых 5 минут Фелисетт находилась в невесомости.</div>
 </div>
 
 <div class="cosmo launch ПК first">
@@ -369,7 +398,7 @@
 <div class="desc"><span class="ago"></span> назад советская АМС «Луна-9» впервые в истории осуществила мягкую посадку на поверхность Луны и передала первую лунную фотопанораму.</div>
 </div>
 
-<div class="cosmo sat dogs medbio">
+<div class="cosmo sat animals medbio">
 <div class="date">22.02.1966</div>
 <div class="slug">Запущен КА «Космос 110» с собаками Ветерок и Уголек на борту</div>
 <div class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Rymdhundarna_Veterok_och_Ugoljok_%2816493301588%29.jpg/610px-Rymdhundarna_Veterok_och_Ugoljok_%2816493301588%29.jpg" alt=""></div>
@@ -381,6 +410,13 @@
 <div class="slug">АМС «Венера-3» впервые в истории достигла поверхности другой планеты</div>
 <div class="img"><img src="https://avatars.mds.yandex.net/get-zen_doc/225901/pub_5c7a2ab22e9e2e00b37a9fb1_5c7a4fae0a5f4400b3a2f832/scale_2400" alt=""></div>
 <div class="desc"><span class="ago"></span> назад АМС «Венера-3» впервые в истории достигла поверхности другой планеты.</div>
+</div>
+
+<div class="cosmo АМС animals first">
+<div class="date">14.09.1968</div>
+<div class="slug">Запуск АМС «Зонд-5»</div>
+<div class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Soviet_Union_1969_CPA_3733_stamp_%28Zond_5%29.png/640px-The_Soviet_Union_1969_CPA_3733_stamp_%28Zond_5%29.png" alt=""></div>
+<div class="desc"><span class="ago"></span> назад, 15 сентября в 00:42 по московскому времени, запущена АМС «Зонд-5». На борту находились две среднеазиатские черепахи, мухи дрозофилы, мучные черви, бактерии (культура кишечной палочки) и растения. Животные и растения успешно пережили полет. Впервые совершен облёт Луны с возвращением на Землю, а также впервые в советской космической программе был выполнен успешный вход спускаемого аппарата в атмосферу Земли со второй космической скоростью.</div>
 </div>
 
 <div class="cosmo moon ПК Apollo photo US">
@@ -714,6 +750,13 @@
 <div class="desc"><span class="ago"></span> назад, 21 декабря <a href="https://twitter.com/SpaceX/status/679114269485436928" target="_blank" rel="noopener noreferrer">около 17-40 по местному времени</a>, была произведена вертикальная посадка первой ступени ракеты-носителя Falcon 9. В августе 2016 ступень <a href="https://spaceflightnow.com/2016/08/20/spacex-puts-historic-flown-rocket-on-permanent-display/" target="_blank" rel="noopener noreferrer">была установлена</a> на территории штаб-квартиры SpaceX в Хоторне, штат Калифорния.</div>
 </div>
 
+<div class="cosmo launch asteroid АМС NASA US">
+<div class="date">08.09.2016</div>
+<div class="slug">Запуск АМС OSIRIS-REx к астероиду Бенну</div>
+<div class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/OSIRIS-REx_artist_rendetion.jpg/576px-OSIRIS-REx_artist_rendetion.jpg" alt=""></div>
+<div class="desc"><span class="ago"></span> назад запущена АМС Origins Spectral Interpretation Resource Identification Security Regolith Explorer (OSIRIS-REx). Миссия – доставка образцов грунта с астероида (101955) Бенну.</div>
+</div>
+
 <div class="cosmo launch science cubesat stars ASTERIA">
 <div class="date">14.08.2017</div>
 <div class="slug">Запущен космический телескоп класса 6U CubeSat ASTERIA</div>
@@ -768,11 +811,11 @@
 </ul>
 </div>
 <div class="blocks">
-Тег <input type="text" id="tag" size="9" maxlength="18" value="" placeholder="venus" style="width: 4rem"><br>
+Тег <input type="text" id="tag" size="9" maxlength="18" value="" placeholder="shuttle" style="width: 4rem"><br>
 <button onclick="showByTag()">Лента</button>
 <button onclick="slidesByTag()">Слайд-шоу</button>
 <br>
-astro, cosmo, first, photo, moon и&nbsp;т.д.<br><br>
+astro, cosmo, launch и&nbsp;т.д.<br><br>
 Пауза слайд-шоу <input type="text" id="tmout" size="4" maxlength="5" value="5000" style="width: 2.2rem"> мс<br>
 <ul>
 <li><b><a href="it/">События из мира IT</a></b></li>
