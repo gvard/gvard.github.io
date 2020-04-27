@@ -7,13 +7,20 @@
   <link rel="stylesheet" href="../../compact.css">
 </head>
 <body>
+<nav class="menu">
+<ul>
+  <li><a href="../">Web-дизайн</a></li>
+  <li><a href="#inherit">Наследование</a></li>
+</ul>
+</nav>
+
 <h1>Объектная модель документа</h1>
 <ul>
   <li>Теги HTML-документа выстраиваются в дерево зависимостей – <b><a href="https://ru.wikipedia.org/wiki/Document_Object_Model" target="_blank" rel="noopener noreferrer">Document Object Model</a>, DOM</b>. К положению элемента в DOM привязываются <i>стили</i> (CSS) и <i>скрипты</i> (JavaScript).</li>
 </ul>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/464px-DOM-model.svg.png" alt="">
 
-<h2>Наследование</h2>
+<h2 id="inherit">Наследование</h2>
 <p>У элементов есть связи внутри объектной модели DOM.</p>
 <ul>
   <li>Тег, внутри которого находятся другие тэги, для них <b>предок</b>, а они – <b>потомки</b>.</li>
