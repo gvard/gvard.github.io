@@ -20,6 +20,7 @@
   <li><a href="#gui">Графический интерфейс</a></li>
   <li><a href="#keys">Управляем с клавиатуры</a></li>
   <li><a href="#merge">Все вместе</a></li>
+  <li><a href="#game">Пишем игру</a></li>
 </ul>
 </nav>
 <h2>&laquo;Черепашья графика&raquo; при помощи turtle. Рисование при помощи алгоритма.</h2>
@@ -889,15 +890,15 @@ circ.color("orange")
 
 sq = turtle.Turtle()
 prepare_fig(sq, -20, 70)
+draw_square(sq, 'red', 60)
 sq2 = turtle.Turtle()
 prepare_fig(sq2, -60, 90)
+draw_square(sq2, 'green', 40)
 
 moves = 0
 GAME_OVER_MSG = 'Game over!\nСделано шагов: '
 WIN_MSG = 'Победа!\nСделано шагов: '
 STEP = 10
-draw_square(sq, 'red', 60)
-draw_square(sq2, 'green', 40)
 
 turtle.listen()
 turtle.onkeypress(lambda: movey(STEP), 'Up')
@@ -905,7 +906,7 @@ turtle.onkeypress(lambda: movey(-STEP), 'Down')
 turtle.onkeypress(lambda: movex(STEP), 'Right')
 turtle.onkeypress(lambda: movex(-STEP), 'Left')
 turtle.done()</code></pre>
-
+<p>Всего 61 строка кода!</p>
 
 <h2>Ссылки</h2>
 <ul>
