@@ -90,7 +90,7 @@ BODY = f"""<body onload="mkHeader()">
     <li>Побывали в космосе и&nbsp;они астронавты: <span class="yellow">{FAI_NUM}</span></li>
     <li>Побывали в космосе, на высоте более 80 467&nbsp;м: <span class="yellow">{USAF_NUM}</span></li>
     <li>Люди провели в космосе свыше <span class="yellow">{MANYR_NUM}</span> человеко-лет</li>
-    <li>Сейчас в космосе <span class="yellow">{len(ASTROS_LST)}</span> космонавтов</li>
+    <li>Сейчас в космосе <span class="yellow">{len(ASTROS_LST)}</span> космонавта</li>
   </ul>
   </div>
   <div id="footer">
