@@ -99,6 +99,22 @@ function loadUsers(gender, num) {
   const url = RANDUSR_URL + '?results=' + num + '&gender=' + gender + '&email=emeline.leclercq@example.com';
   loadReq(url, appendUsers);
 }
+function getSummoner(res, q) {
+  let image = document.createElement('img');
+  const ver = "10.9.1";
+  image.src = `http://ddragon.leagueoflegends.com/cdn/${ver}/img/profileicon/${res.profileIconId}.png`;
+  q.appendChild(image);
+  const reqDate = new Date(res.revisionDate);
+  let info = document.createElement('span');
+  info.innerHTML = `Имя: ${res.name}; Уровень: ${res.summonerLevel}; revision Date: ${reqDate}`;
+  q.appendChild(info);
+}
+function requestSummoner() {
+  const sumName = document.getElementById("summonerName").value;
+  const APIKEY = document.getElementById("APIKey").value;
+  let URL = CORS_ANYWHERE_URL + `https://ru.api.riotgames.com/lol/summoner/v4/summoners/by-name/${sumName}?api_key=${APIKEY}`;
+  loadReq(URL, getSummoner)
+}
 function mkReq(reqName) {
   const reqNames = {
     TZ: {URL: TZ_URL, func: showTime},
