@@ -284,6 +284,12 @@
 "tags": "astro discovery solsys",
 "img": "solarsystem/images/Ariel.jpg",
 "desc": ""
+}, {
+"year": "2004",
+"slug": "Открыт спутник Сатурна Полидевк",
+"tags": "astro discovery solsys",
+"img": "solarsystem/images/Polydeuces.jpg",
+"desc": ""
 }],
 "14.06": [{
 "year": "1949",
@@ -1366,12 +1372,6 @@
 "slug": "Открыт спутник Сатурна Мефона",
 "tags": "astro discovery solsys",
 "img": "solarsystem/images/Methone.jpg",
-"desc": ""
-}, {
-"year": "2004",
-"slug": "Открыт спутник Сатурна Полидевк",
-"tags": "astro discovery solsys",
-"img": "solarsystem/images/Polydeuces.jpg",
 "desc": ""
 }],
 "09.05": [{
