@@ -7,7 +7,7 @@ import urllib.request
 from beautifulsoup_supply import TAIL, mk_head, get_soup
 
 DEBUG = False
-HEAD = mk_head("Космонавтика: статистика", script="") + "<body>\n"
+HEAD = mk_head("Космонавтика: статистика", style="", script="") + "<body>\n"
 N2YO_URL = "https://www.n2yo.com/"
 SPACEFLIGHT_URL = "https://www.worldspaceflight.com/bios/stats.php"
 SPACEFLIGHT1_URL = "https://www.worldspaceflight.com/bios/stats1.php"
