@@ -126,7 +126,7 @@ snstats_txt += f"""</ul>
 <li><a href="https://en.wikipedia.org/wiki/SN_1987A" target="_blank" rel="noopener noreferrer">SN 1987A</a> в Большом Магеллановом Облаке, открыта в ночь 23&ndash;24.02.1987, блеск в пике <b>2.9</b> (10.05.1987).
   <a href="http://rochesterastronomy.com/snimages/sn1987a.html" target="_blank" rel="noopener noreferrer">Страница на rochesterastronomy.com/snimages/</a></li>
 <li><a href="https://en.wikipedia.org/wiki/SN_2011fe" target="_blank" rel="noopener noreferrer">SN 2011fe</a>, в M101, открыта 24.08.2011 по снимкам 22 и 23 августа 2011. Блеск в пике <b>9.9</b> (13.09.2011).</li>
-<li><a href="http://www.rochesterastronomy.org/snimages/lbvlist.html" target="_blank" rel="noopener noreferrer">List of supernova impostors</a> &ndash; LBV's (Luminous Blue Variables), <a href="https://en.wikipedia.org/wiki/Luminous_blue_variable">Luminous blue variable</a> wiki page.</li>
+<li><a href="http://www.rochesterastronomy.com/snimages/lbvlist.html" target="_blank" rel="noopener noreferrer">List of supernova impostors</a> &ndash; LBV's (Luminous Blue Variables), <a href="https://en.wikipedia.org/wiki/Luminous_blue_variable">Luminous blue variable</a> wiki page.</li>
 <li><a href="https://sne.space/statistics/" target="_blank" rel="noopener noreferrer">The Open Supernova Catalog</a>.
   The catalog includes metadata for 58,901 supernovae with 595,032 individual photometric detections and 22,472 individual spectra.<br>
   372 <a href="https://sne.space/statistics/host-galaxies/" target="_blank" rel="noopener noreferrer">SNe in Milky Way</a>, 322 SNe in M83, 214 SNe in M33, 162 SNe in M31, 154 SNe in NGC 2403, 103 SNe in NGC 4214, 81 SNe in NGC 4449, 78 SNe in NGC 4564.</li>
