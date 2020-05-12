@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+  <loc>https://gvard.github.io/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/solarsystem/stats/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/cosm/stats/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/solarsystem/stats.html</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/cosm/stats.html</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/stars/stats.html</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/dev/request/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/dates/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/solarsystem/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/py/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/py/api/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/py/turtle/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/check/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/tools/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/html/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/css/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/media/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/over/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/php/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/dev/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/weather/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/weather-frames/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/cosm/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/stars/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/galaxies/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/me/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/map/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/dates/it/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/dates/about/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/collections/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/exoplanets/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/clusters/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/programming/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/py/demograph/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/py/emoji/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/py/oscar/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/py/text/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/py/parse/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/py/task/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/text/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/img/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/cssorder/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/files/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/task/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/meow/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/meow/page.html</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/news1/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/news/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/site/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/dev/game/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/landing/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/news2/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/present/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/fonts/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/structure.html</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/dev/static/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/dev/bootstrap/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/dev/less/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/dom/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/site/me.html</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/php/txt/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/php/img/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/dev/check/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/dev/db/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/dev/mongo/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/programming/kiss/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/py/data/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/py/pygame/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/py/advanced/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/py/lang/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/list/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/site/games/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/site/quiz/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/dev/node/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/dev/react/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/cad/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/moon/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/sun/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/stars/cat/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/nsbh/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/cosm/launches/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/dates/music/</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/site/gallery.html</loc>
+  <lastmod>2020-05-12T22:17:26+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+</urlset>
