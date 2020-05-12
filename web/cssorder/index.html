@@ -12,14 +12,14 @@
 <body>
 <h1>Порядок применения правил CSS</h1>
 <ol>
-  <li>Для корректной работы с указанными правилами CSS в документе должна быть декларация <a href="../html/index.html#">DOCTYPE</a> современной версии HTML. Иначе страница <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Common_CSS_Questions#Why_doesn't_my_CSS_which_is_valid_render_correctly" target="_blank" rel="noopener noreferrer">будет отображаться</a> в <i>индивидуальном</i> режиме (backwards-compatibility mode).
+  <li>Для корректной работы с указанными правилами CSS в документе должна быть декларация <a href="../html/#tags">DOCTYPE</a> современной версии HTML. Иначе страница <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Common_CSS_Questions#Why_doesn't_my_CSS_which_is_valid_render_correctly" target="_blank" rel="noopener noreferrer">будет отображаться</a> в <i>индивидуальном</i> режиме (backwards-compatibility mode).
     <b>Всегда пиши в первой строке HTML-файла:</b>
     <pre><code>&lt;!DOCTYPE html></code></pre></li>
   <li>Внешние листы стилей, подключаемые в элементе link:
     <pre><code>&lt;link rel="stylesheet" href="style.css"></code></pre>
     сервер должен передавать с <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_MIME-%D1%82%D0%B8%D0%BF%D0%BE%D0%B2#text" target="_blank" rel="noopener noreferrer">MIME-типом</a> <code>text/css</code> (всегда верно для правильно настроенного хостинга)</li>
   <li><b><a href="https://developer.mozilla.org/ru/docs/Web/CSS/inheritance" target="_blank" rel="noopener noreferrer">Наследование</a></b> контролирует, что происходит, если значение свойства элемента не определено.</li>
-  <li>Правило, примененное к <a href="../css/index.html#inheritance">потомку</a>, перезаписывает стиль предка. «<span style="font-weight: bold; color: red">Роскосмос</span>» будет красным и полужирным:
+  <li>Правило, примененное к <a href="../css/#inheritance">потомку</a>, перезаписывает стиль предка. «<span style="font-weight: bold; color: red">Роскосмос</span>» будет красным и полужирным:
 <pre><code>.news { color: black; }
 .name { font-weight: bold; color: red; }
 
