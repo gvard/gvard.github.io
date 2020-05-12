@@ -1,0 +1,8 @@
+User-agent: Googlebot
+Disallow: /weather-frames/
+User-agent: Yandex
+Disallow: /weather-frames/
+User-agent: *
+Allow: /
+
+Sitemap: https://gvard.github.io/sitemap.xml
