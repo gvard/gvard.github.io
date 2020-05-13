@@ -10,7 +10,10 @@ h1 {
 p, li {
   font-size: 0.95rem;
 }
-button {font-size: 0.8rem;}
+button {
+  font-size: 0.8rem;
+  padding: 0 2px;
+}
 img {
   max-width: 100%;
   height: auto;
@@ -38,7 +41,7 @@ img {
   width: calc(100% - 240px);
 }
 .column p {margin: 0.5em 0 0.5em 0;}
-@media (max-width: 480px) {
+@media (max-width: 795px) {
   .right {
     width: 100%;
     margin-top: 5px;
