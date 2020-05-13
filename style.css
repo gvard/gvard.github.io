@@ -3,12 +3,20 @@
   padding: 0;
 }
 body {background-color: #3e3e3e;}
+h1 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+p, li {
+  font-size: 0.95rem;
+}
+button {font-size: 0.8rem;}
 img {
   max-width: 100%;
   height: auto;
 }
 .wrapper {
-  max-width: 1230px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 5px;
   box-sizing: border-box;
@@ -23,11 +31,10 @@ img {
   box-sizing: border-box;
   vertical-align: top;
 }
-.right {
-  width: 220px;
-}
+.right {width: 220px;}
 .left {
   margin-right: 10px;
+  padding-left: 9px;
   width: calc(100% - 240px);
 }
 .column p {margin: 0.5em 0 0.5em 0;}
