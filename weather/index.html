@@ -4,15 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Космическая погода: страница с изображениями на данный момент">
   <title>Монитор космической погоды</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <!-- <div class="mySlides">
-  <iframe src="https://voshod-solnca.ru/widget.php?view=true&newdb=true&time=3&days=7&text=054871" scrolling="no" width="400" height="300" frameborder="0"></iframe>
+<iframe src="https://voshod-solnca.ru/widget.php?view=true&newdb=true&time=3&days=7&text=054871" scrolling="no" width="400" height="300" frameborder="0"></iframe>
 </div> -->
-
 <div class="wrap">
 
 <div class="mySlides">
@@ -83,12 +82,12 @@ function carousel() {
   var i;
   var x = document.getElementsByClassName("mySlides");
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none"; 
+    x[i].style.display = "none";
   }
   slideIndex++;
-  if (slideIndex > x.length) {slideIndex = 1} 
-  x[slideIndex-1].style.display = "block"; 
-  setTimeout(carousel, 10000); 
+  if (slideIndex > x.length) {slideIndex = 1}
+  x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 10000);
 }
 </script>
 
