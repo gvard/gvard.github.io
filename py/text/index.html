@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Python: анализ текста. Учебные материалы, примеры программ, подборка ссылок.">
   <link rel="icon" type="image/png" href="favicon.png">
   <title>Анализ текста на python</title>
   <link rel="stylesheet" href="../../github.css">
@@ -96,7 +97,7 @@ for word in wordsfreq:
 print(dct)</code></pre>
 
 <h2>Медианное среднее</h2>
-<pre><code>import numpy as np
+<pre><code>import statistics as st
 
 TEXT = """Здесь текст для анализа.
 Add text here.
@@ -106,8 +107,8 @@ word_lens = []
 for word in TEXT.split():
     word_lens.append(len(word))
 
-median_val = np.median(word_lens)
-mean_val = np.mean(word_lens)
+median_val = st.median(word_lens)
+mean_val = st.mean(word_lens)
 print("Медианное среднее:", median_val, "Среднее:", mean_val, "Разница:", median_val - mean_val)
 </code></pre>
 
