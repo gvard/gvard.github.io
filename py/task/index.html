@@ -9,11 +9,35 @@
 <link rel="stylesheet" href="../../compact.css">
 <link rel="stylesheet" href="../../github.css">
 <script src="../highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>hljs.initHighlightingOnLoad();
+function show(showId) {document.getElementById(showId).style.display = 'block';}</script>
 <style>.task {margin: 1rem 0}</style>
 </head>
 <body>
 <h1>Задачи с решениями или подсказками</h1>
+<h2 id="strings">Строки</h2>
+<pre><code>s = "In the hole in the ground there lived a hobbit"</code></pre>
+
+<p>Дана строка. Разрежьте ее на две равные части (если длина строки &ndash; четная, а если длина строки нечетная, то длина первой части должна быть на один символ больше).
+Переставьте эти две части местами, результат запишите в новую строку и выведите на экран.</p>
+<button type="button" onclick="show('str1')">Подсказка</button>
+<blockquote hidden id="str1">Вычислите с помощью функции len() длину строки и разделите ее пополам при помощи оператора целочисленного деления.</blockquote>
+
+<p>Дана строка, состоящая ровно из двух слов, разделенных пробелом. Переставьте эти слова местами. Результат запишите в строку и выведите получившуюся строку.</p>
+<button type="button" onclick="show('str2')">Подсказка</button><br>
+<blockquote hidden id="str2">Используйте метод строки <i>split</i>.</blockquote>
+<a href="https://informatics.mccme.ru/mod/statements/view3.php?chapterid=3741" target="_blank" rel="noopener noreferrer" id="3741">Удаление фрагмента</a>
+
+<p>Дана строка, в которой буква h встречается минимум два раза. Удалите из этой строки первое и последнее вхождение буквы h, а также все символы, находящиеся между ними.<br>
+<button type="button" onclick="show('str3')">Подсказка</button>
+<blockquote hidden id="str3">Воспользуйтесь методом строк <i>find</i> для того, чтобы узнать индекс первого вхождения символа.<br>
+Для индекса последнего вхождения символа переверните строку. Используйте полученные индексы для получения срезов. Не забывайте об отрицательных значениях индексов.</blockquote>
+<a href="https://informatics.mccme.ru/mod/statements/view3.php?chapterid=3742" target="_blank" rel="noopener noreferrer" id="3742">Обращение фрагмента</a>
+
+<p>Дана строка, в которой буква h встречается как минимум два раза. Разверните последовательность символов, заключенную между первым и последнием появлением буквы h, в противоположном порядке.</p>
+<button type="button" onclick="show('str4')">Подсказка</button>
+<blockquote hidden id="str4">Используйте срез с отрицательным шагом.</blockquote>
+
 <h2 id="data">Работа с данными: списки и словари</h2>
 <div class="task">
 <b>Объединить списки в один список:</b>
@@ -21,7 +45,8 @@
 b = [30, 40]
 c = [50, 60]
 </code></pre>
-Подсказка: сложите переменные, содержащие списки.</div>
+<button type="button" onclick="show('lst1')">Подсказка</button>
+<blockquote hidden id="lst1">Сложите переменные, содержащие списки.</blockquote></div>
 
 <div class="task">
 <b>Объединить словари в один словарь:</b>
@@ -29,8 +54,10 @@ c = [50, 60]
 dic2 = {3: 30, 4: 40}
 dic3 = {5: 50, 6: 60}
 </code></pre>
-Подсказка: воспользуйтесь методом словаря <i>update</i> и добавьте к одному словарю содержимое всех остальных:
+<button type="button" onclick="show('dct1')">Подсказка</button>
+<blockquote hidden id="dct1">Воспользуйтесь методом словаря <i>update</i> и добавьте к одному словарю содержимое всех остальных:
 <pre><code>d1.update(d2)</code></pre>
+</blockquote>
 </div>
 <hr>
 
@@ -49,11 +76,11 @@ dic3 = {5: 50, 6: 60}
 Рассчитать, в каком году нужно положить в банк 5 рублей под 5% годовых, чтобы к 2020 году стать миллионером.
 </p>
 <hr>
+<a href="https://informatics.mccme.ru/mod/statements/view3.php?chapterid=3837" target="_blank" rel="noopener noreferrer" id="3837">Шеренга</a>
 <p>Петя перешёл в другую школу. На уроке физкультуры ему понадобилось определить
 своё место в строю. Помогите ему это сделать.<br>
 <p><b>Входные данные</b>. Программа получает на вход невозрастающую последовательность натуральных чисел, означающих рост каждого человека в строю. После этого вводится число X – рост Пети. Все числа во входных данных натуральные и не превышают 200.</p>
 <p><b>Выходные данные</b>. Выведите номер, под которым Петя должен встать в строй. Если в строю есть люди с одинаковым ростом, таким же, как у Пети, то он должен встать после них.</p>
-<!-- https://informatics.mccme.ru/mod/statements/view3.php?id=4163&chapterid=3837 -->
 
 <h2>Циклы</h2>
 <ul>
@@ -63,7 +90,9 @@ dic3 = {5: 50, 6: 60}
 <pre><code>a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 # b = [a for a in range(56)]
-c = []
+</code></pre>
+Решение:
+<pre><code>c = []
 for number in a:
     if number in b and number not in c:
         c.append(number)
@@ -121,7 +150,7 @@ for color in a:
 <hr>
 
 Программа сближающихся случайных чисел<br>
-Установка matplotlib в командном интерпретаторе cmd: pip install matplotlib
+Установка matplotlib в командном интерпретаторе: pip install matplotlib
 <pre><code>from random import random, randrange
 from matplotlib import pyplot as plt
 
@@ -167,8 +196,10 @@ print(kopilka)
 <h3>Кольцевая дорога</h3>
 <p>Длина Московской кольцевой автомобильной дороги — 109 километров. Байкер Вася стартует с нулевого километра МКАД и едет со скоростью v километров в час.
 На какой отметке он остановится через t часов?</p>
-<p>Подсказка: используйте целочисленное деление.</p>
-<pre><code>MKAD = 108.9
+<button type="button" onclick="show('road')">Подсказка</button>
+<blockquote hidden id="road">Используйте целочисленное деление.</blockquote>
+<button type="button" onclick="show('road2')">Решение</button>
+<pre id="road2" hidden><code>MKAD = 108.9
 KAD = 142.15
 road = KAD
 v = float(input("v, км/ч: "))
@@ -189,7 +220,8 @@ print("Номер километра:", int(g))
  /  V  \   /  V  \   /  V  \
 /(  _  )\ /(  _  )\ /(  _  )\
   ^^ ^^     ^^ ^^     ^^ ^^   </code></pre>
-Подсказка: размножайте пингвина по частям.
+<button type="button" onclick="show('pinguins')">Подсказка</button>
+<blockquote hidden id="pinguins">Размножайте пингвина по частям.</blockquote>
 
 <h3>Килрой</h3>
 <p>Напишите программу, которая сажает на линию от 1 до 6 <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B4%D0%B5%D1%81%D1%8C_%D0%B1%D1%8B%D0%BB_%D0%9A%D0%B8%D0%BB%D1%80%D0%BE%D0%B9">Килроев</a>.
@@ -197,7 +229,9 @@ print("Номер километра:", int(g))
 <pre><code>                                                  ,,,
                                                  (. .)
 ----------------------------------------------ooO-(_)-Ooo---</code></pre>
-Подсказка: размножайте Килроя построчно; из длины линии вычитайте суммарную длину Килроев.
+
+<button type="button" onclick="show('kilroy')">Подсказка</button>
+<blockquote hidden id="kilroy">Размножайте Килроя построчно; из длины линии вычитайте суммарную длину Килроев.</blockquote>
 <!-- k1 = "    ,,,     "
 k2 = "   (. .)    "
 k3 = "ooO-(_)-Ooo-"
@@ -213,6 +247,7 @@ print("-"*(lenl-a*lenk) + k3*a) -->
 <h2>Ссылки</h2>
 <ul>
   <li><a href="https://thecode.media/hr-code/" target="_blank" rel="noopener noreferrer">Задача про безумного рекрутера</a></li>
+  <li><a href="https://informatics.mccme.ru/course/view.php?id=156" target="_blank" rel="noopener noreferrer">Программирование на python</a></li>
 </ul>
 </body>
 </html>

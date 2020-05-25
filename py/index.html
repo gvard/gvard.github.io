@@ -10,7 +10,8 @@
 <link rel="stylesheet" href="../github.css">
 <link rel="stylesheet" href="../compact.css">
 <script src="highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>hljs.initHighlightingOnLoad();
+function show(showId) {document.getElementById(showId).style.display = 'block';}</script>
 <script src="script.js"></script>
 </head>
 <body>
@@ -118,19 +119,33 @@ async      elif       if         or         yield</code></pre>
 <p><a href="task/">Задачи с решениями или подсказками</a>:</p>
 <ul>
   <li><a href="task/#data">Работа с данными: списки и словари</a></li>
+  <li><a href="task/#strings">Строки</a></li>
 </ul>
 
-<h3>Строки</h3>
+<h2 id="strings">Строки</h2>
+<pre><code>s = "In the hole in the ground there lived a hobbit"</code></pre>
+
 <p>Дана строка. Разрежьте ее на две равные части (если длина строки &ndash; четная, а если длина строки нечетная, то длина первой части должна быть на один символ больше).
 Переставьте эти две части местами, результат запишите в новую строку и выведите на экран.</p>
+<button type="button" onclick="show('str1')">Подсказка</button>
+<blockquote hidden id="str1">Вычислите с помощью функции len() длину строки и разделите ее пополам при помощи оператора целочисленного деления.</blockquote>
+
 <p>Дана строка, состоящая ровно из двух слов, разделенных пробелом. Переставьте эти слова местами. Результат запишите в строку и выведите получившуюся строку.</p>
-<p>Дана строка, в которой буква h встречается минимум два раза. Удалите из этой
-строки первое и последнее вхождение буквы h, а также все символы, находящиеся между ними.<br>
-<pre><code>s = "In the hole in the ground there lived a hobbit"</code></pre>
-<p>Дана строка, в которой буква h встречается как минимум два раза. Разверните последовательность символов, заключенную между первым и последнием появлением буквы h, в противоположном порядке.
-<!-- https://informatics.mccme.ru/mod/statements/view3.php?chapterid=3742 -->
-</p>
-<hr>
+<button type="button" onclick="show('str2')">Подсказка</button><br>
+<blockquote hidden id="str2">Используйте метод строки <i>split</i>.</blockquote>
+<a href="https://informatics.mccme.ru/mod/statements/view3.php?chapterid=3741" target="_blank" rel="noopener noreferrer" id="3741">Удаление фрагмента</a>
+
+<p>Дана строка, в которой буква h встречается минимум два раза. Удалите из этой строки первое и последнее вхождение буквы h, а также все символы, находящиеся между ними.<br>
+<button type="button" onclick="show('str3')">Подсказка</button>
+<blockquote hidden id="str3">Воспользуйтесь методом строк <i>find</i> для того, чтобы узнать индекс первого вхождения символа.<br>
+Для индекса последнего вхождения символа переверните строку. Используйте полученные индексы для получения срезов. Не забывайте об отрицательных значениях индексов.</blockquote>
+<a href="https://informatics.mccme.ru/mod/statements/view3.php?chapterid=3742" target="_blank" rel="noopener noreferrer" id="3742">Обращение фрагмента</a>
+
+<p>Дана строка, в которой буква h встречается как минимум два раза. Разверните последовательность символов, заключенную между первым и последнием появлением буквы h, в противоположном порядке.</p>
+<button type="button" onclick="show('str4')">Подсказка</button><br>
+<blockquote hidden id="str4">Используйте срез с отрицательным шагом.</blockquote>
+
+<br><hr>
 <h3>Улитка на склоне</h3>
 <blockquote><pre>Тихо, тихо ползи,
 Улитка, по склону Фудзи
