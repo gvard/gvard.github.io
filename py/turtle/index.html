@@ -105,7 +105,7 @@ turtle.exitonclick()
 </ol>
 <h2>Решения</h2>
 <button type="button" onclick="show('figures1')">Квадрат и звезда</button>
-<pre id="figures1" style="display:none"><code>import turtle
+<pre id="figures1" hidden><code>import turtle
 square = turtle.Turtle()
 for i in range(4):
     square.forward(100)
@@ -119,7 +119,7 @@ for i in range(5):
 turtle.exitonclick()
 </code></pre>
 <button type="button" onclick="show('figures2')">8-конечная звезда</button>
-<pre id="figures2" style="display:none"><code>import turtle
+<pre id="figures2" hidden><code>import turtle
 star = turtle.Turtle()
 star.hideturtle()
 for i in range(8):
@@ -128,7 +128,7 @@ for i in range(8):
 turtle.exitonclick()
 </code></pre>
 <button type="button" onclick="show('figures3')">9-конечная звезда</button>
-<pre id="figures3" style="display:none"><code>import turtle
+<pre id="figures3" hidden><code>import turtle
 nineang = turtle.Turtle()
 for i in range(9):
     nineang.forward(100)
@@ -246,7 +246,7 @@ turtle.exitonclick()
 </ul>
 <h2>Решения</h2>
 <button type="button" onclick="show('manyfigures')">Несколько закрашенных фигур</button>
-<ul id="manyfigures" style="display:none">
+<ul id="manyfigures" hidden>
   <li>У нас есть два варианта нарисовать несколько фигур: используя отдельные классы и не используя их. Рассмотрим оба варианта.</li>
   <li>Без классов:
     <pre><code>import turtle
