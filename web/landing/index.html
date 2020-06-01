@@ -7,22 +7,20 @@
   <meta name="description" content="Web-дизайн: пример страницы с несколькими слайдами">
   <title>Страница с картинками</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 </head>
 <body>
-
-  <header id="showone"  class="show">
+  <div id="showone" class="show">
     <h1>Welcome To The Beach</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi officiis ipsum officia numquam expedita ullam.</p>
-    <p class="left"><img src="https://www8.lunapic.com/editor/premade/transparent.gif" alt=""></p>
+    <p id="scene" class="left"><img src="https://www8.lunapic.com/editor/premade/transparent.gif" alt="" data-depth="0.8"></p>
     <a href="#" class="button">Read More</a>
-  </header>
-
+  </div>
   <div id="showtwo" class="show">
     <h1>Welcome To The City</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi officiis ipsum officia numquam expedita ullam.</p>
     <a href="#" class="button">Read More</a>
   </div>
-
   <div id="showthree" class="show">
     <h1>Welcome To The Forest</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi officiis ipsum officia numquam expedita ullam.</p>
@@ -33,7 +31,7 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi officiis ipsum officia numquam expedita ullam.</p>
     <a href="#" class="button">Read More</a>
   </div>
-  <!-- 
+  <!--
       <section id="section-a">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit minus impedit maxime, quae soluta quis cumque perferendis! Doloribus quaerat, placeat iste facere, aspernatur ex cum veritatis laudantium, officia, non porro exercitationem incidunt quis dolore? Officia ex accusamus expedita optio, voluptatem minus? In maiores omnis aperiam earum ab molestiae beatae laborum blanditiis incidunt, delectus dolor, id voluptates optio aspernatur aliquam saepe atque labore? Tempore reprehenderit ab ipsam perspiciatis ut, provident perferendis sapiente in numquam blanditiis, enim, illo error nulla incidunt quos quidem ratione repellat ipsa molestias veritatis? Mollitia, fugit dolore commodi porro repudiandae atque, eos, ipsum quam culpa fuga deleniti quae.</p>
       </section>
@@ -51,5 +49,7 @@
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa dolorum est, molestias dolores quis sunt nobis temporibus veritatis libero odio!
         </div>
       </section> -->
+<script>var scene = document.getElementById('scene');
+var parallaxInstance = new Parallax(scene);</script>
 </body>
 </html>
