@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Дмитрий Насонов">
+  <meta name="description" content="Turtle, черепашья графика в Python. Учебные материалы, примеры программ, задания для самостоятельного решения. Классы.">
+  <title>Черепашья графика turtle: классы</title>
+  <link rel="stylesheet" href="../../../github.css">
+  <link rel="stylesheet" href="../../../compact.css">
+  <script src="../../highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();
+  function show(showId) {document.getElementById(showId).style.display = 'block';}</script>
+</head>
+<body>
+<nav class="menu">
+<ul>
+  <li><a href="../../">Python: главная</a></li>
+  <li><a href="../">Turtle</a></li>
+</ul>
+</nav>
+<h1>&laquo;Черепашья графика&raquo; turtle: классы</h1>
+
+<p>Основная программа, которую будем запускать. Назовем ее <b>turtle_hero.py</b>:</p>
+<pre><code>import turtle
+
+from hero import Hero
+
+
+def prepare_fig(fig, x, y):
+    fig.hideturtle()
+    fig.penup()
+    fig.setposition(x, y)
+    fig.speed(13)
+
+def draw_square(fig, color, side_length):
+    fig.pendown()
+    fig.fillcolor(color)
+    fig.begin_fill()
+    for i in range(4):
+        fig.fd(side_length)
+        fig.rt(90)
+    fig.end_fill()
+
+
+wndow = turtle.Screen()
+wndow.title("Circle game")
+wndow.setup(500, 500)
+sq = turtle.Turtle()
+prepare_fig(sq, -20, 70)
+draw_square(sq, 'red', 60)
+sq2 = turtle.Turtle()
+prepare_fig(sq2, -60, 90)
+draw_square(sq2, 'green', 40)
+
+Player1 = Hero(-200, -200, 10, "orange", wndow)
+Player2 = Hero(200, 200, 10, "blue", wndow)
+
+turtle.listen()
+turtle.onkeypress(lambda: Player1.movey(Player1.step), 'Up')
+turtle.onkeypress(lambda: Player1.movey(-Player1.step), 'Down')
+turtle.onkeypress(lambda: Player1.movex(Player1.step), 'Right')
+turtle.onkeypress(lambda: Player1.movex(-Player1.step), 'Left')
+turtle.onkeypress(lambda: Player2.movey(Player2.step), 'w')
+turtle.onkeypress(lambda: Player2.movey(-Player2.step), 's')
+turtle.onkeypress(lambda: Player2.movex(Player2.step), 'd')
+turtle.onkeypress(lambda: Player2.movex(-Player2.step), 'a')
+turtle.done()</code></pre>
+
+<p>Файл <b>hero.py</b>, который сохраняем в ту же папку, что и turtle_hero.py:</p>
+<pre><code>import turtle
+
+
+GAME_OVER_MSG = 'Game over!\nСделано шагов: '
+WIN_MSG = 'Победа!\nСделано шагов: '
+
+
+class Hero:
+    def __init__(self, x, y, step, color, window):
+        self.window = window
+        self.step = 10
+        self.moves = 0
+        self.x = x
+        self.y = y
+        self.circ = turtle.Turtle()
+        self.circ.penup()
+        self.circ.shape("circle")
+        self.circ.color(color)
+        self.circ.setposition(self.x, self.y)
+
+
+    def movex(self, deltax):
+        self.x += deltax
+        self.circ.setx(self.x)
+        self.moves += 1
+        win_or_die(self.moves, self.circ, self.window)
+
+    def movey(self, deltay):
+        self.y += deltay
+        self.circ.sety(self.y)
+        self.moves += 1
+        win_or_die(self.moves, self.circ, self.window)
+
+
+def win_or_die(moves, circ, window):
+    if -20 < circ.xcor() < 40 and 10 < self.circ.ycor() < 70:
+        message(GAME_OVER_MSG + str(moves), 'red', circ, window)
+    if -60 < circ.xcor() < -20 and 50 < circ.ycor() < 90:
+        message(WIN_MSG + str(moves), 'green', circ, window)
+
+def message(text, color, circ, window):
+    window.clear()
+    circ.goto(0, 0)
+    circ.color(color)
+    circ.write(text, font=("Arial", 12, "bold"))</code></pre>
+</body>
+</html>
