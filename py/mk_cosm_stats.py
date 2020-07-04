@@ -63,6 +63,7 @@ ASTROS_LST = astros.get('people')
 ASTROS_STR = ", ".join([astr.get('name') for astr in ASTROS_LST])
 
 COSM_NUM = 3
+ORB_NUM = 321
 SPACEFLIGHT_HTML = f"""<h2>Пилотируемая космонавтика</h2>
 <p><a href="{SPACEFLIGHT_URL}">Статистика</a> <a href="{SPACEFLIGHT1_URL}">пилотируемой космонавтики</a>
 <ul>
@@ -72,6 +73,7 @@ SPACEFLIGHT_HTML = f"""<h2>Пилотируемая космонавтика</h2
 – <b>{FAI_NUM}</b></li>
 <li>Людей, побывавших в космосе (согласно классификации ВВС США, при высоте полета более 80 км 467 м)
 – <b>{USAF_NUM}</b></li>
+<li>Всего орбитальных космических полетов – <b>{ORB_NUM}</b>
 <li>Время, проведенное людьми в космосе – свыше <b>{MANYR_NUM}</b> человеко-лет.</li>
 <li>В космосе <b>{len(ASTROS_LST)}</b> космонавтов: {ASTROS_STR}.</li>
 </ul>
@@ -90,7 +92,7 @@ BODY = f"""<body onload="mkHeader()">
     <li>Побывали в космосе и&nbsp;они астронавты: <span class="yellow">{FAI_NUM}</span></li>
     <li>Побывали в космосе, на высоте более 80 467&nbsp;м: <span class="yellow">{USAF_NUM}</span></li>
     <li>Люди провели в космосе свыше <span class="yellow">{MANYR_NUM}</span> человеко-лет</li>
-    <li>Сейчас в космосе <span class="yellow">{len(ASTROS_LST)}</span> космонавта</li>
+    <li>Сейчас в космосе <span class="yellow">{len(ASTROS_LST)}</span> космонавтов</li>
   </ul>
   </div>
   <div id="footer">
