@@ -12,6 +12,7 @@ SIMBAD_URL = "http://simbad.u-strasbg.fr/simbad/"
 SNIMAGES_URL = "http://rochesterastronomy.com/snimages/"
 SNOTHER_URL = SNIMAGES_URL + "snother.html"
 SNSTATS_URL = SNIMAGES_URL + "archives.html"
+NOVASTATS_URL = SNIMAGES_URL + "novastatsall.html"
 
 TNS_URL = "https://wis-tns.weizmann.ac.il"
 TNS_STATS_URL = TNS_URL + "/stats-maps"
@@ -88,9 +89,11 @@ for (year, snstats_url) in snurls:
         years.append(year)
         sns.append(sn_num)
     elif year != "all":
-        snstats_txt += f"<li><a href='{snstats_url}' target='_blank' rel='noopener noreferrer'>За {year} год</a> открыто <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b> &ndash; любителями. Всего к концу года открыто <b>{all_sn_count}</b>, <b>{sn_amateur_count}</b> &ndash; любителями.\n"
+        snstats_txt += f"<li><a href='{snstats_url}' target='_blank' rel='noopener noreferrer'>За {year} год</a> открыто <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b> – любителями. Всего к концу года открыто <b>{all_sn_count}</b>, <b>{sn_amateur_count}</b> – любителями.\n"
         years.append(year)
         sns.append(sn_num)
+    else:
+        snstats_txt += f"""<li><a href="{snstats_url}" target="_blank" rel="noopener noreferrer">Всего открыто</a> <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b> – любителями.\n"""
 
 labels = ('Статистика открытий сверхновых по годам', 'Год', 'Открытий СН за год')
 tmp_filename = 'snstats_plot_.svg'
@@ -105,8 +108,7 @@ os.remove(tmp_pth)
 soup = get_soup(TNS_STATS_URL)
 all_transient, classified, spectra = get_tns(soup)
 
-snstats_txt += f"""<li><a href="{SNIMAGES_URL}snstatsall.html" target="_blank" rel="noopener noreferrer">Всего открыто</a> <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b> &ndash; любителями.
-</ul>
+snstats_txt += f"""</ul>
 <br><img src="{filename}" alt="">
 
 <h2><a href="{TNS_URL}">Transient Name Server</a></h2>
@@ -119,14 +121,15 @@ snstats_txt += f"""<li><a href="{SNIMAGES_URL}snstatsall.html" target="_blank" r
 
 <h2>Ссылки</h2>
 <ul>
+<li><a href="{NOVASTATS_URL}" target="_blank" rel="noopener noreferrer">Статистика новых звезд</a>
+<li><a href="{SNIMAGES_URL + 'lbvlist.html'}" target="_blank" rel="noopener noreferrer">List of supernova impostors</a> – LBV's (<a href="https://en.wikipedia.org/wiki/Luminous_blue_variable" target="_blank" rel="noopener noreferrer">Luminous Blue Variables</a>).
 <li><a href="https://en.wikipedia.org/wiki/List_of_supernovae" target="_blank" rel="noopener noreferrer">List of supernovae</a> wiki page.
 <li><a href="http://ishivvers.com/maps/sne" target="_blank" rel="noopener noreferrer">A History of Supernova Discovery</a>: анимация.
 <li><a href="https://en.wikipedia.org/wiki/SN_1885A" target="_blank" rel="noopener noreferrer">SN 1885A (S And)</a> в M31, открыта 17.08.1885, блеск в пике <b>5.85</b> (21.08.1985).
 <li><a href="https://en.wikipedia.org/wiki/SN_1972E" target="_blank" rel="noopener noreferrer">SN 1972E</a> в NGC 5253, открыта (06)13.05.1972, блеск в пике ~<b>8.5</b>.
-<li><a href="https://en.wikipedia.org/wiki/SN_1987A" target="_blank" rel="noopener noreferrer">SN 1987A</a> в Большом Магеллановом Облаке, открыта в ночь 23&ndash;24.02.1987, блеск в пике <b>2.9</b> (10.05.1987).
+<li><a href="https://en.wikipedia.org/wiki/SN_1987A" target="_blank" rel="noopener noreferrer">SN 1987A</a> в Большом Магеллановом Облаке, открыта в ночь 23–24.02.1987, блеск в пике <b>2.9</b> (10.05.1987).
   <a href="http://rochesterastronomy.com/snimages/sn1987a.html" target="_blank" rel="noopener noreferrer">Страница на rochesterastronomy.com/snimages/</a>
 <li><a href="https://en.wikipedia.org/wiki/SN_2011fe" target="_blank" rel="noopener noreferrer">SN 2011fe</a>, в M101, открыта 24.08.2011 по снимкам 22 и 23 августа 2011. Блеск в пике <b>9.9</b> (13.09.2011).
-<li><a href="http://www.rochesterastronomy.com/snimages/lbvlist.html" target="_blank" rel="noopener noreferrer">List of supernova impostors</a> &ndash; LBV's (Luminous Blue Variables), <a href="https://en.wikipedia.org/wiki/Luminous_blue_variable">Luminous blue variable</a> wiki page.
 <li><a href="https://sne.space/statistics/" target="_blank" rel="noopener noreferrer">The Open Supernova Catalog</a>.
   The catalog includes metadata for 58,901 supernovae with 595,032 individual photometric detections and 22,472 individual spectra.<br>
   372 <a href="https://sne.space/statistics/host-galaxies/" target="_blank" rel="noopener noreferrer">SNe in Milky Way</a>, 322 SNe in M83, 214 SNe in M33, 162 SNe in M31, 154 SNe in NGC 2403, 103 SNe in NGC 4214, 81 SNe in NGC 4449, 78 SNe in NGC 4564.
@@ -153,7 +156,7 @@ except FileNotFoundError:
 soup = get_soup(SIMBAD_URL)
 SIMDATE, SIMSTAT = simbad_stats(soup)
 
-SIMBAD_HTML = f"""<hr><p><a href="{SIMBAD_URL}">SIMBAD</a> <a href="https://en.wikipedia.org/wiki/SIMBAD">Astronomical Database</a> of objects beyond the Solar System &ndash; CDS (Strasbourg).<br>
+SIMBAD_HTML = f"""<hr><p><a href="{SIMBAD_URL}">SIMBAD</a> <a href="https://en.wikipedia.org/wiki/SIMBAD">Astronomical Database</a> of objects beyond the Solar System – CDS (Strasbourg).<br>
 Последнее обновление <b>{SIMDATE}</b> содержит:</p>
 <ul>
 <li>{SIMSTAT['objects']} объектов
