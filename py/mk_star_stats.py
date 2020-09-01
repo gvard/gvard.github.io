@@ -33,7 +33,8 @@ def get_snstats(soup, end=23):
 
 def get_sn_count(txt):
     """Get Supernova total count"""
-    return int(txt[0].split()[4]), int(txt[1].split()[0]), int(txt[5].split()[0])
+    return int(txt[0].split()[4]), int(txt[1].split()[0]), \
+           int(txt[5].split()[0]), int(txt[6].split()[0])
 
 def get_tns(soup):
     all_stat_num = soup.findAll('div', {"class": "stat-item-right"})
@@ -81,19 +82,19 @@ all_sn_count, sn_amateur_count = 0, 0
 for (year, snstats_url) in snurls:
     soup = get_soup(snstats_url)
     snstats[year] = get_snstats(soup)
-    sn_num, sn_cbat, sn_amateur = get_sn_count(snstats[year])
+    sn_num, sn_cbat, sn_amateur, sn_13th = get_sn_count(snstats[year])
     all_sn_count += sn_num
     sn_amateur_count += sn_amateur
     if year == 1995:
-        snstats_txt += f"<li><a href='{snstats_url}' target='_blank' rel='noopener noreferrer'>До 1996 года</a> открыто <b>{sn_num}</b> сверхновых, <b>{sn_amateur_count}</b> – любителями (<a href='{SNOTHER_URL}'>яркие сверхновые до 1996 года</a>).\n"
+        snstats_txt += f"<li><a href='{snstats_url}' target='_blank' rel='noopener noreferrer'>До 1996 года</a> открыто <b>{sn_num}</b> сверхновых, <b>{sn_amateur_count}</b> – любителями, <b>{sn_13th}</b> ярче 13-й зв. величины (<a href='{SNOTHER_URL}'>яркие сверхновые до 1996 года</a>).\n"
         years.append(year)
         sns.append(sn_num)
     elif year != "all":
-        snstats_txt += f"<li><a href='{snstats_url}' target='_blank' rel='noopener noreferrer'>За {year} год</a> открыто <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b> – любителями. Всего к концу года открыто <b>{all_sn_count}</b>, <b>{sn_amateur_count}</b> – любителями.\n"
+        snstats_txt += f"<li><a href='{snstats_url}' target='_blank' rel='noopener noreferrer'>За {year} год</a> открыто <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b> – любителями, <b>{sn_13th}</b> ярче 13-й зв. величины. Всего к концу года открыто <b>{all_sn_count}</b>, <b>{sn_amateur_count}</b> – любителями.\n"
         years.append(year)
         sns.append(sn_num)
     else:
-        snstats_txt += f"""<li><a href="{snstats_url}" target="_blank" rel="noopener noreferrer">Всего открыто</a> <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b> – любителями.\n"""
+        snstats_txt += f"""<li><a href="{snstats_url}" target="_blank" rel="noopener noreferrer">Всего открыто</a> <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b> – любителями, <b>{sn_13th}</b> ярче 13-й зв. величины.\n"""
 
 labels = ('Статистика открытий сверхновых по годам', 'Год', 'Открытий СН за год')
 tmp_filename = 'snstats_plot_.svg'
