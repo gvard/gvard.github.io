@@ -77,7 +77,7 @@ snstats = {}
 snstats_txt = f"""<h2><a href="{SNSTATS_URL}">Статистика вспышек сверхновых</a></h2>
 <ul>
 """
-years, sns = [], []
+years, sns, snalt = [], [], []
 all_sn_count, sn_amateur_count = 0, 0
 for (year, snstats_url) in snurls:
     soup = get_soup(snstats_url)
@@ -88,11 +88,13 @@ for (year, snstats_url) in snurls:
     if year == 1995:
         snstats_txt += f"<li><a href='{snstats_url}' target='_blank' rel='noopener noreferrer'>До 1996 года</a> открыто <b>{sn_num}</b> сверхновых, <b>{sn_amateur_count}</b> – любителями, <b>{sn_13th}</b> ярче 13-й зв. величины (<a href='{SNOTHER_URL}'>яркие сверхновые до 1996 года</a>).\n"
         years.append(year)
-        sns.append(sn_num)
+        sns.append(sn_num - sn_amateur)
+        snalt.append(sn_amateur)
     elif year != "all":
         snstats_txt += f"<li><a href='{snstats_url}' target='_blank' rel='noopener noreferrer'>За {year} год</a> открыто <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b> – любителями, <b>{sn_13th}</b> ярче 13-й зв. величины. Всего к концу года открыто <b>{all_sn_count}</b>, <b>{sn_amateur_count}</b> – любителями.\n"
         years.append(year)
-        sns.append(sn_num)
+        sns.append(sn_num - sn_amateur)
+        snalt.append(sn_amateur)
     else:
         snstats_txt += f"""<li><a href="{snstats_url}" target="_blank" rel="noopener noreferrer">Всего открыто</a> <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b> – любителями, <b>{sn_13th}</b> ярче 13-й зв. величины.\n"""
 
@@ -102,8 +104,8 @@ filename = 'snstats_plot.svg'
 stars_dir = os.path.join(os.pardir, 'stars')
 tmp_pth = os.path.join(stars_dir, tmp_filename)
 pth = os.path.join(stars_dir, filename)
-xlim = (1994.5, 2020.5)
-plot_bar(years, sns, labels, tmp_pth, xlim)
+xlim = (1994.3, 2020.7)
+plot_bar(years, sns, snalt, labels, tmp_pth, xlim)
 optimize_svg(tmp_pth, pth)
 os.remove(tmp_pth)
 soup = get_soup(TNS_STATS_URL)
