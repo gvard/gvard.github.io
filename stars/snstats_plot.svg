@@ -31,7 +31,7 @@
 <path d="m721.44 507.6h23.926v-225.66h-23.926z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m751.35 507.6h23.926v-224.4h-23.926z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m781.26 507.6h23.926v-462.86h-23.926z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m811.16 507.6h23.926v-337.35h-23.926z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m811.16 507.6h23.926v-340.09h-23.926z" clip-path="url(#a)" fill="#1f77b4"/>
 <defs>
 <path id="b" d="m0 0v3.5" stroke="#000" stroke-width=".8"/>
 </defs>
@@ -139,7 +139,7 @@
 <text transform="rotate(-0 733.4 276.86)" x="733.403077" y="276.862882" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7742</text>
 <text transform="rotate(-0 763.31 278.12)" x="763.310769" y="278.11621" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7699</text>
 <text transform="rotate(-0 793.22 39.663)" x="793.218462" y="39.66317" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">15880</text>
-<text transform="rotate(-0 823.13 165.17)" x="823.126154" y="165.170906" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">11574</text>
+<text transform="rotate(-0 823.13 162.43)" x="823.126154" y="162.431072" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">11668</text>
 <text transform="rotate(-0 449.28 15.6)" x="449.28" y="15.6" font-family="DejaVu Sans" font-size="22px" text-anchor="middle">Статистика открытий сверхновых по годам</text>
 <defs>
 <clipPath id="a">
