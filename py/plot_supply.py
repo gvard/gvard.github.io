@@ -21,6 +21,8 @@ def plot_bar(xes, data, data2, labels, pth, xlim, width=0.85):
     plt.ylabel(ylabel, fontsize=14)
     plt.title(title, fontsize=22)
     plt.xticks(xes)
+    xes[0] = "до 1996"
+    ax.set_xticklabels(xes)
     plt.xlim(xlim[0], xlim[1])
     plt.subplots_adjust(left=0.07, bottom=0.06, right=0.97, top=0.96)
     plt.savefig(pth)

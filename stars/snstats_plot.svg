@@ -62,7 +62,7 @@
 <path id="b" d="m0 0v3.5" stroke="#000" stroke-width=".8"/>
 </defs>
 <use x="87.856364" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 87.856 657.56)" x="87.856364" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1995</text>
+<text transform="rotate(-0 87.856 657.56)" x="87.856364" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">до 1996</text>
 <use x="119.765455" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
 <text transform="rotate(-0 119.77 657.56)" x="119.765455" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1996</text>
 <use x="151.674545" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
