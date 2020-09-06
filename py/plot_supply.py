@@ -2,23 +2,21 @@ from scour import scour
 import matplotlib.pyplot as plt
 
 
-def autolabel(rects, ax):
+def autolabel(rects1, rects2, ax):
     """Attach a text label above each bar in *rects*, displaying its height."""
-    for rect in rects:
-        height = rect.get_height()
-        ax.annotate('{}'.format(height),
-            xy=(rect.get_x() + rect.get_width() / 2, height),
-            xytext=(0, 3),  # 3 points vertical offset
-            textcoords="offset points",
-            ha='center', va='bottom')
+    for x, rect in enumerate(rects1):
+        height = rect.get_height() + rects2[x].get_height()
+        ax.annotate(height, (rect.get_x() + rect.get_width() / 2, height),
+            xytext=(0, 5), textcoords="offset points", ha='center')
 
 
-def plot_bar(xes, data, labels, pth, xlim, width=0.8, dpi=60):
+def plot_bar(xes, data, data2, labels, pth, xlim, width=0.85):
     plt.rcParams['svg.fonttype'] = 'none'
     title, xlabel, ylabel = labels
-    fig, ax = plt.subplots(figsize=(12, 7.5), dpi=dpi)
+    fig, ax = plt.subplots(figsize=(13, 9.5))
     p1 = ax.bar(xes, data, width)
-    autolabel(p1, ax)
+    p2 = ax.bar(xes, data2, width, bottom=data)
+    autolabel(p1, p2, ax)
     plt.xlabel(xlabel, fontsize=14)
     plt.ylabel(ylabel, fontsize=14)
     plt.title(title, fontsize=22)
