@@ -31,7 +31,7 @@
 <path d="m776.3 642.96h27.123v-277.68h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m808.2 642.96h27.123v-278.56h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m840.11 642.96h27.123v-581.86h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m872.02 642.96h27.123v-557.05h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m872.02 642.96h27.123v-560.92h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m74.295 615.27h27.123v-11.135h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m106.2 640.31h27.123v-0.8849h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m138.11 637.8h27.123v-0.84803h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
@@ -51,13 +51,13 @@
 <path d="m584.84 615.79h27.123v-6.1943h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m616.75 610.29h27.123v-6.2681h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m648.66 594.07h27.123v-7.5586h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m680.57 576.11h27.123v-6.6368h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m680.57 576.11h27.123v-6.6736h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m712.48 522.24h27.123v-7.1898h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m744.39 383.98h27.123v-9.0334h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m744.39 383.98h27.123v-9.0703h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m776.3 365.28h27.123v-8.2591h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m808.2 364.4h27.123v-5.4569h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m840.11 61.099h27.123v-4.4245h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m872.02 85.913h27.123v-3.2078h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m872.02 82.042h27.123v-3.2815h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
 <defs>
 <path id="b" d="m0 0v3.5" stroke="#000" stroke-width=".8"/>
 </defs>
@@ -159,13 +159,13 @@
 <text transform="rotate(-0 598.4 604.59)" x="598.401818" y="604.591748" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">905</text>
 <text transform="rotate(-0 630.31 599.02)" x="630.310909" y="599.024228" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1056</text>
 <text transform="rotate(-0 662.22 581.51)" x="662.22" y="581.510504" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1531</text>
-<text transform="rotate(-0 694.13 564.48)" x="694.129091" y="564.476104" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1993</text>
+<text transform="rotate(-0 694.13 564.44)" x="694.129091" y="564.439233" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1994</text>
 <text transform="rotate(-0 726.04 510.05)" x="726.038182" y="510.054513" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">3469</text>
-<text transform="rotate(-0 757.95 369.94)" x="757.947273" y="369.944727" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7269</text>
+<text transform="rotate(-0 757.95 369.91)" x="757.947273" y="369.907856" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7270</text>
 <text transform="rotate(-0 789.86 352.03)" x="789.856364" y="352.025423" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7755</text>
 <text transform="rotate(-0 821.77 353.94)" x="821.765455" y="353.942714" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7703</text>
 <text transform="rotate(-0 853.67 51.674)" x="853.674545" y="51.674286" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">15901</text>
-<text transform="rotate(-0 885.58 77.705)" x="885.583636" y="77.705209" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">15195</text>
+<text transform="rotate(-0 885.58 73.76)" x="885.583636" y="73.760013" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">15302</text>
 <text transform="rotate(-0 486.72 21.36)" x="486.72" y="21.36" font-family="DejaVu Sans" font-size="22px" text-anchor="middle">Статистика открытий сверхновых по годам</text>
 <defs>
 <clipPath id="a">
