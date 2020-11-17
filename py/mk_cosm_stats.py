@@ -16,6 +16,14 @@ NANOSATS_URL = "https://www.nanosats.eu/"
 ASTROS_URL = 'http://api.open-notify.org/astros.json'
 
 
+def ending(cosm_num):
+    if cosm_num in (2, 3, 4):
+        return "а"
+    elif 5 <= cosm_num <= 20:
+        return "ов"
+    elif cosm_num == 1:
+        return ""
+
 def get_n2yo(soup):
     return int(soup.findAll("span", {"style": "color:#d50000"})[0].text)
 
@@ -75,7 +83,7 @@ SPACEFLIGHT_HTML = f"""<h2>Пилотируемая космонавтика</h2
 – <b>{USAF_NUM}</b></li>
 <li>Всего орбитальных космических полетов – <b>{ORB_NUM}</b>
 <li>Время, проведенное людьми в космосе – свыше <b>{MANYR_NUM}</b> человеко-лет.</li>
-<li>В космосе <b>{len(ASTROS_LST)}</b> космонавтов: {ASTROS_STR}.</li>
+<li>В космосе <b>{len(ASTROS_LST)}</b> космонавт{ending(len(ASTROS_LST))}: {ASTROS_STR}.</li>
 </ul>
 """
 
@@ -92,7 +100,7 @@ BODY = f"""<body onload="mkHeader()">
     <li>Побывали в космосе и&nbsp;они астронавты: <span class="yellow">{FAI_NUM}</span></li>
     <li>Побывали в космосе, на высоте более 80 467&nbsp;м: <span class="yellow">{USAF_NUM}</span></li>
     <li>Люди провели в космосе свыше <span class="yellow">{MANYR_NUM}</span> человеко-лет</li>
-    <li>Сейчас в космосе <span class="yellow">{len(ASTROS_LST)}</span> космонавтов</li>
+    <li>Сейчас в космосе <span class="yellow">{len(ASTROS_LST)}</span> космонавт{ending(len(ASTROS_LST))}</li>
   </ul>
   </div>
   <div id="footer">
