@@ -13,6 +13,38 @@
 <p><b><a href="basics.html">Задания по блоку HTML и CSS</a></b></p>
 
 
+<h2 id="php4">Задание от 17 января: Условный оператор IF. Операторы сравнения.</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
+<ol>
+  <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP. Например, бесплатный аккаунт на <a href="https://www.000webhost.com/" target="_blank" rel="noopener noreferrer">000webhost.com</a></li>
+  <li>Скопировать код формы и скрипта, созданные по теме Арифметические операции (занятие 13/17 декабря)</li>
+  <li>Изменить файл с расширением php, как показано в видео:
+<pre>
+&lt;?php
+$a = htmlspecialchars($_POST['i1']);
+$b = htmlspecialchars($_POST['i2']);
+
+if ($a > $b)
+  echo "a ($a) больше b ($b)&lt;br>";
+else
+  echo "b ($b) больше или равно a ($a)&lt;br>";
+
+if ($a != $b)
+  echo "a ($a) не равно b ($b)&lt;br>";
+else
+  echo "a ($a) равно b ($b)&lt;br>";
+
+if ($a == 1 || $b == 2 &amp;&amp; $a + $b == 3)
+  echo "a ($a) равно 1 или b ($b) равно 2&lt;br>";
+else
+  echo "a ($a) не равно 1 и b ($b) не равно 2&lt;br>";
+?>
+</pre>
+  <li>Попробуйте применить другие <a href="https://www.php.net/manual/ru/language.operators.comparison.php" target="_blank" rel="noopener noreferrer">операторы сравнения</a> и <a href="https://www.php.net/manual/ru/language.operators.logical.php" target="_blank" rel="noopener noreferrer">логические операторы</a> И, ИЛИ.</li>
+  <li>Справочная информация: <a href="https://www.php.net/manual/ru/control-structures.if.php" target="_blank" rel="noopener noreferrer">Услловное выражение if</a>.
+    <a href="http://phporphp.000webhostapp.com/if/">Пример на phporphp.000webhostapp.com/if/</a>.</li></li>
+</ol>
+
 <h2 id="php3">Задание от 27/31 декабря: Строки. Строковые операторы. Арифметические операторы</h2>
 <p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
 <ol>
