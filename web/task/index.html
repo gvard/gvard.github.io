@@ -13,6 +13,33 @@
 <p><b><a href="basics.html">Задания по блоку HTML и CSS</a></b></p>
 
 
+<h2 id="php5">Задание от 24 января: Написание программы для решения уравнений.</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
+<ol>
+  <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP. Например, бесплатный аккаунт на <a href="https://www.000webhost.com/" target="_blank" rel="noopener noreferrer">000webhost.com</a></li>
+  <li>Изменить код формы, созданный ранее: добавить в элемент input атрибут required:<br>
+    <b>&lt;input type="text" value="3" name="i2" required></b></li>
+  <li>Изменить скрипт (файл с расширением php), как показано в видео:
+<pre>
+&lt;?php
+if (empty($_POST['i1']) &amp;&amp; empty($_POST['i2'])) {
+  $a = htmlspecialchars($_POST['i1']);
+  $b = htmlspecialchars($_POST['i2']);
+  echo "Введены числа <b>", $a, " и ", $b, "</b>&lt;br>";
+}
+  echo "Решаем уравнение", $a - $b / $b, "&lt;br>округленное значение: ", round($a - $b / $b), "&lt;br>";
+else
+  echo "Одно или несколько значений не установлены";
+
+?>
+</pre>
+  <li>Попробуйте при решении уравнений применить другие <a href=https://www.php.net/manual/ru/ref.math.php" target="_blank" rel="noopener noreferrer">математические функции</a>.</li>
+  <li>Справочная информация: <a href="https://www.php.net/manual/ru/control-structures.if.php" target="_blank" rel="noopener noreferrer">Услловное выражение if</a>,
+    <a href="https://www.php.net/manual/ru/function.empty.php" target="_blank" rel="noopener noreferrer">empty</a> — Проверяет, пуста ли переменная.<br>
+    <a href="http://phporphp.000webhostapp.com/if/">Пример на phporphp.000webhostapp.com/if/</a>.</li></li>
+</ol>
+
+
 <h2 id="php4">Задание от 17 января: Условный оператор IF. Операторы сравнения.</h2>
 <p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
 <ol>
