@@ -12,8 +12,31 @@
 <p>Задания ниже – в первую очередь, для самопроверки. Если при чтении материалов и выполнении заданий возникают сложности, желательно задавать вопросы. Связь – любым удобным вам способом.</p>
 <p><b><a href="basics.html">Задания по блоку HTML и CSS</a></b></p>
 
+<h2 id="php-while">Задание от 31 января: Цикл while. Решение задач на циклы.</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
+<ol>
+  <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP. Например, бесплатный аккаунт на <a href="https://www.000webhost.com/" target="_blank" rel="noopener noreferrer">000webhost.com</a></li>
+  <li>Создать новый каталог и скопировать туда файлы, созданные в прошлый раз.</li>
+  <li>Изменить скрипт (файл с расширением php), как показано в видео:
+<pre>
+&lt;?php
+    $a = htmlspecialchars($_POST['i1']);
+    $b = htmlspecialchars($_POST['i2']);
+    while ($a &lt;= $b) {
+      if ($a % 2 == 0)
+        echo $a, "&lt;br>";
+      $a++;
+    }
+?>
+</pre>Так мы вывели на экран все четные числа между a и b.</li>
+<li>Аналогичным образом можно вывести все степени числа. Для этого потребуется изменить оператор инкрементации ++ на оператор *=<br>
+Попробуйте вывести степени двойки!</li>
+<li>Справочная информация: <a href="https://www.php.net/manual/ru/control-structures.while.php" target="_blank" rel="noopener noreferrer">while</a>,
+  <a href="https://www.php.net/manual/ru/control-structures.do.while.php" target="_blank" rel="noopener noreferrer">do-while</a>.<br>
+  <a href="http://phporphp.000webhostapp.com/while/">Пример на phporphp.000webhostapp.com/while/</a></li>
+</ol>
 
-<h2 id="php5">Задание от 24 января: Написание программы для решения уравнений.</h2>
+<h2 id="php6">Задание от 24 января: Написание программы для решения уравнений.</h2>
 <p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
 <ol>
   <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP. Например, бесплатный аккаунт на <a href="https://www.000webhost.com/" target="_blank" rel="noopener noreferrer">000webhost.com</a></li>
@@ -33,14 +56,14 @@ else
 
 ?>
 </pre>
-  <li>Попробуйте при решении уравнений применить другие <a href=https://www.php.net/manual/ru/ref.math.php" target="_blank" rel="noopener noreferrer">математические функции</a>.</li>
+  <li>Попробуйте при решении уравнений применить другие <a href="https://www.php.net/manual/ru/ref.math.php" target="_blank" rel="noopener noreferrer">математические функции</a>.</li>
   <li>Справочная информация: <a href="https://www.php.net/manual/ru/control-structures.if.php" target="_blank" rel="noopener noreferrer">Услловное выражение if</a>,
     <a href="https://www.php.net/manual/ru/function.empty.php" target="_blank" rel="noopener noreferrer">empty</a> — Проверяет, пуста ли переменная.<br>
-    <a href="http://phporphp.000webhostapp.com/if/">Пример на phporphp.000webhostapp.com/if/</a>.</li></li>
+    <a href="http://phporphp.000webhostapp.com/if/">Пример на phporphp.000webhostapp.com/if/</a>.</li>
 </ol>
 
 
-<h2 id="php4">Задание от 17 января: Условный оператор IF. Операторы сравнения.</h2>
+<h2 id="php5">Задание от 17 января: Условный оператор IF. Операторы сравнения.</h2>
 <p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
 <ol>
   <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP. Например, бесплатный аккаунт на <a href="https://www.000webhost.com/" target="_blank" rel="noopener noreferrer">000webhost.com</a></li>
@@ -69,10 +92,10 @@ else
 </pre>
   <li>Попробуйте применить другие <a href="https://www.php.net/manual/ru/language.operators.comparison.php" target="_blank" rel="noopener noreferrer">операторы сравнения</a> и <a href="https://www.php.net/manual/ru/language.operators.logical.php" target="_blank" rel="noopener noreferrer">логические операторы</a> И, ИЛИ.</li>
   <li>Справочная информация: <a href="https://www.php.net/manual/ru/control-structures.if.php" target="_blank" rel="noopener noreferrer">Услловное выражение if</a>.
-    <a href="http://phporphp.000webhostapp.com/if/">Пример на phporphp.000webhostapp.com/if/</a>.</li></li>
+    <a href="http://phporphp.000webhostapp.com/if/">Пример на phporphp.000webhostapp.com/if/</a>.</li>
 </ol>
 
-<h2 id="php3">Задание от 27/31 декабря: Строки. Строковые операторы. Арифметические операторы</h2>
+<h2 id="php4">Задание от 27/31 декабря: Строки. Строковые операторы. Арифметические операторы</h2>
 <p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
 <ol>
   <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP. Например, бесплатный аккаунт на <a href="https://www.000webhost.com/" target="_blank" rel="noopener noreferrer">000webhost.com</a></li>
@@ -93,11 +116,11 @@ else
   Что произошло?</li>
   <li>Справочная информация: <a href="https://www.php.net/manual/ru/language.operators.string.php" target="_blank" rel="noopener noreferrer">Строковые операторы</a>,
     <a href="https://www.php.net/manual/ru/language.types.string.php" target="_blank" rel="noopener noreferrer">Строки</a>.
-    <a href="http://phporphp.000webhostapp.com/string/">Пример на phporphp.000webhostapp.com/string/</a>.</li></li>
+    <a href="http://phporphp.000webhostapp.com/string/">Пример на phporphp.000webhostapp.com/string/</a>.</li>
 </ol>
 
 
-<h2 id="php2">Задание от 20/24 декабря: Связь html-форм и php страниц</h2>
+<h2 id="php3">Задание от 20/24 декабря: Связь html-форм и php страниц</h2>
 <p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
 <ol>
   <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP. Например, бесплатный аккаунт на <a href="https://www.000webhost.com/" target="_blank" rel="noopener noreferrer">000webhost.com</a></li>
