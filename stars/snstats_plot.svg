@@ -6,164 +6,171 @@
 </defs>
 <path d="m0 684h936v-684h-936z" fill="#fff"/>
 <path d="m65.52 642.96h842.4v-615.6h-842.4z" fill="#fff"/>
-<path d="m74.295 642.96h27.123v-25.599h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m106.2 642.96h27.123v-2.4542h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m138.11 642.96h27.123v-4.7721h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m170.02 642.96h27.123v-4.8403h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m201.93 642.96h27.123v-4.7039h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m233.84 642.96h27.123v-4.1926h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m265.75 642.96h27.123v-7.3286h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m297.66 642.96h27.123v-8.4193h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m329.57 642.96h27.123v-8.3852h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m361.48 642.96h27.123v-6.9877h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m393.39 642.96h27.123v-8.5557h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m425.3 642.96h27.123v-14.419h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m457.2 642.96h27.123v-16.77h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m489.11 642.96h27.123v-12.578h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m521.02 642.96h27.123v-14.078h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m552.93 642.96h27.123v-14.828h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m584.84 642.96h27.123v-25.122h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m616.75 642.96h27.123v-30.235h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m648.66 642.96h27.123v-45.267h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m680.57 642.96h27.123v-61.799h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m712.48 642.96h27.123v-111.6h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m744.39 642.96h27.123v-239.42h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m776.3 642.96h27.123v-256.74h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m808.2 642.96h27.123v-258.51h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m840.11 642.96h27.123v-539.08h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m872.02 642.96h27.123v-581.82h-27.123z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m74.295 617.36h27.123v-10.294h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m106.2 640.51h27.123v-0.81807h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m138.11 638.19h27.123v-0.78399h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m170.02 638.12h27.123v-0.68173h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m201.93 638.26h27.123v-2.1815h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m233.84 638.77h27.123v-2.4883h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m265.75 635.63h27.123v-3.17h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m297.66 634.54h27.123v-3.5791h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m329.57 634.57h27.123v-4.3971h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m361.48 635.97h27.123v-4.7039h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m393.39 634.4h27.123v-4.5335h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m425.3 628.54h27.123v-4.5676h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m457.2 626.19h27.123v-3.8518h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m489.11 630.38h27.123v-4.7039h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m521.02 628.88h27.123v-4.9766h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m552.93 628.13h27.123v-5.2152h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m584.84 617.84h27.123v-5.7265h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m616.75 612.73h27.123v-5.8288h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m648.66 597.69h27.123v-7.0559h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m680.57 581.16h27.123v-6.2378h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m712.48 531.36h27.123v-6.715h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m744.39 403.54h27.123v-8.3852h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m776.3 386.22h27.123v-7.8399h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m808.2 384.45h27.123v-5.0448h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m840.11 103.88h27.123v-4.2949h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m872.02 61.14h27.123v-4.4653h-27.123z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m73.975 642.96h26.133v-22.925h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m104.72 642.96h26.133v-2.1979h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m135.46 642.96h26.133v-4.2737h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m166.21 642.96h26.133v-4.3347h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m196.95 642.96h26.133v-4.2126h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m227.7 642.96h26.133v-3.7547h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m258.44 642.96h26.133v-6.5631h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m289.19 642.96h26.133v-7.54h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m319.93 642.96h26.133v-7.5094h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m350.68 642.96h26.133v-6.2579h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m381.42 642.96h26.133v-7.6621h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m412.16 642.96h26.133v-12.913h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m442.91 642.96h26.133v-15.019h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m473.65 642.96h26.133v-11.264h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m504.4 642.96h26.133v-12.607h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m535.14 642.96h26.133v-13.279h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m565.89 642.96h26.133v-22.498h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m596.63 642.96h26.133v-27.077h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m627.38 642.96h26.133v-40.569h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m658.12 642.96h26.133v-55.344h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m688.87 642.96h26.133v-100h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m719.61 642.96h26.133v-214.42h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m750.35 642.96h26.133v-230.01h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m781.1 642.96h26.133v-231.82h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m811.84 642.96h26.133v-483.26h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m842.59 642.96h26.133v-582.38h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m873.33 642.96h26.133v-64.654h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m73.975 620.03h26.133v-9.2189h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m104.72 640.76h26.133v-0.73263h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m135.46 638.69h26.133v-0.7021h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m166.21 638.63h26.133v-0.61052h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m196.95 638.75h26.133v-1.9537h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m227.7 639.21h26.133v-2.2284h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m258.44 636.4h26.133v-2.8389h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m289.19 635.42h26.133v-3.2052h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m319.93 635.45h26.133v-3.9379h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m350.68 636.7h26.133v-4.2126h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m381.42 635.3h26.133v-4.06h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m412.16 630.05h26.133v-4.0905h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m442.91 627.94h26.133v-3.4495h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m473.65 631.7h26.133v-4.2126h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m504.4 630.35h26.133v-4.4568h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m535.14 629.68h26.133v-4.6705h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m565.89 620.46h26.133v-5.1284h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m596.63 615.88h26.133v-5.22h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m627.38 602.39h26.133v-6.3494h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m658.12 587.62h26.133v-5.5863h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m688.87 542.96h26.133v-6.0442h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m719.61 428.54h26.133v-7.601h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m750.35 412.95h26.133v-7.1737h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m781.1 411.14h26.133v-4.5179h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m811.84 159.7h26.133v-3.8463h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m842.59 60.582h26.133v-3.9074h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m873.33 578.31h26.133v-0.45789h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <defs>
 <path id="b" d="m0 0v3.5" stroke="#000" stroke-width=".8"/>
 </defs>
-<use x="87.856364" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 87.856 657.56)" x="87.856364" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">до 1996</text>
-<use x="119.765455" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 119.77 657.56)" x="119.765455" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1996</text>
-<use x="151.674545" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 151.67 657.56)" x="151.674545" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1997</text>
-<use x="183.583636" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 183.58 657.56)" x="183.583636" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1998</text>
-<use x="215.492727" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 215.49 657.56)" x="215.492727" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1999</text>
-<use x="247.401818" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 247.4 657.56)" x="247.401818" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2000</text>
-<use x="279.310909" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 279.31 657.56)" x="279.310909" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2001</text>
-<use x="311.22" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 311.22 657.56)" x="311.22" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2002</text>
-<use x="343.129091" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 343.13 657.56)" x="343.129091" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2003</text>
-<use x="375.038182" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 375.04 657.56)" x="375.038182" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2004</text>
-<use x="406.947273" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 406.95 657.56)" x="406.947273" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2005</text>
-<use x="438.856364" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 438.86 657.56)" x="438.856364" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2006</text>
-<use x="470.765455" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 470.77 657.56)" x="470.765455" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2007</text>
-<use x="502.674545" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 502.67 657.56)" x="502.674545" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2008</text>
-<use x="534.583636" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 534.58 657.56)" x="534.583636" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2009</text>
-<use x="566.492727" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 566.49 657.56)" x="566.492727" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2010</text>
-<use x="598.401818" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 598.4 657.56)" x="598.401818" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2011</text>
-<use x="630.310909" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 630.31 657.56)" x="630.310909" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2012</text>
-<use x="662.22" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 662.22 657.56)" x="662.22" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2013</text>
-<use x="694.129091" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 694.13 657.56)" x="694.129091" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2014</text>
-<use x="726.038182" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 726.04 657.56)" x="726.038182" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2015</text>
-<use x="757.947273" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 757.95 657.56)" x="757.947273" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2016</text>
-<use x="789.856364" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 789.86 657.56)" x="789.856364" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2017</text>
-<use x="821.765455" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 821.77 657.56)" x="821.765455" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2018</text>
-<use x="853.674545" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 853.67 657.56)" x="853.674545" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2019</text>
-<use x="885.583636" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
-<text transform="rotate(-0 885.58 657.56)" x="885.583636" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2020</text>
+<use x="87.041168" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 87.041 657.56)" x="87.041168" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">до 1996</text>
+<use x="117.785693" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 117.79 657.56)" x="117.785693" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1996</text>
+<use x="148.530219" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 148.53 657.56)" x="148.530219" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1997</text>
+<use x="179.274745" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 179.27 657.56)" x="179.274745" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1998</text>
+<use x="210.01927" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 210.02 657.56)" x="210.01927" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1999</text>
+<use x="240.763796" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 240.76 657.56)" x="240.763796" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2000</text>
+<use x="271.508321" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 271.51 657.56)" x="271.508321" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2001</text>
+<use x="302.252847" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 302.25 657.56)" x="302.252847" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2002</text>
+<use x="332.997372" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 333 657.56)" x="332.997372" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2003</text>
+<use x="363.741898" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 363.74 657.56)" x="363.741898" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2004</text>
+<use x="394.486423" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 394.49 657.56)" x="394.486423" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2005</text>
+<use x="425.230949" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 425.23 657.56)" x="425.230949" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2006</text>
+<use x="455.975474" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 455.98 657.56)" x="455.975474" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2007</text>
+<use x="486.72" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 486.72 657.56)" x="486.72" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2008</text>
+<use x="517.464526" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 517.46 657.56)" x="517.464526" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2009</text>
+<use x="548.209051" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 548.21 657.56)" x="548.209051" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2010</text>
+<use x="578.953577" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 578.95 657.56)" x="578.953577" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2011</text>
+<use x="609.698102" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 609.7 657.56)" x="609.698102" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2012</text>
+<use x="640.442628" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 640.44 657.56)" x="640.442628" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2013</text>
+<use x="671.187153" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 671.19 657.56)" x="671.187153" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2014</text>
+<use x="701.931679" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 701.93 657.56)" x="701.931679" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2015</text>
+<use x="732.676204" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 732.68 657.56)" x="732.676204" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2016</text>
+<use x="763.42073" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 763.42 657.56)" x="763.42073" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2017</text>
+<use x="794.165255" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 794.17 657.56)" x="794.165255" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2018</text>
+<use x="824.909781" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 824.91 657.56)" x="824.909781" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2019</text>
+<use x="855.654307" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 855.65 657.56)" x="855.654307" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2020</text>
+<use x="886.398832" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#b"/>
+<text transform="rotate(-0 886.4 657.56)" x="886.398832" y="657.558437" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2021</text>
 <text transform="rotate(-0 486.72 674.28)" x="486.72" y="674.275937" font-family="DejaVu Sans" font-size="14px" text-anchor="middle">Год</text>
 <defs>
 <path id="c" d="m0 0h-3.5" stroke="#000" stroke-width=".8"/>
 </defs>
 <use x="65.52" y="642.96" stroke="#000000" stroke-width=".8" xlink:href="#c"/>
 <text transform="rotate(-0 58.52 646.76)" x="58.52" y="646.759219" font-family="DejaVu Sans" font-size="10px" text-anchor="end">0</text>
-<use x="65.52" y="557.744053" stroke="#000000" stroke-width=".8" xlink:href="#c"/>
-<text transform="rotate(-0 58.52 561.54)" x="58.52" y="561.543272" font-family="DejaVu Sans" font-size="10px" text-anchor="end">2500</text>
-<use x="65.52" y="472.528106" stroke="#000000" stroke-width=".8" xlink:href="#c"/>
-<text transform="rotate(-0 58.52 476.33)" x="58.52" y="476.327325" font-family="DejaVu Sans" font-size="10px" text-anchor="end">5000</text>
-<use x="65.52" y="387.312159" stroke="#000000" stroke-width=".8" xlink:href="#c"/>
-<text transform="rotate(-0 58.52 391.11)" x="58.52" y="391.111378" font-family="DejaVu Sans" font-size="10px" text-anchor="end">7500</text>
-<use x="65.52" y="302.096213" stroke="#000000" stroke-width=".8" xlink:href="#c"/>
-<text transform="rotate(-0 58.52 305.9)" x="58.52" y="305.895431" font-family="DejaVu Sans" font-size="10px" text-anchor="end">10000</text>
-<use x="65.52" y="216.880266" stroke="#000000" stroke-width=".8" xlink:href="#c"/>
-<text transform="rotate(-0 58.52 220.68)" x="58.52" y="220.679485" font-family="DejaVu Sans" font-size="10px" text-anchor="end">12500</text>
-<use x="65.52" y="131.664319" stroke="#000000" stroke-width=".8" xlink:href="#c"/>
-<text transform="rotate(-0 58.52 135.46)" x="58.52" y="135.463538" font-family="DejaVu Sans" font-size="10px" text-anchor="end">15000</text>
-<use x="65.52" y="46.448372" stroke="#000000" stroke-width=".8" xlink:href="#c"/>
-<text transform="rotate(-0 58.52 50.248)" x="58.52" y="50.247591" font-family="DejaVu Sans" font-size="10px" text-anchor="end">17500</text>
+<use x="65.52" y="566.644563" stroke="#000000" stroke-width=".8" xlink:href="#c"/>
+<text transform="rotate(-0 58.52 570.44)" x="58.52" y="570.443782" font-family="DejaVu Sans" font-size="10px" text-anchor="end">2500</text>
+<use x="65.52" y="490.329126" stroke="#000000" stroke-width=".8" xlink:href="#c"/>
+<text transform="rotate(-0 58.52 494.13)" x="58.52" y="494.128344" font-family="DejaVu Sans" font-size="10px" text-anchor="end">5000</text>
+<use x="65.52" y="414.013689" stroke="#000000" stroke-width=".8" xlink:href="#c"/>
+<text transform="rotate(-0 58.52 417.81)" x="58.52" y="417.812907" font-family="DejaVu Sans" font-size="10px" text-anchor="end">7500</text>
+<use x="65.52" y="337.698251" stroke="#000000" stroke-width=".8" xlink:href="#c"/>
+<text transform="rotate(-0 58.52 341.5)" x="58.52" y="341.49747" font-family="DejaVu Sans" font-size="10px" text-anchor="end">10000</text>
+<use x="65.52" y="261.382814" stroke="#000000" stroke-width=".8" xlink:href="#c"/>
+<text transform="rotate(-0 58.52 265.18)" x="58.52" y="265.182033" font-family="DejaVu Sans" font-size="10px" text-anchor="end">12500</text>
+<use x="65.52" y="185.067377" stroke="#000000" stroke-width=".8" xlink:href="#c"/>
+<text transform="rotate(-0 58.52 188.87)" x="58.52" y="188.866596" font-family="DejaVu Sans" font-size="10px" text-anchor="end">15000</text>
+<use x="65.52" y="108.75194" stroke="#000000" stroke-width=".8" xlink:href="#c"/>
+<text transform="rotate(-0 58.52 112.55)" x="58.52" y="112.551159" font-family="DejaVu Sans" font-size="10px" text-anchor="end">17500</text>
+<use x="65.52" y="32.436503" stroke="#000000" stroke-width=".8" xlink:href="#c"/>
+<text transform="rotate(-0 58.52 36.236)" x="58.52" y="36.235722" font-family="DejaVu Sans" font-size="10px" text-anchor="end">20000</text>
 <text transform="rotate(-90 19.796 335.16)" x="19.795938" y="335.16" font-family="DejaVu Sans" font-size="14px" text-anchor="middle">Открытий СН за год</text>
 <path d="m65.52 642.96v-615.6" fill="none" stroke="#000" stroke-linecap="square" stroke-width=".8"/>
 <path d="m907.92 642.96v-615.6" fill="none" stroke="#000" stroke-linecap="square" stroke-width=".8"/>
 <path d="m65.52 642.96h842.4" fill="none" stroke="#000" stroke-linecap="square" stroke-width=".8"/>
 <path d="m65.52 27.36h842.4" fill="none" stroke="#000" stroke-linecap="square" stroke-width=".8"/>
-<text transform="rotate(-0 87.856 602.07)" x="87.856364" y="602.067043" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1053</text>
-<text transform="rotate(-0 119.77 634.69)" x="119.765455" y="634.687708" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">96</text>
-<text transform="rotate(-0 151.67 632.4)" x="151.674545" y="632.40392" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">163</text>
-<text transform="rotate(-0 183.58 632.44)" x="183.583636" y="632.438007" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">162</text>
-<text transform="rotate(-0 215.49 631.07)" x="215.492727" y="631.074551" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">202</text>
-<text transform="rotate(-0 247.4 631.28)" x="247.401818" y="631.27907" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">196</text>
-<text transform="rotate(-0 279.31 627.46)" x="279.310909" y="627.461395" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">308</text>
-<text transform="rotate(-0 311.22 625.96)" x="311.22" y="625.961595" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">352</text>
-<text transform="rotate(-0 343.13 625.18)" x="343.129091" y="625.177608" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">375</text>
-<text transform="rotate(-0 375.04 626.27)" x="375.038182" y="626.268372" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">343</text>
-<text transform="rotate(-0 406.95 624.87)" x="406.947273" y="624.870831" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">384</text>
-<text transform="rotate(-0 438.86 618.97)" x="438.856364" y="618.973887" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">557</text>
-<text transform="rotate(-0 470.77 617.34)" x="470.765455" y="617.337741" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">605</text>
-<text transform="rotate(-0 502.67 620.68)" x="502.674545" y="620.678206" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">507</text>
-<text transform="rotate(-0 534.58 618.91)" x="534.583636" y="618.905714" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">559</text>
-<text transform="rotate(-0 566.49 617.92)" x="566.492727" y="617.917209" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">588</text>
-<text transform="rotate(-0 598.4 607.11)" x="598.401818" y="607.111827" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">905</text>
-<text transform="rotate(-0 630.31 601.9)" x="630.310909" y="601.896611" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1058</text>
-<text transform="rotate(-0 662.22 585.64)" x="662.22" y="585.637409" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1535</text>
-<text transform="rotate(-0 694.13 569.92)" x="694.129091" y="569.923588" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1996</text>
-<text transform="rotate(-0 726.04 519.65)" x="726.038182" y="519.646179" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">3471</text>
-<text transform="rotate(-0 757.95 390.15)" x="757.947273" y="390.152027" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7270</text>
-<text transform="rotate(-0 789.86 373.38)" x="789.856364" y="373.381528" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7762</text>
-<text transform="rotate(-0 821.77 374.4)" x="821.765455" y="374.40412" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7732</text>
-<text transform="rotate(-0 853.67 94.589)" x="853.674545" y="94.589037" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">15941</text>
-<text transform="rotate(-0 885.58 51.674)" x="885.583636" y="51.674286" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">17200</text>
+<text transform="rotate(-0 87.041 605.82)" x="87.041168" y="605.815938" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1053</text>
+<text transform="rotate(-0 117.79 635.03)" x="117.785693" y="635.029487" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">96</text>
+<text transform="rotate(-0 148.53 632.98)" x="148.530219" y="632.984233" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">163</text>
+<text transform="rotate(-0 179.27 633.01)" x="179.274745" y="633.01476" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">162</text>
+<text transform="rotate(-0 210.02 631.79)" x="210.01927" y="631.793713" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">202</text>
+<text transform="rotate(-0 240.76 631.98)" x="240.763796" y="631.97687" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">196</text>
+<text transform="rotate(-0 271.51 628.56)" x="271.508321" y="628.557938" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">308</text>
+<text transform="rotate(-0 302.25 627.21)" x="302.252847" y="627.214786" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">352</text>
+<text transform="rotate(-0 333 626.51)" x="332.997372" y="626.512684" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">375</text>
+<text transform="rotate(-0 363.74 627.49)" x="363.741898" y="627.489522" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">343</text>
+<text transform="rotate(-0 394.49 626.24)" x="394.486423" y="626.237949" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">384</text>
+<text transform="rotate(-0 425.23 620.96)" x="425.230949" y="620.956921" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">557</text>
+<text transform="rotate(-0 455.98 619.49)" x="455.975474" y="619.491664" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">605</text>
+<text transform="rotate(-0 486.72 622.48)" x="486.72" y="622.483229" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">507</text>
+<text transform="rotate(-0 517.46 620.9)" x="517.464526" y="620.895868" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">559</text>
+<text transform="rotate(-0 548.21 620.01)" x="548.209051" y="620.010609" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">588</text>
+<text transform="rotate(-0 578.95 610.33)" x="578.953577" y="610.333812" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">905</text>
+<text transform="rotate(-0 609.7 605.66)" x="609.698102" y="605.663307" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1058</text>
+<text transform="rotate(-0 640.44 591.04)" x="640.442628" y="591.041269" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1537</text>
+<text transform="rotate(-0 671.19 577.03)" x="671.187153" y="577.029755" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1996</text>
+<text transform="rotate(-0 701.93 531.91)" x="701.931679" y="531.912069" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">3474</text>
+<text transform="rotate(-0 732.68 415.94)" x="732.676204" y="415.94313" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7273</text>
+<text transform="rotate(-0 763.42 400.77)" x="763.42073" y="400.771621" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7770</text>
+<text transform="rotate(-0 794.17 401.63)" x="794.165255" y="401.626354" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7742</text>
+<text transform="rotate(-0 824.91 150.85)" x="824.909781" y="150.853828" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">15957</text>
+<text transform="rotate(-0 855.65 51.674)" x="855.654307" y="51.674286" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">19206</text>
+<text transform="rotate(-0 886.4 572.85)" x="886.398832" y="572.847669" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">2133</text>
 <text transform="rotate(-0 486.72 21.36)" x="486.72" y="21.36" font-family="DejaVu Sans" font-size="22px" text-anchor="middle">Статистика открытий сверхновых по годам</text>
 <defs>
 <clipPath id="a">
