@@ -112,7 +112,7 @@ soup = get_soup(TNS_STATS_URL)
 all_transient, classified, spectra = get_tns(soup)
 
 snstats_txt += f"""</ul>
-<br><img src="{filename}" alt="">
+<br><img src="../{filename}" alt="">
 
 <h2><a href="{TNS_URL}">Transient Name Server</a></h2>
 <a href="{TNS_STATS_URL}" target="_blank" rel="noopener noreferrer">статистика</a>:<br>
