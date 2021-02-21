@@ -12,6 +12,43 @@
 <p>Задания ниже – в первую очередь, для самопроверки. Если при чтении материалов и выполнении заданий возникают сложности, желательно задавать вопросы. Связь – любым удобным вам способом.</p>
 <p><b><a href="basics.html">Задания по блоку HTML и CSS</a></b></p>
 
+<h2 id="php-for2">Задание от 21 февраля: решение задач на тему «Массивы»</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams</p>
+<ol>
+  <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP</li>
+  <li>Изменить скрипт (файл с расширением php), как показано в видео:
+<pre>
+&lt;?php
+if (is_numeric($a)) {
+  for ($i = 1; $i &lt;= abs($a); $i++)
+    echo "Silence is golden&lt;br>";
+} else {
+  echo "Bad n&lt;br>";
+}
+
+if (is_numeric($a)) {
+  $squares = array();
+  for ($i = 1; $i &lt;= abs($a); $i++)
+    $squares[$i] = $i**2;
+
+foreach ($squares as $item => $value)
+  echo $item, ", ", $value, "&lt;br>";
+}
+
+$summa = 0;
+$mult = 1;
+foreach ($squares as $item => $value) {
+  $summa += $value;
+  $mult *= $value;
+}
+echo "$summa, $mult&lt;br>";
+?></pre></li>
+<li>Справочная информация: <a href="https://www.php.net/manual/ru/language.types.array.php" target="_blank" rel="noopener noreferrer">Массивы</a>.
+  <a href="http://old.code.mu/tasks/php/base/osnovy-raboty-s-massivami-v-php.html" target="_blank" rel="noopener noreferrer">Задачи на основы работы с массивами в PHP</a>.
+  <a href="http://www.itmathrepetitor.ru/zadachi-po-php-cikly-i-massivy/" target="_blank" rel="noopener noreferrer">Циклы и массивы в PHP</a>.
+  <a href="https://phporphp.000webhostapp.com/array/">Пример на phporphp.000webhostapp.com/array/</a></li>
+</ol>
+
 <h2 id="php-for">Задание от 14 февраля: Массивы. Ассоциативные массивы. Цикл for</h2>
 <p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams</p>
 <ol>
