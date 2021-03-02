@@ -14,7 +14,7 @@ SNOTHER_URL = SNIMAGES_URL + "snother.html"
 SNSTATS_URL = SNIMAGES_URL + "archives.html"
 NOVASTATS_URL = SNIMAGES_URL + "novastatsall.html"
 
-TNS_URL = "https://wis-tns.weizmann.ac.il"
+TNS_URL = "https://www.wis-tns.org"
 TNS_STATS_URL = TNS_URL + "/stats-maps"
 PICKLE_SIMB_FILENAME = 'simbad_stats.pickle'
 PICKLE_SN_FILENAME = 'snstats.pickle'
