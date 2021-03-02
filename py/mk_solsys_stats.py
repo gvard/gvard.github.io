@@ -68,7 +68,7 @@ def get_astermoons(soup):
     """Parse html, get date of last page update,
     statistics of asteroids with moons."""
     cutbrack = lambda txt: [f.split()[0] for f in txt.split("(")]
-    lastupd = soup.findAll("center")[0].text.split("\n")[-1].split()
+    lastupd = soup.findAll("center")[0].text.split("\n")[4].split()
     last_update = (lastupd[2], lastupd[3], lastupd[-1])
     stats = soup.findAll("p")[3].text.split("\n")
     curcount = stats[1]
