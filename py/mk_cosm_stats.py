@@ -12,6 +12,7 @@ N2YO_URL = "https://www.n2yo.com/"
 SPACEFLIGHT_URL = "https://www.worldspaceflight.com/bios/stats.php"
 SPACEFLIGHT1_URL = "https://www.worldspaceflight.com/bios/stats1.php"
 CURRENTLY_IN_SPACE_URL = "https://www.worldspaceflight.com/bios/currentlyinspace.php"
+FLIGHTLIST_URL = "https://www.worldspaceflight.com/bios/sequence.php"
 NANOSATS_URL = "https://www.nanosats.eu/"
 ASTROS_URL = 'http://api.open-notify.org/astros.json'
 
@@ -50,6 +51,14 @@ N2_STATS_HTML = f"""<h2>Отслеживаемые объекты в около�
 <p>Отслеживается <b>{number_tracking_objects}</b> объектов.</p>
 """
 
+def get_flightlist(soup):
+    trs = soup.findAll('tr')
+    tds = trs[-1].findAll('td')
+    return tds[0].text, tds[1].text, tds[2].text, len(trs)
+
+soup = get_soup(FLIGHTLIST_URL)
+FLIGHT_NUM, LASTFLIGHT_NAME, LASTFLIGHT_DATE, ALLFLIG_NUM = get_flightlist(soup)
+
 
 def get_spaceflight(soup):
     ps = soup.findAll('p')[3:7]
@@ -70,8 +79,6 @@ if DEBUG:
 ASTROS_LST = astros.get('people')
 ASTROS_STR = ", ".join([astr.get('name') for astr in ASTROS_LST])
 
-COSM_NUM = 3
-ORB_NUM = 321
 SPACEFLIGHT_HTML = f"""<h2>Пилотируемая космонавтика</h2>
 <p><a href="{SPACEFLIGHT_URL}">Статистика</a> <a href="{SPACEFLIGHT1_URL}">пилотируемой космонавтики</a>
 <ul>
@@ -81,7 +88,9 @@ SPACEFLIGHT_HTML = f"""<h2>Пилотируемая космонавтика</h2
 – <b>{FAI_NUM}</b></li>
 <li>Людей, побывавших в космосе (согласно классификации ВВС США, при высоте полета более 80 км 467 м)
 – <b>{USAF_NUM}</b></li>
-<li>Всего орбитальных космических полетов – <b>{ORB_NUM}</b>
+<li>Всего космических полетов – <b>{FLIGHT_NUM}</b>, следуя определению ВВС США
+– <b>{ALLFLIG_NUM}</b></li>
+<li>Последний – {LASTFLIGHT_NAME}, {LASTFLIGHT_DATE}</li>
 <li>Время, проведенное людьми в космосе – свыше <b>{MANYR_NUM}</b> человеко-лет.</li>
 <li>В космосе <b>{len(ASTROS_LST)}</b> космонавт{ending(len(ASTROS_LST))}: {ASTROS_STR}.</li>
 </ul>
