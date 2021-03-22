@@ -8,7 +8,7 @@ from plot_supply import plot_bar, optimize_svg
 
 HEAD = mk_head("Статистика звездных каталогов", script="") + "<body>\n"
 WDS_URL = "http://cdsarc.u-strasbg.fr/viz-bin/ReadMe/B/wds?format=html"
-SIMBAD_URL = "http://simbad.u-strasbg.fr/simbad/"
+SIMBAD_URL = "https://simbad.u-strasbg.fr/simbad/"
 SNIMAGES_URL = "http://rochesterastronomy.org/snimages/"
 SNOTHER_URL = SNIMAGES_URL + "snother.html"
 SNSTATS_URL = SNIMAGES_URL + "archives.html"
