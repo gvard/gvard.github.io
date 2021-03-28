@@ -12,6 +12,29 @@
 <p>Задания ниже – в первую очередь, для самопроверки. Если при чтении материалов и выполнении заданий возникают сложности, желательно задавать вопросы. Связь – любым удобным вам способом.</p>
 <p><b><a href="basics.html">Задания по блоку HTML и CSS</a></b></p>
 
+<h2 id="php-font">28 марта: Функции работы с изображениями в php</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams</p>
+<ol>
+  <li>В настройках сервера php.ini раскомментировать (удалить символ ; в начале строки) строку <b>extension=gd</b></li>
+  <li>В файле button.php, как показано в видео, сохранить следующий код:
+<pre>
+  &lt;?php
+  header("Content-type: image/png");
+  // header("Content-type: image/jpeg");
+  $string = $_GET['text'];
+  $im     = imagecreatefrompng("images/button.png");
+  $colorr = imagecolorallocate($im, 240, 200, 200);
+  $px     = (imagesx($im) - 7.5 * strlen($string)) / 2;
+  // imagestring($im, 3, $px, 150, $string, $colorr);
+  $font = 'images/font.ttf';
+  imagettftext($im, 38, 0, $px-100, 180, $colorr, $font, $string);
+  imagepng($im);
+  // imagejpeg($im, NULL, 100);
+  imagedestroy($im);
+  ?></pre></li>
+  <li>Скачать файлы любого кириллического шрифта с <a href="https://fonts.google.com/?subset=cyrillic" target="_blank" rel="noopener noreferrer">fonts.google.com</a> и сохранить как images/font.ttf</li>
+  <li>Создать файл html с кодом картинки &lt;img src="button.php?text=Это кнопка!" alt=""> и открыть его в браузере</li>
+
 <h2 id="func">21 марта: Решение задач по обработке строк</h2>
 <ol>
   <li><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams, и <a href="../../php/txt/">материалы по обработке строк в php</a></li>
@@ -19,7 +42,7 @@
   <li>Для решения задачи рекомендуется применить функции iconv_strlen, str_replace, explode, count.</li>
 </ol>
 
-<h2 id="func">14 марта: Функции работы с текстом в php</h2>
+<h2 id="func-txt">14 марта: Функции работы с текстом в php</h2>
 <p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams;</p>
 <ol>
   <li>Просмотреть <a href="../../php/txt/">материалы по работе с текстом в php</a> и <a href="../fonts/">материал про свойство шрифтов</a></li>
