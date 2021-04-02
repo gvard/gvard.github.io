@@ -33,10 +33,9 @@ BODY = f"""<body">
     <li>Всего орбитальных запусков: <span class="yellow">{AN[0]}</span></li>
     <li>Вне каталога: <span class="yellow">{AN[1]}</span></li>
     <li>Неудачных попыток: <span class="yellow">{AN[2]}</span></li>
-    <li>Суборбитальных пусков: <span class="yellow">{AN[3]}</span></li>
-    <li>Мезосферных пусков: <span class="yellow">{AN[4]}</span></li>
-    <li>Эндоатмосферных пусков: <span class="yellow">{AN[5]}</span></li>
-    <li>Взрывов стартового стола: <span class="yellow">{AN[6]}</span></li>
+    <li>Суборбитальных пусков (апогей от 80 км): более <span class="yellow">{AN[3]}</span></li>
+    <li>Мезосферных пусков: более <span class="yellow">{AN[4]}</span></li>
+    <li>Эндоатмосферных пусков (апогей до 50 км): более <span class="yellow">{AN[5]}</span></li>
     <li>Всего записей в каталоге: <span class="yellow">{AN[7]}</span></li>
   </ul>
   </div>
@@ -45,5 +44,10 @@ BODY = f"""<body">
   </div>
 </div>
 """
+
+"""
+<li>Взрывов стартового стола: <span class="yellow">{AN[6]}</span></li>
+"""
+
 with open(os.path.join(os.pardir, 'cosm', 'launches', 'index.html'), 'w', encoding="utf8") as handle:
     print(HEAD + BODY + TAIL, file=handle)
