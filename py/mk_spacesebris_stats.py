@@ -5,7 +5,6 @@ https://sdup.esoc.esa.int/discosweb/statistics/
 https://www.sdo.esoc.esa.int/environment_report/Space_Environment_Report_latest.pdf
 """
 
-import pickle
 import os
 import urllib.request
 
