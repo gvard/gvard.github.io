@@ -183,10 +183,9 @@ MPC_STATS = f'''<h2>Статистика тел Солнечной систем�
 <script src="https://cneos.jpl.nasa.gov/js/vendor/highcharts/themes/grid.js"></script>
 <script>mkChart()</script>
 <br>
-<p>Распределение малых планет, количество в зависимости от большой полуоси орбиты:<br>
-<img src="https://minorplanetcenter.net/iau/plot/OrbEls01.gif" alt="Distribution of the Minor Planets: Semimajor Axis"><br>
+<p>Распределение малых планет, количество в зависимости от большой полуоси (вертикальные линии - большие полуоси планет и щели Кирквуда):<br>
 <a href="https://en.wikipedia.org/wiki/Kirkwood_gap" target="_blank" rel="noopener noreferrer">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Kirkwood_Gaps.svg/994px-Kirkwood_Gaps.svg.png" alt="Diagram showing inner, middle and outer main-belt asteroids"></a>
+<img src="images/mpc-ahist-202104.png" width="960" alt="Distribution of the Minor Planets: Semimajor Axis"></a>
 </p>
 <p><a href="https://minorplanetcenter.net/iau/lists/t_tnos.html">Список транснептуновых объектов</a></p><br>
 <a href="{JOHNSTON_SOLSYS_URL}">Альтернативная статистика Johnston's Archive</a>, {UPD}:
