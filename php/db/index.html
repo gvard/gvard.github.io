@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Работа с изображениями в PHP: подборка ссылок">
+  <title>PHP: базы данных</title>
+  <link rel="stylesheet" href="../../compact.css">
+  <link rel="stylesheet" href="../../github.css">
+  <script src="../highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<h1>PHP: базы данных</h1>
+<p>Страница <a href="../../dev/db/">базы данных</a> в разделе web-разработка</p>
+
+<p>Для работы не забудьте настроить PHP для работы с базой данных SQLite: в файле php.ini надо раскомментировать строки</p>
+<pre><code>extension=pdo_sqlite
+extension=sqlite3
+</code></pre>
+
+<h2 id="links">Ссылки:</h2>
+<ul>
+  <li><a href="https://www.php.net/manual/ru/book.sqlite3.php" target="_blank" rel="noopener noreferrer">SQLite3</a></li>
+  <li><a href="https://www.php.net/manual/ru/book.pdo.php" target="_blank" rel="noopener noreferrer">Объекты данных PHP</a> (PDO: PHP Data Objects)</li>
+  <li><a href="https://www.php.net/manual/ru/class.pdo.php" target="_blank" rel="noopener noreferrer">Класс PDO</a></li>
+  <li><a href="https://www.php.net/manual/ru/sqlite3.open.php" target="_blank" rel="noopener noreferrer">SQLite3::open</a> — Открыть базу данных SQLite</li>
+  <li><a href="https://www.php.net/manual/ru/sqlite3.query.php" target="_blank" rel="noopener noreferrer">SQLite3::query</a> — Выполняет SQL-запрос</li>
+  <li><a href="https://www.php.net/manual/ru/sqlite3result.fetcharray.php" target="_blank" rel="noopener noreferrer">SQLite3Result::fetchArray</a> — Выбирает одну строку из результирующего набора и помещает её в ассоциативный или нумерованный массив, или в оба сразу</li>
+  <li><a href="https://www.php.net/manual/ru/function.var-dump.php" target="_blank" rel="noopener noreferrer">var_dump</a> — Выводит информацию о переменной</li>
+</ul>
+
+Пример создания и чтения базы данных:
+<pre><code>&lt;?php
+class MyDB extends SQLite3
+{
+    function __construct()
+    {
+        $this->open('mysqlitedb.db');
+    }
+}
+
+$db = new MyDB();
+$db->exec('CREATE TABLE foo (bar1 STRING, bar2 STRING)');
+$db->exec("INSERT INTO foo (bar1, bar2) VALUES
+    ('Автор записи 1', 'Запись 1!'),
+    ('Автор записи 2', 'Запись 2!')
+    ");
+
+$result = $db->query('SELECT bar1, bar2 FROM foo');
+var_dump($result->fetchArray());
+
+$res = $result->fetchArray();
+echo "<br>", $res['bar1'], $res['bar2'], "<br>";
+
+$file_db = new PDO('sqlite:mysqlitedb.db');
+$db = null;
+$res = $file_db->query('SELECT * FROM foo');
+
+foreach ($res as $values)
+    echo $values['bar1'], ' оставил запись ', $values['bar2'], "<br>";
+?>
+</code></pre>
+
+</body>
+</html>
