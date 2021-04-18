@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Работа с изображениями в PHP: подборка ссылок">
+  <title>PHP: формы, динамическое создание</title>
+  <link rel="stylesheet" href="../../compact.css">
+  <link rel="stylesheet" href="../../github.css">
+  <script src="../highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<h1>PHP: формы, динамическое создание</h1>
+
+<p>Для работы не забудьте настроить PHP для работы с базой данных SQLite: в файле php.ini надо раскомментировать строки</p>
+<pre><code>extension=pdo_sqlite
+extension=sqlite3
+</code></pre>
+
+<h2 id="links">Ссылки:</h2>
+<ul>
+  <li><a href="https://www.php.net/manual/ru/function.array-keys.php" target="_blank" rel="noopener noreferrer">array_keys</a> — Возвращает все или некоторое подмножество ключей массива</li>
+  <li><a href="https://www.php.net/manual/ru/language.types.string.php#language.types.string.syntax.heredoc" target="_blank" rel="noopener noreferrer">heredoc-синтаксис</a></li>
+  <li><a href="https://www.php.net/manual/ru/pdo.query.php" target="_blank" rel="noopener noreferrer">PDO::query</a> — Выполняет SQL-запрос и возвращает результирующий набор в виде объекта PDOStatement</li>
+  <li><a href="https://www.php.net/manual/ru/reserved.variables.post.php" target="_blank" rel="noopener noreferrer">$_POST</a> — Переменные HTTP POST</li>
+  <li><a href="https://www.php.net/substr" target="_blank" rel="noopener noreferrer">substr</a> — Возвращает подстроку</li>
+</ul>
+
+Пример создания формы после чтения базы данных:
+<pre><code>&lt;?php
+  $file_db = new PDO('sqlite:mysqlitedb.db');
+  $res = $file_db->query('SELECT * FROM foo', PDO::FETCH_ASSOC);
+  echo '<form action="action2.php" method="post">' . "\n";
+
+  foreach ($res as $values)
+    $keys = array_keys($values);
+  foreach ($keys as $key)
+    echo '  &lt;input type="text" name="' . $key . '">' . "&lt;br>\n";
+
+  $form = &lt;&lt;&lt; FRM
+  &lt;input type="submit" name="send" value="Отправить">
+  </form>
+  FRM;
+  echo $form;
+?>
+</code></pre>
+<p>Обработка формы и добавление значений в базу данных:</p>
+<pre><code>&lt;?php
+unset($_POST["send"]);
+$k = '';
+$v = '';
+foreach (array_keys($_POST) as $key) {
+  $k .= $key . ', ';
+  $v .= "'" . $_POST[$key] . "', ";
+}
+  $k = substr($k, 0, -2);
+  $v = substr($v, 0, -2);
+  $db = new MyDB();
+  $db->exec("INSERT INTO foo ($k) VALUES ($v)");
+</code></pre>
+</body>
+</html>
