@@ -16,11 +16,12 @@
 <body onload="findDate()">
 <nav class="menu">
 <ul>
-  <li>Коллекции:</li>
+  <li><a href="../collections/">Коллекции:</a></li>
   <li>Солнечная система</li>
   <li><a href="../stars/">Звезды</a></li>
-  <li><a href="../galaxies/">Галактики</a></li>
   <li><a href="../exoplanets/">Экзопланеты</a></li>
+  <li><a href="../clusters/">Звездные скопления</a></li>
+  <li><a href="../galaxies/">Галактики</a></li>
 </ul>
 </nav>
 
@@ -37,10 +38,10 @@
 <input type="checkbox" name=".date" value="block" checked onclick="showHideThis(this)">Дата открытия,
 <input type="checkbox" name=".mass" value="block" onclick="showHideThis(this)">Масса,
 <input type="checkbox" name=".delta-v" value="block" onchange="showHideThis(this)">Δv<br>
-<input type="checkbox" name=".highcontrast,.lightcurve" value="inline-block" checked onchange="showHideThis(this)">"восстановленное" изображение или модель<br>
+<input type="checkbox" name=".highcontrast,.lightcurve" value="inline-block" checked onchange="showHideThis(this)">Восстановленное изображение или модель<br>
 <input type="checkbox" name=".dot,.lowcontrast" value="inline-block" checked onchange="showHideThis(this)">Фото низкого разрешения или точечное<br>
 <input type="checkbox" name=".radar" value="inline-block" checked onchange="showHideThis(this)">Радарное изображение<br>
-<input type="checkbox" name=".he" value="inline-block" checked onchange="showHideThis(this)">"круглые" тела (в гидростатическом равновесии)<br>
+<input type="checkbox" name=".he" value="inline-block" checked onchange="showHideThis(this)">«Круглые» тела (в гидростатическом равновесии)<br>
 <input type="checkbox" name=".animation" value="block" checked onclick="showHideThis(this)">С анимированными картинками.<br>
 <input type="text" id="year" size="4" maxlength="4" value="1990">
 <button type="button" onclick="showHideByDate('none')">Скрыть объекты, открытые после указанного года</button>
@@ -60,7 +61,7 @@ $db = null;
 $rezult = $file_db->query('SELECT * FROM sobject');
 
 foreach ($rezult as $result) {
-	
+
   echo '<div class="obj star he">';
   echo '<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="';
   if (!empty($result['anumber']))
