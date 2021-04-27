@@ -48,9 +48,9 @@ ECHO_JPL_STATS = f"""<h2>Астероиды и кометы, измеренны�
 <li>{NEA} околоземных астероидов,
 <li>{CO} комет.
 </ul>
-<a href="https://echo.jpl.nasa.gov/~lance/">Near-Earth Asteroid Files</a>:<br>
-<img src="https://echo.jpl.nasa.gov/~lance/radar_detected_neas_summary/nea.radar.history.jpg" alt=""><br>
-<img src="https://echo.jpl.nasa.gov/~lance/radar_detected_neas_summary/asteroid.radar.history.jpg" alt=""><br>
+<a href="https://echo.jpl.nasa.gov/lance/">Near-Earth Asteroid Files</a>:<br>
+<img src="https://echo.jpl.nasa.gov/lance/radar_detected_neas_summary/nea.radar.history.jpg" alt=""><br>
+<img src="https://echo.jpl.nasa.gov/lance/radar_detected_neas_summary/asteroid.radar.history.jpg" alt=""><br>
 """
 
 try:
