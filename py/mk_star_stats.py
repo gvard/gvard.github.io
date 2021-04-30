@@ -6,7 +6,7 @@ from beautifulsoup_supply import TAIL, mk_head, get_soup
 from plot_supply import plot_bar, optimize_svg
 
 
-HEAD = mk_head("Статистика звездных каталогов", script="") + "<body>\n"
+HEAD = mk_head("Статистика звездных каталогов", style="../../compact.css", script="") + "<body>\n"
 WDS_URL = "http://cdsarc.u-strasbg.fr/viz-bin/ReadMe/B/wds?format=html"
 SIMBAD_URL = "https://simbad.u-strasbg.fr/simbad/"
 SNIMAGES_URL = "http://rochesterastronomy.org/snimages/"
@@ -105,7 +105,7 @@ stars_dir = os.path.join(os.pardir, 'stars')
 tmp_pth = os.path.join(stars_dir, tmp_filename)
 pth = os.path.join(stars_dir, filename)
 xlim = (1994.3, 2021.7)
-plot_bar(years, sns, snalt, labels, tmp_pth, xlim)
+plot_bar(years, sns, snalt, labels, tmp_pth, xlim, lab0="до 1996")
 optimize_svg(tmp_pth, pth)
 os.remove(tmp_pth)
 soup = get_soup(TNS_STATS_URL)

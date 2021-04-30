@@ -10,11 +10,10 @@ import urllib.request
 from beautifulsoup_supply import TAIL, mk_head, get_soup
 
 
-DEBUG = False
 GCAT_URL = 'https://planet4589.org/space/gcat/web/launch/count.html'
 
 
-def get_sd(soup, debug=False):
+def get_sd(soup):
     """Parse html, get statistics of rocket launches."""
     pretxt = soup.findAll("pre")[1].text.splitlines()[1:]
     allnums = [line.split()[-1] for line in pretxt]
@@ -22,7 +21,7 @@ def get_sd(soup, debug=False):
 
 
 soup = get_soup(GCAT_URL)
-AN = get_sd(soup, debug=DEBUG)
+AN = get_sd(soup)
 
 HEAD = mk_head("Статистика запусков ракет", style="stats.css")
 BODY = f"""<body">

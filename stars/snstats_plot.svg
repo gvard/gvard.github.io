@@ -32,7 +32,7 @@
 <path d="m781.1 642.96h26.133v-231.74h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m811.84 642.96h26.133v-482.7h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m842.59 642.96h26.133v-582.36h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m873.33 642.96h26.133v-204.77h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m873.33 642.96h26.133v-206.33h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m73.975 620.08h26.133v-9.2012h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m104.72 640.77h26.133v-0.73122h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m135.46 638.69h26.133v-0.70075h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
@@ -51,7 +51,7 @@
 <path d="m535.14 629.68h26.133v-4.6615h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m565.89 620.51h26.133v-5.1185h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m596.63 615.97h26.133v-5.2404h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m627.38 602.44h26.133v-6.3677h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m627.38 602.44h26.133v-6.3982h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m658.12 587.72h26.133v-5.6365h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m688.87 543.06h26.133v-6.0935h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m719.61 428.93h26.133v-7.6169h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
@@ -59,7 +59,7 @@
 <path d="m781.1 411.22h26.133v-4.5397h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m811.84 160.26h26.133v-3.8389h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m842.59 60.605h26.133v-3.9303h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m873.33 438.19h26.133v-9.4754h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m873.33 436.63h26.133v-9.9933h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <defs>
 <path id="b" d="m0 0v3.5" stroke="#000" stroke-width=".8"/>
 </defs>
@@ -162,7 +162,7 @@
 <text transform="rotate(-0 548.21 620.01)" x="548.209051" y="620.014654" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">589</text>
 <text transform="rotate(-0 578.95 610.39)" x="578.953577" y="610.386931" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">905</text>
 <text transform="rotate(-0 609.7 605.73)" x="609.698102" y="605.725406" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1058</text>
-<text transform="rotate(-0 640.44 591.07)" x="640.442628" y="591.070549" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1539</text>
+<text transform="rotate(-0 640.44 591.04)" x="640.442628" y="591.040081" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1540</text>
 <text transform="rotate(-0 671.19 577.09)" x="671.187153" y="577.085975" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1998</text>
 <text transform="rotate(-0 701.93 531.96)" x="701.931679" y="531.963638" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">3479</text>
 <text transform="rotate(-0 732.68 416.31)" x="732.676204" y="416.309084" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7275</text>
@@ -170,7 +170,7 @@
 <text transform="rotate(-0 794.17 401.68)" x="794.165255" y="401.684694" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7755</text>
 <text transform="rotate(-0 824.91 151.42)" x="824.909781" y="151.424815" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">15969</text>
 <text transform="rotate(-0 855.65 51.674)" x="855.654307" y="51.674286" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">19243</text>
-<text transform="rotate(-0 886.4 423.71)" x="886.398832" y="423.712682" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7032</text>
+<text transform="rotate(-0 886.4 421.64)" x="886.398832" y="421.640893" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7100</text>
 <text transform="rotate(-0 486.72 21.36)" x="486.72" y="21.36" font-family="DejaVu Sans" font-size="22px" text-anchor="middle">Статистика открытий сверхновых по годам</text>
 <defs>
 <clipPath id="a">

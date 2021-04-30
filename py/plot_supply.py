@@ -10,7 +10,7 @@ def autolabel(rects1, rects2, ax):
             xytext=(0, 5), textcoords="offset points", ha='center')
 
 
-def plot_bar(xes, data, data2, labels, pth, xlim, width=0.85):
+def plot_bar(xes, data, data2, labels, pth, xlim, width=0.85, lab0=None):
     plt.rcParams['svg.fonttype'] = 'none'
     title, xlabel, ylabel = labels
     fig, ax = plt.subplots(figsize=(13, 9.5))
@@ -21,7 +21,8 @@ def plot_bar(xes, data, data2, labels, pth, xlim, width=0.85):
     plt.ylabel(ylabel, fontsize=14)
     plt.title(title, fontsize=22)
     plt.xticks(xes)
-    xes[0] = "до 1996"
+    if lab0:
+        xes[0] = lab0
     ax.set_xticklabels(xes)
     plt.xlim(xlim[0], xlim[1])
     plt.subplots_adjust(left=0.07, bottom=0.06, right=0.97, top=0.96)

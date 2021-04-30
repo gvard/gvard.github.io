@@ -11,11 +11,10 @@ import urllib.request
 from beautifulsoup_supply import TAIL, mk_head, get_soup
 
 
-DEBUG = False
 SD_URL = 'https://sdup.esoc.esa.int/discosweb/statistics/embed/bythenumbers'
 
 
-def get_sd(soup, debug=False):
+def get_sd(soup):
     """Parse html, get date of last page update,
     statistics of space debris."""
     months_dct = {"January": "января",  "April": "апреля"}
@@ -31,7 +30,7 @@ def get_sd(soup, debug=False):
 
 
 soup = get_soup(SD_URL)
-DATE, stats, DEBR_MODEL = get_sd(soup, debug=DEBUG)
+DATE, stats, DEBR_MODEL = get_sd(soup)
 
 HEAD = mk_head("Космический мусор: статистика", style="stats.css")
 BODY = f"""<body">
