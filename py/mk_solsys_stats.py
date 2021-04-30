@@ -11,7 +11,7 @@ from beautifulsoup_supply import TAIL, mk_head, get_soup
 
 
 DEBUG = False
-HEAD = mk_head("Статистика тел Солнечной системы", script="nea_size_bin_chart.js") + "<body>\n"
+HEAD = mk_head("Статистика тел Солнечной системы", style="../compact.css", script="nea_size_bin_chart.js") + "<body>\n"
 PICKLE_RADAR_FILENAME = "radar_obj_names.pickle"
 ECHO_URL = "https://echo.jpl.nasa.gov/asteroids/"
 MPC_URL = "https://minorplanetcenter.net/mpc/summary"
