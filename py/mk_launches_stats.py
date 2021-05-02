@@ -23,7 +23,7 @@ def get_sd(soup):
 soup = get_soup(GCAT_URL)
 AN = get_sd(soup)
 
-HEAD = mk_head("Статистика запусков ракет", style="stats.css")
+HEAD = mk_head("Статистика запусков ракет", style="stats.css", script="")
 BODY = f"""<body">
 <div id="stats" class="container show">
   <h1 id="header">Статистика запусков ракет: апрель 2021 г.</h1>

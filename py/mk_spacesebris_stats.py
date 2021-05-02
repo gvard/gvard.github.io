@@ -32,7 +32,7 @@ def get_sd(soup):
 soup = get_soup(SD_URL)
 DATE, stats, DEBR_MODEL = get_sd(soup)
 
-HEAD = mk_head("Космический мусор: статистика", style="stats.css")
+HEAD = mk_head("Космический мусор: статистика", style="stats.css", script="")
 BODY = f"""<body">
 <div id="stats" class="container show">
   <h1 id="header">Космический мусор: статистика от {DATE} года</h1>
