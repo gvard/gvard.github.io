@@ -23,6 +23,8 @@ def plot_bar(xes, data, data2, labels, pth, xlim, width=0.85, lab0=None):
     plt.xticks(xes)
     if lab0:
         xes[0] = lab0
+    # for i, x in enumerate(xes):
+    #     xes[i] = str(x) + "0"
     ax.set_xticklabels(xes)
     plt.xlim(xlim[0], xlim[1])
     plt.subplots_adjust(left=0.07, bottom=0.06, right=0.97, top=0.96)
