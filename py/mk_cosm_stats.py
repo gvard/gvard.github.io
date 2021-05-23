@@ -53,7 +53,10 @@ N2_STATS_HTML = f"""<h2>Отслеживаемые объекты в около�
 
 def get_flightlist(soup):
     trs = soup.findAll('tr')
-    tds = trs[-1].findAll('td')
+    x = -1
+    while trs[x].findAll('td')[0].text == "NotFAI":
+        x -= 1
+    tds = trs[x].findAll('td')
     return tds[0].text, tds[1].text, tds[2].text, len(trs)
 
 soup = get_soup(FLIGHTLIST_URL)
