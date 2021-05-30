@@ -2,7 +2,7 @@ import os
 import pickle
 import urllib.request
 
-from beautifulsoup_supply import TAIL, mk_head, get_soup
+from beautifulsoup_supply import TAIL, mk_head, get_soup, get_soup_Request
 from plot_supply import plot_bar, optimize_svg
 
 
@@ -108,7 +108,7 @@ xlim = (1994.3, 2021.7)
 plot_bar(years, sns, snalt, labels, tmp_pth, xlim, lab0="до 1996")
 optimize_svg(tmp_pth, pth)
 os.remove(tmp_pth)
-soup = get_soup(TNS_STATS_URL)
+soup = get_soup_Request(TNS_STATS_URL)
 all_transient, classified, spectra = get_tns(soup)
 
 snstats_txt += f"""</ul>

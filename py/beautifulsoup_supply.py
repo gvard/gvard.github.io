@@ -1,4 +1,5 @@
 import urllib.request
+from urllib.request import Request
 
 from bs4 import BeautifulSoup
 
@@ -25,6 +26,12 @@ def mk_head(title, style="style.css", script="script.js"):
     if script:
         SCRIPT = f'  <script src="{script}"></script>\n'
     return HEAD_HEAD + f'  <title>{title}</title>\n' + STYLE + SCRIPT + HEAD_TAIL
+
+def get_soup_Request(url):
+    """get url, return BeautifulSoup object."""
+    req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    html = urllib.request.urlopen(req).read()
+    return BeautifulSoup(html, 'html.parser')
 
 def get_soup(url):
     """get url, return BeautifulSoup object."""

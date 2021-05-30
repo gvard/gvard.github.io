@@ -30,9 +30,9 @@
 <path d="m719.61 642.96h26.133v-213.99h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m750.35 642.96h26.133v-229.65h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m781.1 642.96h26.133v-232.36h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m811.84 642.96h26.133v-482.69h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m811.84 642.96h26.133v-482.75h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m842.59 642.96h26.133v-582.36h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m873.33 642.96h26.133v-250.27h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m873.33 642.96h26.133v-263.12h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m73.975 620.08h26.133v-9.3516h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m104.72 640.77h26.133v-0.73107h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m135.46 638.7h26.133v-0.70061h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
@@ -53,13 +53,13 @@
 <path d="m596.63 615.97h26.133v-5.2393h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m627.38 602.45h26.133v-6.3968h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m658.12 587.73h26.133v-5.6353h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m688.87 543.08h26.133v-6.0922h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m688.87 543.08h26.133v-6.1532h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m719.61 428.97h26.133v-7.6153h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m750.35 413.31h26.133v-7.2498h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m781.1 410.6h26.133v-4.5387h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m811.84 160.27h26.133v-3.8381h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m811.84 160.21h26.133v-3.8381h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m842.59 60.604h26.133v-3.9295h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m873.33 392.69h26.133v-12.063h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m873.33 379.84h26.133v-12.063h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <defs>
 <path id="b" d="m0 0v3.5" stroke="#000" stroke-width=".8"/>
 </defs>
@@ -164,13 +164,13 @@
 <text transform="rotate(-0 609.7 605.73)" x="609.698102" y="605.732105" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1058</text>
 <text transform="rotate(-0 640.44 591.05)" x="640.442628" y="591.049832" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1540</text>
 <text transform="rotate(-0 671.19 577.1)" x="671.187153" y="577.098626" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1998</text>
-<text transform="rotate(-0 701.93 531.99)" x="701.931679" y="531.985666" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">3479</text>
+<text transform="rotate(-0 701.93 531.92)" x="701.931679" y="531.924744" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">3481</text>
 <text transform="rotate(-0 732.68 416.36)" x="732.676204" y="416.355149" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7275</text>
 <text transform="rotate(-0 763.42 401.06)" x="763.42073" y="401.063653" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7777</text>
 <text transform="rotate(-0 794.17 401.06)" x="794.165255" y="401.063653" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7777</text>
-<text transform="rotate(-0 824.91 151.43)" x="824.909781" y="151.434545" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">15972</text>
+<text transform="rotate(-0 824.91 151.37)" x="824.909781" y="151.373623" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">15974</text>
 <text transform="rotate(-0 855.65 51.674)" x="855.654307" y="51.674286" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">19247</text>
-<text transform="rotate(-0 886.4 375.63)" x="886.398832" y="375.628594" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">8612</text>
+<text transform="rotate(-0 886.4 362.77)" x="886.398832" y="362.77399" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">9034</text>
 <text transform="rotate(-0 486.72 21.36)" x="486.72" y="21.36" font-family="DejaVu Sans" font-size="22px" text-anchor="middle">Статистика открытий сверхновых по годам</text>
 <defs>
 <clipPath id="a">
