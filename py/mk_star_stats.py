@@ -9,7 +9,7 @@ from plot_supply import plot_bar, optimize_svg
 HEAD = mk_head("Статистика звездных каталогов", style="../../compact.css", script="") + "<body>\n"
 WDS_URL = "http://cdsarc.u-strasbg.fr/viz-bin/ReadMe/B/wds?format=html"
 SIMBAD_URL = "https://simbad.u-strasbg.fr/simbad/"
-SNIMAGES_URL = "http://rochesterastronomy.org/snimages/"
+SNIMAGES_URL = "https://rochesterastronomy.org/snimages/"
 SNOTHER_URL = SNIMAGES_URL + "snother.html"
 SNSTATS_URL = SNIMAGES_URL + "archives.html"
 NOVASTATS_URL = SNIMAGES_URL + "novastatsall.html"
@@ -69,7 +69,7 @@ for year in range(1996, 1999):
 snurls.append((1999, f'{SNIMAGES_URL}sn1999/snstats.html'))
 
 for year in range(2000, 2022):
-    snstats_year = f'http://rochesterastronomy.org/sn{year}/snstats.html'
+    snstats_year = f'https://rochesterastronomy.org/sn{year}/snstats.html'
     snurls.append((year, snstats_year))
 snurls.append(('all', f'{SNIMAGES_URL}snstatsall.html'))
 
@@ -131,7 +131,7 @@ snstats_txt += f"""</ul>
 <li><a href="https://en.wikipedia.org/wiki/SN_1885A" target="_blank" rel="noopener noreferrer">SN 1885A (S And)</a> в M31, открыта 17.08.1885, блеск в пике <b>5.85</b> (21.08.1985).
 <li><a href="https://en.wikipedia.org/wiki/SN_1972E" target="_blank" rel="noopener noreferrer">SN 1972E</a> в NGC 5253, открыта (06)13.05.1972, блеск в пике ~<b>8.5</b>.
 <li><a href="https://en.wikipedia.org/wiki/SN_1987A" target="_blank" rel="noopener noreferrer">SN 1987A</a> в Большом Магеллановом Облаке, открыта в ночь 23–24.02.1987, блеск в пике <b>2.9</b> (10.05.1987).
-  <a href="http://rochesterastronomy.org/snimages/sn1987a.html" target="_blank" rel="noopener noreferrer">Страница на rochesterastronomy.org/snimages/</a>
+  <a href="https://rochesterastronomy.org/snimages/sn1987a.html" target="_blank" rel="noopener noreferrer">Страница на rochesterastronomy.org/snimages/</a>
 <li><a href="https://en.wikipedia.org/wiki/SN_2011fe" target="_blank" rel="noopener noreferrer">SN 2011fe</a>, в M101, открыта 24.08.2011 по снимкам 22 и 23 августа 2011. Блеск в пике <b>9.9</b> (13.09.2011).
 <li><a href="https://sne.space/statistics/" target="_blank" rel="noopener noreferrer">The Open Supernova Catalog</a>.
   The catalog includes metadata for 58,901 supernovae with 595,032 individual photometric detections and 22,472 individual spectra.<br>
