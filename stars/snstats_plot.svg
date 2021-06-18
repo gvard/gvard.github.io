@@ -27,12 +27,12 @@
 <path d="m627.38 642.96h26.133v-40.524h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m658.12 642.96h26.133v-55.24h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m688.87 642.96h26.133v-99.908h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m719.61 642.96h26.133v-214.14h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m719.61 642.96h26.133v-214.17h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m750.35 642.96h26.133v-229.74h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m781.1 642.96h26.133v-232.45h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m811.84 642.96h26.133v-483.03h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m842.59 642.96h26.133v-582.36h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m873.33 642.96h26.133v-301.61h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m873.33 642.96h26.133v-307.52h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m73.975 620.08h26.133v-9.354h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m104.72 640.77h26.133v-0.73126h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m135.46 638.69h26.133v-0.70079h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
@@ -54,12 +54,12 @@
 <path d="m627.38 602.44h26.133v-6.3985h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m658.12 587.72h26.133v-5.6368h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m688.87 543.05h26.133v-6.1548h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m719.61 428.82h26.133v-7.6173h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m719.61 428.79h26.133v-7.6173h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m750.35 413.22h26.133v-7.2516h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m781.1 410.51h26.133v-4.5704h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m811.84 159.93h26.133v-4.0829h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m842.59 60.605h26.133v-3.9305h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m873.33 341.35h26.133v-12.279h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m873.33 335.44h26.133v-12.279h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <defs>
 <path id="b" d="m0 0v3.5" stroke="#000" stroke-width=".8"/>
 </defs>
@@ -165,12 +165,12 @@
 <text transform="rotate(-0 640.44 591.04)" x="640.442628" y="591.037643" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1540</text>
 <text transform="rotate(-0 671.19 577.08)" x="671.187153" y="577.082812" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1998</text>
 <text transform="rotate(-0 701.93 531.9)" x="701.931679" y="531.897191" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">3481</text>
-<text transform="rotate(-0 732.68 416.21)" x="732.676204" y="416.206158" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7278</text>
+<text transform="rotate(-0 732.68 416.18)" x="732.676204" y="416.175689" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7279</text>
 <text transform="rotate(-0 763.42 400.97)" x="763.42073" y="400.971626" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7778</text>
 <text transform="rotate(-0 794.17 400.94)" x="794.165255" y="400.941157" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7779</text>
 <text transform="rotate(-0 824.91 150.85)" x="824.909781" y="150.851086" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">15987</text>
 <text transform="rotate(-0 855.65 51.674)" x="855.654307" y="51.674286" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">19242</text>
-<text transform="rotate(-0 886.4 324.07)" x="886.398832" y="324.067711" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">10302</text>
+<text transform="rotate(-0 886.4 318.16)" x="886.398832" y="318.156713" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">10496</text>
 <text transform="rotate(-0 486.72 21.36)" x="486.72" y="21.36" font-family="DejaVu Sans" font-size="22px" text-anchor="middle">Статистика открытий сверхновых по годам</text>
 <defs>
 <clipPath id="a">
