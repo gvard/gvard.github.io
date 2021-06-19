@@ -55,6 +55,7 @@ img {max-width: 100%;}
   padding: 20px;
   display: inline-block;
 }
+a.hidden {color: rgb(205, 205, 255)}
 @media (max-width: 600px) {
   body {margin: 0 0 0.8em 0.8em;}
   nav ul li {display: block;}
