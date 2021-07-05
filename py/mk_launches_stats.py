@@ -26,7 +26,7 @@ AN = get_sd(soup)
 HEAD = mk_head("Статистика запусков ракет", style="stats.css", script="")
 BODY = f"""<body">
 <div id="stats" class="container show">
-  <h1 id="header">Статистика запусков ракет: май 2021 г.</h1>
+  <h1 id="header">Статистика запусков ракет: июль 2021 г.</h1>
   <div class="list">
   <ul>
     <li>Всего орбитальных запусков: <span class="yellow">{AN[0]}</span></li>
