@@ -92,7 +92,7 @@ SPACEFLIGHT_HTML = f"""<h2>Пилотируемая космонавтика</h2
 <li>Людей, побывавших в космосе (согласно классификации ВВС США, при высоте полета более 80 км 467 м)
 – <b>{USAF_NUM}</b></li>
 <li>Всего космических полетов – <b>{FLIGHT_NUM}</b>, следуя определению ВВС США
-– <b>{ALLFLIG_NUM}</b></li>
+– <b>{ALLFLIG_NUM+1}</b></li>
 <li>Последний – {LASTFLIGHT_NAME}, {LASTFLIGHT_DATE}</li>
 <li>Время, проведенное людьми в космосе – свыше <b>{MANYR_NUM}</b> человеко-лет.</li>
 <li>В космосе <b>{len(ASTROS_LST)}</b> космонавт{ending(len(ASTROS_LST))}: {ASTROS_STR}.</li>
