@@ -26,13 +26,13 @@
 <path d="m596.63 642.96h26.133v-26.986h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m627.38 642.96h26.133v-40.54h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m658.12 642.96h26.133v-55.22h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m688.87 642.96h26.133v-99.872h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m688.87 642.96h26.133v-99.963h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m719.61 642.96h26.133v-214.09h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m750.35 642.96h26.133v-229.68h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m781.1 642.96h26.133v-233.16h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m811.84 642.96h26.133v-483.03h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m811.84 642.96h26.133v-483.15h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m842.59 642.96h26.133v-582.36h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m873.33 642.96h26.133v-382.1h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m873.33 642.96h26.133v-410.54h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m73.975 620.09h26.133v-9.4724h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m104.72 640.77h26.133v-0.73099h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m135.46 638.7h26.133v-0.70053h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
@@ -53,13 +53,13 @@
 <path d="m596.63 615.97h26.133v-5.2388h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m627.38 602.42h26.133v-6.3962h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m658.12 587.74h26.133v-5.6347h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m688.87 543.09h26.133v-6.1525h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m688.87 543h26.133v-6.1525h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m719.61 428.87h26.133v-7.6145h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m750.35 413.28h26.133v-7.249h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m781.1 409.8h26.133v-4.5687h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m811.84 159.93h26.133v-4.0814h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m811.84 159.81h26.133v-4.1118h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m842.59 60.603h26.133v-3.9291h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m873.33 260.86h26.133v-12.61h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m873.33 232.42h26.133v-12.853h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <defs>
 <path id="b" d="m0 0v3.5" stroke="#000" stroke-width=".8"/>
 </defs>
@@ -164,13 +164,13 @@
 <text transform="rotate(-0 609.7 605.74)" x="609.698102" y="605.735454" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1058</text>
 <text transform="rotate(-0 640.44 591.02)" x="640.442628" y="591.024248" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1541</text>
 <text transform="rotate(-0 671.19 577.1)" x="671.187153" y="577.10495" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">1998</text>
-<text transform="rotate(-0 701.93 531.94)" x="701.931679" y="531.935761" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">3481</text>
+<text transform="rotate(-0 701.93 531.84)" x="701.931679" y="531.844387" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">3484</text>
 <text transform="rotate(-0 732.68 416.26)" x="732.676204" y="416.256342" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7279</text>
 <text transform="rotate(-0 763.42 401.03)" x="763.42073" y="401.02735" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7779</text>
 <text transform="rotate(-0 794.17 400.24)" x="794.165255" y="400.235443" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7805</text>
-<text transform="rotate(-0 824.91 150.85)" x="824.909781" y="150.845478" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">15993</text>
+<text transform="rotate(-0 824.91 150.69)" x="824.909781" y="150.693188" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">15998</text>
 <text transform="rotate(-0 855.65 51.674)" x="855.654307" y="51.674286" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">19249</text>
-<text transform="rotate(-0 886.4 243.25)" x="886.398832" y="243.254999" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">12959</text>
+<text transform="rotate(-0 886.4 214.56)" x="886.398832" y="214.563579" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">13901</text>
 <text transform="rotate(-0 486.72 21.36)" x="486.72" y="21.36" font-family="DejaVu Sans" font-size="22px" text-anchor="middle">Статистика открытий сверхновых по годам</text>
 <defs>
 <clipPath id="a">
