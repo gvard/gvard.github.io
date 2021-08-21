@@ -32,7 +32,7 @@
 <path d="m781.1 642.96h26.133v-233.14h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m811.84 642.96h26.133v-483.16h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m842.59 642.96h26.133v-582.36h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m873.33 642.96h26.133v-417.72h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m873.33 642.96h26.133v-422.72h-26.133z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m73.975 620.09h26.133v-9.4695h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m104.72 640.77h26.133v-0.73076h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m135.46 638.7h26.133v-0.70032h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
@@ -59,7 +59,7 @@
 <path d="m781.1 409.82h26.133v-4.5673h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m811.84 159.8h26.133v-4.1105h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m842.59 60.602h26.133v-3.9279h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m873.33 225.24h26.133v-12.88h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m873.33 220.24h26.133v-12.88h-26.133z" clip-path="url(#a)" fill="#ff7f0e"/>
 <defs>
 <path id="b" d="m0 0v3.5" stroke="#000" stroke-width=".8"/>
 </defs>
@@ -170,7 +170,7 @@
 <text transform="rotate(-0 794.17 400.25)" x="794.165255" y="400.248623" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">7807</text>
 <text transform="rotate(-0 824.91 150.69)" x="824.909781" y="150.692782" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">16003</text>
 <text transform="rotate(-0 855.65 51.674)" x="855.654307" y="51.674286" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">19255</text>
-<text transform="rotate(-0 886.4 207.36)" x="886.398832" y="207.357426" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">14142</text>
+<text transform="rotate(-0 886.4 202.36)" x="886.398832" y="202.363873" font-family="DejaVu Sans" font-size="10px" text-anchor="middle">14306</text>
 <text transform="rotate(-0 486.72 21.36)" x="486.72" y="21.36" font-family="DejaVu Sans" font-size="22px" text-anchor="middle">Статистика открытий сверхновых по годам</text>
 <defs>
 <clipPath id="a">
