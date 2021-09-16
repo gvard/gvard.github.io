@@ -20,7 +20,7 @@ ul, ol {
 #tab {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1321px;
+  max-width: 1621px;
   min-width: 408px;
   margin: auto;
   margin-bottom: 1em;
