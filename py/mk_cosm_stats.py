@@ -64,11 +64,11 @@ FLIGHT_NUM, LASTFLIGHT_NAME, LASTFLIGHT_DATE, ALLFLIG_NUM = get_flightlist(soup)
 
 
 def get_spaceflight(soup):
-    ps = soup.findAll('p')[3:7]
+    ps = soup.findAll('p')[3:8]
     manyr_num = float(ps[0].text.split()[-2])
-    usaf_num = int(ps[1].text.split()[-1])
-    fai_num = int(ps[2].text.split()[-1])
-    cosmonaut_num = int(ps[3].text.split()[-1])
+    usaf_num = int(ps[2].text.split()[-1])
+    fai_num = int(ps[3].text.split()[-1])
+    cosmonaut_num = int(ps[4].text.split()[-1])
     return manyr_num, usaf_num, fai_num, cosmonaut_num
 
 soup = get_soup(SPACEFLIGHT_URL)
