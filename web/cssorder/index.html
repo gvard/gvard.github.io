@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Web-дизайн: порядок применения правил CSS, конспект и ссылки">
+  <title>Порядок применения правил CSS</title>
+  <link rel="stylesheet" href="../../compact.css">
+  <link rel="stylesheet" href="../../github.css">
+  <script src="../../dev/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<h1>Порядок применения правил CSS</h1>
+<ol>
+  <li>Для корректной работы с указанными правилами CSS в документе должна быть декларация <a href="../html/#tags">DOCTYPE</a> современной версии HTML. Иначе страница <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Common_CSS_Questions#Why_doesn't_my_CSS_which_is_valid_render_correctly" target="_blank" rel="noopener noreferrer">будет отображаться</a> в <i>индивидуальном</i> режиме (backwards-compatibility mode).
+    <b>Всегда пиши в первой строке HTML-файла:</b>
+    <pre><code>&lt;!DOCTYPE html></code></pre></li>
+  <li>Внешние листы стилей, подключаемые в элементе link:
+    <pre><code>&lt;link rel="stylesheet" href="style.css"></code></pre>
+    сервер должен передавать с <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_MIME-%D1%82%D0%B8%D0%BF%D0%BE%D0%B2#text" target="_blank" rel="noopener noreferrer">MIME-типом</a> <code>text/css</code> (всегда верно для правильно настроенного хостинга)</li>
+  <li><b><a href="https://developer.mozilla.org/ru/docs/Web/CSS/inheritance" target="_blank" rel="noopener noreferrer">Наследование</a></b> контролирует, что происходит, если значение свойства элемента не определено.</li>
+  <li>Правило, примененное к <a href="../css/#inheritance">потомку</a>, перезаписывает стиль предка. «<span style="font-weight: bold; color: red">Роскосмос</span>» будет красным и полужирным:
+<pre><code>.news { color: black; }
+.name { font-weight: bold; color: red; }
+
+&lt;div class="news">
+   (ТАСС) &lt;span class="name">Роскосмос&lt;/span> опубликовал пресс-релиз...
+&lt;/div>
+</code></pre></li>
+  <li>Порядок следования правил в листах стилей важен. При явном переопределении правила используется последнее. «<span style="color: blue">Роскосмос</span>» будет синим:
+<pre><code>.news { color: black; }
+.name { font-weight: bold; color: red; }
+/* Какие-то правила */
+.name { font-weight: normal; color: blue; }
+
+&lt;div class="news">
+   (ТАСС) &lt;span class="name">Роскосмос&lt;/span> опубликовал пресс-релиз...
+&lt;/div>
+</code></pre></li>
+  <li>Если один элемент соответствует нескольким правилам: <b>правило для непосредственно соответствующего элемента всегда будет иметь больший приоритет, чем правила, унаследованные от предка</b>.
+    Это называется <b><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Specificity" target="_blank" rel="noopener noreferrer">Специфичность</a>: способ, с помощью которого браузеры определяют, какие значения свойств CSS наиболее соответствуют элементу и, следовательно, будут применены.</b></li>
+  <li>Взаимное расположение элементов, указанных в селекторе не влияет на специфичность правила.</li>
+  <li>Когда при объявлении стиля используется <b>модификатор <code>!important</code></b>, это объявление получает наивысший приоритет среди всех прочих объявлений. Хотя технически модификатор !important не имеет со специфичностью ничего общего, он непосредственно на неё влияет.</li>
+  <li>Отрицающий псевдокласс <code>:not</code> не учитывается как псевдокласс при расчете специфичности. Однако селекторы, расположенные внутри :not, при подсчете количества по типам селекторов рассматриваются как обычные селекторы и учитываются. <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Specificity#%D0%9D%D0%B5_%D0%B8%D1%81%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_-_not()" target="_blank" rel="noopener noreferrer">Пример</a>.</li>
+  <li>Если для элемента HTML-разметки (тега) не подходит ни одно из указанных правил CSS (или каскадные листы стилей в документе отсутствуют) и <b><a href="https://developer.mozilla.org/ru/docs/Web/CSS/inheritance#Non-inherited_properties" target="_blank" rel="noopener noreferrer">не наследуется</a></b>, то применяются <a href="https://developer.mozilla.org/ru/docs/Web/CSS/initial_value" target="_blank" rel="noopener noreferrer">начальные значения</a>.
+    Начальное значение дано в кратком описании каждого CSS свойства и имеет различное значение для наследуемых и не наследуемых свойств.
+    Например, заголовок 1-го уровня <code>&lt;h1></code> будет отображен как блочный элемент полужирным начертанием с внешними отступами сверху и снизу, равными 0.67em:
+<pre><code>display: block;
+font-size: 2em;
+margin-top: 0.67em;
+margin-bottom: 0.67em;
+font-weight: bold;</code></pre></li>
+  <li>Если требуется восстановить начальное значение свойства стиля (стиль по умолчанию), используется <b>ключевое слово <code>initial</code></b>. Восстановление размера шрифта заголовка 1-го уровня до значения 2em:
+<pre><code>h1 {
+  font-size: initial;
+}
+</code></pre></li>
+</ol>
+
+<h2>Наследуемые свойства</h2>
+<p>Когда никакого значения для свойства, которое наследуется, у элемента не установлено, элемент получает <a href="https://developer.mozilla.org/ru/docs/Web/CSS/computed_value" target="_blank" rel="noopener noreferrer">вычисленное значение</a> этого свойства от его родителя. Только корневой элемент документа получает начальное значение из описания свойства.</p>
+<p>Типичный пример наследуемого свойства <code>color</code>. Подчёркнутый текст будет зеленым:</p>
+<pre><code>p { color: green }
+
+&lt;p>В этом параграфе &lt;em>подчёркнутый текст&lt;/em>.&lt;/p>
+</code></pre>
+
+<h2>Ненаследуемые свойства</h2>
+<p>Когда значения свойства элемента, которое не наследуется, не указано, элемент получает начальное значение этого свойства (как указано в описании свойства).</p>
+<p>Пример ненаследуемого свойства <code>border</code>. Подчёркнутый текст не будет иметь рамки, т.к. начальное значение <code>border-style: none</code>:</p>
+<pre><code>p { border: medium solid }
+
+&lt;p>В этом параграфе &lt;em>подчёркнутый текст&lt;/em>.&lt;/p>
+</code></pre>
+
+<p><b>Ключевое слово <a href="https://developer.mozilla.org/ru/docs/Web/CSS/inherit" target="_blank" rel="noopener noreferrer">inherit</a></b> позволяет явно задать наследование. Это работает и на наследуемых, и на ненаследуемых свойствах.</p>
+</body>
+</html>

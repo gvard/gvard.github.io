@@ -1,0 +1,99 @@
+html,
+body {
+  margin: 0;
+  font-size: 1.1em;
+  line-height: 1.1;
+}
+body {
+  min-width: 280px;
+  max-width: 1200px;
+  border: 2px dashed #c7e4ff;
+  background-color: white;
+}
+html::before,
+body::before,
+header::before,
+footer::before,
+main::before {
+  color: #7fc1ff;
+}
+main,
+header,
+footer {
+  width: auto;
+  background-color: #f3faff;
+  border: 2px solid #7fc1ff;
+}
+nav,
+section,
+article,
+aside {
+  background-color: #f9f7ff;
+  border: 2px solid #9779ec;
+}
+nav::before,
+section::before,
+article::before,
+aside::before {
+  color: #9779ec;
+}
+h2 {
+  font-size: 1.1rem;
+  background-color: #ffffff;
+  border: 2px solid #ff994f;
+}
+h2::before {
+  content: "h2";
+  color: #ff994f;
+}
+p {
+  background-color: #ffffff;
+  border: 2px solid #f36dff;
+}
+p::before {
+  color: #f36dff;
+  content: "p";
+}
+* {
+  position: relative;
+  padding: 25px 10px 10px;
+  margin: 0;
+  border-radius: 4px;
+}
+*:not(:last-child) {
+  margin-bottom: 6px;
+}
+*::before {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  font-weight: 700;
+  font-size: 0.7em;
+}
+html::before {
+  content: "html";
+}
+body::before {
+  content: "body";
+}
+main::before {
+  content: "main";
+}
+header::before {
+  content: "header";
+}
+footer::before {
+  content: "footer";
+}
+section::before {
+  content: "section";
+}
+article::before {
+  content: "article";
+}
+aside::before {
+  content: "aside";
+}
+nav::before {
+  content: "nav";
+}

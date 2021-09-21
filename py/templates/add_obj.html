@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flask SQLAlchemy form</title>
+</head>
+<body>
+  <h3>Форма добавления объекта в таблицу параметров тел Солнечной системы</h3>
+  <p>
+    {%- for category, message in get_flashed_messages(with_categories = true) %}
+    <b>{{ message }}</b><br>
+    {%- endfor %}
+  </p>
+  <form action = "{{ request.path }}" method="post">
+    <label for="name">Имя: (номер астероида), name, имя, имя файла</label><br>
+    <input type="text" name="anumber" placeholder="123456" size="6">      
+    <input type="text" id="name" name="name" placeholder="Geographos">
+    <input type="text" name="runame" placeholder="Географ">
+    <input type="text" name="filename" placeholder="Geographos.jpg"><br>
+    <label for="size">Параметры: радиус (км), масса (кг), ΔV (км/с), дата открытия (дд.мм.гггг)</label><br>
+    <input type="text" name="size" id="size" placeholder="size" size="9">
+    <input type="text" name="mass" placeholder="1.2E34" size="9">
+    <input type="text" name="deltaV" placeholder="6.34" size="6">
+    <input type="text" name="discoverdate" placeholder="01.09.1956" size="12"><br>
+    <label for="classes">Классы: разделение пробелом</label><br>
+    <textarea name="classes" id="classes" placeholder="neo radar lightcurve" rows="3" cols="19"></textarea><br>
+    <input type="submit" value="Добавить объект">
+  </form>
+</body>
+</html>

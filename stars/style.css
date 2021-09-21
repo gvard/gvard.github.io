@@ -1,0 +1,23 @@
+img {max-width: 1024px;}
+div.desc, .class, .temp {
+  font-size: 0.89em;
+  color: white;
+}
+.mass, .angular, .desc, .mag, .jmag {
+  display: none;
+  font-size: 0.78em;
+  color: white;
+}
+div.size {
+  font-size: 0.9em;
+  color: white;
+}
+@media (max-width: 625px) {
+  .name, .date {
+    font-size: 0.82em;
+    color: white;
+  }
+  img {
+    max-width: 621px;
+  }
+}

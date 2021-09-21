@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: black;
+  font-size: 1.1em;
+}
+main {
+  padding: 20px;
+}
+.obj {
+  display: inline-block;
+}
+.img, .name, .size, .mass {
+  border: 1px #aaa solid;
+}
+.img {
+  height: 480px;
+}
+img {
+  display: block;
+}
+img.avatar {
+  border-radius: 50%;
+}
+ul, ol {
+  margin: 5px 0 10px 20px;
+  padding-left: 13px;
+}
+h1, h2, h3 {
+  margin-top: 0.59em;
+  margin-bottom: 0.4em;
+}
+nav ul {
+  margin: 0;
+  background-color: blue;
+}
+nav ul li {
+  display: inline-block;
+}
+a {
+  color: rgb(91, 168, 194);
+}
+nav a {
+  display: block;
+  padding: 0 10px;
+  color: white;
+  font-size: 1.1em;
+  line-height: 40px;
+  text-decoration: none;
+}
+nav a:hover {
+  background-color: #566DD6;
+}

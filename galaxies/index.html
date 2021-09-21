@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Коллекции астрономических объектов: галактики Местного объема">
+  <title>Галактики</title>
+  <link rel="stylesheet" href="../collections.css">
+  <script src="../collections.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+<nav class="menu">
+<ul>
+  <li><a href="../collections/">Коллекции:</a></li>
+  <li><a href="../solarsystem/">Солнечная система</a></li>
+  <li><a href="../stars/">Звезды</a></li>
+  <li><a href="../clusters/">Звездные скопления</a></li>
+  <li><a href="../exoplanets/">Экзопланеты</a></li>
+  <li><a href="../nsbh/">Звездные остатки</a></li>
+  <li><a href="../browndwarfs/">Бурые карлики</a></li>
+  <li><a href="../nebulae/">Туманности</a></li>
+  <li><a>Галактики</a></li>
+</ul>
+</nav>
+
+<div id="messageBox">
+  <div id="contents"></div>
+</div>
+
+<h1>Галактики, разрешающиеся на отдельные звезды</h1>
+
+<div class="cont">
+  <input type="checkbox" name=".name" value="block" checked onclick="showHideThis(this)">Название,
+  <input type="checkbox" name=".angular" value="block" checked onclick="showHideThis(this)">Угловой диаметр,
+  <input type="checkbox" name=".size" value="block" onclick="showHideThis(this)">Размеры,
+  <input type="checkbox" name=".mass" value="block" checked onclick="showHideThis(this)">Масса,
+  <input type="checkbox" name=".class" value="block" checked onclick="showHideThis(this)">Тип,
+  <input type="checkbox" name=".dist" value="block" checked onclick="showHideThis(this)">Расстояние,
+  Сортировать: <button onclick="toSort('size')">по возрастанию размера</button>
+  <button onclick="toSort('mass')">по возрастанию массы</button>
+</div>
+
+<div id="tab">
+<div class="obj SBm MWsat">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/Large_Magellanic_Cloud.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Large_Magellanic_Cloud" title="Large Magellanic Cloud">Бол. Магелланово Облако</a></div>
+  <div class="info_field angular">10.75° × 9.17°</div>
+  <div class="info_field size">4.3-9.86</div>
+  <div class="info_field mass">10<sup>11</sup></div>
+  <div class="info_field class">SB(s)m</div>
+  <div class="info_field dist">49.97</div>
+</div><div class="obj NGC Im MWsat">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/Small_Magellanic_Cloud.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Small_Magellanic_Cloud" title="Small Magellanic Cloud">Мал. Магелланово Облако</a></div>
+  <div class="info_field angular">5°20′ × 3°5′</div>
+  <div class="info_field size">2.15-3</div>
+  <div class="info_field mass">7 * 10<sup>9</sup></div>
+  <div class="info_field class">SB(s)m pec</div>
+  <div class="info_field dist">60.6±1.0</div>
+</div><div class="obj dE MWsat">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/Sculptor_Dwarf_Galaxy.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Sculptor_Dwarf_Galaxy" title="Карликовая галактика в Скульпторе">Sculptor Dwarf Elliptical</a></div>
+  <div class="info_field angular">39′.8 × 30′.9</div>
+  <div class="info_field size">&nbsp;</div>
+  <div class="info_field mass">&nbsp;</div>
+  <div class="info_field class">dE</div>
+  <div class="info_field dist">90±10</div>
+</div><div class="obj dE MWsat">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/Draco_Dwarf.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Draco_Dwarf" title="Карликовая галактика в Драконе">Draco Dwarf</a></div>
+  <div class="info_field angular">35′.5 × 24′.5</div>
+  <div class="info_field size">0.83±0.1 × 0.57±0.07</div>
+  <div class="info_field mass">&nbsp;</div>
+  <div class="info_field class">dE</div>
+  <div class="info_field dist">80±10</div>
+  <div class="desc">Возможно, имеет наибольшее из известных отношение масса-светимость.</div>
+</div><div class="obj dE MWsat">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Карликовая галактика в Киле" src="images/Carina_Dwarf_Spheroidal_Galaxy.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Carina_Dwarf_Spheroidal_Galaxy" title="Карликовая галактика в Киле">Carina Dwarf</a></div>
+  <div class="info_field angular">23′.4 × 15′.5</div>
+  <div class="info_field size">&nbsp;</div>
+  <div class="info_field mass">1.51-1.69 × 10<sup>6</sup></div>
+  <div class="info_field class">dE3</div>
+  <div class="info_field dist">100 ± 10</div>
+</div><div class="obj dE MWsat">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/Ursa_Minor_Dwarf.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Ursa_Minor_Dwarf" title="Карликовая галактика в Малой Медведице">Ursa Minor Dwarf</a></div>
+  <div class="info_field angular">30′.2 × 19′.1</div>
+  <div class="info_field size">&nbsp;</div>
+  <div class="info_field mass">&nbsp;</div>
+  <div class="info_field class">dE</div>
+  <div class="info_field dist">60 ± 10</div>
+</div><div class="obj dE MWsat">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/Fornax_Dwarf.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Fornax_Dwarf" title="Карликовая галактика в Печи">Fornax Dwarf</a></div>
+  <div class="info_field angular">17′.0 × 12′.6</div>
+  <div class="info_field size">&nbsp;</div>
+  <div class="info_field mass">&nbsp;</div>
+  <div class="info_field class">dE0</div>
+  <div class="info_field dist">140 ± 10</div>
+</div><div class="obj dE MWsat">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/Leo_I_(dwarf_galaxy).jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Leo_I_(dwarf_galaxy)" title="Карликовая галактика во Льве I">Leo I Dwarf</a></div>
+  <div class="info_field angular">9′.8 × 7′.4</div>
+  <div class="info_field size">&nbsp;</div>
+  <div class="info_field mass">(2.0 ± 1.0) × 10<sup>7</sup></div>
+  <div class="info_field class">E, dE3</div>
+  <div class="info_field dist">250 ± 20</div>
+  <div class="desc">Галактика находится в 12 угловых минутах от звезды 1.4 зв. величины Регул</div>
+</div><div class="obj dE MWsat">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/Leo_II_(dwarf_galaxy).jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Leo_II_(dwarf_galaxy)" title="Карликовая галактика во Льве II">Leo II Dwarf</a></div>
+  <div class="info_field angular">12.0 x 11.0</div>
+  <div class="info_field size">0.18-0.63</div>
+  <div class="info_field mass">(2.7 ± 0.5)×10<sup>7</sup></div>
+  <div class="info_field class">E0 pec</div>
+  <div class="info_field dist">210 ± 20</div>
+</div><div class="obj M NGC M31sat">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/Messier_32.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Messier_32" title="Messier 32">M 32</a></div>
+  <div class="info_field angular">8′.7 × 6′.5</div>
+  <div class="info_field size">2</div>
+  <div class="info_field mass">&nbsp;</div>
+  <div class="info_field class">cE2</div>
+  <div class="info_field dist">763 ± 24</div>
+  <div class="desc">Содержит сверхмассивную черную дыру M32* 1.5-5 млн. M<sub>☉</sub></div>
+</div><div class="obj M NGC dE M31sat">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/Messier_110.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Messier_110" title="Messier 110">M 110</a></div>
+  <div class="info_field angular">21′.9 × 11′.0</div>
+  <div class="info_field size">&nbsp;</div>
+  <div class="info_field mass">&nbsp;</div>
+  <div class="info_field class">E5 pec</div>
+  <div class="info_field dist">750–850</div>
+  <div class="desc">В отличие от M32, не содержит сверхмассивной черной дыры</div>
+</div><div class="obj NGC C DDO M31sat">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/NGC_147.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/NGC_147" title="NGC 147">NGC 147</a></div>
+  <div class="info_field angular">13′.2 × 7′.8</div>
+  <div class="info_field size">&nbsp;</div>
+  <div class="info_field mass">&nbsp;</div>
+  <div class="info_field class">dSph/dE5</div>
+  <div class="info_field dist">780 ± 30</div>
+  <div class="desc"></div>
+</div><div class="obj NGC C M31sat">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/NGC_185.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/NGC_185" title="NGC 185">NGC 185</a></div>
+  <div class="info_field angular">11′.7 × 10′.0</div>
+  <div class="info_field size">&nbsp;</div>
+  <div class="info_field mass">&nbsp;</div>
+  <div class="info_field class">dSph/dE3, Sy2</div>
+  <div class="info_field dist">630 ± 40</div>
+  <div class="desc"></div>
+</div><div class="obj M NGC SA">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/Triangulum_Galaxy.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Triangulum_Galaxy" title="Галактика в Треугольнике">M 33</a></div>
+  <div class="info_field angular">70′.8 × 41′.7</div>
+  <div class="info_field size">18.4</div>
+  <div class="info_field mass">5 × 10<sup>10</sup></div>
+  <div class="info_field class">SA(s)cd</div>
+  <div class="info_field dist">840</div>
+</div><div class="obj IB">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/Wolf–Lundmark–Melotte.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Triangulum_Galaxy" title="Вольф-Ландмарк-Мелотт">Wolf–Lundmark–Melotte</a></div>
+  <div class="info_field angular">11′.5 × 4′.2</div>
+  <div class="info_field size">3.54</div>
+  <div class="info_field mass">&nbsp;</div>
+  <div class="info_field class">IB(s)m</div>
+  <div class="info_field dist">930 ± 30</div>
+</div><div class="obj Im">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/IC_10.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/IC_10" title="IC 10">IC 10</a></div>
+  <div class="info_field angular">6′.8 × 5′.9</div>
+  <div class="info_field size">3.81</div>
+  <div class="info_field mass">&nbsp;</div>
+  <div class="info_field class">dIrr IV/BCD</div>
+  <div class="info_field dist">660 ± 60</div>
+</div><div class="obj dE">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/PGC29388.jpg"></div>
+  <div class="name"><a href="https://www.spacetelescope.org/images/potw2016a/" title="PGC 29388">PGC 29388</a></div>
+  <div class="info_field angular">2′</div>
+  <div class="info_field size">&nbsp;</div>
+  <div class="info_field mass">&nbsp;</div>
+  <div class="info_field class">dE</div>
+  <div class="info_field dist">3700–3740</div>
+</div>
+</div>
+
+<h2>Ссылки</h2>
+<ul>
+  <li>Галактика: <a href="https://en.wikipedia.org/wiki/Galactic_year" target="_blank" rel="noopener noreferrer">Galactic year</a></li>
+  <li>Списки: <a href="https://en.wikipedia.org/wiki/List_of_galaxies" target="_blank" rel="noopener noreferrer">List of galaxies</a>,
+    <a href="https://en.wikipedia.org/wiki/List_of_nearest_galaxies" target="_blank" rel="noopener noreferrer">Список ближайших галактик</a>,
+    <a href="https://en.wikipedia.org/wiki/Satellite_galaxies_of_the_Milky_Way" target="_blank" rel="noopener noreferrer">Satellite galaxies of the Milky Way</a>,
+    <a href="https://en.wikipedia.org/wiki/List_of_Andromeda%27s_satellite_galaxies" target="_blank" rel="noopener noreferrer">List of Andromeda's satellite galaxies</a>,
+    <a href="https://en.wikipedia.org/wiki/Local_Group" target="_blank" rel="noopener noreferrer">Local Group</a>,
+    <a href="https://en.wikipedia.org/wiki/List_of_galaxy_groups_and_clusters" target="_blank" rel="noopener noreferrer">List of galaxy groups and clusters</a>,
+    <a href="https://en.wikipedia.org/wiki/Local_Sheet" target="_blank" rel="noopener noreferrer">Local Sheet</a> (Council of Giants).</li>
+  <li>Местный объем: <a href="https://www.sao.ru/lv/lvgdb/introduction.php" target="_blank" rel="noopener noreferrer">Catalog & Atlas of the Local Volume galaxies</a>. The Data base on galaxies in the Local Volume, which locate within 11 Mpc around the Milky Way or have corrected radial velocities VLG &lt; 600 km/s. It contains 1246 objects.</li>
+  <li>Темная материя: <a href="https://en.wikipedia.org/wiki/Massive_compact_halo_object" target="_blank" rel="noopener noreferrer">Massive compact halo object</a>,
+    <a href="https://en.wikipedia.org/wiki/Cold_dark_matter" target="_blank" rel="noopener noreferrer">Cold dark matter</a>.
+    <a href="https://en.wikipedia.org/wiki/Hot_dark_matter" target="_blank" rel="noopener noreferrer">Hot dark matter</a>,
+    <a href="https://youtu.be/o_0oB9CHvjc" target="_blank" rel="noopener noreferrer">Introductory Astronomy: Dark Matter</a> (видео),
+    <a href="https://www.eso.org/public/videos/eso1217a/" target="_blank" rel="noopener noreferrer">Artist’s impression of the expected dark matter distribution around the Milky Way</a> (видео).</li>
+  <li><a href="https://en.wikipedia.org/wiki/Galaxy_group" target="_blank" rel="noopener noreferrer">Galaxy group</a>,
+    <a href="https://en.wikipedia.org/wiki/IC_342/Maffei_Group" target="_blank" rel="noopener noreferrer">IC 342/Maffei Group</a>,
+    <a href="https://en.wikipedia.org/wiki/M81_Group" target="_blank" rel="noopener noreferrer">M81 Group</a> (M82),
+    <a href="https://en.wikipedia.org/wiki/Centaurus_A/M83_Group" target="_blank" rel="noopener noreferrer">Centaurus A/M83 Group</a>
+    (<a href="https://en.wikipedia.org/wiki/NGC_5253" target="_blank" rel="noopener noreferrer">NGC 5253</a>),
+    <a href="https://en.wikipedia.org/wiki/Sculptor_Group" target="_blank" rel="noopener noreferrer">Sculptor Group</a>,
+    <a href="https://en.wikipedia.org/wiki/M94_Group" target="_blank" rel="noopener noreferrer">M94 Group</a>,
+    <a href="https://en.wikipedia.org/wiki/NGC_1023_Group" target="_blank" rel="noopener noreferrer">NGC 1023 group</a>,
+    <a href="https://en.wikipedia.org/wiki/M101_Group" target="_blank" rel="noopener noreferrer">M101 group</a>,
+    <a href="https://en.wikipedia.org/wiki/NGC_2997_Group" target="_blank" rel="noopener noreferrer">NGC 2997 group</a>,
+    <a href="https://en.wikipedia.org/wiki/Canes_II_Group" target="_blank" rel="noopener noreferrer">Canes II group</a>,
+    <a href="https://en.wikipedia.org/wiki/M51_Group" target="_blank" rel="noopener noreferrer">M51 group</a>,
+    <a href="https://en.wikipedia.org/wiki/Leo_Triplet" target="_blank" rel="noopener noreferrer">Leo Triplet (M66 group)</a>,
+    <a href="https://en.wikipedia.org/wiki/M96_Group" target="_blank" rel="noopener noreferrer">M96 Group</a> (Leo I Group, M95, M105),
+    <a href="https://en.wikipedia.org/wiki/NGC_5866_Group" target="_blank" rel="noopener noreferrer">NGC 5866 group</a>,
+    <a href="https://en.wikipedia.org/wiki/M109_Group" target="_blank" rel="noopener noreferrer">M109 group</a>.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Black_Eye_Galaxy" target="_blank" rel="noopener noreferrer">M64</a> (NGC 4826),
+    <a href="https://en.wikipedia.org/wiki/Circinus_Galaxy" target="_blank" rel="noopener noreferrer">Circinus Galaxy </a> (ESO 97-G13),
+    <a href="https://en.wikipedia.org/wiki/NGC_5982" target="_blank" rel="noopener noreferrer">NGC 5982</a>,
+    <a href="https://en.wikipedia.org/wiki/NGC_5985" target="_blank" rel="noopener noreferrer">NGC 5985</a>,
+    <a href="https://apod.nasa.gov/apod/ap090701.html" target="_blank" rel="noopener noreferrer">Three Galaxies in Draco</a>.
+  <li><a href="https://en.wikipedia.org/wiki/Category:Galaxy_clusters" target="_blank" rel="noopener noreferrer">Category:Galaxy clusters</a>:
+    <a href="https://en.wikipedia.org/wiki/M74_Group" target="_blank" rel="noopener noreferrer">M74 group</a>,
+    <a href="https://en.wikipedia.org/wiki/Coma_I" target="_blank" rel="noopener noreferrer">Coma I Group</a>.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Galaxy_cluster" target="_blank" rel="noopener noreferrer">Galaxy cluster</a>,
+    <a href="https://en.wikipedia.org/wiki/Virgo_Cluster" target="_blank" rel="noopener noreferrer">Virgo Cluster</a>,
+    <a href="https://en.wikipedia.org/wiki/Virgo_Supercluster" target="_blank" rel="noopener noreferrer">Virgo Supercluster</a>,
+    <a href="https://en.wikipedia.org/wiki/Laniakea_Supercluster" target="_blank" rel="noopener noreferrer">Laniakea Supercluster</a>.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Principal_Galaxies_Catalogue" target="_blank" rel="noopener noreferrer">Principal Galaxies Catalogue</a>,
+    <a href="https://en.wikipedia.org/wiki/Lyon-Meudon_Extragalactic_Database" target="_blank" rel="noopener noreferrer">LEDA</a>,
+    <a href="http://leda.univ-lyon1.fr/fG.cgi?n=hlcatalogs&a=htab&nakd=1&z=d" target="_blank" rel="noopener noreferrer">HyperLeda stats</a>: list of compilations, together with statistics on their content.
+    <a href="http://cdsarc.u-strasbg.fr/viz-bin/cat/VII/237" target="_blank" rel="noopener noreferrer">HYPERLEDA. I. Catalog of galaxies</a>: VII/237<br>
+    <img src="http://cdsarc.u-strasbg.fr//ftp/cats/VII/237/+footg8.gif" alt=""></li>
+  <li><a href="https://en.wikipedia.org/wiki/Uppsala_General_Catalogue" target="_blank" rel="noopener noreferrer">Uppsala General Catalogue</a>,
+    <a href="http://cdsarc.u-strasbg.fr/viz-bin/Cat?VII/26D" target="_blank" rel="noopener noreferrer">Uppsala General Catalogue of Galaxies (UGC)</a>: VII/26D<br>
+    <img src="http://cdsarc.u-strasbg.fr//ftp/cats/VII/26D/+footg8.gif" alt=""></li>
+  <li><a href="http://cdsarc.u-strasbg.fr/viz-bin/Cat?VII/190" target="_blank" rel="noopener noreferrer">Zwicky Galaxy Catalog</a>: VII/190<br>
+      <img src="http://cdsarc.u-strasbg.fr//ftp/cats/VII/190/+footg8.gif" alt=""></li>
+  <li><a href="https://en.wikipedia.org/wiki/NASA/IPAC_Extragalactic_Database" target="_blank" rel="noopener noreferrer">NASA/IPAC Extragalactic Database</a>.</li>
+  <li><a href="https://en.wikipedia.org/wiki/New_General_Catalogue" target="_blank" rel="noopener noreferrer">New General Catalogue</a>, Index Catalogue, Revised New General Catalogue.</li>
+  <li><a href="https://en.wikipedia.org/wiki/List_of_astronomical_catalogues" target="_blank" rel="noopener noreferrer">List of astronomical catalogues</a>,
+    <a href="https://old.ipac.caltech.edu/2mass/overview/about2mass.html" target="_blank" rel="noopener noreferrer">A Brief Explanation of 2MASS</a>,
+    <a href="https://cdsarc.unistra.fr/viz-bin/cat/II/246" target="_blank" rel="noopener noreferrer">2MASS All-Sky Catalog of Point Sources</a>: II/246<br>
+    <img src="https://cdsarc.u-strasbg.fr//ftp/cats/II/246/+footg8.png" alt=""></li>
+  <li><a href="https://en.wikipedia.org/wiki/ROSAT" target="_blank" rel="noopener noreferrer">ROSAT</a>,
+    <a href="https://heasarc.gsfc.nasa.gov/docs/rosat/ass.html" target="_blank" rel="noopener noreferrer">The ROSAT All-Sky Survey Bright Source Catalogue</a> (1RXS):
+    <a href="https://cdsarc.unistra.fr/viz-bin/cat/IX/10A" target="_blank" rel="noopener noreferrer">IX/10A</a>,
+    <a href="https://cdsarc.unistra.fr/viz-bin/cat/IX/29" target="_blank" rel="noopener noreferrer">Faint Source Catalog</a>: IX/29.<br>
+    <img src="https://cdsarc.u-strasbg.fr//ftp/cats/IX/29/+footg8.gif" alt=""></li>
+  <li><a href="https://vizier.u-strasbg.fr/vizier/cats/U.htx" target="_blank" rel="noopener noreferrer">CDS Catalogues. Usual Names</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Active_galactic_nucleus" target="_blank" rel="noopener noreferrer">Active galactic nucleus</a>,
+    <a href="https://en.wikipedia.org/wiki/Quasar" target="_blank" rel="noopener noreferrer">Quasar</a>,
+    <a href="https://en.wikipedia.org/wiki/List_of_quasars" target="_blank" rel="noopener noreferrer">List of quasars</a>.<br>
+    <a href="http://www.quasars.org/" target="_blank" rel="noopener noreferrer">Quasars and Redshift</a>,
+    <a href="https://heasarc.gsfc.nasa.gov/W3Browse/all/milliquas.html" target="_blank" rel="noopener noreferrer">MILLIQUAS - Million Quasars Catalog</a>.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Gaia_Sausage" target="_blank" rel="noopener noreferrer">Gaia-Enceladus</a>,
+    <a href="https://en.wikipedia.org/wiki/List_of_stellar_streams" target="_blank" rel="noopener noreferrer">List of stellar streams</a>,
+    <a href="https://en.wikipedia.org/wiki/Helmi_stream" target="_blank" rel="noopener noreferrer">Helmi stream</a>.</li>
+  <li><a href="https://en.wikipedia.org/wiki/CAS_parameters" target="_blank" rel="noopener noreferrer">CAS (concentration, asymmetry, smoothness) parameters</a></li>
+  <li><a href="https://nplus1.ru/news/2019/10/21/merger-sfr" target="_blank" rel="noopener noreferrer">Слияние галактик слабо повлияло на звездообразование</a></li>
+</ul>
+
+<h2>Статьи</h2>
+<ul>
+  <li><a href="https://arxiv.org/abs/2012.10130" target="_blank" rel="noopener noreferrer">The Bar and Spiral Arms in the Milky Way: Structure and Kinematics</a></li>
+  <li><a href="https://arxiv.org/abs/1810.08819" target="_blank" rel="noopener noreferrer">The spiral structure of the Milky Way</a>,
+    <a href="https://arxiv.org/abs/2101.00158" target="_blank" rel="noopener noreferrer">Local spiral structure based on the Gaia EDR3 parallaxes</a></li>
+  <li><a href="https://www.eso.org/public/news/eso0411/" target="_blank" rel="noopener noreferrer">Milky Way Past Was More Turbulent Than Previously Known</a>,
+    <a href="https://www.eso.org/public/images/eso0411c/" target="_blank" rel="noopener noreferrer">The motions of ~14.000 observed stars during the past 250 million years</a></li>
+  <li><a href="https://arxiv.org/abs/2007.11084" target="_blank" rel="noopener noreferrer">Synthetic observations of spiral arm tracers of a simulated Milky Way analog</a></li>
+</ul>
+
+<h2>Иллюстрации</h2>
+<ul>
+  <li>История. <a href="https://de.wikipedia.org/wiki/New_General_Catalogue" target="_blank" rel="noopener noreferrer">NGC: зарисовки и фото</a></li>
+  <li><a href="https://scienceblogs.com/startswithabang/2013/10/28/messier-monday-the-pinwheel-galaxy-m101" target="_blank" rel="noopener noreferrer">Messier Monday: The Pinwheel Galaxy, M101</a></li>
+  <li><a href="https://skyandtelescope.org/online-gallery/andromeda-galaxy-and-triangulum-galaxy-in-one-shot/" target="_blank" rel="noopener noreferrer">Andromeda galaxy and Triangulum galaxy in one shot</a></li>
+  <li><a href="https://www.sciencephoto.com/media/364275/view/sketch-of-andromeda-by-messier-1807" target="_blank" rel="noopener noreferrer">Sketch of Andromeda by Messier, 1807</a></li>
+  <li><a href="https://www.nasa.gov/content/goddard/hubble-s-messier-catalog#grid" target="_blank" rel="noopener noreferrer">Hubble's Messier Images</a></li>
+  <li><a href="http://www.astronet.ru/db/msg/1216186/" target="_blank" rel="noopener noreferrer">Мессье 110</a>, APOD 8.09.2006.
+  <a href="https://www.nasa.gov/feature/goddard/2018/messier-110" target="_blank" rel="noopener noreferrer">M110 в Hubble's Messier Catalog</a>.</li>
+  <li><a href="https://www.nasa.gov/feature/goddard/2017/messier-32" target="_blank" rel="noopener noreferrer">M32 в Hubble's Messier Catalog</a>,
+    <a href="https://www.flickr.com/photos/133259498@N05/40576589440" target="_blank" rel="noopener noreferrer">M32 NAOJ/Subaru/Hyper Suprime-Cam (HSC)/ Giuseppe Donatiello</a>.</li>
+  <li><a href="https://www.nasa.gov/feature/goddard/2019/messier-33-the-triangulum-galaxy" target="_blank" rel="noopener noreferrer">Messier 33 (The Triangulum Galaxy) в Hubble's Messier Catalog</a></li>
+  <li><a href="https://www.eso.org/public/images/potw1838a/" target="_blank" rel="noopener noreferrer">An explosive phoenix</a>,
+    <a href="https://www.eso.org/public/russia/images/ann11075a/" target="_blank" rel="noopener noreferrer">The Phoenix dwarf galaxy</a>.</li>
+  <li><a href="http://greggsastronomy.com/ngc147.htm" target="_blank" rel="noopener noreferrer">NGC 147 & 185</a>,
+    <a href="http://www.astrophoton.com/NGC0147.htm" target="_blank" rel="noopener noreferrer">NGC 147</a>,
+  <a href="https://www.flickr.com/photos/133259498@N05/40074696634" target="_blank" rel="noopener noreferrer">NGC 147-185</a> (astrometry solved).</li>
+  <li><a href="https://en.wikipedia.org/wiki/Cassiopeia_Dwarf" target="_blank" rel="noopener noreferrer">Cassiopeia Dwarf</a> (Andromeda VII)</li>
+  <li><a href="https://en.wikipedia.org/wiki/Seyfert%27s_Sextet" target="_blank" rel="noopener noreferrer">Секстет Сейферта</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Hanny%27s_Voorwerp" target="_blank" rel="noopener noreferrer">Hanny's Voorwerp</a>,
+    <a href="https://en.wikipedia.org/wiki/Teacup_galaxy" target="_blank" rel="noopener noreferrer">Teacup galaxy</a></li>
+</ul>
+<footer>2019&ndash;2020 Википедия, NASA/IPAC Extragalactic Database. Компиляция, код: Д.С. Насонов.</footer>
+</body>
+</html>

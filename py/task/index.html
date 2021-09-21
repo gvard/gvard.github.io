@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Работа с данными и программирование на языке Python: задачи с решениями и подсказками">
+<title>Программирование: задачи</title>
+<link rel="stylesheet" href="../../compact.css">
+<link rel="stylesheet" href="../../github.css">
+<script src="../highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();
+function show(showId) {document.getElementById(showId).style.display = 'block';}</script>
+<style>.task {margin: 1rem 0}</style>
+</head>
+<body>
+<h1>Задачи с решениями или подсказками</h1>
+
+<h2 id="strings"><a href="https://informatics.mccme.ru/mod/statements/view.php?id=3863" target="_blank" rel="noopener noreferrer">Строки</a></h2>
+<pre><code>s = "In the hole in the ground there lived a hobbit"</code></pre>
+
+<a href="https://informatics.mccme.ru/mod/statements/view3.php?chapterid=3737" target="_blank" rel="noopener noreferrer" id="3737">Две половинки</a>
+<p>Дана строка. Разрежьте ее на две равные части (если длина строки – четная, а если длина строки нечетная, то длина первой части должна быть на один символ больше).
+Переставьте эти две части местами, результат запишите в новую строку и выведите на экран.</p>
+<button type="button" onclick="show('str1')">Подсказка</button><br>
+<blockquote hidden id="str1">Вычислите с помощью функции len() длину строки и разделите ее пополам при помощи оператора целочисленного деления.</blockquote>
+
+<a href="https://informatics.mccme.ru/mod/statements/view3.php?chapterid=3738" target="_blank" rel="noopener noreferrer" id="3738">Переставить два слова</a>
+<p>Дана строка, состоящая ровно из двух слов, разделенных пробелом. Переставьте эти слова местами. Результат запишите в строку и выведите получившуюся строку.</p>
+<button type="button" onclick="show('str2')">Подсказка</button><br>
+<blockquote hidden id="str2">Используйте метод строки <i>split</i>.</blockquote>
+
+<a href="https://informatics.mccme.ru/mod/statements/view3.php?chapterid=3741" target="_blank" rel="noopener noreferrer" id="3741">Удаление фрагмента</a>
+<p>Дана строка, в которой буква h встречается минимум два раза. Удалите из этой строки первое и последнее вхождение буквы h, а также все символы, находящиеся между ними.</p>
+<button type="button" onclick="show('str3')">Подсказка</button><br>
+<blockquote hidden id="str3">Воспользуйтесь методом строк <i>find</i> для того, чтобы узнать индекс первого вхождения символа.<br>
+Для индекса последнего вхождения символа переверните строку. Используйте полученные индексы для получения срезов. Не забывайте об отрицательных значениях индексов.</blockquote>
+
+<a href="https://informatics.mccme.ru/mod/statements/view3.php?chapterid=3742" target="_blank" rel="noopener noreferrer" id="3742">Обращение фрагмента</a>
+<p>Дана строка, в которой буква h встречается как минимум два раза. Разверните последовательность символов, заключенную между первым и последнием появлением буквы h, в противоположном порядке.</p>
+<button type="button" onclick="show('str4')">Подсказка</button>
+<blockquote hidden id="str4">Используйте срез с отрицательным шагом.</blockquote>
+
+<h2 id="data">Работа с данными: списки и словари</h2>
+<div class="task">
+<b>Объединить списки в один список:</b>
+<pre><code>a = [10, 20]
+b = [30, 40]
+c = [50, 60]
+</code></pre>
+<button type="button" onclick="show('lst1')">Подсказка</button>
+<blockquote hidden id="lst1">Сложите переменные, содержащие списки.</blockquote></div>
+
+<div class="task">
+<b>Объединить словари в один словарь:</b>
+<pre><code>dic1 = {1: 10, 2: 20}
+dic2 = {3: 30, 4: 40}
+dic3 = {5: 50, 6: 60}
+</code></pre>
+<button type="button" onclick="show('dct1')">Подсказка</button>
+<blockquote hidden id="dct1">Воспользуйтесь методом словаря <i>update</i> и добавьте к одному словарю содержимое всех остальных:
+<pre><code>d1.update(d2)</code></pre>
+</blockquote>
+</div>
+<hr>
+<a href="https://informatics.mccme.ru/mod/statements/view3.php?chapterid=3170" target="_blank" rel="noopener noreferrer" id="3170">Количество совпадающих пар</a>
+<p>Дан список чисел. Посчитайте, сколько в нем пар элементов, равных друг другу. Считается, что любые два элемента, равные друг другу образуют одну пару, которую необходимо посчитать.</p>
+<p><b>Примеры</b>: 1 2 3 2 3 -> 2, 1 1 1 1 1 -> 10</p>
+<button type="button" onclick="show('pairs')">Подсказка</button><br>
+<blockquote hidden id="pairs">Задача решается перебором: каждое число требуется сравнить с остальными. Это делается в цикле с условным выражением. Избегайте подсчета пары по два раза.</blockquote>
+
+<hr>
+
+<a href="https://informatics.mccme.ru/mod/statements/view3.php?chapterid=3062" target="_blank" rel="noopener noreferrer" id="3062">Утренняя пробежка</a>
+<p>В первый день спортсмен пробежал x километров, а затем он каждый день увеличивал пробег на 10% от предыдущего значения. По данному числу <b>y</b> определите номер дня, на который пробег спортсмена составит не менее y километров.</p>
+
+<hr>
+<a href="https://informatics.mccme.ru/mod/statements/view3.php?chapterid=3063" target="_blank" rel="noopener noreferrer" id="3063">Банковские проценты</a>
+<p>Вклад в банке составляет x рублей. Ежегодно он увеличивается на p процентов, после чего дробная часть копеек отбрасывается. Каждый год сумма вклада становится больше. Определите, через сколько лет вклад составит не менее y рублей.</p>
+<h3>Банк Юрского периода</h3>
+<p>В недалеком будущем ученые изобрели машину времени. С помощью него удалось перенестись в прошлое и основать Самый Первый Банк.<br>
+Рассчитать, в каком году нужно положить в банк 5 рублей под 5% годовых, чтобы к 2020 году стать миллионером.
+</p>
+<hr>
+<a href="https://informatics.mccme.ru/mod/statements/view3.php?chapterid=3837" target="_blank" rel="noopener noreferrer" id="3837">Шеренга</a>
+<p>Петя перешёл в другую школу. На уроке физкультуры ему понадобилось определить
+своё место в строю. Помогите ему это сделать.<br>
+<p><b>Входные данные</b>. Программа получает на вход невозрастающую последовательность натуральных чисел, означающих рост каждого человека в строю. После этого вводится число X – рост Пети. Все числа во входных данных натуральные и не превышают 200.</p>
+<p><b>Выходные данные</b>. Выведите номер, под которым Петя должен встать в строй. Если в строю есть люди с одинаковым ростом, таким же, как у Пети, то он должен встать после них.</p>
+
+<h2>Циклы</h2>
+<ul>
+  <li><a href="https://informatics.mccme.ru/course/view.php?id=8" target="_blank" rel="noopener noreferrer">Материалы</a></li>
+</ul>
+<p>Составить список, который состоит из элементов, общих для этих двух списков:</p>
+<pre><code>a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+# b = [a for a in range(56)]
+</code></pre>
+Решение:
+<pre><code>c = []
+for number in a:
+    if number in b and number not in c:
+        c.append(number)
+print(c)
+</code></pre>
+
+<h2>Входные и выходные данные</h2>
+<p>Дан список имен объектов Солнечной системы.</p>
+<ol>
+  <li>Отделить номер или год от названия</li>
+  <li>Определить, год это или номер: если число между 1950 и 2020, то это год, иначе номер.</li>
+  <li>Создать имя файла, которое содержит год+имя или просто имя, потому что номер отброшен. Имя не должно содержать пробелы!</li>
+</ol>
+<pre><code>names = ["2867 Šteins", "2014 JO25", "486958 Arrokoth", "243 Ida"]
+filenames = ["Steins.jpg", "2014JO25.jpg", "Arrokoth.jpg", "Ida.jpg"]
+
+ar = "486958 Arrokoth"
+ar.split()
+# ['486958', 'Arrokoth']
+splitted = ar.split()
+splitted[0]
+# '486958'
+int(splitted[0])
+# 486958
+int(splitted[0]) > 1950
+# True
+int(splitted[0]) &lt; 2020
+# False
+int(splitted[0]) > 1950 and int(splitted[0]) &lt; 2020
+# False
+
+splitted = '2014 JO25'.split()
+strnumber = splitted[0]
+number = int(strnumber)
+int(number) > 1950 and int(number) &lt; 2020
+# True
+
+filename = "Steins.jpg".split(".")
+# ['Steins', 'jpg']
+if filename[1] == "jpg":
+    print("Это картинка! Запускаем фотошоп...")
+</code></pre>
+<hr>
+
+<p>Напишите программу, которая принимает два списка и выводит все элементы первого, которых нет во втором.</p>
+<pre><code>a = ['White', 'Black', 'Red', 'Purple', 'Magenta']
+b = ['Red', 'Green', 'Blue', 'Cyan', 'Magenta']
+for color in a:
+    # code here
+    print(color)
+</code></pre>
+Или:
+<pre><code>print(set(a) - set(b))</code></pre>
+
+<hr>
+
+Программа сближающихся случайных чисел<br>
+Установка matplotlib в командном интерпретаторе: pip install matplotlib
+<pre><code>from random import random, randrange
+from matplotlib import pyplot as plt
+
+a, b = 1000, 3000
+j = 0
+c, d = [], []
+e, f = 1, 9000000
+while abs(a - b) > 1:
+    a = randrange(e, f)
+    b = randrange(e, f)
+    e = min(a, b)
+    f = max(a, b)
+    j += 1
+    c.append(j)
+    d.append(abs(a - b))
+    print("j", j, abs(a - b))
+
+plt.plot(d, c, 'o')
+plt.grid()
+plt.show()
+</code></pre>
+
+
+<p>Проверка на палиндром:</p>
+<pre><code>rawwords = input()
+words = rawwords.lower().replace(" ", "")
+ispalindrom = words == words[::-1]
+print(ispalindrom)
+</code></pre>
+<hr>
+<p>При заданном целом числе n посчитайте n + nn + nnn<br>
+Обобщить для n от 1 до 9.</p>
+<pre><code>a = input("Введите число: ")
+b = input("Сколько раз умножать число: ")
+kopilka = 0
+for count in range(int(b)):
+    print(a * (count + 1))
+    kopilka = kopilka + int(a * (count + 1))
+print(kopilka)
+</code></pre>
+<hr>
+
+<a href="https://informatics.mccme.ru/mod/statements/view3.php?chapterid=3460" target="_blank" rel="noopener noreferrer" id="3460">МКАД</a> (Кольцевая дорога)
+<p>Длина Московской кольцевой автомобильной дороги – 109 километров.
+Байкер Вася стартует с нулевого километра МКАД и едет со скоростью v километров в час.
+На какой отметке он остановится через t часов?</p>
+<p>Решить задачу для КАД (142.15 км).</p>
+<button type="button" onclick="show('road')">Подсказка</button>
+<blockquote hidden id="road">Используйте целочисленное деление.</blockquote>
+<button type="button" onclick="show('road2')">Решение</button>
+<pre id="road2" hidden><code>MKAD = 108.9
+KAD = 142.15
+road = KAD
+v = float(input("v, км/ч: "))
+t = float(input("t, ч: "))
+s = v * t
+x = s // road
+g = s - x * road
+if g - round(g):
+    g += 1
+print("Номер километра:", int(g))
+</code></pre><br>
+
+<a href="https://informatics.mccme.ru/mod/statements/view3.php?chapterid=3535" target="_blank" rel="noopener noreferrer" id="3535">Пингвины</a>
+<p>Напишите программу, которая по данному числу N от 1 до 9 выводит на экран N пингвинов. Изображение одного пингвина имеет размер 5 на 9 символов, между двумя соседними пингвинами также имеется пустой (из пробелов) столбец. Разрешается вывести пустой столбец после последнего пингвина.
+</p>
+<pre><code>   _~_       _~_       _~_
+  (o o)     (o o)     (o o)
+ /  V  \   /  V  \   /  V  \
+/(  _  )\ /(  _  )\ /(  _  )\
+  ^^ ^^     ^^ ^^     ^^ ^^   </code></pre>
+<button type="button" onclick="show('pinguins')">Подсказка</button>
+<blockquote hidden id="pinguins">Размножайте пингвина по частям.</blockquote>
+
+<h3>Килрой</h3>
+<p>Напишите программу, которая сажает на линию от 1 до 6 <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B4%D0%B5%D1%81%D1%8C_%D0%B1%D1%8B%D0%BB_%D0%9A%D0%B8%D0%BB%D1%80%D0%BE%D0%B9">Килроев</a>.
+Килрои не любят тесноты и должны разделяться минимум одним символом на линии с обеих сторон. Длина линии не должна изменяться!</p>
+<pre><code>                                                  ,,,
+                                                 (. .)
+----------------------------------------------ooO-(_)-Ooo---</code></pre>
+
+<button type="button" onclick="show('kilroy')">Подсказка</button>
+<blockquote hidden id="kilroy">Размножайте Килроя построчно; из длины линии вычитайте суммарную длину Килроев.</blockquote>
+<!-- k1 = "    ,,,     "
+k2 = "   (. .)    "
+k3 = "ooO-(_)-Ooo-"
+a = int(input("Введите количество Килроев: "))
+lenk = len(k3)
+lenl = 74
+print("Длина Килроя:", lenk)
+print("Длина линейки:", lenl)
+print(" "*(lenl-a*lenk) + k1*a)
+print(" "*(lenl-a*lenk) + k2*a)
+print("-"*(lenl-a*lenk) + k3*a) -->
+
+<h2>Ссылки</h2>
+<ul>
+  <li><a href="https://thecode.media/hr-code/" target="_blank" rel="noopener noreferrer">Задача про безумного рекрутера</a></li>
+  <li><a href="https://informatics.mccme.ru/course/view.php?id=156" target="_blank" rel="noopener noreferrer">Программирование на python</a></li>
+</ul>
+</body>
+</html>

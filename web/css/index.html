@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Web-дизайн: оформление Web-страниц, способы использования CSS в HTML, виды селекторов, наследование, стили по умолчанию. Учебные материалы, ссылки по теме.">
+  <title>CSS: cвойства</title>
+  <link rel="stylesheet" href="../../compact.css">
+</head>
+<body>
+<nav class="menu">
+  <ul>
+    <li><a href="../">Web-дизайн</a></li>
+    <li><a href="#default">Стили по умолчанию</a></li>
+    <li><a href="#blockmodel">Блочная модель</a></li>
+  </ul>
+</nav>
+<h1>Оформление Web-страниц</h1>
+<p>В современной версии стандарта HTML5 практически все оформление страницы делается при помощи <b>каскадных листов стилей</b>,
+  <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank" rel="noopener noreferrer">CSS</a>.
+  Команда CSS состоит из селектора и соответствующих ему свойств:<br>
+  <img src="../css.png" alt="Иллюстрация из Большая книга CSS3. Д. Макфарлард." style="margin: 20px">
+<ul>
+  <li>Все относящиеся к селектору свойства записываются в фигурных скобках</li>
+  <li>Описания свойств разделяются точкой с запятой. <b>Не поставил «;» между свойствами – получил ошибку</b></li>
+  <li>Свойства и их значения разделяются двоеточием</li>
+  <li>Вокруг селекторов, свойств, их значений можно ставить любое количество пробелов, знаков табуляции и переносов строки</li>
+</ul>
+</p>
+<h2>Способы использования CSS в HTML</h2>
+<ol>
+  <li>внешние стили, подключаются тегом &lt;link&gt; в голове документа, т.е. <b>внутри</b> тега &lt;head&gt;:
+<pre><code><b>&lt;link rel="stylesheet" href="style.css"></b></code></pre>
+  </li>
+  <li>внутренние стили, внутри тега &lt;style> (a &lt;style> – внутри тега &lt;head> документа html)</li>
+  <li>встроенные стили, как значение атрибута style:
+<pre><code>&lt;p style="display:none"></code></pre>
+  </li>
+</ol>
+
+<h2 id="inheritance">Наследование</h2>
+<p>У элементов есть связи внутри объектной модели DOM.</p>
+<ul>
+  <li>Тег, внутри которого находятся другие теги, для них <b>предок</b>, а они – <b>потомки</b>.</li>
+  <li>Тег, который находится непосредственно в предке, без промежуточных елементов – <b>дочерний элемент</b>, а предок для него – <b>родитель</b>.</li>
+</ul>
+<p>Свойства предков могут наследоваться потомками.</p>
+
+<h2 id="selectors">Виды селекторов</h2>
+<p>Селектор – от to select: выбирать, отбирать. Чаще всего используются первые шесть.</p>
+<ol>
+  <li><b>универсальный (*)</b>: Выбирает все элементы (теги) на странице;</li>
+  <li><b>элемент</b>: выбирает все элементы (теги) с указанным именем;</li>
+  <li><b>класс (class)</b>: выбирает все элементы (теги) с указанным классом (в атрибуте class);</li>
+  <li><b>идентификатор (id)</b>: выбирает элемент (тег) с указанным уникальным идентификатором (атрибут id);</li>
+  <li><b>вложенные селекторы</b>, запись через пробел;</li>
+  <li><b>дочерний селектор</b>, должен располагаться непосредственно внутри родительского элемента. Записывается через <b>></b>.
+  Также используются <b>дочерние псевдоклассы</b> :first-child, :last-child,
+  :only-child, :nth-child (odd), :nth-child (even) и др.</li>
+  <li><b>Соседние селекторы</b>: i <b>+</b> b. Стиль применяется к тегу b, соседнему по оотношению к i.</li>
+  <li><b>Родственные селекторы</b>: i <b>~</b> b. Стили применяются ко всем близлежащим элементам.</li>
+  <li><b>Селекторы атрибутов</b>: стили приименяются, если задан атрибут тега. Например: q[title]</li>
+  <li><b>[атрибут="значение"]</b> устанавливает стиль для элемента в том случае, если задано определённое значение указанного атрибута. Пример: a[target="_blank"]</li>
+  <li><b>[атрибут~="значение"]</b> Стиль применяется в том случае, если у атрибута имеется указанное значение или оно входит в список значений, разделяемых пробелом. Пример: [class~="block"]</li>
+  <li><b>[атрибут|="значение"]</b> Стиль применяется к элементам, у которых атрибут начинается с указанного значения или с фрагмента значения, после которого идет дефис.
+  Пример: div[class|="block"] применится к &lt;div class="<b>block-menu-item</b>"></li>
+  <li><b>[атрибут^="значение"]</b> стиль применяются ко всем элементам, у которых значение атрибута начинается с указанного текста.  Пример: a[href^="http://"]</li>
+  <li><b>[атрибут$="значение"]</b> стиль применяются ко всем элементам, у которых значение атрибута оканчивается указанным текстом. Пример: a[href$=".ru"]</li>
+  <li><b>[атрибут*="значение"]</b> определяет, что значение атрибута содержит указанный текст. Пример: [href*="000webhost"]</li>
+</ol>
+<p>Свойства селектора будут применены ко всем выбранным элементам (тегам) на странице.</p>
+<p>Ниже для удобства свойства разбиты на несколько категорий.</p>
+
+<h2 id="default">Стили по умолчанию</h2>
+<p>У Web-страницы без стилевого файла есть оформление: элементы имеют отступы, используются шрифты с определенными параметрами и так далее. Например, ссылки &ndash; синие и подчеркнуты. Это браузерные <i>стили по умолчанию</i>, они определены в стандарте CSS <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%81%D0%BE%D1%80%D1%86%D0%B8%D1%83%D0%BC_%D0%92%D1%81%D0%B5%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B9_%D0%BF%D0%B0%D1%83%D1%82%D0%B8%D0%BD%D1%8B" target="_blank" rel="noopener noreferrer">консорциумом W3C</a>.</p>
+<p><b><a href="https://www.w3schools.com/cssref/css_default_values.asp" target="_blank" rel="noopener noreferrer">Алфавитный список элементов HTML и их стилей по умолчанию</a></b>.</p>
+
+<h2>Все свойства CSS</h2>
+  <p><a href="https://www.web4college.com/css-play/" target="_blank" rel="noopener noreferrer">Список 300+ CSS-свойств</a>,
+    <a href="https://docs.google.com/spreadsheets/d/1cyvzKuuPe6ejysLh3qeHfdpa_7TOJk7l6IYiH1X6Y88/" target="_blank" rel="noopener noreferrer">Таблица css-свойств</a>.</p>
+
+<h2>Фон – background</h2>
+
+<ul>
+  <li>background-color: white; Задает цвет фона.</li>
+  <li>background: white url("image.jpg") no-repeat 50% 0; Общее свойство, описывающее фон страницы.</li>
+</ul>
+<h2>Размеры, ширина, высота – width, height</h2>
+<ul>
+  <li>ширина, width: 100px;</li>
+  <li>минимальная ширина, min-width: 100px;</li>
+  <li>максимальная ширина, max-width: 100px;</li>
+  <li>высота, height: 100px;</li>
+  <li>минимальная высота, min-height: 100px;</li>
+  <li>касимальная высота, max-height: 100px;</li>
+</ul>
+<p>В чем задаются значения? В <a href="https://www.w3.org/TR/css3-values/#absolute-lengths" target="_blank" rel="noopener noreferrer">абсолютных</a>
+  и <a href="https://www.w3.org/TR/css3-values/#relative-lengths" target="_blank" rel="noopener noreferrer">относительных</a> единицах.<br>
+  <b><a href="../fonts/#units">Единицы измерения</a></b></p>
+
+<h2>Цвет – color</h2>
+<ul>
+  <li>color: green;</li>
+</ul>
+
+<h2>Шрифт – font</h2>
+<p><b><a href="../fonts/">Отдельная страница про шрифты и их свойства</a></b>.</p>
+<a href="https://html5book.ru/css-shrifty/" target="_blank" rel="noopener noreferrer">Шрифт в CSS</a> с картинками.
+<ul>
+  <li>font-family: arial sans-serif;<br>
+    <a href="https://en.wikipedia.org/wiki/Sans-serif" target="_blank" rel="noopener noreferrer">Гротеск</a>: sans – без + serif – <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%81%D0%B5%D1%87%D0%BA%D0%B8" target="_blank" rel="noopener noreferrer">засечек</a>. <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D1%82%D0%B8%D0%BA%D0%B2%D0%B0" target="_blank" rel="noopener noreferrer">Антиква</a>, serif – с засечками:<br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Serif_and_sans-serif_03.svg" alt=""></li>
+  <li>font-size: 16pt;</li>
+</ul>
+<p><a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp" target="_blank" rel="noopener noreferrer">CSS Web Safe Font Combinations</a>,
+  <a href="https://habr.com/ru/post/188484/" target="_blank" rel="noopener noreferrer">Мобильная типографика</a></p>
+<h2>Текст – text</h2>
+<p><b><a href="../text/">Отдельная страница про свойства текста</a></b>.</p>
+<ul>
+  <li>text-align: justify; (left, right, center)</li>
+  <li>text-decoration: underline;</li>
+  <li>line-height: 20pt;</li>
+</ul>
+
+<h2 id="blockmodel">Блочная модель</h2>
+<p>Любой блочный элемент состоит из четырех составляющих:</p>
+<ul>
+  <li>Основой блока выступает его <b>контент</b>: текст, изображения и т.д. Контент имеет 2 размера:  ширина (задается свойством <b>width</b>) и высота (<b>height</b>);</li>
+  <li>вокруг контента идет внутреннее поле (<b>padding</b>), создающее пустое пространство от контента до внутреннего края границ;</li>
+  <li>затем идут границы (<b>border</b>).</li>
+  <li>Завершают блок внешние отступы (<b>margin</b>, от «<a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D0%B3%D0%B8%D0%BD%D0%B0%D0%BB%D0%B8%D0%B8" target="_blank" rel="noopener noreferrer">маргиналии</a>»), пустое пространство от внешнего края границ.</li>
+</ul>
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Boxmodell-detail.png" alt="">
+<p>Похоже на матрешки: <b>поменять местами контент, padding, border и margin невозможно!</b></p>
+<img src="http://htmlbook.ru/files/images/layout2/3-02.jpg" alt="">
+
+<p>Каждая составляющая, кроме контента, может иметь различные размеры с каждой
+из четырех сторон.<br>
+<b>Часто задаются по часовой стрелке: top, right, bottom, left</b>.<br>
+Таким образом, <b>блочный макет страницы с контентом описывается максимум 14
+размерами</b>. Если толщина рамки со всех сторон одинаковая, параметров&nbsp;11.</p>
+<img src="http://htmlbook.ru/files/images/layout2/3-06.png" alt="">
+
+<h2>Схлопывание отступов</h2>
+<p>У блочных элементов, расположенных рядом друг с другом по вертикали, отступы не суммируются, а объединяются между собой. Само схлопывание действует на два и более блока (один может быть вложен внутрь другого) с отступами сверху или снизу, при этом примыкающие отступы комбинируются в один.
+<b>Этот эффект работает только для блоков, у которых не заданы поля и границы. Для отступов слева и справа схлопывание никогда не применяется.</b></p>
+<p><b>Зачем?</b> Для корректного отображения текста: расстояние между абзацами (тег &lt;p>) без схлопывания увеличится в два раза, тогда как верхний отступ первого абзаца и нижний отступ последнего абзаца останутся неизменными. Схлопывание гарантирует, что расстояние в абзацах везде будет одинаковым.</p>
+<p><b><a
+href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing"
+target="_blank" rel="noopener noreferrer">Схлопывание внешних отступов</a>: полное описание и примеры</b></p>
+
+<h2>box-sizing</h2>
+<p>Свойство box-sizing применяется для изменения алгоритма расчета ширины и высоты элемента; чтобы свойства width и height задавали размеры не контента, а размеры блока.</p>
+<ul>
+  <li>box-sizing: content-box; свойства width и height задают ширину и высоту контента и не включают в себя значения отступов, полей и границ.</li>
+  <li>box-sizing: border-box; Свойства width и height включают в себя значения полей и границ, но не отступов (margin).</li>
+  <li>box-sizing: padding-box; Свойства width и height включают в себя значения полей, но не отступов (margin) и границ (border).</li>
+  <li>box-sizing: inherit; Наследует значение родителя.</li>
+</ul>
+
+<h2>Рамка – border</h2>
+<p>У рамки есть дополнительные свойства: тип линии, скругление и т.д. Примеры:</p>
+<ul>
+  <li>обобщенное правило. <b>border</b>: 2px dashed blue;</li>
+  <li>радиус скругления рамки. <b>border-radius</b>: 5px;</li>
+  <li>Скруглить квадрат до круга – border-radius: 50%; <a href="../../site/me.html">пример</a>.</li>
+  <li><b>border-collapse</b>: collapse (separate, inherit); Устанавливает, как отображать границы вокруг ячеек таблицы. Это свойство играет роль, когда для ячеек установлена рамка, тогда в месте стыка ячеек получится линия двойной толщины. При значении collapse линия между ячейками отображается только одна.</li>
+</ul>
+
+<h2>Поля – margin и padding</h2>
+<p>Поля страницы можно инспектировать в браузере по нажатию F12, вкладка Elements</p>
+<ul>
+  <li>margin: 0 auto; (внешнее поле) Так заданное поле центрирует блок</li>
+  <li>padding: 20px; (внутреннее поле)</li>
+</ul>
+<h2>Положение и видимость</h2>
+<ul>
+  <li>display: block; (inline, inline-block, none). display: none используется
+  для скрытия элемента со страницы.</li>
+  <li>position: relative; (absolute)</li>
+  <li>float: right; (left)</li>
+  <li>object-fit: cover; (contain, scale-down. Для тегов img и video)</li>
+  <li><a href="https://html5book.ru/svoystva-object-fit-i-object-position/" target="_blank" rel="noopener noreferrer">object-position</a>: 50% 50%;</li>
+  <li>overflow-y: scroll;</li>
+</ul>
+<h2>Горизонтальное и вертикальное выравнивание</h2>
+<ul>
+  <li>Центрирование блочного элемента: { margin: 0 auto; width: 50%; }</li>
+  <li>Центрирование строчного элемента: text-align: center;</li>
+  <li>Центрировать горизонтально и вертикально: #mysection { display: flex; align-items: center justify-content: center; }</li>
+</ul>
+<p><a href="https://flaviocopes.com/css-centering/" target="_blank" rel="noopener
+  noreferrer">Центрирование в css</a>
+  <a href="https://www.w3schools.com/csS/css_align.asp" target="_blank"
+  rel="noopener noreferrer">выравнивание в css</a>
+</p>
+
+<h2><a href="https://www.w3schools.com/csS/css3_flexbox.asp" target="_blank" rel="noopener noreferrer">Flexbox</a></h2>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank" rel="noopener noreferrer">Basic concepts of flexbox</a>
+
+<h2>Остальное</h2>
+<ul>
+  <li>list-style: none; (применяется для скрытия буллетов у ненумерованных списков)</li>
+</ul>
+
+<h2 id="geometry">Геометрия в CSS</h2>
+<ul>
+  <li><a href="https://codepen.io/gvardovich/pen/LYYempB" target="_blank" rel="noopener noreferrer">Прямоугольник</a></li>
+  <li><a href="https://codepen.io/vitaliy_kirenkov/pen/qBBPqxm" target="_blank" rel="noopener noreferrer">Треугольники</a></li>
+  <li><a href="https://cloudfour.com/thinks/css-circles/" target="_blank" rel="noopener noreferrer">Круги</a></li>
+</ul>
+
+<h2>Альтернативы CSS?</h2>
+<p><a href="https://en.wikipedia.org/wiki/Comparison_of_stylesheet_languages" target="_blank" rel="noopener noreferrer">Сравнение стилевых языков</a>.
+Существует <a href="https://ru.wikipedia.org/wiki/XSL" target="_blank" rel="noopener noreferrer">XSL</a> (eXtensible Stylesheet Language) – семейство рекомендаций консорциума W3C, описывающее языки преобразования и визуализации XML-документов. Состоит из трех частей:</p>
+<ul>
+  <li>XSL Transformations (XSLT) – язык преобразования XML-документов.</li>
+  <li>XSL Formatting Objects (XSL-FO) – язык разметки типографских макетов и иных предпечатных материалов.</li>
+  <li>XPath – язык путей и выражений, используемый в том числе и в XSLT для доступа к отдельным частям XML-документа.</li>
+</ul>
+<p>Языком, лежащим в основе XSL, является XML, а это означает, что XSL более гибок, универсален. Почти не используется в вебе, потому что более сложен и требует более строгого подхода.
+<b>Дизайнеры и верстальщики всего мира сделали все, чтобы технологии, основанные на XML, не стали рабочими стандартами веба</b>. Что, конечно, не избавило от недостатков HTML и CSS. В итоге имеем постоянно и стихийно меняющиеся технологии разных версий, по-разному поддерживаемые разными браузерами.
+<b>Хороший дизайнер должен учитывать особенности поддержки технологий разными версиями разных браузеров</b>. С прекращением поддержки старых версий операционной системы Windows и ростом популярности мобильных технологий ситуация улучшилась, но пока еще далека от идеала.</p>
+
+<p>Применение свойств классов к <a href="https://codepen.io/gvardovich/pen/zYYoOWV" target="_blank" rel="noopener noreferrer">простому html-коду</a>:<br>
+  <img src="../codepen.png" alt=""></p>
+
+<h2 id="links">Ссылки:</h2>
+<ul>
+  <li><a href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics" target="_blank" rel="noopener noreferrer">Основы CSS</a></li>
+  <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference" target="_blank" rel="noopener noreferrer">Руководство по CSS</a></li>
+  <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/box_model" target="_blank" rel="noopener noreferrer">Блоковая модель (box model)</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/CSS_box_model" target="_blank" rel="noopener noreferrer">CSS box model</a></li>
+  <li><a href="http://tpverstak.ru/css-selectors/" target="_blank" rel="noopener noreferrer">Наглядно о CSS селекторах</a></li>
+  <li><a href="https://html5book.ru/css-colors/" target="_blank" rel="noopener noreferrer">CSS-цвета</a>: основные ключевые слова, числовые значения цвета<br>
+    Если цвет &ndash; это слово, но не ключевое: <a href="https://stackoverflow.com/questions/8318911/why-does-html-think-chucknorris-is-a-color" target="_blank" rel="noopener noreferrer">Почему chucknorris - это красный цвет, а chucknorr - желтый?</a>
+    <a href="https://mothereff.in/bgcolor" target="_blank" rel="noopener noreferrer">Проверить</a>.</li>
+  <li><a href="https://css-tricks.com/" target="_blank" rel="noopener noreferrer">css-tricks</a>,</li>
+  <li><a href="https://www.w3schools.com/cssref/css_default_values.asp" target="_blank" rel="noopener noreferrer">CSS Default Values Reference</a>,</li>
+  <li><a href="https://html5book.ru/gorizontalnoe-menu/" target="_blank" rel="noopener noreferrer">горизонтальное меню</a>,</li>
+  <li><a href="http://htmlbook.ru/css/position" target="_blank" rel="noopener noreferrer">position</a> (Устанавливает способ позиционирования элемента относительно окна браузера или других объектов на веб-странице).</li>
+  <li><a href="https://stackoverflow.com/questions/16617248/calc-of-max-or-max-of-calc-in-css" target="_blank" rel="noopener noreferrer">Calc of max, or max of calc in CSS</a></li>
+</ul>
+</body>
+</html>

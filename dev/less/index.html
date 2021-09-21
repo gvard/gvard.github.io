@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Web-разработка: CSS-препроцессоры, less">
+  <title>less, CSS-препроцессор</title>
+  <link rel="stylesheet" href="../../compact.css">
+  <link rel="shortcut icon" href="http://lesscss.org/public/ico/favicon.ico">
+</head>
+<body>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LESS_Logo.svg" height="100" alt="" style="margin: 10px; text-align: center">
+<h1>CSS-препроцессоры: less</h1>
+<ul>
+  <li>Препроцессор &ndash; программа, принимающая данные на входе и выдающая на выходе данные, предназначенные для входа другой программы.</li>
+  <li><a href="https://ru.wikipedia.org/wiki/LESS_(%D1%8F%D0%B7%D1%8B%D0%BA_%D1%81%D1%82%D0%B8%D0%BB%D0%B5%D0%B9)" target="_blank" rel="noopener noreferrer">Less</a> (Leaner Style Sheets, компактные таблицы стилей) &ndash;
+    это динамический язык стилей, упрощающий и ускоряющий разработку .</li>
+  <li>Less – это вложенный метаязык (<a href="https://en.wikipedia.org/wiki/Metalanguage#Nested" target="_blank" rel="noopener noreferrer">nested metalanguage</a>):
+    валидный CSS будет валидным less-кодом с аналогичной семантикой.</li>
+  <li>Less как программа (lessc) &ndash; препроцессор, преобразующий код less в валидный css-код.</li>
+  <li>Использование на стороне сервера (из командной строки): устанавливается в node.js командой<br>
+    npm install less -g
+  </li>
+  <li>Использование в браузере: вставить в документ<br>
+    &lt;link rel="stylesheet/less" type="text/css" href="styles.less"&gt; и<br>
+    &lt;script src="<a href="https://github.com/less/less.js/archive/master.zip" target="_blank" rel="noopener noreferrer">less.js</a>" type="text/javascript"&gt;&lt;/script&gt;
+  </li>
+</ul>
+
+<h2>Использование переменных: пример</h2>
+<pre>
+@header-font: Georgia, serif;
+@base_unit: 1px;
+@color-evil_red: #e40f2f;
+@color-name: "color-evil_red";
+color: @@color-name;
+h1, h2, h3, h4 {
+  font-family: @header-font;
+}
+.large {
+  font-family: @header-font;
+}
+.boxy {
+  border: @base_unit @base_unit + 1 @base_unit + 1 @base_unit + 1
+}
+</pre>
+
+<h2>Миксины (от mixing in): пример</h2>
+<pre>.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}</pre>
+Используется далее следующим образом
+<pre><code>
+#menu a {
+  color: #222;
+  .bordered();
+}
+
+.post a {
+  color: red;
+  .bordered();
+}
+</code></pre>
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<style type="text/css">
+<!--
+body{margin: 1px; overflow:hidden;}
+.title{font-family: Arial; font-size: 26pt; color: cc8; }
+.clock{background-color:#100520; color:#7e7; font: bold 52px MS Sans Serif; padding: 1px;}
+-->
+</style>
+</head>
+<body background="../bg.png" spacing="0">
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr>
+<td align="left" valign="middle" width="75%"><span class="title">&nbsp;&nbsp;Космическая погода в реальном режиме времени</div></td>
+<td align="right" valign="bottom">
+
+<span id="digitalclock" class="clock"></span>
+&nbsp;
+<script>
+var alternate=0
+var standardbrowser=!document.all&&!document.getElementById
+
+if (standardbrowser)
+document.write('<form name="tick"><input type="text" name="tock" size="10"></form>')
+
+function show(){
+if (!standardbrowser)
+var clockobj=document.getElementById? document.getElementById("digitalclock") : document.all.digitalclock
+var Digital=new Date()
+var hours=Digital.getHours()
+var minutes=Digital.getMinutes()
+var seconds=Digital.getSeconds()
+
+
+if (hours==0) hours=12
+if (hours.toString().length==1)
+hours="0"+hours
+if (minutes<=9)
+minutes="0"+minutes
+if (seconds<=9)
+seconds="0"+seconds
+
+if (standardbrowser){
+if (alternate==0)
+document.tick.tock.value=hours+":"+minutes+":"+seconds
+else
+document.tick.tock.value=hours+"  "+minutes+":"+seconds
+}
+else{
+if (alternate==0)
+clockobj.innerHTML=hours+":"+minutes+":"+seconds
+else
+clockobj.innerHTML=hours+":"+minutes+":"+seconds
+}
+alternate=(alternate==0)? 1 : 0
+setTimeout("show()",1000)
+}
+window.onload=show
+</script>
+
+</tr></table>
+</body>
+</html>

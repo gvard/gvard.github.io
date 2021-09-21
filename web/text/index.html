@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Web-дизайн: Свойства текста, конспект и ссылки">
+  <title>Свойства текста</title>
+  <link rel="stylesheet" href="../../compact.css">
+</head>
+<body>
+  <nav class="menu">
+    <ul>
+      <li><a href="../">Web-дизайн</a></li>
+    </ul>
+  </nav>
+<h1>Свойства текста</h1>
+<p><a href="../fonts/#units">Единицы измерения</a> описаны в разделе <a href="../fonts/">шрифты</a></p>
+<ul>
+  <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/text-align" target="_blank" rel="noopener noreferrer">text-align</a>.
+    свойство описывает, как линейное содержимое, наподобие текста, выравнивается в блоке его родительского элемента. text-align не контролирует выравнивание элементов самого блока, но только их линейное содержимое.<br>
+    <b>Значения:</b> left, right, center, justify, start, end<br>
+    <b>Начальное значение</b>: start, или неназванное значение, которое действует как left.<br><br>
+    <b>Важно!</b> При выравнивании по обоим краям (правильно говорить: при выключке по ширине) следует понимать: <b>текст без переносов имеет межсловные пробелы разной ширины и выглядит ужасно!</b> Мы привычны к выключке по ширине, потому что так оформляются тексты в книгах и газетах. Следует понимать, что до сих пор в хороших книгах выключка по ширине делается под контролем человека. Поэтому: <b>забудьте о text-align: justify! Выравнивание влево с неровным правым краем — общепринятая, безопасная и эстетичная практика оформления делового текста на бумаге и в вебе</b><br>
+    Ссылки: <a href="https://habr.com/ru/post/20653/" target="_blank" rel="noopener noreferrer">Выключка по ширине, или Убей «text-align: justify;»</a><br>
+    <a href="https://bureau.ru/bb/soviet/20101217/" target="_blank" rel="noopener noreferrer">как объяснить клиенту, что выключка по ширине в Вебе — это неверное решение</a>;<br>
+    <a href="https://awdee.ru/justify/" target="_blank" rel="noopener noreferrer">Выключка по формату: примеры, ошибки, как сделать</a>.</li>
+  <li>text-transform.
+    свойство описывает, как трансформировать текст в заглавные или прописные буквы.<br>
+    <b>Значения:</b> capitalize, uppercase, lowercase, none, full-width</li>
+  <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/word-spacing" target="_blank" rel="noopener noreferrer">word-spacing</a> устанавливает длину пробела между словами и между тегами.<br>
+    <b>Значения:</b> normal, значение в абсолютных или относительных единицах.</li>
+  <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/white-space" target="_blank" rel="noopener noreferrer">white-space</a> используется для описания того, как обрабатываются пробелы внутри элемента.<br>
+    <b>Значения:</b> normal, nowrap, pre, pre-wrap, pre-line.</li>
+  <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/text-align-last" target="_blank" rel="noopener noreferrer">text-align-last</a> описывает, как выравнивается последняя строка в блоке или строка, идущая сразу перед принудительным разрывом строки<br>
+    <b>Значения:</b> auto, start, end, left, right, center, justify.</li>
+  <li>text-decoration описывает декорирование текста. Сокращенная запись для свойств
+    text-decoration-line (декорирование текста горизонтальными линиями), text-decoration-style (устанавливает стиль линии), text-decoration-color (устанавливает цвет декорирования), text-decoration-thickness (устанавливает толщину горизонтальной линии)<br>
+    <b>Значения:</b> none, underline, overline, line-through, blink и их камбинации. Еще примеры: underline dotted, underline dotted blue, wavy overline lime и т.д.</li>
+  <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/text-indent" target="_blank" rel="noopener noreferrer">text-indent</a> определяет размер отступа (пустого места) перед строкой в текстовом блоке. По умолчанию это свойство управляет отступом только первой строкой блока, однако ключевые слова hanging и each-line могут изменить данное поведение.<br>
+    <b>Значения</b>: значение в абсолютных или относительных единицах.</li>
+  <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/line-height" target="_blank" rel="noopener noreferrer">line-height</a> устанавливает величину пространства между строками, например в тексте. В блочных элементах оно указывает минимальную высоту блоков строк внутри элемента. В незамещаемых внутристрочных элементах —указывает высоту, которая используется для вычисления высоты блоков строк.</li>
+  <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/letter-spacing" target="_blank" rel="noopener noreferrer">letter-spacing</a> определяет межбуквенное расстояние в тексте.<br>
+    <b>Значения</b>: normal, значение в абсолютных или относительных единицах.</li>
+</ul>
+</body>
+</html>

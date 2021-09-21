@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Коллекции астрономических объектов: звезды с разрешенными дисками или околозвездным окружением">
+<title>Звезды</title>
+<link rel="stylesheet" href="../collections.css">
+<link rel="stylesheet" href="style.css">
+<script src="../collections.js"></script>
+<script src="script.js"></script>
+</head>
+<body onload="ObjParams()">
+<nav class="menu">
+<ul>
+<li><a href="../collections/">Коллекции:</a></li>
+<li><a href="../solarsystem/">Солнечная система</a></li>
+<li><a href="../exoplanets/">Экзопланеты</a></li>
+<li><a href="../clusters/">Звездные скопления</a></li>
+<li><a href="../galaxies/">Галактики</a></li>
+</ul>
+</nav>
+
+<div id="messageBox">
+<div id="contents"></div>
+</div>
+
+<h1>Звезды не как точки</h1>
+
+<div class="cont">
+<input type="checkbox" name=".name" value="block" checked onclick="showHideThis(this)">Имя,
+<input type="checkbox" name=".angular" value="block" onclick="showHideThis(this)">Угловой диаметр,
+<input type="checkbox" name=".size" value="block" checked onclick="showHideThis(this)">Радиус,
+<input type="checkbox" name=".mass" value="block" onclick="showHideThis(this)">Масса,
+<input type="checkbox" name=".class" value="block" checked onclick="showHideThis(this)">Спектральный класс,
+<input type="checkbox" name=".temp" value="block" checked onclick="showHideThis(this)">Эффективная температура,
+<input type="checkbox" name=".mag" value="block" onclick="showHideThis(this)">Зв. величина (V),
+<input type="checkbox" name=".jmag" value="block" onclick="showHideThis(this)">Зв. величина (J).<br>
+<input type="checkbox" name=".animation" value="block" checked onclick="showHideThis(this)">С анимированными картинками,
+<input type="checkbox" name=".low" value="block" checked onclick="showHideThis(this)">низкое разрешение.<br>
+Сортировать: <button onclick="toSort('size')">по возрастанию размера</button>
+<button onclick="toSort('mass')">по возрастанию массы</button>
+<!-- <button onclick="toSort('mag')">по возрастанию звездной величины</button> -->
+</div>
+
+<div id="tab">
+<div class="obj sg SRc brightest">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Betelgeuse" src="images/Betelgeuse.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Betelgeuse" title="α Ori">Бетельгейзе</a></div>
+  <div class="angular">50</div>
+  <div class="size">887</div>
+  <div class="mass">11.6</div>
+  <div class="class">M1–M2 Ia–ab</div>
+  <div class="temp">3590</div>
+  <div class="mag">0.0–1.61</div>
+  <div class="jmag">−3.00</div>
+</div><div class="obj sg Lc brightest double">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Antares" src="images/Antares.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Antares" title="α Sco">Антарес</a></div>
+  <div class="angular">37–41</div>
+  <div class="size">680–800</div>
+  <div class="mass">12.65</div>
+  <div class="class">M1.5 Iab–Ib</div>
+  <div class="temp">3660</div>
+  <div class="mag">0.6–1.6</div>
+  <div class="jmag">–2.73</div>
+</div><div class="obj mira">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="R Doradus" src="images/R_Doradus.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/R_Doradus" title="R Золотой Рыбы">R Doradus</a></div>
+  <div class="angular">57±5</div>
+  <div class="size">370±50</div>
+  <div class="mass">1.2</div>
+  <div class="class">M8IIIe</div>
+  <div class="temp">2740±190</div>
+  <div class="mag">0.6–1.6</div>
+  <div class="jmag">−2.65</div>
+</div><div class="obj agb mira IRbrightest">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="W Hydrae" src="images/W_Hydrae.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/W_Hydrae" title="W Hya">W Гидры</a></div>
+  <div class="angular">44±4</div>
+  <div class="size">229–560</div>
+  <div class="mass">1</div>
+  <div class="class">M7.5IIIe</div>
+  <div class="temp">2500–3129</div>
+  <div class="mag">7–11.6</div>
+  <div class="jmag">–1.7</div>
+</div><div class="obj mira">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Mira" src="images/Mira.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Mira" title="ο Cet">Мира</a></div>
+  <div class="angular">43±2</div>
+  <div class="size">367</div>
+  <div class="mass">1.18</div>
+  <div class="class">M7 IIIe</div>
+  <div class="temp">2918–3192</div>
+  <div class="mag">2.0–10.1</div>
+  <div class="jmag">–0.73</div>
+</div><div class="obj agb SRb variable double">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="π1 Gruis" src="images/Pi1Gruis.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Pi1_Gruis" title="π1 Gru">π1 Журавля</a></div>
+  <div class="angular">18.4</div>
+  <div class="size">350</div>
+  <div class="mass">1.5</div>
+  <div class="class">S5,7: (~M5)</div>
+  <div class="temp">3100</div>
+  <div class="mag">5.31–7.01</div>
+  <div class="jmag">–0.62</div>
+</div><div class="obj agb SRb variable double">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="R Sculptoris" src="images/R_Sculptoris.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/R_Sculptoris" title="R Scl">R Scl</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">355 ± 55</div>
+  <div class="mass">1.3 ± 0.7</div>
+  <div class="class">C6,5ea(Np)</div>
+  <div class="temp">2,640 ± 80</div>
+  <div class="mag">5.72–7.41</div>
+  <div class="jmag">1.44</div>
+  <div class="desc">Оболочка, окружающая звезду, имеет сложную спиралеобразную структуру.</div>
+</div><div class="obj mira">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="T Leporis" src="images/T_Leporis.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/T_Leporis" title="T Lep">T Зайца</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">100</div>
+  <div class="mass">2.7</div>
+  <div class="class">M6e–M9e</div>
+  <div class="temp">2800</div>
+  <div class="mag">7.4–14.3</div>
+  <div class="jmag">1.31</div>
+</div><div class="obj rot deltaSct">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Vega" src="images/Vega.png"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Vega" title="α Lyr">Вега</a></div>
+  <div class="angular">3.2</div>
+  <div class="size">2.36×2.82</div>
+  <div class="mass">2.135</div>
+  <div class="class">A0 V</div>
+  <div class="temp">10000</div>
+  <div class="mag">−0.02…+0.07</div>
+  <div class="jmag">–0.177</div>
+  <div class="desc">Первая звезда после Солнца, для которой был получен спектр.
+  Это произошло в августе 1872 г.</div>
+</div><div class="obj rot deltaSct brightest">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Altair" src="images/Altair.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Altair" title="α Aql">Альтаир</a></div>
+  <div class="angular">3</div>
+  <div class="size">1.63–2.03</div>
+  <div class="mass">1.79</div>
+  <div class="class">A7 V</div>
+  <div class="temp">6900–8500</div>
+  <div class="mag">0.76</div>
+  <div class="jmag">0.35</div>
+</div><div class="obj rot deltaSct">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Beta Cassiopeiae" src="images/Beta_Cassiopeiae.png"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Beta_Cassiopeiae" title="β Cas">Каф (β Cas)</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">3.43–3.69</div>
+  <div class="mass">1.91</div>
+  <div class="class">F2 III</div>
+  <div class="temp">7079</div>
+  <div class="mag">2.25–2.31</div>
+  <div class="jmag">1.63</div>
+</div><div class="obj rot">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Alpha Cephei" src="images/Alpha_Cephei.png"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Alpha_Cephei" title="α Cep">Альдерамин</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">2.3</div>
+  <div class="mass">1.74</div>
+  <div class="class">A8Vn</div>
+  <div class="temp">7740±170</div>
+  <div class="mag">2.51</div>
+  <div class="jmag">2.15</div>
+</div><div class="obj mira low">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="R Hydrae" src="images/R_Hydrae.png"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/R_Hydrae" title="R Hya">R Гидры</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">460–631</div>
+  <div class="mass">2</div>
+  <div class="class">M6e/M9e:</div>
+  <div class="temp">2128–2830</div>
+  <div class="mag">3.5–10.9</div>
+  <div class="jmag">–1.16</div>
+</div><div class="obj sg algol">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Epsilon Aurigae" src="images/Epsilon_Aurigae.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Epsilon_Aurigae" title="ε Aurigae">ε Возничего</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">143–358 + 3.9</div>
+  <div class="mass">2.2–15 + 6–14</div>
+  <div class="class">F0 Iab + ~B5V</div>
+  <div class="temp">7750 + 15000</div>
+  <div class="mag">2.92–3.83</div>
+  <div class="jmag">1.83</div>
+</div><div class="obj rot">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Regulus" src="images/Regulus.png"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Regulus" title="α Leo">Регул</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">3.09±0.15</div>
+  <div class="mass">3.8</div>
+  <div class="class">B8 IVn</div>
+  <div class="temp">12460±200</div>
+  <div class="mag">1.40±0.05</div>
+  <div class="jmag">1.54</div>
+</div><div class="obj rot double">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Alpha Ophiuchi" src="images/Alpha_Ophiuchi.png"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Alpha_Ophiuchi" title="α Oph">Рас Альхаге</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">2.6</div>
+  <div class="mass">2.4±0.25</div>
+  <div class="class">A5 III + K5–7 V</div>
+  <div class="temp">7880–8050</div>
+  <div class="mag">2.07</div>
+  <div class="jmag">1.74</div>
+</div><div class="obj rot Be double brightest">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Achernar" src="images/Achernar.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Achernar" title="α Eri">Ахернар</a></div>
+  <div class="angular">2–2.45</div>
+  <div class="size">7.3×11.4</div>
+  <div class="mass">6.7</div>
+  <div class="class">B6 Vep</div>
+  <div class="temp">15000</div>
+  <div class="mag">0.40–0.46</div>
+  <div class="jmag">0.80</div>
+</div><div class="obj double giant RSCVn">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Zeta Andromedae" src="images/Zeta_Andromedae.png"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Zeta_Andromedae" title="ζ And">ζ And</a></div>
+  <div class="angular">2.502</div>
+  <div class="size">15.9±0.8</div>
+  <div class="mass">2.6±0.4</div>
+  <div class="class">K1III + KV</div>
+  <div class="temp">4665±140</div>
+  <div class="mag">3.92–4.14</div>
+  <div class="jmag">2.19</div>
+</div><div class="obj double RSCVn SB1">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Sigma Geminorum" src="images/Sigma_Geminorum.png"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Sigma_Geminorum" title="σ Gem">σ Близнецов</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">10.1±0.4</div>
+  <div class="mass">1.28±0.07, 0.73</div>
+  <div class="class">K1 III + dG/K</div>
+  <div class="temp">4571±5</div>
+  <div class="mag">4.13–4.29</div>
+  <div class="jmag">2.35</div>
+</div><div class="obj sg SRc">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="CE Tauri" src="images/119_Tauri.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/119_Tauri" title="CE Tauri">CE Тельца</a></div>
+  <div class="angular">10</div>
+  <div class="size">587–593</div>
+  <div class="mass">14.37±2</div>
+  <div class="class">M2Iab–Ib</div>
+  <div class="temp">3801–3820</div>
+  <div class="mag">4.23–4.54</div>
+  <div class="jmag">0.31</div>
+</div><div class="obj sg SRc">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="RS Persei" src="images/RS_Persei.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/RS_Persei" title="RS
+  Per">RS Персея</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">770±30</div>
+  <div class="mass">12-15</div>
+  <div class="class">M4Iab</div>
+  <div class="temp">3470±90</div>
+  <div class="mag">7.82–9.0</div>
+  <div class="jmag">3.05</div>
+</div><div class="obj sg SRc">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="T Persei" src="images/T_Persei.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/T_Persei"
+  title="T Per">T Персея</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">510±20</div>
+  <div class="mass">9-12</div>
+  <div class="class">M2Iab</div>
+  <div class="temp">3750±60</div>
+  <div class="mag">8.34–9.70</div>
+  <div class="jmag">3.89</div>
+</div><div class="obj double algol animation">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Algol" src="images/Algol.gif"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Algol" title="β Per">Алголь</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">2.7±0.2, 3.5±0.3</div>
+  <div class="mass">3.17±0.2, 0.7±0.1</div>
+  <div class="class">B8V + K0IV</div>
+  <div class="temp">13000, 4500</div>
+  <div class="mag">2.1–3.35</div>
+  <div class="jmag">2.16</div>
+</div><div class="obj double betaLyr animation">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Beta Lyrae" src="images/Beta_Lyrae.gif"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Beta_Lyrae" title="β Lyr">Бета Лиры</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">6, 15.2±0.2</div>
+  <div class="mass">13.2±0.3, 3±0.2</div>
+  <div class="class">B8.5Ib–II</div>
+  <div class="temp">30000, 13300</div>
+  <div class="mag">3.25–4.36</div>
+  <div class="jmag">3.35</div>
+</div><div class="obj double RSCVn animation">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="UX Arietis" src="images/UX_Arietis.gif"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/UX_Arietis" title="UX Ari">UX Овна</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">5.6, 1.6±0.2</div>
+  <div class="mass">1.3, 1.14±0.06</div>
+  <div class="class">K0IV+G5V</div>
+  <div class="temp">4560, 5670±100</div>
+  <div class="mag">6.35–6.71</div>
+  <div class="jmag">4.46</div>
+</div><div class="obj double nova animation">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="V339 Delphini" src="images/V339_Delphini.gif"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/V339_Delphini" title="V339 Delphini">V339 Del</a></div>
+  <div class="angular">2</div>
+  <div class="size">&nbsp;</div>
+  <div class="mass">&nbsp;</div>
+  <div class="class">em, P Cyg</div>
+  <div class="temp">&nbsp;</div>
+  <div class="mag">4.3–17.6</div>
+  <div class="jmag">&nbsp;</div>
+  <div class="desc">Новая открыта 14.08.2013. Впервые в спектре новой обнаружены признаки производства лития.</div>
+</div><div class="obj sg SRc animation">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="AZ Cyg" src="images/AZ_Cyg.gif"></div>
+  <div class="name"><a href="http://simbad.u-strasbg.fr/simbad/sim-id?Ident=az+cyg" title="">AZ Cyg</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size"></div>
+  <div class="mass"></div>
+  <div class="class">M2-M4Iab</div>
+  <div class="temp"></div>
+  <div class="mag">8.85</div>
+  <div class="jmag">2.64</div>
+</div><div class="obj sg SRc animation">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="μ Cephei" src="images/Mu_Cephei.gif"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Mu_Cephei" title="μ Cep">μ Цефея</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">1260–1650</div>
+  <div class="mass">19.2 ± 0.1</div>
+  <div class="class">M2e Ia</div>
+  <div class="temp">3750</div>
+  <div class="mag">3.43–5.1</div>
+  <div class="jmag">-0.52</div>
+</div><div class="obj subgiant">
+  <div class="img second" onmouseover="show(this)" onmouseout="hide()"><img alt="κ Andromedae" src="images/Kappa_Andromedae.png"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Kappa_Andromedae" title="κ Andromedae">κ And</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">2.29±0.06</div>
+  <div class="mass">2.8±0.1</div>
+  <div class="class">B9 IVn</div>
+  <div class="temp">11361±66</div>
+  <div class="mag">4.139</div>
+  <div class="jmag">4.29</div>
+</div><div class="obj AGB mira">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="R Carinae" src="images/R_Carinae.png"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/R_Carinae" title="R Carinae">R Киля</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">241.0±35</div>
+  <div class="mass">0.87±0.4</div>
+  <div class="class">M6/7pe</div>
+  <div class="temp">2800</div>
+  <div class="mag">3.9–10.5</div>
+  <div class="jmag">0.09</div>
+</div><div class="obj hypergiant Lc">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="VY Canis Majoris" src="images/VY_Canis_Majoris.png"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/VY_Canis_Majoris" title="VY Большого Пса">VY CMa</a></div>
+  <div class="angular">&nbsp;</div>
+  <div class="size">1420±120</div>
+  <div class="mass">17±8</div>
+  <div class="class">M3–M4.5</div>
+  <div class="temp">3490±90</div>
+  <div class="mag">6.5–9.6</div>
+  <div class="jmag">1.98</div>
+</div>
+</div>
+
+<div class="cont">
+<p>Этот список звезд содержит:</p>
+<ul>
+  <li>Звезды из <a href="https://en.wikipedia.org/wiki/List_of_stars_with_resolved_images" target="_blank" rel="noopener noreferrer">списка разрешенных звезд</a></li>
+  <li>Звезды из
+    <a href="https://www.jmmc.fr/english/tools/data-bases/jmdc-71/" target="_blank" rel="noopener noreferrer">каталога</a>
+    <a href="https://cdsarc.unistra.fr/viz-bin/cat/II/345" target="_blank" rel="noopener noreferrer">JMDC: JMMC Measured Stellar Diameters Catalogue</a>: II/345,<br>
+    <img src="http://cdsarc.u-strasbg.fr//ftp/cats/II/345/+footg8.gif" alt=""><br>
+    а также <a href="http://cdsarc.u-strasbg.fr/viz-bin/Cat?II/346" target="_blank" rel="noopener noreferrer">JMMC Stellar Diameters Catalogue - JSDC. Version 2</a>: II/346.<br>
+    <img src="http://cdsarc.u-strasbg.fr//ftp/cats/II/346/+footg8.gif" alt=""><br>
+    <a href="https://www.jmmc.fr/english/tools/proposal-preparation/getstar-61/" target="_blank" rel="noopener noreferrer">GetStar</a> utility,<br>
+    Статья: <a href="https://doi.org/10.1051/0004-6361/201527484" target="_blank" rel="noopener noreferrer">Pseudomagnitudes and differential surface brightness: Application to the apparent diameter of stars</a>,<br>
+    <a href="http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/367/521" target="_blank" rel="noopener noreferrer">Catalogue of Stellar Diameters (CADARS)</a>.
+  </li>
+</ul>
+
+<p><b><a href="stats/">Статистика звездных каталогов</a></b> (файл создается автоматически)<br>
+  <a href="cat/">звездные каталоги в картинках</a>.</p><br>
+
+<p>А также:<br>
+  <a href="https://ui.adsabs.harvard.edu/abs/2012ApJ...753..156K/abstract" target="_blank" rel="noopener noreferrer">Близкие звезды</a>,
+  звезды и белые карлики в окрестности 8 парсек:<br>
+<img src="images/nearest8pc.png" width="650" alt=""><br>
+<a href="https://gruze.org/galaxymap/10pc/" target="_blank" rel="noopener noreferrer">Карта в окрестности 10 парсек</a>,<br>
+  <a href="https://ui.adsabs.harvard.edu/abs/2021A%26A...650A.201R/abstract" target="_blank" rel="noopener noreferrer">звезды и белые карлики в окрестности 10 парсек</a>:<br>
+<img src="images/nearest10pc.png" width="650" alt=""><br>
+Гиганты и сверхгиганты<br>
+<img src="images/biggest_angular.jpg" alt=""><br>
+Быстро вращающиеся звезды<br>
+<a href="http://www.chara.gsu.edu/science-highlights/rapid-rotators" target="_blank" rel="noopener noreferrer"><img src="http://www.chara.gsu.edu/files/images/rapid_rotator_crop.png" alt=""></a>
+</p>
+
+
+<p>Замечания:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Betelgeuse" target="_blank" rel="noopener noreferrer">Бетельгейзе</a>
+&ndash; первая звезда, угловой диаметр которой измерен методом интерферометрии. Измерения были проведены 13 декабря 1920 года.</li>
+<li><a href="https://en.wikipedia.org/wiki/Eta_Carinae" target="_blank" rel="noopener noreferrer">Эта Киля</a>.</li>
+</ul>
+
+<p>Дополнительные источники:</p>
+<ul>
+  <li><a href="https://postnauka.ru/longreads/88757" target="_blank" rel="noopener noreferrer">Эволюция звезд: от красных гигантов до белых карликов</a>.
+    Астрофизик Дмитрий Вибе о жизни и смерти больших термоядерных печек</li>
+  <li><a href="https://en.wikipedia.org/wiki/Angular_diameter" target="_blank" rel="noopener noreferrer">Angular diameter</a></li>
+  <li><a href="https://www.iau.org/public/themes/naming_stars/" target="_blank" rel="noopener noreferrer">Список утвержденных МАС имен звезд</a>, <b>449</b> имен. Включая 112 имен, данных в рамках кампании <a href="http://www.nameexoworlds.iau.org/final-results" target="_blank" rel="noopener noreferrer">NameExoWorlds</a>.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Historical_brightest_stars" target="_blank" rel="noopener noreferrer">Historical brightest stars</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Hypergiant" target="_blank" rel="noopener noreferrer">Hypergiant</a>,
+    <a href="https://en.wikipedia.org/wiki/Eddington_luminosity" target="_blank" rel="noopener noreferrer">Eddington luminosity</a>. Observations of massive stars show a clear upper limit to their luminosity, termed the Humphreys–Davidson limit after the researchers who first wrote about it.<br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Lbv.png/1024px-Lbv.png" alt="">
+  </li>
+  <li><a href="https://en.wikipedia.org/wiki/Hayashi_limit" target="_blank" rel="noopener noreferrer">Hayashi limit</a> is a constraint upon the maximum radius of a star for a given mass</li>
+  <li><a href="https://en.wikipedia.org/wiki/List_of_most_massive_stars" target="_blank" rel="noopener noreferrer">List of most massive stars</a>,
+    <a href="https://en.wikipedia.org/wiki/List_of_largest_stars" target="_blank" rel="noopener noreferrer">List of largest stars</a>,
+    <a href="https://en.wikipedia.org/wiki/List_of_most_luminous_stars" target="_blank" rel="noopener noreferrer">List of most luminous stars</a>.
+  </li>
+  <li><a href="https://en.wikipedia.org/wiki/Hypernova" target="_blank" rel="noopener noreferrer">Hypernova</a>,
+    <a href="https://en.wikipedia.org/wiki/SN_2005ap" target="_blank" rel="noopener noreferrer">SN 2005ap</a>,
+    <a href="https://en.wikipedia.org/wiki/ASASSN-15lh" target="_blank" rel="noopener noreferrer">SN 2015L</a>,
+    <a href="https://en.wikipedia.org/wiki/PS1-10adi" target="_blank" rel="noopener noreferrer">PS1-10adi</a>.</li>
+  <li><a href="https://astrocats.space/" target="_blank" rel="noopener noreferrer">Open Astronomy Catalogs</a>:
+    <a href="https://sne.space/" target="_blank" rel="noopener noreferrer">the Open Supernova Catalog</a>,
+    <a href="https://kilonova.space/" target="_blank" rel="noopener noreferrer">the open kilonova catalog</a>,
+    <a href="https://tde.space/" target="_blank" rel="noopener noreferrer">The Open TDE Catalog</a>
+    (<a href="https://en.wikipedia.org/wiki/Tidal_disruption_event" target="_blank" rel="noopener noreferrer">Tidal disruption event</a>).</li>
+  <li><a href="https://www.eso.org/public/unitedkingdom/images/eso0906d/" target="_blank" rel="noopener noreferrer">The orbit of Theta1 Orionis C</a>,
+  <a href="https://www.eso.org/public/unitedkingdom/images/eso1601a/" target="_blank" rel="noopener noreferrer">GRAVITY discovers new double star in Orion Trapezium cluster</a></li>
+  <li><a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank" rel="noopener noreferrer">NASA Exoplanet Archive</a> (4116 confirmed planets),
+    <a href="http://exoplanet.eu/" target="_blank" rel="noopener noreferrer">The Extrasolar Planets Encyclopaedia</a> (4177 planets / 3098 planetary systems / 679 multiple planet systems),
+    <a href="http://exoplanets.org/" target="_blank" rel="noopener noreferrer">Exoplanet Orbit Database | Exoplanet Data Explorer</a> (3262 confirmed planets).
+    <a href="https://en.wikipedia.org/wiki/List_of_directly_imaged_exoplanets" target="_blank" rel="noopener noreferrer">List of directly imaged exoplanets</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/White_dwarf#Nearest" target="_blank" rel="noopener noreferrer">White Dwarfs</a> within 25 Light Years,
+    <a href="https://en.wikipedia.org/wiki/List_of_white_dwarfs" target="_blank" rel="noopener noreferrer">List of white dwarfs</a>.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Tolman%E2%80%93Oppenheimer%E2%80%93Volkoff_limit#List_of_most_massive_neutron_stars" target="_blank" rel="noopener noreferrer">Tolman–Oppenheimer–Volkoff limit</a>, List of most massive neutron stars, List of least massive black holes,
+    <a href="https://en.wikipedia.org/wiki/Stellar_black_hole" target="_blank" rel="noopener noreferrer">Stellar black hole</a>,
+    <a href="https://en.wikipedia.org/wiki/Quark_star" target="_blank" rel="noopener noreferrer">Quark star</a>.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Radio-quiet_neutron_star" target="_blank" rel="noopener noreferrer">Radio-quiet neutron star</a>,
+    <a href="https://en.wikipedia.org/wiki/The_Magnificent_Seven_(neutron_stars)" target="_blank" rel="noopener noreferrer">Великолепная семёрка</a> нейтронных звезд,
+    <a href="https://en.wikipedia.org/wiki/Calvera_(X-ray_source)" target="_blank" rel="noopener noreferrer">Калвера (нейтронная звезда)</a>.
+  </li>
+  <li><a href="https://en.wikipedia.org/wiki/List_of_gamma-ray_bursts" target="_blank" rel="noopener noreferrer">List of gamma-ray bursts</a>,
+    <a href="https://en.wikipedia.org/wiki/GRB_080916C" target="_blank" rel="noopener noreferrer">GRB 080916C</a>,
+    <a href="https://en.wikipedia.org/wiki/GRB_080319B" target="_blank" rel="noopener noreferrer">GRB 080319B</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/List_of_gravitational_wave_observations" target="_blank" rel="noopener noreferrer">List of gravitational wave observations</a></li>
+  <li><a href="http://scan.sai.msu.ru/~denis/morelinx.html" target="_blank" rel="noopener noreferrer">Список ссылок Д. Денисенко</a></li>
+  <li><a href="http://www.pas.rochester.edu/~emamajek/memo_star_dens.html" target="_blank" rel="noopener noreferrer">Number Densities of Stars of Different Types in the Solar Vicinity</a> Eric Mamajek</li>
+  <li><a href="https://en.wikipedia.org/wiki/Interstellar_medium" target="_blank" rel="noopener noreferrer">Interstellar medium</a></li>
+  <li><a href="https://nplus1.ru/news/2021/04/26/flare-proxima" target="_blank" rel="noopener noreferrer">Проксима Центавра произвела экстремально мощную вспышку</a>,
+    <a href="https://arxiv.org/abs/2104.09519" target="_blank" rel="noopener noreferrer">Discovery of an Extremely Short Duration Flare from Proxima Centauri Using Millimeter through FUV Observations</a></li>
+</ul>
+</div>
+<footer>2019&ndash;2020 Википедия. Компиляция, код: Д.С. Насонов.</footer>
+</body>
+</html>

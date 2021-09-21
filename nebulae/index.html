@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Коллекции астрономических объектов: туманности">
+  <title>Туманности. Коллекции астрономических объектов</title>
+  <link rel="stylesheet" href="../collections.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../collections.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+<nav class="menu">
+<ul>
+  <li><a href="../collections/">Коллекции:</a></li>
+  <li><a href="../solarsystem/">Солнечная система</a></li>
+  <li><a href="../stars/">Звезды</a></li>
+  <li><a href="../clusters/">Звездные скопления</a></li>
+  <li><a href="../exoplanets/">Экзопланеты</a></li>
+  <li><a href="../nsbh/">Звездные остатки</a></li>
+  <li><a href="../browndwarfs/">Бурые карлики</a></li>
+  <li><a>Туманности</a></li>
+  <li><a href="../galaxies/">Галактики</a></li>
+</ul>
+</nav>
+
+<div id="messageBox">
+  <div id="contents"></div>
+</div>
+
+<h1>Туманности</h1>
+
+<div class="cont">
+  <input type="checkbox" name=".name" value="block" checked onclick="showHideThis(this)">Имя,
+  <input type="checkbox" name=".size" value="block" checked onclick="showHideThis(this)">радиус,
+  <input type="checkbox" name=".class" value="block" checked onclick="showHideThis(this)">спектральный класс,
+  <input type="checkbox" name=".temp" value="block" checked onclick="showHideThis(this)">температура.
+  <input type="checkbox" name=".animation" value="block" checked onclick="showHideThis(this)">С анимированными картинками.<br>
+</div>
+
+<div id="tab">
+<div class="obj image">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Mz_3" title="">Menzel 3</a></div>
+  <div class="info_field dist"> ± </div>
+  <div class="info_field size"></div>
+  <div class="info_field mass"></div>
+  <div class="info_field class"></div>
+  <div class="info_field age"></div>
+  <div class="info_field temp"></div>
+  <div class="info_field mag"></div>
+</div><div class="obj image">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/.png"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/VY_Canis_Majoris" title="">VY Большого Пса</a></div>
+  <div class="info_field dist"> ± </div>
+  <div class="info_field size"></div>
+  <div class="info_field mass"></div>
+  <div class="info_field class"></div>
+  <div class="info_field age"></div>
+  <div class="info_field temp"></div>
+  <div class="info_field mag"></div>
+</div>
+</div>
+
+<div class="cont">
+<h2>Ссылки</h2>
+<ul>
+  <li><a href="https://www.drdjones.net/bcspn/" target="_blank" rel="noopener noreferrer">Table of post-CE binary PNe</a></li>
+  <li><a href="https://arxiv.org/abs/2005.10368" target="_blank" rel="noopener noreferrer">Catalogue of the central stars of planetary nebulae. Expanded edition</a> (arXiv:2005.10368)</li>
+  <li><a href="https://arxiv.org/abs/1808.04624" target="_blank" rel="noopener noreferrer">Revealing the True Nature of Hen 2-428</a> (arXiv:1808.04624)</li>
+  <li><a href="https://en.wikipedia.org/wiki/Herbig%E2%80%93Haro_object" target="_blank" rel="noopener noreferrer">Объект Хербига — Аро</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Lists_of_nebulae" target="_blank" rel="noopener noreferrer">Lists of nebulae</a></li>
+  <li><a href="http://www.idebono.eu/2015/09/16/the-earliest-image-of-another-galaxy/" target="_blank" rel="noopener noreferrer">The earliest image of another galaxy</a></li>
+  <li><a href="http://www.klima-luft.de/steinicke/ngcic/persons/hodierna.htm" target="_blank" rel="noopener noreferrer">Giovanni Battista Hodierna</a></li>
+  <li><a href="http://cosmicneighbors.net/PeriodicMessier.htm" target="_blank" rel="noopener noreferrer">The Periodic Table of Messier Objects</a></li>
+</ul>
+<h2>Иллюстрации</h2>
+<ul>
+  <li><a href="http://www.astronet.ru/db/msg/1370867" target="_blank" rel="noopener noreferrer">Гигантский Кальмар в Летучей мыши</a> (APoD 27.10.2016)</li>
+  <li><a href="https://www.astrobin.com/full/279540/E/" target="_blank" rel="noopener noreferrer">Sh2-129 "Flying Bat" and Outters 4 "Giant Squid" Nebulae</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/SNR_0509-67.5" target="_blank" rel="noopener noreferrer">SNR 0509-67.5</a></li>
+  <li><a href="https://www.eso.org/public/images/eso1719a/" target="_blank" rel="noopener noreferrer">The VST captures three spectacular nebulae in one image</a></li>
+  <li><a href="http://www.astronet.ru/db/msg/1210539" target="_blank" rel="noopener noreferrer">Водород и пыль в туманности Розетка</a></li>
+  <li><a href="http://www.bucksnortobservatory.com/deepspace_pages/NGC_1788_Orion_Ha.shtml" target="_blank" rel="noopener noreferrer">NGC 1788 and Orion Ha</a></li>
+</ul>
+</div>
+<footer>2021 Википедия. Компиляция, код: Д.С. Насонов.</footer>
+</body>
+</html>

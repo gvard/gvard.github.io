@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Знаменательные даты (Flask SQLAlchemy app)</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='dates/style.css') }}">
+  <script src="{{ url_for('static', filename='dates/script.js') }}"></script>
+</head>
+<body>
+<div class="wrapper">
+<div class="column left">
+<div id="head">
+<h1>Этапы большого пути: тематические презентации</h1>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Sozdatelyam-sputnika.jpg/480px-Sozdatelyam-sputnika.jpg" alt=""><br>
+<button onclick="slidesByTag('first')">Покорение космоса</button> <button onclick="showByTag('first')">Покорение космоса (лента)</button><br>
+<button onclick="slidesByTag('photo')">Знаменитые фото</button> <button onclick="showByTag('photo')">Знаменитые фото (лента)</button><br>
+<button onclick="slidesByTag('venus')">Венера</button><br>
+</div>
+
+{% for event in events %}
+<div class="wrap{% for tag in event.tags %} {{ tag.tag }}{% endfor %}">
+<div class="slug">{{ event.name }}</div>
+<div class="date">{% if event.date %}{{ event.date.strftime("%d.%m.%Y") }}{% endif %}</div>
+<div class="img">{% for img in event.imgs %}{% if img.img_url %}<img src="{{ img.img_url }}" alt="">{% endif %}{% if img.img_filename %}<img src="{{ img.img_filename }}" alt="">{% endif %}{% endfor %}</div>
+<div class="desc"><span class="ago"></span> {{ event.text }}</div>
+</div>{% endfor %}
+
+<p><b>Всего {{ events|length }} событий.</b></p>
+</div>
+
+<div class="column right">
+<div class="blocks">
+<b>Выборка: дата, месяц, год</b><br>
+<input type="text" id="daymon" size="4" maxlength="5" value="" placeholder="29.02">
+<input type="text" id="year" size="4" maxlength="4" value="" placeholder="1984"><br>
+<input type="checkbox" id="today">Сегодня
+<input type="checkbox" id="thisYear">Этот год<br>
+<button onclick="showByDate()">Лента</button>
+<button onclick="slidesByDate()">Слайд-шоу</button>
+<ul>
+<li>День.месяц – дд.мм или мм</li>
+<li>Год – гггг</li>
+<li>Пустое поле года – события заданной даты</li>
+</ul>
+</div>
+<div class="blocks">
+Тег <input type="text" id="tag" size="9" maxlength="18" value="" placeholder="venus" style="width: 4rem"><br>
+<button onclick="showByTag()">Лента</button>
+<button onclick="slidesByTag()">Слайд-шоу</button>
+<br>
+astro, cosmo, photo, moon и&nbsp;т.д.<br><br>
+Пауза слайд-шоу <input type="text" id="tmout" size="4" maxlength="5" value="4500" style="width: 2.2rem"> мс<br>
+</div>
+</div>
+</div>
+</body>
+</html>

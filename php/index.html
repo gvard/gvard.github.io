@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Web-разработка, PHP: учебные материалы. Созданы для занятий кружков в Московском Дворце пионеров.">
+  <title>PHP: учебные материалы</title>
+  <link rel="stylesheet" href="../compact.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="https://www.php.net/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../github.css">
+  <script src="highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <h1>gvard.github.io/php/</h1>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" width="100" alt="">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Webysther_20160423_-_Elephpant.svg" width="150" alt="The elePHPant, PHP mascot">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/HTTP_logo.svg" width="80" alt=""><br>
+  <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods" target="_blank" rel="noopener noreferrer">Hypertext Transfer Protocol: request methods</a>,
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods" target="_blank" rel="noopener noreferrer">HTTP request methods</a>,
+  <a href="https://ru.wikipedia.org/wiki/HTTP#%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B" target="_blank" rel="noopener noreferrer">HTTP методы</a>.<br>
+  <a href="https://en.wikipedia.org/wiki/HTTP/2" target="_blank" rel="noopener noreferrer">Спецификация HTTP/2.0</a> опубликована 14.05.2015.
+  <a href="https://en.wikipedia.org/wiki/HTTP/2#Differences_from_HTTP_1.1" target="_blank" rel="noopener noreferrer">HTTP/2: differences from HTTP 1.1</a>.
+  <br>http://phporphp.000webhostapp.com - PHP or not PHP? That's a question!</a>
+<h1>Основы PHP</h1>
+<h2>Темы</h2>
+<ul>
+  <li>Цикл while</li>
+  <li>Массивы. Ассоциативные массивы. Цикл for, foreach</li>
+  <li><a href="txt/">Функции работы с текстом в PHP</a></li>
+  <li>Решение задач по обработке строк</li>
+  <li><a href="img/">Функции работы с изображениями в PHP</a>. Решение задач по обработке изображений</li>
+  <li><a href="files/">Функции работы с файлами</a>. Загрузка и сохранение файлов на сервер</li>
+  <li><a href="db/">Базы данных. Создание простой базы данных</a></li>
+  <li><a href="forms/">Динамическое создание форм на сайте</a></li>
+  <li><a href="get/">Методы POST и GET</a></li>
+</ul>
+<h2>Формы и их обработка на PHP</h2>
+<p>Форма поиска:</p>
+<form action="https://google.com/search">
+  <input type="text" name="q" placeholder="гвозди">
+  <input type="submit" value="Искать в Google">
+</form>
+
+<h2>Установка PHP в ОС Windows</h2>
+<p><a href="https://windows.php.net/download" target="_blank" rel="noopener noreferrer">Ссылки на скачивание архива PHP</a> для Windows.<br>
+Скачать zip-архив нужной архитектуры системы (x86/x64), распаковать, зайти в директорию, запустить учебный сервер.</p>
+
+<h2>Запуск веб-сервера</h2>
+<pre><code>php -S localhost:8000</code></pre>
+
+Простая гостевая книга.
+Для работы гостевой книги необходим текстовый файл guestbook.txt. Нужно изменить права доступа к нему, чтобы любой мог оставить сообщение:
+<pre><code>chmod 646 guestbook.txt</code></pre>
+
+<h2>Функция include</h2>
+<p>include предназначена для включения файлов в код сценария PHP во время исполнения сценария PHP.
+</p>
+<p>
+В отличие от конструкции require конструкция include позволяет включать файлы в код PHP скрипта во время выполнения сценария. Синтаксис конструкции include выглядит следующим образом:
+</p>
+<pre><code>include имя_файла;</code></pre>
+<p>Поясним принципиальную разницу между конструкциями require и include на конкретном практическом примере. Создадим 10 файлов с именами 1.txt, 2.txt и так далее до 10.txt, содержимое этих файлов – просто десятичные цифры 1, 2, … 10 (по одной цифре в каждом файле). Создадим такой сценарий PHP:</p>
+<pre><code>&lt;?php
+// Создаем цикл, в теле которого конструкция include
+for($i=1; $i&lt;=10; $i++) {
+include "$i.txt";
+}
+// Включили десять файлов: 1.txt, 2.txt, 3.txt ... 10.txt
+// Результат - вывод 12345678910
+?></code></pre>
+<p>В результате мы получим вывод, состоящий из 10 цифр: "12345678910". Из этого мы можем слелать вывод, что каждый из файлов был включен по одному разу прямо во время выполнения цикла! Если мы поставим теперь вместо include require, то сценарий сгенерирует критическую ошибку (fatal error).</p>
+
+<h3>Более строго:</h3>
+<p>Файлы включаются исходя из пути указанного файла, или, если путь не указан, используется путь, указанный в директиве include_path. Если файл не найден в include_path, include попытается проверить директорию, в которой находится текущий включающий скрипт и текущую рабочую директорию перед тем, как выдать ошибку. Конструкция include выдаст E_WARNING, если не сможет найти файл; поведение отлично от require, который выдаст E_ERROR.</p>
+
+<p>PHP преобразует сценарий во внутреннее представление, анализируя строки сценария по очереди, пока не доходит до конструкции include. Дойдя до include, PHP прекращает транслировать сценарий и переключается на указанный в include файл. Таким образом из-за подобного поведения транслятора, быстродействие сценария снижается, особенно при большом колличестве включаемых с помощью include файлов. С require таких проблем нет, поскольку файлы с помощью <b>require</b> включаются до выполнения сценария, то есть на момент трансляции файл уже включен в сценарий.</p>
+<p>Таким образом, целесообразнее использовать конструкцию <b>require</b> там, где не требуется динамическое включение файлов в сценарий, а конструкцию include использовать только с целью динамического включения файлов в код PHP скрипта.</p>
+<p>Конструкция include поддерживает включения удаленных файлов. Например:</p>
+<pre><code>&lt;?php
+// Следующий пример на работает, поскольку пытается включить локальный файл
+include 'file.php?foo=1&bar=2';
+// Следующий пример работает
+include 'http://www.example.com/file.php?foo=1&bar=2';
+?></code></pre>
+<p><b>Конструкция include позволяет включать удаленные файлы, если такая возможность включена в конфигурационном файле PHP.</b></p>
+<p><b>Для того, чтобы удаленное включение файлов было доступно, необходимо в конфигурационном файле (php.ini) установить allow_url_fopen=1.</b></p>
+
+<p>PHP позволяет работать с объектами URL, как с обычными файлами. Упаковщики, доступные по умолчанию, служат для работы с удаленными файлами с использованием протокола ftp или http.</p>
+<p>Если "URL fopen-оболочки" включены в PHP (как в конфигурации по умолчанию), вы можете специфицировать файл, подключаемый с использованием URL (через HTTP), вместо локального пути. Если целевой сервер интерпретирует целевой файл как PHP-код, переменные могут передаваться в подключаемый файл с использованием URL-строки запроса, как в HTTP GET. Строго говоря, это не то же самое, что подключение файла и наследование им области видимости переменных родительского файла; ведь скрипт работает на удалённом сервере, а результат затем подключается в локальный скрипт.</p>
+<pre><code>&lt;?php
+
+/* Здесь предполагается, что www.example.com сконфигурирован для разбора .php
+  * файлов, а не .txt файлов. Также 'Works' здесь означает, что переменные
+  * $foo и $bar доступны в подключённом файле. */
+
+// Не будет работать, так как file.txt не обрабатывается www.example.com как PHP
+include 'http://www.example.com/file.txt?foo=1&bar=2';
+
+// Не будет работать, поскольку ищет файл 'file.php?foo=1&bar=2' в локальной
+// файловой системе.
+include 'file.php?foo=1&bar=2';
+
+// Следующий пример работает:
+include 'http://www.example.com/file.php?foo=1&bar=2';
+
+$foo = 1;
+$bar = 2;
+include 'file.txt';  // Работает
+include 'file.php';  // Работает
+?></code></pre>
+
+<h3>Область видимости переменых</h3>
+<p>Когда файл включается, его код наследует ту же область видимости переменых, что и строка, на которой произошло включение. Все переменные, доступные на этой строке во включающем файле, будут также доступны во включаемом файле. Однако все функции и классы, объявленные во включаемом файле, имеют глобальную область видимости. Пример:</p>
+<pre><code><b>vars.php</b>
+&lt;?php
+
+$color = 'зеленое';
+$fruit = 'яблоко';
+
+?>
+
+<b>test.php</b>
+&lt;?php
+
+echo "Одно $color $fruit"; // Одно
+
+include 'vars.php';
+
+echo "Одно $color $fruit"; // Одно зеленое яблоко
+
+?>
+</code></pre>
+
+<h2>Метод POST</h2>
+<p>
+  Тег <b>&lt;form action="action.php" method="post"&gt;</b> отправит данные на
+  обработку скрипту action.php после нажатия на кнопку, созданную элементом формы
+  <b>&lt;input type="submit"&gt;</b><br>
+  Исходный код форм можно посмотреть при помощи сочетания клавиш Ctrl+U.<br>
+</p>
+
+<form action="action.php" method="post">
+  Название тега, который является корневым элементом: <input type="text" name="name" placeholder="html"><br>
+  В каком году создана всемирная сеть WWW? <input type="text" name="year" placeholder="1990"><br>
+  Какой тег лишний?
+  <select name="tag1">
+    <option value="div">div</option>
+    <option value="img" selected>img</option>
+    <option value="p">p</option>
+    <option value="h1">h1</option>
+  </select><br>
+  Какой тег является строчным?<br>
+  <input type="radio" name="tag2" value="p">p<br>
+  <input type="radio" name="tag2" value="span">span<br>
+  <input type="radio" name="tag2" value="div" checked>div<br>
+  <input type="radio" name="tag2" value="div">h1<br>
+  Название или адрес картинки: <input type="text" name="imgurl" value="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"><br>
+  <input type="checkbox" id="checker" name="checker" checked> Я согласен с условиями обработки данных<br>
+  <textarea name="msg" rows="10" cols="30">Поле для отправки сообщения. Писать сюда.</textarea><br>
+<input type="submit" value="Отправить">
+</form>
+
+<p><b>Код php в файле action.php:</b></p>
+<pre><code>Главный тег: &lt;?php echo htmlspecialchars($_POST['name']); ?&gt;.
+Лишний тег: &lt;?php echo $_POST['tag1']; ?&gt;
+Строчный тег: &lt;?php echo $_POST['tag2']; ?&gt;
+
+&lt;?php if ((int)$_POST['year'] == 1990): ?&gt;
+Год создания WWW &ndash; &lt;?php echo (int)$_POST['year']; ?&gt;.
+&lt;?php else: ?&gt;
+  Нет, год создания WWW &ndash; не &lt;?php echo (int)$_POST['year']; ?&gt;.
+&lt;?php endif; ?&gt;
+
+Сообщение: &lt;?php echo htmlspecialchars($_POST['msg']); ?&gt;
+Согласился с условиями?
+&lt;?php
+if ( isset($_POST['checker']) )
+{
+  echo "Да";
+} else {
+  echo "Нет";
+} ?&gt;
+</code></pre>
+
+<h2>Метод GET</h2>
+<p>Тег <b>&lt;form action="action-get.php" method="get"&gt;</b> отправит данные на обработку скрипту action.php после нажатия на кнопку.</p>
+
+<form action="action-get.php" method= "get">
+  Название тега, который является корневым элементом: <input type="text" name="name" value="html"><br>
+  В каком году создана всемирная сеть WWW? <input type="text" name="year" placeholder="1990"><br>
+  Какой тег лишний?
+  <select name="tag1">
+    <option value="div">div</option>
+    <option value="img" selected>img</option>
+    <option value="p">p</option>
+    <option value="h1">h1</option>
+  </select><br>
+  Какой тег является строчным?<br>
+  <input type="radio" name="tag2" value="p">p<br>
+  <input type="radio" name="tag2" value="span">span<br>
+  <input type="radio" name="tag2" value="div" checked>div<br>
+  <input type="radio" name="tag2" value="div">h1<br>
+  Название или адрес картинки: <input type="text" name="imgurl" value="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"><br>
+  <input type="checkbox" id="checker" name="checker" checked> Я согласен с условиями обработки данных<br>
+  <textarea name="msg" rows="10" cols="30">Поле для отправки сообщения. Писать сюда.</textarea><br>
+<input type="submit" value="Отправить">
+</form>
+
+<h2>Ссылки</h2>
+<ul>
+  <li><a href="https://www.php.net/manual/ru/tutorial.php" target="_blank" rel="noopener noreferrer">Простой учебник</a></li>
+  <li><a href="https://www.php.net/manual/ru/features.commandline.webserver.php" target="_blank" rel="noopener noreferrer">Встроенный веб-сервер</a></li>
+  <li><a href="https://www.php.net/manual/ru/langref.php" target="_blank" rel="noopener noreferrer">Справочник языка</a></li>
+  <li><a href="https://www.php.net/manual/ru/language.basic-syntax.phptags.php" target="_blank" rel="noopener noreferrer">Теги PHP</a></li>
+  <li><a href="https://www.php.net/manual/ru/language.basic-syntax.phpmode.php" target="_blank" rel="noopener noreferrer">Изолирование от HTML</a></li>
+  <li><a href="https://www.php.net/manual/ru/language.basic-syntax.instruction-separation.php" target="_blank" rel="noopener noreferrer">Разделение инструкций</a></li>
+  <li><a href="https://www.php.net/manual/ru/language.basic-syntax.comments.php" target="_blank" rel="noopener noreferrer">Комментарии</a></li>
+  <li><a href="https://www.php.net/manual/ru/ref.strings.php" target="_blank" rel="noopener noreferrer">Функции для работы со строками</a></li>
+  <li><a href="https://www.php.net/manual/ru/refs.basic.text.php" target="_blank" rel="noopener noreferrer">Справочник функций &gt; Обработка текста</a></li>
+  <li><a href="https://www.php.net/manual/ru/book.strings.php" target="_blank" rel="noopener noreferrer">Справочник функций &gt; Обработка текста &gt; Строки</a></li>
+  <li><a href="https://www.php.net/manual/ru/language.types.string.php" target="_blank" rel="noopener noreferrer">Справочник языка &gt; Типы &gt; Строки</a></li>
+  <li><a href="https://www.php.net/manual/ru/refs.utilspec.image.php" target="_blank" rel="noopener noreferrer">Справочник функций &gt; Обработка и генерация изображений</a></li>
+  <li><a href="https://www.php.net/manual/ru/book.image.php" target="_blank" rel="noopener noreferrer">Справочник функций &gt; Обработка и генерация изображений &gt; Обработка изображений и GD</a></li>
+  <li><a href="https://www.php.net/manual/ru/faq.using.php" target="_blank" rel="noopener noreferrer">Использование PHP</a> (FAQ)</li>
+  <li><a href="https://www.php.net/manual/ru/language.operators.precedence.php" target="_blank" rel="noopener noreferrer">Приоритет оператора</a>, важно для and/or</li>
+  <li><a href="https://www.php.net/manual/ru/function.include.php" target="_blank" rel="noopener noreferrer">Выражение include</a> включает и выполняет указанный файл</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.testfield {
+  background-color: #eee;
+  color: black;
+  border-radius: 4px;
+  margin: 10px 20px;
+  padding: 10px 20px;
+  max-width: 1200px;
+}
+.testitem {
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 5px 5px;
+  padding: 5px 10px;
+}
+#submitButton {
+  height:35px;
+  width:95px;
+  border: 1px solid #5E5E5E;
+  border-radius:5px;
+  font-weight: bold;
+  background: red;
+  color: white;
+}
+.btn {
+  text-align: center;
+}
+.hide {
+  display: none;
+}

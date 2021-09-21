@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="description" content="Python: cинтаксический разбор текста, Beautiful Soup. Пример автоматического составления текста из фрагментов статей Википедии.">
+  <title>Python: cинтаксический разбор текста, Beautiful Soup</title>
+  <link rel="stylesheet" href="../../compact.css">
+  <link rel="stylesheet" href="../../github.css">
+  <script src="../highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<h1>Синтаксический разбор текста и Beautiful Soup</h1>
+
+<section>
+<h2>Пишем реферат. Пример автоматического составления текста из фрагментов статей Википедии.</h2>
+
+<p>Мы просматриваем web-страницы в web-браузере, например, Google Chrome.
+Исходный текст страниц написан на языке гипертекстовой разметки HTML, Hypertext Markup Language. Его можно просмотреть, нажав в браузере сочетание клавиш Ctrl+U.</p>
+<p>html-страницу можно загрузить, не открывая браузер. Будем использовать python и библиотеку urllib. Для загрузки страницы необходим ее адрес в интернете &ndash; URL (Uniform Resource Locator), единый указатель ресурса. Его мы сохраним в переменной URL.<br>
+Если объявленная переменная не изменяется на протяжении всей программы, она называется <i>константой</i> и ее название пишется заглавными буквами. Если бы адрес страницы менялся, переменную стоило написать строчными буквами.</p>
+<pre><code>import urllib.request
+URL = "https://gvard.github.io/py/"
+html_bytes = urllib.request.urlopen(URL)</code></pre>
+<p>Страница загрузится в виде последовательности байт. Мы можем разделить ее на
+отдельные строки, найти нужную последовательность байтов, перевести ее в строку:</p>
+<pre><code class="py">html_byte_list = html_bytes.readlines()
+title = html_byte_list[7].decode()
+print(title)
+# '  &lt;title&gt;Программирование на Python&lt;title&gt;\r\n'</code></pre>
+
+<p>Искать нужные данные в последовательности байт довольно утомительно. Для этого лучше использовать специальные библиотеки, например,
+<a href="https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)" target="_blank" rel="noopener noreferrer">Beautiful Soup</a>.
+Установка библиотеки: в командной строке выполнить команду
+<pre><code>pip install bs4</code></pre>
+
+<p>Программа с использованием Beautiful Soup ищет на странице параграфы с текстом и печатает первые три на экран:</p>
+<pre><code>import urllib.request
+
+from bs4 import BeautifulSoup
+
+# Адрес страницы в Википедии - константа:
+URL = "https://en.wikipedia.org/wiki/Dinosaur"
+
+# Открыть и прочитать исходный код страницы по адресу URL
+html = urllib.request.urlopen(URL).read()
+# Перевести скачанную страницу в виде байтовой строки (bytes) в объект BeautifulSoup
+soup = BeautifulSoup(html, 'html.parser')
+# Найти все параграфы - содержимое тегов p. ps - список.
+ps = soup.findAll("p")
+# Соединить текст первых трех (первые два часто пустые) параграфов статьи
+text = ps[0].text + ps[1].text + ps[2].text
+print(text)</code></pre>
+
+<p>Убираем из текста все ссылки:</p>
+<pre><code>while "[" in text:
+  br1 = s.find("[")
+  br2 = s.find("]") + 1
+  text = text[:br1] + text[br2:]
+
+print(text)</code></pre>
+<p>Мы только что написали <i>подпрограмму</i>: законченный фрагмент кода, который может применяться для любого текста, содержащегося в переменной text.
+Следующий шаг &ndash; составить реферат из текста нескольких статей Википедии. Тогда для каждой статьи можно будет повторить уже написанный код.<br>
+Возьмем адреса статей про внутренние планеты Солнечной системы и сохраним их список в переменной URLS:</p>
+<pre><code>URLS = [
+"https://en.wikipedia.org/wiki/Mercury_(planet)",
+"https://en.wikipedia.org/wiki/Venus",
+"https://en.wikipedia.org/wiki/Earth",
+"https://en.wikipedia.org/wiki/Mars"
+]</code></pre>
+
+<p>С русским языком сложнее. Для обработки русских символов в URL будем использовать модуль urllib.parse</p>
+
+<pre><code>import urllib.request
+import urllib.parse
+
+from bs4 import BeautifulSoup
+
+
+WIKI_URL = "https://ru.wikipedia.org/wiki/"
+ASTEROIDS = ["Церера", "(2)_Паллада", "(3)_Юнона", "(4)_Веста"]
+URLS = [WIKI_URL + urllib.parse.quote(name) for name in ASTEROIDS]
+
+for url in URLS:
+    html = urllib.request.urlopen(url).read()
+    soup = BeautifulSoup(html, 'html.parser')
+    ps = soup.findAll("p")
+    text = ps[0].text
+    while "[" in text:
+        br1 = text.find("[")
+        br2 = text.find("]")
+        text = text[:br1] + text[br2+1:]
+    accent_ind = text.find("́")
+    text = text[:accent_ind] + text[accent_ind+1:]
+    print(text)</code></pre>
+
+<p>Посмотрите видео о том, как "написать" реферат при помощи Python:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NSE83EEKU44" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</section>
+<a href="bs.py">Программа для скачивания статей и вырезания (любых) [скобок]</a><br>
+<h2>Ссылки</h2>
+<ul>
+  <li><a href="https://www.dataquest.io/blog/web-scraping-tutorial-python/" target="_blank" rel="noopener noreferrer">Tutorial: Python Web Scraping Using BeautifulSoup</a></li>
+  <li><a href="http://www.pybloggers.com/2018/01/practical-introduction-to-web-scraping-in-python/" target="_blank" rel="noopener noreferrer">Practical Introduction to Web Scraping in Python</a></li>
+</ul>
+
+</body>
+</html>

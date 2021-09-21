@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Дмитрий Насонов">
+  <meta name="description" content="Turtle, черепашья графика в Python. Учебные материалы, примеры программ, задания для самостоятельного решения.">
+  <title>Черепашья графика turtle</title>
+  <link rel="stylesheet" href="../../github.css">
+  <link rel="stylesheet" href="../../compact.css">
+  <script src="../highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();
+  function show(showId) {document.getElementById(showId).style.display = 'block';}</script>
+</head>
+<body>
+<nav class="menu">
+<ul>
+  <li><a href="../">Python: главная</a></li>
+  <li><a href="#geometry">Геометрия</a></li>
+  <li><a href="#coord">Координаты</a></li>
+  <li><a href="#equals">Равновеликие фигуры</a></li>
+  <li><a href="#gui">Графический интерфейс</a></li>
+  <li><a href="#keys">Управляем с клавиатуры</a></li>
+  <li><a href="#merge">Все вместе</a></li>
+  <li><a href="#game">Пишем игру</a></li>
+</ul>
+</nav>
+<h1>&laquo;Черепашья графика&raquo; при помощи turtle, рисование при помощи алгоритма</h1>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Turtle-animation.gif" alt="">
+<p><a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%B5%D0%BF%D0%B0%D1%88%D1%8C%D1%8F_%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0" target="_blank" rel="noopener noreferrer">Черепашья</a>
+  <a href="https://en.wikipedia.org/wiki/Turtle_graphics" target="_blank" rel="noopener noreferrer">графика</a>,
+  <a href="https://docs.python.org/3/library/turtle.html" target="_blank" rel="noopener noreferrer">turtle</a> –
+  принцип организации библиотеки графического вывода, построенный на метафоре Черепахи, воображаемого роботоподобного устройства, которое перемещается по экрану или бумаге и поворачивается в заданных направлениях, при этом оставляя (или, по выбору, не оставляя) за собой нарисованный след заданного цвета и ширины.</p>
+  <p>Проще: <b>черепашка ползает по экрану и рисует. Мы управляем черепашкой на плоскости при помощи программы.</b></p>
+
+<h2>Начало работы. Движения</h2>
+<p>В первой строке необходимо добавить:</p>
+<pre><code>import turtle</code></pre>
+<p>Мы командуем черепашкой простыми словами на английском языке.
+left, right – поворот налево и направо, forward и backward – движение вперед и назад.
+  В программе каждое действие – вызов функции из модуля turtle. Простая программа:</p>
+<pre><code>import turtle
+
+turtle.right(90)
+turtle.forward(100)
+turtle.left(90)
+turtle.backward(100)
+</code></pre><br>
+<img src="https://files.realpython.com/media/Update_-_Moving_Turtle_VIDEO_GIF.61623cf40fed.gif" alt="">
+<p><b>Что произошло</b>:</p>
+<ul>
+  <li>Поворот направо на 90 градусов</li>
+  <li>Движение вперед на 100 шагов (пикселей)</li>
+  <li>Поворот налево на 90 градусов</li>
+  <li>Движение назад на 100 шагов</li>
+</ul>
+
+<p>Не похоже на черепашку, это ползающая стрелка! Исправим это:</p>
+<pre><code>import turtle
+turtle.shape("turtle")
+turtle.fd(100)
+turtle.exitonclick()
+</code></pre><br>
+<img src="turtle.png" alt=""><br>
+<p>Отлично! Теперь это черепашка, пусть и монохромная.
+  Дополнительно, функция exitonclick() позволяет закрыть окно и завершить выполнение программы кликом мышкой по окну.<br>
+  А еще можно использовать сокращенные названия функций: fd(100) вместо forward(100),
+rt вместо right, lt вместо left, bk вместо backward.</p>
+
+<h2 id="geometry">Геометрические фигуры</h2>
+<p>Рисуем простые геометрические фигуры:</p>
+<ul>
+  <li>Прямая: просто движение вперед</li>
+  <li>Квадрат: вперед, поворот на 90 градусов и так 4 раза. Повторение команд – значит, можно выполнить их в цикле for!</li>
+  <li>Пятиконечная звезда: вперед, поворот на 144 градусов и так 5 раз.</li>
+</ul>
+<p>Если мы хотим выполнить инструкции n раз, мы пишем их в цикле</p>
+<pre><code>for i in range(n):</code></pre>
+<p>Далее идут инструкции с отступом в 4 пробела. Код с отступами – <i>тело цикла</i>.
+  Когда цикл завершается, отступы больше не ставятся.</p>
+<p><b>Рисуем квадрат:</b></p>
+<pre><code>import turtle
+square = turtle.Turtle()
+square.shape("turtle")
+for i in range(4):
+    square.forward(100)
+    square.right(90)
+turtle.exitonclick()
+</code></pre><br>
+<img src="https://michael0x2a.com/_assets/media/turtle-examples/square.2836.png" alt="">
+<p>Скучно рисовать одинокие фигуры. Поэтому мы приготовились рисовать сразу несколько и теперь создаем отдельный <i>экземпляр класса</i> Turtle для каждой фигуры.
+Так мы можем менять цвет линии и другие параметры отдельно для каждой фигуры.
+Потом, когда мы захотим дорисовать или изменить параметры фигуры, у нее будут сохранены старые параметры.
+Их не надо будет устанавливать заново, как это было бы без отдельных экземпляров класса для каждой фигуры.</p>
+<p><b>Звезда рисуется также:</b></p>
+<img src="https://michael0x2a.com/_assets/media/turtle-examples/star.8cc6.png" alt="">
+
+<h3>Самостоятельно:</h3>
+<ol>
+  <li>Нарисуйте пятиконечную звезду (угол поворота 144 градуса).</li>
+  <li>Квадрат и звезду в одной программе, на одном графическом поле, но с разными экземплярами класса Turtle.</li>
+  <li>Восьмиконечную звезду (угол поворота 135 градусов).</li>
+  <li>Фигуру из анимации в начале страницы.</li>
+</ol>
+<h2>Решения</h2>
+<button type="button" onclick="show('figures1')">Квадрат и звезда</button>
+<pre id="figures1" hidden><code>import turtle
+square = turtle.Turtle()
+for i in range(4):
+    square.forward(100)
+    square.right(90)
+
+starf = turtle.Turtle()
+for i in range(5):
+    starf.forward(100)
+    starf.right(144)
+
+turtle.exitonclick()
+</code></pre>
+<button type="button" onclick="show('figures2')">8-конечная звезда</button>
+<pre id="figures2" hidden><code>import turtle
+star = turtle.Turtle()
+star.hideturtle()
+for i in range(8):
+    star.forward(100)
+    star.right(135)
+turtle.exitonclick()
+</code></pre>
+<button type="button" onclick="show('figures3')">9-конечная звезда</button>
+<pre id="figures3" hidden><code>import turtle
+nineang = turtle.Turtle()
+for i in range(9):
+    nineang.forward(100)
+    nineang.left(140)
+    nineang.forward(100)
+    nineang.right(100)
+turtle.exitonclick()
+</code></pre>
+
+<h2>Изменяем параметры во время движения</h2>
+<p>При отрисовке простых фигур черепашка возвращалась в исходную точку, и программа останавливалась, ожидая, когда будет закрыто окно.
+Если в цикле продолжить рисовать по прежним инструкциям, фигура будет нарисована заново по уже нарисованным контурам.
+А если ввести дополнительный угол поворота?</p>
+<pre><code>import turtle
+
+square = turtle.Turtle()
+square.shape("turtle")
+square.color('red', 'green')
+square.begin_fill()
+for j in range(3):
+    square.left(20)
+    for i in range(4):
+        square.forward(100)
+        square.left(90)
+
+square.end_fill()
+turtle.exitonclick()
+</code></pre>
+<img src="turtle_fill.png" alt="">
+<p>Мы также добавили:</p>
+<ul>
+  <li>color('red', 'green') определяет цвет линии и цвет заполнения. Черепашка теперь зеленая!</li>
+  <li>begin_fill() и end_fill() обозначают начало и конец заполнения</li>
+</ul>
+
+<h3>Больше программирования!</h3>
+<p>Напишем обобщенную программу рисования выпуклых равносторонних многоугольников.
+  num_sides – количество граней, side_length – длина грани, angle – угол поворота.
+</p>
+<pre><code>import turtle
+
+polygon = turtle.Turtle()
+num_sides = 6
+side_length = 100
+angle = 360.0 / num_sides
+
+for i in range(num_sides):
+    polygon.forward(side_length)
+    polygon.right(angle)
+
+turtle.exitonclick()
+</code></pre>
+<img src="https://michael0x2a.com/_assets/media/turtle-examples/polygon.080a.png" alt="">
+
+<p>Что будет, если на каждом шаге увеличивать длину пути? В первый день 10 шагов, во второй – 20, далее 30, 40 и так до 200:</p>
+<pre><code>import turtle
+
+spiral = turtle.Turtle()
+for i in range(20):
+    spiral.forward(i * 10)
+    spiral.right(144)
+turtle.exitonclick()
+</code></pre>
+<img src="https://michael0x2a.com/_assets/media/turtle-examples/spiraling-star.346f.png" alt="">
+
+<h2 id="coord">Координаты на плоскости</h2>
+<p>Положение на плоскости определяется двумя числами, x и y:</p>
+<img src="https://files.realpython.com/media/Turtle_EDIT_Graph.790c213ce0ba.jpg" width="480" alt="">
+<p>Черепашку в программе можно перемещать функцией goto(x, y). x и y – числа, или переменные.
+  goto(0, 0) переместит черепашку в начало координат.</p>
+<pre><code>import turtle
+
+spiral = turtle.Turtle()
+for i in range(20):
+    spiral.fd(i * 10)
+    spiral.rt(144)
+    spiral.goto(0,0)
+turtle.exitonclick()
+</code></pre>
+<p>Вместо звезды-спирали мы получили 5 линий, расходящихся из точки начала координат.</p>
+
+<h3>Круг и точка</h3>
+<p>Не хватает плавных изгибов? На помощь приходят функции dot() и circle():</p>
+<pre><code>import turtle
+
+turtle.title("Turtle Drawing")
+circle = turtle.Turtle()
+circle.shape("turtle")
+circle.pensize(5)
+circle.pencolor("cyan")
+
+circle.dot(20)
+circle.penup()
+circle.goto(0, -100)
+circle.pendown()
+circle.circle(100)
+turtle.exitonclick()
+</code></pre><br>
+<img src="circle_dot.png" alt="">
+<p>Дополнительно мы:</p>
+<ul>
+  <li>изменили заголовок окна функцией title(),</li>
+  <li>установили толщину линии – pensize(),</li>
+  <li>установили цвет линии – pencolor(),</li>
+  <li>Подняли черепашку перед перемещением – penup() и опустили после – pendown().</li>
+</ul>
+
+<h3>Самостоятельно:</h3>
+<ul>
+  <li>Используя код из примеров и функцию goto(), нарисовать галерею из 5 или более многоугольников на одном поле.
+    Использовать экземпляр класса turtle.Turtle().</li>
+  <li>Нарисованные многоугольники закрасить разными цветами. Пробуйте стандартные цвета или их шестнадцатеричное представление.
+    <b>Не забудьте кавычки вокруг названия или кода цвета!</b></li>
+</ul>
+<h2>Решения</h2>
+<button type="button" onclick="show('manyfigures')">Несколько закрашенных фигур</button>
+<ul id="manyfigures" hidden>
+  <li>У нас есть два варианта нарисовать несколько фигур: используя отдельные классы и не используя их. Рассмотрим оба варианта.</li>
+  <li>Без классов:
+    <pre><code>import turtle
+
+turtle.hideturtle()
+turtle.speed(10)
+
+turtle.color('red')
+turtle.begin_fill()
+for i in range(4):
+    turtle.forward(100)
+    turtle.right(90)
+turtle.end_fill()
+
+turtle.penup()
+turtle.goto(200, 200)
+turtle.pendown()
+
+turtle.color('green')
+turtle.begin_fill()
+for i in range(5):
+    turtle.forward(100)
+    turtle.rt(144)
+turtle.end_fill()
+
+turtle.penup()
+turtle.goto(-200, -200)
+turtle.pendown()
+
+turtle.color('blue')
+turtle.begin_fill()
+for i in range(8):
+    turtle.forward(100)
+    turtle.right(135)
+turtle.end_fill()
+
+turtle.penup()
+turtle.goto(200, -200)
+turtle.pendown()
+
+turtle.color('cyan')
+turtle.begin_fill()
+for i in range(3):
+    turtle.forward(100)
+    turtle.lt(120)
+turtle.end_fill()
+
+turtle.penup()
+turtle.goto(-200, 200)
+turtle.pendown()
+
+turtle.color('magenta')
+turtle.begin_fill()
+for i in range(9):
+    turtle.forward(30)
+    turtle.right(140)
+    turtle.forward(30)
+    turtle.left(100)
+turtle.end_fill()
+
+turtle.exitonclick()</code></pre></li>
+  <li>Получается довольно многословно. С классами (начало):
+    <pre><code>import turtle
+
+square = turtle.Turtle()
+square.hideturtle()
+square.color('red')
+square.speed(10)
+square.begin_fill()
+for i in range(4):
+    square.forward(100)
+    square.right(90)
+square.end_fill()
+square.penup()</code></pre></li>
+  <li>Так еще многословнее. Зачем нам понадобилось писать для каждой фигуры отдельный класс? Для того, чтобы подготовиться к написанию программы с помощью функций, которые помогут обобщить и сократить наш код.<br>
+    Создадим функции, используя написанную ранее обобщенную программу рисования выпуклых равносторонних многоугольников. Функция prepare() делает все приготовления для рисования: переходит в нужную
+  точку холста, устанавливает нужный цвет и дает команду заполнять цветом.
+    У функции три <i>входных параметра</i>: координаты по осям X, Y и кодовое слово цвета.<br>
+    Функция draw_polygon() – наш старый знакомый, так мы рисуем выпуклый многоугольник.
+    У функции два входных параметра: количество граней и длина грани.
+    <pre><code>import turtle
+
+def prepare(x, y, color):
+    turtle.penup()
+    turtle.goto(x, y)
+    turtle.pendown()
+    turtle.color(color)
+    turtle.begin_fill()
+
+def draw_polygon(num_sides, side_length):
+    angle = 360.0 / num_sides
+    for i in range(num_sides):
+        turtle.forward(side_length)
+        turtle.right(angle)
+
+turtle.hideturtle()
+turtle.speed(10)
+
+prepare(0, 0, 'red')
+draw_polygon(3, 100)
+turtle.end_fill()
+
+prepare(200, 200, 'green')
+draw_polygon(4, 100)
+turtle.end_fill()
+
+prepare(-200, -200, 'blue')
+draw_polygon(5, 100)
+turtle.end_fill()
+
+prepare(200, -200, 'cyan')
+draw_polygon(6, 100)
+turtle.end_fill()
+
+prepare(-200, 200, 'magenta')
+draw_polygon(7, 100)
+turtle.end_fill()
+
+turtle.exitonclick()</code></pre></li>
+  <li>Получилось существенно сократить программу, и она стала более читаемой. Но повторяющиеся действия остались. Значит, есть еще работа для программиста!
+  Будем рисовать все 5 фигур в цикле. Для этого все параметры соберем в списки, а внутри цикла будем брать значение параметра по индексу (номеру минус 1) в списке. Теперь всего 22 строки кода:
+    <pre><code>import turtle
+
+def prepare(x, y, color):
+    turtle.penup()
+    turtle.goto(x, y)
+    turtle.pendown()
+    turtle.color(color)
+    turtle.begin_fill()
+
+def draw_polygon(num_sides, side_length):
+    angle = 360.0 / num_sides
+    for i in range(num_sides):
+        turtle.forward(side_length)
+        turtle.right(angle)
+    turtle.end_fill()
+
+
+turtle.hideturtle()
+turtle.speed(10)
+
+colors = ['red', 'green', 'blue', 'cyan', 'magenta']
+xcoords = [0, 200, -200, 200, -200]
+ycoords = [0, 200, -200, -200, 200]
+for i in range(5):
+    prepare(xcoords[i], ycoords[i], colors[i])
+    draw_polygon(i+3, 100)
+
+turtle.exitonclick()</code></pre></li>
+<li>Получились фигуры разного размера. <b>Самостоятельно</b>: Задать переменной внутри цикла длину грани так, чтобы фигуры казались (или являлись) равновеликими.</li>
+</ul>
+
+<h2 id="equals">Делаем фигуры равновеликими</h2>
+<p>Площадь квадрата со стороной 100 пикселей – 10 000 квадратных пикселей.
+Вычислим площади всех фигур со стороной 100 от треугольника до 7-угольника.
+Формула площади правильного многоугольника содержит <a href="https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B8%D0%B3%D0%BE%D0%BD%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8" target="_blank" rel="noopener noreferrer">тангенс</a>, поэтому «поверим на слово» результату, зависимости <b>количество углов (вершин) – площадь</b>:</p>
+<ul>
+  <li>3 – 4330.13</li>
+  <li>4 – 10000</li>
+  <li>5 – 17204.77</li>
+  <li>6 – 25980.76</li>
+  <li>7 – 36339.12</li>
+</ul>
+<p>Изобразим ее на графике:</p>
+<img src="squares.png" alt="">
+<p>Получается, что площадь 7-угольника в 36339.12 / 4330.13 = <b>8.4</b> раза больше, чем площадь треугольника! Это очень заметно на рисунке:</p>
+<img src="five_figures.png" alt="">
+<p>Чтобы фигуры стали равновеликими, надо сделать длину грани вместо константы 100 – переменной, которая зависит от количества углов.</p>
+<p><b>Как:</b> приведем все площади к 10000. Для треугольника площадь увеличится на 10000 / 4330.13 = 2.31 раза. Для 7-угольника – уменьшится в 36339.12 / 10000 = 3.63 раз.
+Значит, стороны должны измениться в <b>1.52 и 0.52</b> раз соответственно, то есть, до <b>152 и 32.7</b> пикселей (снова «верим на слово»).
+Эту зависимость можно нащупать «на глаз», в чем и заключалось задание.</p>
+<p>Наша программа без труда <b>масштабируется</b> до большего количества фигур:</p>
+<img src="nine_figures.png" alt="">
+<p>Программа, в которой вычисляются <b>точные</b> значения:</p>
+<pre><code>import turtle
+from math import tan, sqrt, pi
+
+def prepare(x, y, color):
+    turtle.penup()
+    turtle.goto(x, y)
+    turtle.pendown()
+    turtle.color(color)
+    turtle.begin_fill()
+
+def draw_polygon(num_sides, side_length):
+    angle = 360.0 / num_sides
+    for i in range(num_sides):
+        turtle.forward(side_length)
+        turtle.right(angle)
+    turtle.end_fill()
+
+def calc_s(num_sides, side_length):
+    return num_sides * side_length ** 2 / (4 * tan(pi/num_sides))
+
+def calc_side(square):
+    return sqrt(4 * square * tan(pi/num_sides) / num_sides)
+
+turtle.hideturtle()
+turtle.speed(10)
+
+colors = ['red', 'green', 'blue', 'cyan', 'magenta', 'black', 'yellow', 'pink', 'brown']
+xcoords = [0, 150, -150, 150, -150, 270, -270, 270, -270]
+ycoords = [0, 150, -150, -150, 150, 270, -270, -270, 270]
+
+squares = []
+numsides = []
+for i in range(9):
+    num_sides = i + 3
+    square = round(calc_s(num_sides, 100), 2)
+    side_length = round(calc_side(10000), 3)
+    squares.append(square)
+    numsides.append(num_sides)
+    print("Углов:", num_sides, "была площадь:", square, "стала длина грани:", side_length,
+          "изменение в", round(side_length/100, 2), "раз")
+    prepare(xcoords[i], ycoords[i], colors[i])
+    draw_polygon(num_sides, side_length)
+
+turtle.exitonclick()
+print("Список количество углов:", numsides, end="")
+print("Список площади:", squares)</code></pre>
+<p>Текстовый вывод:</p>
+<pre><code>Углов: 3 была площадь: 4330.13 стала длина грани: 151.967 изменение в 1.52 раз
+Углов: 4 была площадь: 10000.0 стала длина грани: 100.0 изменение в 1.0 раз
+Углов: 5 была площадь: 17204.77 стала длина грани: 76.239 изменение в 0.76 раз
+Углов: 6 была площадь: 25980.76 стала длина грани: 62.04 изменение в 0.62 раз
+Углов: 7 была площадь: 36339.12 стала длина грани: 52.458 изменение в 0.52 раз
+Углов: 8 была площадь: 48284.27 стала длина грани: 45.509 изменение в 0.46 раз
+Углов: 9 была площадь: 61818.24 стала длина грани: 40.22 изменение в 0.4 раз
+Углов: 10 была площадь: 76942.09 стала длина грани: 36.051 изменение в 0.36 раз
+Углов: 11 была площадь: 93656.4 стала длина грани: 32.676 изменение в 0.33 раз
+Список количество углов: [3, 4, 5, 6, 7, 8, 9, 10, 11]
+Список площади: [4330.13, 10000.0, 17204.77, 25980.76, 36339.12, 48284.27, 61818.24, 76942.09, 93656.4]</code></pre>
+<p>Как построить график (если кто захочет):</p>
+<ol>
+  <li>Поставить <a href="https://ru.wikipedia.org/wiki/Matplotlib" target="_blank" rel="noopener noreferrer">Matplotlib</a>, набрав в <a href="https://ru.wikipedia.org/wiki/PowerShell" target="_blank" rel="noopener noreferrer">командной строке</a>
+  <pre><code>pip install matplotlib</code></pre></li>
+  <li>Запустить программу
+    <pre><code>import matplotlib.pyplot as plt
+numsides = [3, 4, 5, 6, 7, 8, 9, 10, 11]
+squares = [4330.13, 10000.0, 17204.77, 25980.76, 36339.12, 48284.27, 61818.24, 76942.09, 93656.4]
+plt.plot(numsides, squares, 'or--')
+plt.xlabel('Количество углов')
+plt.ylabel('Площадь')
+plt.show()</code></pre></li>
+</ol>
+
+<h2>Другие полезные функции:</h2>
+<ul>
+  <li>turtle.setup(800, 400) устанавливает размеры окна в 800 на 400 пикселей</li>
+  <li>turtle.setworldcoordinates(0, 0, 800, 400) устанавливает начало координат в точку 800, 400</li>
+  <li>turtle.tracer(0, 0) отключает анимацию</li>
+  <li>setpos(x, y) устанавливает черепашку (курсор) в позицию с координатами (x, y)</li>
+  <li>seth(x) устанавливает направление в градусах. 0 – горизонтально направо (на восток), 90 – вверх (на север) и так далее</li>
+  <li>hideturtle() скрывает черепашку (или стрелку, курсор)</li>
+  <li>speed(x) изменяет скорость рисования. Например, speed(11) – почти моментальная отрисовка простых фигур</li>
+  <li>clear() очищает холст от нарисованного</li>
+  <li>reset() очищает холст и возвращает курсор в начало координат</li>
+</ul>
+
+<h3>Пример двух рисунков – экземпляров класса Turtle() – на одном полотне</h3>
+<pre><code>import turtle
+
+turtle.title("Turtle Circles")
+circ = turtle.Turtle()
+circ.pencolor("purple")
+circ.fillcolor("orange")
+circ.shape("circle")
+circ.pensize(5)
+circ.speed(10)
+circ.fd(150)
+circ.begin_fill()
+circ.circle(90)
+circ.end_fill()
+
+n = 10
+t = turtle.Turtle()
+while n &lt;= 50:
+    t.circle(n)
+    n += 10
+
+turtle.exitonclick()
+</code></pre>
+<img src="circles.png" alt="">
+<p><b>Что произошло:</b></p>
+<ol>
+  <li>Задали название окна,</li>
+  <li>создали экземпляр класса Turtle под именем circ. Все изменения сохраняются для класса circ;</li>
+  <li>цвет линии и заполняющий цвет,</li>
+  <li>форму и размер курсора,</li>
+  <li>установили 10-ю скорость</li>
+  <li>продвинулись на 150 пикселей вперед от старта,</li>
+  <li>начали заполнять фигуру цветом,</li>
+  <li>нарисовали круг</li>
+  <li>закончили заполнять цветом,</li>
+</ol>
+<p><b>Затем:</b></p>
+<ol>
+  <li>Объявили переменную n и присвоили ей значение 10,</li>
+  <li>создали новый экземпляр класса Turtle под именем t. <b>У него нет настроек экземпляра класса circ!</b></li>
+  <li>В цикле while: пока переменная n меньше или равна 50, рисовать круги радиусом n;</li>
+  <li>после нарисованного круга увеличить переменную n на 10.</li>
+  <li>Алгоритм рисования кругов прекратит рисовать круги после 4-го круга.</li>
+</ol>
+
+<h3>Итог: функции и классы на примере turtle</h3>
+<ul>
+  <li>Функция – фрагмент программного кода, к которому можно обратиться по имени. Иногда функции бывают безымянными.</li>
+  <li>У функции есть входные и выходные параметры. Функция fd(150) – фрагмент программного кода, который двигает курсор вперед на заданное во входном значении количество пикселей (150). Выходного значения у функции fd() нет.</li>
+  <li>Когда функцию надо выполнить, после ее названия пишут круглые скобки. fd – просто название, ничего не происходит. fd(100) – функция выполняется с входным параметром 100. Обычно названия функций пишут с маленькой буквы.</li>
+  <li>Класс – программный шаблон для создания объектов, заготовка для чего-то, имеющего собственное состояние. Мы можем нарисовать прямоугольник и назвать его кнопкой, но это еще не кнопка, потому что у нее нет собственных свойств и поведения. Прямоугольник надо <i>научить</i> быть самостоятельной, отличной от других, кнопкой.</li>
+  <li>Turtle – класс, его имя пишется с большой буквы. через оператор присваивания = мы создаем <i>экземпляр класса</i>: circ = turtle.Turtle(). Turtle – класс (шаблон, трафарет, заготовка), circ – его экземпляр (рисунок, набор уникальных цветов, штрихов и свойств). На картинке выше видно, что экземпляр класса circ богат установленными свойствами, а экземпляр t обладает свойствами <b>по умолчанию</b>: тонкая черная линия, треугольный курсор.</li>
+  <li>Программирование с использованием классов и их экземпляров будем называть <b>объектно-ориентированным программированием, ООП</b>. объектно-ориентированный подход необходим при построении <a href="https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F" target="_blank" rel="noopener noreferrer">графического интерфейса пользователя, GUI</a>.</li>
+</ul>
+
+<h2 id="gui">Графический интерфейс средствами библиотеки turtle.</h2>
+<p>Нарисуем прямоугольник и сделаем его кнопкой: при нажатии кнопка исчезает и появляется круг:</p>
+<pre><code>import turtle
+
+wndow = turtle.Screen()
+wndow.title("Screen & Button")
+wndow.setup(500, 500)
+
+btn1 = turtle.Turtle()
+btn1.hideturtle()
+for i in range(2):
+    btn1.fd(80)
+    btn1.left(90)
+    btn1.fd(30)
+    btn1.left(90)
+btn1.penup()
+btn1.goto(11,7)
+btn1.write("Push me", font=("Arial", 12, "normal"))
+
+def btnclick(x, y):
+    if 0&lt;x&lt;80 and 0&lt;y&lt;30:
+        print("Кнопка нажата!")
+        btn1.clear()
+        ball = turtle.Turtle()
+        turtle.fillcolor("orange")
+        turtle.pencolor("purple")
+        turtle.shape("circle")
+
+turtle.listen()
+turtle.onscreenclick(btnclick, 1)
+turtle.done()
+</code></pre>
+
+<p><b>Что произошло:</b></p>
+<ol>
+  <li>Задали название и размеры (500 на 500 пикселей) окна,</li>
+  <li>Создали экземпляр класса btn1 и спрятали курсор (черепашку),</li>
+  <li>Нарисовали <b>прямоугольник 80 на 30</b>;</li>
+  <li>подняли перо и перешли на координаты (11, 7);</li>
+  <li>написали <b>Push me</b> шрифтом Arial 12-го размера, нормальное начертание. <b>Попробуйте вместо normal ключевые слова bold (полужирный), italic (наклонный);</b></li>
+</ol>
+<p><b>Задаем поведение кнопки:</b></p>
+<ul>
+  <li>Функции turtle.listen() и turtle.onscreenclick() будут слушать (listen) и реагировать на клик по экрану (onscreenclick). Реакцией будет запуск функции btnclick(x, y)</li>
+  <li>Напишем btnclick(x, y). У нее 2 входных параметра – координаты точки, куда мы кликнули. Наша задача: если клик был по кнопке, спрятать ее и показать оранжевый круг</li>
+  <li>Мы помним: кнопка 80 на 30 пикселей от точки (0, 0). Значит, мы попали по кнопке, если x между 0 и 80 <b>и</b> y между 0 и 30. Условие попадания по кнопке: <b>if 0&lt;x&lt;80 and 0&lt;y&lt;30:</b></li>
+  <li>1) Убираем кнопку: btn1.clear(), 2) создаем экземпляр класса ball = turtle.Turtle(), 3) устанавливаем ему нужные свойства.</li>
+</ul>
+
+<h3>Самостоятельно:</h3>
+<ul>
+  <li>Нарисовать вторую кнопку (не изменяя первую!), сделать обработчик нажатия: при клике программа завершается, выполняется функция exit()</li>
+  <li>При нажатии на первую кнопку появляется случайная фигура: при рисовании фигуры использовать random:
+<pre><code>from random import randrange
+print(randrange(30, 201)) # случайное целое число от 30 до 200
+</code></pre>
+  </li>
+</ul>
+
+<h3>Уточнения</h3>
+<ul>
+  <li>Чтобы окно не закрывалось сразу, мы использовали turtle.exitonclick().
+  Теперь, когда клик обрабатывается функцией, пишем в конце turtle.done().</li>
+  <li>функция exit() самостоятельная, это не команда turtle. Писать turtle.exit() неверно.</li>
+  <li>Случайная фигура – это любая фигура, при рисовании которой используются случайные числа. Например:
+<pre><code>from random import randrange
+circle = turtle.Turtle()
+circle.circle(randrange(36, 91))
+</code></pre>
+Но есть и второй вариант: случайное число будет индексом списка и укажет на одну из заранее подготовленных неслучайных фигур:
+<pre><code>from random import randrange
+figures = ['circle', 'rectangle', 'triangle']
+choice = figures[randrange(0, 3)] # случайный индекс от 0 до 2 даст одно из трех слов списка
+</code></pre>
+Таким приемом можно случайно выбирать цвета фигур. Функция choice делает тоже самое изящнее:
+<pre><code>from random import randrange, choice
+colors = ['red', 'green', 'blue']
+color = colors[randrange(0, 3)]
+another_color = choice(colors)
+</code></pre>
+</li>
+</ul>
+
+<h2 id="keys">Управляем рисунком с клавиатуры</h2>
+<p>Итак, мы умеем рисовать фигуры разных форм и стилей, перемещать курсор в разные точки холста, а также обрабатывать клик мышкой по фигуре. Добавим к этим действиям обработку нажатий клавиш. Для этого существуют две функции:</p>
+<ul>
+  <li>turtle.onkeypress(fun, key): вызывается функция fun при нажатии клавиши key</li>
+  <li>turtle.onkey(fun, key): вызывается функция fun при отпускании клавиши key</li>
+</ul>
+<p>Клавиша задается строкой с ее названием. Например, 'space' – пробел, 'Up' (с заглавной буквы) – стрелка вверх.
+Клавиши букв задаются заглавными, только если мы хотим нажать именно заглавную (с Shift или Caps Lock).</p>
+<p>По нажатию клавиши мы будем перемещать фигуру. Для этого понадобятся функции,
+которые сообщают и изменяют координаты:</p>
+<ul>
+  <li>xcor() и ycor() выдают координаты по x и y как дробные числа</li>
+  <li>setx(x) и sety(y) устанавливают координаты. x и y – числа</li>
+</ul>
+<p>Создадим экземпляр класса Turtle и выведем его координаты:</p>
+<pre><code>import turtle
+
+circ = turtle.Turtle()
+circ.shape("circle")
+circ.color("orange")
+circ.penup()
+print(circ.xcor(), circ.ycor())</code></pre>
+<p>Получили вывод "0.0 0.0". Теперь напишем функцию up(), которая будет
+запускаться при нажатии стрелки вверх и перемещать наш circ на 10 пикселей вверх:</p>
+<pre><code>import turtle
+
+circ = turtle.Turtle()
+circ.shape("circle")
+circ.color("orange")
+circ.penup()
+
+def up():
+    y = circ.ycor() + 10
+    circ.sety(y)
+
+turtle.listen()
+turtle.onkeypress(up, 'Up')
+turtle.done()</code></pre>
+<p>Очень похоже на нажатие мышкой! Функцию up() можно сократить до одной строчки:</p>
+<pre><code>def up(): circ.sety(circ.ycor() + 10)</code></pre>
+<p>Будет работать, но функции в одну строчку писать не принято. Для таких случаев используют <i><a
+href="https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%BE%D0%BD%D0%B8%D0%BC%D0%BD%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F"
+target="_blank" rel="noopener noreferrer">анонимные функции</a></i>: у них может
+вовсе не быть имени. В Python в качестве анонимных функций
+используются лямбда-выражения, мы их уже использовали <a href="../oscar/">для
+сортировки</a>. Так будет выглядеть лямбда-функция up:</p>
+<pre><code>up = lambda: circ.sety(circ.ycor() + 10)</code></pre>
+<p>Она используется у нас только в одном месте, внутри функкии turtle.onkeypress(). А почему бы не соединить их вместе? Так будет выглядеть наша программа в сокращенном виде:</p>
+<pre><code>import turtle
+
+circ = turtle.Turtle()
+circ.shape("circle")
+circ.color("orange")
+circ.penup()
+turtle.listen()
+turtle.onkeypress(lambda: circ.sety(circ.ycor() + 10), 'Up')
+turtle.done()</code></pre>
+<p>Всего 8 строк, и функции действительно не понадобилось имени! Как видим, язык Python дает возможность писать разными стилями, и мы можем выбирать на свой вкус: писать развернуто и красиво (как писал
+  <a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D1%80%D0%B6%D0%B0%D0%B2%D0%B8%D0%BD,_%D0%93%D0%B0%D0%B2%D1%80%D0%B8%D0%B8%D0%BB_%D0%A0%D0%BE%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87" target="_blank" rel="noopener noreferrer">Гавриил Романович Державин</a>) или кратко
+  (как <a href="https://ru.wikipedia.org/wiki/%D0%A5%D0%B5%D0%BC%D0%B8%D0%BD%D0%B3%D1%83%D1%8D%D0%B9,_%D0%AD%D1%80%D0%BD%D0%B5%D1%81%D1%82" target="_blank" rel="noopener noreferrer">Эрнест Хемингуэй</a>).</p>
+
+<h3>Самостоятельно:</h3>
+<ul>
+<li>Добавить движение circ влево, вправо и вниз</li>
+<li>Скорость движения (у нас пока 10 пикселей за раз) сделать переменной</li>
+</ul>
+
+<h2 id="merge">Соединяем все вместе</h2>
+<p>У нас уже есть кнопка с текстом и обработчик клика мышкой. Соединим все в одну программу:</p>
+<pre><code>import turtle
+
+wndow = turtle.Screen()
+wndow.title("Circle game")
+wndow.setup(500, 500)
+
+btn1 = turtle.Turtle()
+btn1.hideturtle()
+for i in range(2):
+    btn1.fd(80)
+    btn1.left(90)
+    btn1.fd(30)
+    btn1.left(90)
+btn1.penup()
+btn1.goto(4, 5)
+btn1.write("Start!", font=("Arial", 12, "normal"))
+
+circ = turtle.Turtle()
+circ.hideturtle()
+circ.shape("circle")
+circ.color("orange")
+
+def btnclick(x, y):
+    if 0&lt;x&lt;80 and 0&lt;y&lt;30:
+        btn1.clear()
+        circ.showturtle()
+        circ.penup()
+
+turtle.listen()
+turtle.onscreenclick(btnclick, 1)
+turtle.onkeypress(lambda: circ.sety(circ.ycor() + 10), 'Up')
+turtle.done()</code></pre>
+<p>Есть стартовый экран, управляемый с клавиатуры персонаж... Добавим препятствие, и уже почти готова игра!</p>
+<pre><code>import turtle
+
+wndow = turtle.Screen()
+wndow.title("Circle game")
+wndow.setup(500, 500)
+
+btn1 = turtle.Turtle()
+btn1.hideturtle()
+for i in range(2):
+    btn1.fd(80)
+    btn1.left(90)
+    btn1.fd(30)
+    btn1.left(90)
+btn1.penup()
+btn1.goto(4, 5)
+btn1.write("Start!", font=("Arial", 12, "normal"))
+
+circ = turtle.Turtle()
+circ.hideturtle()
+circ.shape("circle")
+circ.color("orange")
+
+sq = turtle.Turtle()
+sq.hideturtle()
+sq.penup()
+sq.setposition(-20, 70)
+
+def btnclick(x, y):
+  if 0&lt;x&lt;80 and 0&lt;y&lt;30:
+      btn1.clear()
+      circ.showturtle()
+      circ.penup()
+      sq.pendown()
+      print("sq position:", sq.xcor(), sq.ycor())
+      for i in range(4):
+          sq.fd(40)
+          sq.rt(90)
+
+def up():
+    y = circ.ycor() + 10
+    circ.sety(y)
+    if -20&lt;circ.xcor()&lt;20 and 30&lt;circ.ycor()&lt;70:
+        circ.hideturtle()
+        sq.clear()
+        circ.write("Game over!", font=("Arial", 12, "bold"))
+
+turtle.listen()
+turtle.onscreenclick(btnclick, 1)
+turtle.onkeypress(up, 'Up')
+turtle.done()
+</code></pre>
+
+<h3>Самостоятельно:</h3>
+<ul>
+<li>Нарисовать фигуры, которые надо обойти герою игры. Это может быть простой лабиринт!</li>
+<li>Написать условное выражение (если координаты circ больше заданных величин), при котором наступает победа, и игра заканчивается. Это может быть выход из лабиринта!</li>
+<li>В программе должно быть реализовано движение во все 4 стороны. Можно использовать стрелки, можно – клавиши WASD. Также можно реализовать движение по диагонали, когда за один ход изменяются обе координаты.</li>
+</ul>
+
+<h2>Подсказки</h2>
+<button type="button" onclick="show('cheat')">Показать</button>
+<ul id="cheat" style="display: none">
+  <li>Движение во все 4 стороны:
+    <pre><code>import turtle
+
+circ = turtle.Turtle()
+circ.shape("circle")
+circ.color("orange")
+circ.penup()
+turtle.listen()
+
+turtle.onkeypress(lambda: circ.setx(circ.xcor() + 10), 'Right')
+turtle.onkeypress(lambda: circ.setx(circ.xcor() - 10), 'Left')
+turtle.onkeypress(lambda: circ.sety(circ.ycor() + 10), 'Up')
+turtle.onkeypress(lambda: circ.sety(circ.ycor() - 10), 'Down')
+turtle.done()</code></pre></li>
+  <li>В одной программе может быть сколько угодно обработчиков нажатия клавиши. Просто перечисляем (в примере по нажатию запускается функция up()):
+    <pre><code>turtle.onkeypress(up, 'Up') # движение вверх по кнопке вверх
+turtle.onkeypress(up, 'w') # движение вверх по кнопке w​
+turtle.onkeypress(up, 'W') # движение​ вверх по W (w с нажатой Shift или CapsLock)</code></pre></li>
+  <li>Для движения по диагонали создаем функцию, в которой соединяем движение по вертикали и горизонтали:
+    <pre><code>def upright():
+    x = circ.xcor() + 10
+    y = circ.ycor() + 10
+    circ.setx(x)
+    circ.sety(y)</code></pre></li>
+</ul>
+
+<h2 id="game">Игра с подсчетом ходов</h2>
+<pre><code>import turtle
+
+def prepare_fig(fig, x, y):
+    fig.hideturtle()
+    fig.penup()
+    fig.setposition(x, y)
+    fig.speed(13)
+
+def draw_square(fig, color, side_length):
+    fig.pendown()
+    fig.fillcolor(color)
+    fig.begin_fill()
+    for i in range(4):
+        fig.fd(side_length)
+        fig.rt(90)
+    fig.end_fill()
+
+def message(text, color):
+    circ.hideturtle()
+    circ.goto(0, 0)
+    circ.color(color)
+    sq.clear()
+    sq2.clear()
+    print(moves)
+    circ.write(text, font=("Arial", 12, "bold"))
+
+def win_or_die(moves):
+    if -20 &lt; circ.xcor() &lt; 40 and 10 &lt; circ.ycor() &lt; 70:
+        message(GAME_OVER_MSG + str(moves), 'red')
+    if -60 &lt; circ.xcor() &lt; -20 and 50 &lt; circ.ycor() &lt; 90:
+        message(WIN_MSG + str(moves), 'green')
+
+def movey(deltay):
+    global moves
+    y = circ.ycor() + deltay
+    circ.sety(y)
+    moves += 1
+    win_or_die(moves)
+
+def movex(deltax):
+    global moves
+    x = circ.xcor() + deltax
+    circ.setx(x)
+    moves += 1
+    win_or_die(moves)
+
+wndow = turtle.Screen()
+wndow.title("Circle game")
+wndow.setup(500, 500)
+
+circ = turtle.Turtle()
+circ.penup()
+circ.shape("circle")
+circ.color("orange")
+
+sq = turtle.Turtle()
+prepare_fig(sq, -20, 70)
+draw_square(sq, 'red', 60)
+sq2 = turtle.Turtle()
+prepare_fig(sq2, -60, 90)
+draw_square(sq2, 'green', 40)
+
+moves = 0
+GAME_OVER_MSG = 'Game over!\nСделано шагов: '
+WIN_MSG = 'Победа!\nСделано шагов: '
+STEP = 10
+
+turtle.listen()
+turtle.onkeypress(lambda: movey(STEP), 'Up')
+turtle.onkeypress(lambda: movey(-STEP), 'Down')
+turtle.onkeypress(lambda: movex(STEP), 'Right')
+turtle.onkeypress(lambda: movex(-STEP), 'Left')
+turtle.done()</code></pre>
+<p>Всего 61 строка кода!</p>
+
+<p><a href="class/">Добавляем в программу классы</a>.</p>
+
+<h2>Ссылки</h2>
+<ul>
+  <li><a href="https://opentechschool.github.io/python-beginners/en/simple_drawing.html" target="_blank" rel="noopener noreferrer">Simple drawing with turtle</a></li>
+  <li><a href="http://technikes.com/turtle-graphics-in-python/" target="_blank" rel="noopener noreferrer">Turtle Graphics in Python</a></li>
+  <li><a href="https://realpython.com/beginners-guide-python-turtle/" target="_blank" rel="noopener noreferrer">The Beginner's Guide to Python Turtle</a></li>
+  <li><a href="https://michael0x2a.com/blog/turtle-examples" target="_blank" rel="noopener noreferrer">Turtle examples</a></li>
+  <li><a href="https://stackoverflow.com/questions/53692744/give-python-turtle-a-rectangular-shape-for-ping-pong-game" target="_blank" rel="noopener noreferrer">Give Python turtle a rectangular shape for ping pong game</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,13 @@
+#flexContainer {
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: grey;
+}
+#flexContainer > div {
+  background-color: red;
+  margin: 5px;
+  padding: 5px;
+  width: 11px;
+  height: 11px;
+}

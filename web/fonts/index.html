@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Шрифты в web-дизайне, единицы измерения в CSS. Конспект и ссылки.">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC%7CNunito%7CCalistoga%7CCaveat%7CMarck+Script%7CDancing+Script%7COdibee+Sans&display=swap" rel="stylesheet">
+  <title>Шрифты в web-дизайне</title>
+  <link rel="stylesheet" href="../../compact.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="menu">
+<ul>
+  <li><a href="../">Web-дизайн</a></li>
+  <li><a href="#units">Единицы измерения</a></li>
+  <li><a href="#googlefonts">Внешние шрифты</a></li>
+  <li><a href="#examples">Примеры шрифтов</a></li>
+</ul>
+</nav>
+<h1>Шрифты: основные характеристики</h1>
+<ul>
+  <li><b>начертание</b>: прямой, <i>курсивный</i> (свойство <b>font-style</b>)</li>
+  <li><b>насыщенность</b>: светлый, <b>полужирный</b>, <span style="font-weight: bolder">жирный</span> (свойство <b>font-weight</b>)</li>
+  <li><b>ширина</b>: нормальный, <span style="font-stretch: condensed">узкий</span>, широкий (свойство <b>font-stretch</b>), <span style="font-family: Courier, monospace">шрифт фиксированной ширины</span> (моноширинный)</li>
+  <li><b>размер</b> (кегль) &ndash; высота литер шрифта (свойства <b>font-size, font-size-adjust</b>)</li>
+  <li><b>наличие (serif) или отсутствие (sans-serif) <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%81%D0%B5%D1%87%D0%BA%D0%B8" target="_blank" rel="noopener noreferrer">засечек</a></b> на концах линий. Это группы шрифтов <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D1%82%D0%B8%D0%BA%D0%B2%D0%B0" target="_blank" rel="noopener noreferrer">Антиква</a>, с засечками и <a href="https://en.wikipedia.org/wiki/Sans-serif" target="_blank" rel="noopener noreferrer">Гротеск</a>, без засечек:<br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Serif_and_sans-serif_03.svg" alt=""></li>
+</ul>
+
+<h2>Семейства шрифтов (свойство font-family)</h2>
+<dl>
+<dt>Шрифты с засечками, или антиква (font-family: serif):</dt>
+<dd>
+  <ul>
+    <li><span style="font-family: Georgia, serif; font-size: 1.5rem">Times Georgia</span> (шрифт Georgia)</li>
+    <li><span style="font-family: 'Times New Roman', Times, serif; font-size: 1.5rem">Times Georgia</span> (шрифт Times New Roman)</li>
+  </ul>
+</dd>
+<dt>Шрифты без засечек, рубленые шрифты, или гротески (font-family: sans-serif)</dt>
+<dd>
+  <ul>
+    <li><span style="font-family: Arial, Helvetica, sans-serif; font-size: 1.5rem">Arial, Helvetica</span></li>
+    <li><span style="font-family: Tahoma, Geneva, sans-serif; font-size: 1.5rem">Tahoma, Geneva</span></li>
+  </ul>
+</dd>
+<dt>Моноширинные шрифты, когда все знаки имеют одинаковую ширину (font-family: monospace)</dt>
+<dd>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Propvsmono.svg" height="110" alt="">
+  <ul>
+    <li><span style="font-family: 'Courier New', Courier, monospace; font-size: 1.5rem">Courier New, Courier</span></li>
+    <li><span style="font-family: 'Lucida Console', Monaco, monospace; font-size: 1.5rem">Lucida Console, Monaco</span></li>
+  </ul>
+</dd>
+<dt>Шрифты, имитирующие почерк (font-family: cursive)</dt>
+<dd>
+  <ul>
+    <li><span style="font-family: 'Comic Sans MS', Comic Sans, cursive; font-size: 1.5rem">Comic Sans MS, Comic Sans, <i>cursive</i></span></li>
+    <li><span style="font-family: 'Bradley Hand', cursive; font-size: 1.5rem">Bradley Hand, <i>cursive</i></span></li>
+  </ul>
+</dd>
+<dt>Декоративные шрифты, для названий и т.д. (font-family: fantasy)</dt>
+<dd>
+  <ul>
+    <li><span style="font-family: Impact, fantasy; font-size: 1.5rem">Impact, fantasy</span></li>
+    <li><span style="font-family: Luminari, fantasy; font-size: 1.5rem">Luminari, fantasy</span></li>
+  </ul>
+</dd>
+</dl>
+
+<h1 id="units">Какие единицы измерения CSS существуют</h1>
+<p><a href="https://learn.javascript.ru/css-units" target="_blank" rel="noopener noreferrer">Много и разные</a>.</p>
+<ul>
+  <li><b>%</b>, процент.</li>
+  <li><b>cm</b>, сантиметр.</li>
+  <li><b>px</b>, пиксель (от picture element). <b><u>Используй для указания размеров элементов макета: блоков, изображений</u></b>.</li>
+  <li><b>em</b> (название связано с <a href="https://en.wikipedia.org/wiki/Em_(typography)" target="_blank" rel="noopener noreferrer">шириной заглавной M</a>) &ndash; относительная единица измерения, равная текущему указанному размеру шрифта. Спецсимвол HTML &amp;mdash; имеет ширину в 1 em: &laquo;&mdash;&raquo;.
+    <b><u>Используй для указания размеров шрифта!</u></b></li>
+  <li><b>rem</b> (от root em). 1 rem равен вычисленному значению font-size главного элемента. <b><u>Используй для указания размеров шрифта!</u></b></li>
+  <li><b>pt</b>, пункт (<a href="https://en.wikipedia.org/wiki/Point_(typography)#Desktop_publishing_point" target="_blank" rel="noopener noreferrer">desktop publishing point</a>). Равен ​1⁄72 дюйма, или 0.353 мм. <b>Используется в Microsoft Word как основная единица. <u>Не используй в web-страницах!</u></b>.</li>
+</ul>
+
+<h2>Как устроено свойство font-size (размер шрифта) в CSS</h2>
+<ul>
+  <li>font-size наследуется по всему <a href="https://en.wikipedia.org/wiki/Document_Object_Model" target="_blank" rel="noopener noreferrer">дереву документа</a></li>
+  <li>Если нигде не было определено свойство font-size, то значение единичного em будет равно 16px, которое является значением по умолчанию</li>
+</ul>
+<p>Подробнее <a href="https://www.w3.org/Style/Examples/007/units.ru.html" target="_blank" rel="noopener noreferrer">о единицах размера и об их применении для шрифтов</a> на сайте Консорциума Всемирной паутины (по-русски).</p>
+
+<h1 id="googlefonts">Использование внешних шрифтов</h1>
+<ol>
+  <li>Для выбора и подключения внешнего шрифта <b>зайти на сайт <a href="https://fonts.google.com" target="_blank" rel="noopener noreferrer">fonts.google.com</a></b>. На нем свободно доступно более 900 шрифтов.</li>
+  <li>Не для всех шрифтов есть кириллическое написание. Поэтому, на Google Fonts необходимо указать язык шрифта: <b>выбрать Cyrillic</b>.</li>
+  <li>Для выбора шрифта нужно <b>нажать на знак добавления "+"</b> в верхнем правом углу блока шрифта. Появится черная полоса снизу с указанием количества выбранных шрифтов. По клику полоса раскрывается, показывая два блока кода.</li>
+  <li>Первый блок &mdash; тег &lt;link&gt;. <b>Вставить в &laquo;голову&raquo; (тег &lt;head&gt;) html-файла</b>.</li>
+  <li>Второй блок &ndash; правила css (свойство css <b>font-family</b> и значение, в котором указано название шрифта и его семейство) для использования выбранных шрифтов. <b>Вставить в блок объявлений нужного селектора</b>.</li>
+  <li>Альтернатива &ndash; скачать шрифт с <a href="https://www.fontsquirrel.com/" target="_blank" rel="noopener noreferrer">Font squirrel</a>, справа в разделе Languages выбрать <a href="https://www.fontsquirrel.com/fonts/list/language/cyrillic" target="_blank" rel="noopener noreferrer">Cyrillic</a>, скачать (форматы файлов <b>ttf, otf, woff, svg</b>) и подключить с помощью правила <b>@font-face</b>, <a href="http://site4business.net/css/kak-podklyuchit-shrift.html" target="_blank" rel="noopener noreferrer">рецепт</a>.</li>
+</ol>
+
+<h2>Переносы строк и тег pre</h2>
+<ul>
+  <li>Для сохранения переносов строк используется тег <b>&lt;pre&gt;</b> или свойство <b>white-space: pre</b></li>
+  <li>Для тега pre по умолчанию установлен <span class="mono">моноширинный</span> шрифт: <b>font-family: monospace</b>.</li>
+</ul>
+
+<h1 id="examples">Примеры</h1>
+
+<p class="marck">«Мой дядя самых честных правил,
+Когда не в шутку занемог,
+Он уважать себя заставил
+И лучше выдумать не мог.</p>
+<p class="calis">Его пример другим наука;
+Но, боже мой, какая скука
+С больным сидеть и день и ночь,
+Не отходя ни шагу прочь!</p>
+<p class="nunito">Какое низкое коварство
+Полуживого забавлять,
+Ему подушки поправлять,
+Печально подносить лекарство,
+Вздыхать и думать про себя:
+<span class="marck">Когда же черт возьмет тебя!»</span></p>
+
+<hr>
+
+<h2>Шрифты для латинского алфавита</h2>
+<p class="dance"><u>Dancing+Script</u>. Minus, dolore unde laborum ab ut quasi nihil recusandae error, laboriosam optio omnis nesciunt explicabo deleniti reprehenderit in excepturi adipisci expedita et animi neque assumenda veniam at molestias numquam.</p>
+<p class="calis"><u>Calistoga</u>. Quisquam ullam fugiat pariatur dolore assumenda deserunt minima mollitia. Recusandae vero tempora id.</p>
+<p class="odibee"><u>Odibee+Sans</u>. Tempora beatae suscipit voluptatem libero, optio voluptatum quod, cumque, asperiores sit quia iusto corrupti officiis eaque animi nemo sint?</p>
+<p class="Caveat"><u>Caveat</u>. Ullam doloribus cupiditate soluta, facere, nulla at quas unde magnam perferendis molestias ex quisquam quia!</p>
+
+<h2>Ссылки</h2>
+<ul>
+  <li><a href="https://pomelnikov.com/blog/uroki/153-bezopasnye-shrifty" target="_blank" rel="noopener noreferrer">безопасные шрифты</a>,
+    <a href="https://pomelnikov.com/font-pair" target="_blank" rel="noopener noreferrer">сочетание шрифтов</a></li>
+  <li><a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp" target="_blank" rel="noopener noreferrer">Распространенные шрифты: примеры</a></li>
+  <li><a href="https://www.w3.org/Style/Examples/007/fonts.ru.html" target="_blank" rel="noopener noreferrer">Семейства и стили шрифтов</a> на сайте Консорциума Всемирной паутины (по-русски)</li>
+  <li><a href="https://drafts.csswg.org/css-fonts-3/" target="_blank" rel="noopener noreferrer">CSS Fonts</a>, W3C Recommendation</li>
+  <li><a href="https://alexdev.ru/809" target="_blank" rel="noopener noreferrer">Понимание em-значений в CSS</a></li>
+</ul>
+</body>
+</html>

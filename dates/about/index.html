@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Знаменательные даты: формат разметки HTML, тематические ссылки">
+<title>Знаменательные даты: о разделе, формат, ссылки</title>
+<link rel="stylesheet" href="../../compact.css">
+<link rel="stylesheet" href="../../github.css">
+<script src="../../dev/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<h1>Знаменательные даты</h1>
+<ul>
+  <li><b><a href="../">Астрономия, космонавтика, авиация</a></b></li>
+  <li><b><a href="../it/">IT, дизайн и программирование</a></b></li>
+  <li><b><a href="../music/">Музыка</a></b></li>
+</ul>
+<h3 id="format">Формат разметки HTML</h3>
+<ol>
+  <li>Вся информация о событии с <b>тегами</b> (в одно слово на русском или английском) tag1 и tag2 обернута в <pre><code>&lt;div class="tag1 tag2">&lt;/div></code></pre></li>
+  <li><b>Дата</b> вида дд.мм.гггг в <pre><code>&lt;div class="date"></code></pre></li>
+  <li><b>Короткое название</b>
+    (<a href="https://en.wikipedia.org/wiki/Slug_(publishing)" target="_blank" rel="noopener noreferrer">slug</a>,
+    <a href="https://en.wikipedia.org/wiki/Clean_URL#Slug" target="_blank" rel="noopener noreferrer">человекочитаемый URL</a>)
+    в <pre><code>&lt;div class="slug"></code></pre></li>
+  <li><b>URL</b>, ссылка на изображение из внешнего источника (википедии) в <pre><code>&lt;div class="img">&lt;img src="URL">&lt;/div></code></pre></li>
+  <li><b>Текстовое описание</b> (объем желательно до 2048 знаков), начинающееся со слов вида « назад произошло...» (число прошедших лет и слово «год/года/лет» будет вставлено автоматически) в <pre><code>&lt;div class="desc"></code></pre></li>
+  <li>Как: скрипт вычисляет количество прошедших лет из текущей даты и даты из п. №2, потом вставляет в приведенный ниже код; для текущего года ничего не вставляется:
+    <pre><code>&lt;span class="ago">&lt;/span></code></pre></li>
+  <li>HTML-страница с датами, подключенными <a href="../script.js">скриптом</a> и <a href="../style.css">стилями</a> готова к просмотру. Данные из разметки скриптом конвертируются в <a href="../astrocosm.json">JSON</a> для использования на других страницах.</li>
+</ol>
+<p><a href="../../dev/db/#datesapp">Приложение Flask + SQLite</a>: тоже самое, но <a href="https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D0%B4_%D0%B8_%D0%B1%D1%8D%D0%BA%D0%B5%D0%BD%D0%B4" target="_blank" rel="noopener noreferrer">бэкенд</a>,
+  <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D0%BB:%D0%A4%D1%83%D1%82%D1%83%D1%80%D0%B0%D0%BC%D0%B0" target="_blank" rel="noopener noreferrer">с базой данных и шаблонами</a>.</p>
+<h2>Ссылки</h2>
+<ul>
+  <li><a href="https://www.roscosmos.ru/dates/1/" target="_blank" rel="noopener noreferrer">Роскосмос: календарь космических дат</a></li>
+  <li><a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D0%BB:%D0%9A%D0%BE%D1%81%D0%BC%D0%BE%D0%BD%D0%B0%D0%B2%D1%82%D0%B8%D0%BA%D0%B0/%D0%A1%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F_%D0%B4%D0%BD%D1%8F/%D1%8F%D0%BD%D0%B2%D0%B0%D1%80%D1%8C" target="_blank" rel="noopener noreferrer">Портал:Космонавтика/События дня/</a>, даты разделены в списки по месяцам.</li>
+  <li><a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D0%BB:%D0%90%D1%81%D1%82%D1%80%D0%BE%D0%BD%D0%BE%D0%BC%D0%B8%D1%8F/%D0%A1%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F_%D0%B4%D0%BD%D1%8F/%D1%8F%D0%BD%D0%B2%D0%B0%D1%80%D1%8C" target="_blank" rel="noopener noreferrer">Портал:Астрономия/События дня/январь</a>, даты разделены в списки по месяцам.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Portal:Astronomy" target="_blank" rel="noopener noreferrer">Portal:Astronomy</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Portal:Solar_System" target="_blank" rel="noopener noreferrer">Portal:Solar System</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Portal:Spaceflight" target="_blank" rel="noopener noreferrer">Portal:Spaceflight</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Portal:Outer_space" target="_blank" rel="noopener noreferrer">Portal:Outer space</a>,
+    <a href="https://en.wikipedia.org/wiki/Space_exploration" target="_blank" rel="noopener noreferrer">Space exploration</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Portal:Earth_sciences" target="_blank" rel="noopener noreferrer">Portal:Earth sciences</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Portal:Aviation" target="_blank" rel="noopener noreferrer">Portal:Aviation</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Portal:Computer_programming" target="_blank" rel="noopener noreferrer">Portal:Computer programming</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Portal:Technology" target="_blank" rel="noopener noreferrer">Portal:Technology</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Portal:Internet" target="_blank" rel="noopener noreferrer">Portal:Internet</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Portal:Free_and_open-source_software" target="_blank" rel="noopener noreferrer">Portal:Free and open-source software</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Portal:Electronics" target="_blank" rel="noopener noreferrer">Portal:Electronics</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/List_of_Solar_System_probes" target="_blank" rel="noopener noreferrer">List of Solar System probes</a>,
+    <a href="https://en.wikipedia.org/wiki/List_of_lunar_probes" target="_blank" rel="noopener noreferrer">List of lunar probes</a></li>
+  <li><a href="https://www.airspacemag.com/photos/top-nasa-photos-of-all-time-9777715/" target="_blank" rel="noopener noreferrer">Top NASA Photos of All Time</a></li>
+  <li><a href="http://raketoff.ru/MPK-small.pdf" target="_blank" rel="noopener noreferrer">Мировая пилотируемая космонавтика История. Техника. Люди</a>. И.Б.Афанасьев, Ю.М.Батурин, А.Г.Белозерский и др. М.: Издательство «РТСофт», 2005.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Portal:Music" target="_blank" rel="noopener noreferrer">Portal:Music</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Коллекции астрономических объектов: шаровые и ядерные (nuclear) звездные скопления">
+  <title>Звездные скопления</title>
+  <link rel="stylesheet" href="../collections.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <script src="../collections.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+<nav class="menu">
+<ul>
+  <li><a href="../collections/">Коллекции:</a></li>
+  <li><a href="../solarsystem/">Солнечная система</a></li>
+  <li><a href="../stars/">Звезды</a></li>
+  <li><a>Звездные скопления</a></li>
+  <li><a href="../exoplanets/">Экзопланеты</a></li>
+  <li><a href="../nsbh/">Звездные остатки</a></li>
+  <li><a href="../browndwarfs/">Бурые карлики</a></li>
+  <li><a href="../nebulae/">Туманности</a></li>
+  <li><a href="../galaxies/">Галактики</a></li>
+</ul>
+</nav>
+
+<div id="messageBox">
+  <div id="contents"></div>
+</div>
+
+<h1>Звездные скопления</h1>
+
+<div class="cont">
+  <input type="checkbox" name=".name" value="block" checked onclick="showHideThis(this)">Имя,
+  <input type="checkbox" name=".angular" value="block" checked onclick="showHideThis(this)">Угловые размеры,
+  <input type="checkbox" name=".dist" value="block" checked onclick="showHideThis(this)">Расстояние,
+  <input type="checkbox" name=".mass" value="block" checked onclick="showHideThis(this)">Масса,
+  <input type="checkbox" name=".age" value="block" checked onclick="showHideThis(this)">Возраст,
+  <input type="checkbox" name=".mag" value="block" checked onclick="showHideThis(this)">Звездная величина.
+</div>
+
+<div id="tab">
+<div class="obj gc">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/Omega_Centauri.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/Omega_Centauri" title="Omega Centauri">Омега Центавра</a></div>
+  <div class="info_field angular">36′.3</div>
+  <div class="info_field dist">4.84 ± 0.34</div>
+  <div class="info_field mass">4.05 ± 0.1 × 10<sup>6</sup></div>
+  <div class="info_field age">11.52</div>
+  <div class="info_field mag">3.9</div>
+</div><div class="obj gc">
+  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/47_Tucanae.jpg"></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/47_Tucanae" title="47 Tucanae">47 Тукана</a></div>
+  <div class="info_field angular">30′.9</div>
+  <div class="info_field dist">4.0 ± 0.35</div>
+  <div class="info_field mass">7.00 × 10<sup>5</sup></div>
+  <div class="info_field age">13.06</div>
+  <div class="info_field mag">4.09</div>
+</div>
+</div>
+
+<div class="cont">
+<h2>Ссылки</h2>
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Globular_cluster" target="_blank" rel="noopener noreferrer">Шаровое звёздное скопление</a>,
+    <a href="https://en.wikipedia.org/wiki/List_of_globular_clusters" target="_blank" rel="noopener noreferrer">Список шаровых звёздных скоплений</a></li>
+  <li><a href="http://gclusters.altervista.org/" target="_blank" rel="noopener noreferrer">GGCs database</a>,
+    <a href="http://cdsarc.u-strasbg.fr/viz-bin/cat/VII/202" target="_blank" rel="noopener noreferrer">Globular Clusters in the Milky Way</a>: VII/202.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Open_cluster" target="_blank" rel="noopener noreferrer">Рассеянное звёздное скопление</a>,
+    <a href="https://en.wikipedia.org/wiki/List_of_open_clusters" target="_blank" rel="noopener noreferrer">List of open clusters</a>.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Nuclear_star_cluster" target="_blank" rel="noopener noreferrer">Nuclear star cluster</a></li>
+  <li><a href="https://hubblesite.org/image/2609/category/23-star-clusters" target="_blank" rel="noopener noreferrer">Colorful Stars Galore Inside Globular Star Cluster Omega Centauri</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Super_star_cluster" target="_blank" rel="noopener noreferrer">Super star cluster</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Messier_35" target="_blank" rel="noopener noreferrer">M35</a>, <a href="https://en.wikipedia.org/wiki/NGC_2158" target="_blank" rel="noopener noreferrer">NGC 2158</a></li>
+</ul>
+<h2>Каталоги и списки</h2>
+<ul>
+  <li><a href="https://heasarc.gsfc.nasa.gov/W3Browse/all/mwsc.html" target="_blank" rel="noopener noreferrer">MWSC - Milky Way Star Clusters Catalog</a>,
+    <a href="https://cdsarc.unistra.fr/viz-bin/cat/J/A+A/558/A53" target="_blank" rel="noopener noreferrer">Milky Way global survey of star clusters. II. : J/A+A/558/A53</a>. We present a list of 3006 Milky Way Stellar Clusters (MWSC), found in the 2MAst (2MASS with Astrometry) catalogue.</li>
+  <li><a href="https://ui.adsabs.harvard.edu/abs/2019AJ....157...12B/abstract" target="_blank" rel="noopener noreferrer">A Multi-band Catalog of 10978 Star Clusters, Associations, and Candidates in the Milky Way</a>. About 3200 objects have measured parameters in the literature. A fundamental contribution of the present study is to present an additional ≈7700 objects for the first analyses of nature, photometry, spectroscopy and structure.</li>
+</ul>
+</div>
+<footer>2020 Википедия. Компиляция, код: Д.С. Насонов.</footer>
+</body>
+</html>

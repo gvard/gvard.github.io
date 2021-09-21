@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Web-дизайн: задания, самостоятельная работа">
+  <title>Web-дизайн: задания</title>
+  <link rel="stylesheet" href="../../compact.css">
+</head>
+<body>
+<h1>Страница заданий кружков «Web-дизайн»</h1>
+<p>Задания ниже – в первую очередь, для самопроверки. Если при чтении материалов и выполнении заданий возникают сложности, желательно задавать вопросы. Связь – любым удобным вам способом.</p>
+<p><b><a href="basics.html">Задания по блоку HTML и CSS</a></b></p>
+
+<h2 id="php-dform">18/22 апреля: Динамическое создание форм</h2>
+<p><b>Материалы по теме находятся на странице <a href="../../php/forms/">PHP: формы</a></b></p>
+
+<h2 id="php-db">11/15 апреля: Базы данных. Создание простой базы данных</h2>
+<p><b>Материалы по теме находятся на странице <a href="../../php/db/">Работа с базой данных SQLite в PHP</a></b></p>
+
+<h2 id="php-files">4/8 апреля: Функции работы с файлами Загрузка файлов на сервер</h2>
+<p><b>Материалы по теме находятся на странице <a href="../../php/files/">Работа с файлами в PHP</a></b></p>
+
+<h2 id="php-img">28/1 марта: Функции работы с изображениями в php</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams</p>
+<ol>
+  <li>В настройках сервера php.ini раскомментировать (удалить символ ; в начале строки) строку <b>extension=gd</b></li>
+  <li>В файле button.php, как показано в видео, сохранить следующий код:
+<pre>
+  &lt;?php
+  header("Content-type: image/png");
+  // header("Content-type: image/jpeg");
+  $string = $_GET['text'];
+  $im     = imagecreatefrompng("images/button.png");
+  $colorr = imagecolorallocate($im, 240, 200, 200);
+  $px     = (imagesx($im) - 7.5 * strlen($string)) / 2;
+  // imagestring($im, 3, $px, 150, $string, $colorr);
+  $font = 'images/font.ttf';
+  imagettftext($im, 38, 0, $px-100, 180, $colorr, $font, $string);
+  imagepng($im);
+  // imagejpeg($im, NULL, 100);
+  imagedestroy($im);
+  ?></pre></li>
+  <li>Скачать файлы любого кириллического шрифта с <a href="https://fonts.google.com/?subset=cyrillic" target="_blank" rel="noopener noreferrer">fonts.google.com</a> и сохранить как images/font.ttf</li>
+  <li>Создать файл html с кодом картинки &lt;img src="button.php?text=Это кнопка!" alt=""> и открыть его в браузере</li>
+  <li><a href="../../php/img/">Страница с материалами по обработке изображений в PHP</a></li>
+</ol>
+
+<h2 id="php-txt">21/25 марта: Решение задач по обработке строк</h2>
+<ol>
+  <li><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams, и <a href="../../php/txt/">материалы по обработке строк в php</a></li>
+  <li>Создать страницу с формой ввода и скриптом обработки введенного текста. Скрипт должен подсчитывать в тексте: количество символов, количество символов без пробелов и количество слов.</li>
+  <li>Для решения задачи рекомендуется применить функции iconv_strlen, str_replace, explode, count.</li>
+</ol>
+
+<h2 id="func-txt">14/18 марта: Функции работы с текстом в php</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams;</p>
+<ol>
+  <li>Просмотреть <a href="../../php/txt/">материалы по работе с текстом в php</a> и <a href="../fonts/">материал про свойство шрифтов</a></li>
+  <li>Создать страницу, на которой будут представлены 1) различные семейства шрифтов, 2) свойством font-size установлен размер шрифта и 3) подключен хотя бы один внешний шрифт</li>
+</ol>
+
+<h2 id="func">7 марта: Понятие функции. Функции в php</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams</p>
+<ol>
+  <li>В файле index.php, как показано в видео, создать и выполнить функцию:
+<pre>
+&lt;?php
+function fun($inpt, $in2, $in3=4)
+{
+    echo "Пример функции. На входе $inpt, $in2, $in3\n";
+    $inpt += 2;
+    return array($inpt, $in2+3);
+}
+
+echo "Запускаем функцию\n", fun(7, 8)[1], "&lt;br>";
+?></pre></li>
+<li>Справочная информация: <a href="https://ru.wikipedia.org/wiki/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)" target="_blank" rel="noopener noreferrer">Функция (программирование)</a>.
+  <a href="https://en.wikipedia.org/wiki/Subroutine" target="_blank" rel="noopener noreferrer">Subroutine</a>.
+  <a href="https://www.php.net/manual/ru/functions.user-defined.php" target="_blank" rel="noopener noreferrer">Функции, определяемые пользователем</a>.
+  <a href="https://www.php.net/manual/ru/functions.returning-values.php" target="_blank" rel="noopener noreferrer">Возврат значений</a>.
+  Пример на phporphp.000webhostapp.com/fun/</li>
+</ol>
+
+<h2 id="task">28 февраля: Создание эскиза для творческого задания</h2>
+<p>К этому занятию ученикам крайне желательно определиться с темой, технологиями и этапами реализации проекта, то есть, авторского сайта. Технологии web-дизайна, которые были изучены на данный момент: HTML, CSS и PHP. Также мы не раз упоминали JavaScript.<br>
+Возможные темы для сайта (творческого задания):</p>
+<ol>
+  <li>Моя персональная web-страница</li>
+  <li>Тематический сайт</li>
+  <li>Арт-проект. Визуальное искусство средствами web-дизайна. Например, <a href="http://tolivegoodly.000webhostapp.com/" target="_blank" rel="noopener noreferrer">Enjoy the beautiful</a></li>
+  <li>Демонстрация web-технологии. Например, <a href="https://gvard.github.io/dev/game/">страница с игрой</a> или <a href="../../site/quiz/">тест</a></li>
+  <li>Мой взгляд на web-технологию. Например, <a href="https://ilyasar.github.io/Javascript-Python-Cpp/" target="_blank" rel="noopener noreferrer">Что такое программирование?</a></li>
+</ol>
+
+<h2 id="php-for2">Задание от 21 февраля: решение задач на тему «Массивы»</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams</p>
+<ol>
+  <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP</li>
+  <li>Изменить скрипт (файл с расширением php), как показано в видео:
+<pre>
+&lt;?php
+if (is_numeric($a)) {
+  for ($i = 1; $i &lt;= abs($a); $i++)
+    echo "Silence is golden&lt;br>";
+} else {
+  echo "Bad n&lt;br>";
+}
+
+if (is_numeric($a)) {
+  $squares = array();
+  for ($i = 1; $i &lt;= abs($a); $i++)
+    $squares[$i] = $i**2;
+
+foreach ($squares as $item => $value)
+  echo $item, ", ", $value, "&lt;br>";
+}
+
+$summa = 0;
+$mult = 1;
+foreach ($squares as $item => $value) {
+  $summa += $value;
+  $mult *= $value;
+}
+echo "$summa, $mult&lt;br>";
+?></pre></li>
+<li>Справочная информация: <a href="https://www.php.net/manual/ru/language.types.array.php" target="_blank" rel="noopener noreferrer">Массивы</a>.
+  <a href="http://old.code.mu/tasks/php/base/osnovy-raboty-s-massivami-v-php.html" target="_blank" rel="noopener noreferrer">Задачи на основы работы с массивами в PHP</a>.
+  <a href="http://www.itmathrepetitor.ru/zadachi-po-php-cikly-i-massivy/" target="_blank" rel="noopener noreferrer">Циклы и массивы в PHP</a>.
+  Пример на phporphp.000webhostapp.com/array/</li>
+</ol>
+
+<h2 id="php-for">Задание от 14 февраля: Массивы. Ассоциативные массивы. Цикл for</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams</p>
+<ol>
+  <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP</li>
+  <li>Изменить скрипт (файл с расширением php), как показано в видео:
+<pre>
+&lt;?php
+$zz = array();
+$arr = array(5 => 1, 12 => 2);
+$arr[0] = 7;
+$arr[] = "sdsv";
+
+foreach($arr as $item => $value) {
+  echo $item, ", ", $value, "&lt;br>";
+}
+echo "$arr[0], $arr[5], $arr[13]&lt;br>";
+
+$z = array("foo", "bar", "hello", "world");
+$z = $z + $arr;
+
+foreach($z as $item => $value) {
+  echo $item, ", ", $value, "&lt;br>";
+}
+
+foreach($arr as $item => $item_count)
+  echo "Item=" . $item . ", Value=" . $item_count . ".&lt;br>";
+?></pre> Мы изучили устройство массивов в PHP и научились работать с ними. Попробуйте применить массивы и циклы в своих проектах! Например, в массиве могут содержаться данные о пользователе, который оставил запись в гостевой книге.</li>
+<li>Справочная информация: <a href="https://www.php.net/manual/ru/language.types.array.php" target="_blank" rel="noopener noreferrer">Массивы</a>,
+  <a href="https://www.php.net/manual/ru/language.operators.array.php" target="_blank" rel="noopener noreferrer">Операторы, работающие с массивами</a>.
+  <a href="https://htmlacademy.ru/blog/boost/backend/associative-arrays-php" target="_blank" rel="noopener noreferrer">Ассоциативные массивы в PHP с примерами</a>.
+  <a href="https://www.php.net/manual/ru/control-structures.foreach.php" target="_blank" rel="noopener noreferrer">foreach</a>.
+  Пример на phporphp.000webhostapp.com/for/</li>
+</ol>
+
+<h2 id="php-while2">Задание от 7 февраля: Вложенные циклы. Решение задач.</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
+<ol>
+  <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP. Например, бесплатный аккаунт на <a href="https://www.000webhost.com/" target="_blank" rel="noopener noreferrer">000webhost.com</a></li>
+  <li>Модифицировать файлы, созданные в прошлый раз. Изменить скрипт (файл с расширением php), как показано в видео:
+<pre>
+&lt;?php
+$x = 1;
+$y = 1;
+while ($x &lt;= $a) {
+  $y = 1;
+  while ($y &lt;= $b) {
+    echo $x, $y, "&lt;br>";
+    $y++;
+  }
+  $x++;
+}
+echo "Цикл for&lt;br>";
+
+for ($i = 1; $i &lt;= $a; $i++)
+    for ($j = 1; $j &lt;= $b; $j++)
+      if ($i != $j)
+        echo $i, $j, "&lt;br>";
+?></pre>Так мы вывели на экран все двузначные числа, где цифры ограничены введенными в форму значениями. Условное выражение во вложенных цикклах for исключает все числа, в которых цифры совпадают.</li>
+<li>Попробуйте найти все трехзначные числа, у которых все цифры различны.</li>
+<li>Справочная информация: <a href="https://www.php.net/manual/ru/control-structures.for.php" target="_blank" rel="noopener noreferrer">Цикл for</a>. Пример на phporphp.000webhostapp.com/while/</li>
+</ol>
+
+<h2 id="php-while">Задание от 31 января: Цикл while. Решение задач на циклы.</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
+<ol>
+  <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP. Например, бесплатный аккаунт на <a href="https://www.000webhost.com/" target="_blank" rel="noopener noreferrer">000webhost.com</a></li>
+  <li>Создать новый каталог и скопировать туда файлы, созданные в прошлый раз.</li>
+  <li>Изменить скрипт (файл с расширением php), как показано в видео:
+<pre>
+&lt;?php
+    $a = htmlspecialchars($_POST['i1']);
+    $b = htmlspecialchars($_POST['i2']);
+    while ($a &lt;= $b) {
+      if ($a % 2 == 0)
+        echo $a, "&lt;br>";
+      $a++;
+    }
+?>
+</pre>Так мы вывели на экран все четные числа между a и b.</li>
+<li>Аналогичным образом можно вывести все степени числа. Для этого потребуется изменить оператор инкрементации ++ на оператор *=<br>
+Попробуйте вывести степени двойки!</li>
+<li>Справочная информация: <a href="https://www.php.net/manual/ru/control-structures.while.php" target="_blank" rel="noopener noreferrer">while</a>,
+  <a href="https://www.php.net/manual/ru/control-structures.do.while.php" target="_blank" rel="noopener noreferrer">do-while</a>.<br>
+  Пример на phporphp.000webhostapp.com/while/</li>
+</ol>
+
+<h2 id="php6">Задание от 24 января: Написание программы для решения уравнений.</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
+<ol>
+  <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP. Например, бесплатный аккаунт на <a href="https://www.000webhost.com/" target="_blank" rel="noopener noreferrer">000webhost.com</a></li>
+  <li>Изменить код формы, созданный ранее: добавить в элемент input атрибут required:<br>
+    <b>&lt;input type="text" value="3" name="i2" required></b></li>
+  <li>Изменить скрипт (файл с расширением php), как показано в видео:
+<pre>
+&lt;?php
+if (empty($_POST['i1']) &amp;&amp; empty($_POST['i2'])) {
+  $a = htmlspecialchars($_POST['i1']);
+  $b = htmlspecialchars($_POST['i2']);
+  echo "Введены числа <b>", $a, " и ", $b, "</b>&lt;br>";
+}
+  echo "Решаем уравнение", $a - $b / $b, "&lt;br>округленное значение: ", round($a - $b / $b), "&lt;br>";
+else
+  echo "Одно или несколько значений не установлены";
+
+?>
+</pre>
+  <li>Попробуйте при решении уравнений применить другие <a href="https://www.php.net/manual/ru/ref.math.php" target="_blank" rel="noopener noreferrer">математические функции</a>.</li>
+  <li>Справочная информация: <a href="https://www.php.net/manual/ru/control-structures.if.php" target="_blank" rel="noopener noreferrer">Услловное выражение if</a>,
+    <a href="https://www.php.net/manual/ru/function.empty.php" target="_blank" rel="noopener noreferrer">empty</a> — Проверяет, пуста ли переменная.<br>
+    Пример на phporphp.000webhostapp.com/if/.</li>
+</ol>
+
+
+<h2 id="php5">Задание от 17 января: Условный оператор IF. Операторы сравнения.</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
+<ol>
+  <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP. Например, бесплатный аккаунт на <a href="https://www.000webhost.com/" target="_blank" rel="noopener noreferrer">000webhost.com</a></li>
+  <li>Скопировать код формы и скрипта, созданные по теме Арифметические операции (занятие 13/17 декабря)</li>
+  <li>Изменить файл с расширением php, как показано в видео:
+<pre>
+&lt;?php
+$a = htmlspecialchars($_POST['i1']);
+$b = htmlspecialchars($_POST['i2']);
+
+if ($a > $b)
+  echo "a ($a) больше b ($b)&lt;br>";
+else
+  echo "b ($b) больше или равно a ($a)&lt;br>";
+
+if ($a != $b)
+  echo "a ($a) не равно b ($b)&lt;br>";
+else
+  echo "a ($a) равно b ($b)&lt;br>";
+
+if ($a == 1 || $b == 2 &amp;&amp; $a + $b == 3)
+  echo "a ($a) равно 1 или b ($b) равно 2&lt;br>";
+else
+  echo "a ($a) не равно 1 и b ($b) не равно 2&lt;br>";
+?>
+</pre>
+  <li>Попробуйте применить другие <a href="https://www.php.net/manual/ru/language.operators.comparison.php" target="_blank" rel="noopener noreferrer">операторы сравнения</a> и <a href="https://www.php.net/manual/ru/language.operators.logical.php" target="_blank" rel="noopener noreferrer">логические операторы</a> И, ИЛИ.</li>
+  <li>Справочная информация: <a href="https://www.php.net/manual/ru/control-structures.if.php" target="_blank" rel="noopener noreferrer">Услловное выражение if</a>.
+    Пример на phporphp.000webhostapp.com/if/</li>
+</ol>
+
+<h2 id="php4">Задание от 27/31 декабря: Строки. Строковые операторы. Арифметические операторы</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
+<ol>
+  <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP. Например, бесплатный аккаунт на <a href="https://www.000webhost.com/" target="_blank" rel="noopener noreferrer">000webhost.com</a></li>
+  <li>Создать файл с расширением php слежующего содержания:
+<pre>
+&lt;pre>
+&lt;?php
+  $a = trim(' Hello');
+  $b = ' world';
+  $a .= $b;
+  echo $a;
+  echo "\nHello $a" . '!!!' . "\n";
+  echo 'Новая строка';
+?>
+&lt;/pre>
+</pre>
+  <li>Попробуйте заменить оператор конкатенации . на оператор сложения +<br>
+  Что произошло?</li>
+  <li>Справочная информация: <a href="https://www.php.net/manual/ru/language.operators.string.php" target="_blank" rel="noopener noreferrer">Строковые операторы</a>,
+    <a href="https://www.php.net/manual/ru/language.types.string.php" target="_blank" rel="noopener noreferrer">Строки</a>.
+    Пример на phporphp.000webhostapp.com/string/.</li>
+</ol>
+
+
+<h2 id="php3">Задание от 20/24 декабря: Связь html-форм и php страниц</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
+<ol>
+  <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP. Например, бесплатный аккаунт на <a href="https://www.000webhost.com/" target="_blank" rel="noopener noreferrer">000webhost.com</a></li>
+  <li>Создать отдельную папку. Создать в ней файл index.html с кодом формы:
+<pre>
+&lt;form name="file_upload" method="POST" action="action.php" enctype="multipart/form-data">
+  Загрузите ваш аватар:
+  &lt;input type="file" name="avatar">
+  &lt;input type="submit" name="send" value="Отправить файл">
+&lt;/form>
+</pre></li>
+  <li>Создать там же файл action.php с кодом обработки формы:
+<pre>
+&lt;?php
+if (isset($_FILES['avatar'])) {
+    $file = $_FILES['avatar'];
+    print("<i>Загружен файл с именем</i> " . $file['name'] . " и размером " . $file['size'] . " байт:&lt;br>");
+  }
+
+$current_path = $_FILES['avatar']['tmp_name'];
+$filename = $_FILES['avatar']['name'];
+$new_path = dirname(__FILE__) . '/../images/' . $filename;
+move_uploaded_file($current_path, $new_path);
+
+echo "&lt;img alt='' src='../images/$filename'>";
+?></pre>
+  Для работы скрипта необходимо создать папку с именем "images" в родительском каталоге, в директории public_html (также говорят "в корне"). Скрипт печатает имя и размер загруженного файла, затем перемещает его в папку images и показывает на экране.</li>
+  <li>Загрузите картинку (аватарку) при помощи созданной формы. Убедитесь, что в папке images появился новый файл.</li>
+
+  <li>При помощи формы загрузки можно загружать любые файлы. Попробуйте загрузить файл, не являющийся изображением. Что произойдет?</li>
+</ol>
+
+<h2 id="php2">Задание от 13/17 декабря: Арифметические операции</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
+<ol>
+  <li>Запустить учебный сервер PHP или открыть файловый менеджер на хостинге с поддержкой PHP. Например, бесплатный аккаунт на <a href="https://www.000webhost.com/" target="_blank" rel="noopener noreferrer">000webhost.com</a></li>
+  <li>Создать файл index.html с кодом формы:
+<pre>
+&lt;form action="action.php" method="post">
+  &lt;input type="text" value="2" name="i1">
+  &lt;input type="text" value="3" name="i2">
+  &lt;input type="submit" value="Отправить">
+&lt;/form>
+</pre>
+  </li>
+  <li>Создать там же файл action.php с кодом обработки формы:
+<pre>
+&lt;?php
+  $a = htmlspecialchars($_POST['i1']);
+  $b = htmlspecialchars($_POST['i2']);
+  echo "Введены числа &lt;b>", $a, " и ", $b, "&lt;/b>&lt;br>";
+  echo "Результат операции сложения: ", $a + $b, "&lt;br>";
+  echo "Результат операции вычитания: ",  $a - $b, "&lt;br>";
+  echo "Результат операции умножения: ",  $a * $b, "&lt;br>";
+  echo "Результат операции деления: ",  $a / $b, "&lt;br>";
+  echo "Результат операции возведения в степень: ",  $a ** $b, "&lt;br>";
+  echo "Возведение в степень при помощи функции pow(): ",  pow($a, $b), "&lt;br>";
+?>
+</pre>Теперь наш скрипт умеет выполнять арифметические операции. Обратите внимание: <b>мы управляем форматированием вывода при помощи тегов HTML. То есть, команда echo может (и должна) выводить не просто текст, а код HTML</b>.</li>
+  <li>Напишите обработку формы, в первое поле которой вводится имя, а во второе поле - год рождения. После нажатия кнопки "отправить" запускается скипт action.php, который выводит приветствие вида "Здравствуй, Вася! Тебе 12 лет". Имя и возраст подставляются скриптом.</li>
+  <li><a href="https://www.php.net/manual/ru/language.operators.arithmetic.php" target="_blank" rel="noopener noreferrer">Справочная информация</a>, пример на phporphp.000webhostapp.com/arithmetic/</li>
+</ol>
+
+<h2 id="php1">Задание от 6/10 декабря: Команда echo. Вывод переменных в html-документ</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
+<ol>
+  <li>Запустить учебный сервер PHP или создать аккаунт на хостинге с поддержкой PHP. Например, бесплатный аккаунт на <a href="https://www.000webhost.com/" target="_blank" rel="noopener noreferrer">000webhost.com</a></li>
+  <li>Создать в корневой директории (папке) файл index.html с кодом формы:
+<pre>
+&lt;form action="action.php" method="post">
+  &lt;input type="text" value="2" name="i1">
+  &lt;input type="text" value="3" name="i2">
+  &lt;input type="submit" value="Отправить">
+&lt;/form>
+</pre>
+  </li>
+  <li>Создать там же файл action.php с кодом обработки формы:
+<pre>
+&lt;?php
+  $a = htmlspecialchars($_POST['i1']);
+  $b = htmlspecialchars($_POST['i2']);
+  echo $a + $b;
+?>
+</pre>Теперь наш скрипт умеет складывать введенные значения!
+  </li>
+  <li>Поменяйте в форме метод <b>method="get"</b> и замените названия служебной переменной <b>$_POST</b> на <b>$_GET</b>. Что изменилось?</li>
+  <li>Попробуйте создать калькулятор, который выводит результаты операций сложения, вычитания, умножения и деления.</li>
+  <li><a href="https://www.php.net/manual/ru/tutorial.php" target="_blank" rel="noopener noreferrer">Справочная информация</a>, <a href="../../php/">код более сложной формы</a>.</li>
+</ol>
+
+<h2 id="php0">Задание от 29 ноября: Основы PHP. Синтаксис. Переменные</h2>
+<p><b>Просмотреть видеозапись занятия</b>, доступную в группах Microsoft Teams и попробовать выполнить следующие задачи:</p>
+<ol>
+  <li>Скачать архив с интерпретатором PHP по <a href="https://windows.php.net/download" target="_blank" rel="noopener noreferrer">ссылке</a>. Подойдет версия <b>VS16 x86 Non Thread Safe</b>, ссылка на Zip-архив.</li>
+  <li>Распаковать zip-архив в отдельную папку, создать ярлык файла php.exe (с зажатой клавишей Alt перетащить файл php.exe на рабочий стол или иную папку).</li>
+  <li>Нажать правой кнопкой мыши на ярлык, открыть его свойства. В поле "объект" после php.exe через пробел дописать строку "-S localhost:8000" (без кавычек).</li>
+  <li>Запустить учебный сервер PHP, дважды кликнув по созданному ярлыку. Должно открыться окно с текущей датой/временем и версией тестового сервера PHP.</li>
+  <li>Создать текстовый файл с названием hello.php и сохранить его в папку, где находится распакованный файл php.exe. Содержимое hello.php – строка <b>&lt;?php echo 'Hello, world!'; ?></b></li>
+  <li>При запущенном сервере открыть в баузере страницу с URL <b>localhost:8000/hello.php</b></li>
+  <li>По желанию: повторить все действия с сервером и программой на PHP из видеозаписи занятия.</li>
+</ol>
+
+</body>
+</html>
