@@ -11,9 +11,10 @@
 <nav class="menu">
 <ul>
   <li><a href="../">Web-дизайн</a></li>
-  <li><a href="#types">Типы файлов</a></li>
   <li><a href="#regspace">Регистр и пробелы</a></li>
   <li><a href="#index">index.html</a></li>
+  <li><a href="#mime">MIME-типы</a></li>
+  <li><a href="#types">Типы файлов</a></li>
 </ul>
 </nav>
 <h1>Работа с файлами</h1>
@@ -21,29 +22,6 @@
   Как правило, у имени файла есть <a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8_%D1%84%D0%B0%D0%B9%D0%BB%D0%B0" target="_blank" rel="noopener noreferrer">расширение</a>, предназначенное для определения типа (формата) файла.</p>
 <p>Главная статья: <a href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/Dealing_with_files" target="_blank" rel="noopener noreferrer">Работа с файлами</a></p>
 
-<h2>Медиа тип или MIME-тип</h2>
-<p><a href="https://ru.wikipedia.org/wiki/MIME" target="_blank" rel="noopener noreferrer">Multipurpose Internet Mail Extensions</a>, является <a href="https://www.iana.org/assignments/media-types/media-types.xhtml" target="_blank" rel="noopener noreferrer">стандартом (полный список)</a>, который описывает природу и формат документа, файла или набора байтов.</p>
-<ul>
-  <li>Простейший MIME тип состоит из типа и подтипа – двух строк разделённых наклонной чертой (/), без использования пробелов.</li>
-  <li>Необязательный параметр может быть добавлен для указания дополнительных деталей.
-    Например, для MIME типов катогории text, необязательный параметр charset может быть задан для уточнения кодировки: <code>text/plain;charset=UTF-8</code></li>
-  <li>Все типы можно разделить на два класса: дискретные и многокомпонентные. Дискретные типы представляют одиночные файлы, например, одиночный текстовый, музыкальный или видео файл. Многокомпонентные типы представляют документы, составленные из нескольких частей, каждая из которых может иметь свой отдельный MIME тип, или они могут заключать в себе несколько отдельных файлов, передаваемых в одном сообщении.</li>
-</ul>
-
-
-<h2 id="types">Распространенные типы файлов и их MIME-типы</h2>
-<ul>
-  <li>Страница, написанная на языке разметки HTML, имеет расширение <b>.html</b> или, реже, <b>.htm</b> и MIME-тип <code>text/html</code></li>
-  <li>Файл, содержащий каскадные листы стилей, имеет расширение <b>.css</b>, <b>обязательно</b> <code>text/css</code></li>
-  <li>Файлы, написанные на языках программирования JavaScript, PHP имеют расширения <b>.js, .php</b>, <code>application/javascript, text/javascript (<b>устарел</b>), application/php (не в стандарте!) и application/octet-stream</code> соответственно</li>
-  <li>Иконка – <b><a href="https://en.wikipedia.org/wiki/ICO_(file_format)" target="_blank" rel="noopener noreferrer">.ico</a>, .png</b>, <code>image/x-icon, image/png</code></li>
-  <li>Изображения – <b>.jpg, .jpeg, .jfif, .gif, .png, .apng, .bmp, .webp, .svg, .svgz</b>,
-    <code>image/jpeg, image/gif, image/png, image/apng, image/bmp, image/webp, image/svg+xml</code></li>
-  <li>Шрифты – <b>.woff, .ttf, .otf</b>, <code>font/woff, font/ttf и font/otf</code></li>
-  <li>Данные в форматах CSV, JSON, XML – <b>.csv, .json, .xml</b>, <code>text/csv, application/json, application/xml, text/xml</code></li>
-  <li>Разметка Markdown – <b>.md, .markdown</b>, <code>text/markdown</code></li>
-  <li>Документ PDF – <b>.pdf</b>, <code>application/pdf</code></li>
-</ul>
 <h2 id="regspace">О регистре и пробелах</h2>
 <p><b>Регистр букв</b> – понятие книгопечатного, типографского и офисного дела, документооборота, полиграфии, лингвистики, шрифтового дизайна; различают верхний (заглавная, прописная буква) и нижний (малая, строчная буква) регистры символов.</p>
 
@@ -59,6 +37,29 @@
 <h2 id="index">index.html</h2>
 <p>Основные файлы HTML лучше называть именем <a href="https://ru.wikipedia.org/wiki/Index.html" target="_blank" rel="noopener noreferrer">index.html</a>, который ищется по умолчанию веб-сервером, если в URL указан не файл, а каталог. То же для других типов: index.php, index.shtml, index.jsp, default.asp.
   Тогда в ссылках можно указывать только название каталога, это <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BC%D0%B0%D0%BD%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_URL" target="_blank" rel="noopener noreferrer">улучшает читаемость</a> URL-адреса.</p>
+
+<h2 id="mime">Медиа тип или MIME-тип</h2>
+<p><a href="https://ru.wikipedia.org/wiki/MIME" target="_blank" rel="noopener noreferrer">Multipurpose Internet Mail Extensions</a>, является <a href="https://www.iana.org/assignments/media-types/media-types.xhtml" target="_blank" rel="noopener noreferrer">стандартом (полный список)</a>, который описывает природу и формат документа, файла или набора байтов.</p>
+<ul>
+  <li>Простейший MIME тип состоит из типа и подтипа – двух строк, разделённых наклонной чертой (/), без использования пробелов.</li>
+  <li>Необязательный параметр может быть добавлен для указания дополнительных деталей.
+    Например, для MIME типов катогории text, необязательный параметр charset может быть задан для уточнения кодировки: <code>text/plain;charset=UTF-8</code></li>
+  <li>Все типы можно разделить на два класса: дискретные и многокомпонентные. Дискретные типы представляют одиночные файлы, например, одиночный текстовый, музыкальный или видео файл. Многокомпонентные типы представляют документы, составленные из нескольких частей, каждая из которых может иметь свой отдельный MIME тип, или они могут заключать в себе несколько отдельных файлов, передаваемых в одном сообщении.</li>
+</ul>
+
+<h2 id="types">Распространенные типы файлов и их MIME-типы</h2>
+<ul>
+  <li>Страница, написанная на языке разметки HTML, имеет расширение <b>.html</b> или, реже, <b>.htm</b> и MIME-тип <code>text/html</code></li>
+  <li>Файл, содержащий каскадные листы стилей, имеет расширение <b>.css</b>, <b>обязательно</b> <code>text/css</code></li>
+  <li>Файлы, написанные на языках программирования JavaScript, PHP имеют расширения <b>.js, .php</b>, <code>application/javascript, text/javascript (<b>устарел</b>), application/php (не в стандарте!) и application/octet-stream</code> соответственно</li>
+  <li>Иконка – <b><a href="https://en.wikipedia.org/wiki/ICO_(file_format)" target="_blank" rel="noopener noreferrer">.ico</a>, .png</b>, <code>image/x-icon, image/png</code></li>
+  <li>Изображения – <b>.jpg, .jpeg, .jfif, .gif, .png, .apng, .bmp, .webp, .svg, .svgz</b>,
+    <code>image/jpeg, image/gif, image/png, image/apng, image/bmp, image/webp, image/svg+xml</code></li>
+  <li>Шрифты – <b>.woff, .ttf, .otf</b>, <code>font/woff, font/ttf и font/otf</code></li>
+  <li>Данные в форматах CSV, JSON, XML – <b>.csv, .json, .xml</b>, <code>text/csv, application/json, application/xml, text/xml</code></li>
+  <li>Разметка Markdown – <b>.md, .markdown</b>, <code>text/markdown</code></li>
+  <li>Документ PDF – <b>.pdf</b>, <code>application/pdf</code></li>
+</ul>
 
 <h2>Ссылки</h2>
 <ul>
