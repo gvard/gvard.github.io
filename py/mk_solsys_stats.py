@@ -16,7 +16,7 @@ PICKLE_RADAR_FILENAME = "radar_obj_names.pickle"
 ECHO_URL = "https://echo.jpl.nasa.gov/asteroids/"
 MPC_URL = "https://minorplanetcenter.net/mpc/summary"
 MP_NAMES_URL = "https://minorplanetcenter.net/iau/lists/MPNames.html"
-SSD_URL = "https://ssd.jpl.nasa.gov/?body_count"
+SSD_BODY_COUNT_URL = "https://ssd.jpl.nasa.gov/dat/body_count.json"
 NEO_SIZE_BIN_URL = 'https://cneos.jpl.nasa.gov/stats/size_bin.json'
 NEOS_STATS_URL = 'https://cneos.jpl.nasa.gov/stats/totals.html'
 JOHNSTON_ASTEROID_MOONS_URL = "http://www.johnstonsarchive.net/astro/asteroidmoons.html"
@@ -199,16 +199,20 @@ MPC_STATS = f'''<h2>Статистика тел Солнечной систем�
 '''
 
 
-def get_ssdtats(soup):
-    """Get statistics from Solar System Dynamics page."""
-    td_with_numbers = soup.findAll("td", {"align": "right"})
-    ssd_numbers = [int(f.text.replace(',', '')) for f in td_with_numbers[1:8]]
-    last_upd = soup.findAll("td", {"align": "left"})[-1].text.strip()
+def get_ssdtats(body_count):
+    """Get statistics from JPL's Solar System Dynamics group page."""
+    sat = body_count.get('sat').get('count')
+    ast = body_count.get('ast')
+    com = body_count.get('com')
+    ssd_numbers = [sat, com["total"], com["numbered"], com["unnumbered"],
+        ast["total"], ast["numbered"], ast["unnumbered"]]
+    last_upd = body_count.get('timestamp')
     return ssd_numbers, last_upd
 
 
-soup = get_soup(SSD_URL)
-SSD_NUMBERS, LAST_UPD = get_ssdtats(soup)
+body_count_obj = urllib.request.urlopen(SSD_BODY_COUNT_URL)
+body_count = json.load(body_count_obj)
+SSD_NUMBERS, LAST_UPD = get_ssdtats(body_count)
 SATELLITES, COMETS, COM_NUM, COM_UNNUM, ASTEROIDS, AST_NUM, AST_UNNUM = SSD_NUMBERS
 SSD_STATS = f'''<h2>Статистика тел Солнечной системы</h2>
 <p><a href="https://ssd.jpl.nasa.gov/?body_count">группы динамики Солнечной системы</a>.
