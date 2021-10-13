@@ -1,6 +1,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
+  line-height: 1.65;
   margin: 0;
   padding: 0;
   text-shadow: black 1px 1px 0, black -1px -1px 0,
@@ -21,17 +21,18 @@ body {
 h1 {
   padding-top: 0.15em;
   padding-bottom: 0.2em;
-  font-size: 3em;
+  font-size: 2.5em;
 }
 h2 {
   font-size: 1.45em;
   font-weight: normal;
 }
 ul>li {
-  font-size: 2.6em;
+  font-size: 2.17em;
 }
 ul {
   margin: 0 auto;
+  max-width: 920px;
 }
 #header {
   margin: 0 auto;
@@ -55,15 +56,22 @@ ul {
 }
 @media (max-width: 490px) {
   h1 {
-    font-size: 2.5em;
+    font-size: 2em;
+
   }
   ul, h1, h2 {
-    padding: 0;
+    padding-left: 0;
     margin: 0 0.4em 0 1em;
     line-height: 1.1;
   }
+  .list {
+    margin-left: 22px;
+  }
   ul>li {
-    font-size: 1.8em;
+    font-size: 1.7em;
     margin-bottom: 0.5em;
+  }
+  h2 {
+    font-size: 1em;
   }
 }
