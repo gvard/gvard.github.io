@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
 
-import os
+import os, ssl
 import json
 import urllib.request
 
 from beautifulsoup_supply import TAIL, mk_head, get_soup
+
+if (not os.environ.get('PYTHONHTTPSVERIFY', '') and
+    getattr(ssl, '_create_unverified_context', None)):
+    ssl._create_default_https_context = ssl._create_unverified_context
 
 DEBUG = False
 HEAD = mk_head("Космонавтика: статистика", style="../compact.css", script="") + "<body>\n"

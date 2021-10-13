@@ -4,11 +4,15 @@ https://planet4589.org/space/gcat/web/launch/count.html
 https://planet4589.org/space/gcat/web/launch/ldes.html
 """
 
-import os
+import os, ssl
 import urllib.request
 
 from beautifulsoup_supply import TAIL, mk_head, get_soup
 
+
+if (not os.environ.get('PYTHONHTTPSVERIFY', '') and
+    getattr(ssl, '_create_unverified_context', None)):
+    ssl._create_default_https_context = ssl._create_unverified_context
 
 GCAT_URL = 'https://planet4589.org/space/gcat/web/launch/count.html'
 
