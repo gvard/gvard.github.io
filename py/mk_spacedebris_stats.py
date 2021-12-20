@@ -19,7 +19,7 @@ def get_sd(soup):
     statistics of space debris."""
     months_dct = {"January": "января",  "April": "апреля", "May": "мая",
         "July": "июля", "August": "августа", "September": "сентября",
-        "October": "октября", "November": "ноября"}
+        "October": "октября", "November": "ноября", "December": "декабря"}
     date = soup.find("p").text.split()[4:]
     date[1] = months_dct[date[1]]
     dd = soup.find("dl").findAll("dd")
