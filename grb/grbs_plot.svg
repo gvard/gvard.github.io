@@ -27,9 +27,10 @@
 <path d="m696.46 642.96h29.346v-407.14h-29.346z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m730.98 642.96h29.346v-285h-29.346z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m765.51 642.96h29.346v-362.36h-29.346z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m800.03 642.96h29.346v-370.5h-29.346z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m800.03 642.96h29.346v-366.43h-29.346z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m834.56 642.96h29.346v-305.36h-29.346z" clip-path="url(#a)" fill="#1f77b4"/>
-<path d="m869.08 642.96h29.346v-350.14h-29.346z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m869.08 642.96h29.346v-346.07h-29.346z" clip-path="url(#a)" fill="#1f77b4"/>
+<path d="m903.6 642.96h29.346v-399h-29.346z" clip-path="url(#a)" fill="#1f77b4"/>
 <path d="m75.014 618.53h29.346v-16.286h-29.346z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m109.54 626.67h29.346v-28.5h-29.346z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m144.06 585.96h29.346v-28.5h-29.346z" clip-path="url(#a)" fill="#ff7f0e"/>
@@ -51,9 +52,10 @@
 <path d="m696.46 235.82h29.346v-158.79h-29.346z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m730.98 357.96h29.346v-219.86h-29.346z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m765.51 280.6h29.346v-154.71h-29.346z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m800.03 272.46h29.346v-158.79h-29.346z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m800.03 276.53h29.346v-162.86h-29.346z" clip-path="url(#a)" fill="#ff7f0e"/>
 <path d="m834.56 337.6h29.346v-126.21h-29.346z" clip-path="url(#a)" fill="#ff7f0e"/>
-<path d="m869.08 292.82h29.346v-158.79h-29.346z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m869.08 296.89h29.346v-162.86h-29.346z" clip-path="url(#a)" fill="#ff7f0e"/>
+<path d="m903.6 243.96h29.346v-162.86h-29.346z" clip-path="url(#a)" fill="#ff7f0e"/>
 <defs>
 <path id="b" d="m0 0v3.5" stroke="#000" stroke-width=".8"/>
 </defs>
