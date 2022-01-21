@@ -68,7 +68,7 @@ for year in range(1996, 1999):
     snurls.append((year, snstats_year))
 snurls.append((1999, f'{SNIMAGES_URL}sn1999/snstats.html'))
 
-for year in range(2000, 2022):
+for year in range(2000, 2023):
     snstats_year = f'https://rochesterastronomy.org/sn{year}/snstats.html'
     snurls.append((year, snstats_year))
 snurls.append(('all', f'{SNIMAGES_URL}snstatsall.html'))
@@ -104,7 +104,7 @@ filename = 'snstats_plot.svg'
 stars_dir = os.path.join(os.pardir, 'stars')
 tmp_pth = os.path.join(stars_dir, tmp_filename)
 pth = os.path.join(stars_dir, filename)
-xlim = (1994.3, 2021.7)
+xlim = (1994.3, 2022.7)
 plot_bar(years, sns, snalt, labels, tmp_pth, xlim, lab0="до 1996")
 optimize_svg(tmp_pth, pth)
 os.remove(tmp_pth)
