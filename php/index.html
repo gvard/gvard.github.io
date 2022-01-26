@@ -14,6 +14,13 @@
   <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
+  <nav class="menu">
+    <ul>
+      <li><a href="../">Главная страница</a></li>
+      <li><a href="#forms">Формы</a></li>
+      <li><a href="#guestbook">Гостевая книга</a></li>
+    </ul>
+  </nav>
   <h1>gvard.github.io/php/</h1>
   <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" width="100" alt="">
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Webysther_20160423_-_Elephpant.svg" width="150" alt="The elePHPant, PHP mascot">
@@ -37,12 +44,14 @@
   <li><a href="forms/">Динамическое создание форм на сайте</a></li>
   <li><a href="get/">Методы POST и GET</a></li>
 </ul>
-<h2>Формы и их обработка на PHP</h2>
+<h2 id="forms">Формы и их обработка на PHP</h2>
 <p>Форма поиска:</p>
 <form action="https://google.com/search">
   <input type="text" name="q" placeholder="гвозди">
   <input type="submit" value="Искать в Google">
 </form>
+<br>
+<a href="forms/">Динамическое создание формы после чтения базы данных</a>
 
 <h2>Установка PHP в ОС Windows</h2>
 <p><a href="https://windows.php.net/download" target="_blank" rel="noopener noreferrer">Ссылки на скачивание архива PHP</a> для Windows.<br>
@@ -51,7 +60,7 @@
 <h2>Запуск веб-сервера</h2>
 <pre><code>php -S localhost:8000</code></pre>
 
-<h2>Простая гостевая книга</h2>
+<h2 id="guestbook">Простая гостевая книга</h2>
 <a href="readbook.php">readbook.php</a> - основной файл гостевой книги,<br>
 <a href="addbook.php">addbook.php</a>, <a href="postform.php">postform.php</a>.<br>
 Для работы гостевой книги необходим текстовый файл <b>guestbook.txt</b>. Нужно изменить права доступа к нему, чтобы любой мог оставить сообщение:
