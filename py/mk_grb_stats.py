@@ -37,7 +37,7 @@ filename = 'grbs_plot.svg'
 grb_dir = os.path.join(os.pardir, 'grb')
 tmp_pth = os.path.join(grb_dir, tmp_filename)
 pth = os.path.join(grb_dir, filename)
-xlim = (1996.3, 2020.7)
+xlim = (1996.3, 2021.7)
 plot_bar(years, grbnums, opts, labels, tmp_pth, xlim)
 optimize_svg(tmp_pth, pth)
 os.remove(tmp_pth)
