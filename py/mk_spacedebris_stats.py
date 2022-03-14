@@ -17,7 +17,7 @@ SD_URL = 'https://sdup.esoc.esa.int/discosweb/statistics/embed/bythenumbers'
 def get_sd(soup):
     """Parse html, get date of last page update,
     statistics of space debris."""
-    months_dct = {"January": "января",  "April": "апреля", "May": "мая",
+    months_dct = {"January": "января", "March": "марта", "April": "апреля", "May": "мая",
         "July": "июля", "August": "августа", "September": "сентября",
         "October": "октября", "November": "ноября", "December": "декабря"}
     date = soup.find("p").text.split()[4:]
