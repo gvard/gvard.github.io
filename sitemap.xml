@@ -120,6 +120,11 @@
   <priority>0.8</priority>
 </url>
 <url>
+  <loc>https://gvard.github.io/web/memo/</loc>
+  <lastmod>2022-04-01T14:19:27+01:00</lastmod>
+  <priority>0.6</priority>
+</url>
+<url>
   <loc>https://gvard.github.io/web/html/</loc>
   <lastmod>2021-05-30T19:40:55+00:00</lastmod>
   <priority>0.8</priority>
@@ -420,9 +425,9 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://gvard.github.io/video/cosmozoo/</loc>
-  <lastmod>2021-05-30T19:40:55+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://gvard.github.io/cosmozoo/</loc>
+  <lastmod>2022-03-30T19:40:55+00:00</lastmod>
+  <priority>0.8</priority>
 </url>
 <url>
   <loc>https://gvard.github.io/dev/check/</loc>
@@ -475,9 +480,14 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://gvard.github.io/video/var/</loc>
-  <lastmod>2021-05-30T19:40:55+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://gvard.github.io/php/include/</loc>
+  <lastmod>2022-04-01T14:19:37+01:00</lastmod>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/variability/</loc>
+  <lastmod>2022-04-01T14:19:37+01:00</lastmod>
+  <priority>0.8</priority>
 </url>
 <url>
   <loc>https://gvard.github.io/video/astrodata/</loc>
@@ -560,14 +570,34 @@
   <priority>0.64</priority>
 </url>
 <url>
+  <loc>https://gvard.github.io/cosmology/</loc>
+  <lastmod>2022-04-01T14:19:37+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/life/</loc>
+  <lastmod>2022-04-01T14:19:37+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+<url>
   <loc>https://gvard.github.io/dates/music/</loc>
   <lastmod>2021-05-30T19:40:55+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://gvard.github.io/web/task/basics.html</loc>
-  <lastmod>2021-05-30T19:40:55+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://gvard.github.io/nlc/</loc>
+  <lastmod>2022-04-01T14:19:39+01:00</lastmod>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/task/2020/</loc>
+  <lastmod>2022-04-01T14:19:39+01:00</lastmod>
+  <priority>0.4</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/web/task/2020/basics.html</loc>
+  <lastmod>2022-04-01T14:19:52+01:00</lastmod>
+  <priority>0.4</priority>
 </url>
 <url>
   <loc>https://gvard.github.io/site/gallery.html</loc>
