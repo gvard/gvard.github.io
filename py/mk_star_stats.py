@@ -39,9 +39,10 @@ def get_sn_count(txt):
 def get_tns(soup):
     all_stat_num = soup.findAll('div', {"class": "stat-item-right"})
     all_transient = int(all_stat_num[0].text)
+    public_transient = int(all_stat_num[1].text)
     classified = int(all_stat_num[2].text)
     spectra = int(all_stat_num[3].text)
-    return all_transient, classified, spectra
+    return all_transient, public_transient, classified, spectra
 
 def simbad_stats(soup):
     tdsbg = soup.findAll("td", {"bgcolor": "#3264A0"})
@@ -109,7 +110,7 @@ plot_bar(years, sns, snalt, labels, tmp_pth, xlim, lab0="до 1996")
 optimize_svg(tmp_pth, pth)
 os.remove(tmp_pth)
 soup = get_soup_Request(TNS_STATS_URL)
-all_transient, classified, spectra = get_tns(soup)
+all_transient, public_transient, classified, spectra = get_tns(soup)
 
 snstats_txt += f"""</ul>
 <br><img src="../{filename}" alt="">
@@ -117,7 +118,7 @@ snstats_txt += f"""</ul>
 <h2><a href="{TNS_URL}">Transient Name Server</a></h2>
 <a href="{TNS_STATS_URL}" target="_blank" rel="noopener noreferrer">статистика</a>:<br>
 <ul>
-<li>Всего транзиентов с 01.01.2016: <b>{all_transient}</b>
+<li>Всего транзиентов с 01.01.2016: <b>{all_transient}</b>, <b>{public_transient}</b> в открытом доступе
 <li>Сверхновых классифицировано: <b>{classified}</b>
 <li>Всего спектров: <b>{spectra}</b>
 </ul>

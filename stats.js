@@ -7,4 +7,4 @@ function getStrToday() {
     6: "июня", 7: "июля", 8: "августа", 9: "сентября", 10: "октября", 11: "ноября", 12: "декабря" }[month];
   return `${day} ${monthName} ${currentdate.getFullYear()}`;
 }
-const mkHeader = () => document.getElementById('header').innerHTML = getStrToday()
+const mkHeader = () => document.getElementById('header').innerHTML = getStrToday() + " года"
