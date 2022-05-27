@@ -11,15 +11,15 @@ def autolabel(rects1, rects2, ax):
 
 
 def plot_bar(xes, data, data2, labels, pth, xlim, width=0.85, lab0=None):
-    plt.rcParams['svg.fonttype'] = 'none'
+    # plt.rcParams['svg.fonttype'] = 'none'
     title, xlabel, ylabel = labels
-    fig, ax = plt.subplots(figsize=(13, 9.5))
+    fig, ax = plt.subplots(figsize=(16, 9))
     p1 = ax.bar(xes, data, width)
     p2 = ax.bar(xes, data2, width, bottom=data)
     autolabel(p1, p2, ax)
     plt.xlabel(xlabel, fontsize=14)
     plt.ylabel(ylabel, fontsize=14)
-    plt.title(title, fontsize=22)
+    plt.title(title, fontsize=16)
     plt.xticks(xes)
     if lab0:
         xes[0] = lab0
@@ -27,8 +27,8 @@ def plot_bar(xes, data, data2, labels, pth, xlim, width=0.85, lab0=None):
     #     xes[i] = str(x) + "0"
     ax.set_xticklabels(xes)
     plt.xlim(xlim[0], xlim[1])
-    plt.subplots_adjust(left=0.07, bottom=0.06, right=0.97, top=0.96)
-    plt.savefig(pth)
+    plt.subplots_adjust(left=0.06, bottom=0.06, right=0.97, top=0.955)
+    plt.savefig(pth, dpi=240)
 
 
 def optimize_svg(tmp_pth, pth):
