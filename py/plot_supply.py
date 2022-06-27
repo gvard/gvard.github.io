@@ -1,3 +1,6 @@
+"""Python module with supplement functons for matplotlib plots
+"""
+
 from scour import scour
 import matplotlib.pyplot as plt
 
@@ -13,7 +16,7 @@ def autolabel(rects1, rects2, ax):
 def plot_bar(xes, data, data2, labels, pth, xlim, width=0.85, lab0=None):
     # plt.rcParams['svg.fonttype'] = 'none'
     title, xlabel, ylabel = labels
-    fig, ax = plt.subplots(figsize=(16, 9))
+    _fig, ax = plt.subplots(figsize=(16, 9))
     p1 = ax.bar(xes, data, width)
     p2 = ax.bar(xes, data2, width, bottom=data)
     autolabel(p1, p2, ax)
@@ -32,6 +35,7 @@ def plot_bar(xes, data, data2, labels, pth, xlim, width=0.85, lab0=None):
 
 
 def optimize_svg(tmp_pth, pth):
+    """Optimize svg file with scour (use pip to install it)."""
     inputfile = open(tmp_pth, 'rb')
     outputfile = open(pth, 'wb')
     options = scour.generateDefaultOptions()

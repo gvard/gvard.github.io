@@ -3,7 +3,8 @@ with solar system statistics.
 """
 
 import pickle
-import os, ssl
+import os
+import ssl
 import json
 import urllib.request
 
@@ -15,7 +16,9 @@ if (not os.environ.get('PYTHONHTTPSVERIFY', '') and
     ssl._create_default_https_context = ssl._create_unverified_context
 
 DEBUG = False
-HEAD = mk_head("Статистика тел Солнечной системы", style="../compact.css", script="nea_size_bin_chart.js") + "<body>\n"
+HEAD = mk_head("Статистика тел Солнечной системы",
+            style="../compact.css",
+            script="nea_size_bin_chart.js") + "<body>\n"
 PICKLE_RADAR_FILENAME = "radar_obj_names.pickle"
 ECHO_URL = "https://echo.jpl.nasa.gov/asteroids/"
 MPC_URL = "https://minorplanetcenter.net/mpc/summary"
@@ -68,10 +71,14 @@ except FileNotFoundError:
 #SSPHYS_URL = "http://www.johnstonsarchive.net/astro/solar_system_phys_data.html"
 #CONT_BIN_URL = "http://www.johnstonsarchive.net/astro/contactbinast.html"
 
+def cut_brackets(txt, sign):
+    """Cut bracket, comma or dot from string"""
+    txt = txt.strip(sign + " \r")
+    return [f.split()[0] for f in txt.split("(")]
+
 def get_astermoons(soup):
     """Parse html, get date of last page update,
     statistics of asteroids with moons."""
-    cutbrack = lambda txt: [f.split()[0] for f in txt.split("(")]
     lastupd = soup.findAll("center")[0].text.split("\n")[4].split()
     last_update = (lastupd[2], lastupd[3], lastupd[-1])
     stats = soup.findAll("p")[3].text.split("\n")
@@ -80,19 +87,20 @@ def get_astermoons(soup):
     multip_lst = [f.strip().split()[0] for f in multipl_str.split(",")]
     multip_lst.append(curcount.split(":")[2].split(";")[1].strip().split()[0])
     num_obj = int(num_obj.split()[0])
-    nea = cutbrack(stats[3].strip(", \r"))
-    mca = cutbrack(stats[4].strip(", \r"))
-    mba = cutbrack(stats[5].strip(", \r"))
+    nea = cut_brackets(stats[3], ",")
+    mca = cut_brackets(stats[4], ",")
+    mba = cut_brackets(stats[5], ",")
     mba_dualcomet = int(stats[5].split(";")[1].strip().split()[0])
     jta = int(stats[6].strip(", and \r").split()[0])
-    tno = cutbrack(stats[7].strip(". \r"))
+    tno = cut_brackets(stats[7], ".")
     tno.append(stats[7].split(",")[1].strip().split()[0])
     tno.append(stats[7].split(";")[1].strip().split()[2])
     return last_update, (num_obj, multip_lst), (nea, mca, mba, mba_dualcomet, jta, tno)
 
 
 soup = get_soup(JOHNSTON_ASTEROID_MOONS_URL)
-(DAY, MON, YR), (NUM_OBJ, MULTIPLICITY), (NEA, MCA, MBA, MBA_DUALCOMET, JTA, TNO) = get_astermoons(soup)
+(DAY, MON, YR), (NUM_OBJ, MULTIPLICITY), \
+    (NEA, MCA, MBA, MBA_DUALCOMET, JTA, TNO) = get_astermoons(soup)
 
 JOHNSTON_SAT = f"""<h2>Астероиды со спутниками</h2>
 <p>by <a href="http://www.johnstonsarchive.net/astro/asteroidmoons.html">Wm.
@@ -252,5 +260,5 @@ BODY = f"""<body onload="mkHeader()">
   </div>
 </div>
 """
-with open(os.path.join(os.pardir, 'solarsystem', 'stats', 'index.html'), 'w', encoding="utf8") as handle:
-    print(HEAD + BODY + TAIL, file=handle)
+with open(os.path.join(os.pardir, 'solarsystem', 'stats', 'index.html'), 'w', encoding="utf8") as fl:
+    print(HEAD + BODY + TAIL, file=fl)

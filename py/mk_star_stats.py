@@ -2,9 +2,10 @@ import os
 import pickle
 import urllib.request
 
-from beautifulsoup_supply import TAIL, mk_head, get_soup, get_soup_Request
-from plot_supply import plot_bar, optimize_svg
 import matplotlib.pyplot as plt
+from beautifulsoup_supply import TAIL, mk_head, get_soup, get_soup_Request
+
+from plot_supply import plot_bar, optimize_svg
 
 
 HEAD = mk_head("Статистика звездных каталогов", style="../../compact.css", script="") + "<body>\n"

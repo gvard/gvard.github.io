@@ -4,8 +4,10 @@ https://planet4589.org/space/gcat/web/launch/count.html
 https://planet4589.org/space/gcat/web/launch/ldes.html
 """
 
-import os, ssl
-import urllib.request
+import os
+import ssl
+import datetime
+import locale
 
 from beautifulsoup_supply import TAIL, mk_head, get_soup
 
@@ -20,17 +22,20 @@ GCAT_URL = 'https://planet4589.org/space/gcat/web/launch/count.html'
 def get_sd(soup):
     """Parse html, get statistics of rocket launches."""
     pretxt = soup.findAll("pre")[1].text.splitlines()[1:]
-    allnums = [line.split()[-1] for line in pretxt]
+    allnums = ["{:,d}".format(int(line.split()[-1])).replace(",", " ") for line in pretxt]
     return allnums
 
 
 soup = get_soup(GCAT_URL)
 AN = get_sd(soup)
 
+locale.setlocale(locale.LC_ALL, '')
+month = datetime.date.today().strftime("%B").lower()
+
 HEAD = mk_head("Статистика запусков ракет", style="stats.css", script="")
 BODY = f"""<body">
 <div id="stats" class="container show">
-  <h1 id="header">Статистика запусков ракет: март 2022 г.</h1>
+  <h1 id="header">Статистика запусков ракет: {month} 2022 г.</h1>
   <div class="list">
   <ul>
     <li>Всего орбитальных запусков: <span class="yellow">{AN[0]}</span></li>
@@ -39,7 +44,6 @@ BODY = f"""<body">
     <li>Суборбитальных пусков (апогей от 80 км): более <span class="yellow">{AN[3]}</span></li>
     <li>Мезосферных пусков: более <span class="yellow">{AN[4]}</span></li>
     <li>Эндоатмосферных пусков (апогей до 50 км): более <span class="yellow">{AN[5]}</span></li>
-    <li>Всего записей в списке запусков: <span class="yellow">{AN[7]}</span></li>
   </ul>
   </div>
   <div id="footer">
@@ -49,8 +53,9 @@ BODY = f"""<body">
 """
 
 """
+<li>Всего записей в списке запусков: <span class="yellow">{AN[7]}</span></li>
 <li>Взрывов стартового стола: <span class="yellow">{AN[6]}</span></li>
 """
 
-with open(os.path.join(os.pardir, 'cosm', 'launches', 'index.html'), 'w', encoding="utf8") as handle:
-    print(HEAD + BODY + TAIL, file=handle)
+with open(os.path.join(os.pardir, 'cosm', 'launches', 'index.html'), 'w', encoding="utf8") as fl:
+    print(HEAD + BODY + TAIL, file=fl)

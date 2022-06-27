@@ -8,7 +8,8 @@ https://github.com/gvard/gvard.github.io/blob/master/stars/stats/index.html
 https://github.com/gvard/gvard.github.io/blob/master/stars/stats.html
 """
 
-import re, os
+import re
+import os
 import itertools
 from datetime import datetime, timedelta
 
@@ -69,9 +70,9 @@ for (html_files_dir, ul_num) in (('stars-stats.html', 0),
     files_to_read.append((files_path, filenames_lst, ul_num))
 
 date_pattern = re.compile(
-    "\d+.(\d{1,2})-(Jan?|Feb?|Mar?|Apr?|May|Jun?|"
-    "Jul?|Aug?|Sep?|Oct?|Nov?|"
-    "Dec?)-(\d{4}).*")
+    r"\d+.(\d{1,2})-(Jan?|Feb?|Mar?|Apr?|May|Jun?|"
+    r"Jul?|Aug?|Sep?|Oct?|Nov?|"
+    r"Dec?)-(\d{4}).*")
 all_nums = dict((year, []) for year in range(1995, 2023))
 dats = []
 for (files_path, filenames_lst, ul_num) in files_to_read:

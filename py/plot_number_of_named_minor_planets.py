@@ -4,7 +4,8 @@ How to get all previous version of a specific file/folder:
 https://stackoverflow.com/questions/12850030/git-getting-all-previous-version-of-a-specific-file-folder
 """
 
-import re, os
+import re
+import os
 from datetime import datetime
 
 from bs4 import BeautifulSoup
@@ -15,9 +16,9 @@ filenames = next(os.walk(tmp_path), (None, None, []))[2]
 print(filenames)
 dats, nums = [], []
 date_pattern = re.compile(
-    "\d+.(\d{1,2})-(Jan?|Feb?|Mar?|Apr?|May|Jun?|"
-    "Jul?|Aug?|Sep?|Oct?|Nov?|"
-    "Dec?)-(\d{4}).*")
+    r"\d+.(\d{1,2})-(Jan?|Feb?|Mar?|Apr?|May|Jun?|"
+    r"Jul?|Aug?|Sep?|Oct?|Nov?|"
+    r"Dec?)-(\d{4}).*")
 
 for fname in filenames:
     with open(os.path.join(tmp_path, fname)) as html:
@@ -32,6 +33,6 @@ for fname in filenames:
 plt.plot(dats, nums, 'o-')
 plt.xlabel('Время', fontsize=14)
 plt.ylabel('Количество малых планет с именами', fontsize=14)
- 
+
 plt.grid()
 plt.show()
