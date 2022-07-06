@@ -40,8 +40,8 @@ TAIL = '''
 '''
 
 try:
-    with open(PICKLE_FILENAME, 'rb') as handle:
-        bodies_params_dct = pickle.load(handle)
+    with open(PICKLE_FILENAME, 'rb') as fl:
+        bodies_params_dct = pickle.load(fl)
 except Exception:
     bodies_params_dct = {}
 
@@ -68,8 +68,8 @@ def mk_img(txt, ext="jpg"):
 def wrap_div(txt):
     return f'<div class="obj">\n{txt}\n</div>'
 
-with open(os.path.join(os.pardir, 'stars', 'objects.html'), 'w', encoding="utf8") as handle:
-    print(HEAD, file=handle)
+with open(os.path.join(os.pardir, 'stars', 'objects.html'), 'w', encoding="utf8") as fl:
+    print(HEAD, file=fl)
     for objname in bodies_params_dct:
         mass_str = str(bodies_params_dct[objname].get('mass'))
         radius_str = str(bodies_params_dct[objname].get('radius'))
@@ -77,5 +77,5 @@ with open(os.path.join(os.pardir, 'stars', 'objects.html'), 'w', encoding="utf8"
         #age_str = str(bodies_params_dct[objname].get('age_myr'))
         #luminosity_str = str(bodies_params_dct[objname].get('luminosity'))
         html_obj = wrap_div(mk_img(objname) + '\n' + mk_link(objname) + '\n' +  mk_div(radius_str, 'size') + '\n' + mk_div(mass_str, 'mass') + mk_div(temperature_str, 'temp'))
-        print(html_obj, file=handle, end='')
-    print(TAIL, file=handle)
+        print(html_obj, file=fl, end='')
+    print(TAIL, file=fl)

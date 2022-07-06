@@ -13,6 +13,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 from sql_solsys_db import Sobject, Class
 
+
 base_path = os.getcwd()
 path = os.path.abspath(os.path.join(base_path, os.pardir))
 # static_path = os.path.join(path, 'solarsystem')

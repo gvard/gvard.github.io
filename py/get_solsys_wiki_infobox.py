@@ -75,5 +75,5 @@ for objname in NEXTNAMS:
 
 print(f"{len(bodies_params_dct)} objects")
 
-with open(RESULT_PICKLE_FILENAME, 'wb') as handle:
-    pickle.dump(bodies_params_dct, handle)
+with open(RESULT_PICKLE_FILENAME, 'wb') as fl:
+    pickle.dump(bodies_params_dct, fl)

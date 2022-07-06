@@ -61,5 +61,5 @@ grbstats_txt += f"""</ul>
 </ul>
 """
 
-with open(HTML_FILENAME, 'w', encoding="utf8") as handle:
-    print(HEAD + grbstats_txt + TAIL, file=handle)
+with open(HTML_FILENAME, 'w', encoding="utf8") as fl:
+    print(HEAD + grbstats_txt + TAIL, file=fl)

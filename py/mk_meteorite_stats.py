@@ -57,5 +57,5 @@ meteorite_falls_txt += f"""</ul>
 </ul>
 """
 
-with open(HTML_FILENAME, 'w', encoding="utf8") as handle:
-    print(HEAD + meteorite_falls_txt + TAIL, file=handle)
+with open(HTML_FILENAME, 'w', encoding="utf8") as fl:
+    print(HEAD + meteorite_falls_txt + TAIL, file=fl)

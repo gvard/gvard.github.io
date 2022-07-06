@@ -1,5 +1,8 @@
-from bs4 import BeautifulSoup
 import glob
+
+from bs4 import BeautifulSoup
+
+
 images = [f.split("\\")[1] for f in glob.glob("images/*.jpg")]
 # print(images)
 

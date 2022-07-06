@@ -13,6 +13,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 from sql_dates_db import Tag, Img, Event
 
+
 base_path = os.getcwd()
 path = os.path.abspath(os.path.join(base_path, os.pardir))
 # dates_static_path = os.path.join(path, 'dates')

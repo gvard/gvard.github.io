@@ -11,6 +11,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 import matplotlib.pyplot as plt
 
+
 tmp_path = os.path.join(os.pardir, 'tmp', 'all_versions_exported')
 filenames = next(os.walk(tmp_path), (None, None, []))[2]
 print(filenames)

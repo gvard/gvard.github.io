@@ -20,12 +20,12 @@ def dct_sort(bodies_lst, bodies_params_dct):
 
 
 try:
-    with open(PICKLE_FILENAME, 'rb') as handle:
-        bodies_params_dct = pickle.load(handle)
+    with open(PICKLE_FILENAME, 'rb') as fl:
+        bodies_params_dct = pickle.load(fl)
 except Exception:
     bodies_params_dct = {}
 
 objects = dct_sort(BODIES_SIZE_ORDERED, bodies_params_dct)
 
-with open(PICKLE_RESULT_FILENAME, 'wb') as handle:
-    pickle.dump(objects, handle)
+with open(PICKLE_RESULT_FILENAME, 'wb') as fl:
+    pickle.dump(objects, fl)

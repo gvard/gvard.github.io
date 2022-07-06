@@ -1,6 +1,7 @@
 import pickle
 import re
 import os
+
 from object_data import PLANETS, DWARFPLANETS, COMETS, MOONS, MARS_MOONS, \
     JUPITER_MOONS, SATURN_MOONS, URANUS_MOONS, NEPTUNE_MOONS, PLUTO_MOONS, \
     ASTEROIDS, NEOS, TNOS, BODIES_RU_NAMES
@@ -63,8 +64,8 @@ TAIL = '''
 
 
 try:
-    with open(PICKLE_FILENAME, 'rb') as handle:
-        bodies_params_dct = pickle.load(handle)
+    with open(PICKLE_FILENAME, 'rb') as fl:
+        bodies_params_dct = pickle.load(fl)
         print(bodies_params_dct)
 except Exception:
     bodies_params_dct = {}
@@ -150,8 +151,8 @@ def which_moon(name):
 
 strcut = lambda txt: str(txt).replace("<", "").replace(">", "").replace("None", "")
 
-with open(os.path.join(os.pardir, 'solarsystem', 'objects.html'), 'w', encoding="utf8") as handle:
-    print(HEAD, file=handle)
+with open(os.path.join(os.pardir, 'solarsystem', 'objects.html'), 'w', encoding="utf8") as fl:
+    print(HEAD, file=fl)
     deltav_str = ""
     for objname in bodies_params_dct:
         mass_str = strcut(bodies_params_dct[objname].get('mass'))
@@ -197,5 +198,5 @@ with open(os.path.join(os.pardir, 'solarsystem', 'objects.html'), 'w', encoding=
   {mk_div(deltav_str, 'delta-v')}"""
 #   {mk_div(period_str, 'period')}
         html_obj = wrap_div(divs_html, classes)
-        print(html_obj, file=handle, end='')
-    print(TAIL, file=handle)
+        print(html_obj, file=fl, end='')
+    print(TAIL, file=fl)

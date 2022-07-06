@@ -1,5 +1,7 @@
 from os import listdir, pardir
 from os.path import isfile, join
+
+
 HEAD = '''<!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -52,4 +54,3 @@ for f in imgs:
 html += TAIL
 with open(join(pardir, 'dates', 'carousel_gen.html'), 'w', encoding="utf8") as fil:
     print(html, file=fil)
-

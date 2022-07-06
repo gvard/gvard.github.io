@@ -1,6 +1,11 @@
-#import urllib.request
+"""Python script for plotting graph
+with suborbital launches statistics.
+"""
+
 import datetime
-import os, ssl
+import os
+import ssl
+import urllib.request
 
 from bs4 import BeautifulSoup
 import matplotlib.pyplot as plt
@@ -14,14 +19,14 @@ if (not os.environ.get('PYTHONHTTPSVERIFY', '') and
 
 
 def get_table(url):
-    #html = urllib.request.urlopen(url).read()
-    html = open(url)
+    html = urllib.request.urlopen(url).read()
+    #html = open(url)
     soup = BeautifulSoup(html, 'html.parser')
     return soup.findAll('pre')[1].text.splitlines()
 
 
-#BASE_URL = "https://planet4589.org/space/gcat/data/ldes/"
-DATA_URL = "S.html"
+BASE_URL = "https://planet4589.org/space/gcat/data/ldes/"
+DATA_URL = BASE_URL + "S.html"
 data = get_table(DATA_URL)[1:]
 #dates, nums = get_data_array(data)
 #print("Suborbital launches:", len(dates))
@@ -54,13 +59,14 @@ locator = AutoDateLocator()
 locator.intervald[0] = [5]
 ax.xaxis.set_major_locator(locator)
 ax.xaxis.set_minor_locator(AutoMinorLocator(5))
+ax.yaxis.set_minor_locator(AutoMinorLocator(5))
 
 plt.plot(dates, nums, '.b', ms=4)
 tdlt = datetime.timedelta(days=630)
 plt.xlim(dates[0]-tdlt, dates[-1]+tdlt)
-#plt.ylim(-100, 30000)
-plt.title('Рост числа суборбитальных запусков. Всего ' + str(len(dates)) + ' запуска к ноябрю 2021 года')
+month, year = "июлю", 2022
+plt.title('Рост числа суборбитальных запусков. Всего ' + str(len(dates)) + f' запусков к {month} {year} года')
 plt.xlabel('Время, годы', fontsize=14)
 plt.ylabel('Количество суборбитальных запусков', fontsize=12)
 plt.grid()
-plt.savefig('launches-suborb-80km-graph_.png', dpi=120)
+plt.savefig('launches-suborb-80km-graph.png', dpi=120)

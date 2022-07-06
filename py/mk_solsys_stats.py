@@ -61,8 +61,8 @@ ECHO_JPL_STATS = f"""<h2>Астероиды и кометы, измеренны�
 """
 
 try:
-    with open(PICKLE_RADAR_FILENAME, 'wb') as handle:
-        pickle.dump(RADAR_OBJ_NAMES, handle)
+    with open(PICKLE_RADAR_FILENAME, 'wb') as fl:
+        pickle.dump(RADAR_OBJ_NAMES, fl)
 except FileNotFoundError:
     print("File", PICKLE_RADAR_FILENAME, "not found, continue")
 
@@ -238,8 +238,8 @@ SSD_STATS = f'''<h2>Статистика тел Солнечной систем�
 </ul>
 '''
 
-with open(os.path.join(os.pardir, 'solarsystem', 'stats.html'), 'w', encoding="utf8") as handle:
-    print(HEAD + MPC_STATS + SSD_STATS + ECHO_JPL_STATS + JOHNSTON_SAT + TAIL, file=handle)
+with open(os.path.join(os.pardir, 'solarsystem', 'stats.html'), 'w', encoding="utf8") as fl:
+    print(HEAD + MPC_STATS + SSD_STATS + ECHO_JPL_STATS + JOHNSTON_SAT + TAIL, file=fl)
 
 
 HEAD = mk_head("Статистика Солнечной системы", style="stats.css", script="../../stats.js")

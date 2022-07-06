@@ -20,13 +20,13 @@ result_filename = "solsysbod_res_dct.pickle"
 all_lst = []
 
 try:
-    with open(main_filename, 'rb') as handle:
-        main_objects = pickle.load(handle)
+    with open(main_filename, 'rb') as fl:
+        main_objects = pickle.load(fl)
 except Exception:
     main_objects = {}
 
-with open(add_filename, 'rb') as handle:
-    add_objects = pickle.load(handle)
+with open(add_filename, 'rb') as fl:
+    add_objects = pickle.load(fl)
 
 for obj in add_objects:
     if obj not in main_objects:
@@ -34,7 +34,7 @@ for obj in add_objects:
     else:
         print(obj, "already exist:", "\n", main_objects[obj], "\n", add_objects[obj])
 
-with open(result_filename, 'wb') as handle:
-    pickle.dump(main_objects, handle)
+with open(result_filename, 'wb') as fl:
+    pickle.dump(main_objects, fl)
 
 print(f"Total {len(main_objects)} objects in pickled object")

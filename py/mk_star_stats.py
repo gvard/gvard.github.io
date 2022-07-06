@@ -170,15 +170,15 @@ snstats_txt += f"""</ul>
 """
 
 try:
-    with open(PICKLE_SN_FILENAME, 'rb') as handle:
-        snstats_prev = pickle.load(handle)
+    with open(PICKLE_SN_FILENAME, 'rb') as fl:
+        snstats_prev = pickle.load(fl)
 
     for year in snstats_prev:
         if snstats.get(year) != snstats_prev.get(year):
             print(snstats_prev.get(year), snstats.get(year))
 
-    with open(PICKLE_SN_FILENAME, 'wb') as handle:
-        pickle.dump(snstats, handle)
+    with open(PICKLE_SN_FILENAME, 'wb') as fl:
+        pickle.dump(snstats, fl)
 except FileNotFoundError:
     print("File", PICKLE_SN_FILENAME, "not found, continue")
 
@@ -200,8 +200,8 @@ SIMBAD_HTML = f"""<hr><p><a href="{SIMBAD_URL}">SIMBAD</a> <a href="https://en.w
 """
 
 try:
-    with open(PICKLE_SIMB_FILENAME, 'rb') as handle:
-        simbstats_dict = pickle.load(handle)
+    with open(PICKLE_SIMB_FILENAME, 'rb') as fl:
+        simbstats_dict = pickle.load(fl)
 except FileNotFoundError:
     print("File", PICKLE_SIMB_FILENAME, "not found, continue")
     simbstats_dict = {}
@@ -211,8 +211,8 @@ if SIMDATE not in simbstats_dict:
 
 print("Number of dates in pickle file:", len(simbstats_dict))
 
-with open(PICKLE_SIMB_FILENAME, 'wb') as handle:
-    pickle.dump(simbstats_dict, handle)
+with open(PICKLE_SIMB_FILENAME, 'wb') as fl:
+    pickle.dump(simbstats_dict, fl)
 
-with open(HTML_FILENAME, 'w', encoding="utf8") as handle:
-    print(HEAD + snstats_txt + SIMBAD_HTML + TAIL, file=handle)
+with open(HTML_FILENAME, 'w', encoding="utf8") as fl:
+    print(HEAD + snstats_txt + SIMBAD_HTML + TAIL, file=fl)

@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
+"""Python script for genererating an html page
+with manned spaceflight statistics.
+"""
 
-import os, ssl
+import os
+import ssl
 import json
 import urllib.request
 
@@ -103,8 +107,8 @@ SPACEFLIGHT_HTML = f"""<h2>Пилотируемая космонавтика</h2
 </ul>
 """
 
-with open(os.path.join(os.pardir, 'cosm', 'stats.html'), 'w', encoding="utf8") as handle:
-    print(HEAD + SPACEFLIGHT_HTML + N2_STATS_HTML + NANOSATS_HTML + TAIL, file=handle)
+with open(os.path.join(os.pardir, 'cosm', 'stats.html'), 'w', encoding="utf8") as fl:
+    print(HEAD + SPACEFLIGHT_HTML + N2_STATS_HTML + NANOSATS_HTML + TAIL, file=fl)
 
 HEAD = mk_head("Космонавтика: статистика", style="stats.css", script="../../stats.js")
 BODY = f"""<body onload="mkHeader()">
@@ -124,5 +128,5 @@ BODY = f"""<body onload="mkHeader()">
   </div>
 </div>
 """
-with open(os.path.join(os.pardir, 'cosm', 'stats', 'index.html'), 'w', encoding="utf8") as handle:
-    print(HEAD + BODY + TAIL, file=handle)
+with open(os.path.join(os.pardir, 'cosm', 'stats', 'index.html'), 'w', encoding="utf8") as fl:
+    print(HEAD + BODY + TAIL, file=fl)

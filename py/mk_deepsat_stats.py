@@ -60,5 +60,5 @@ BODY = f"""<body">
 </div>
 """
 
-with open(os.path.join(os.pardir, 'cosm', 'deepspace', 'index.html'), 'w', encoding="utf8") as handle:
-    print(HEAD + BODY + TAIL, file=handle)
+with open(os.path.join(os.pardir, 'cosm', 'deepspace', 'index.html'), 'w', encoding="utf8") as fl:
+    print(HEAD + BODY + TAIL, file=fl)

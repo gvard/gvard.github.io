@@ -3,6 +3,7 @@ WRT https://docs.sqlalchemy.org/en/13/orm/tutorial.html
 """
 
 import datetime
+
 from sqlalchemy import create_engine, Table, Column, ForeignKey, \
     Integer, BigInteger, Float, String, Boolean, Date
 from sqlalchemy.orm import relationship

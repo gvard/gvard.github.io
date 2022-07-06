@@ -20,5 +20,5 @@ for movie_id in PROFIT_USA_INFL_CORR:
     oscar_list.append([movie.id, movie.title_en, movie.title, movie.year, (movie.rating, movie.votes), (movie.imdb_rating, movie.imdb_votes), movie.runtime, movie.genres, movie.budget, movie.profit_world, movie.profit_russia, movie.profit_usa, movie.marketing, movie.directors, movie.producers, movie.screenwriters, movie.countries, movie.operators])
     print(oscar_list[-1])
 
-with open(PICKLE_FILENAME, 'wb') as handle:
-    pickle.dump(oscar_list, handle)
+with open(PICKLE_FILENAME, 'wb') as fl:
+    pickle.dump(oscar_list, fl)

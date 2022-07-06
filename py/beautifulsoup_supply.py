@@ -1,3 +1,7 @@
+""" Python module with functions and data, useful for operating
+with BeautifulSoup
+"""
+
 import urllib.request
 from urllib.request import Request
 
@@ -19,6 +23,7 @@ TAIL = """</body>
 </html>"""
 
 def mk_head(title, style="style.css", script="script.js"):
+    """Make an html code with head element"""
     STYLE = ""
     if style:
         STYLE = f'  <link rel="stylesheet" href="{style}">\n'

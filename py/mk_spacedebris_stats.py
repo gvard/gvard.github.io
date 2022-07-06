@@ -6,7 +6,6 @@ https://www.sdo.esoc.esa.int/environment_report/Space_Environment_Report_latest.
 """
 
 import os
-import urllib.request
 
 from beautifulsoup_supply import TAIL, mk_head, get_soup
 
@@ -64,5 +63,5 @@ BODY = f"""<body">
       </ul>
     </li>
 """
-with open(os.path.join(os.pardir, 'cosm', 'debris', 'index.html'), 'w', encoding="utf8") as handle:
-    print(HEAD + BODY + TAIL, file=handle)
+with open(os.path.join(os.pardir, 'cosm', 'debris', 'index.html'), 'w', encoding="utf8") as fl:
+    print(HEAD + BODY + TAIL, file=fl)

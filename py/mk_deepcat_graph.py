@@ -1,6 +1,7 @@
 import urllib.request
 import datetime
-import os, ssl
+import os
+import ssl
 
 from bs4 import BeautifulSoup
 import matplotlib.pyplot as plt
@@ -72,7 +73,9 @@ plt.plot(dates, nums, '.b', ms=5)
 tdlt = datetime.timedelta(days=630)
 plt.xlim(dates[0]-tdlt, dates[-1]+tdlt)
 plt.ylim(0, 550)
-plt.title('Рост числа искусственных объектов глубокого космоса. Всего ' + str(len(dates)) + ' объектов к ноябрю 2021 года')
+month, year = "июлю", 2022
+plt.title('Рост числа искусственных объектов глубокого космоса. Всего ' + \
+          str(len(dates)) + f' объектов к {month} {year} года')
 plt.xlabel('Время, годы', fontsize=14)
 plt.ylabel('Количество объектов', fontsize=14)
 plt.grid()
