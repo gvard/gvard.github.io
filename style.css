@@ -41,6 +41,12 @@ img {
   width: calc(100% - 240px);
 }
 .column p {margin: 0.5em 0 0.5em 0;}
+#copyright {
+  display: flex;
+}
+#copyright #link {
+  margin-left: 10px;
+}
 @media (max-width: 795px) {
   .right {
     width: 100%;
