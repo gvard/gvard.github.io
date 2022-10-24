@@ -31,9 +31,9 @@
 <path d="m891.35 609.12h31.376v-197.64h-31.376z" clip-path="url(#b)" fill="#1f77b4"/>
 <path d="m928.26 609.12h31.376v-202.64h-31.376z" clip-path="url(#b)" fill="#1f77b4"/>
 <path d="m965.18 609.12h31.376v-418.08h-31.376z" clip-path="url(#b)" fill="#1f77b4"/>
-<path d="m1002.1 609.12h31.376v-503.29h-31.376z" clip-path="url(#b)" fill="#1f77b4"/>
+<path d="m1002.1 609.12h31.376v-503.36h-31.376z" clip-path="url(#b)" fill="#1f77b4"/>
 <path d="m1039 609.12h31.376v-549.2h-31.376z" clip-path="url(#b)" fill="#1f77b4"/>
-<path d="m1075.9 609.12h31.376v-406.3h-31.376z" clip-path="url(#b)" fill="#1f77b4"/>
+<path d="m1075.9 609.12h31.376v-408.94h-31.376z" clip-path="url(#b)" fill="#1f77b4"/>
 <path d="m79.271 589.46h31.376v-9.1621h-31.376z" clip-path="url(#b)" fill="#ff7f0e"/>
 <path d="m116.18 607.24h31.376v-0.75914h-31.376z" clip-path="url(#b)" fill="#ff7f0e"/>
 <path d="m153.1 605.46h31.376v-0.60208h-31.376z" clip-path="url(#b)" fill="#ff7f0e"/>
@@ -59,9 +59,9 @@
 <path d="m891.35 411.48h31.376v-6.6491h-31.376z" clip-path="url(#b)" fill="#ff7f0e"/>
 <path d="m928.26 406.48h31.376v-5.4187h-31.376z" clip-path="url(#b)" fill="#ff7f0e"/>
 <path d="m965.18 191.04h31.376v-4.3716h-31.376z" clip-path="url(#b)" fill="#ff7f0e"/>
-<path d="m1002.1 105.83h31.376v-3.4292h-31.376z" clip-path="url(#b)" fill="#ff7f0e"/>
+<path d="m1002.1 105.76h31.376v-3.4292h-31.376z" clip-path="url(#b)" fill="#ff7f0e"/>
 <path d="m1039 59.918h31.376v-3.1413h-31.376z" clip-path="url(#b)" fill="#ff7f0e"/>
-<path d="m1075.9 202.82h31.376v-3.0366h-31.376z" clip-path="url(#b)" fill="#ff7f0e"/>
+<path d="m1075.9 200.18h31.376v-3.0889h-31.376z" clip-path="url(#b)" fill="#ff7f0e"/>
 <defs>
 <path id="e" d="m0 0v3.5" stroke="#000" stroke-width=".8"/>
 </defs>
@@ -550,12 +550,12 @@
 <use x="190.869141" xlink:href="#h"/>
 <use x="254.492188" xlink:href="#j"/>
 </g>
-<g transform="translate(1001.9 97.404) scale(.1 -.1)">
+<g transform="translate(1001.9 97.326) scale(.1 -.1)">
 <use xlink:href="#d"/>
 <use x="63.623047" xlink:href="#g"/>
 <use x="127.246094" xlink:href="#h"/>
-<use x="190.869141" xlink:href="#f"/>
-<use x="254.492188" xlink:href="#i"/>
+<use x="190.869141" xlink:href="#k"/>
+<use x="254.492188" xlink:href="#a"/>
 </g>
 <g transform="translate(1038.8 51.777) scale(.1 -.1)">
 <use xlink:href="#c"/>
@@ -564,12 +564,12 @@
 <use x="190.869141" xlink:href="#a"/>
 <use x="254.492188" xlink:href="#a"/>
 </g>
-<g transform="translate(1075.7 194.78) scale(.1 -.1)">
+<g transform="translate(1075.7 192.09) scale(.1 -.1)">
 <use xlink:href="#d"/>
 <use x="63.623047" xlink:href="#f"/>
-<use x="127.246094" xlink:href="#k"/>
-<use x="190.869141" xlink:href="#h"/>
-<use x="254.492188" xlink:href="#i"/>
+<use x="127.246094" xlink:href="#i"/>
+<use x="190.869141" xlink:href="#o"/>
+<use x="254.492188" xlink:href="#a"/>
 </g>
 <g transform="translate(407.84 23.16) scale(.16 -.16)">
 <defs>
