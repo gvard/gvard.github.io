@@ -54,10 +54,16 @@ a:link {
 }
 a:visited {color: rgb(70, 70, 255)}
 a:hover {text-decoration: underline;}
-nav ul li {display: inline-block;}
+nav ul {
+  margin-left: 0;
+  padding-left: 1em;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
 nav a {
   display: block;
-  padding: 0 10px;
   text-decoration: none;
 }
 img {vertical-align: middle;}

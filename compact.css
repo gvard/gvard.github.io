@@ -37,10 +37,16 @@ blockquote {
   color: red;
   font-weight: bold;
 }
-nav ul li {display: inline-block;}
+nav ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
 nav a {
   display: block;
-  padding: 0 10px;
   text-decoration: none;
 }
 nav a:hover {text-decoration: underline;}
@@ -60,4 +66,20 @@ a.hidden {color: rgb(205, 205, 255)}
   body {margin: 0 0 0.8em 0.8em;}
   nav ul li {display: block;}
   ul, ol {padding-left: 0;}
+}
+.cols {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.left {
+  max-width: 670px;
+  margin-right: 5%;
+  margin-bottom: 20px;
+}
+.right {
+  margin-right: 4%;
+}
+.right h2 {
+  margin-top: 0;
 }
