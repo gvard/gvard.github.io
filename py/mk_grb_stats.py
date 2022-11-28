@@ -1,6 +1,9 @@
+"""Python script for genererating an html page with list and a bar chart
+with localized GRBs statistics.
+Data source: https://www.mpe.mpg.de/~jcg/grbgen.html
+"""
+
 import os, ssl
-import pickle
-import urllib.request
 
 from beautifulsoup_supply import TAIL, mk_head, get_soup
 from plot_supply import plot_bar, optimize_svg
@@ -31,7 +34,8 @@ def get_grb(soup):
 soup = get_soup(GRB_URL)
 years, grbnums, opts = get_grb(soup)
 
-labels = ('Статистика гамма-всплесков по годам', 'Год', 'Открытий за год')
+labels = ('Статистика гамма-всплесков, локализованных в пределах 1 градуса',
+          'Год', 'Открытий за год', 'Оптические послесвечения')
 tmp_filename = 'grbs_plot_.svg'
 filename = 'grbs_plot.svg'
 grb_dir = os.path.join(os.pardir, 'grb')

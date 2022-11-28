@@ -1,5 +1,6 @@
 """Python script for genererating an html page
-with meteorites statistics. Data source: Meteoritical Bulletin
+with meteorites statistics.
+Data source: Meteoritical Bulletin Database https://www.lpi.usra.edu/meteor/
 """
 
 import os
@@ -31,7 +32,8 @@ for i in range(1600, 2021, 10):
     falls_doubtful.append(doubtful.count(decastr))
 
 
-labels = ('Статистика падений метеоритов по годам', 'Десятилетие', 'Падений за 10 лет')
+labels = ('Статистика падений метеоритов по годам', 'Десятилетие',
+          'Падений за 10 лет', 'Сомнительные падения (отсутствие или недоступность образцов)')
 tmp_filename = 'meteorites_plot_.svg'
 filename = 'meteorites_plot.svg'
 meteorites_dir = os.path.join(os.pardir, 'meteorites')

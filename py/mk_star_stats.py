@@ -1,3 +1,12 @@
+"""Python script for genererating an html page with lists and a bar chart with
+supernovae statistics.
+
+Data sources:
+* [David Bishop, Latest Supernovae Archives](https://www.rochesterastronomy.org/snimages/archives.html)
+* [Transient Name Server](https://www.wis-tns.org/stats-maps)
+* [SIMBAD Astronomical Database statistics](https://simbad.u-strasbg.fr/simbad/)
+"""
+
 import os
 import pickle
 import urllib.request
@@ -128,7 +137,7 @@ if file_ext == 'svg':
 
 
 labels = ('Статистика открытий сверхновых по годам', 'Год',
-          'Открытий сверхновых за год')
+          'Открытий сверхновых за год', 'Сверхновые, обнаруженные любителями')
 tmp_filename = 'snstats_plot_.' + file_ext
 filename = 'snstats_plot.' + file_ext
 tmp_pth = os.path.join(stars_dir, tmp_filename)
