@@ -1,8 +1,16 @@
 """Python module with supplement functons for matplotlib plots
 """
 
+import locale
+from datetime import datetime
+
 from scour import scour
 import matplotlib.pyplot as plt
+
+
+locale.setlocale(locale.LC_ALL, 'ru_RU')
+today = datetime.now()
+MONTH, YEAR = today.strftime("%B"), today.year
 
 
 def autolabel(rects1, rects2, ax):
@@ -23,7 +31,7 @@ def plot_bar(xes, data, data2, labels, pth, xlim, width=0.85, lab0=None):
     autolabel(p1, p2, ax)
     plt.xlabel(xlabel, fontsize=14)
     plt.ylabel(ylabel, fontsize=14)
-    plt.title(title, fontsize=16)
+    plt.title(title+f'. {MONTH} {YEAR} года', fontsize=16)
     plt.xticks(xes)
     if lab0:
         xes[0] = lab0

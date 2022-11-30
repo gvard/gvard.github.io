@@ -10,10 +10,13 @@ Data sources:
 import os
 import pickle
 import urllib.request
+from datetime import datetime
+import locale
 
 import matplotlib.pyplot as plt
-from beautifulsoup_supply import TAIL, mk_head, get_soup, get_soup_Request
+import matplotlib.dates as mdates
 
+from beautifulsoup_supply import TAIL, mk_head, get_soup, get_soup_Request
 from plot_supply import plot_bar, optimize_svg
 
 
@@ -86,10 +89,14 @@ for year in range(2000, 2023):
 snurls.append(('all', f'{SNIMAGES_URL}snstatsall.html'))
 
 snstats = {}
+locale.setlocale(locale.LC_ALL, 'ru_RU')
+today = datetime.now()
+MONTH, YEAR = today.strftime("%B"), today.year
 snstats_txt = f"""<h2><a href="{SNSTATS_URL}">Статистика вспышек сверхновых</a></h2>
 <ul>
 """
 years, sns, snalt, all_sne = [], [], [], []
+years_dt = []
 all_sn_count, sn_amateur_count = 0, 0
 for (year, snstats_url) in snurls:
     soup = get_soup(snstats_url)
@@ -101,11 +108,16 @@ for (year, snstats_url) in snurls:
         all_sne.append(all_sn_count)
         snstats_txt += f"<li><a href='{snstats_url}' target='_blank' rel='noopener noreferrer'>До 1996 года</a> открыто <b>{sn_num}</b> сверхновых, <b>{sn_amateur_count}</b> – любителями, <b>{sn_13th}</b> ярче 13-й зв. величины (<a href='{SNOTHER_URL}'>яркие сверхновые до 1996 года</a>).\n"
         years.append(year)
+        years_dt.append(datetime(year+1, 1, 1))
         sns.append(sn_num - sn_amateur)
         snalt.append(sn_amateur)
     elif year != "all":
         all_sne.append(all_sn_count)
         snstats_txt += f"<li><a href='{snstats_url}' target='_blank' rel='noopener noreferrer'>За {year} год</a> открыто <b>{sn_num}</b> сверхновых, <b>{sn_amateur}</b> – любителями, <b>{sn_13th}</b> ярче 13-й зв. величины. Всего к концу года открыто <b>{all_sn_count}</b>, <b>{sn_amateur_count}</b> – любителями.\n"
+        if year == YEAR:
+            years_dt.append(today)
+        else:
+            years_dt.append(datetime(year+1, 1, 1))
         years.append(year)
         sns.append(sn_num - sn_amateur)
         snalt.append(sn_amateur)
@@ -121,15 +133,17 @@ tmp_pth = os.path.join(stars_dir, tmp_filename)
 
 fig, ax = plt.subplots(figsize=(16, 9))
 plt.subplots_adjust(left=0.06, bottom=0.06, right=0.97, top=0.955)
+ax.xaxis.set_major_locator(mdates.YearLocator(1))
 
-plt.plot(years, all_sne, 'ok-')
+plt.plot(years_dt, all_sne, 'ok-')
+plt.xlim(datetime(1995, 4, 1), datetime(2023, 8, 1))
 plt.yscale("log")
-ax.minorticks_on()
-plt.title('Динамика открытий сверхновых', fontsize=16)
+plt.title(f'Динамика открытий сверхновых. {MONTH} {YEAR} года', fontsize=16)
 plt.xlabel('Время', fontsize=14)
 plt.ylabel('Количество открытых сверхновых', fontsize=14)
-plt.grid(which='major', linestyle='-')
-plt.grid(which='minor', linestyle='--')
+plt.grid(axis='y', which='major', linestyle='-')
+plt.grid(axis='x', which='major', linestyle=':')
+plt.grid(axis='y', which='minor', linestyle='--')
 plt.savefig(tmp_pth, dpi=240)
 if file_ext == 'svg':
     optimize_svg(tmp_pth, pth)
@@ -151,8 +165,8 @@ soup = get_soup_Request(TNS_STATS_URL)
 all_transient, public_transient, classified, spectra = get_tns(soup)
 
 snstats_txt += f"""</ul>
-<br><img src="../{filename}" alt=""><br>
-<img src="../{total_sne_filename}" alt="">
+<br><img src="https://github.com/gvard/astrodata/raw/main/plots/stars/sne_stats_bar_chart.svg" alt=""><br>
+<img src="https://github.com/gvard/astrodata/raw/main/plots/stars/sne_total_number_log_plot.svg" alt="">
 <h2><a href="{TNS_URL}">Transient Name Server</a></h2>
 <a href="{TNS_STATS_URL}" target="_blank" rel="noopener noreferrer">статистика</a>:<br>
 <ul>
