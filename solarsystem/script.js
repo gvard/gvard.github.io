@@ -68,10 +68,9 @@ function toSort(classNam) {
     sortFunction = getDeltaV;
   doSort(sortFunction, classNam);
 }
-function show(divImg) {
+function show(divImg, imgPth) {
   const obj = divImg.parentElement;
-  let name = obj.getElementsByClassName("name")[0].getElementsByTagName("a")[0].innerText;
-  name = mkPar('<b>', name, '</b>');
+  let name = divImg.getElementsByTagName('img')[0].alt;
   let size = obj.getElementsByClassName("size")[0].innerText;
   size = mkPar('Радиус: ', size, '&nbsp;км');
   let mass = obj.getElementsByClassName("mass")[0].innerText;
@@ -91,7 +90,10 @@ function show(divImg) {
     desc = mkPar('', desc[0].innerText, '');
   else
     desc = "";
-  const contentToShow = divImg.innerHTML + name + type + size + mass + date + deltaV + desc;
+  if (!imgPth) {
+    imgPth = divImg.getElementsByTagName('img')[0].src;
+  }
+  const contentToShow = `<img src="${imgPth}"><h2>${name}</h2>` + type + size + mass + date + deltaV + desc;
   toShow(contentToShow);
 }
 function getToday() {
