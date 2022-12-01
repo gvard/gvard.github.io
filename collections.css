@@ -43,6 +43,13 @@ ul, ol {
   height: auto;
   z-index: 2;
 }
+#controls {
+  border: 3px solid black;
+  width: fit-content;
+  padding: 15px;
+  margin: 10px 0;
+  max-width: 1000px;
+}
 h1 {
   text-align: center;
   font-weight: bold;
