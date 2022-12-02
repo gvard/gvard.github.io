@@ -68,6 +68,15 @@ function mkType(className, OBJTYPES) {
   }
   return type.replace(/,\s*$/, "");
 }
+function uncheckAll(isChecked){
+  let inputs = document.getElementById('props').getElementsByTagName("input");
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].type == 'checkbox') {
+      inputs[i].checked = isChecked;
+    }
+  }
+  showHideThis(document.getElementsByName(".obj")[0])
+}
 function toShow(contentToShow) {
   let contents = document.getElementById('contents');
   contents.innerHTML = contentToShow;
