@@ -41,7 +41,7 @@
 <button onclick="uncheckAll(true)">Вкл</button><button onclick="uncheckAll(false)">Выкл</button><br>
 <b>Картинка:</b><br>
 <input type="checkbox" name=".dot,.lowcontrast" checked onchange="showHideThis(this)">Низкое разрешение/точечное
-<input type="checkbox" name=".highcontrast,.lightcurve" checked onchange="showHideThis(this)">Восстановленное изображение/модель
+<input type="checkbox" name=".highcontrast,.lightcurve,.model" checked onchange="showHideThis(this)">Восстановленное изображение/модель
 <input type="checkbox" name=".lightcurve" checked onchange="showHideThis(this)">Модель по кривой блеска
 <input type="checkbox" name=".radarimage" checked onchange="showHideThis(this)">Радарное изображение
 <input type="checkbox" name=".animation" checked onclick="showHideThis(this)">Анимация
@@ -66,8 +66,9 @@
 <br>
 <b>Свойства:</b><br>
 <input type="checkbox" name=".he" checked onchange="showHideThis(this)">«Круглые» тела (в гидростатическом равновесии)
-<input type="checkbox" name=".havesats" checked onchange="showHideThis(this)">Имеют спутники/луны
-<input type="checkbox" name=".binary" checked onchange="showHideThis(this)">Двойные тела
+<input type="checkbox" name=".havesats" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Minor-planet_moon" target="_blank" rel="noopener noreferrer">Имеют спутники/луны</a>
+<input type="checkbox" name=".binary" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Binary_asteroid" target="_blank" rel="noopener noreferrer">Двойные тела</a>
+<input type="checkbox" name=".contactbinary" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Contact_binary_(small_Solar_System_body)" target="_blank" rel="noopener noreferrer">Контактные двойные</a>
 <br>
 <b>Космонавтика:</b><br>
 <input type="checkbox" name=".visited" checked onclick="showHideThis(this)">Посещенные АМС
@@ -94,7 +95,7 @@
 <div class="name"><a href="https://en.wikipedia.org/wiki/Sun">Солнце</a></div>
 <div class="size">696342±65</div>
 <div class="mass">1.9885E30</div>
-<div class="date"></div>
+<div class="date">&nbsp;</div>
 <div class="delta-v">&gt;21</div>
 <div class="desc">В составе Солнца всего 1.48% элементов тяжелее Водорода и Гелия</div>
 </div><div class="obj pla he visited orbited">
@@ -102,14 +103,14 @@
 <div class="name"><a href="https://en.wikipedia.org/wiki/Jupiter">Юпитер</a></div>
 <div class="size">69911±6</div>
 <div class="mass">1.898E27</div>
-<div class="date"></div>
+<div class="date">&nbsp;</div>
 <div class="delta-v">6.6-23.78</div>
 </div><div class="obj pla he visited orbited">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Saturnoppositions-animated.gif')" onmouseout="hide()"><img alt="Сатурн" src="images/Saturn.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Saturn">Сатурн</a></div>
 <div class="size">58232±6</div>
 <div class="mass">5.6834E26</div>
-<div class="date"></div>
+<div class="date">&nbsp;</div>
 <div class="delta-v">&gt;7.71</div>
 </div><div class="obj pla he visited flyby">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Уран" src="images/Uranus.jpg"></div>
@@ -131,7 +132,7 @@
 <div class="name"><a href="https://en.wikipedia.org/wiki/Earth">Земля</a></div>
 <div class="size">6371.0</div>
 <div class="mass">5.972E24</div>
-<div class="date"></div>
+<div class="date">&nbsp;</div>
 <div class="delta-v">0</div>
 <div class="desc">Планета с самой большой плотностью в Солнечной системе: 5.514 г/см**3. Здесь живет 8 миллиардов человек.</div>
 </div><div class="obj pla he radar visited orbited">
@@ -139,7 +140,7 @@
 <div class="name"><a href="https://en.wikipedia.org/wiki/Venus">Венера</a></div>
 <div class="size">6051.8±1.0</div>
 <div class="mass">4.8675E24</div>
-<div class="date"></div>
+<div class="date">&nbsp;</div>
 <div class="delta-v">6.79</div>
 </div><div class="obj pla he radar visited orbited">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Марс" src="images/Mars.jpg"></div>
@@ -168,7 +169,7 @@
 <div class="name"><a href="https://en.wikipedia.org/wiki/Mercury_(planet)">Меркурий</a></div>
 <div class="size">2439.7±1.0</div>
 <div class="mass">3.3011E23</div>
-<div class="date"></div>
+<div class="date">&nbsp;</div>
 <div class="delta-v">13.2</div>
 </div><div class="obj ju he moon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Каллисто (спутник)" src="images/Callisto.jpg"></div>
@@ -206,7 +207,7 @@
 <div class="mass">2.14E22</div>
 <div class="date">10.10.1846</div>
 <div class="delta-v">&gt;7.7</div>
-</div><div class="obj dw tno he visited flyby">
+</div><div class="obj dw tno he havesats visited flyby">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(134340) Плутон" src="images/Pluto.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Pluto">Плутон</a></div>
 <div class="size">1188.3±0.8</div>
@@ -214,14 +215,14 @@
 <div class="date">18.02.1930</div>
 <div class="delta-v">12.7</div>
 <div class="desc">Клайд Томбо открыл Плутон на снимках от 23 и 29 января 1930 г.</div>
-</div><div class="obj dw tno he dot">
+</div><div class="obj dw tno havesats he dot">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(136199) Эрида" src="images/Eris.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Eris_(dwarf_planet)">Эрида</a></div>
 <div class="size">1163±6</div>
 <div class="mass">1.66±0.02E22</div>
 <div class="date">21.10.2003</div>
 <div class="delta-v">16.0</div>
-</div><div class="obj dw tno he dot">
+</div><div class="obj dw tno havesats he dot">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(136108) Хаумеа" src="images/Haumea.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Haumea">Хаумеа</a></div>
 <div class="size">798±6–816</div>
@@ -256,14 +257,14 @@
 <div class="mass">1.81E21</div>
 <div class="date">25.10.1671</div>
 <div class="delta-v">&gt;7.7</div>
-</div><div class="obj dw tno dot he">
+</div><div class="obj dw tno havesats dot he">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(136472) Макемаке" src="images/Makemake.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Makemake">Макемаке</a></div>
 <div class="size">710−750</div>
 <div class="mass">4.4E21</div>
 <div class="date">31.03.2005</div>
 <div class="delta-v">14.3</div>
-</div><div class="obj tno dot he">
+</div><div class="obj tno havesats dot he">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Xiangliu_orbiting_225088_Gonggong_%282009-2010%29.jpg/330px-Xiangliu_orbiting_225088_Gonggong_%282009-2010%29.jpg')" onmouseout="hide()"><img alt="(225088) Gonggong" src="images/Gonggong.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/225088_Gonggong">Гун-гун</a></div>
 <div class="size">615±25</div>
@@ -299,7 +300,7 @@
 <div class="mass">1.095E21</div>
 <div class="date">21.03.1684</div>
 <div class="delta-v">&gt;7.7</div>
-</div><div class="obj tno dot he">
+</div><div class="obj tno havesats dot he">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(50000) Quaoar" src="images/Quaoar.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/50000_Quaoar">Квавар</a></div>
 <div class="size">560.5±0.6</div>
@@ -336,14 +337,14 @@
 <div class="date">18.06.2002</div>
 <div class="delta-v">13.0</div>
 <div class="desc">Из наблюдений покрытия звезд в 2019–2020 годах получены оценки размера 808 на 748 км</div>
-</div><div class="obj tno dot he">
+</div><div class="obj tno havesats dot he">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Orcus-Vanth.gif/330px-Orcus-Vanth.gif')" onmouseout="hide()"><img alt="(90482) Orcus" src="images/Orcus.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/90482_Orcus">Орк</a></div>
 <div class="size">458±13</div>
 <div class="mass">6.4±0.2E20</div>
 <div class="date">17.02.2004</div>
 <div class="delta-v">13.2</div>
-</div><div class="obj tno dot he">
+</div><div class="obj tno havesats dot he">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(120347) Salacia" src="images/Salacia.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/120347_Salacia">Салация</a></div>
 <div class="size">446.5±11</div>
@@ -398,7 +399,7 @@
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Протей (спутник)" src="images/Proteus.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Proteus_(moon)">Протей</a></div>
 <div class="size">210±7</div>
-<div class="mass">0.44E20</div>
+<div class="mass">4.4E19</div>
 <div class="date">16.06.1989</div>
 <div class="delta-v">&gt;7.7</div>
 </div><div class="obj sat he moon">
@@ -620,18 +621,18 @@
 <div class="mass"><a href="https://solarsystem.nasa.gov/moons/saturn-moons/helene/by-the-numbers/">1.139E16</a></div>
 <div class="date">01.03.1980</div>
 <div class="delta-v">&gt;7.7</div>
-</div><div class="obj tno visited flyby">
+</div><div class="obj tno contactbinary visited flyby">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(486958) Arrokoth" src="images/Arrokoth.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/486958_Arrokoth">Аррокот</a></div>
 <div class="size">15.85±0.25</div>
 <div class="mass"><a href="https://jenab6.livejournal.com/85249.html">1.25E16</a></div>
 <div class="date">26.06.2014</div>
 <div class="delta-v">12.378</div>
-</div><div class="obj mab havesats visited animation flyby">
-<div class="img" onmouseover="show(this, 'images/Ida-big.gif')" onmouseout="hide()"><a href="https://upload.wikimedia.org/wikipedia/commons/1/15/Ida-approach.gif" target="_blank" rel="noopener noreferrer"><img alt="(243) Ida" src="images/Ida.jpg"></a></div>
+</div><div class="obj mab havesats binary visited animation flyby">
+<div class="img" onmouseover="show(this, 'images/Ida-big.gif')" onmouseout="hide()"><img alt="(243) Ida" src="images/Ida.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/243_Ida">Ида</a></div>
 <div class="size">15.7</div>
-<div class="mass">42±6E15</div>
+<div class="mass">4.2±6E16</div>
 <div class="date">29.09.1884</div>
 <div class="delta-v">10.3</div>
 </div><div class="obj sat moon">
@@ -723,7 +724,7 @@
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img  alt="Daphnis (moon)" src="images/Daphnis.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Daphnis_(moon)">Дафнис</a></div>
 <div class="size">3.8±0.8</div>
-<div class="mass">77.93E12</div>
+<div class="mass">7.79E13</div>
 <div class="date">01.05.2005</div>
 <div class="delta-v">&gt;7.7</div>
 </div><div class="obj co jfc visited flyby">
@@ -788,11 +789,11 @@
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="3122 Florence" src="images/Florence.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/3122_Florence">Флоренс</a></div>
 <div class="size">2.1</div>
-<div class="mass"></div>
+<div class="mass">7.9E13</div>
 <div class="date">02.03.1981</div>
 <div class="delta-v">8.2</div>
 <div class="desc"></div>
-</div><div class="obj co jfc visited orbited">
+</div><div class="obj co jfc contactbinary visited orbited">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="67P/Churyumov–Gerasimenko" src="images/ChuryumovGerasimenko.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/67P/Churyumov–Gerasimenko">Чурюмова-</a></div>
 <div class="size">2</div>
@@ -842,6 +843,13 @@
 <div class="mass">3E13</div>  <!-- https://photojournal.jpl.nasa.gov/catalog/?IDNumber=PIA08209 -->
 <div class="date">24.10.2004</div>
 <div class="delta-v">&gt;7.7</div>
+</div><div class="obj neo pha havesats radar radarimage">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(153591) 2001 SN263" src="images/2001SN263.jpg"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/(153591)_2001_SN263">2001 SN263</a></div>
+<div class="size">1.25</div>
+<div class="mass">9.17E12</div>
+<div class="date">20.09.2001</div>
+<div class="delta-v">6.1</div>
 </div><div class="obj neo pha radar radarimage animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(52768) 1998 OR2" src="images/1998OR2.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(52768)_1998_OR2">1998 OR2</a></div>
@@ -863,7 +871,15 @@
 <div class="mass">7.8E15</div>
 <div class="date">27.05.1992</div>
 <div class="delta-v">10.93</div>
-</div><div class="obj mab visited flyby satellite">
+</div><div class="obj neo pha contactbinary radar model animation">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="4769 Castalia" src="images/Castalia.gif"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/4769_Castalia">Касталия</a></div>
+<div class="size">0.7</div>
+<div class="mass"></div>
+<div class="date">09.08.1989</div>
+<div class="delta-v">8.5</div>
+<div class="desc">Первый астероид, для которого была рассчитана трехмерная модель по радиолакационным данным</div>
+</div><div class="obj mab binary visited flyby satellite">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Dactyl" src="images/Dactyl.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/243_Ida#Dactyl">Дактиль</a></div>
 <div class="size">0.7</div>
@@ -929,14 +945,14 @@
 <div class="date">10.05.1999</div>
 <div class="delta-v">4.663</div>
 <div class="desc">Миссия Hayabusa2 прибыла к астероиду 27.06.2018.</div>
-</div><div class="obj neo pha radar radarimage animation">
+</div><div class="obj neo pha contactbinary radar radarimage animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="2014 JO25" src="images/2014JO25.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2014_JO25">2014 JO25</a></div>
 <div class="size">0.4</div>
 <div class="mass"></div>
 <div class="date">05.05.2014</div>
 <div class="delta-v">13.173</div>
-</div><div class="obj neo pha havesats radar visited flyby">
+</div><div class="obj neo pha havesats binary radar visited flyby">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(65803) Didymos" src="images/Didymos_dimorphos.png" width="100"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/65803_Didymos">Дидим</a></div>
 <div class="size">0.39</div>
@@ -997,7 +1013,7 @@
 <div class="date">28.12.2005</div>
 <div class="delta-v">6.9</div>
 <div class="desc"></div>
-</div><div class="obj neo pha visited orbited">
+</div><div class="obj neo pha contactbinary visited orbited">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(25143) Itokawa" src="images/Itokawa.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/25143_Itokawa">Итокава</a></div>
 <div class="size">0.173</div>
@@ -1013,7 +1029,7 @@
 <div class="date">19.06.2004</div>
 <div class="delta-v">5.688</div>
 <div class="desc">Больше не потенциально опасный астероид. До 2013 г. вероятность столкновения была сильно переоценена.</div>
-</div><div class="obj neo pha radar radarimage">
+</div><div class="obj neo pha contactbinary radar radarimage">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="2014 HQ124" src="images/2014HQ124.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2014_HQ124">2014 HQ124</a></div>
 <div class="size">0.163</div>
@@ -1028,11 +1044,11 @@
 <div class="mass"></div>
 <div class="date">30.01.2004</div>
 <div class="delta-v">8.705</div>
-</div><div class="obj neo pha satellite binary animation visited flyby">
+</div><div class="obj neo pha satellite binary radar animation visited flyby">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Dimorphos" src="images/Dimorphos.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Dimorphos">Диморф</a></div>
 <div class="size">0.085</div>
-<div class="mass"></div>
+<div class="mass">5E9</div>
 <div class="date">20.11.2003</div>
 <div class="delta-v">5.162</div>
 </div><div class="obj neo pha radar radarimage animation">
@@ -1057,17 +1073,19 @@
 <div class="cont">
 <h3>Очередь объектов для добавления в таблицу</h3>
 <ul>
-  <li><a href="https://en.wikipedia.org/wiki/54509_YORP" target="_blank" rel="noopener noreferrer">54509 YORP</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/6489_Golevka" target="_blank" rel="noopener noreferrer">6489 Голевка</a></li>
   <li><a href="https://en.wikipedia.org/wiki/15_Eunomia" target="_blank" rel="noopener noreferrer">15 Эвномия</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/31_Euphrosyne" target="_blank" rel="noopener noreferrer">31 Euphrosyne</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/31_Euphrosyne" target="_blank" rel="noopener noreferrer">31 Евфросина</a></li>
   <li><a href="https://en.wikipedia.org/wiki/52_Europa" target="_blank" rel="noopener noreferrer">52 Европа</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/87_Sylvia" target="_blank" rel="noopener noreferrer">87 Sylvia</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/87_Sylvia" target="_blank" rel="noopener noreferrer">87 Сильвия</a></li>
   <li><a href="https://en.wikipedia.org/wiki/216_Kleopatra" target="_blank" rel="noopener noreferrer">216 Клеопатра</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/532_Herculina" target="_blank" rel="noopener noreferrer">532 Herculina</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/944_Hidalgo" target="_blank" rel="noopener noreferrer">944 Hidalgo</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/532_Herculina" target="_blank" rel="noopener noreferrer">532 Геркулина</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/944_Hidalgo" target="_blank" rel="noopener noreferrer">944 Идальго</a></li>
   <li><a href="https://en.wikipedia.org/wiki/1036_Ganymed" target="_blank" rel="noopener noreferrer">1036 Ганимед</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/367943_Duende" target="_blank" rel="noopener noreferrer">367943 Duende</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/4660_Nereus" target="_blank" rel="noopener noreferrer">4660 Нерей</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/6489_Golevka" target="_blank" rel="noopener noreferrer">6489 Голевка</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/54509_YORP" target="_blank" rel="noopener noreferrer">54509 YORP</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/367943_Duende" target="_blank" rel="noopener noreferrer">367943 Дуэнде</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/2016_AJ193" target="_blank" rel="noopener noreferrer">2016 AJ193</a></li>
   <li><a href="https://en.wikipedia.org/wiki/List_of_asteroid_close_approaches_to_Earth" target="_blank" rel="noopener noreferrer">List of asteroid close approaches to Earth</a></li>
 </ul>
 </div>
