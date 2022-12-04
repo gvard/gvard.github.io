@@ -101,7 +101,7 @@ div.img {
   font-size: 0.9em;
   color: white;
 }
-@media (max-width: 625px) {
+@media (max-width: 900px) {
   .cont {
     padding: 0 0 0.4em 2px;
   }
