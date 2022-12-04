@@ -15,15 +15,14 @@
 <body onload="findDate()">
 <nav class="menu">
 <ul>
-<li><a href="../collections/">Коллекции:</a></li>
-<li>Солнечная система</li>
-<li><a href="../stars/">Звезды</a></li>
-<li><a href="../exoplanets/">Экзопланеты</a></li>
-<li><a href="../clusters/">Звездные скопления</a></li>
-<li><a href="../galaxies/">Галактики</a></li>
+<li><a href="../">Главная</a></li>
+<li><a href="../collections/">Коллекции</a></li>
+<li><a href="#controls">Управление инфографикой</a></li>
+<li><a href="#tab">Инфографика</a></li>
+<li><a href="#description">Описание</a></li>
+<li><a href="#links">Ссылки</a></li>
 </ul>
 </nav>
-
 <div id="messageBox">
 <div id="contents"></div>
 </div>
@@ -439,10 +438,17 @@
 <div class="date">16.09.1848</div>
 <div class="delta-v">&gt;7.7</div>
 </div><div class="obj mab highcontrast">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(15) Eunomia" src="images/Eunomia.png"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/15_Eunomia">Эвномия</a></div>
+<div class="size">135±1.5</div>
+<div class="mass">3.1±0.2E19</div>
+<div class="date">29.07.1851</div>
+<div class="delta-v">9.9</div>
+</div><div class="obj mab highcontrast">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(3) Juno" src="images/Juno.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/3_Juno">Юнона</a></div>
-<div class="size">135.7±11</div>
-<div class="mass">2.9±0.5E19</div>
+<div class="size">127±1</div>
+<div class="mass">2.7±0.2E19</div>
 <div class="date">01.09.1804</div>
 <div class="delta-v">9.7</div>
 </div><div class="obj mab highcontrast">
@@ -998,8 +1004,8 @@
 <div class="mass"></div>
 <div class="date">25.10.2011</div>
 <div class="delta-v">5.189</div>
-</div><div class="obj neo pha radar radarimage">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(33342) 1998 WT24" src="images/1998WT24.jpg"></div>
+</div><div class="obj neo pha radar radarimage animation">
+<div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/0/03/%2833342%29_1998_WT24_bistatic_radar_image.gif')" onmouseout="hide()"><img alt="(33342) 1998 WT24" src="images/1998WT24.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(33342)_1998_WT24">1998 WT24</a></div>
 <div class="size">0.205</div>
 <div class="mass">7.8E10</div> <!-- 2008cosp...37..984G -->
@@ -1073,24 +1079,25 @@
 <div class="cont">
 <h3>Очередь объектов для добавления в таблицу</h3>
 <ul>
-  <li><a href="https://en.wikipedia.org/wiki/15_Eunomia" target="_blank" rel="noopener noreferrer">15 Эвномия</a></li>
   <li><a href="https://en.wikipedia.org/wiki/31_Euphrosyne" target="_blank" rel="noopener noreferrer">31 Евфросина</a></li>
   <li><a href="https://en.wikipedia.org/wiki/52_Europa" target="_blank" rel="noopener noreferrer">52 Европа</a></li>
   <li><a href="https://en.wikipedia.org/wiki/87_Sylvia" target="_blank" rel="noopener noreferrer">87 Сильвия</a></li>
   <li><a href="https://en.wikipedia.org/wiki/216_Kleopatra" target="_blank" rel="noopener noreferrer">216 Клеопатра</a></li>
   <li><a href="https://en.wikipedia.org/wiki/532_Herculina" target="_blank" rel="noopener noreferrer">532 Геркулина</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/624_Hektor" target="_blank" rel="noopener noreferrer">624 Гектор</a></li>
   <li><a href="https://en.wikipedia.org/wiki/944_Hidalgo" target="_blank" rel="noopener noreferrer">944 Идальго</a></li>
   <li><a href="https://en.wikipedia.org/wiki/1036_Ganymed" target="_blank" rel="noopener noreferrer">1036 Ганимед</a></li>
   <li><a href="https://en.wikipedia.org/wiki/4660_Nereus" target="_blank" rel="noopener noreferrer">4660 Нерей</a></li>
   <li><a href="https://en.wikipedia.org/wiki/6489_Golevka" target="_blank" rel="noopener noreferrer">6489 Голевка</a></li>
   <li><a href="https://en.wikipedia.org/wiki/54509_YORP" target="_blank" rel="noopener noreferrer">54509 YORP</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/174567_Varda" target="_blank" rel="noopener noreferrer">174567 Варда</a></li>
   <li><a href="https://en.wikipedia.org/wiki/367943_Duende" target="_blank" rel="noopener noreferrer">367943 Дуэнде</a></li>
   <li><a href="https://en.wikipedia.org/wiki/2016_AJ193" target="_blank" rel="noopener noreferrer">2016 AJ193</a></li>
   <li><a href="https://en.wikipedia.org/wiki/List_of_asteroid_close_approaches_to_Earth" target="_blank" rel="noopener noreferrer">List of asteroid close approaches to Earth</a></li>
 </ul>
 </div>
 
-<div class="cont">
+<div class="cont" id="description">
 <p>Этот список тел Солнечной системы содержит:</p>
 <ul>
   <li>Все известные тела в гидростатическом равновесии, то есть, имеющие близкую к сферической форму (39 штук)</li>
@@ -1172,15 +1179,6 @@
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Small_Asteroids_and_Comets_Visited_by_Spacecraft.jpg/640px-Small_Asteroids_and_Comets_Visited_by_Spacecraft.jpg"></a><br>
   На этой картинке в масштабе изображены 18 из 20 астероидов, сфотографированные до декабря 2018 года.
 </p><br>
-<p>Размер ядер комет – 0.2–45 км. Красные треугольники –
-  кометы семейства Юпитера, синие треугольники – долгопериодические кометы:<br>
-  <a href="https://ui.adsabs.harvard.edu/abs/2017AJ....154...53B/abstract" target="_blank" rel="noopener noreferrer">
-    <img src="https://ic.pics.livejournal.com/za_neptunie/70387688/1800067/1800067_800.jpg"
-      alt="" title="NEOWISE comet diameters vs. heliocentric distance at the time of observation by NEOWISE.
-The red triangles are JFCs, and the blue triangles are LPCs.
-The selection bias against small objects at large heliocentric distances is apparent, as well as inherent to a flux-limited survey">
-  </a><br>
-</p><br>
 
 <h2>Тела Солнечной системы: материалы и подборки ссылок</h2>
 <ul>
@@ -1191,7 +1189,7 @@ The selection bias against small objects at large heliocentric distances is appa
   <li><a href="../asteroids/">Астероиды</a></li>
 </ul>
 
-<h2>Ссылки:</h2>
+<h2 id="links">Ссылки:</h2>
 <ul>
   <li><a href="https://en.wikipedia.org/wiki/Discovery_and_exploration_of_the_Solar_System" target="_blank" rel="noopener noreferrer">Discovery and exploration of the Solar System</a>;
     <a href="https://en.wikipedia.org/wiki/Solar_System#Visual_summary" target="_blank" rel="noopener noreferrer">Solar System#Visual summary</a></li>
@@ -1211,9 +1209,10 @@ The selection bias against small objects at large heliocentric distances is appa
     <a href="https://cneos.jpl.nasa.gov/nhats/" target="_blank" rel="noopener noreferrer">Accessible NEAs</a>.
     <a href="https://ssd-api.jpl.nasa.gov/" target="_blank" rel="noopener noreferrer">PL SSD/CNEOS API</a>,
     <a href="https://ssd-api.jpl.nasa.gov/nhats.api?dv=6&dur=390&stay=8&launch=2020-2045&h=26&occ=7" target="_blank"  rel="noopener noreferrer">example request</a>.</li>
+  <li><a href="https://ui.adsabs.harvard.edu/abs/2021A%26A...654A..56V/abstract" target="_blank" rel="noopener noreferrer">VLT/SPHERE imaging survey of the largest main-belt asteroids: Final results and synthesis</a></li>
 </ul>
 
-<h2>Списки и статистика</h2>
+<h3>Списки и статистика</h3>
 <ul>
   <li><a href="http://www.gps.caltech.edu/~mbrown/dps.html">страница М. Брауна о карликовых планетах</a>,
     <a href="https://en.wikipedia.org/wiki/List_of_possible_dwarf_planets" target="_blank" rel="noopener noreferrer">список возможных карликовых планет</a>,

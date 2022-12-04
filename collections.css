@@ -21,9 +21,10 @@ ul, ol {
   display: flex;
   flex-wrap: wrap;
   max-width: 1621px;
-  min-width: 408px;
+  min-width: 306px;
   margin: auto;
   margin-bottom: 1em;
+  padding: 1em;
 }
 #messageBox {
   display: none;
@@ -46,7 +47,7 @@ ul, ol {
 #controls {
   border: 3px solid black;
   width: fit-content;
-  padding: 15px;
+  padding: 10px;
   margin: 10px 0;
   max-width: 1000px;
 }
@@ -90,7 +91,11 @@ div.img {
   background-color: black;
 }
 .desc {display: none;}
-.cont {padding: 1em;}
+.cont {
+  padding: 1em;
+  max-width: 1621px;
+  min-width: 306px;
+}
 .name {background-color: #ffe7c8;}
 .info_field {
   font-size: 0.9em;
@@ -98,12 +103,22 @@ div.img {
 }
 @media (max-width: 625px) {
   .cont {
-    padding: 0;
-    padding-left: 0.5em;
-    padding-bottom: 0.4em;
+    padding: 0 0 0.4em 2px;
+  }
+  #tab {
+    padding: 0 0 0.4em 2px;
+  }
+  #controls {
+    margin: 4px 2px 2px 0;
   }
   .info_field {
     font-size: 0.82em;
     color: white;
+  }
+  nav ul {
+    padding-left: 4px;
+  }
+  nav ul li {
+    margin-right: 2px;
   }
 }
