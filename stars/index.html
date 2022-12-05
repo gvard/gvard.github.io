@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="description" content="Коллекции астрономических объектов: звезды с разрешенными дисками или околозвездным окружением">
 <title>Звезды</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="stylesheet" href="../collections.css">
 <link rel="stylesheet" href="style.css">
 <script src="../collections.js"></script>
@@ -14,21 +15,21 @@
 <body onload="ObjParams()">
 <nav class="menu">
 <ul>
-<li><a href="../collections/">Коллекции:</a></li>
-<li><a href="../solarsystem/">Солнечная система</a></li>
-<li><a href="../exoplanets/">Экзопланеты</a></li>
-<li><a href="../clusters/">Звездные скопления</a></li>
-<li><a href="../galaxies/">Галактики</a></li>
+<li><a href="../">Главная</a></li>
+<li><a href="../collections/">Коллекции</a></li>
+<li><a href="#controls">Управление инфографикой</a></li>
+<li><a href="#tab">Инфографика</a></li>
+<li><a href="#description">Описание</a></li>
+<li><a href="#links">Ссылки</a></li>
 </ul>
 </nav>
 
 <div id="messageBox">
 <div id="contents"></div>
 </div>
-
 <h1>Звезды не как точки</h1>
-
 <div class="cont">
+<div id="controls">
 <input type="checkbox" name=".name" value="block" checked onclick="showHideThis(this)">Имя,
 <input type="checkbox" name=".angular" value="block" onclick="showHideThis(this)">Угловой диаметр,
 <input type="checkbox" name=".size" value="block" checked onclick="showHideThis(this)">Радиус,
@@ -37,11 +38,13 @@
 <input type="checkbox" name=".temp" value="block" checked onclick="showHideThis(this)">Эффективная температура,
 <input type="checkbox" name=".mag" value="block" onclick="showHideThis(this)">Зв. величина (V),
 <input type="checkbox" name=".jmag" value="block" onclick="showHideThis(this)">Зв. величина (J).<br>
-<input type="checkbox" name=".animation" value="block" checked onclick="showHideThis(this)">С анимированными картинками,
-<input type="checkbox" name=".low" value="block" checked onclick="showHideThis(this)">низкое разрешение.<br>
-Сортировать: <button onclick="toSort('size')">по возрастанию размера</button>
+<b>Картинка:</b>
+<input type="checkbox" name=".animation" value="block" checked onclick="showHideThis(this)">Анимация
+<input type="checkbox" name=".low" value="block" checked onclick="showHideThis(this)">Низкое разрешение<br>
+<b>Сортировать:</b> <button onclick="toSort('size')">по возрастанию размера</button>
 <button onclick="toSort('mass')">по возрастанию массы</button>
 <!-- <button onclick="toSort('mag')">по возрастанию звездной величины</button> -->
+</div>
 </div>
 
 <div id="tab">
@@ -364,16 +367,16 @@
 </div>
 </div>
 
-<div class="cont">
+<div class="cont" id="description">
 <p>Этот список звезд содержит:</p>
 <ul>
   <li>Звезды из <a href="https://en.wikipedia.org/wiki/List_of_stars_with_resolved_images" target="_blank" rel="noopener noreferrer">списка разрешенных звезд</a></li>
   <li>Звезды из
     <a href="https://www.jmmc.fr/english/tools/data-bases/jmdc-71/" target="_blank" rel="noopener noreferrer">каталога</a>
-    <a href="https://cdsarc.unistra.fr/viz-bin/cat/II/345" target="_blank" rel="noopener noreferrer">JMDC: JMMC Measured Stellar Diameters Catalogue</a>: II/345,<br>
-    <img src="http://cdsarc.u-strasbg.fr//ftp/cats/II/345/+footg8.gif" alt=""><br>
+    <a href="https://cdsarc.u-strasbg.fr/viz-bin/Cat?II/345" target="_blank" rel="noopener noreferrer">JMDC: JMMC Measured Stellar Diameters Catalogue</a>: II/345,<br>
+    <img src="http://cdsarc.u-strasbg.fr//ftp/cats/II/345/+footg8.gif" class="w" alt=""><br>
     а также <a href="http://cdsarc.u-strasbg.fr/viz-bin/Cat?II/346" target="_blank" rel="noopener noreferrer">JMMC Stellar Diameters Catalogue - JSDC. Version 2</a>: II/346.<br>
-    <img src="http://cdsarc.u-strasbg.fr//ftp/cats/II/346/+footg8.gif" alt=""><br>
+    <img src="http://cdsarc.u-strasbg.fr//ftp/cats/II/346/+footg8.gif" class="w" alt=""><br>
     <a href="https://www.jmmc.fr/english/tools/proposal-preparation/getstar-61/" target="_blank" rel="noopener noreferrer">GetStar</a> utility,<br>
     Статья: <a href="https://doi.org/10.1051/0004-6361/201527484" target="_blank" rel="noopener noreferrer">Pseudomagnitudes and differential surface brightness: Application to the apparent diameter of stars</a>,<br>
     <a href="http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/367/521" target="_blank" rel="noopener noreferrer">Catalogue of Stellar Diameters (CADARS)</a>.
@@ -386,25 +389,17 @@
 <p>А также:<br>
   <a href="https://ui.adsabs.harvard.edu/abs/2012ApJ...753..156K/abstract" target="_blank" rel="noopener noreferrer">Близкие звезды</a>,
   звезды и белые карлики в окрестности 8 парсек:<br>
-<img src="images/nearest8pc.png" width="650" alt=""><br>
+<img src="images/nearest8pc.png" class="w" style="max-width: 650px" alt=""><br>
 <a href="https://gruze.org/galaxymap/10pc/" target="_blank" rel="noopener noreferrer">Карта в окрестности 10 парсек</a>,<br>
   <a href="https://ui.adsabs.harvard.edu/abs/2021A%26A...650A.201R/abstract" target="_blank" rel="noopener noreferrer">звезды и белые карлики в окрестности 10 парсек</a>:<br>
-<img src="images/nearest10pc.png" width="650" alt=""><br>
+<img src="images/nearest10pc.png" class="w" style="max-width: 650px" alt=""><br>
 Гиганты и сверхгиганты<br>
-<img src="images/biggest_angular.jpg" alt=""><br>
+<img src="images/biggest_angular.jpg" style="max-width: 650px" class="w" alt=""><br>
 Быстро вращающиеся звезды<br>
 <a href="http://www.chara.gsu.edu/science-highlights/rapid-rotators" target="_blank" rel="noopener noreferrer"><img src="http://www.chara.gsu.edu/files/images/rapid_rotator_crop.png" alt=""></a>
 </p>
 
-
-<p>Замечания:</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Betelgeuse" target="_blank" rel="noopener noreferrer">Бетельгейзе</a>
-&ndash; первая звезда, угловой диаметр которой измерен методом интерферометрии. Измерения были проведены 13 декабря 1920 года.</li>
-<li><a href="https://en.wikipedia.org/wiki/Eta_Carinae" target="_blank" rel="noopener noreferrer">Эта Киля</a>.</li>
-</ul>
-
-<p>Дополнительные источники:</p>
+<h2 id="links">Ссылки</h2>
 <ul>
   <li><a href="https://postnauka.ru/longreads/88757" target="_blank" rel="noopener noreferrer">Эволюция звезд: от красных гигантов до белых карликов</a>.
     Астрофизик Дмитрий Вибе о жизни и смерти больших термоядерных печек</li>
@@ -413,13 +408,14 @@
   <li><a href="https://en.wikipedia.org/wiki/Historical_brightest_stars" target="_blank" rel="noopener noreferrer">Historical brightest stars</a></li>
   <li><a href="https://en.wikipedia.org/wiki/Hypergiant" target="_blank" rel="noopener noreferrer">Hypergiant</a>,
     <a href="https://en.wikipedia.org/wiki/Eddington_luminosity" target="_blank" rel="noopener noreferrer">Eddington luminosity</a>. Observations of massive stars show a clear upper limit to their luminosity, termed the Humphreys–Davidson limit after the researchers who first wrote about it.<br>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Lbv.png/1024px-Lbv.png" alt="">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Lbv.png/1024px-Lbv.png" class="w" alt="">
   </li>
   <li><a href="https://en.wikipedia.org/wiki/Hayashi_limit" target="_blank" rel="noopener noreferrer">Hayashi limit</a> is a constraint upon the maximum radius of a star for a given mass</li>
   <li><a href="https://en.wikipedia.org/wiki/List_of_most_massive_stars" target="_blank" rel="noopener noreferrer">List of most massive stars</a>,
     <a href="https://en.wikipedia.org/wiki/List_of_largest_stars" target="_blank" rel="noopener noreferrer">List of largest stars</a>,
     <a href="https://en.wikipedia.org/wiki/List_of_most_luminous_stars" target="_blank" rel="noopener noreferrer">List of most luminous stars</a>.
   </li>
+  <li><a href="https://ui.adsabs.harvard.edu/abs/2013PASP..125..749G/abstract" target="_blank" rel="noopener noreferrer">Supernova Discoveries 2010-2011: Statistics and Trends</a></li>
   <li><a href="https://en.wikipedia.org/wiki/Hypernova" target="_blank" rel="noopener noreferrer">Hypernova</a>,
     <a href="https://en.wikipedia.org/wiki/SN_2005ap" target="_blank" rel="noopener noreferrer">SN 2005ap</a>,
     <a href="https://en.wikipedia.org/wiki/ASASSN-15lh" target="_blank" rel="noopener noreferrer">SN 2015L</a>,
@@ -455,6 +451,12 @@
     <a href="https://arxiv.org/abs/2104.09519" target="_blank" rel="noopener noreferrer">Discovery of an Extremely Short Duration Flare from Proxima Centauri Using Millimeter through FUV Observations</a></li>
 </ul>
 </div>
-<footer>2019&ndash;2020 Википедия. Компиляция, код: Д.С. Насонов.</footer>
+<footer id="copyright" class="cont">
+<div><a href="https://creativecommons.org/licenses/by/4.0/deed.ru" target="_blank" rel="noopener noreferrer">
+  <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="100" alt="CC BY icon"
+    title="Представленные здесь материалы доступны под лицензией Creative Commons BY «С указанием авторства»"></a>
+</div>
+<div id="link">Д.С. Насонов</div>
+</footer>
 </body>
 </html>
