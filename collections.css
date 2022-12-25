@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 * {
 margin: 0;
 padding: 0;
@@ -5,6 +6,7 @@ padding: 0;
 body {
 color: black;
 font-size: 1em;
+font-family: 'Roboto', sans-serif;
 }
 footer {
 display: flex;
@@ -61,11 +63,11 @@ font-weight: bold;
 font-size: large;
 }
 a:link {
-color: rgb(40, 40, 255);
+color: rgb(20, 20, 125);
 background: transparent;
 text-decoration: none;
 }
-a:visited {color: rgb(70, 70, 255)}
+a:visited {color: rgb(8, 8, 75)}
 a:hover {text-decoration: underline;}
 nav ul {
 margin-left: 0;
@@ -90,8 +92,11 @@ display: inline-block;
 background-color: black;
 min-width: 100px;
 }
-div.img {
+.img {
 min-height: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
 background-color: black;
 }
 .desc {display: none;}
@@ -100,7 +105,15 @@ padding: 1em;
 max-width: 1621px;
 min-width: 306px;
 }
-.name {background-color: #ffe7c8;}
+.name {
+width: 100px;
+background-color: #ffe7c8;
+white-space: nowrap;
+overflow: hidden;
+}
+.name a {
+font-size: 17px;
+}
 .info_field {
 font-size: 0.9em;
 color: white;
