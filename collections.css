@@ -53,7 +53,7 @@ z-index: 2;
 #controls {
 border: 3px solid black;
 width: fit-content;
-padding: 10px;
+padding: 10px 5px 10px 10px;
 margin: 10px 0;
 max-width: 1000px;
 }
@@ -130,6 +130,7 @@ white-space: nowrap;
   }
   #controls {
     margin: 4px 2px 2px 0;
+    padding: 10px 5px;
   }
   .info_field {
     font-size: 0.82em;
