@@ -1,14 +1,10 @@
-div.name, .date {
+.date, .size {
   font-size: 0.9em;
   color: white;
 }
 .mass, .desc, .period, .delta-v {
   display: none;
   font-size: 0.78em;
-  color: white;
-}
-div.size {
-  font-size: 0.9em;
   color: white;
 }
 .star > .name {background-color: #ffe7c8;}
