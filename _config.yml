@@ -1,4 +1,5 @@
 theme: jekyll-theme-minimal
+markdown: GFM
 
 plugins:
   - jemoji
