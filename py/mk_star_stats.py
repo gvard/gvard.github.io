@@ -83,7 +83,7 @@ for year in range(1996, 1999):
     snurls.append((year, snstats_year))
 snurls.append((1999, f'{SNIMAGES_URL}sn1999/snstats.html'))
 
-for year in range(2000, 2023):
+for year in range(2000, 2024):
     snstats_year = f'https://rochesterastronomy.org/sn{year}/snstats.html'
     snurls.append((year, snstats_year))
 snurls.append(('all', f'{SNIMAGES_URL}snstatsall.html'))
@@ -152,11 +152,11 @@ if file_ext == 'svg':
 
 labels = ('Статистика открытий сверхновых по годам', 'Год',
           'Открытий сверхновых за год', 'Сверхновые, обнаруженные любителями')
-tmp_filename = 'snstats_plot_.' + file_ext
-filename = 'snstats_plot.' + file_ext
+tmp_filename = 'sne_stats_bar_chart_.' + file_ext
+filename = 'sne_stats_bar_chart.' + file_ext
 tmp_pth = os.path.join(stars_dir, tmp_filename)
 pth = os.path.join(stars_dir, filename)
-xlim = (1994.3, 2022.7)
+xlim = (1994.3, 2023.7)
 plot_bar(years, sns, snalt, labels, tmp_pth, xlim, lab0="до 1996")
 if file_ext == 'svg':
     optimize_svg(tmp_pth, pth)
@@ -166,7 +166,7 @@ all_transient, public_transient, classified, spectra = get_tns(soup)
 
 snstats_txt += f"""</ul>
 <br><img src="https://github.com/gvard/astrodata/raw/main/plots/stars/sne_stats_bar_chart.svg" alt=""><br>
-<img src="https://github.com/gvard/astrodata/raw/main/plots/stars/sne_total_number_log_plot.svg" alt="">
+<img src="https://github.com/gvard/astrodata/raw/main/plots/stars/sne_transients_total_number_log_plot.svg" alt="">
 <h2><a href="{TNS_URL}">Transient Name Server</a></h2>
 <a href="{TNS_STATS_URL}" target="_blank" rel="noopener noreferrer">статистика</a>:<br>
 <ul>
