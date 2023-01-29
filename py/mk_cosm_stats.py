@@ -21,6 +21,7 @@ SPACEFLIGHT_URL = "https://www.worldspaceflight.com/bios/stats.php"
 SPACEFLIGHT1_URL = "https://www.worldspaceflight.com/bios/stats1.php"
 CURRENTLY_IN_SPACE_URL = "https://www.worldspaceflight.com/bios/currentlyinspace.php"
 FLIGHTLIST_URL = "https://www.worldspaceflight.com/bios/sequence.php"
+SPACE_MISSIONS_URL = "https://planet4589.org/space/astro/lists/missions.html"
 NANOSATS_URL = "https://www.nanosats.eu/"
 ASTROS_URL = 'http://api.open-notify.org/astros.json'
 
@@ -69,7 +70,12 @@ def get_flightlist(soup):
 
 soup = get_soup(FLIGHTLIST_URL)
 FLIGHT_NUM, LASTFLIGHT_NAME, LASTFLIGHT_DATE, ALLFLIG_NUM = get_flightlist(soup)
-
+soup = get_soup(SPACE_MISSIONS_URL)
+flights_list = soup.findAll('pre')[1].text.splitlines()[1:]
+flights_num = 0
+for line in flights_list:
+    if line and line[:2] == "H0":
+        flights_num += 1
 
 def get_spaceflight(soup):
     ps = soup.findAll('p')[3:8]
@@ -100,7 +106,7 @@ SPACEFLIGHT_HTML = f"""<h2>Пилотируемая космонавтика</h2
 <li>Людей, побывавших в космосе (согласно классификации ВВС США, при высоте полета более 80 км 467 м)
 – <b>{USAF_NUM}</b></li>
 <li>Всего космических полетов – <b>{FLIGHT_NUM}</b>, следуя определению ВВС США
-– <b>{ALLFLIG_NUM+1}</b></li>
+– <b>{flights_num}</b></li>
 <li>Последний – {LASTFLIGHT_NAME}, {LASTFLIGHT_DATE}</li>
 <li>Время, проведенное людьми в космосе – свыше <b>{MANYR_NUM}</b> человеко-лет.</li>
 <li>В космосе <b>{len(ASTROS_LST)}</b> космонавт{ending(len(ASTROS_LST))}: {ASTROS_STR}.</li>
@@ -119,6 +125,8 @@ BODY = f"""<body onload="mkHeader()">
     <li>Совершили орбитальный полет и&nbsp;они космонавты: <span class="yellow">{COSMONAUT_NUM}</span></li>
     <li>Побывали в космосе и&nbsp;они астронавты: <span class="yellow">{FAI_NUM}</span></li>
     <li>Побывали в космосе, на высоте более 80 467&nbsp;м: <span class="yellow">{USAF_NUM}</span></li>
+    <li>Всего космических полетов – <span class="yellow">{FLIGHT_NUM}</span>, по определению ВВС США –
+      <span class="yellow">{flights_num}</span></li>
     <li>Люди провели в космосе свыше <span class="yellow">{MANYR_NUM}</span> человеко-лет</li>
     <li>Сейчас в космосе <span class="yellow">{len(ASTROS_LST)}</span> космонавт{ending(len(ASTROS_LST))}</li>
   </ul>

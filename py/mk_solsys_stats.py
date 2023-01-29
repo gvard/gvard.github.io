@@ -23,6 +23,7 @@ PICKLE_RADAR_FILENAME = "radar_obj_names.pickle"
 ECHO_URL = "https://echo.jpl.nasa.gov/asteroids/"
 MPC_URL = "https://minorplanetcenter.net/mpc/summary"
 MP_NAMES_URL = "https://minorplanetcenter.net/iau/lists/MPNames.html"
+NOMENCLATURE_URL = "https://www.wgsbn-iau.org/files/Bulletins/index.html"
 SSD_BODY_COUNT_URL = "https://ssd.jpl.nasa.gov/dat/body_count.json"
 NEO_SIZE_BIN_URL = 'https://cneos.jpl.nasa.gov/stats/size_bin.json'
 NEOS_STATS_URL = 'https://cneos.jpl.nasa.gov/stats/totals.html'
@@ -140,7 +141,8 @@ def get_mpcstats(soup):
 
 
 soup = get_soup(MP_NAMES_URL)
-MP_NAMES, NAMES_UPD_DATE = get_mp_names(soup)
+NAMES_UPD_DATE = soup.find("h2").next_sibling.split()[-3:]
+#MP_NAMES, NAMES_UPD_DATE = get_mp_names(soup)
 
 soup = get_soup(MPC_URL)
 MPC_STAT_NUMBERS, INNER_NUMBERS, MID_OUTER_NUMBERS, NEA_NUMBERS = get_mpcstats(soup)
@@ -178,6 +180,9 @@ if DEBUG:
 neo_size_bin = json.load(neo_size_bin_obj)
 NEO_DATE, NEO_DATA = neo_size_bin.get('dataDate'), neo_size_bin.get('data')
 
+soup = get_soup(NOMENCLATURE_URL)
+NAMED_MP_NUM = int(soup.findAll("p")[-2].text.split()[3])
+
 MPC_STATS = f'''<h2>Статистика тел Солнечной системы</h2>
 <p><a href="https://minorplanetcenter.net/mpc/summary">Центра Малых планет</a></p>
 <ul>
@@ -186,7 +191,7 @@ MPC_STATS = f'''<h2>Статистика тел Солнечной систем�
 <li>Более {NUMBERED_NUM} <a href="https://minorplanetcenter.net/iau/lists/NumberedMPs.html">нумерованных</a> малых планет</li>
 <li>{UNNUMBERED_NUM} ненумерованных малых планет</li>
 <li>{COMETS_NUM} комет</li>
-<li>Более {len(MP_NAMES)-2} <a href="{MP_NAMES_URL}">малых планет с именами</a> (последнее обновление списка: {" ".join(NAMES_UPD_DATE)})</li>
+<li>Более {NAMED_MP_NUM} <a href="{MP_NAMES_URL}">малых планет с именами</a> (последнее обновление списка: {" ".join(NAMES_UPD_DATE)})</li>
 <li>{ATIRAS} <a href="https://en.wikipedia.org/wiki/Atira_asteroid">Атир</a>, {ATENS} <a href="https://en.wikipedia.org/wiki/Aten_asteroid">Атонов</a>, {APOLLOS} <a href="https://en.wikipedia.org/wiki/Apollo_asteroid">Аполлонов</a>, {AMORS} <a href="https://en.wikipedia.org/wiki/Amor_asteroid">Амуров</a>, {HUNGARIAS} <a href="https://en.wikipedia.org/wiki/Hungaria_asteroid">астероидов семейства Венгрии</a>, {MARS_CROSSERS} <a href="https://en.wikipedia.org/wiki/List_of_Mars-crossing_minor_planets">пересекающих орбиту Марса</a>;</li>
 <li>{MBA} астероидов основного пояса, {HILDAS} <a href="https://en.wikipedia.org/wiki/Hilda_asteroid">астероидов семейства Хильды</a>, {JUP_TROJANS} <a href="https://en.wikipedia.org/wiki/Jupiter_trojan">троянцев Юпитера</a>, {DISTANT} объектов за орбитой Юпитера;</li>
 <li>{NEA} <a href="https://en.wikipedia.org/wiki/Near-Earth_object#Near-Earth_asteroids">околоземных астероидов</a>, из них {NEA1KM} больше 1 км, {PHA} потенциально опасных астероидов, {NEC} <a href="https://en.wikipedia.org/wiki/Near-Earth_object#Near-Earth_comets">околоземных комет</a>.</li>
@@ -254,7 +259,7 @@ BODY = f"""<body onload="mkHeader()">
     <li><span class="yellow">{SATELLITES}</span> спутников планет</li>
     <li>Более <span class="yellow">{str(COMETS_NUM)[:-2]+'00'}</span> комет</li>
     <li>Более <span class="yellow">{str(MBA + NEA)[:-4]+'0.000'}</span> астероидов</li>
-    <li>Только <span class="yellow">{str((len(MP_NAMES)-2)/1000)}</span> имеют имена</li>
+    <li>Только <span class="yellow">{str(NAMED_MP_NUM/1000)}</span> имеют имена</li>
   </ul>
   </div>
   <div id="footer">
