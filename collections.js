@@ -91,12 +91,12 @@ function toShow(contentToShow) {
     x = event.clientX + window.scrollX;
     y = event.clientY + window.scrollY;
   }
-  x -= 2;
-  y += 15;
-  if (screen.width - x < 200 / window.devicePixelRatio) {
-    x -= 180 / window.devicePixelRatio;
-  }
+  messageBox.style.display = "block";
+  x -= 5 / window.devicePixelRatio;
+  y += 5 / window.devicePixelRatio;
+  let xOff = messageBox.offsetWidth;
+  if ((x - xOff) >= 0 && (x + xOff) >= screen.width)
+    x -= xOff;
   messageBox.style.left = x + "px";
   messageBox.style.top = y + "px";
-  messageBox.style.display = "block";
 }
