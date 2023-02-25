@@ -77,8 +77,12 @@ function showLuke(res, q) {
   q.innerHTML = 'Имя: ' + res.name + ', рост: ' + res.height + ', вес: ' + res.mass + ', дата рождения: ' + res.birth_year + ', цвет волос: ' + res.hair_color;
 }
 function showLatestSpaceXFlight(res, q) {
-  const localDateTime = new Date(res.launch_date_unix * 1000);
-  q.innerHTML = 'Flight number: ' + res.flight_number + ', название миссии: ' + res.mission_name + '.<br>Дата и время запуска: ' + res.launch_date_utc  + '(UTC), московское время: ' + localDateTime + ',<br>Ракета: ' + res.rocket.rocket_name + '.<br>Эмблема:<br><img src="' + res.links.mission_patch_small + '" alt=""><br><a href="' + res.links.reddit_campaign + '">Подробно на reddit</a>, <a href="' + res.links.wikipedia + '">на википедии</a>.<br>Подробности на английском: ' + res.details;
+  const localDateTime = new Date(res.date_unix * 1000);
+  q.innerHTML = `Flight number: ${res.flight_number}, название миссии: ${res.name}.<br>
+  Дата и время запуска: ${res.date_utc} (UTC), московское время: ${localDateTime}.<br>
+  Эмблема:<br><img src="${res.links.patch.small}" alt=""><br>
+  <a href="${res.links.reddit.launch}">Подробно на reddit</a>, <a href="${res.links.wikipedia}">на википедии</a>.<br>
+  Подробности на английском: ${res.details}`;
 }
 function showAstros(res, q) {
   let strRepr = ": ";
@@ -122,7 +126,7 @@ function mkReq(reqName) {
     reqRes: {URL: 'https://reqres.in/api/products/3', func: showReqRes},
     starWars: {URL: 'https://swapi.co/api/people/1/', func: showLuke},
     exchange: {URL: 'https://api.exchangerate-api.com/v4/latest/USD', func: function (res, q) { q.innerHTML = res.rates.RUB; }},
-    spaceX: {URL: 'https://api.spacexdata.com/v3/launches/latest', func: showLatestSpaceXFlight},
+    spaceX: {URL: 'https://api.spacexdata.com/v5/launches/latest', func: showLatestSpaceXFlight},
     astros: {URL: 'http://api.open-notify.org/astros.json', func: showAstros},
     apod: {URL: APOD_URL, func: showAPOD}
   };

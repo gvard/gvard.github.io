@@ -125,13 +125,14 @@ Hello world!</code></pre>
 </ul>
 
 <h2 id="examples">Примеры</h2>
+<p><b>Response (ответ)</b>: <span id="sp">&nbsp;</span></p><br>
 <b>Request (запрос)</b>:<br>
   Узнать точное время: <button onclick="mkReq('TZ')">в Москве (timezonedb)</button>
   (<a href="https://timezonedb.com/api" target="_blank" rel="noopener noreferrer">описание</a>)
   <button onclick="mkReq('yandexTime')">в Москве (yandex)</button>
   (<a href="https://yandex.ru/time/" target="_blank" rel="noopener noreferrer">Яндекс.Время</a>,
-  <a href="https://yandex.com/time/sync.json?geo=213" target="_blank" rel="noopener noreferrer">ссылка</a>)<br>
-
+  <a href="https://yandex.com/time/sync.json?geo=213" target="_blank" rel="noopener noreferrer">ссылка</a>;
+  <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="_blank" rel="noopener noreferrer">для работы запросить временный доступ</a>)<br>
   <button onclick="mkReq('reqRes')">GET products/3</button>
   (<a href="https://reqres.in/api/products/3" target="_blank" rel="noopener noreferrer">ссылка</a>)<br>
   <button onclick="mkReq('astros')">Сколько людей в космосе?</button>
@@ -141,7 +142,7 @@ Hello world!</code></pre>
   <button onclick="mkReq('exchange')">Узнать курс доллара к рублю</button>
   (<a href="https://api.exchangerate-api.com/v4/latest/USD" target="_blank" rel="noopener noreferrer">ссылка</a>)<br>
   <button onclick="mkReq('spaceX')">Последний запуск SpaceX</button>
-  (<a href="https://api.spacexdata.com/v3/launches/latest" target="_blank" rel="noopener noreferrer">ссылка</a>,
+  (<a href="https://api.spacexdata.com/v5/launches/latest" target="_blank" rel="noopener noreferrer">ссылка</a>,
   <a href="https://github.com/r-spacex/SpaceX-API" target="_blank" rel="noopener noreferrer">описание на гитхабе</a>)<br>
   <button onclick="mkReq('apod')">Астрономическая картинка дня</button> – NASA APOD
   (<a href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA APIs</a>),
@@ -156,6 +157,5 @@ Hello world!</code></pre>
   <!-- <a href="https://developer.riotgames.com/docs/lol#data-dragon_champions" target="_blank" rel="noopener noreferrer">Champions</a>,
   <a href="https://developer.riotgames.com/apis" target="_blank" rel="noopener noreferrer">API</a> -->
   <br><br>
-  <p><b>Response (ответ)</b>: <span id="sp">&nbsp;</span></p><br>
 </body>
 </html>
