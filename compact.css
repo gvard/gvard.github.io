@@ -63,11 +63,6 @@ img {max-width: 100%;}
 }
 a.hidden {color: rgb(205, 205, 255)}
 iframe {border: 0;}
-@media (max-width: 600px) {
-  body {margin: 0 0 0.8em 0.8em;}
-  nav ul li {display: block;}
-  ul, ol {padding-left: 0;}
-}
 .cols {
   display: flex;
   flex-wrap: wrap;
@@ -83,4 +78,16 @@ iframe {border: 0;}
 }
 .right h2 {
   margin-top: 0;
+}
+table.sortable thead {
+text-align: left;
+background-color:#eee;
+color:#444;
+font-weight: bold;
+cursor: default;
+}
+@media (max-width: 600px) {
+  body {margin: 0 0 0.8em 0.8em;}
+  nav ul li {display: block;}
+  ul, ol {padding-left: 0;}
 }

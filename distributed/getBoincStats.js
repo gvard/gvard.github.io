@@ -103,6 +103,10 @@ SI: {
 URL: "https://sidock.si/sidock/",
 ID: 10462,
 },
+GA: {
+URL: "http://150.254.66.104/gaiaathome/",
+ID: 9234,
+},
 // "SE": {
 // "URL": "https://setiathome.berkeley.edu/",
 // "ID": 9915793, //"ID": 7813115, //"ID": 9416599,
@@ -129,9 +133,10 @@ function createCORSRequest(method, url) {
   }
   return xhr;
 }
-function mkReq(reqName) {
+function mkReq(elm) {
   const elmToShowInfo = document.getElementById("sp");
   var parsedResults = [];
+  const reqName = elm.parentElement.id;
   if (reqName == 'All') {
     for (const proj in BOINC_DATA) {
       const URL = `${CORS_ANYWHERE_URL}${BOINC_DATA[proj].URL}show_user.php?userid=${BOINC_DATA[proj].ID}&format=xml`;
@@ -139,25 +144,27 @@ function mkReq(reqName) {
       request.send(null);
       var parser = new DOMParser();
       const res = parser.parseFromString(request.response, "text/xml");
-      const totalCredit = res.getElementsByTagName("total_credit")[0].childNodes[0].nodeValue;
+      const projTotalCredit = res.getElementsByTagName("total_credit")[0].childNodes[0].nodeValue;
       delay(500);
       parsedResults.push({
         project: proj,
-        stats: totalCredit,
+        stats: projTotalCredit,
       });
+      const curElm = document.getElementById(proj);
+      curElm.innerHTML = Math.round(projTotalCredit * 100) / 100;
     }
     let CreditSum = 0;
     for (const z of parsedResults) {
       CreditSum += parseFloat(z.stats);
     }
-    elmToShowInfo.innerHTML = `Честные кредиты: ${Math.round((retiredCreditsSumNoDoubtful+CreditSum) * 100) / 100}, свальный грех: ${Math.round((retiredCreditsSum+CreditSum) * 100) / 100}`;  }
-  else {
+    elmToShowInfo.innerHTML = `Честные кредиты: ${Math.round((retiredCreditsSumNoDoubtful+CreditSum) * 100) / 100}, свальный грех: ${Math.round((retiredCreditsSum+CreditSum) * 100) / 100}`;
+  } else {
     const URL = `${CORS_ANYWHERE_URL}${BOINC_DATA[reqName].URL}show_user.php?userid=${BOINC_DATA[reqName].ID}&format=xml`;
     let request = createCORSRequest('GET', URL);
     request.send(null);
     var parser = new DOMParser();
     const res = parser.parseFromString(request.response, "text/xml");
     const projCredit = res.getElementsByTagName("total_credit")[0].childNodes[0].nodeValue;
-    elmToShowInfo.innerHTML = projCredit;
+    elm.parentElement.innerHTML = projCredit;
   }
 }

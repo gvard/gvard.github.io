@@ -8,174 +8,154 @@
   <title>Распределенные вычисления</title>
   <link rel="stylesheet" href="../compact.css">
   <script src="getBoincStats.js"></script>
+  <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
 </head>
 <body>
-  <nav class="menu">
-    <ul>
-      <li><a href="../">Главная</a></li>
-      <li><a href="#links">Ссылки</a></li>
-    </ul>
-  </nav>
+<nav class="menu">
+<ul>
+<li><a href="../">Главная</a></li>
+<li><a href="#sp">Проекты BOINC</a></li>
+<li><a href="#links">Ссылки</a></li>
+</ul>
+</nav>
 
 <h1>Распределенные вычисления</h1>
 
-<h2 id="mystats">Моя статистика распределенных вычислений</h2>
+<h2><a href="https://www.boincstats.com/stats/-1/user/detail/3662893/projectList" target="_blank" rel="noopener noreferrer">Статистика проектов BOINC</a></h2>
 <img src="https://www.boincstats.com/signature/-1/user/3662893/sig.png" alt="Статистика проектов BOINC">
 <div id="sp">&nbsp;</div>
-<button onclick="mkReq('All')">Показать текущую сумму кредитов</button>
-
-<table>
-<tr>
+<div id="All"><button onclick="mkReq(this)">Показать текущие кредиты и их сумму</button>,
+  <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="_blank" rel="noopener noreferrer">для работы запросить временный доступ</a></div>
+<table class="sortable">
+<tr><th>Проект</th><th>Публикации</th><th>Кредиты</th></tr><tr>
 <td><a href="https://asteroidsathome.net/scientific_results.html" target="_blank" rel="noopener noreferrer">Asteroids@home</a></td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#Asteroids@home" target="_blank" rel="noopener noreferrer">9 публикаций</a></td>
-<td><button onclick="mkReq('AS')">текущие кредиты Asteroids</button></td>
-</tr>
-<tr>
+<td><a href="https://boinc.berkeley.edu/pubs.php#Asteroids@home" target="_blank" rel="noopener noreferrer">9</a></td>
+<td id="AS"><button onclick="mkReq(this)">для Asteroids</button></td>
+</tr><tr>
 <td><a href="https://einsteinathome.org/ru/science/publications" target="_blank" rel="noopener noreferrer">Einstein@Home</a></td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#Einstein@Home" target="_blank" rel="noopener noreferrer">38 публикаций</a></td>
-<td><button onclick="mkReq('EI')">текущие кредиты Einstein</button></td>
-</tr>
-<tr>
-<td><a href="https://www.primegrid.com/" target="_blank" rel="noopener noreferrer">PrimeGrid</a></td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#PrimeGrid" target="_blank" rel="noopener noreferrer">3 публикации</a></td>
-<td><button onclick="mkReq('PG')">текущие кредиты PrimeGrid</button></td>
-</tr>
-<tr>
+<td><a href="https://boinc.berkeley.edu/pubs.php#Einstein@Home" target="_blank" rel="noopener noreferrer">38</a></td>
+<td id="EI"><button onclick="mkReq(this)">для Einstein</button></td>
+</tr><tr>
+<td><a href="https://www.primegrid.com/" target="_blank" rel="noopener noreferrer">PrimeGrid</a>
+  (<a href="https://www.primegrid.com/show_badges.php?userid=1073864" target="_blank" rel="noopener noreferrer">badges</a>)</td>
+<td><a href="https://boinc.berkeley.edu/pubs.php#PrimeGrid" target="_blank" rel="noopener noreferrer">3</a></td>
+<td id="PG"><button onclick="mkReq(this)">для PrimeGrid</button></td>
+</tr><tr>
 <td><a href="https://universeathome.pl/universe/publications.php" target="_blank" rel="noopener noreferrer">Universe@Home</a></td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#Universe@home" target="_blank" rel="noopener noreferrer">13 публикаций</a></td>
-<td><button onclick="mkReq('UN')">текущие кредиты Universe</button></td>
-</tr>
-<tr>
-<td><a href="https://milkyway.cs.rpi.edu/milkyway/science.php" target="_blank" rel="noopener noreferrer">MilkyWay@home</a></td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#Milkyway@home" target="_blank" rel="noopener noreferrer">25 публикаций</a></td>
-<td><button onclick="mkReq('MW')">текущие кредиты MilkyWay</button></td>
-</tr>
-<tr>
+<td><a href="https://boinc.berkeley.edu/pubs.php#Universe@home" target="_blank" rel="noopener noreferrer">13</a></td>
+<td id="UN"><button onclick="mkReq(this)">для Universe</button></td>
+</tr><tr>
+<td><a href="https://milkyway.cs.rpi.edu/milkyway/science.php" target="_blank" rel="noopener noreferrer">MilkyWay@home</a>
+  (<a href="https://milkyway.cs.rpi.edu/milkyway/show_user.php?userid=117018" target="_blank" rel="noopener noreferrer">g</a>,
+  <a href="https://milkyway.cs.rpi.edu/milkyway/show_user.php?userid=148127" target="_blank" rel="noopener noreferrer">G</a>)</td>
+<td><a href="https://boinc.berkeley.edu/pubs.php#Milkyway@home" target="_blank" rel="noopener noreferrer">25</a></td>
+<td id="MW"><button onclick="mkReq(this)">для MilkyWay</button></td>
+</tr><tr>
 <td><a href="https://www.gpugrid.net/science.php" target="_blank" rel="noopener noreferrer">GPUGRID.net</a></td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#GPUGrid.net" target="_blank" rel="noopener noreferrer">50 публикаций</a></td>
-<td><button onclick="mkReq('GP')">текущие кредиты GPUGRID</button></td>
-</tr>
-<tr>
+<td><a href="https://boinc.berkeley.edu/pubs.php#GPUGrid.net" target="_blank" rel="noopener noreferrer">50</a></td>
+<td id="GP"><button onclick="mkReq(this)">для GPUGRID</button></td>
+</tr><tr>
 <td><a href="https://boinc.bakerlab.org/rosetta/rah/rah_about.php" target="_blank" rel="noopener noreferrer">Rosetta@Home</a></td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#Rosetta@home" target="_blank" rel="noopener noreferrer">180 публикаций</a></td>
-<td><button onclick="mkReq('RO')">текущие кредиты Rosetta</button></td>
-</tr>
-<tr>
+<td><a href="https://boinc.berkeley.edu/pubs.php#Rosetta@home" target="_blank" rel="noopener noreferrer">180</a></td>
+<td id="RO"><button onclick="mkReq(this)">для Rosetta</button></td>
+</tr><tr>
 <td><a href="https://gerasim.boinc.ru/science/science.aspx" target="_blank" rel="noopener noreferrer">Gerasim@Home</a></td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#Gerasim@home" target="_blank" rel="noopener noreferrer">8 публикаций</a></td>
-<td><button onclick="mkReq('GE')">текущие кредиты Gerasim</button></td>
-</tr>
-<tr>
+<td><a href="https://boinc.berkeley.edu/pubs.php#Gerasim@home" target="_blank" rel="noopener noreferrer">8</a></td>
+<td id="GE"><button onclick="mkReq(this)">для Gerasim</button></td>
+</tr><tr>
 <td><a href="http://www.cosmologyathome.org/faq.php#science" target="_blank" rel="noopener noreferrer">Cosmology@Home</a></td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#Cosmology@Home" target="_blank" rel="noopener noreferrer">5 публикаций</a></td>
-<td><button onclick="mkReq('CO')">текущие кредиты Cosmology</button></td>
-</tr>
-<tr>
-<td><a href="https://wuprop.boinc-af.org/" target="_blank" rel="noopener noreferrer">WUProp@Home</a></td>
-<td>нет публикаций</td>
-<td><button onclick="mkReq('WU')">текущие кредиты WUProp</button></td>
-</tr>
-<tr>
+<td><a href="https://boinc.berkeley.edu/pubs.php#Cosmology@Home" target="_blank" rel="noopener noreferrer">5</a></td>
+<td id="CO"><button onclick="mkReq(this)">для Cosmology</button></td>
+</tr><tr>
 <td><a href="https://lhcathome.cern.ch/lhcathome/" target="_blank" rel="noopener noreferrer">LHC@Home</a></td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#LHC@home" target="_blank" rel="noopener noreferrer">6+6+10+44 публикаций</a></td>
-<td><button onclick="mkReq('LHC')">текущие кредиты LHC</button></td>
-</tr>
-<tr>
+<td><a href="https://boinc.berkeley.edu/pubs.php#LHC@home" target="_blank" rel="noopener noreferrer">66</a></td>
+<td id="LHC"><button onclick="mkReq(this)">для LHC</button></td>
+</tr><tr>
 <td><a href="https://www.sidock.si/sidock/" target="_blank" rel="noopener noreferrer">SiDock@home</a></td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#SiDock@home" target="_blank" rel="noopener noreferrer">5 публикаций</a></td>
-<td><button onclick="mkReq('SI')">текущие кредиты SiDock</button></td>
-</tr>
-<tr>
+<td><a href="https://boinc.berkeley.edu/pubs.php#SiDock@home" target="_blank" rel="noopener noreferrer">5</a></td>
+<td id="SI"><button onclick="mkReq(this)">для SiDock</button></td>
+</tr><tr>
+<td><a href="http://gaiaathome.eu/gaiaathome/" target="_blank" rel="noopener noreferrer">Gaia@home</a></td>
+<td><a href="http://150.254.66.104/gaiaathome/about.phpx" target="_blank" rel="noopener noreferrer">2</a></td>
+<td id="GA"><button onclick="mkReq(this)">для Gaia</button></td>
+</tr><tr>
+<td><a href="https://wuprop.boinc-af.org/" target="_blank" rel="noopener noreferrer">WUProp@Home</a></td>
+<td>нет</td>
+<td id="WU"><button onclick="mkReq(this)">для WUProp</button></td>
+</tr><tr>
 <td><a href="https://setiathome.berkeley.edu/sah_about.php" target="_blank" rel="noopener noreferrer">SETI@Home</a></td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#SETI@home" target="_blank" rel="noopener noreferrer">12 публикаций</a></td>
+<td><a href="https://boinc.berkeley.edu/pubs.php#SETI@home" target="_blank" rel="noopener noreferrer">12</a></td>
 <td>36528.9</td>
-</tr>
-<tr>
-<td class="red">Collatz Conjecture</td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#Collatz" target="_blank" rel="noopener noreferrer">1 публикация</a></td>
-<td>1343145.61</td>
-</tr>
-<tr>
-<td class="red">GoofyxGrid@Home NCI</td>
-<td>нет публикаций</td>
-<td>2407680</td>
-</tr>
-<tr>
+</tr><tr>
 <td>POGS (theSkyNet)</td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#TheSkyNet" target="_blank" rel="noopener noreferrer">3 публикации</a></td>
+<td><a href="https://boinc.berkeley.edu/pubs.php#TheSkyNet" target="_blank" rel="noopener noreferrer">3</a></td>
 <td>375980.23</td>
-</tr>
-<tr>
+</tr><tr>
 <td>POEM@HOME</td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#POEM@HOME" target="_blank" rel="noopener noreferrer">4 публикации</a></td>
+<td><a href="https://boinc.berkeley.edu/pubs.php#POEM@HOME" target="_blank" rel="noopener noreferrer">4</a></td>
 <td>324687.64</td>
-</tr>
-<tr>
+</tr><tr>
 <td>SAT@home</td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#SAT@home" target="_blank" rel="noopener noreferrer">8 публикаций</a></td>
-<td>192600.00</td>
-</tr>
-<tr>
+<td><a href="https://boinc.berkeley.edu/pubs.php#SAT@home" target="_blank" rel="noopener noreferrer">8</a></td>
+<td>192600.0</td>
+</tr><tr>
 <td>Acoustics@home</td>
-<td><a href="https://boinc.berkeley.edu/pubs.php#Acoustics@home" target="_blank" rel="noopener noreferrer">2 публикации</a></td>
-<td>37212.00</td>
-</tr>
-<tr>
+<td><a href="https://boinc.berkeley.edu/pubs.php#Acoustics@home" target="_blank" rel="noopener noreferrer">2</a></td>
+<td>37212.0</td>
+</tr><tr>
+<td class="red">Collatz Conjecture</td>
+<td><a href="https://boinc.berkeley.edu/pubs.php#Collatz" target="_blank" rel="noopener noreferrer">1</a></td>
+<td>1343145.61</td>
+</tr><tr>
+<td class="red">GoofyxGrid@Home NCI</td>
+<td>нет</td>
+<td>2407680</td>
+</tr><tr>
 <td class="red">Constellation</td>
-<td>нет публикаций</td>
+<td><a href="http://personal.psu.edu/dab143/OFW6/Abstracts/andreas_hornig2_ab.pdf" target="_blank" rel="noopener noreferrer">1 постер</a></td>
 <td>21775.65</td>
-</tr>
-<tr>
+</tr><tr>
 <td class="red">Distr. Hardware Evolution</td>
-<td>нет публикаций</td>
-<td>6957.00</td>
+<td>нет</td>
+<td>6957.0</td>
 </tr>
 </table>
 
+<h2 id="links">Ссылки</h2>
 <ul>
-  <li><a href="https://www.boincstats.com/stats/-1/user/detail/3662893/projectList" target="_blank" rel="noopener noreferrer">Статистика проектов BOINC</a></li>
-  <li><a href="https://www.primegrid.com/" target="_blank" rel="noopener noreferrer">PrimeGrid</a>:
-    <a href="https://www.primegrid.com/show_badges.php?userid=1073864" target="_blank" rel="noopener noreferrer">badges</a></li>
-  <li>MilkyWay@home: профили <a href="https://milkyway.cs.rpi.edu/milkyway/show_user.php?userid=117018" target="_blank" rel="noopener noreferrer">gvard</a>,
-    <a href="https://milkyway.cs.rpi.edu/milkyway/show_user.php?userid=148127" target="_blank" rel="noopener noreferrer">Gvard</a></li>
-  <li><a href="https://foldingathome.org/papers-results/" target="_blank" rel="noopener noreferrer">Folding@home</a>: <a href="https://stats.foldingathome.org/donor/name/gvard" target="_blank" rel="noopener noreferrer">статистика пользователя gvard</a>,
-    <a href="https://stats.foldingathome.org/donor/name/gvard_FLDC_1J5JAyRKp9F4w3ybdfwnZn393S4Kmn6pHE" target="_blank" rel="noopener noreferrer">gvard_FLDC_1J5JAyRKp9F4w3ybdfwnZn393S4Kmn6pHE</a></li>
+  <li>Статистика команд на BOINCstats:
+    <a href="https://www.boincstats.com/stats/-1/team/detail/10372/projectList" target="_blank" rel="noopener noreferrer">TSC! Russia</a>
+    (<a href="https://www.boincstats.com/signature/-1/team/10372/sig.png" target="_blank" rel="noopener noreferrer">картинкой</a>),
+    <a href="https://www.boincstats.com/stats/-1/team/detail/6422/projectList" target="_blank" rel="noopener noreferrer">Russia</a>,
+    <a href="https://www.boincstats.com/stats/-1/team/detail/19597/projectList" target="_blank" rel="noopener noreferrer">Russia Team</a></li>
+  <li><a href="https://foldingathome.org/papers-results/" target="_blank" rel="noopener noreferrer">Folding@home</a>
+    (<a href="https://ru.wikipedia.org/wiki/Folding@home" target="_blank" rel="noopener noreferrer">вики</a>):
+    <a href="https://stats.foldingathome.org/donor/name/gvard" target="_blank" rel="noopener noreferrer">статистика пользователя gvard</a>,
+    <a href="https://stats.foldingathome.org/donor/name/gvard_FLDC_1J5JAyRKp9F4w3ybdfwnZn393S4Kmn6pHE" target="_blank" rel="noopener noreferrer">gvard_FLDC_1J5J...pHE</a></li>
   <li>SETI@home, <a href="https://setiathome.berkeley.edu/show_user.php?userid=7813115" target="_blank" rel="noopener noreferrer">старый</a> и
     <a href="https://setiathome.berkeley.edu/show_user.php?userid=9915793" target="_blank" rel="noopener noreferrer">новый профиль</a>:
     SETI@home classic (<b>251</b> WorkUnits, <a href="100wu.jpg" target="_blank" rel="noopener noreferrer">100 WU certificate</a> @25.07.2004,
     250 WU certificate @8.03.2005, <b>184.2</b> days of CPU time), <b>35767.5</b>+761.4 очков</li>
-  <li>Find-a-drug,
+  <li><a href="https://en.wikipedia.org/wiki/Find-a-drug" target="_blank" rel="noopener noreferrer">Find-a-drug</a>,
     <a href="https://web.archive.org/web/20121103055333/http://tsc.overclockers.ru/old/fadstats.html" target="_blank" rel="noopener noreferrer">статистика</a>:
     <b>1013631</b> очков, <b>533</b> заданий, <b>433.33</b> days of computer time (2 Million Molecules @6.10.2004, 1 year of computer time @june 2005)</li>
   <li><a href="https://juick.com/gvard/?tag=tsc" target="_blank" rel="noopener noreferrer">архив статистики</a>,
     <a href="https://web.archive.org/web/20070805171058/http://gvard.nm.ru/what.htm" target="_blank" rel="noopener noreferrer">мои достижения на gvard.nm.ru</a></li>
 </ul>
-
-<h2 id="links">Ссылки</h2>
 <ul>
-  <li><a href="https://en.wikipedia.org/wiki/Berkeley_Open_Infrastructure_for_Network_Computing#Projects" target="_blank" rel="noopener noreferrer">Проекты BOINC</a></li>
-  <li><a href="https://ru.wikipedia.org/wiki/Folding@home" target="_blank" rel="noopener noreferrer">Folding@home</a>,
-    <a href="https://foldingathome.org/" target="_blank" rel="noopener noreferrer">официальная страница</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Find-a-drug" target="_blank" rel="noopener noreferrer">Find-a-drug</a></li>
-  <li>Статистика команд:
-    <a href="https://www.boincstats.com/stats/-1/team/detail/10372/projectList" target="_blank" rel="noopener noreferrer">TSC! Russia</a>
-    (<a href="https://www.boincstats.com/signature/-1/team/10372/sig.png" target="_blank" rel="noopener noreferrer">картинкой</a>),
-    <a href="https://www.boincstats.com/stats/-1/team/detail/6422/projectList" target="_blank" rel="noopener noreferrer">Russia</a>,
-    <a href="https://www.boincstats.com/stats/-1/team/detail/19597/projectList" target="_blank" rel="noopener noreferrer">Russia Team</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/List_of_volunteer_computing_projects" target="_blank" rel="noopener noreferrer">List of volunteer computing projects</a>,
+    <a href="https://en.wikipedia.org/wiki/Berkeley_Open_Infrastructure_for_Network_Computing#Projects" target="_blank" rel="noopener noreferrer">проекты BOINC</a></li>
   <li><a href="https://forums.overclockers.ru/viewtopic.php?f=21&t=622795" target="_blank" rel="noopener noreferrer">Различные проекты</a> на форуме TSC! Russia</li>
 </ul>
 <h3 id="results">Научные результаты</h3>
 <ul>
-  <li><a href="https://asteroidsathome.net/scientific_results.html" target="_blank" rel="noopener noreferrer">Asteroids@home</a>,
-    <a href="https://boinc.berkeley.edu/pubs.php#Asteroids@home" target="_blank" rel="noopener noreferrer">publications by BOINC Projects</a>:
+  <li>Asteroids@home:
     <a href="https://ui.adsabs.harvard.edu/abs/2018A%26A...617A..57D/abstract" target="_blank" rel="noopener noreferrer">Asteroid models reconstructed from the Lowell Photometric Database and WISE data</a> (2018),
     <a href="https://ui.adsabs.harvard.edu/abs/2020A%26A...643A..59D/abstract" target="_blank" rel="noopener noreferrer">Asteroid models reconstructed from ATLAS photometry</a> (2020),
     <a href="https://ui.adsabs.harvard.edu/abs/2022FrASS...909771D/abstract" target="_blank" rel="noopener noreferrer">Rotation Periods of Asteroids Determined With Bootstrap Convex Inversion From ATLAS Photometry</a> (2022),
-    <a href="https://ui.adsabs.harvard.edu/search/p_=0&q=author%3A%22%C4%8Eurech%2C%20Josef%22&sort=date%20desc%2C%20bibcode%20desc" target="_blank" rel="noopener noreferrer">статьи Josef Ďurech</a>.
+    <a href="https://ui.adsabs.harvard.edu/search/p_=0&q=author%3A%22%C4%8Eurech%2C%20Josef%22&sort=date%20desc%2C%20bibcode%20desc" target="_blank" rel="noopener noreferrer">статьи Josef Ďurech</a>.<br>
     <a href="https://boinc.ru/proekty/proekt-asteroidshome-est-li-v-nem-chto-to-czennoe/" target="_blank" rel="noopener noreferrer">Проект Asteroids@home. Есть ли в нем что-то ценное?</a></li>
-  <li><a href="http://gaiaathome.eu/gaiaathome/" target="_blank" rel="noopener noreferrer">Gaia@home</a>,
-    <a href="http://150.254.66.104/gaiaathome/about.php" target="_blank" rel="noopener noreferrer">science with gaia@home</a></li>
-  <li><a href="https://boinc.berkeley.edu/dev/forum_thread.php?id=14159" target="_blank" rel="noopener noreferrer">bad news everyone, results of the BOINC Collatz project are invalid</a></li>
+  <li><a href="https://boinc.berkeley.edu/dev/forum_thread.php?id=14159" target="_blank" rel="noopener noreferrer">Bad news everyone, results of the BOINC Collatz project are invalid</a></li>
 </ul>
 </body>
 </html>
