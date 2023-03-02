@@ -103,6 +103,10 @@ SI: {
 URL: "https://sidock.si/sidock/",
 ID: 10462,
 },
+RA: {
+URL: "https://rake.boincfast.ru/rakesearch/",
+ID: 13860,
+},
 GA: {
 URL: "http://150.254.66.104/gaiaathome/",
 ID: 9234,
@@ -145,7 +149,7 @@ function mkReq(elm) {
       var parser = new DOMParser();
       const res = parser.parseFromString(request.response, "text/xml");
       const projTotalCredit = res.getElementsByTagName("total_credit")[0].childNodes[0].nodeValue;
-      delay(500);
+      delay(250);
       parsedResults.push({
         project: proj,
         stats: projTotalCredit,
