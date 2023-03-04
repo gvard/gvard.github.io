@@ -149,7 +149,7 @@ function mkReq(elm) {
       var parser = new DOMParser();
       const res = parser.parseFromString(request.response, "text/xml");
       const projTotalCredit = res.getElementsByTagName("total_credit")[0].childNodes[0].nodeValue;
-      delay(250);
+      delay(350);
       parsedResults.push({
         project: proj,
         stats: projTotalCredit,
@@ -166,9 +166,16 @@ function mkReq(elm) {
     const URL = `${CORS_ANYWHERE_URL}${BOINC_DATA[reqName].URL}show_user.php?userid=${BOINC_DATA[reqName].ID}&format=xml`;
     let request = createCORSRequest('GET', URL);
     request.send(null);
-    var parser = new DOMParser();
-    const res = parser.parseFromString(request.response, "text/xml");
+    const res = new DOMParser().parseFromString(request.response, "text/xml");
     const projCredit = res.getElementsByTagName("total_credit")[0].childNodes[0].nodeValue;
     elm.parentElement.innerHTML = projCredit;
   }
+}
+function fetchXML(elm) {
+  const reqName = elm.parentElement.id;
+  const URL = `${CORS_ANYWHERE_URL}${BOINC_DATA[reqName].URL}show_user.php?userid=${BOINC_DATA[reqName].ID}&format=xml`;
+  fetch(URL)
+    .then(response => response.text())
+    .then(str => new DOMParser().parseFromString(str, "text/xml"))
+    .then(res => elm.parentElement.innerHTML = res.getElementsByTagName("total_credit")[0].childNodes[0].nodeValue);
 }
