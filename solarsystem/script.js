@@ -16,7 +16,7 @@ function ObjParams() {
     const size = getSize(objs[i].getElementsByClassName('size')[0].innerText);
     const mass = txtMass(objs[i].getElementsByClassName('mass')[0].innerText);
     const date = objs[i].getElementsByClassName('date')[0].innerText;
-    const deltaV = getDeltaV(objs[i].getElementsByClassName('delta-v')[0].innerText);
+    const deltaV = getDeltaV(objs[i].getElementsByClassName('deltav')[0].innerText);
     const type = mkType(objs[i].className, OBJTYPES);
     let otkrWord = "Открыт ";
     if (type.includes("ланета") || type.includes("комет"))
@@ -60,11 +60,13 @@ function toSort(classNam) {
   let sortFunction;
   if (classNam == 'mass')
     sortFunction = getMass;
+  else if (classNam == 'dens')
+    sortFunction = getSize;
   else if (classNam == 'size')
     sortFunction = getSize;
   else if (classNam == 'date')
     sortFunction = getDate;
-  else if (classNam == 'delta-v')
+  else if (classNam == 'deltav')
     sortFunction = getDeltaV;
   doSort(sortFunction, classNam);
 }
@@ -77,7 +79,7 @@ function show(divImg, imgPth) {
   mass = mkPar('Масса: ', mass, '&nbsp;кг');
   let date = obj.getElementsByClassName("date")[0].innerText;
   date = mkPar('Дата открытия: ', date, '');
-  let deltaV = obj.getElementsByClassName("delta-v");
+  let deltaV = obj.getElementsByClassName("deltav");
   if (deltaV.length) {
     deltaV = mkPar('Δv: ', deltaV[0].innerText, '&nbsp;км/с');
   } else {

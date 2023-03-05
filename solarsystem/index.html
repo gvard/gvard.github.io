@@ -38,7 +38,8 @@
 <label class="nowrap"><input type="checkbox" name=".size" checked onclick="showHideThis(this)">Радиус</label>,
 <label class="nowrap"><input type="checkbox" name=".date" checked onclick="showHideThis(this)">Дата открытия</label>,
 <label class="nowrap"><input type="checkbox" name=".mass" onclick="showHideThis(this)">Масса</label>,
-<label class="nowrap" title="Характеристическая скорость орбитального маневра"><input type="checkbox" name=".delta-v" onchange="showHideThis(this)">Δv</label>
+<label class="nowrap"><input type="checkbox" name=".dens" onclick="showHideThis(this)">Плотность</label>,
+<label class="nowrap" title="Характеристическая скорость орбитального маневра"><input type="checkbox" name=".deltav" onchange="showHideThis(this)">Δv</label>
 <div id="props">
 <button onclick="uncheckAll(true)">Вкл</button><button onclick="uncheckAll(false)">Выкл</button><br>
 <b>Изображение и поверхность:</b><br>
@@ -82,6 +83,10 @@
 <label class="nowrap"><input type="checkbox" name=".flyby" checked onclick="showHideThis(this)">Пролетные миссии</label>
 <label class="nowrap"><input type="checkbox" name=".orbited" checked onclick="showHideThis(this)">Орбитальные миссии</label>
 <br>
+<b>Номенклатура:</b><br>
+<label class="nowrap"><input type="checkbox" name=".numbered" checked onclick="showHideThis(this)">Нумерованные</label>
+<label class="nowrap"><input type="checkbox" name=".named" checked onclick="showHideThis(this)">Именованные</label>
+<br>
 <b>Дата открытия:</b>
 <input type="text" id="year" size="2" maxlength="4" value="1990">
 <button type="button" onclick="showHideByDate('none')">Скрыть объекты, открытые после указанного года</button>
@@ -90,7 +95,8 @@
 <b>Сортировать по:</b> <button type="button" onclick="toSort('date')" title="году открытия">году</button>
 <button type="button" onclick="toSort('size')" title="возрастанию радиуса">размеру</button>
 <button type="button" onclick="toSort('mass')" title="возрастанию массы">массе</button>
-<button type="button" onclick="toSort('delta-v')" title="характеристической скорости орбитального маневра">Δv</button>
+<button type="button" onclick="toSort('dens')" title="возрастанию плотности">плотности</button>
+<button type="button" onclick="toSort('deltav')" title="характеристической скорости орбитального маневра">Δv</button>
 </div>
 </div>
 Фокус на картинке – полная информация
@@ -103,7 +109,8 @@
 <div class="size">696342±65</div>
 <div class="mass">1.9885E30</div>
 <div class="date">&nbsp;</div>
-<div class="delta-v">&gt;21</div>
+<div class="deltav">&gt;21</div>
+<div class="dens">1.408</div>
 <div class="desc">В составе Солнца всего 1.48% элементов тяжелее Водорода и Гелия</div>
 </div><div class="obj pla he visited orbited">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Юпитер" src="images/Jupiter.jpg"></div>
@@ -111,21 +118,24 @@
 <div class="size">69911±6</div>
 <div class="mass">1.898E27</div>
 <div class="date">&nbsp;</div>
-<div class="delta-v">6.6-23.78</div>
+<div class="deltav">6.6-23.78</div>
+<div class="dens">1.326</div>
 </div><div class="obj pla he visited orbited animation">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Saturnoppositions-animated.gif')" onmouseout="hide()"><img alt="Сатурн" src="images/Saturn.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Saturn">Сатурн</a></div>
 <div class="size">58232±6</div>
 <div class="mass">5.6834E26</div>
 <div class="date">&nbsp;</div>
-<div class="delta-v">&gt;7.71</div>
+<div class="deltav">&gt;7.71</div>
+<div class="dens">0.687</div>
 </div><div class="obj pla he visited flyby">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Уран" src="images/Uranus.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Uranus">Уран</a></div>
 <div class="size">25362±7</div>
 <div class="mass">8.681E25</div>
 <div class="date">13.03.1781</div>
-<div class="delta-v">&gt;8.49</div>
+<div class="deltav">&gt;8.49</div>
+<div class="dens">1.27</div>
 <div class="desc">Название планеты устоялось лишь спустя 70 лет после открытия. Среди предложений было имя Нептун.</div>
 </div><div class="obj pla he visited flyby">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Нептун" src="images/Neptune.jpg"></div>
@@ -133,29 +143,33 @@
 <div class="size">24622±19</div>
 <div class="mass">1.024E26</div>
 <div class="date">23.09.1846</div>
-<div class="delta-v">8.6</div>
+<div class="deltav">8.6</div>
+<div class="dens">1.638</div>
 </div><div class="obj pla he radar map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Земля" src="images/Earth.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Earth">Земля</a></div>
 <div class="size">6371.0</div>
 <div class="mass">5.972E24</div>
 <div class="date">&nbsp;</div>
-<div class="delta-v">0</div>
-<div class="desc">Планета с самой большой плотностью в Солнечной системе: 5.514 г/см**3. Здесь живет 8 миллиардов человек.</div>
+<div class="deltav">0</div>
+<div class="dens">5.5134</div>
+<div class="desc">Планета с самой большой плотностью в Солнечной системе. Здесь живет 8 миллиардов человек.</div>
 </div><div class="obj pla he radar visited orbited map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Венера" src="images/Venus.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Venus">Венера</a></div>
 <div class="size">6051.8±1.0</div>
 <div class="mass">4.8675E24</div>
 <div class="date">&nbsp;</div>
-<div class="delta-v">6.79</div>
+<div class="deltav">6.79</div>
+<div class="dens">5.243</div>
 </div><div class="obj pla he radar visited orbited map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Марс" src="images/Mars.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Mars">Марс</a></div>
 <div class="size">3389.5±0.2</div>
 <div class="mass">6.4171E23</div>
 <div class="date">&nbsp;</div>
-<div class="delta-v">&gt;5.7</div>
+<div class="deltav">&gt;5.7</div>
+<div class="dens">3.9335</div>
 <div class="desc">Известно не менее 240 метеоритов марсианского происхождения</div>
 </div><div class="obj ju he moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Ганимед (спутник)" src="images/Ganymede.jpg"></div>
@@ -163,42 +177,48 @@
 <div class="size">2634.1±0.3</div>
 <div class="mass">1.4819E23</div>
 <div class="date">13.03.1610</div>
-<div class="delta-v">14.07</div>
+<div class="deltav">14.07</div>
+<div class="dens">1.936</div>
 </div><div class="obj sat he moon radar visited map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Титан (спутник)" src="images/Titan.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Titan_(moon)">Титан</a></div>
 <div class="size">2574.7</div>
 <div class="mass">1.3452E23</div>
 <div class="date">25.03.1655</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.8798±0.0044</div>
 </div><div class="obj pla he radar visited orbited map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Меркурий" src="images/Mercury.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Mercury_(planet)">Меркурий</a></div>
 <div class="size">2439.7±1.0</div>
 <div class="mass">3.3011E23</div>
 <div class="date">&nbsp;</div>
-<div class="delta-v">13.2</div>
+<div class="deltav">13.2</div>
+<div class="dens">5.427</div>
 </div><div class="obj ju he moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Каллисто (спутник)" src="images/Callisto.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Callisto_(moon)">Каллисто</a></div>
 <div class="size">2410.3±1.5</div>
 <div class="mass">1.0759E23</div>
 <div class="date">13.03.1610</div>
-<div class="delta-v">12.42</div>
+<div class="deltav">12.42</div>
+<div class="dens">1.8344±0.0034</div>
 </div><div class="obj ju he moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Ио (спутник)" src="images/Io.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Io_(moon)">Ио</a></div>
 <div class="size">1821.6±0.5</div>
 <div class="mass">8.932E22</div>
 <div class="date">13.03.1610</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">3.528±0.006</div>
 </div><div class="obj ea he moon radar visited orbited map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Луна (луна)" src="images/Moon.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Moon">Луна</a></div>
 <div class="size">1737.1</div>
 <div class="mass">7.342E22</div>
 <div class="date">&nbsp;</div>
-<div class="delta-v">6.3</div>
+<div class="deltav">6.3</div>
+<div class="dens">3.344</div>
 <div class="desc">Известно не менее 390 метеоритов с Луны и не менее 35 событий их падения (одно событие – много фрагментов).</div>
 </div><div class="obj ju he moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Европа (спутник)" src="images/Europa_moon.jpg"></div>
@@ -206,78 +226,89 @@
 <div class="size">1560.8±0.5</div>
 <div class="mass">4.7998E22</div>
 <div class="date">13.03.1610</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">3.013±0.005</div>
 </div><div class="obj ne he moon visited flyby map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Тритон (спутник)" src="images/Triton.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Triton_(moon)">Тритон</a></div>
 <div class="size">1353.4±0.9</div>
 <div class="mass">2.14E22</div>
 <div class="date">10.10.1846</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj dw tno he havesats visited flyby map">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(134340) Плутон" src="images/Pluto.jpg"></div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">2.061</div>
+</div><div class="obj dw tno he havesats visited flyby numbered named map">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="134340 Плутон" src="images/Pluto.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Pluto">Плутон</a></div>
 <div class="size">1188.3±0.8</div>
 <div class="mass">1.3E22</div>
 <div class="date">18.02.1930</div>
-<div class="delta-v">12.7</div>
+<div class="deltav">12.7</div>
+<div class="dens">1.854±0.006</div>
 <div class="desc">Клайд Томбо открыл Плутон на снимках от 23 и 29 января 1930 г.</div>
-</div><div class="obj dw tno havesats he dot">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(136199) Эрида" src="images/Eris.jpg"></div>
+</div><div class="obj dw tno havesats he dot numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="136199 Эрида" src="images/Eris.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Eris_(dwarf_planet)">Эрида</a></div>
 <div class="size">1163±6</div>
 <div class="mass">1.66±0.02E22</div>
 <div class="date">21.10.2003</div>
-<div class="delta-v">16.0</div>
-</div><div class="obj dw tno havesats he dot">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(136108) Хаумеа" src="images/Haumea.jpg"></div>
+<div class="deltav">16.0</div>
+<div class="dens">2.43±0.05</div>
+</div><div class="obj dw tno havesats he dot numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="136108 Хаумеа" src="images/Haumea.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Haumea">Хаумеа</a></div>
 <div class="size">798±6–816</div>
 <div class="mass">4.01±0.04E21</div>
 <div class="date">28.12.2004</div>
-<div class="delta-v">14.2</div>
+<div class="deltav">14.2</div>
+<div class="dens">1.76−1.89</div>
 </div><div class="obj ur he moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Титания (спутник)" src="images/Titania.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Titania_(moon)">Титания</a></div>
 <div class="size">788.4±0.6</div>
 <div class="mass">3.4E21</div>
 <div class="date">11.01.1787</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.711±0.005</div>
 </div><div class="obj sat he moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Рея (спутник)" src="images/Rhea.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Rhea_(moon)">Рея</a></div>
 <div class="size">763.8±1</div>
 <div class="mass">2.307E21</div>
 <div class="date">23.12.1672</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.236±0.005</div>
 </div><div class="obj ur he moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Оберон (спутник)" src="images/Oberon.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Oberon_(moon)">Оберон</a></div>
 <div class="size">761.4±2.6</div>
 <div class="mass">3.08±0.09E21</div>
 <div class="date">11.01.1787</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.63±0.05</div>
 </div><div class="obj sat he moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Япет (спутник)" src="images/Iapetus.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Iapetus_(moon)">Япет</a></div>
 <div class="size">734.5±2.8</div>
 <div class="mass">1.81E21</div>
 <div class="date">25.10.1671</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj dw tno havesats dot he">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(136472) Макемаке" src="images/Makemake.jpg"></div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.088±0.013</div>
+</div><div class="obj dw tno havesats dot he numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="136472 Макемаке" src="images/Makemake.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Makemake">Макемаке</a></div>
 <div class="size">710−750</div>
 <div class="mass">4.4E21</div>
 <div class="date">31.03.2005</div>
-<div class="delta-v">14.3</div>
-</div><div class="obj tno havesats dot he">
-<div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Xiangliu_orbiting_225088_Gonggong_%282009-2010%29.jpg/330px-Xiangliu_orbiting_225088_Gonggong_%282009-2010%29.jpg')" onmouseout="hide()"><img alt="(225088) Gonggong" src="images/Gonggong.jpg"></div>
+<div class="deltav">14.3</div>
+<div class="dens">1.7−2.1</div>
+</div><div class="obj tno havesats dot he numbered named">
+<div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Xiangliu_orbiting_225088_Gonggong_%282009-2010%29.jpg/330px-Xiangliu_orbiting_225088_Gonggong_%282009-2010%29.jpg')" onmouseout="hide()"><img alt="225088 Gonggong" src="images/Gonggong.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/225088_Gonggong">Гун-гун</a></div>
 <div class="size">615±25</div>
 <div class="mass">1.75±0.07E21</div>
 <div class="date">17.07.2007</div>
-<div class="delta-v">13.5</div>
+<div class="deltav">13.5</div>
+<div class="dens">1.74±0.16</div>
 <div class="desc">Был крупнейшим телом Солнечной системы без названия до 05.02.2020. В 2019 году находился в 88 а.е. от Солнца и продолжает удаляться со скоростью 1.1 км/с. Имеет спутник Сянлю.</div>
 </div><div class="obj pl tno he dwmoon visited flyby map">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Charon-Neutral-Bright-Release.jpg/255px-Charon-Neutral-Bright-Release.jpg')" onmouseout="hide()"><img alt="Харон (спутник)" src="images/Charon.jpg"></div>
@@ -285,35 +316,40 @@
 <div class="size">606.0±0.5</div>
 <div class="mass">1.59±0.015E21</div>
 <div class="date">13.04.1978</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.702±0.017</div>
 </div><div class="obj ur he moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Умбриэль (спутник)" src="images/Umbriel.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Umbriel_(moon)">Умбриэль</a></div>
 <div class="size">584.7±2.8</div>
 <div class="mass">1.28±0.03E21</div>
 <div class="date">24.10.1851</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.39±0.16</div>
 </div><div class="obj ur he moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Ариэль (спутник)" src="images/Ariel.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Ariel_(moon)">Ариэль</a></div>
 <div class="size">578.9±0.6</div>
 <div class="mass">1.25±0.02E21</div>
 <div class="date">24.10.1851</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.592±0.15</div>
 </div><div class="obj sat he moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Диона (спутник)" src="images/Dione.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Dione_(moon)">Диона</a></div>
 <div class="size">561.4±0.4</div>
 <div class="mass">1.095E21</div>
 <div class="date">21.03.1684</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj tno havesats dot he">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(50000) Quaoar" src="images/Quaoar.jpg"></div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.478±0.003</div>
+</div><div class="obj tno havesats dot he numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="50000 Quaoar" src="images/Quaoar.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/50000_Quaoar">Квавар</a></div>
 <div class="size">560.5±0.6</div>
 <div class="mass">1.4±0.2E21</div>
 <div class="date">05.06.2002</div>
-<div class="delta-v">12.6</div>
+<div class="deltav">12.6</div>
+<div class="dens">1.7</div>
 <div class="desc">Кьюбивано, кандидат в карликовые планеты. Имеет спутник Вейвот</div>
 </div><div class="obj sat he moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Тефия (спутник)" src="images/Tethys.jpg"></div>
@@ -321,71 +357,79 @@
 <div class="size">531.1±0.6</div>
 <div class="mass">6.175E20</div>
 <div class="date">21.03.1684</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj tno dot he">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(90377) Sedna" src="images/Sedna.png"></div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">0.984±0.003</div>
+</div><div class="obj tno dot he numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="90377 Sedna" src="images/Sedna.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/90377_Sedna">Седна</a></div>
 <div class="size">497.5±40</div>
 <div class="mass">&nbsp;</div>
 <div class="date">14.11.2003</div>
-<div class="delta-v">10.1</div>
-</div><div class="obj mab dw he visited orbited animation map">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(1) Ceres" src="images/Ceres.jpg"></div>
+<div class="deltav">10.1</div>
+</div><div class="obj mab dw he visited orbited animation map numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="1 Ceres" src="images/Ceres.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)">Церера</a></div>
 <div class="size">470</div>
 <div class="mass">9.3835E20</div>
 <div class="date">01.01.1801</div>
-<div class="delta-v">10.5</div>
-</div><div class="obj tno dot he occultation">
+<div class="deltav">10.5</div>
+<div class="dens">2.162±0.008</div>
+</div><div class="obj tno dot he occultation numbered">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/2002_MS4_occultation_8_Aug_2020_EPSC2021-440.jpg/495px-2002_MS4_occultation_8_Aug_2020_EPSC2021-440.jpg')" onmouseout="hide()"><img alt="(307261) 2002 MS4" src="images/2002MS4.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(307261)_2002_MS4">2002 MS4</a></div>
 <div class="size">467±24</div>
 <div class="mass">&nbsp;</div>
 <div class="date">18.06.2002</div>
-<div class="delta-v">13.0</div>
+<div class="deltav">13.0</div>
 <div class="desc">Из наблюдений покрытия звезд в 2019–2020 годах получены оценки размера 808 на 748 км</div>
-</div><div class="obj tno havesats dot he animation">
-<div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Orcus-Vanth.gif/330px-Orcus-Vanth.gif')" onmouseout="hide()"><img alt="(90482) Orcus" src="images/Orcus.png"></div>
+</div><div class="obj tno havesats dot he numbered named animation">
+<div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Orcus-Vanth.gif/330px-Orcus-Vanth.gif')" onmouseout="hide()"><img alt="90482 Orcus" src="images/Orcus.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/90482_Orcus">Орк</a></div>
 <div class="size">458±13</div>
 <div class="mass">6.4±0.2E20</div>
 <div class="date">17.02.2004</div>
-<div class="delta-v">13.2</div>
-</div><div class="obj tno havesats dot he">
+<div class="deltav">13.2</div>
+<div class="dens">1.53±0.1</div>
+</div><div class="obj tno havesats dot he numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="120347 Salacia" src="images/Salacia.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/120347_Salacia">Салация</a></div>
 <div class="size">446.5±11</div>
 <div class="mass">4.92±0.07E20</div>
 <div class="date">22.09.2004</div>
-<div class="delta-v">13.9</div>
-</div><div class="obj tno havesats dot he animation occultation">
+<div class="deltav">13.9</div>
+<div class="dens">1.26−1.5</div>
+</div><div class="obj tno havesats dot he animation occultation numbered named">
 <div class="img" onmouseover="show(this, 'images/Varda-occultation-model.png')" onmouseout="hide()"><img alt="174567 Varda" src="images/Varda.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/174567_Varda">Варда</a></div>
 <div class="size">370±7</div>
 <div class="mass">2.45±0.06E20</div>
 <div class="date">21.06.2003</div>
-<div class="delta-v">13.4</div>
+<div class="deltav">13.4</div>
+<div class="dens">1.23−1.78</div>
 </div><div class="obj dwmoon tno he dot">
-  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Dysnomia (moon)" src="images/Eris.jpg"></div>
-  <div class="name"><a href="https://en.wikipedia.org/wiki/Dysnomia_(moon)">Дисномия</a></div>
-  <div class="size">300</div>
-  <div class="mass">4E20</div>
-  <div class="date">10.09.2005</div>
-  <div class="delta-v">16.0</div>
-</div><div class="obj mab animation visited orbited map">
-<div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Vesta_Rotation.gif/180px-Vesta_Rotation.gif')" onmouseout="hide()"><img alt="(4) Vesta" src="images/Vesta.jpg"></div>
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Dysnomia (moon)" src="images/Eris.jpg"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/Dysnomia_(moon)">Дисномия</a></div>
+<div class="size">300</div>
+<div class="mass">4E20</div>
+<div class="date">10.09.2005</div>
+<div class="deltav">16.0</div>
+<div class="dens">1.8−2.4</div>
+</div><div class="obj mab animation visited orbited map numbered named">
+<div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Vesta_Rotation.gif/180px-Vesta_Rotation.gif')" onmouseout="hide()"><img alt="4 Vesta" src="images/Vesta.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/4_Vesta">Веста</a></div>
 <div class="size">262.7±0.1</div>
 <div class="mass">2.59E20</div>
 <div class="date">29.03.1807</div>
-<div class="delta-v">9.4</div>
-</div><div class="obj mab highcontrast">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(2) Pallas" src="images/Pallas.jpg"></div>
+<div class="deltav">9.4</div>
+<div class="dens">3.456±0.035</div>
+</div><div class="obj mab highcontrast numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="2 Pallas" src="images/Pallas.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2_Pallas">Паллада</a></div>
 <div class="size">256±3</div>
 <div class="mass">2.11±0.26E20</div>
 <div class="date">28.03.1802</div>
-<div class="delta-v">14.2</div>
+<div class="deltav">14.2</div>
+<div class="dens">2.92±0.08</div>
 <div class="desc">Третий по массе астероид Солнечной системы: 7% от массы пояса астероидов.</div>
 </div><div class="obj sat he moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Энцелад (спутник)" src="images/Enceladus.jpg"></div>
@@ -393,21 +437,24 @@
 <div class="size">252.1±0.2</div>
 <div class="mass">1.08E20</div>
 <div class="date">28.08.1789</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.609±0.005</div>
 </div><div class="obj ur he moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Миранда (спутник)" src="images/Miranda.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Miranda_(moon)">Миранда</a></div>
 <div class="size">235.8±0.7</div>
 <div class="mass">0.66±0.08E20</div>
 <div class="date">16.02.1948</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj mab highcontrast">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(10) Hygiea" src="images/Hygiea.jpg"></div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.20±0.15</div>
+</div><div class="obj mab highcontrast numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="10 Hygiea" src="images/Hygiea.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/10_Hygiea">Гигея</a></div>
 <div class="size">217±7</div>
 <div class="mass">0.83±0.08E20</div>
 <div class="date">12.04.1849</div>
-<div class="delta-v">10.5</div>
+<div class="deltav">10.5</div>
+<div class="dens">2.06±0.2</div>
 <div class="desc">4-й (по объему и массе) астероид Солнечной системы. Имеет близкую к сферической форму и может быть кандидатом в карликовые планеты.</div>
 </div><div class="obj ne moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Протей (спутник)" src="images/Proteus.jpg"></div>
@@ -415,35 +462,48 @@
 <div class="size">210±7</div>
 <div class="mass">4.4E19</div>
 <div class="date">16.06.1989</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.3</div>
 </div><div class="obj sat he moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Мимас (спутник)" src="images/Mimas.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Mimas_(moon)">Мимас</a></div>
 <div class="size">198.2±0.4</div>
 <div class="mass">3.749E19</div>
 <div class="date">17.09.1789</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.1479±0.007</div>
 </div><div class="obj ne lowcontrast moon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Нереида (спутник)" src="images/Nereid.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Nereid_(moon)">Нереида</a></div>
 <div class="size">170±25</div>
 <div class="mass"><a href="https://solarsystem.nasa.gov/moons/neptune-moons/nereid/by-the-numbers/">3.09E19</a></div>
 <div class="date">01.05.1949</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj mab highcontrast">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(704) Interamnia" src="images/Interamnia.jpg"></div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.5</div>
+</div><div class="obj mab highcontrast numbered named">
+<div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/704_Interamnia_VLT_%282021%29%2C_deconvolved.pdf/page1-296px-704_Interamnia_VLT_%282021%29%2C_deconvolved.pdf.jpg')" onmouseout="hide()"><img alt="704 Interamnia" src="images/Interamnia.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/704_Interamnia">Интерамния</a></div>
 <div class="size">166±3</div>
 <div class="mass">3.8±1.3E19</div>
 <div class="date">02.10.1910</div>
-<div class="delta-v">11.4</div>
-</div><div class="obj mab highcontrast">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(511) Davida" src="images/Davida.jpg"></div>
+<div class="deltav">11.4</div>
+<div class="dens">1.84±0.28</div>
+</div><div class="obj mab highcontrast numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="52 Europa" src="images/Europa.jpg"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/52_Europa">Европа</a></div>
+<div class="size">159.5±2</div>
+<div class="mass">2.4±0.4E19</div>
+<div class="date">04.02.1858</div>
+<div class="deltav">10.6</div>
+<div class="dens">1.41±0.23</div>
+</div><div class="obj mab highcontrast numbered named">
+<div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/511_Davida_VLT_%282021%29%2C_deconvolved.pdf/page1-350px-511_Davida_VLT_%282021%29%2C_deconvolved.pdf.jpg')" onmouseout="hide()"><img alt="511 Davida" src="images/Davida.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/511_Davida">Давида</a></div>
 <div class="size">145±10</div>
 <div class="mass">3.8±0.2E19</div>
 <div class="date">30.05.1903</div>
-<div class="delta-v">11.1</div>
+<div class="deltav">11.1</div>
+<div class="dens">1.92±0.53</div>
 <!-- <div class="period">5.63009883 yr (2056.393597 d)</div> -->
 </div><div class="obj sat moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Hyperion (moon)" src="images/Hyperion.jpg"></div>
@@ -451,295 +511,336 @@
 <div class="size">138.6±4</div>
 <div class="mass">5.62±0.05E18</div>
 <div class="date">16.09.1848</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj mab highcontrast">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(15) Eunomia" src="images/Eunomia.png"></div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">0.544±0.05</div>
+</div><div class="obj mab highcontrast numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="15 Eunomia" src="images/Eunomia.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/15_Eunomia">Эвномия</a></div>
 <div class="size">135±1.5</div>
 <div class="mass">3.1±0.2E19</div>
 <div class="date">29.07.1851</div>
-<div class="delta-v">9.9</div>
-</div><div class="obj mab highcontrast">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(3) Juno" src="images/Juno.jpg"></div>
+<div class="deltav">9.9</div>
+<div class="dens">2.96±0.21</div>
+</div><div class="obj mab highcontrast numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="3 Juno" src="images/Juno.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/3_Juno">Юнона</a></div>
 <div class="size">127±1</div>
 <div class="mass">2.7±0.2E19</div>
 <div class="date">01.09.1804</div>
-<div class="delta-v">9.7</div>
-</div><div class="obj mab highcontrast">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(16) Psyche" src="images/Psyche.jpg"></div>
+<div class="deltav">9.7</div>
+<div class="dens">3.15±0.28</div>
+</div><div class="obj mab radar highcontrast numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="16 Psyche" src="images/Psyche.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/16_Psyche">Психея</a></div>
-<div class="size">112.5±2</div>
-<div class="mass">2.4±0.3E19</div>
+<div class="size">111.5±1.5</div>
+<div class="mass">2.29±0.14E19</div>
 <div class="date">17.03.1852</div>
-<div class="delta-v">10.0</div>
-</div><div class="obj mab highcontrast">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(324) Bamberga" src="images/Bamberga.jpg"></div>
+<div class="deltav">10.0</div>
+<div class="dens">3.88±0.25</div>
+</div><div class="obj mab highcontrast numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="324 Bamberga" src="images/Bamberga.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/324_Bamberga">Бамберга</a></div>
 <div class="size">112±4</div>
-<div class="mass">1.1E19</div>
+<div class="mass">1.02±0.9E19</div>
 <div class="date">25.02.1892</div>
-<div class="delta-v">9.0</div>
-</div><div class="obj mab highcontrast">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(7) Iris" src="images/Iris.jpg"></div>
+<div class="deltav">9.0</div>
+<div class="dens">1.67±0.16</div>
+</div><div class="obj mab highcontrast numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="7 Iris" src="images/Iris.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/7_Iris">Ирида</a></div>
 <div class="size">107±2.5</div>
 <div class="mass">1.37±0.13E19</div>
 <div class="date">13.08.1847</div>
-<div class="delta-v">8.6</div>
+<div class="deltav">8.6</div>
+<div class="dens">3.2±0.74</div>
 </div><div class="obj sat moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Phoebe (moon)" src="images/Phoebe.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Phoebe_(moon)">Феба</a></div>
 <div class="size">106.6±0.8</div>
 <div class="mass">8.29±0.01E18</div>
 <div class="date">16.08.1898</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.638±0.033</div>
 </div><div class="obj ne moon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img  alt="Larissa (moon)" src="images/Larissa.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Larissa_(moon)">Ларисса</a></div>
 <div class="size">97±5.4</div>
 <div class="mass">4.2E18</div>
 <div class="date">24.05.1981</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj mab highcontrast">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(6) Hebe" src="images/Hebe.jpg"></div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.2</div>
+</div><div class="obj mab highcontrast numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="6 Hebe" src="images/Hebe.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/6_Hebe">Геба</a></div>
 <div class="size">93</div>
 <div class="mass">1.27±0.13E19</div>
 <div class="date">01.07.1847</div>
-<div class="delta-v">9.7</div>
+<div class="deltav">9.7</div>
+<div class="dens">3.18±0.64</div>
 </div><div class="obj sat moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Janus (moon)" src="images/Janus.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Janus_(moon)">Янус</a></div>
 <div class="size">89.5±1.4</div>
 <div class="mass">1.898E18</div>
 <div class="date">15.12.1966</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj mab binary highcontrast">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(90) Antiope" src="images/Antiope.jpg"></div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">0.63±0.03</div>
+</div><div class="obj mab binary highcontrast numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="90 Antiope" src="images/Antiope.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/90_Antiope">Антиопа</a></div>
 <div class="size">84−88</div>
 <div class="mass">8.3E17</div>
 <div class="date">01.10.1866</div>
-<div class="delta-v">10.2</div>
-</div><div class="obj tno dot animation">
+<div class="deltav">10.2</div>
+<div class="dens">1.25±0.05</div>
+</div><div class="obj tno dot numbered named animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="15760 Albion (1992 QB1)" src="images/Albion.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/15760_Albion">Альбион</a></div>
 <div class="size">84</div>
 <div class="mass">&nbsp;</div>
 <div class="date">30.08.1992</div>
-<div class="delta-v">12.3</div>
+<div class="deltav">12.3</div>
 <div class="desc">Первый транснептуновый объект, открытый после Плутона и Харона. Дал название классическим объектам пояса Койпера – кьюбивано</div>
 </div><div class="obj ju moon map">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Amalthea (moon)" src="images/Amalthea.jpg"></div>
+<div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/6/62/Amalthea.gif')" onmouseout="hide()"><img alt="Amalthea (moon)" src="images/Amalthea.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Amalthea_(moon)">Амальтея</a></div>
 <div class="size">83.5±2</div>
 <div class="mass">2.08±0.15E18</div>
 <div class="date">09.09.1892</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">0.857±0.099</div>
 </div><div class="obj ur moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Puck (moon)" src="images/Puck.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Puck_(moon)">Пак</a></div>
 <div class="size">81±2</div>
 <div class="mass">2.9E18</div>
 <div class="date">30.12.1985</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.3</div>
 </div><div class="obj ne moon lowcontrast">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Despina (moon)" src="images/Despina.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Despina_(moon)">Деспина</a></div>
 <div class="size">78.0 ± 4.7</div>
 <div class="mass">2.2E18</div>
 <div class="date">02.08.1989</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.2</div>
 </div><div class="obj ju moon dot">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Himalia (moon)" src="images/Himalia.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Himalia_(moon)">Гималия</a></div>
 <div class="size">69.8±0.9</div>
 <div class="mass">4.2±0.6E18</div>
 <div class="date">03.12.1904</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj mab innermb lightcurve">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(8) Flora" src="images/Flora.jpg"></div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.63</div>
+</div><div class="obj mab innermb lightcurve numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="8 Flora" src="images/Flora.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/8_Flora">Флора</a></div>
 <div class="size">64</div>
 <div class="mass">6.6±0.8E18</div>
 <div class="date">18.10.1847</div>
-<div class="delta-v">8.6</div>
-</div><div class="obj mab lightcurve">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(5) Astraea" src="images/Astraea.jpg"></div>
+<div class="deltav">8.6</div>
+<div class="dens">2.4±1</div>
+</div><div class="obj mab highcontrast havesats contactbinary numbered named model animation">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="216 Kleopatra" src="images/Kleopatra.gif"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/216_Kleopatra">Клеопатра</a></div>
+<div class="size">59±1</div>
+<div class="mass">3E18</div>
+<div class="date">10.04.1880</div>
+<div class="deltav">9.9</div>
+<div class="dens">3.45±0.41</div>
+</div><div class="obj mab lightcurve numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="5 Astraea" src="images/Astraea.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/5_Astraea">Астрея</a></div>
 <div class="size">59.5</div>
 <div class="mass">2.9E18</div>
 <div class="date">08.12.1845</div>
-<div class="delta-v">9.2</div>
+<div class="deltav">9.2</div>
+<div class="dens">3.3</div>
 </div><div class="obj sat moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Epimetheus (moon)" src="images/Epimetheus.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Epimetheus_(moon)">Эпиметей</a></div>
 <div class="size">58.1±1.8</div>
 <div class="mass">5.27±0.01E17</div>
 <div class="date">18.12.1966</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">0.640±0.062</div>
 </div><div class="obj ju moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Thebe (moon)" src="images/Thebe.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Thebe_(moon)">Фива</a></div>
 <div class="size">49.3±2</div>
 <div class="mass">4.3E17</div>
 <div class="date">05.03.1979</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj mab visited flyby map">
+<div class="deltav">&gt;7.7</div>
+</div><div class="obj mab visited flyby map numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="21 Lutetia" src="images/Lutetia.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/21_Lutetia">Лютеция</a></div>
 <div class="size">49±1</div>
 <div class="mass">1.7±0.02E18</div>
 <div class="date">15.11.1852</div>
-<div class="delta-v">9.0</div>
+<div class="deltav">9.0</div>
+<div class="dens">3.45±0.21</div>
 </div><div class="obj ur lowcontrast moon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Juliet (moon)" src="images/Juliet.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Juliet_(moon)">Джульетта</a></div>
 <div class="size">46.8±4</div>
 <div class="mass">5.6E17</div>
 <div class="date">03.01.1986</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.3</div>
 </div><div class="obj sat moon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Prometheus (moon)" src="images/Prometheus.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Prometheus_(moon)">Прометей</a></div>
 <div class="size">43.1±2.7</div>
 <div class="mass">1.59±0.02E17</div>
 <div class="date">01.10.1980</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">0.48±0.09</div>
 </div><div class="obj sat moon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Pandora (moon)" src="images/Pandora.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Pandora_(moon)">Пандора</a></div>
 <div class="size">40.7±1.5</div>
 <div class="mass">1.37±0.02E17</div>
 <div class="date">01.10.1980</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">0.49±0.06</div>
 </div><div class="obj ju moon lowcontrast">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Elara (moon)" src="images/Elara.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Elara_(moon)">Элара</a></div>
 <div class="size">39.9±0.9</div>
 <div class="mass">8.66±0.6E17</div>
 <div class="date">02.01.1905</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj mab visited flyby animation map">
+<div class="deltav">&gt;7.7</div>
+</div><div class="obj mab visited flyby animation map numbered named">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/b/b9/253_Mathilde_Flyby.gif')" onmouseout="hide()"><img alt="253 Mathilde" src="images/Mathilde.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/253_Mathilde">Матильда</a></div>
 <div class="size">26.4</div>
 <div class="mass">1.03±0.04E17</div>
 <div class="date">12.11.1885</div>
-<div class="delta-v">9.0</div>
+<div class="deltav">9.0</div>
+<div class="dens">1.3</div>
 </div><div class="obj ju lowcontrast moon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Metis (moon)" src="images/Metis_moon.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Metis_(moon)">Метида</a></div>
 <div class="size">21.5±2</div>
 <div class="mass"><a href="https://solarsystem.nasa.gov/moons/jupiter-moons/metis/by-the-numbers/">1.2E17</a></div>
 <div class="date">04.03.1979</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
 </div><div class="obj pl dwmoon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Hydra (moon)" src="images/Hydra.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Hydra_(moon)">Гидра</a></div>
 <div class="size">19.65</div>
 <div class="mass">4.8±4.2E16</div>
 <div class="date">15.05.2005</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">2.13</div>
 </div><div class="obj pl dwmoon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Nix (moon)" src="images/Nix.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Nix_(moon)">Никс</a></div>
 <div class="size">19.017</div>
 <div class="mass">4.5±4E16</div>
 <div class="date">15.05.2005</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.37</div>
 </div><div class="obj sat moon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Helene (moon)" src="images/Helene.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Helene_(moon)">Елена</a></div>
 <div class="size">17.6±0.4</div>
 <div class="mass"><a href="https://solarsystem.nasa.gov/moons/saturn-moons/helene/by-the-numbers/">1.139E16</a></div>
 <div class="date">01.03.1980</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj tno contactbinary visited flyby animation map">
+<div class="deltav">&gt;7.7</div>
+</div><div class="obj tno contactbinary visited flyby animation map numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="486958 Arrokoth" src="images/Arrokoth.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/486958_Arrokoth">Аррокот</a></div>
 <div class="size">15.85±0.25</div>
 <div class="mass"><a href="https://jenab6.livejournal.com/85249.html">1.25E16</a></div>
 <div class="date">26.06.2014</div>
-<div class="delta-v">12.378</div>
-</div><div class="obj mab havesats binary visited animation flyby map">
+<div class="deltav">12.378</div>
+<div class="dens">0.235</div>
+</div><div class="obj mab havesats binary visited animation flyby map numbered named">
 <div class="img" onmouseover="show(this, 'images/Ida-big.gif')" onmouseout="hide()"><img alt="243 Ida" src="images/Ida.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/243_Ida">Ида</a></div>
 <div class="size">15.7</div>
 <div class="mass">4.2±6E16</div>
 <div class="date">29.09.1884</div>
-<div class="delta-v">10.3</div>
+<div class="deltav">10.3</div>
+<div class="dens">2.6±0.5</div>
 </div><div class="obj sat moon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Atlas (moon)" src="images/Atlas.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Atlas_(moon)">Атлас</a></div>
 <div class="size">15.1±0.9</div>
 <div class="mass">6.60±0.45E15</div>
 <div class="date">01.10.1980</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">0.46±0.11</div>
 </div><div class="obj sat moon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Pan (moon)" src="images/Pan.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Pan_(moon)">Пан</a></div>
 <div class="size">14.1±1.3</div>
 <div class="mass">4.95±0.75E15</div>
 <div class="date">16.07.1990</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">0.42±0.15</div>
 </div><div class="obj sat moon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Telesto (moon)" src="images/Telesto.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Telesto_(moon)">Телесто</a></div>
 <div class="size">12.4±0.4</div>
 <div class="mass"><a href="https://solarsystem.nasa.gov/moons/saturn-moons/telesto/by-the-numbers/">4.046E15</a></div>
 <div class="date">08.04.1980</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
 </div><div class="obj mar moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Phobos (moon)" src="images/Phobos.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Phobos_(moon)">Фобос</a></div>
 <div class="size">11.267</div>
 <div class="mass">1.0659E16</div>
 <div class="date">18.08.1877</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.876</div>
 </div><div class="obj sat moon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Calypso (moon)" src="images/Calypso.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Calypso_(moon)">Калипсо</a></div>
 <div class="size">10.7±0.7</div>
 <div class="mass"><a href="https://solarsystem.nasa.gov/moons/saturn-moons/calypso/by-the-numbers/">2.548E15</a></div>
 <div class="date">13.03.1980</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj neo visited orbited animation map">
+<div class="deltav">&gt;7.7</div>
+</div><div class="obj neo visited orbited animation map numbered named">
 <div class="img" onmouseover="show(this, 'https://nssdc.gsfc.nasa.gov/planetary/image/near_20000212_anim.gif')" onmouseout="hide()"><img alt="433 Eros" src="images/Eros.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/433_Eros">Эрос</a></div>
 <div class="size">8.42±0.02</div>
 <div class="mass">6.69±E15</div>
 <div class="date">13.08.1898</div>
-<div class="delta-v">6.112</div>
+<div class="deltav">6.112</div>
+<div class="dens">2.67±0.03</div>
 </div><div class="obj ju moon lowcontrast">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Adrastea (moon)" src="images/Adrastea.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Adrastea_(moon)">Адрастея</a></div>
 <div class="size">8.2±2</div>
 <div class="mass">2E15</div>
 <div class="date">08.07.1979</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
 </div><div class="obj pl lowcontrast dwmoon flyby">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Kerberos (moon)" src="images/Kerberos.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Kerberos_(moon)">Кербер</a></div>
 <div class="size">6.33</div>
 <div class="mass">1.65E16</div>
 <div class="date">28.06.2011</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">12.7</div>
 </div><div class="obj mar moon map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Deimos (moon)" src="images/Deimos.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Deimos_(moon)">Деймос</a></div>
 <div class="size">6.2±0.18</div>
 <div class="mass">1.476E15</div>
 <div class="date">12.08.1877</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj mab innermb visited flyby map">
+<div class="deltav">&gt;7.7</div>
+<div class="dens">1.471±0.166</div>
+</div><div class="obj mab innermb visited flyby map numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="951 Gaspra" src="images/Gaspra.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/951_Gaspra">Гаспра</a></div>
 <div class="size">6.266</div>
 <div class="mass">2.5E16</div>
 <div class="date">30.07.1916</div>
-<div class="delta-v">8.402</div>
+<div class="deltav">8.402</div>
+<div class="dens">2.7</div>
 <div class="desc">Первый посещенный космическим аппаратом (<a href="https://en.wikipedia.org/wiki/Galileo_spacecraft">Галилео</a>) астероид. Был посещен 29.10.1991, фото сделаны с расстояния 5300 км на скорости 8 км/с.</div>
 </div><div class="obj co visited flyby">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="1P/Halley" src="images/Halley.jpg"></div>
@@ -747,63 +848,67 @@
 <div class="size">5.75</div>
 <div class="mass">2.2E14</div>
 <div class="date">25.12.1758</div>
-<div class="delta-v">&gt;29.8</div>
+<div class="deltav">&gt;29.8</div>
+<div class="dens">0.6</div>
 </div><div class="obj pl lowcontrast dwmoon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Styx (moon)" src="images/Styx.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Styx_(moon)">Стикс</a></div>
 <div class="size">5.5</div>
 <div class="mass">7.5E15</div>
 <div class="date">26.06.2012</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">12.7</div>
 </div><div class="obj sat moon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img  alt="Daphnis (moon)" src="images/Daphnis.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Daphnis_(moon)">Дафнис</a></div>
 <div class="size">3.8±0.8</div>
 <div class="mass">7.79E13</div>
 <div class="date">01.05.2005</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">0.34±0.26</div>
 </div><div class="obj co jfc visited flyby">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="9P/Tempel" src="images/Tempel1.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Tempel_1">Темпель 1</a></div>
 <div class="size">3±0.1</div>
 <div class="mass"><a href="https://www.sciencedirect.com/science/article/abs/pii/S001910350700303X">4.5E13</a></div>
 <div class="date">03.04.1867</div>
-<div class="delta-v">&gt;11.1</div>
-</div><div class="obj neo pha radar radarimage">
+<div class="deltav">&gt;11.1</div>
+<div class="dens">0.62</div>
+</div><div class="obj neo pha radar radarimage numbered">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/9/9f/1999jm8-01.jpg')" onmouseout="hide()"><img alt="(53319) 1999 JM8" src="images/1999JM8.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(53319)_1999_JM8">1999 JM8</a></div>
 <div class="size">3</div>
 <div class="mass">&nbsp;</div>
 <div class="date">13.05.1999</div>
-<div class="delta-v">7.86</div>
-</div><div class="obj neo pha radar radarimage animation">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(3200) Phaethon" src="images/Phaethon.gif"></div>
+<div class="deltav">7.86</div>
+</div><div class="obj neo pha radar radarimage animation numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="3200 Phaethon" src="images/Phaethon.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/3200_Phaethon">Фаэтон</a></div>
 <div class="size">2.9</div>
 <div class="mass">1.4E14</div>
 <div class="date">11.10.1983</div>
-<div class="delta-v">15.35</div>
+<div class="deltav">15.35</div>
 </div><div class="obj co jfc visited flyby">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="19P/Borrelly" src="images/Borrelly.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/19P/Borrelly">Борелли</a></div>
 <div class="size">2.66</div>
 <div class="mass">2E13</div>
 <div class="date">28.12.1904</div>
-<div class="delta-v">&gt;13</div>
-</div><div class="obj mab visited flyby map">
+<div class="deltav">&gt;13</div>
+<div class="dens">0.3</div>
+</div><div class="obj mab visited flyby map numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="2867 Šteins" src="images/Steins.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2867_%C5%A0teins">Штейнс</a></div>
 <div class="size">2.58±0.084</div>
 <div class="mass">&nbsp;</div>
 <div class="date">04.11.1969</div>
-<div class="delta-v">9.35</div>
-</div><div class="obj mab visited flyby">
+<div class="deltav">9.35</div>
+</div><div class="obj mab visited flyby numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="5535 Annefrank" src="images/Annefrank.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/5535_Annefrank">Аннафранк</a></div>
 <div class="size">2.4</div>
 <div class="mass">&nbsp;</div>
 <div class="date">23.03.1942</div>
-<div class="delta-v">8.96</div>
+<div class="deltav">8.96</div>
 <div class="desc">Фото астероида было получено КА Stardust 02.11.2002 с расстояния 3&nbsp;км.</div>
 </div><div class="obj sat moon lowcontrast">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Pallene (moon)" src="images/Pallene.jpg"></div>
@@ -811,130 +916,139 @@
 <div class="size">2.22±0.07</div>
 <div class="mass">2E13</div>
 <div class="date">06.01.1978</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">0.25±0.09</div>
 </div><div class="obj co jfc visited flyby">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="81P/Wild" src="images/Wild.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/81P/Wild">Вилт 2</a></div>
 <div class="size">2.133</div>
 <div class="mass">2.3E13</div>
 <div class="date">06.01.1978</div>
-<div class="delta-v">&gt;10.8</div>
+<div class="deltav">&gt;10.8</div>
+<div class="dens">0.6</div>
 <div class="desc">КА Stardust сблизился с ядром кометы 02.01.2004 с относительной скоростью 6.1 км/с. Фото сделано с расстояния 237&nbsp;км.</div>
-</div><div class="obj neo pha havesats radarimage animation">
+</div><div class="obj neo pha havesats radarimage numbered named animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="3122 Florence" src="images/Florence.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/3122_Florence">Флоренс</a></div>
 <div class="size">2.1</div>
 <div class="mass">7.9E13</div>
 <div class="date">02.03.1981</div>
-<div class="delta-v">8.2</div>
-<div class="desc"></div>
-</div><div class="obj co jfc contactbinary visited orbited">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="67P/Churyumov–Gerasimenko" src="images/ChuryumovGerasimenko.jpg"></div>
+<div class="deltav">8.171</div>
+<div class="dens">1.4</div>
+</div><div class="obj co jfc contactbinary visited orbited animation">
+<div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/d/da/NavCam_Comet_67P_animation_20140806_%28cropped%29.gif')" onmouseout="hide()"><img alt="67P/Churyumov–Gerasimenko" src="images/ChuryumovGerasimenko.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/67P/Churyumov–Gerasimenko">Чурюмова-</a></div>
 <div class="size">2</div>
 <div class="mass">9.98E12</div>
 <div class="date">20.09.1969</div>
-<div class="delta-v">&gt;9.8</div>
+<div class="deltav">&gt;9.8</div>
+<div class="dens">0.533±0.006</div>
 <div class="desc">Первые подробные фото получены КА Rosetta в промежуток 1–6 августа 2014&nbsp;г.</div>
-</div><div class="obj neo pha binary havesats radar radarimage animation">
+</div><div class="obj neo pha binary havesats radar radarimage numbered animation">
 <div class="img" onmouseover="show(this, 'https://planetary.s3.amazonaws.com/web/assets/pictures/20130624_asteroid_1998_QE2_on_20130607.gif')" onmouseout="hide()"><img alt="(285263) 1998 QE2" src="images/1998QE2.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(285263)_1998_QE2">1998 QE2</a></div>
 <div class="size">1.6</div>
 <div class="mass">&nbsp;</div>
 <div class="date">19.08.1998</div>
-<div class="delta-v">7.4</div>
-</div><div class="obj neo pha radar visited flyby">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(4179) Toutatis" src="images/Toutatis.jpg"></div>
+<div class="deltav">7.4</div>
+</div><div class="obj neo pha radar visited flyby numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="4179 Toutatis" src="images/Toutatis.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/4179_Toutatis">Таутатис</a></div>
 <div class="size">1.516</div>
 <div class="mass">5.05E13</div>
 <div class="date">04.01.1989</div>
-<div class="delta-v">6.59</div>
-</div><div class="obj mab co active dot binary animation">
+<div class="deltav">6.59</div>
+<div class="dens">2.5</div>
+</div><div class="obj mab co active dot binary numbered animation">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/2006VW139.gif/390px-2006VW139.gif')" onmouseout="hide()"><img alt="288P (300163) 2006 VW139" src="images/288P-2006VW139.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(300163)_2006_VW139">2006 VW139</a></div>
 <div class="size">1.5</div>
 <div class="mass">6.1E12</div>
 <div class="date">15.11.2006</div>
-<div class="delta-v">9.9</div>
+<div class="deltav">9.9</div>
 </div><div class="obj sat moon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Methone (moon)" src="images/Methone.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Methone_(moon)">Мефона</a></div>
 <div class="size">1.45±0.03</div>
 <div class="mass"><a href="https://solarsystem.nasa.gov/moons/saturn-moons/methone/by-the-numbers/">8.992E12</a></div>
 <div class="date">01.06.2004</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj mab lowcontrast flyby">
+<div class="deltav">&gt;7.7</div>
+<div class="dens">0.31±0.05</div>
+</div><div class="obj mab lowcontrast flyby numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="132524 APL" src="images/APL.jpg"></div>
-<div class="name"><a href="https://en.wikipedia.org/wiki/132524_APL">132524 APL</a></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/132524_APL">APL</a></div>
 <div class="size">1.25</div>
 <div class="mass">&nbsp;</div>
 <div class="date">09.05.2002</div>
-<div class="delta-v">8.77</div>
+<div class="deltav">8.77</div>
 </div><div class="obj sat lowcontrast moon">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Polydeuces (moon)" src="images/Polydeuces.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Polydeuces_(moon)">Полидевк</a></div>
 <div class="size">1.3±0.4</div>
 <div class="mass">3E13</div>  <!-- https://photojournal.jpl.nasa.gov/catalog/?IDNumber=PIA08209 -->
 <div class="date">24.10.2004</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj neo pha havesats radar radarimage">
+<div class="deltav">&gt;7.7</div>
+<div class="dens">0.5–2</div>
+</div><div class="obj neo pha havesats radar radarimage numbered">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(153591) 2001 SN263" src="images/2001SN263.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(153591)_2001_SN263">2001 SN263</a></div>
 <div class="size">1.25</div>
 <div class="mass">9.17E12</div>
 <div class="date">20.09.2001</div>
-<div class="delta-v">6.1</div>
-</div><div class="obj neo pha radar radarimage animation">
+<div class="deltav">6.1</div>
+<div class="dens">1.1±0.2</div>
+</div><div class="obj neo pha radar radarimage numbered animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(52768) 1998 OR2" src="images/1998OR2.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(52768)_1998_OR2">1998 OR2</a></div>
 <div class="size">1.03</div>
 <div class="mass">&nbsp;</div>
 <div class="date">24.07.1998</div>
-<div class="delta-v">6.55</div>
-</div><div class="obj neo pha contactbinary radar radarimage animation">
+<div class="deltav">6.55</div>
+</div><div class="obj neo pha contactbinary radar radarimage numbered animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(85989) 1999 JD6" src="images/1999JD6.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(85989)_1999_JD6">1999 JD6</a></div>
 <div class="size">1</div>
 <div class="mass">&nbsp;</div>
 <div class="date">12.05.1999</div>
-<div class="delta-v">14.8</div>
-</div><div class="obj neo pha radar lightcurve">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(1620) Geographos" src="images/Geographos.jpg"></div>
+<div class="deltav">14.8</div>
+</div><div class="obj neo pha radar lightcurve numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="1620 Geographos" src="images/Geographos.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/1620_Geographos">Географ</a></div>
 <div class="size">0.94</div>
 <div class="mass">2.6E13</div>
 <div class="date">14.09.1951</div>
-<div class="delta-v">6.75</div>
+<div class="deltav">6.75</div>
 </div><div class="obj sat moon lowcontrast dot">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Anthe (moon)" src="images/Anthe.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Anthe_(moon)">Анфа</a></div>
 <div class="size">0.9</div>
 <div class="mass">1.5E12</div>
 <div class="date">30.05.2007</div>
-<div class="delta-v">&gt;7.7</div>
-</div><div class="obj mab lowcontrast visited flyby">
-<div class="img" onmouseover="show(this, 'images/braillepair.png')" onmouseout="hide()"><img alt="(9969) Braille" src="images/Braille.jpg"></div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">0.5</div>
+</div><div class="obj mab lowcontrast visited flyby numbered named">
+<div class="img" onmouseover="show(this, 'images/braillepair.png')" onmouseout="hide()"><img alt="9969 Braille" src="images/Braille.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/9969_Braille">Брайль</a></div>
 <div class="size">0.82</div>
-<div class="mass">7.8E15</div>
+<div class="mass">7.8E12</div>
 <div class="date">27.05.1992</div>
-<div class="delta-v">10.93</div>
-</div><div class="obj neo pha contactbinary radar model animation">
+<div class="deltav">10.93</div>
+<div class="dens">3.9</div>
+</div><div class="obj neo pha contactbinary radar model numbered named animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="4769 Castalia" src="images/Castalia.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/4769_Castalia">Касталия</a></div>
 <div class="size">0.7</div>
 <div class="mass">&nbsp;</div>
 <div class="date">09.08.1989</div>
-<div class="delta-v">8.5</div>
+<div class="deltav">8.5</div>
 <div class="desc">Первый астероид, для которого была рассчитана трехмерная модель по радиолакационным данным</div>
-</div><div class="obj mab binary visited flyby satellite map">
+</div><div class="obj mab binary visited flyby satellite map named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Dactyl" src="images/Dactyl.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/243_Ida#Dactyl">Дактиль</a></div>
 <div class="size">0.7</div>
 <div class="mass">&nbsp;</div>
 <div class="date">17.02.1994</div>
-<div class="delta-v">10.3</div>
+<div class="deltav">10.3</div>
 <div class="desc">Спутник астероида Ида, обнаружен 17.02.1994 на снимках АМС Галилео от 28 августа 1993 г. Стал первым прямым доказательством существования лун у астероидов.</div>
 </div><div class="obj neo pha radar radarimage animation">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Asteroid_2016_AJ193_-_PIA24564.jpg/320px-Asteroid_2016_AJ193_-_PIA24564.jpg')" onmouseout="hide()"><img alt="2016 AJ193" src="images/2016AJ193.gif"></div>
@@ -942,35 +1056,37 @@
 <div class="size">0.69±0.2</div>
 <div class="mass">&nbsp;</div>
 <div class="date">17.05.2010</div>
-<div class="delta-v">10.58</div>
-</div><div class="obj neo pha radar radarimage">
+<div class="deltav">10.58</div>
+</div><div class="obj neo pha radar radarimage numbered">
 <div class="img" onmouseover="show(this, 'https://d2pn8kiwq2w21t.cloudfront.net/original_images/jpegPIA16474.jpg')" onmouseout="hide()"><img alt="(214869) 2007 PA8" src="images/2007PA8.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(214869)_2007_PA8">2007 PA8</a></div>
 <div class="size">0.68±0.04</div>
 <div class="mass">&nbsp;</div>
 <div class="date">09.08.2007</div>
-<div class="delta-v">6.812</div>
-</div><div class="obj neo pha binary radar highcontrast">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(66391) Moshup" src="images/Moshup.jpg"></div>
+<div class="deltav">6.812</div>
+</div><div class="obj neo pha binary radar highcontrast numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="66391 Moshup" src="images/Moshup.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/66391_Moshup">Мошап</a></div>
 <div class="size">0.66±0.02</div>
 <div class="mass">2.49±0.05E12</div>
 <div class="date">20.05.1999</div>
-<div class="delta-v">21.374</div>
+<div class="deltav">21.374</div>
+<div class="dens">1.97±0.24</div>
 </div><div class="obj co jfc radar visited flyby">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="103P/Hartley" src="images/Hartley.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/103P/Hartley">Хартли 2</a></div>
 <div class="size">0.57±0.08</div>
 <div class="mass">3E11</div>
 <div class="date">15.03.1986</div>
-<div class="delta-v">&gt;13</div>
-</div><div class="obj neo pha radar radarimage animation">
+<div class="deltav">&gt;13</div>
+</div><div class="obj neo pha radar radarimage numbered animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(29075) 1950 DA" src="images/1950DA.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(29075)_1950_DA">1950 DA</a></div>
 <div class="size">0.55</div>
 <div class="mass">4E12</div>
 <div class="date">23.02.1950</div>
-<div class="delta-v">6.994</div>
+<div class="deltav">6.994</div>
+<div class="dens">3.5</div>
 <div class="desc">Имеет вероятность столкновения с Землей в 2880 году.</div>
 </div><div class="obj neo co jfc nec radar radarimage">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="P/2016 BA14 (PanSTARRS)" src="images/P2016BA14.jpg"></div>
@@ -978,35 +1094,37 @@
 <div class="size">0.5</div>
 <div class="mass">&nbsp;</div>
 <div class="date">21.01.2016</div>
-<div class="delta-v">8.852</div>
-</div><div class="obj neo pha radar radarimage">
+<div class="deltav">8.852</div>
+</div><div class="obj neo pha radar radarimage numbered">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(163899) 2003 SD220" src="images/2003SD220.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(163899)_2003_SD220">2003 SD220</a></div>
 <div class="size">0.5</div>
 <div class="mass">&nbsp;</div>
 <div class="date">29.09.2003</div>
-<div class="delta-v">7.884</div>
+<div class="deltav">7.884</div>
 </div><div class="obj neo pha binary radar radarimage">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="2017 YE5" src="images/2017YE5.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2017_YE5">2017 YE5</a></div>
 <div class="size">0.5</div>
 <div class="mass">&nbsp;</div>
 <div class="date">21.12.2017</div>
-<div class="delta-v">7.562</div>
-</div><div class="obj neo pha numbered havesats animation">
+<div class="deltav">7.562</div>
+<div class="dens">0.6−1.2</div>
+</div><div class="obj neo pha numbered havesats radar radarimage numbered animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(7335) 1989 JA" src="images/1989JA.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(7335)_1989_JA">1989 JA</a></div>
 <div class="size">0.45</div>
 <div class="mass">&nbsp;</div>
 <div class="date">01.05.1989</div>
-<div class="delta-v">7.131</div>
-</div><div class="obj neo pha visited orbited numbered animation map">
+<div class="deltav">7.131</div>
+</div><div class="obj neo pha visited orbited numbered animation map numbered named">
 <div class="img" onmouseover="show(this, 'images/Ryugu.gif')" onmouseout="hide()"><img alt="162173 Ryugu" src="images/Ryugu.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/162173_Ryugu">Рюгу</a></div>
 <div class="size">0.432</div>
 <div class="mass">4.5E11</div>
 <div class="date">10.05.1999</div>
-<div class="delta-v">4.663</div>
+<div class="deltav">4.663</div>
+<div class="dens">1.19±0.03</div>
 <div class="desc">Миссия Hayabusa2 прибыла к астероиду 27.06.2018.</div>
 </div><div class="obj neo pha contactbinary radar radarimage animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="2014 JO25" src="images/2014JO25.gif"></div>
@@ -1014,14 +1132,15 @@
 <div class="size">0.4</div>
 <div class="mass">&nbsp;</div>
 <div class="date">05.05.2014</div>
-<div class="delta-v">13.173</div>
-</div><div class="obj neo pha havesats binary radar visited flyby numbered map">
+<div class="deltav">13.173</div>
+</div><div class="obj neo pha havesats binary radar visited flyby numbered map numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="65803 Didymos" src="images/Didymos_dimorphos.png" width="100"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/65803_Didymos">Дидим</a></div>
 <div class="size">0.39</div>
 <div class="mass">5.4E11</div>
 <div class="date">11.04.1996</div>
-<div class="delta-v">5.162</div>
+<div class="deltav">5.162</div>
+<div class="dens">2.4±0.3</div>
 <div class="desc">Цель миссии DART.</div>
 </div><div class="obj sat moon lowcontrast">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Aegaeon (moon)" src="images/Aegaeon.jpg"></div>
@@ -1029,14 +1148,15 @@
 <div class="size">0.33±0.06</div>
 <div class="mass">6E12</div>
 <div class="date">03.03.2009</div>
-<div class="delta-v">&gt;7.7</div>
+<div class="deltav">&gt;7.7</div>
+<div class="dens">0.54±0.15</div>
 </div><div class="obj neo pha radar radarimage animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="2015 TB145" src="images/2015TB145.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2015_TB145">2015 TB145</a></div>
 <div class="size">0.325</div>
 <div class="mass">&nbsp;</div>
 <div class="date">10.10.2015</div>
-<div class="delta-v">15.747</div>
+<div class="deltav">15.747</div>
 <!-- <div class="period">3.04 yr (1112.0 d)</div> -->
 </div><div class="obj neo pha havesats radar radarimage animation numbered">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(136617) 1994 CC" src="images/1994CC.gif"></div>
@@ -1044,7 +1164,7 @@
 <div class="size">0.31±0.03</div>
 <div class="mass">&nbsp;</div>
 <div class="date">03.02.1994</div>
-<div class="delta-v">5.4</div>
+<div class="deltav">5.4</div>
 <div class="desc"></div>
 </div><div class="obj neo radar radarimage animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="2015 HM10" src="images/2015HM10.gif"></div>
@@ -1052,15 +1172,16 @@
 <div class="size">0.29</div>
 <div class="mass">&nbsp;</div>
 <div class="date">19.04.2015</div>
-<div class="delta-v">6.4</div>
+<div class="deltav">6.4</div>
 <div class="desc"></div>
-</div><div class="obj neo pha radar visited orbited animation numbered map">
+</div><div class="obj neo pha radar visited orbited animation numbered named map">
 <div class="img" onmouseover="show(this, 'images/Bennu.gif')" onmouseout="hide()"><img alt="101955 Bennu" src="images/Bennu.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/101955_Bennu">Бенну</a></div>
 <div class="size">0.245</div>
 <div class="mass">7.329E10</div>
 <div class="date">11.09.1999</div>
-<div class="delta-v">5.096</div>
+<div class="deltav">5.096</div>
+<div class="dens">1.190±0.013</div>
 <div class="desc">Имеет высокую вероятность столкновения с Землей в 2175–2199 гг. 03.12.2018 к астероиду приблизился КА OSIRIS-REx.</div>
 </div><div class="obj neo pha radar radarimage animation numbered">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(436724) 2011 UW158" src="images/2011UW158.gif"></div>
@@ -1068,45 +1189,47 @@
 <div class="size">0.22±0.04</div>
 <div class="mass">&nbsp;</div>
 <div class="date">25.10.2011</div>
-<div class="delta-v">5.189</div>
+<div class="deltav">5.189</div>
 </div><div class="obj neo pha radar radarimage animation numbered">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/0/03/%2833342%29_1998_WT24_bistatic_radar_image.gif')" onmouseout="hide()"><img alt="(33342) 1998 WT24" src="images/1998WT24.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(33342)_1998_WT24">1998 WT24</a></div>
 <div class="size">0.205</div>
 <div class="mass">7.8E10</div> <!-- 2008cosp...37..984G -->
 <div class="date">25.11.1998</div>
-<div class="delta-v">10.865</div>
+<div class="deltav">10.865</div>
 </div><div class="obj neo pha radarimage numbered">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(308635) 2005 YU55" src="images/2005YU55.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(308635)_2005_YU55">2005 YU55</a></div>
 <div class="size">0.18</div>
 <div class="mass">&nbsp;</div>
 <div class="date">28.12.2005</div>
-<div class="delta-v">6.9</div>
+<div class="deltav">6.9</div>
 <div class="desc"></div>
-</div><div class="obj neo pha contactbinary visited orbited numbered map radar">
+</div><div class="obj neo pha contactbinary visited orbited numbered named map radar">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="25143 Itokawa" src="images/Itokawa.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/25143_Itokawa">Итокава</a></div>
 <div class="size">0.173</div>
 <div class="mass">3.51±0.1E10</div>
 <div class="date">26.09.1998</div>
-<div class="delta-v">4.637</div>
+<div class="deltav">4.637</div>
+<div class="dens">1.9±0.13</div>
 <div class="desc">Посещен миссией Хаябуса в октябре 2005 г. Капсула с ~1500 частицами астероида (почти все менее 10 мкм) приземлилась в Австралии 13.06.2010</div>
-</div><div class="obj neo pha lightcurve numbered">
+</div><div class="obj neo pha lightcurve numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="99942 Apophis" src="images/Apophis.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/99942_Apophis">Апофис</a></div>
 <div class="size">0.17</div>
 <div class="mass">6.1E10</div>
 <div class="date">19.06.2004</div>
-<div class="delta-v">5.688</div>
+<div class="deltav">5.688</div>
+<div class="dens">2.6−3.2</div>
 <div class="desc">Больше не потенциально опасный астероид. До 2013 г. вероятность столкновения была сильно переоценена.</div>
-</div><div class="obj neo pha radar radarimage animation numbered">
+</div><div class="obj neo pha radar radarimage animation numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="4660 Nereus" src="images/Nereus.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/4660_Nereus">Нерей</a></div>
 <div class="size">0.165</div>
 <div class="mass">&nbsp;</div>
 <div class="date">28.02.1982</div>
-<div class="delta-v">4.987</div>
+<div class="deltav">4.987</div>
 </div><div class="obj neo pha contactbinary radar radarimage animation">
 <div class="img" onmouseover="show(this, 'images/2014HQ124.jpg')" onmouseout="hide()"><img alt="2014 HQ124" src="images/2014HQ124.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2014_HQ124">2014 HQ124</a></div>
@@ -1114,35 +1237,43 @@
 <div class="mass">&nbsp;</div>
 <div class="date">23.04.2014</div>
 <!-- <div class="period">0.78 yr 286.7 d</div> -->
-<div class="delta-v">12.229</div>
+<div class="deltav">12.229</div>
 </div><div class="obj neo pha radar radarimage havesats animation numbered">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(357439) 2004 BL86" src="images/2004BL86.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(357439)_2004_BL86">2004 BL86</a></div>
 <div class="size">0.15</div>
 <div class="mass">&nbsp;</div>
 <div class="date">30.01.2004</div>
-<div class="delta-v">8.705</div>
-</div><div class="obj neo pha satellite binary radar animation visited flyby map">
+<div class="deltav">8.705</div>
+</div><div class="obj neo pha radar radarimage havesats animation">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="2016 AZ8" src="images/2016AZ8.gif"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/2016_AZ8">2016 AZ8</a></div>
+<div class="size">0.108</div>
+<div class="mass">&nbsp;</div>
+<div class="date">03.01.2016</div>
+<div class="deltav">5.629</div>
+</div><div class="obj neo pha satellite binary radar animation visited flyby map named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Dimorphos" src="images/Dimorphos.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Dimorphos">Диморф</a></div>
 <div class="size">0.085</div>
 <div class="mass">5E9</div>
 <div class="date">20.11.2003</div>
-<div class="delta-v">5.162</div>
+<div class="deltav">5.162</div>
+<div class="dens">0.6−2.4</div>
 </div><div class="obj neo pha radar radarimage animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="2017 BQ6" src="images/2017BQ6.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2017_BQ6">2017 BQ6</a></div>
 <div class="size">0.078</div>
 <div class="mass">&nbsp;</div>
 <div class="date">26.01.2017</div>
-<div class="delta-v">6.542</div>
-</div><div class="obj neo pha radar radarimage animation">
+<div class="deltav">6.542</div>
+</div><div class="obj neo pha radar radarimage numbered animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="(367789) 2011 AG5" src="images/2011AG5.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(367789)_2011_AG5">2011 AG5</a></div>
 <div class="size">0.07</div>
 <div class="mass">4E9</div>
 <div class="date">08.01.2011</div>
-<div class="delta-v">5.534</div>
+<div class="deltav">5.534</div>
 </div>
 
 </div>
@@ -1159,9 +1290,7 @@
 <h3>Очередь объектов для добавления в таблицу</h3>
 <ul>
   <li><a href="https://en.wikipedia.org/wiki/31_Euphrosyne" target="_blank" rel="noopener noreferrer">31 Евфросина</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/52_Europa" target="_blank" rel="noopener noreferrer">52 Европа</a></li>
   <li><a href="https://en.wikipedia.org/wiki/87_Sylvia" target="_blank" rel="noopener noreferrer">87 Сильвия</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/216_Kleopatra" target="_blank" rel="noopener noreferrer">216 Клеопатра</a></li>
   <li><a href="https://en.wikipedia.org/wiki/532_Herculina" target="_blank" rel="noopener noreferrer">532 Геркулина</a></li>
   <li><a href="https://en.wikipedia.org/wiki/624_Hektor" target="_blank" rel="noopener noreferrer">624 Гектор</a></li>
   <li><a href="https://en.wikipedia.org/wiki/944_Hidalgo" target="_blank" rel="noopener noreferrer">944 Идальго</a></li>
@@ -1169,6 +1298,9 @@
   <li><a href="https://en.wikipedia.org/wiki/6489_Golevka" target="_blank" rel="noopener noreferrer">6489 Голевка</a></li>
   <li><a href="https://en.wikipedia.org/wiki/54509_YORP" target="_blank" rel="noopener noreferrer">54509 YORP</a></li>
   <li><a href="https://en.wikipedia.org/wiki/367943_Duende" target="_blank" rel="noopener noreferrer">367943 Дуэнде</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/(231937)_2001_FO32" target="_blank" rel="noopener noreferrer">(231937) 2001 FO32</a> (радарные изображения от 22.03.2021)</li>
+  <li><a href="https://echo.jpl.nasa.gov/asteroids/2007WV4/2007WV4_planning.html" target="_blank" rel="noopener noreferrer">2007 WV4 и 2017 CS</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/46P/Wirtanen" target="_blank" rel="noopener noreferrer">46P/Виртанена</a></li>
   <li><a href="https://en.wikipedia.org/wiki/List_of_asteroid_close_approaches_to_Earth" target="_blank" rel="noopener noreferrer">List of asteroid close approaches to Earth</a></li>
 </ul>
 </div>
@@ -1293,6 +1425,7 @@
     Delay-Doppler Radar Imaging: <a href="https://www.planetary.org/articles/3248" target="_blank" rel="noopener noreferrer">How radio telescopes get "images" of asteroids</a></li>
   <li><a href="https://echo.jpl.nasa.gov/introduction.html" target="_blank" rel="noopener noreferrer">Asteroid Radar Research</a>,
     <a href="http://echo.jpl.nasa.gov/asteroids/ostro_1997_es.pdf" target="_blank" rel="noopener noreferrer">Radar observations of Earth-approaching asteroids (1997, pdf)</a></li>
+  <li><a href="https://nplus1.ru/material/2021/09/09/1001-radar-neo" target="_blank" rel="noopener noreferrer">Ты узнаешь его из тысячи</a>. Радиоастрономы рассмотрели уже 1001 астероид, сближавшийся с Землей. Вот самые интересные</li>
   <li><a href="https://gvard-ru.livejournal.com/108111.html" target="_blank" rel="noopener noreferrer">Анонс первой версии инфографики</a></li>
 </ul>
 

@@ -45,8 +45,12 @@ function doSort(sortFunction, classNam) {
   const objToSort = getDivs('obj');
   let ArrToSort = Array.prototype.slice.call(objToSort, 0);
   ArrToSort.sort((a, b) => {
-    let aord = sortFunction(a.getElementsByClassName(classNam)[0].innerText);
-    let bord = sortFunction(b.getElementsByClassName(classNam)[0].innerText);
+    if(a.getElementsByClassName(classNam)[0] != null) {
+      var aord = sortFunction(a.getElementsByClassName(classNam)[0].innerText);
+    } else {var aord = 0;}
+    if(b.getElementsByClassName(classNam)[0] != null) {
+      var bord = sortFunction(b.getElementsByClassName(classNam)[0].innerText);
+    } else {var bord = 0;}
     return (aord > bord) ? 1 : -1;
   });
   let parent = document.getElementById('tab');
