@@ -7,10 +7,12 @@ import os
 import ssl
 import json
 import urllib.request
+import locale
 
 from beautifulsoup_supply import TAIL, mk_head, get_soup
 
 
+locale.setlocale(locale.LC_ALL, 'ru_RU')
 if (not os.environ.get('PYTHONHTTPSVERIFY', '') and
     getattr(ssl, '_create_unverified_context', None)):
     ssl._create_default_https_context = ssl._create_unverified_context
@@ -248,7 +250,6 @@ SSD_STATS = f'''<h2>Статистика тел Солнечной систем�
 with open(os.path.join(os.pardir, 'solarsystem', 'stats.html'), 'w', encoding="utf8") as fl:
     print(HEAD + MPC_STATS + SSD_STATS + ECHO_JPL_STATS + JOHNSTON_SAT + TAIL, file=fl)
 
-
 HEAD = mk_head("Статистика Солнечной системы", style="stats.css", script="../../stats.js")
 BODY = f"""<body onload="mkHeader()">
 <div id="stats" class="container show">
@@ -257,9 +258,9 @@ BODY = f"""<body onload="mkHeader()">
   <ul>
     <li>В Солнечной системе <span class="yellow">8</span> планет</li>
     <li><span class="yellow">{SATELLITES}</span> спутников планет</li>
-    <li>Более <span class="yellow">{str(COMETS_NUM)[:-2]+'00'}</span> комет</li>
-    <li>Более <span class="yellow">{str(MBA + NEA)[:-4]+'0.000'}</span> астероидов</li>
-    <li>Только <span class="yellow">{str(NAMED_MP_NUM/1000)}</span> имеют имена</li>
+    <li>Более <span class="yellow">{COMETS_NUM:n}</span> комет</li>
+    <li>Более <span class="yellow">{round((MBA + NEA), -2):n}</span> астероидов</li>
+    <li>Только <span class="yellow">{NAMED_MP_NUM:n}</span> имеют имена</li>
   </ul>
   </div>
   <div id="footer">
