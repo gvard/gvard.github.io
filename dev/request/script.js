@@ -93,7 +93,7 @@ function showAstros(res, q) {
 function showAPOD(res, q) {
   let media = "";
   if (res.media_type === "video") {
-    media = '<iframe width="560" height="315" src="' + res.url + '" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    media = '<iframe width="560" height="315" src="' + res.url + '" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
   } else {
     media = '<a href="' + res.hdurl + '"><img alt="" src="' + res.url + '"></a>';
   }
