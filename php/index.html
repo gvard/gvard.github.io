@@ -17,7 +17,7 @@
   <nav class="menu">
     <ul>
       <li><a href="../">Главная страница</a></li>
-      <li><a href="#forms">Формы</a></li>
+      <li><a href="#install">Установка и запуск сервера</a></li>
       <li><a href="#guestbook">Гостевая книга</a></li>
     </ul>
   </nav>
@@ -27,125 +27,40 @@
 
 <h1>Основы PHP</h1>
 
-<h2>Темы</h2>
+<h2 id="themes">Темы</h2>
 <ul>
   <li><a href="https://www.php.net/manual/ru/control-structures.if.php" target="_blank" rel="noopener noreferrer">Условный оператор if</a>;
     <a href="https://www.php.net/manual/ru/language.operators.comparison.php" target="_blank" rel="noopener noreferrer">Операторы сравнения</a></li>
-  <li>Цикл while</li>
-  <li>Вложенные циклы</li>
-  <li>Массивы. Ассоциативные массивы. Цикл for, foreach</li>
-  <li><a href="txt/">Функции работы с текстом в PHP</a></li>
-  <li>Решение задач по обработке строк</li>
+  <li><a href="https://www.php.net/manual/ru/control-structures.while.php" target="_blank" rel="noopener noreferrer">Цикл while</a>. Вложенные циклы</li>
+  <li><a href="https://www.php.net/manual/ru/language.types.array.php" target="_blank" rel="noopener noreferrer">Массивы</a>, ассоциативные массивы
+    (PHP не делает различия между индексированными и ассоциативными массивами)</li>
+  <li><a href="https://www.php.net/manual/ru/control-structures.for.php" target="_blank" rel="noopener noreferrer">Цикл for</a>,
+    <a href="https://www.php.net/manual/ru/control-structures.foreach.php" target="_blank" rel="noopener noreferrer">foreach</a></li>
+  <li><a href="txt/">Функции работы с текстом в PHP</a>. Решение задач по обработке строк</li>
   <li><a href="img/">Функции работы с изображениями в PHP</a>. Решение задач по обработке изображений</li>
   <li><a href="files/">Функции работы с файлами</a>. Загрузка и сохранение файлов на сервер</li>
   <li><a href="db/">Базы данных. Создание простой базы данных</a></li>
-  <li><a href="forms/">Динамическое создание форм на сайте</a></li>
+  <li>Формы и их обработка на PHP. <a href="forms/">Динамическое создание форм</a>, в том числе после чтения базы данных</li>
   <li><a href="get/">Методы POST и GET</a></li>
   <li><a href="include/">Функция include</a></li>
 </ul>
 
-<h2 id="forms">Формы и их обработка на PHP</h2>
-<p>Форма поиска:</p>
-<form action="https://google.com/search">
-  <input type="text" name="q" placeholder="гвозди">
-  <input type="submit" value="Искать в Google">
-</form>
-<br>
-<a href="forms/">Динамическое создание формы после чтения базы данных</a>
-
-<h2>Установка PHP в ОС Windows</h2>
+<h2 id="install">Установка PHP в ОС Windows и запуск веб-сервера</h2>
 <p><a href="https://windows.php.net/download" target="_blank" rel="noopener noreferrer">Ссылки на скачивание архива PHP</a> для Windows.<br>
 Скачать zip-архив нужной архитектуры системы (x86/x64, например, <b>VS16 x64 Non Thread Safe</b>), распаковать, зайти в директорию, запустить учебный сервер,
 <a href="https://www.php.net/manual/ru/features.commandline.webserver.php" target="_blank" rel="noopener noreferrer">Встроенный веб-сервер</a>.</p>
 
-<h2>Запуск веб-сервера</h2>
 <pre><code>php -S localhost:8000 -t public_html</code></pre>
 <p>Здесь опциональным ключом -t задается имя директории, в которой будут располагаться рабочие файлы. Перед запуском сервера разработки при необходимости создать данную папку. В ОС Windows можно для удобства создать ярлык файла php.exe на Рабочем столе, затем открыть его свойства и в поле Объект к полному пути файла php.exe дописать указанные выше ключи, например:</p>
 <pre><code>C:\php\php.exe -S localhost:8000 -t public_html</code></pre>
 
-<h2 id="guestbook">Простая гостевая книга</h2>
-<a href="https://uranograph.000webhostapp.com/gb/readbook.php" target="_blank" rel="noopener noreferrer">Пример гостевой книги</a>
+<h2 id="guestbook">Простая гостевая книга без базы данных</h2>
 <a href="readbook.php">readbook.php</a> - основной файл гостевой книги,<br>
 <a href="addbook.php">addbook.php</a>, <a href="postform.php">postform.php</a>.<br>
 Для работы гостевой книги необходим текстовый файл <b>guestbook.txt</b>. На рабочем сервере, если на файловой системе используются права доступа, нужно добавить файлу guestbook.txt права на запись, чтобы любой мог оставить сообщение:
 <pre><code>chmod 646 guestbook.txt</code></pre>
 
-<h2>Метод POST</h2>
-<p>
-  Тег <b>&lt;form action="action.php" method="post"&gt;</b> отправит данные на
-  обработку скрипту action.php после нажатия на кнопку, созданную элементом формы
-  <b>&lt;input type="submit"&gt;</b><br>
-  Исходный код форм можно посмотреть при помощи сочетания клавиш Ctrl+U.<br>
-</p>
-
-<form action="action.php" method="post">
-  Название тега, который является корневым элементом: <input type="text" name="name" placeholder="html"><br>
-  В каком году создана всемирная сеть WWW? <input type="text" name="year" placeholder="1990"><br>
-  Какой тег лишний?
-  <select name="tag1">
-    <option value="div">div</option>
-    <option value="img" selected>img</option>
-    <option value="p">p</option>
-    <option value="h1">h1</option>
-  </select><br>
-  Какой тег является строчным?<br>
-  <input type="radio" name="tag2" value="p">p<br>
-  <input type="radio" name="tag2" value="span">span<br>
-  <input type="radio" name="tag2" value="div" checked>div<br>
-  <input type="radio" name="tag2" value="div">h1<br>
-  Название или адрес картинки: <input type="text" name="imgurl" value="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"><br>
-  <input type="checkbox" id="checker" name="checker" checked> Я согласен с условиями обработки данных<br>
-  <textarea name="msg" rows="10" cols="30">Поле для отправки сообщения. Писать сюда.</textarea><br>
-<input type="submit" value="Отправить">
-</form>
-
-<p><b>Код php в файле action.php:</b></p>
-<pre><code>Главный тег: &lt;?php echo htmlspecialchars($_POST['name']); ?&gt;.
-Лишний тег: &lt;?php echo $_POST['tag1']; ?&gt;
-Строчный тег: &lt;?php echo $_POST['tag2']; ?&gt;
-
-&lt;?php if ((int)$_POST['year'] == 1990): ?&gt;
-Год создания WWW &ndash; &lt;?php echo (int)$_POST['year']; ?&gt;.
-&lt;?php else: ?&gt;
-  Нет, год создания WWW &ndash; не &lt;?php echo (int)$_POST['year']; ?&gt;.
-&lt;?php endif; ?&gt;
-
-Сообщение: &lt;?php echo htmlspecialchars($_POST['msg']); ?&gt;
-Согласился с условиями?
-&lt;?php
-if ( isset($_POST['checker']) )
-{
-  echo "Да";
-} else {
-  echo "Нет";
-} ?&gt;
-</code></pre>
-
-<h2>Метод GET</h2>
-<p>Тег <b>&lt;form action="action-get.php" method="get"&gt;</b> отправит данные на обработку скрипту action.php после нажатия на кнопку.</p>
-
-<form action="action-get.php" method= "get">
-  Название тега, который является корневым элементом: <input type="text" name="name" value="html"><br>
-  В каком году создана всемирная сеть WWW? <input type="text" name="year" placeholder="1990"><br>
-  Какой тег лишний?
-  <select name="tag1">
-    <option value="div">div</option>
-    <option value="img" selected>img</option>
-    <option value="p">p</option>
-    <option value="h1">h1</option>
-  </select><br>
-  Какой тег является строчным?<br>
-  <input type="radio" name="tag2" value="p">p<br>
-  <input type="radio" name="tag2" value="span">span<br>
-  <input type="radio" name="tag2" value="div" checked>div<br>
-  <input type="radio" name="tag2" value="div">h1<br>
-  Название или адрес картинки: <input type="text" name="imgurl" value="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"><br>
-  <input type="checkbox" id="checker" name="checker" checked> Я согласен с условиями обработки данных<br>
-  <textarea name="msg" rows="10" cols="30">Поле для отправки сообщения. Писать сюда.</textarea><br>
-<input type="submit" value="Отправить">
-</form>
-
-<h2>Создание веб-сервера. Размещение в интернете</h2>
+<h2 id="server-more">Создание веб-сервера. Размещение в интернете</h2>
 <p>Как правило, рабочий код создается на основе готовых решений. Например, самой популярной на сегодняшний день
   <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_%D0%B2%D0%B5%D0%B1-%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%BC%D1%8B%D0%BC" target="_blank" rel="noopener noreferrer">системой управления содержимым</a> является
   <a href="https://ru.wikipedia.org/wiki/WordPress" target="_blank" rel="noopener noreferrer">WordPress</a>. на ее основе можно создать блог, интернет-магазин и многое другое.</p>
@@ -159,7 +74,7 @@ if ( isset($_POST['checker']) )
   <a href="https://ru.wikipedia.org/wiki/%D0%92%D1%81%D0%B5%D0%BC%D0%B8%D1%80%D0%BD%D0%B0%D1%8F_%D0%BF%D0%B0%D1%83%D1%82%D0%B8%D0%BD%D0%B0" target="_blank" rel="noopener noreferrer">Всемирной паутине</a> готового сайта необходимо использовать
   <a href="https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B3" target="_blank" rel="noopener noreferrer">хостинг</a> с поддержкой всех использованных технологий! Если сайт создан на коде php, требуется хостинг с поддержкой php. Если сайт сделан на базе WordPress, желательно располагать его на хостинге с поддержкой этой системы.</p>
 
-<h2>Ссылки</h2>
+<h2 id="links">Ссылки</h2>
 <ul>
   <li><a href="https://www.php.net/manual/ru/tutorial.php" target="_blank" rel="noopener noreferrer">Простой учебник</a></li>
   <li><a href="https://www.php.net/manual/ru/features.commandline.webserver.php" target="_blank" rel="noopener noreferrer">Встроенный веб-сервер</a></li>
