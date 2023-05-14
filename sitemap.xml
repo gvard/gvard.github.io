@@ -165,6 +165,11 @@
   <priority>0.8</priority>
 </url>
 <url>
+  <loc>https://gvard.github.io/code/</loc>
+  <lastmod>2023-05-14T18:25:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://gvard.github.io/video/</loc>
   <lastmod>2021-05-30T19:40:55+00:00</lastmod>
   <priority>0.8</priority>
@@ -173,6 +178,21 @@
   <loc>https://gvard.github.io/me/</loc>
   <lastmod>2021-05-30T19:40:55+00:00</lastmod>
   <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/themes/</loc>
+  <lastmod>2023-05-14T18:25:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/cv/</loc>
+  <lastmod>2023-05-14T18:25:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/cv/en/</loc>
+  <lastmod>2023-05-14T18:25:20+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://gvard.github.io/links/</loc>
@@ -557,6 +577,11 @@
 <url>
   <loc>https://gvard.github.io/cad/</loc>
   <lastmod>2021-05-30T19:40:55+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gvard.github.io/distributed/</loc>
+  <lastmod>2023-05-14T18:25:20+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
