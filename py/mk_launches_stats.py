@@ -6,7 +6,7 @@ https://planet4589.org/space/gcat/web/launch/ldes.html
 
 import os
 import ssl
-import datetime
+from datetime import datetime
 import locale
 
 from beautifulsoup_supply import TAIL, mk_head, get_soup
@@ -30,12 +30,13 @@ soup = get_soup(GCAT_URL)
 AN = get_sd(soup)
 
 locale.setlocale(locale.LC_ALL, '')
-month = datetime.date.today().strftime("%B").lower()
+today = datetime.now()
+MONTH, YEAR = today.strftime("%B").lower(), today.year
 
 HEAD = mk_head("Статистика запусков ракет", style="stats.css", script="")
 BODY = f"""<body">
 <div id="stats" class="container show">
-  <h1 id="header">Статистика запусков ракет: {month} 2022 г.</h1>
+  <h1 id="header">Статистика запусков ракет: {MONTH} {YEAR} г.</h1>
   <div class="list">
   <ul>
     <li>Всего орбитальных запусков: <span class="yellow">{AN[0]}</span></li>

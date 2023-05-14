@@ -109,7 +109,7 @@ max-width: 1621px;
 min-width: 306px;
 }
 .name {
-width: 100px;
+width: 100%;
 background-color: #ffe7c8;
 white-space: nowrap;
 overflow: hidden;

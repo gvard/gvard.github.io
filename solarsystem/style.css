@@ -7,6 +7,7 @@
   font-size: 0.78em;
   color: white;
 }
+.name {width: 100px}
 .star > .name {background-color: #ffe7c8;}
 .pla > .name {background-color: white;}
 .neo > .name {background-color: #FFC2E0;}
