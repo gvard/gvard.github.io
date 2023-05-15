@@ -470,7 +470,7 @@ obj_data = [
 7.7,
 ["tno", "dot", "he"
 ],
-"Sedna.jpg"
+"Sedna.png"
 ],
 ["(1) Ceres (dwarf planet)",
 "Церера",

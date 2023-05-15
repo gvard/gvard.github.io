@@ -34,7 +34,7 @@ today = datetime.now()
 MONTH, YEAR = today.strftime("%B").lower(), today.year
 
 HEAD = mk_head("Статистика запусков ракет", style="stats.css", script="")
-BODY = f"""<body">
+BODY = f"""<body>
 <div id="stats" class="container show">
   <h1 id="header">Статистика запусков ракет: {MONTH} {YEAR} г.</h1>
   <div class="list">

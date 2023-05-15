@@ -1,4 +1,5 @@
 img {max-width: 1024px;}
+.name, .size, .temp {width: 100px}
 div.desc, .class, .temp {
   font-size: 0.89em;
   color: white;

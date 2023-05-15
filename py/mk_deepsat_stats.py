@@ -34,7 +34,7 @@ def get_deepcatdata(soup):
 soup = get_soup(DEEPC_URL)
 DATA, ALL = get_deepcatdata(soup)
 HEAD = mk_head("Статистика искусственных объектов далекого космоса", style="stats.css", script="")
-BODY = f"""<body">
+BODY = f"""<body>
 <div id="stats" class="container show">
   <h1 id="header">Статистика искусственных объектов далекого космоса</h1>
   <div class="list">

@@ -103,9 +103,9 @@ class Hero:
 
 
 def win_or_die(moves, circ, window):
-    if -20 < circ.xcor() < 40 and 10 < self.circ.ycor() < 70:
+    if -20 &lt; circ.xcor() &lt; 40 and 10 &lt; self.circ.ycor() &lt; 70:
         message(GAME_OVER_MSG + str(moves), 'red', circ, window)
-    if -60 < circ.xcor() < -20 and 50 < circ.ycor() < 90:
+    if -60 &lt; circ.xcor() &lt; -20 and 50 &lt; circ.ycor() &lt; 90:
         message(WIN_MSG + str(moves), 'green', circ, window)
 
 def message(text, color, circ, window):

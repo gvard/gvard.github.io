@@ -116,7 +116,7 @@ SPACEFLIGHT_HTML = f"""<h2>Пилотируемая космонавтика</h2
 with open(os.path.join(os.pardir, 'cosm', 'stats.html'), 'w', encoding="utf8") as fl:
     print(HEAD + SPACEFLIGHT_HTML + N2_STATS_HTML + NANOSATS_HTML + TAIL, file=fl)
 
-HEAD = mk_head("Космонавтика: статистика", style="stats.css", script="../../stats.js")
+HEAD = mk_head("Статистика пилотируемой космонавтики", style="stats.css", script="../../stats.js")
 BODY = f"""<body onload="mkHeader()">
 <div id="stats" class="container show">
   <h1 id="header"></h1>

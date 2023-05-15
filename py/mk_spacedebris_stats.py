@@ -34,7 +34,7 @@ soup = get_soup(SD_URL)
 DATE, stats, DEBR_MODEL = get_sd(soup)
 
 HEAD = mk_head("Космический мусор: статистика", style="stats.css", script="")
-BODY = f"""<body">
+BODY = f"""<body>
 <div id="stats" class="container show">
   <h1 id="header">Космический мусор: статистика от {DATE} года</h1>
   <div class="list">
