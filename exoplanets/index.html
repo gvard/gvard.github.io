@@ -33,36 +33,69 @@
 <h1>Экзопланеты и родительские звезды</h1>
 
 <div class="cont">
-  <input type="checkbox" name=".name" value="block" checked onclick="showHideThis(this)">Имя,
-  <input type="checkbox" name=".size" value="block" checked onclick="showHideThis(this)">радиус,
-  <input type="checkbox" name=".class" value="block" checked onclick="showHideThis(this)">спектральный класс,
-  <input type="checkbox" name=".temp" value="block" checked onclick="showHideThis(this)">температура.
-  <input type="checkbox" name=".animation" value="block" checked onclick="showHideThis(this)">С анимированными картинками.<br>
+<b>Пульт управления информацией:</b><br>
+<div id="controls">
+Звезда:
+<label class="nowrap"><input type="checkbox" name=".name" checked onclick="showHideThis(this)">Имя</label>,
+<label class="nowrap"><input type="checkbox" name=".size" checked onclick="showHideThis(this)">радиус</label>,
+<label class="nowrap"><input type="checkbox" name=".mass" checked onclick="showHideThis(this)">масса</label>,
+<label class="nowrap"><input type="checkbox" name=".temp" checked onclick="showHideThis(this)">температура</label>,
+<label class="nowrap"><input type="checkbox" name=".class" checked onclick="showHideThis(this)">спектральный класс</label>,
+<label class="nowrap"><input type="checkbox" name=".mag" onclick="showHideThis(this)">блеск</label>;
+<br>Система:
+<label class="nowrap"><input type="checkbox" name=".number" onclick="showHideThis(this)">количество экзопланет</label>,
+<label class="nowrap"><input type="checkbox" name=".age" onclick="showHideThis(this)">возраст</label>,
+<label class="nowrap"><input type="checkbox" name=".dist" onclick="showHideThis(this)">расстояние</label>,
+<label class="nowrap"><input type="checkbox" name=".date" onclick="showHideThis(this)">год открытия экзопланет</label>
+
+<div id="props">
+<button onclick="uncheckAll(true)">Вкл</button><button onclick="uncheckAll(false)">Выкл</button><br>
+<label class="nowrap"><input type="checkbox" name=".obj" checked onclick="showHideThis(this)">Все объекты</label><br>
+<b>Изображение:</b><br>
+<label class="nowrap"><input type="checkbox" name=".imaging" checked onchange="showHideThis(this)">Прямое изображение</label>
+<label class="nowrap"><input type="checkbox" name=".animation" checked onclick="showHideThis(this)">Анимация</label>
+</div>
+</div>
+Фокус на картинке – полная информация
 </div>
 
 <div id="tab">
-<div class="obj imaged animation GDor">
-  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/HR_8799.gif"></div>
-  <div class="name"><a href="https://en.wikipedia.org/wiki/HR_8799" title="V342 Peg">HR 8799</a></div>
-  <div class="info_field number">4</div>
-  <div class="info_field dist">39.4 ± 1.0</div>
-  <div class="info_field size">1.5 ± 0.3</div>
-  <div class="info_field mass">1.56</div>
-  <div class="info_field class">A5V</div>
-  <div class="info_field age">30±15</div>
-  <div class="info_field temp">7430±75</div>
-  <div class="info_field mag">5.96</div>
-</div><div class="obj imaged animation">
-  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/51_Eridani_b.gif"></div>
-  <div class="name"><a href="https://en.wikipedia.org/wiki/51_Eridani_b" title="">51 Эридана</a></div>
-  <div class="info_field number">1</div>
-  <div class="info_field dist">29.4 ± 0.3</div>
-  <div class="info_field size">1.45 ± 0.02</div>
-  <div class="info_field mass">1.75 ± 0.05</div>
-  <div class="info_field class">F0IV</div>
-  <div class="info_field age">20±6</div>
-  <div class="info_field temp">7331±30</div>
-  <div class="info_field mag">5.22</div>
+<div class="obj imaging spectra debris var GDor animation">
+<div class="img" onmouseover="show(this, 'images/HR8799-planet-orbits.png')" onmouseout="hide()"><img alt="" src="images/HR8799.gif"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/HR_8799" title="V342 Peg">HR 8799</a></div>
+<div class="info_field number">4</div>
+<div class="info_field size">1.34</div>
+<div class="info_field mass">1.43</div>
+<div class="info_field temp">7430±75</div>
+<div class="info_field class">A5 V</div>
+<div class="info_field mag">5.96</div>
+<div class="info_field age">30±15</div>
+<div class="info_field dist">40.88</div>
+<div class="info_field date">2008</div>
+</div><div class="obj imaging animation">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/51_Eridani_b.gif"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/51_Eridani_b" title="">51 Эридана</a></div>
+<div class="info_field number">1</div>
+<div class="info_field size">1.45±0.02</div>
+<div class="info_field mass">1.75±0.05</div>
+<div class="info_field temp">7331±30</div>
+<div class="info_field class">F0 V</div>
+<div class="info_field mag">5.22</div>
+<div class="info_field age">20±6</div>
+<div class="info_field dist">29.4±0.3</div>
+<div class="info_field date">2015</div>
+</div><div class="obj imaging">
+<div class="img" onmouseover="show(this, 'images/Kappa-And-b.jpg')" onmouseout="hide()"><img alt="" src="images/Kappa-And-b.png"></div>
+<div class="name"><a href="http://exoplanet.eu/catalog/kappa_and_b/" title="">κ Андромеды</a></div>
+<div class="info_field number">1</div>
+<div class="info_field size">2.29±0.06</div>
+<div class="info_field mass">2.768</div>
+<div class="info_field temp">11361±66</div>
+<div class="info_field class">B9 IVn</div>
+<div class="info_field mag">4.139</div>
+<div class="info_field age">47</div>
+<div class="info_field dist">51.6±0.5</div>
+<div class="info_field date">2013</div>
 </div>
 </div>
 

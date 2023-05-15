@@ -1,7 +1,7 @@
 "use strict";
 /*jshint esversion: 6 */
 const OBJTYPES = {
-  imaged: "Метод прямого наблюдения",
+  imaging: "Прямое наблюдение",
   GDor: "Переменная типа γ Золотой Рыбы",
 };
 function ObjParams() {
@@ -30,21 +30,27 @@ function toSort(classNam) {
     sortFunction = getSize;
   doSort(sortFunction, classNam);
 }
-function show(divImg) {
+function show(divImg, imgPth) {
   const obj = divImg.parentElement;
   let name = obj.getElementsByClassName("name")[0].getElementsByTagName("a")[0].innerText;
   name = mkPar('<b>', name, '</b>');
   let size = obj.getElementsByClassName("size")[0].innerText;
-  size = mkPar('Радиус: ', size, '&nbsp;R<sub>☉</sub>');
+  size = mkPar('Радиус звезды: ', size, '&nbsp;R<sub>☉</sub>');
   let mass = obj.getElementsByClassName("mass")[0].innerText;
-  mass = mkPar('Масса: ', mass, '&nbsp;M<sub>☉</sub>');
-  let spClass = obj.getElementsByClassName("class")[0].innerText;
-  spClass = mkPar('Спектральный класс: ', spClass, '');
+  mass = mkPar('Масса звезды: ', mass, '&nbsp;M<sub>☉</sub>');
   let temp = obj.getElementsByClassName("temp")[0].innerText;
   temp = mkPar('Температура: ', temp, '&nbsp;K');
+  let spClass = obj.getElementsByClassName("class")[0].innerText;
+  spClass = mkPar('Спектральный класс: ', spClass, '');
+  let age = obj.getElementsByClassName("age")[0].innerText;
+  age = mkPar('Возраст: ', age, '&nbsp;млн лет');
+  let dist = obj.getElementsByClassName("dist")[0].innerText;
+  dist = mkPar('Расстояние: ', dist, '&nbsp;пк');
   let mag = obj.getElementsByClassName("mag")[0].innerText;
   mag = mkPar('Звездная величина (V): ', mag, '<sup>m</sup>');
   let type = mkType(obj.className, OBJTYPES);
+  let date = obj.getElementsByClassName("date")[0].innerText;
+  date = mkPar('Дата открытия: ', date, '');
   type = mkPar('Типы: ', type, '');
   let desc = obj.getElementsByClassName("desc");
   if (desc.length) {
@@ -52,6 +58,9 @@ function show(divImg) {
   } else {
     desc = "";
   }
-  const contentToShow = divImg.innerHTML + name + type + size + mass + spClass + temp + mag + desc;
+  if (!imgPth) {
+    imgPth = divImg.getElementsByTagName('img')[0].src;
+  }
+  const contentToShow = `<img src="${imgPth}">` + type + name + size + mass + temp + spClass + mag + age + dist + date + desc;
   toShow(contentToShow);
 }
