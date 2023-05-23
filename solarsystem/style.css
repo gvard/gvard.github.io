@@ -8,17 +8,18 @@
   color: white;
 }
 .name {width: 100px}
-.star > .name {background-color: #ffe7c8;}
-.pla > .name {background-color: white;}
-.neo > .name {background-color: #FFC2E0;}
-.co > .name {background-color: #c1f8f5;}
-.ea > .name {background-color: white;}
-.mar > .name {background-color: #f57c54;}
-.mab > .name {background-color: #fcb;}
-.dw > .name {background-color: #ffffff;}
-.ju > .name {background-color: #ccffaa;}
-.sat > .name {background-color: #fffcb1;}
-.ur > .name {background-color: #a890ff;}
-.ne > .name {background-color: #7b9ee9;}
-.pl > .name {background-color: #f1e8ff;}
-.tno > .name {background-color: #acdeff;}
+.star .name {background-color: #ffe7c8}
+.pla .name {background-color: white}
+.neo .name {background-color: #FFC2E0}
+.co .name {background-color: #c1f8f5}
+.ea .name {background-color: white}
+.mar .name {background-color: #f57c54}
+.mab .name {background-color: #fcb}
+.dw .name {background-color: #ffffff}
+.ju .name {background-color: #ccffaa}
+.sat .name {background-color: #fffcb1}
+.ur .name {background-color: #a890ff}
+.ne .name {background-color: #7b9ee9}
+.pl .name {background-color: #f1e8ff}
+.centaur .name {background-color: #7fa7c0}
+.tno .name {background-color: #acdeff}

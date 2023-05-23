@@ -75,8 +75,15 @@ function show(divImg, imgPth) {
   let name = divImg.getElementsByTagName('img')[0].alt;
   let size = obj.getElementsByClassName("size")[0].innerText;
   size = mkPar('Радиус: ', size, '&nbsp;км');
-  let mass = obj.getElementsByClassName("mass")[0].innerText;
-  mass = mkPar('Масса: ', mass, '&nbsp;кг');
+  let mass = obj.getElementsByClassName("mass")[0].innerText.trim();
+  if (mass)
+    mass = mkPar('Масса: ', mass, '&nbsp;кг');
+  let dens = obj.getElementsByClassName("dens");
+  if (dens.length) {
+    dens = mkPar('Плотность: ', dens[0].innerText, '&nbsp;г/см<sup>3</sup>');
+  } else {
+    dens = "";
+  }
   let date = obj.getElementsByClassName("date")[0].innerText;
   date = mkPar('Дата открытия: ', date, '');
   let deltaV = obj.getElementsByClassName("deltav");
@@ -95,7 +102,7 @@ function show(divImg, imgPth) {
   if (!imgPth) {
     imgPth = divImg.getElementsByTagName('img')[0].src;
   }
-  const contentToShow = `<img src="${imgPth}"><h2>${name}</h2>` + type + size + mass + date + deltaV + desc;
+  const contentToShow = `<img src="${imgPth}"><h2>${name}</h2>` + type + size + mass + dens + date + deltaV + desc;
   toShow(contentToShow);
 }
 function getToday() {

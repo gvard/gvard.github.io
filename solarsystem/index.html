@@ -66,7 +66,7 @@
 <label class="nowrap"><input type="checkbox" name=".satellite" checked onclick="showHideThis(this)">Спутники малых планет</label>
 <br>
 <label class="nowrap"><input type="checkbox" name=".mab" checked onclick="showHideThis(this)">Астероиды главного пояса</label>
-<label class="nowrap"><input type="checkbox" name=".tno" checked onclick="showHideThis(this)">Транснептуновые объекты</label>
+<label class="nowrap"><input type="checkbox" name=".tno,.centaur" checked onclick="showHideThis(this)">Транснептуновые объекты и кентавры</label>
 <label class="nowrap"><input type="checkbox" name=".co" checked onclick="showHideThis(this)">Кометы</label>
 <label class="nowrap"><input type="checkbox" name=".jfc" checked onclick="showHideThis(this)">Кометы семейства Юпитера</label>
 <label class="nowrap"><input type="checkbox" name=".neo" checked onclick="showHideThis(this)">Околоземные объекты</label>
@@ -74,6 +74,7 @@
 <br>
 <b>Свойства:</b><br>
 <label class="nowrap"><input type="checkbox" name=".he" checked onchange="showHideThis(this)">«Круглые» тела</label> (в гидростатическом равновесии)
+<label class="nowrap"><input type="checkbox" name=".rings" checked onchange="showHideThis(this)">Имеют кольца</label>
 <label class="nowrap"><input type="checkbox" name=".havesats" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Minor-planet_moon" target="_blank" rel="noopener noreferrer">Имеют спутники/луны</a></label>
 <label class="nowrap"><input type="checkbox" name=".binary" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Binary_asteroid" target="_blank" rel="noopener noreferrer">Двойные тела</a></label>
 <label class="nowrap"><input type="checkbox" name=".contactbinary" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Contact_binary_(small_Solar_System_body)" target="_blank" rel="noopener noreferrer">Контактные двойные</a></label>
@@ -112,7 +113,7 @@
 <div class="deltav">&gt;21</div>
 <div class="dens">1.408</div>
 <div class="desc">В составе Солнца всего 1.48% элементов тяжелее Водорода и Гелия</div>
-</div><div class="obj pla he visited orbited">
+</div><div class="obj pla he visited orbited rings">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Юпитер" src="images/Jupiter.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Jupiter">Юпитер</a></div>
 <div class="size">69911±6</div>
@@ -120,7 +121,7 @@
 <div class="date">&nbsp;</div>
 <div class="deltav">6.6-23.78</div>
 <div class="dens">1.326</div>
-</div><div class="obj pla he visited orbited animation">
+</div><div class="obj pla he visited orbited animation rings">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Saturnoppositions-animated.gif')" onmouseout="hide()"><img alt="Сатурн" src="images/Saturn.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Saturn">Сатурн</a></div>
 <div class="size">58232±6</div>
@@ -128,7 +129,7 @@
 <div class="date">&nbsp;</div>
 <div class="deltav">&gt;7.71</div>
 <div class="dens">0.687</div>
-</div><div class="obj pla he visited flyby">
+</div><div class="obj pla he visited flyby rings">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Уран" src="images/Uranus.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Uranus">Уран</a></div>
 <div class="size">25362±7</div>
@@ -137,7 +138,7 @@
 <div class="deltav">&gt;8.49</div>
 <div class="dens">1.27</div>
 <div class="desc">Название планеты устоялось лишь спустя 70 лет после открытия. Среди предложений было имя Нептун.</div>
-</div><div class="obj pla he visited flyby">
+</div><div class="obj pla he visited flyby rings">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Нептун" src="images/Neptune.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Neptune">Нептун</a></div>
 <div class="size">24622±19</div>
@@ -253,7 +254,7 @@
 <div class="date">21.10.2003</div>
 <div class="deltav">16.0</div>
 <div class="dens">2.43±0.05</div>
-</div><div class="obj dw tno havesats he dot numbered named">
+</div><div class="obj dw tno havesats he dot numbered named rings">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="136108 Хаумеа" src="images/Haumea.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Haumea">Хаумеа</a></div>
 <div class="size">798±6–816</div>
@@ -342,7 +343,7 @@
 <div class="date">21.03.1684</div>
 <div class="deltav">&gt;7.7</div>
 <div class="dens">1.478±0.003</div>
-</div><div class="obj tno havesats dot he numbered named">
+</div><div class="obj tno havesats dot he numbered named rings">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="50000 Quaoar" src="images/Quaoar.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/50000_Quaoar">Квавар</a></div>
 <div class="size">560.5±0.6</div>
@@ -529,6 +530,13 @@
 <div class="date">01.09.1804</div>
 <div class="deltav">9.7</div>
 <div class="dens">3.15±0.28</div>
+</div><div class="obj centaur dot numbered named rings">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="10199 Chariklo" src="images/Chariklo.png"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/10199_Chariklo">Харикло</a></div>
+<div class="size">119±5</div>
+<div class="mass">&nbsp;</div>
+<div class="date">15.02.1997</div>
+<div class="deltav">14.26</div>
 </div><div class="obj mab radar highcontrast numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="16 Psyche" src="images/Psyche.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/16_Psyche">Психея</a></div>
