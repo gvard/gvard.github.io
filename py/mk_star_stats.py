@@ -16,7 +16,7 @@ import locale
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
-from beautifulsoup_supply import TAIL, mk_head, get_soup, get_soup_Request
+from beautifulsoup_supply import TAIL, mk_head, get_soup_Request
 from plot_supply import plot_bar, optimize_svg
 
 
@@ -99,7 +99,7 @@ years, sns, snalt, all_sne = [], [], [], []
 years_dt = []
 all_sn_count, sn_amateur_count = 0, 0
 for (year, snstats_url) in snurls:
-    soup = get_soup(snstats_url)
+    soup = get_soup_Request(snstats_url)
     snstats[year] = get_snstats(soup)
     sn_num, sn_cbat, sn_amateur, sn_13th = get_sn_count(snstats[year])
     all_sn_count += sn_num
@@ -169,6 +169,7 @@ snstats_txt += f"""</ul>
 <img src="https://github.com/gvard/astrodata/raw/main/plots/stars/sne_transients_total_number_log_plot.svg" alt="">
 <h2><a href="{TNS_URL}">Transient Name Server</a></h2>
 <a href="{TNS_STATS_URL}" target="_blank" rel="noopener noreferrer">статистика</a>:<br>
+<img src="https://github.com/gvard/astrodata/raw/main/plots/stars/transient_stats_bar_chart.svg" alt="">
 <ul>
 <li>Всего транзиентов с 01.01.2016: <b>{all_transient}</b>, <b>{public_transient}</b> в открытом доступе
 <li>Сверхновых классифицировано: <b>{classified}</b>
@@ -209,7 +210,7 @@ except FileNotFoundError:
 # CDS_HTML = f"""<p>The <a href="{WDS_URL}">Washington Visual Double Star Catalog</a> (WDS) update on {WDS_DATE} {WDS_NUM} binaries.</p>
 # """
 
-soup = get_soup(SIMBAD_URL)
+soup = get_soup_Request(SIMBAD_URL)
 SIMDATE, SIMSTAT = simbad_stats(soup)
 
 SIMBAD_HTML = f"""<hr><p><a href="{SIMBAD_URL}">SIMBAD</a> <a href="https://en.wikipedia.org/wiki/SIMBAD">Astronomical Database</a> of objects beyond the Solar System – CDS (Strasbourg).<br>

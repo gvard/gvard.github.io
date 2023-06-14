@@ -17,7 +17,7 @@ def get_sd(soup):
     """Parse html, get date of last page update,
     statistics of space debris."""
     months_dct = {"January": "января", "March": "марта", "April": "апреля", "May": "мая",
-        "July": "июля", "August": "августа", "September": "сентября",
+        "June": "июня", "July": "июля", "August": "августа", "September": "сентября",
         "October": "октября", "November": "ноября", "December": "декабря"}
     date = soup.find("p").text.split()[4:]
     date[1] = months_dct[date[1]]
