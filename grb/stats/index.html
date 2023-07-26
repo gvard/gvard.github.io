@@ -14,7 +14,7 @@ function addStats(data) {
     ul.innerHTML += `<li>За <b>${key}</b> год открыто <b>${val[0]}</b> гама-всплесков, <b>${val[1]}</b> послесвечений в рентгене, <b>${val[2]}</b> оптических послесвечений, <b>${val[3]}</b> в радио, <b>${val[4]}</b> измеренных красных смещений</li>`
   })
 }
-fetch("https://raw.githubusercontent.com/gvard/astrodata/main/data/grbs-stats/")
+fetch("https://raw.githubusercontent.com/gvard/astrodata/main/data/stars/grbs-localized-stats.json")
   .then(response => response.json())
   .then(data => addStats(data))
   .catch(err => console.log(err));
