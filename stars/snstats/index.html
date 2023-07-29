@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Подборка статистических данных в области астрономии, астрофизики и космонавтики. Файл сгенерирован автоматически.">
+<title>Статистика звездных каталогов</title>
+<link rel="stylesheet" href="../../compact.css">
+<script>
+function addStats(data) {
+  ul = document.getElementById("data");
+  var data = data[Object.keys(data).sort().pop()];
+  let currentYr = 2023;
+  Object.entries(data).forEach(([yr, val]) => {
+    yr = Number(yr);
+    namStr = `За <b>${yr}</b> год`;
+    if (yr == 1995) {
+      namStr = `До <b>${yr}</b> года`;
+      pre = "snimages/";
+      pos = "other";
+    }
+    else if (yr >= 1995.9 && yr <= 1998.1) {
+      pre = "snimages/";
+      pos = yr;
+    }
+    else if (yr == 1999) {
+      pre = "snimages/sn1999/";
+      pos = "";
+    }
+    else if (yr >= 1999.9 && yr <= currentYr+1.1) {
+      pre = `sn${yr}/`;
+      pos = "";
+    }
+    let yearStr = `<a href="https://rochesterastronomy.org/${pre}snstats${pos}.html" target="_blank">${namStr}</a>`;
+    ul.innerHTML += `<li>${yearStr} открыто <b>${val[0]}</b> сверхновых, <b>${val[1]}</b> транзиентов, <b>${val[2]}</b> СН открыто любителями, <b>${val[3]}</b> ярче 13 зв. вел. Обн. <b>${val[4]}</b></li>`
+  })
+}
+fetch("https://raw.githubusercontent.com/gvard/astrodata/main/data/stars/sne-stats.json")
+  .then(response => response.json())
+  .then(data => addStats(data))
+  .catch(err => console.log(err));
+</script>
+</head>
+<body>
+<h2><a href="https://rochesterastronomy.org/snimages/archives.html" target="_blank" rel="noopener noreferrer">Статистика вспышек сверхновых</a></h2>
+<ul id="data"></ul>
+
+<img src="https://github.com/gvard/astrodata/raw/main/plots/stars/sne_stats_bar_chart.svg" alt=""><br>
+<img src="https://github.com/gvard/astrodata/raw/main/plots/stars/transient_stats_bar_chart.svg" alt=""><br>
+<img src="https://github.com/gvard/astrodata/raw/main/plots/stars/sne_transients_total_number_log_plot.svg" alt="">
+
+<h2>Ссылки</h2>
+<ul>
+<li><a href="https://www.wis-tns.org">Transient Name Server</a> <a href="https://www.wis-tns.org/stats-maps" target="_blank" rel="noopener noreferrer">stats</a></li>
+<li><a href="https://rochesterastronomy.org/snimages/novastatsall.html" target="_blank" rel="noopener noreferrer">Статистика новых звезд</a></li>
+<li><a href="https://rochesterastronomy.org/snimages/lbvlist.html" target="_blank" rel="noopener noreferrer">List of supernova impostors</a> – LBV's (<a href="https://en.wikipedia.org/wiki/Luminous_blue_variable" target="_blank" rel="noopener noreferrer">Luminous Blue Variables</a>)</li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_supernovae" target="_blank" rel="noopener noreferrer">List of supernovae</a> wiki page</li>
+<li><a href="https://en.wikipedia.org/wiki/SN_1885A" target="_blank" rel="noopener noreferrer">SN 1885A (S And)</a> в M31, открыта 17.08.1885, блеск в пике <b>5.85</b> (21.08.1985)</li>
+<li><a href="https://en.wikipedia.org/wiki/SN_1972E" target="_blank" rel="noopener noreferrer">SN 1972E</a> в NGC 5253, открыта (06)13.05.1972, блеск в пике ~<b>8.5</b></li>
+<li><a href="https://en.wikipedia.org/wiki/SN_1987A" target="_blank" rel="noopener noreferrer">SN 1987A</a> в Большом Магеллановом Облаке, открыта в ночь 23–24.02.1987, блеск в пике <b>2.9</b> (10.05.1987).
+  <a href="https://rochesterastronomy.org/snimages/sn1987a.html" target="_blank" rel="noopener noreferrer">Страница на rochesterastronomy.org/snimages/</a></li>
+<li><a href="https://en.wikipedia.org/wiki/SN_2011fe" target="_blank" rel="noopener noreferrer">SN 2011fe</a>, в M101, открыта 24.08.2011 по снимкам 22 и 23 августа 2011. Блеск в пике <b>9.9</b> (13.09.2011)</li>
+</ul>
+</body>
+</html>
