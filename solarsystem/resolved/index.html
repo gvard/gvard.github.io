@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Объекты Солнечной системы, для которых получены изображения с высоким разрешением, инфографика">
+<title>Солнечная система: семейный портрет</title>
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="stylesheet" href="../../collections.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="../../collections.js"></script>
+<script src="../script.js"></script>
+<script>
+function addSolsysTable(data) {
+  tab = document.getElementById("tab");
+  Object.entries(data).forEach(([name, params]) => {
+    var classes = params["tags"];
+    var pth = `../images/${params["imgnam"]}`;
+    var dateStr = "&nbsp;";
+    if ("date" in params) {
+      dateStr = params['date'];
+    }
+    tab.innerHTML += `
+<div class="obj ${classes.join(' ')}">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="${params['numnam']}" src="${pth}"></div>
+<div class="name"><a href="${params['url']}">${params['runame']}</a></div>
+<div class="size">${params['size']}</div>
+<div class="mass">${params['mass']}</div>
+<div class="date">${dateStr}</div>
+<div class="deltav">${params['deltav']}</div>
+</div>`;
+})
+}
+fetch("https://raw.githubusercontent.com/gvard/astrodata/main/data/solarsystem/resolved.json")
+  .then(response => response.json())
+  .then(data => addSolsysTable(data))
+  .catch(err => console.log(err));
+</script>
+</head>
+<body>
+<div id="messageBox">
+<div id="contents"></div>
+</div>
+<h1>&laquo;Семейный портрет&raquo; Солнечной системы</h1>
+
+<div class="cont">
+<b>Пульт управления информацией:</b><br>
+<div id="controls">
+<label class="nowrap"><input type="checkbox" name=".name" checked onclick="showHideThis(this)">Имя</label>,
+<label class="nowrap"><input type="checkbox" name=".size" checked onclick="showHideThis(this)">Радиус</label>,
+<label class="nowrap"><input type="checkbox" name=".date" checked onclick="showHideThis(this)">Дата открытия</label>,
+<label class="nowrap"><input type="checkbox" name=".mass" onclick="showHideThis(this)">Масса</label>,
+<label class="nowrap"><input type="checkbox" name=".dens" onclick="showHideThis(this)">Плотность</label>,
+<label class="nowrap" title="Дата получения наиболее подробных изображений"><input type="checkbox" name=".imgdat" onchange="showHideThis(this)">Дата получения изображений</label>,
+<label class="nowrap" title="Характеристическая скорость орбитального маневра"><input type="checkbox" name=".deltav" onchange="showHideThis(this)">Δv</label>
+<div id="props">
+<button onclick="uncheckAll(true)">Вкл</button><button onclick="uncheckAll(false)">Выкл</button><br>
+<b>Изображение и поверхность:</b><br>
+<label class="nowrap"><input type="checkbox" name=".dot,.lowcontrast" checked onchange="showHideThis(this)">Низкое разрешение/точечное</label>
+<label class="nowrap"><input type="checkbox" name=".highcontrast,.lightcurve,.model" checked onchange="showHideThis(this)">Восстановленное изображение/модель</label>
+<label class="nowrap"><input type="checkbox" name=".lightcurve" checked onchange="showHideThis(this)">Модель по кривой блеска</label>
+<label class="nowrap"><input type="checkbox" name=".radarimage" checked onchange="showHideThis(this)">Радарное изображение</label>
+<label class="nowrap"><input type="checkbox" name=".animation" checked onclick="showHideThis(this)">Анимация</label>
+<label class="nowrap"><input type="checkbox" name=".map" checked onclick="showHideThis(this)">Карта поверхности</label>
+<br>
+<b>Классы тел:</b><br>
+<label class="nowrap"><input type="checkbox" name=".obj" checked onclick="showHideThis(this)">Все объекты</label>
+<label class="nowrap"><input type="checkbox" name=".star,.pla,.moon" checked onclick="showHideThis(this)">Планеты, cпутники, Солнце</label>
+<label class="nowrap"><input type="checkbox" name=".star" checked onclick="showHideThis(this)">Солнце</label>
+<label class="nowrap"><input type="checkbox" name=".ea" checked onclick="showHideThis(this)">Луна</label>
+<label class="nowrap"><input type="checkbox" name=".pla" checked onclick="showHideThis(this)">Планеты</label>
+<label class="nowrap"><input type="checkbox" name=".dw" checked onclick="showHideThis(this)">Карликовые планеты</label>
+<label class="nowrap"><input type="checkbox" name=".moon" checked onclick="showHideThis(this)">Спутники планет</label>:
+<label class="nowrap"><input type="checkbox" name=".ju" checked onclick="showHideThis(this)">Юпитера</label>,
+<label class="nowrap"><input type="checkbox" name=".sat" checked onclick="showHideThis(this)">Сатурна</label>,
+<label class="nowrap"><input type="checkbox" name=".ur" checked onclick="showHideThis(this)">Урана</label>,
+<label class="nowrap"><input type="checkbox" name=".ne" checked onclick="showHideThis(this)">Нептуна</label>.
+<label class="nowrap"><input type="checkbox" name=".dwmoon" checked onclick="showHideThis(this)">Спутники карликовых планет</label>
+<label class="nowrap"><input type="checkbox" name=".satellite" checked onclick="showHideThis(this)">Спутники малых планет</label>
+<br>
+<label class="nowrap"><input type="checkbox" name=".mab" checked onclick="showHideThis(this)">Астероиды главного пояса</label>
+<label class="nowrap"><input type="checkbox" name=".tno,.centaur" checked onclick="showHideThis(this)">Транснептуновые объекты и кентавры</label>
+<label class="nowrap"><input type="checkbox" name=".co" checked onclick="showHideThis(this)">Кометы</label>
+<label class="nowrap"><input type="checkbox" name=".jfc" checked onclick="showHideThis(this)">Кометы семейства Юпитера</label>
+<label class="nowrap"><input type="checkbox" name=".neo" checked onclick="showHideThis(this)">Околоземные объекты</label>
+<label class="nowrap"><input type="checkbox" name=".pha" checked onclick="showHideThis(this)">Потенциально опасные астероиды</label>
+<br>
+<b>Свойства:</b><br>
+<label class="nowrap"><input type="checkbox" name=".he" checked onchange="showHideThis(this)">«Круглые» тела</label> (в гидростатическом равновесии)
+<label class="nowrap"><input type="checkbox" name=".rings" checked onchange="showHideThis(this)">Имеют кольца</label>
+<label class="nowrap"><input type="checkbox" name=".havesats" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Minor-planet_moon" target="_blank" rel="noopener noreferrer">Имеют спутники/луны</a></label>
+<label class="nowrap"><input type="checkbox" name=".binary" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Binary_asteroid" target="_blank" rel="noopener noreferrer">Двойные тела</a></label>
+<label class="nowrap"><input type="checkbox" name=".contactbinary" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Contact_binary_(small_Solar_System_body)" target="_blank" rel="noopener noreferrer">Контактные двойные</a></label>
+<br>
+<b>Космонавтика:</b><br>
+<label class="nowrap"><input type="checkbox" name=".visited" checked onclick="showHideThis(this)">Посещенные АМС</label>
+<label class="nowrap"><input type="checkbox" name=".flyby" checked onclick="showHideThis(this)">Пролетные миссии</label>
+<label class="nowrap"><input type="checkbox" name=".orbited" checked onclick="showHideThis(this)">Орбитальные миссии</label>
+<br>
+<b>Номенклатура:</b><br>
+<label class="nowrap"><input type="checkbox" name=".numbered" checked onclick="showHideThis(this)">Нумерованные</label>
+<label class="nowrap"><input type="checkbox" name=".named" checked onclick="showHideThis(this)">Именованные</label>
+<br>
+<b>Дата открытия:</b>
+<input type="text" id="year" size="2" maxlength="4" value="1990">
+<button type="button" onclick="showHideByDate('none')">Скрыть объекты, открытые после указанного года</button>
+<button type="button" onclick="showHideByDate('inline-block')">Показать объекты, открытые после этого года</button>
+<br>
+<b>Сортировать по:</b> <button type="button" onclick="toSort('date')" title="году открытия">году</button>
+<button type="button" onclick="toSort('size')" title="возрастанию радиуса">размеру</button>
+<button type="button" onclick="toSort('mass')" title="возрастанию массы">массе</button>
+<button type="button" onclick="toSort('dens')" title="возрастанию плотности">плотности</button>
+<button type="button" onclick="toSort('deltav')" title="характеристической скорости орбитального маневра">Δv</button>
+<button type="button" onclick="toSort('imgdat')" title="году получения наиболее подробных изображений">дате получения изображений</button>
+</div>
+</div>
+Фокус на картинке – полная информация
+</div>
+
+<div id="tab">
+</div>
+</body>
+</html>
