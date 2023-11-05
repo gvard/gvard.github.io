@@ -2,7 +2,7 @@
   font-size: 0.9em;
   color: white;
 }
-.mass, .desc, .period, .deltav, .dens {
+.mass, .desc, .period, .deltav, .dens, .des, .imgdat {
   display: none;
   font-size: 0.78em;
   color: white;

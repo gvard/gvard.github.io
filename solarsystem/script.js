@@ -66,6 +66,8 @@ function toSort(classNam) {
     sortFunction = getSize;
   else if (classNam == 'date')
     sortFunction = getDate;
+  else if (classNam == 'imgdat')
+    sortFunction = getDate;
   else if (classNam == 'deltav')
     sortFunction = getDeltaV;
   doSort(sortFunction, classNam);
