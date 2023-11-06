@@ -24,9 +24,13 @@ function addSolsysTable(data) {
     if ("date" in params) {
       dateStr = params['date'];
     }
+    var showthis = "";
+    if ("imgurl" in params) {
+      showthis = `, '${params["imgurl"]}'`;
+    }
     tab.innerHTML += `
 <div class="obj ${classes.join(' ')}">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="${params['numnam']}" src="${pth}"></div>
+<div class="img" onmouseover="show(this${showthis})" onmouseout="hide()"><img alt="${params['numnam']}" src="${pth}"></div>
 <div class="name"><a href="${params['url']}">${params['runame']}</a></div>
 <div class="size">${params['size']}</div>
 <div class="mass">${params['mass']}</div>
