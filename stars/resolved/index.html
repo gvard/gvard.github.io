@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Звезды и их окружение как протяженные источники, инфографика">
+<title>Звезды и их окружение как протяженные источники</title>
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="stylesheet" href="../../collections.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="../../collections.js"></script>
+<script src="../script.js"></script>
+<script>
+function addCollectionTable(data) {
+  tab = document.getElementById("tab");
+  Object.entries(data).forEach(([name, params]) => {
+    let classes = params["tags"];
+    let pth = `../images/${params["imgnam"]}`;
+    let mass = "&nbsp;";
+    if ("mass" in params) {
+      mass = params['mass'];
+    }
+    let imgdat = "";
+    if ("imgdat" in params) {
+      imgdat = `<div class="imgdat">${params['imgdat']}</div>`;
+    }
+    let desc = "";
+    if ("desc" in params) {
+      desc = `<div class="desc">${params['desc']}</div>`;
+    }
+    let sp = "&nbsp;";
+    if ("sp" in params) {
+      sp = params['sp'];
+    }
+    var showthis = "";
+    if ("imgurl" in params) {
+      if (params["imgurl"].startsWith("images/")) {
+        params["imgurl"] = "../" + params["imgurl"];
+      }
+      showthis = `, '${params["imgurl"]}'`;
+    }
+    tab.innerHTML += `
+<div class="obj ${classes.join(' ')}">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="${params['name']}" src="${pth}"></div>
+<div class="name"><a href="${params['url']}">${params['runame']}</a></div>
+<div class="angular">${params['angular']}</div>
+<div class="size">${params['size']}</div>
+<div class="mass">${mass}</div>
+<div class="class">${sp}</div>
+<div class="temp">${params['temp']}</div>
+<div class="mag">${params['mag']}</div>
+<div class="jmag">${params['jmag']}</div>
+${desc}
+${imgdat}
+</div>`;
+})
+// <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Betelgeuse" src="images/Betelgeuse.jpg"></div>
+// <div class="name"><a href="https://en.wikipedia.org/wiki/Betelgeuse" title="α Ori">Бетельгейзе</a></div>
+// <div class="angular">50</div>
+// <div class="size">887</div>
+// <div class="mass">11.6</div>
+// <div class="class">M1–M2 Ia–ab</div>
+// <div class="temp">3590</div>
+// <div class="mag">0.0–1.61</div>
+// <div class="jmag">−3.00</div>
+}
+fetch("https://raw.githubusercontent.com/gvard/astrodata/main/data/stars/resolved.json")
+  .then(response => response.json())
+  .then(data => addCollectionTable(data))
+  .catch(err => console.log(err));
+</script>
+</head>
+<body>
+<div id="messageBox">
+<div id="contents"></div>
+</div>
+<h1>Звезды не как точки</h1>
+<div class="cont">
+<div id="controls">
+<label class="nowrap"><input type="checkbox" name=".name" value="block" checked onclick="showHideThis(this)">Имя</label>,
+<label class="nowrap"><input type="checkbox" name=".angular" value="block" onclick="showHideThis(this)">Угловой диаметр</label>,
+<label class="nowrap"><input type="checkbox" name=".size" value="block" checked onclick="showHideThis(this)">Радиус</label>,
+<label class="nowrap"><input type="checkbox" name=".mass" value="block" onclick="showHideThis(this)">Масса</label>,
+<label class="nowrap"><input type="checkbox" name=".class" value="block" checked onclick="showHideThis(this)">Спектральный класс</label>,
+<label class="nowrap"><input type="checkbox" name=".temp" value="block" checked onclick="showHideThis(this)">Эффективная температура</label>,
+<label class="nowrap"><input type="checkbox" name=".mag" value="block" onclick="showHideThis(this)">Зв. величина (V)</label>,
+<label class="nowrap"><input type="checkbox" name=".jmag" value="block" onclick="showHideThis(this)">Зв. величина (J)</label>.<br>
+<b>Картинка:</b>
+<label class="nowrap"><input type="checkbox" name=".animation" value="block" checked onclick="showHideThis(this)">Анимация</label>
+<label class="nowrap"><input type="checkbox" name=".low" value="block" checked onclick="showHideThis(this)">Низкое разрешение</label><br>
+<b>Сортировать:</b> <button onclick="toSort('size')">по возрастанию размера</button>
+<button onclick="toSort('mass')">по возрастанию массы</button>
+<!-- <button onclick="toSort('mag')">по возрастанию звездной величины</button> -->
+</div>
+</div>
+
+<div id="tab">
+</div>
+</body>
+</html>
