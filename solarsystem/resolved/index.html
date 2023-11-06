@@ -18,14 +18,21 @@
 function addSolsysTable(data) {
   tab = document.getElementById("tab");
   Object.entries(data).forEach(([name, params]) => {
-    var classes = params["tags"];
-    var pth = `../images/${params["imgnam"]}`;
-    var dateStr = "&nbsp;";
+    let classes = params["tags"];
+    let pth = `../images/${params["imgnam"]}`;
+    let dateStr = "&nbsp;";
     if ("date" in params) {
       dateStr = params['date'];
     }
+    let imgdat = "";
+    if ("imgdat" in params) {
+      imgdat = params['imgdat'];
+    }
     var showthis = "";
     if ("imgurl" in params) {
+      if (params["imgurl"].startsWith("images/")) {
+        params["imgurl"] = "../" + params["imgurl"];
+      }
       showthis = `, '${params["imgurl"]}'`;
     }
     tab.innerHTML += `
@@ -36,6 +43,7 @@ function addSolsysTable(data) {
 <div class="mass">${params['mass']}</div>
 <div class="date">${dateStr}</div>
 <div class="deltav">${params['deltav']}</div>
+${imgdat}
 </div>`;
 })
 }
