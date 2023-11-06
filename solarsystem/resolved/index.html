@@ -26,7 +26,7 @@ function addSolsysTable(data) {
     }
     let imgdat = "";
     if ("imgdat" in params) {
-      imgdat = params['imgdat'];
+      imgdat = `<div class="imgdat">${params['imgdat']}</div>`;
     }
     var showthis = "";
     if ("imgurl" in params) {
