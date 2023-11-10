@@ -2,9 +2,10 @@
 supernovae statistics.
 
 Data sources:
-* [David Bishop, Latest Supernovae Archives](https://www.rochesterastronomy.org/snimages/archives.html)
-* [Transient Name Server](https://www.wis-tns.org/stats-maps)
-* [SIMBAD Astronomical Database statistics](https://simbad.u-strasbg.fr/simbad/)
+David Bishop, Latest Supernovae Archives
+https://rochesterastronomy.org/snimages/archives.html
+Transient Name Server https://www.wis-tns.org/stats-maps
+SIMBAD Astronomical Database statistics https://simbad.u-strasbg.fr/simbad/
 """
 
 import os
@@ -133,7 +134,7 @@ snstats_txt += f"""</ul>
 <a href="../snstats/">Статистика сверхновых и транзиентов</a> на отдельной странице
 <h2><a href="{TNS_STATS_URL}" target="_blank" rel="noopener noreferrer">статистика</a>
   <a href="{TNS_URL}" target="_blank">Transient Name Server</a></h2>
-<img src="https://github.com/gvard/astrodata/raw/main/plots/stars/transient_stats_bar_chart.svg" alt=""><br>
+<img src="https://github.com/gvard/astrodata/raw/main/plots/stars/transient_stats_bar_chart-ru.png" alt=""><br>
 <ul>
 <li>Всего транзиентов с 01.01.2016: <b>{all_transient}</b>, <b>{public_transient}</b> в открытом доступе</li>
 <li>Сверхновых классифицировано: <b>{classified}</b></li>
