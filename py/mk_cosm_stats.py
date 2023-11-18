@@ -10,8 +10,9 @@ import urllib.request
 
 from beautifulsoup_supply import TAIL, mk_head, get_soup
 
-if (not os.environ.get('PYTHONHTTPSVERIFY', '') and
-    getattr(ssl, '_create_unverified_context', None)):
+if not os.environ.get("PYTHONHTTPSVERIFY", "") and getattr(
+    ssl, "_create_unverified_context", None
+):
     ssl._create_default_https_context = ssl._create_unverified_context
 
 DEBUG = False
@@ -23,7 +24,7 @@ CURRENTLY_IN_SPACE_URL = "https://www.worldspaceflight.com/bios/currentlyinspace
 FLIGHTLIST_URL = "https://www.worldspaceflight.com/bios/sequence.php"
 SPACE_MISSIONS_URL = "https://planet4589.org/space/astro/lists/missions.html"
 NANOSATS_URL = "https://www.nanosats.eu/"
-ASTROS_URL = 'http://api.open-notify.org/astros.json'
+ASTROS_URL = "http://api.open-notify.org/astros.json"
 
 
 def ending(cosm_num):
@@ -34,13 +35,16 @@ def ending(cosm_num):
     elif cosm_num == 1:
         return ""
 
+
 def get_n2yo(soup):
     return int(soup.findAll("span", {"style": "color:#d50000"})[0].text)
 
+
 def get_nanosats(soup):
-    date = soup.findAll('h3')[-1].b.text.split('of')[1].strip()
-    lis = soup.find("ul", {"class": "ultwo center-align"}).findAll('li')
+    date = soup.findAll("h3")[-1].b.text.split("of")[1].strip()
+    lis = soup.find("ul", {"class": "ultwo center-align"}).findAll("li")
     return date, lis
+
 
 soup = get_soup(NANOSATS_URL)
 DATE, LIS = get_nanosats(soup)
@@ -50,8 +54,8 @@ NANOSATS_HTML = f"""<h2><a href="https://en.wikipedia.org/wiki/Small_satellite#N
 <ul>
 """
 for li in LIS:
-    NANOSATS_HTML += str(li) + '\n'
-NANOSATS_HTML += '</ul>\n'
+    NANOSATS_HTML += str(li) + "\n"
+NANOSATS_HTML += "</ul>\n"
 
 soup = get_soup(N2YO_URL)
 number_tracking_objects = get_n2yo(soup)
@@ -60,30 +64,34 @@ N2_STATS_HTML = f"""<h2>Отслеживаемые объекты в около�
 <p>Отслеживается <b>{number_tracking_objects}</b> объектов.</p>
 """
 
+
 def get_flightlist(soup):
-    trs = soup.findAll('tr')
-    x = -1
-    while trs[x].findAll('td')[0].text == "NotFAI":
-        x -= 1
-    tds = trs[x].findAll('td')
-    return tds[0].text, tds[1].text, tds[2].text, len(trs)
+    """Get Sequential Flight List
+    Note: int(last[0].text) == len(lines)
+    """
+    lines = soup.findAll("div", {"class": "row"})
+    last = lines[-1].findAll("div", {"class": "col"})
+    return last[0].text, last[1].text, last[2].text
+
 
 soup = get_soup(FLIGHTLIST_URL)
-FLIGHT_NUM, LASTFLIGHT_NAME, LASTFLIGHT_DATE, ALLFLIG_NUM = get_flightlist(soup)
+FLIGHT_NUM, LASTFLIGHT_NAME, LASTFLIGHT_DATE = get_flightlist(soup)
 soup = get_soup(SPACE_MISSIONS_URL)
-flights_list = soup.findAll('pre')[1].text.splitlines()[1:]
+flights_list = soup.findAll("pre")[1].text.splitlines()[1:]
 flights_num = 0
 for line in flights_list:
-    if line and line[:2] == "H0":
+    if line and line.startswith("H0"):
         flights_num += 1
 
+
 def get_spaceflight(soup):
-    ps = soup.findAll('p')[3:8]
+    ps = soup.findAll("p")[3:8]
     manyr_num = float(ps[0].text.split()[-2])
     usaf_num = int(ps[2].text.split()[-1])
     fai_num = int(ps[3].text.split()[-1])
     cosmonaut_num = int(ps[4].text.split()[-1])
     return manyr_num, usaf_num, fai_num, cosmonaut_num
+
 
 soup = get_soup(SPACEFLIGHT_URL)
 MANYR_NUM, USAF_NUM, FAI_NUM, COSMONAUT_NUM = get_spaceflight(soup)
@@ -91,10 +99,10 @@ MANYR_NUM, USAF_NUM, FAI_NUM, COSMONAUT_NUM = get_spaceflight(soup)
 astros_obj = urllib.request.urlopen(ASTROS_URL)
 astros = json.load(astros_obj)
 if DEBUG:
-    print('URL:', astros_obj.geturl(), 'HTTP code:', astros_obj.getcode())
+    print("URL:", astros_obj.geturl(), "HTTP code:", astros_obj.getcode())
 
-ASTROS_LST = astros.get('people')
-ASTROS_STR = ", ".join([astr.get('name') for astr in ASTROS_LST])
+ASTROS_LST = astros.get("people")
+ASTROS_STR = ", ".join([astr.get("name") for astr in ASTROS_LST])
 
 SPACEFLIGHT_HTML = f"""<h2>Пилотируемая космонавтика</h2>
 <p><a href="{SPACEFLIGHT_URL}">Статистика</a> <a href="{SPACEFLIGHT1_URL}">пилотируемой космонавтики</a>
@@ -113,7 +121,7 @@ SPACEFLIGHT_HTML = f"""<h2>Пилотируемая космонавтика</h2
 </ul>
 """
 
-with open(os.path.join(os.pardir, 'cosm', 'stats.html'), 'w', encoding="utf8") as fl:
+with open(os.path.join(os.pardir, "cosm", "stats.html"), "w", encoding="utf8") as fl:
     print(HEAD + SPACEFLIGHT_HTML + N2_STATS_HTML + NANOSATS_HTML + TAIL, file=fl)
 
 HEAD = mk_head("Статистика пилотируемой космонавтики", style="stats.css", script="../../stats.js")
@@ -136,5 +144,5 @@ BODY = f"""<body onload="mkHeader()">
   </div>
 </div>
 """
-with open(os.path.join(os.pardir, 'cosm', 'stats', 'index.html'), 'w', encoding="utf8") as fl:
+with open(os.path.join(os.pardir, "cosm", "stats", "index.html"), "w", encoding="utf8") as fl:
     print(HEAD + BODY + TAIL, file=fl)
