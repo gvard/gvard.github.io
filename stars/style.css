@@ -11,15 +11,19 @@ div.desc, .class, .temp {
   font-size: 0.89em;
   color: white;
 }
-.mass, .desc, .mag, .jmag, .class, .temp, .bib {
+.angular, .size, .mass, .class, .bib {
+  overflow: hidden;
+}
+.mass, .desc, .mag, .jmag, .class, .bib {
   display: none;
-  font-size: 0.48em;
+  font-size: 0.75em;
   color: white;
 }
 .angular {
   display: none;
-  font-size: 0.48em;
+  font-size: 0.7em;
   color: white;
+
 }
 .size {
   font-size: 0.9em;
