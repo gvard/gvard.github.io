@@ -1,15 +1,27 @@
 img {max-width: 1024px;}
 .name, .size, .temp {width: 100px}
+/* .name a {
+  font-size: font-size: 10px;
+  font-size: calc(0.7vw + 0.7vh + 0.7vmin);
+} */
+.name a {
+  font-size: 15.5px;
+  }
 div.desc, .class, .temp {
   font-size: 0.89em;
   color: white;
 }
-.mass, .angular, .desc, .mag, .jmag {
+.mass, .desc, .mag, .jmag, .class, .temp, .bib {
   display: none;
-  font-size: 0.78em;
+  font-size: 0.48em;
   color: white;
 }
-div.size {
+.angular {
+  display: none;
+  font-size: 0.48em;
+  color: white;
+}
+.size {
   font-size: 0.9em;
   color: white;
 }
