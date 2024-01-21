@@ -31,7 +31,7 @@ PICKLE_SIMB_FILENAME = "simbad_stats.pickle"
 PICKLE_SN_FILENAME = "snstats.pickle"
 HTML_FILENAME = os.path.join(os.pardir, "stars", "stats", "index.html")
 SIMBAD_LST = ["objects", "identifiers", "bibliographic references",
-              "citations of objects in papers"]
+              "citations of objects in papers", "acronyms described for Simbad"]
 
 
 def cds_readme_stats(url):
@@ -54,10 +54,10 @@ def get_sn_count(txt):
 
 def get_tns(soup):
     all_stat_num = soup.findAll("div", {"class": "stat-item-right"})
-    all_transient = int(all_stat_num[0].text)
-    public_transient = int(all_stat_num[1].text)
-    classified = int(all_stat_num[2].text)
-    spectra = int(all_stat_num[3].text)
+    all_transient = int(all_stat_num[0].text.replace(",", ""))
+    public_transient = int(all_stat_num[1].text.replace(",", ""))
+    classified = int(all_stat_num[2].text.replace(",", ""))
+    spectra = int(all_stat_num[3].text.replace(",", ""))
     return all_transient, public_transient, classified, spectra
 
 
@@ -86,7 +86,7 @@ for year in range(1996, 1999):
     snurls.append((year, snstats_year))
 snurls.append((1999, f"{SNIMAGES_URL}sn1999/snstats.html"))
 
-for year in range(2000, 2024):
+for year in range(2000, 2025):
     snstats_year = f"https://rochesterastronomy.org/sn{year}/snstats.html"
     snurls.append((year, snstats_year))
 snurls.append(("all", f"{SNIMAGES_URL}snstatsall.html"))
@@ -102,7 +102,11 @@ years, sns, snalt, all_sne = [], [], [], []
 years_dt = []
 all_sn_count, sn_amateur_count = 0, 0
 for year, snstats_url in snurls:
-    soup = get_soup_Request(snstats_url)
+    try:
+        soup = get_soup_Request(snstats_url)
+    except urllib.error.URLError:
+        print("break")
+        break
     snstats[year] = get_snstats(soup)
     sn_num, sn_cbat, sn_amateur, sn_13th = get_sn_count(snstats[year])
     all_sn_count += sn_num
@@ -167,6 +171,7 @@ objects beyond the Solar System – CDS (Strasbourg).<br>
 <li>{SIMSTAT['identifiers']} идентификаторов</li>
 <li>{SIMSTAT['bibliographic references']} библиографических ссылок</li>
 <li>{SIMSTAT['citations of objects in papers']} цитирований объектов в статьях</li>
+<li>{SIMSTAT['acronyms described for Simbad']} сокращений, описанных в Simbad</li>
 </ul>
 """
 
