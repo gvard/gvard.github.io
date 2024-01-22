@@ -29,22 +29,43 @@
 </div>
 <h1>Звезды не как точки</h1>
 <div class="cont">
+<b>Пульт управления информацией:</b><br>
 <div id="controls">
-<input type="checkbox" name=".name" value="block" checked onclick="showHideThis(this)">Имя,
-<input type="checkbox" name=".angular" value="block" onclick="showHideThis(this)">Угловой диаметр,
-<input type="checkbox" name=".size" value="block" checked onclick="showHideThis(this)">Радиус,
-<input type="checkbox" name=".mass" value="block" onclick="showHideThis(this)">Масса,
-<input type="checkbox" name=".class" value="block" checked onclick="showHideThis(this)">Спектральный класс,
-<input type="checkbox" name=".temp" value="block" checked onclick="showHideThis(this)">Эффективная температура,
-<input type="checkbox" name=".mag" value="block" onclick="showHideThis(this)">Зв. величина (V),
-<input type="checkbox" name=".jmag" value="block" onclick="showHideThis(this)">Зв. величина (J).<br>
-<b>Картинка:</b>
-<input type="checkbox" name=".animation" value="block" checked onclick="showHideThis(this)">Анимация
-<input type="checkbox" name=".low" value="block" checked onclick="showHideThis(this)">Низкое разрешение<br>
+<label class="nowrap"><input type="checkbox" name=".name" checked onclick="showHideThis(this)">Имя</label>,
+<label class="nowrap"><input type="checkbox" name=".angular" value="block" onclick="showHideThis(this)">Угловой диаметр</label>,
+<label class="nowrap"><input type="checkbox" name=".size" value="block" checked onclick="showHideThis(this)">Радиус</label>,
+<label class="nowrap"><input type="checkbox" name=".mass" value="block" onclick="showHideThis(this)">Масса</label>,
+<label class="nowrap"><input type="checkbox" name=".class" value="block" checked onclick="showHideThis(this)">Спектральный класс</label>,
+<label class="nowrap"><input type="checkbox" name=".temp" value="block" checked onclick="showHideThis(this)">Эффективная температура</label>,
+<label class="nowrap"><input type="checkbox" name=".mag" value="block" onclick="showHideThis(this)">Зв. величина (V)</label>,
+<label class="nowrap"><input type="checkbox" name=".jmag" value="block" onclick="showHideThis(this)">Зв. величина (J)</label>
+<div id="props">
+<button onclick="uncheckAll(true)">Вкл</button><button onclick="uncheckAll(false)">Выкл</button><br>
+<label class="nowrap"><input type="checkbox" name=".obj" checked onclick="showHideThis(this)">Все объекты</label>
+<br><b>Классы:</b><br>
+<label class="nowrap"><input type="checkbox" name=".hypergiant" checked onclick="showHideThis(this)">Гипергиганты</label>
+<label class="nowrap"><input type="checkbox" name=".sg" checked onclick="showHideThis(this)">Сверхгиганты</label>
+<label class="nowrap"><input type="checkbox" name=".giant" checked onclick="showHideThis(this)">Гиганты</label>
+<label class="nowrap"><input type="checkbox" name=".agb" checked onclick="showHideThis(this)">AGB</label>
+<label class="nowrap"><input type="checkbox" name=".subgiant" checked onclick="showHideThis(this)">Субгиганты</label>
+<label class="nowrap"><input type="checkbox" name=".dwarf" checked onclick="showHideThis(this)">Карлики</label>
+<br><b title="Appearance">Проявление:</b><br>
+<label class="nowrap"><input type="checkbox" name=".variable" checked onclick="showHideThis(this)">Переменные</label>
+<label class="nowrap"><input type="checkbox" name=".mira" checked onclick="showHideThis(this)">Мириды</label>
+<label class="nowrap"><input type="checkbox" name=".cepheid" checked onclick="showHideThis(this)">Цефеиды</label>
+<br><b>Окружение:</b><br>
+<label class="nowrap"><input type="checkbox" name=".cse" checked onclick="showHideThis(this)">Околозвездная оболочка</label>
+<label class="nowrap"><input type="checkbox" name=".bowshock" checked onclick="showHideThis(this)">Астросфера, головная ударная волна</label>
+<label class="nowrap"><input type="checkbox" name=".nebula" checked onclick="showHideThis(this)">Туманность</label>
+<br><b>Картинка:</b>
+<label class="nowrap"><input type="checkbox" name=".animation" value="block" checked onclick="showHideThis(this)">Анимация</label>
+<label class="nowrap"><input type="checkbox" name=".low" value="block" checked onclick="showHideThis(this)">Низкое разрешение</label><br>
 <b>Сортировать:</b> <button onclick="toSort('size')">по возрастанию размера</button>
 <button onclick="toSort('mass')">по возрастанию массы</button>
 <!-- <button onclick="toSort('mag')">по возрастанию звездной величины</button> -->
 </div>
+</div>
+Фокус на картинке – полная информация
 </div>
 
 <div id="tab">
@@ -58,7 +79,7 @@
   <div class="temp">3590</div>
   <div class="mag">0.0–1.61</div>
   <div class="jmag">−3.00</div>
-</div><div class="obj sg Lc brightest double">
+</div><div class="obj sg Lc brightest double variable">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Antares" src="images/Antares.jpg"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/Antares" title="α Sco">Антарес</a></div>
   <div class="angular">37–41</div>
@@ -68,7 +89,7 @@
   <div class="temp">3660</div>
   <div class="mag">0.6–1.6</div>
   <div class="jmag">–2.73</div>
-</div><div class="obj mira">
+</div><div class="obj giant mira variable">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="R Doradus" src="images/R_Doradus.jpg"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/R_Doradus" title="R Золотой Рыбы">R Doradus</a></div>
   <div class="angular">57±5</div>
@@ -78,8 +99,8 @@
   <div class="temp">2740±190</div>
   <div class="mag">0.6–1.6</div>
   <div class="jmag">−2.65</div>
-</div><div class="obj agb mira IRbrightest">
-  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="W Hydrae" src="images/W_Hydrae.jpg"></div>
+</div><div class="obj agb giant mira IRbrightest variable">
+  <div class="img" onmouseover="show(this, 'images/W_Hya.png')" onmouseout="hide()"><img alt="W Hydrae" src="images/W_Hydrae.jpg"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/W_Hydrae" title="W Hya">W Гидры</a></div>
   <div class="angular">44±4</div>
   <div class="size">229–560</div>
@@ -88,8 +109,8 @@
   <div class="temp">2500–3129</div>
   <div class="mag">7–11.6</div>
   <div class="jmag">–1.7</div>
-</div><div class="obj mira variable">
-  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Mira" src="images/Mira.jpg"></div>
+</div><div class="obj giant mira double variable">
+  <div class="img" onmouseover="show(this, 'images/Mira.png')" onmouseout="hide()"><img alt="Mira" src="images/Mira.jpg"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/Mira" title="ο Cet">Мира</a></div>
   <div class="angular">43±2</div>
   <div class="size">367</div>
@@ -119,7 +140,7 @@
   <div class="mag">5.72–7.41</div>
   <div class="jmag">1.44</div>
   <div class="desc">Оболочка, окружающая звезду, имеет сложную спиралеобразную структуру.</div>
-</div><div class="obj mira">
+</div><div class="obj mira variable">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="T Leporis" src="images/T_Leporis.jpg"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/T_Leporis" title="T Lep">T Зайца</a></div>
   <div class="angular">5.8 (15)</div>
@@ -140,8 +161,8 @@
   <div class="temp">4287±760</div>
   <div class="mag">6.1–7.5</div>
   <div class="jmag">2.12</div>
-</div><div class="obj hypergiant variable">
-  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="RW Cephei" src="images/RW_Cep.png"></div>
+</div><div class="obj hypergiant variable animation">
+  <div class="img" onmouseover="show(this, 'images/RW_Cep.gif')" onmouseout="hide()"><img alt="RW Cephei" src="images/RW_Cep.png"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/RW_Cephei" title="RW Cep">RW Цефея</a></div>
   <div class="angular">2.45</div>
   <div class="size">900–1760</div>
@@ -150,7 +171,7 @@
   <div class="temp">3900–4200</div>
   <div class="mag">6.65</div>
   <div class="jmag">2.83</div>
-</div><div class="obj LBV hypergiant variable">
+</div><div class="obj LBV cse nebula hypergiant variable">
   <div class="img" onmouseover="show(this, 'images/Eta_Carinae-big.png')" onmouseout="hide()"><img alt="Eta Carinae" src="images/Eta_Carinae.png"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/Eta_Carinae" title="η Car">Эта Киля</a></div>
   <div class="angular">5 (0.2)</div>
@@ -161,7 +182,7 @@
   <div class="mag">−1.0 – 7.6</div>
   <div class="jmag">1.658</div>
   <div class="bib">2016A&amp;A...594A.106W</div>
-</div><div class="obj cepheid variable">
+</div><div class="obj sg cepheid variable">
   <div class="img" onmouseover="show(this, 'images/l_Carinae-big.png')" onmouseout="hide()"><img alt="l Carinae" src="images/l_Carinae.png"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/HD_84810" title="l Car">l Киля</a></div>
   <div class="angular">2.65±0.08–3.21±0.03</div>
@@ -172,7 +193,7 @@
   <div class="mag">3.35–4.06</div>
   <div class="jmag">1.684</div>
   <div class="bib">2004ApJ...604L.113K</div>
-</div><div class="obj rot deltaSct">
+</div><div class="obj dwarf rot deltaSct variable">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Vega" src="images/Vega.png"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/Vega" title="α Lyr">Вега</a></div>
   <div class="angular">3.2</div>
@@ -184,7 +205,7 @@
   <div class="jmag">–0.177</div>
   <div class="desc">Первая звезда после Солнца, для которой был получен спектр.
   Это произошло в августе 1872 г.</div>
-</div><div class="obj rot deltaSct brightest">
+</div><div class="obj dwarf rot deltaSct brightest variable">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Altair" src="images/Altair.jpg"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/Altair" title="α Aql">Альтаир</a></div>
   <div class="angular">3</div>
@@ -194,7 +215,7 @@
   <div class="temp">6900–8500</div>
   <div class="mag">0.76</div>
   <div class="jmag">0.35</div>
-</div><div class="obj rot deltaSct">
+</div><div class="obj giant rot deltaSct variable">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Beta Cassiopeiae" src="images/Beta_Cassiopeiae.png"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/Beta_Cassiopeiae" title="β Cas">Каф (β Cas)</a></div>
   <div class="angular">&nbsp;</div>
@@ -215,18 +236,19 @@
   <div class="mag">2.51</div>
   <div class="jmag">2.15</div>
   <div class="bib">2006ApJ...637..494V, 2009ApJ...701..209Z</div>
-</div><div class="obj mira low">
+</div><div class="obj mira bowshock low variable">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="R Hydrae" src="images/R_Hydrae.png"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/R_Hydrae" title="R Hya">R Гидры</a></div>
-  <div class="angular">&nbsp;</div>
+  <div class="angular">400000</div>
   <div class="size">460–631</div>
   <div class="mass">2</div>
   <div class="class">M6e/M9e:</div>
   <div class="temp">2128–2830</div>
   <div class="mag">3.5–10.9</div>
   <div class="jmag">–1.16</div>
-</div><div class="obj sg algol variable">
-  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Epsilon Aurigae" src="images/Epsilon_Aurigae.jpg"></div>
+  <div class="bib">2006ApJ...648L..39U 2023AJ....165..229S</div>
+</div><div class="obj sg algol variable animation">
+  <div class="img" onmouseover="show(this, 'images/Eps_Aur.gif')" onmouseout="hide()"><img alt="Epsilon Aurigae" src="images/Epsilon_Aurigae.jpg"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/Epsilon_Aurigae" title="ε Aurigae">ε Возничего</a></div>
   <div class="angular">1.44–2.18</div>
   <div class="size">143–358 + 3.9</div>
@@ -236,7 +258,7 @@
   <div class="mag">2.92–3.83</div>
   <div class="jmag">1.83</div>
   <div class="bib">2012A&amp;A...544A..91M</div>
-</div><div class="obj rot">
+</div><div class="obj subgiant rot">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Regulus" src="images/Regulus.png"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/Regulus" title="α Leo">Регул</a></div>
   <div class="angular">1.25±0.02, 1.65±0.02</div>
@@ -258,7 +280,7 @@
   <div class="mag">2.07</div>
   <div class="jmag">1.74</div>
   <div class="bib">2009ApJ...701..209Z</div>
-</div><div class="obj rot Be double brightest">
+</div><div class="obj rot Be double brightest variable">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Achernar" src="images/Achernar.jpg"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/Achernar" title="α Eri">Ахернар</a></div>
   <div class="angular">2–2.45</div>
@@ -268,7 +290,7 @@
   <div class="temp">15000</div>
   <div class="mag">0.40–0.46</div>
   <div class="jmag">0.80</div>
-</div><div class="obj double giant RSCVn">
+</div><div class="obj double giant RSCVn variable">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Zeta Andromedae" src="images/Zeta_Andromedae.png"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/Zeta_Andromedae" title="ζ And">ζ Андромеды</a></div>
   <div class="angular">2.502</div>
@@ -278,7 +300,7 @@
   <div class="temp">4665±140</div>
   <div class="mag">3.92–4.14</div>
   <div class="jmag">2.19</div>
-</div><div class="obj double RSCVn SB1">
+</div><div class="obj double RSCVn SB1 variable">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Sigma Geminorum" src="images/Sigma_Geminorum.png"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/Sigma_Geminorum" title="σ Gem">σ Близнецов</a></div>
   <div class="angular">1.64±0.15, 1.81±0.31</div>
@@ -312,8 +334,7 @@
   <div class="bib">2014ApJ...785...46B</div>
 </div><div class="obj sg SRc variable">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="T Persei" src="images/T_Persei.jpg"></div>
-  <div class="name"><a href="https://en.wikipedia.org/wiki/T_Persei"
-  title="T Per">T Персея</a></div>
+  <div class="name"><a href="https://en.wikipedia.org/wiki/T_Persei" title="T Per">T Персея</a></div>
   <div class="angular">2.01±0.03 (LDD)</div>
   <div class="size">510±20</div>
   <div class="mass">9-12</div>
@@ -395,7 +416,7 @@
   <div class="mag">4.139</div>
   <div class="jmag">4.29</div>
   <div class="bib">2016ApJ...822L...3J</div>
-</div><div class="obj AGB mira variable">
+</div><div class="obj agb mira variable">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="R Carinae" src="images/R_Carinae.png"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/R_Carinae" title="R Carinae">R Киля</a></div>
   <div class="angular">&nbsp;</div>
@@ -405,7 +426,7 @@
   <div class="temp">2800</div>
   <div class="mag">3.9–10.5</div>
   <div class="jmag">0.09</div>
-</div><div class="obj hypergiant Lc variable">
+</div><div class="obj hypergiant cse Lc variable">
   <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="VY Canis Majoris" src="images/VY_Canis_Majoris.png"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/VY_Canis_Majoris" title="VY Большого Пса"><span style="font-size: 13px">VY</span><span style="font-size: 13.5px"> Canis Majoris</span></a></div>
   <div class="angular">&nbsp;</div>
@@ -415,7 +436,7 @@
   <div class="temp">3490±90</div>
   <div class="mag">6.5–9.6</div>
   <div class="jmag">1.98</div>
-</div><div class="obj ">
+</div><div class="obj giant double">
   <div class="img" onmouseover="show(this, 'images/Capella-big.png')" onmouseout="hide()"><img alt="Capella" src="images/Capella.png"></div>
   <div class="name"><a href="https://en.wikipedia.org/wiki/Capella" title="α Aur">Капелла</a></div>
   <div class="angular">8.47±0.4, 6.24±0.23</div>
@@ -496,6 +517,13 @@
   <li><a href="https://nplus1.ru/news/2021/04/26/flare-proxima" target="_blank" rel="noopener noreferrer">Проксима Центавра произвела экстремально мощную вспышку</a>,
     <a href="https://arxiv.org/abs/2104.09519" target="_blank" rel="noopener noreferrer">Discovery of an Extremely Short Duration Flare from Proxima Centauri Using Millimeter through FUV Observations</a></li>
 </ul>
+<h3 id="lists">Списки и каталоги</h3>
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Mira_variable#List" target="_blank" rel="noopener noreferrer">Мириды</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Classical_Cepheid_variable#Examples" target="_blank" rel="noopener noreferrer">Цефеиды</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Luminous_blue_variable#List_of_LBVs" target="_blank" rel="noopener noreferrer">Яркие голубые переменные</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Flare_star#Nearby_flare_stars" target="_blank" rel="noopener noreferrer">Вспыхивающие звезды</a></li>
+</ul>
 <h3 id="diam">Диаметры звезд</h3>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Angular_diameter" target="_blank" rel="noopener noreferrer">Angular diameter</a></li>
@@ -518,6 +546,14 @@
   <a href="http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/367/521" target="_blank" rel="noopener noreferrer">Catalogue of Stellar Diameters (CADARS)</a>.</li>
 <li><a href="https://www.eso.org/public/news/eso0609/" target="_blank" rel="noopener noreferrer">Interferometry Helps Discover Envelopes Around Supergiant Stars</a>;
   <a href="https://ui.adsabs.harvard.edu/abs/2006A%26A...448..623K/abstract" target="_blank" rel="noopener noreferrer">Extended envelopes around Galactic Cepheids. I. ℓ Carinae from near and mid-infrared interferometry with the VLTI</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2006ApJ...648L..39U/abstract" target="_blank" rel="noopener noreferrer">Detection of a Far-Infrared Bow Shock Nebula around R Hya: The First MIRIAD Results</a>,
+  <a href="https://ui.adsabs.harvard.edu/abs/2023AJ....165..229S/abstract" target="_blank" rel="noopener noreferrer">Faint but Not Forgotten. I. First Results from a Search for Astrospheres around AGB Stars in the Far-ultraviolet</a>,
+  <a href="https://ui.adsabs.harvard.edu/abs/2024MNRAS.527.4730G/abstract" target="_blank" rel="noopener noreferrer">Three new identifications of extended UV emission around AGB stars</a>,
+  <a href="https://arxiv.org/abs/1907.00122" target="_blank" rel="noopener noreferrer">Bow shocks, bow waves, and dust waves. IV. Shell shape statistics</a>,
+  <a href="https://ui.adsabs.harvard.edu/abs/2015ASPC..497..181M/abstract" target="_blank" rel="noopener noreferrer">Winds of Binary AGB Stars as Observed by Herschel</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2014A%26A...570A.113M/abstract" target="_blank" rel="noopener noreferrer">Large-scale environments of binary AGB stars probed by Herschel. II. Two companions interacting with the wind of π1 Gruis</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2011A%26A...530A.120Z/abstract" target="_blank" rel="noopener noreferrer">The mid-infrared diameter of W Hydrae</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2020A%26A...635A.200K/abstract" target="_blank" rel="noopener noreferrer">Inner dusty envelope of the AGB stars W Hydrae, SW Virginis, and R Crateris using SPHERE/ZIMPOL</a></li>
 <li><a href="https://ui.adsabs.harvard.edu/abs/2019NatAs...3..511B/abstract" target="_blank" rel="noopener noreferrer">Direct measurement of stellar angular diameters by the VERITAS Cherenkov telescopes</a></li>
 </ul>
 </div>
