@@ -18,7 +18,7 @@ function toSort(classNam) {
     sortFunction = getSize;
   doSort(sortFunction, classNam);
 }
-function show(divImg) {
+function show(divImg, imgPth) {
   const obj = divImg.parentElement;
   let name = obj.getElementsByClassName("name")[0].getElementsByTagName("a")[0].innerText;
   name = mkPar('<b>', name, '</b>');
@@ -40,6 +40,9 @@ function show(divImg) {
   } else {
     desc = "";
   }
-  const contentToShow = divImg.innerHTML + name + type + angular + size + mass + gType + dist + desc;
+  if (!imgPth) {
+    imgPth = divImg.getElementsByTagName('img')[0].src;
+  }
+  const contentToShow = `<img src="${imgPth}"><h2>${name}</h2>` + type + angular + size + mass + gType + dist + desc;
   toShow(contentToShow);
 }
