@@ -41,18 +41,24 @@
 <div id="props">
 <button onclick="uncheckAll(true)">Вкл</button><button onclick="uncheckAll(false)">Выкл</button><br>
 <label class="nowrap"><input type="checkbox" name=".obj" checked onclick="showHideThis(this)">Все объекты</label>
-<label class="nowrap"><input type="checkbox" name=".dwarf" checked onclick="showHideThis(this)">Карлики</label>
+<label class="nowrap"><input type="checkbox" name=".agn" checked onclick="showHideThis(this)">Галактики с активным ядром</label>
+<label class="nowrap"><input type="checkbox" name=".sn" checked onclick="showHideThis(this)">Наблюдались вспышки сверхновых</label>
+
 <br><b>Номенклатура:</b><br>
-<label class="nowrap"><input type="checkbox" name=".M" checked onclick="showHideThis(this)">Каталог Мессье</label>
-<label class="nowrap"><input type="checkbox" name=".C" checked onclick="showHideThis(this)">Caldwell</label>
-<label class="nowrap"><input type="checkbox" name=".NGC" checked onclick="showHideThis(this)">каталог NGC</label>
+Каталоги <label class="nowrap"><input type="checkbox" name=".M" checked onclick="showHideThis(this)"> Мессье</label>
+<label class="nowrap"><input type="checkbox" name=".C" checked onclick="showHideThis(this)">Колдуэлла</label>
+<label class="nowrap"><input type="checkbox" name=".NGC" checked onclick="showHideThis(this)">NGC</label>
 <label class="nowrap"><input type="checkbox" name=".IC" checked onclick="showHideThis(this)">IC</label>
 <label class="nowrap"><input type="checkbox" name=".pgc" checked onclick="showHideThis(this)">PGC</label>
 <label class="nowrap"><input type="checkbox" name=".ugc" checked onclick="showHideThis(this)">UGC</label>
-<br><b>Местная группа:</b><br>
+<br><b>Космография:</b><br>
 <label class="nowrap"><input type="checkbox" name=".MWsat" checked onclick="showHideThis(this)">Спутники Млечного пути</label>
 <label class="nowrap"><input type="checkbox" name=".M31sat" checked onclick="showHideThis(this)">Спутники M31</label>
 <br><b>Морфология:</b><br>
+<label class="nowrap"><input type="checkbox" name=".S" checked onclick="showHideThis(this)">Спиральные галактики</label>
+<label class="nowrap"><input type="checkbox" name=".grand-design" checked onclick="showHideThis(this)">Grand design</label>
+<label class="nowrap"><input type="checkbox" name=".dwarf" checked onclick="showHideThis(this)">Карлики</label>
+<label class="nowrap"><input type="checkbox" name=".irr" checked onclick="showHideThis(this)">Неправильные галактики</label>
 <br><b>Сортировать:</b> <button onclick="toSort('size')">по возрастанию размера</button>
 <button onclick="toSort('mass')">по возрастанию массы</button>
 </div>
@@ -60,7 +66,7 @@
 Фокус на картинке – полная информация
 </div>
 <div id="tab">
-<div class="obj pgc SBm MWsat">
+<div class="obj pgc SBm MWsat sn">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="LMC" src="images/Large_Magellanic_Cloud.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Large_Magellanic_Cloud" title="Large Magellanic Cloud" style="font-size: 16px">Большое Магелланово Облако</a></div>
 <div class="info_field angular">10.75° × 9.17°</div>
@@ -143,7 +149,7 @@
 <div class="info_field class">cE2</div>
 <div class="info_field dist">763 ± 24</div>
 <div class="desc">Содержит сверхмассивную черную дыру M32* 1.5-5 млн. M<sub>☉</sub></div>
-</div><div class="obj M NGC ugc pgc sn">
+</div><div class="obj S M NGC ugc pgc sn">
 <div class="img" onmouseover="show(this, 'images/M31-big.png')" onmouseout="hide()"><img alt="M31" src="images/M31.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Andromeda_Galaxy" title="M31">Андромеда</a></div>
 <div class="info_field angular">3.167° × 1°</div>
@@ -160,7 +166,7 @@
 <div class="info_field class">E5 pec</div>
 <div class="info_field dist">750–850</div>
 <div class="desc">В отличие от M32, не содержит сверхмассивной черной дыры</div>
-</div><div class="obj NGC C DDO M31sat">
+</div><div class="obj dwarf dSph NGC C DDO M31sat">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="NGC 147" src="images/NGC_147.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/NGC_147" title="NGC 147">NGC 147</a></div>
 <div class="info_field angular">13′.2 × 7′.8</div>
@@ -169,7 +175,7 @@
 <div class="info_field class">dSph/dE5</div>
 <div class="info_field dist">780 ± 30</div>
 <div class="desc"></div>
-</div><div class="obj NGC C M31sat">
+</div><div class="obj dwarf dSph NGC C M31sat">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="NGC 185" src="images/NGC_185.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/NGC_185" title="NGC 185">NGC 185</a></div>
 <div class="info_field angular">11′.7 × 10′.0</div>
@@ -178,7 +184,7 @@
 <div class="info_field class">dSph/dE3, Sy2</div>
 <div class="info_field dist">630 ± 40</div>
 <div class="desc"></div>
-</div><div class="obj M NGC SA">
+</div><div class="obj S M NGC SA">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="M 33" src="images/Triangulum_Galaxy.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Triangulum_Galaxy" title="Галактика в Треугольнике">M 33</a></div>
 <div class="info_field angular">70′.8 × 41′.7</div>
@@ -186,7 +192,7 @@
 <div class="info_field mass">5 × 10<sup>10</sup></div>
 <div class="info_field class">SA(s)cd</div>
 <div class="info_field dist">840</div>
-</div><div class="obj pgc IB">
+</div><div class="obj pgc irr IB">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="WLM" src="images/Wolf–Lundmark–Melotte.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Wolf%E2%80%93Lundmark%E2%80%93Melotte" title="Wolf–Lundmark–Melotte">Вольф-Ландмарк-Мелотт</a></div>
 <div class="info_field angular">11′.5 × 4′.2</div>
@@ -194,7 +200,7 @@
 <div class="info_field mass">&nbsp;</div>
 <div class="info_field class">IB(s)m</div>
 <div class="info_field dist">930 ± 30</div>
-</div><div class="obj IC ugc pgc Im">
+</div><div class="obj irr IC ugc pgc Im">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="IC 10" src="images/IC_10.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/IC_10" title="IC 10">IC 10</a></div>
 <div class="info_field angular">6′.8 × 5′.9</div>
@@ -202,7 +208,7 @@
 <div class="info_field mass">&nbsp;</div>
 <div class="info_field class">dIrr IV/BCD</div>
 <div class="info_field dist">660 ± 60</div>
-</div><div class="obj pgc dE">
+</div><div class="obj dwarf pgc dE">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="PGC 29388" src="images/PGC29388.jpg"></div>
 <div class="name"><a href="https://www.spacetelescope.org/images/potw2016a/" title="PGC 29388">PGC 29388</a></div>
 <div class="info_field angular">2′</div>
@@ -210,22 +216,30 @@
 <div class="info_field mass">&nbsp;</div>
 <div class="info_field class">dE</div>
 <div class="info_field dist">3700–3740</div>
-</div><div class="obj NGC ugc pgc SAB C sn">
+</div><div class="obj S grand-design NGC ugc pgc SAB C sn">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/5/5e/SpiralGalaxy_NGC6946.jpg')" onmouseout="hide()"><img alt="NGC 6946" src="images/NGC_6946.jpg"></div>
-<div class="name"><a href="https://en.wikipedia.org/wiki/NGC_6946" title="NGC 6946, C12">Фейерверк</a> (C12)</div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/NGC_6946" title="Fireworks Galaxy, NGC 6946, C12">Фейерверк</a> (C12)</div>
 <div class="info_field angular">16′ × 11′</div>
 <div class="info_field size">25.75</div>
 <div class="info_field mass">&nbsp;</div>
 <div class="info_field class">SAB(rs)cd</div>
 <div class="info_field dist">7720 ± 320</div>
-</div><div class="obj M NGC ugc pgc grand-design agn seyfert sn">
+</div><div class="obj S M NGC ugc pgc grand-design agn seyfert sn">
 <div class="img" onmouseover="show(this, 'images/M51-big.png')" onmouseout="hide()"><img alt="M51" src="images/M51.png"></div>
-<div class="name"><a href="https://en.wikipedia.org/wiki/Whirlpool_Galaxy" title="M51">Водоворот</a> (M51)</div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/Whirlpool_Galaxy" title="Whirlpool Galaxy">Водоворот</a> (M51)</div>
 <div class="info_field angular">&nbsp;</div>
 <div class="info_field size">33.28 × 22.63</div>
 <div class="info_field mass">1.6*10<sup>11</sup></div>
 <div class="info_field class">SA(s)bc pec</div>
 <div class="info_field dist">9760 ± 680</div>
+</div><div class="obj S grand-design M NGC ugc pgc sn">
+<div class="img" onmouseover="show(this, 'images/M101-big.png')" onmouseout="hide()"><img alt="M51" src="images/M101.png"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/Whirlpool_Galaxy" title="Pinwheel Galaxy">Вертушка</a> (M101)</div>
+<div class="info_field angular">28′.8 × 26′.9</div>
+<div class="info_field size">51.91</div>
+<div class="info_field mass">1.03*10<sup>11</sup></div>
+<div class="info_field class">SAB(rs)cd</div>
+<div class="info_field dist">6400 ± 500</div>
 </div>
 </div>
 <h2>Ссылки</h2>
@@ -237,7 +251,8 @@
   <a href="https://en.wikipedia.org/wiki/List_of_Andromeda%27s_satellite_galaxies" target="_blank" rel="noopener noreferrer">List of Andromeda's satellite galaxies</a>,
   <a href="https://en.wikipedia.org/wiki/Local_Group" target="_blank" rel="noopener noreferrer">Local Group</a>,
   <a href="https://en.wikipedia.org/wiki/List_of_galaxy_groups_and_clusters" target="_blank" rel="noopener noreferrer">List of galaxy groups and clusters</a>,
-  <a href="https://en.wikipedia.org/wiki/Local_Sheet" target="_blank" rel="noopener noreferrer">Local Sheet</a> (Council of Giants).</li>
+  <a href="https://en.wikipedia.org/wiki/Local_Sheet" target="_blank" rel="noopener noreferrer">Local Sheet</a> (Council of Giants);
+  <a href="https://en.wikipedia.org/wiki/Seyfert_galaxy#Examples" target="_blank" rel="noopener noreferrer">Сейфертовские галактики</a></li>
 <li>Местный объем: <a href="https://www.sao.ru/lv/lvgdb/introduction.php" target="_blank" rel="noopener noreferrer">Catalog & Atlas of the Local Volume galaxies</a>. The Data base on galaxies in the Local Volume, which locate within 11 Mpc around the Milky Way or have corrected radial velocities VLG &lt; 600 km/s. It contains 1246 objects.</li>
 <li>Темная материя: <a href="https://en.wikipedia.org/wiki/Massive_compact_halo_object" target="_blank" rel="noopener noreferrer">Massive compact halo object</a>,
   <a href="https://en.wikipedia.org/wiki/Cold_dark_matter" target="_blank" rel="noopener noreferrer">Cold dark matter</a>.
@@ -276,23 +291,38 @@
   <a href="https://en.wikipedia.org/wiki/Lyon-Meudon_Extragalactic_Database" target="_blank" rel="noopener noreferrer">LEDA</a>,
   <a href="https://leda.univ-lyon1.fr/fG.cgi?n=hlcatalogs&a=htab&nakd=1&z=d" target="_blank" rel="noopener noreferrer">HyperLeda stats</a>: list of compilations, together with statistics on their content.
   <a href="https://cdsarc.u-strasbg.fr/viz-bin/cat/VII/237" target="_blank" rel="noopener noreferrer">HYPERLEDA. I. Catalog of galaxies</a>: VII/237<br>
-  <img src="https://cdsarc.u-strasbg.fr//ftp/cats/VII/237/+footg8.gif" alt=""></li>
+  <details>
+    <summary>Распределение объектов на небесной сфере</summary>
+    <img src="https://cdsarc.u-strasbg.fr//ftp/cats/VII/237/+footg8.gif" alt="">
+  </details></li>
 <li><a href="https://en.wikipedia.org/wiki/Uppsala_General_Catalogue" target="_blank" rel="noopener noreferrer">Uppsala General Catalogue</a>,
   <a href="https://cdsarc.u-strasbg.fr/viz-bin/Cat?VII/26D" target="_blank" rel="noopener noreferrer">Uppsala General Catalogue of Galaxies (UGC)</a>: VII/26D<br>
-  <img src="https://cdsarc.u-strasbg.fr//ftp/cats/VII/26D/+footg8.gif" alt=""></li>
+  <details>
+    <summary>Распределение объектов на небесной сфере</summary>
+    <img src="https://cdsarc.u-strasbg.fr//ftp/cats/VII/26D/+footg8.gif" alt="">
+  </details></li>
 <li><a href="https://cdsarc.u-strasbg.fr/viz-bin/Cat?VII/190" target="_blank" rel="noopener noreferrer">Zwicky Galaxy Catalog</a>: VII/190<br>
-    <img src="https://cdsarc.u-strasbg.fr//ftp/cats/VII/190/+footg8.gif" alt=""></li>
+  <details>
+    <summary>Распределение объектов на небесной сфере</summary>
+    <img src="https://cdsarc.u-strasbg.fr//ftp/cats/VII/190/+footg8.gif" alt="">
+  </details></li>
 <li><a href="https://en.wikipedia.org/wiki/NASA/IPAC_Extragalactic_Database" target="_blank" rel="noopener noreferrer">NASA/IPAC Extragalactic Database</a>.</li>
 <li><a href="https://en.wikipedia.org/wiki/New_General_Catalogue" target="_blank" rel="noopener noreferrer">New General Catalogue</a>, Index Catalogue, Revised New General Catalogue.</li>
 <li><a href="https://en.wikipedia.org/wiki/List_of_astronomical_catalogues" target="_blank" rel="noopener noreferrer">List of astronomical catalogues</a>,
   <a href="https://old.ipac.caltech.edu/2mass/overview/about2mass.html" target="_blank" rel="noopener noreferrer">A Brief Explanation of 2MASS</a>,
   <a href="https://cdsarc.unistra.fr/viz-bin/cat/II/246" target="_blank" rel="noopener noreferrer">2MASS All-Sky Catalog of Point Sources</a>: II/246<br>
-  <img src="https://cdsarc.u-strasbg.fr//ftp/cats/II/246/+footg8.png" alt=""></li>
+  <details>
+    <summary>Распределение объектов на небесной сфере</summary>
+    <img src="https://cdsarc.u-strasbg.fr//ftp/cats/II/246/+footg8.png" alt="">
+  </details></li>
 <li><a href="https://en.wikipedia.org/wiki/ROSAT" target="_blank" rel="noopener noreferrer">ROSAT</a>,
   <a href="https://heasarc.gsfc.nasa.gov/docs/rosat/ass.html" target="_blank" rel="noopener noreferrer">The ROSAT All-Sky Survey Bright Source Catalogue</a> (1RXS):
   <a href="https://cdsarc.unistra.fr/viz-bin/cat/IX/10A" target="_blank" rel="noopener noreferrer">IX/10A</a>,
   <a href="https://cdsarc.unistra.fr/viz-bin/cat/IX/29" target="_blank" rel="noopener noreferrer">Faint Source Catalog</a>: IX/29.<br>
-  <img src="https://cdsarc.u-strasbg.fr//ftp/cats/IX/29/+footg8.gif" alt=""></li>
+  <details>
+    <summary>Распределение объектов на небесной сфере</summary>
+    <img src="https://cdsarc.u-strasbg.fr//ftp/cats/IX/29/+footg8.gif" alt="">
+  </details></li>
 <li><a href="https://vizier.u-strasbg.fr/vizier/cats/U.htx" target="_blank" rel="noopener noreferrer">CDS Catalogues. Usual Names</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Active_galactic_nucleus" target="_blank" rel="noopener noreferrer">Active galactic nucleus</a>,
   <a href="https://en.wikipedia.org/wiki/Quasar" target="_blank" rel="noopener noreferrer">Quasar</a>,
@@ -338,6 +368,8 @@
 <li><a href="https://en.wikipedia.org/wiki/Seyfert%27s_Sextet" target="_blank" rel="noopener noreferrer">Секстет Сейферта</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Hanny%27s_Voorwerp" target="_blank" rel="noopener noreferrer">Hanny's Voorwerp</a>,
   <a href="https://en.wikipedia.org/wiki/Teacup_galaxy" target="_blank" rel="noopener noreferrer">Teacup galaxy</a></li>
+<li><a href="http://www.astronet.ru/db/msg/1906447" target="_blank" rel="noopener noreferrer">M51 с экспозицией в 255 часов</a>,
+  <a href="https://www.astrobin.com/7hwtz0/" target="_blank" rel="noopener noreferrer">Unveiling hidden features in M51 using 255hours</a></li>
 <li><a href="https://www.astrobin.com/ygebfl/" target="_blank" rel="noopener noreferrer">NGC6946, Fireworks galaxy</a></li>
 <li><a href="https://www.astrobin.com/9gwmol/" target="_blank" rel="noopener noreferrer">Andromeda Galaxy [Ultra-deep version 2020]</a>,
   <a href="https://www.astrobin.com/pt21d1/" target="_blank" rel="noopener noreferrer">M31 (nomenclature structures in the outer halo of the galaxy)</a></li>
