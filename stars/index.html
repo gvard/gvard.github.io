@@ -54,6 +54,7 @@
 <label class="nowrap"><input type="checkbox" name=".variable" checked onclick="showHideThis(this)">Переменные</label>
 <label class="nowrap"><input type="checkbox" name=".mira" checked onclick="showHideThis(this)">Мириды</label>
 <label class="nowrap"><input type="checkbox" name=".cepheid" checked onclick="showHideThis(this)">Цефеиды</label>
+<label class="nowrap"><input type="checkbox" name=".dimming" checked onclick="showHideThis(this)">Звезды с примечательными эпизодами падения блеска</label>
 <br><b>Окружение:</b><br>
 <label class="nowrap"><input type="checkbox" name=".cse" checked onclick="showHideThis(this)">Околозвездная оболочка</label>
 <label class="nowrap"><input type="checkbox" name=".bowshock" checked onclick="showHideThis(this)">Астросфера, головная ударная волна</label>
@@ -70,7 +71,7 @@
 </div>
 
 <div id="tab">
-<div class="obj sg SRc brightest variable">
+<div class="obj sg SRc brightest variable dimming">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Betelgeuse" src="images/Betelgeuse.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Betelgeuse" title="α Ori">Бетельгейзе</a></div>
 <div class="angular">50</div>
@@ -162,7 +163,7 @@
 <div class="temp">4287±760</div>
 <div class="mag">6.1–7.5</div>
 <div class="jmag">2.12</div>
-</div><div class="obj hypergiant variable animation">
+</div><div class="obj hypergiant variable animation dimming">
 <div class="img" onmouseover="show(this, 'images/RW_Cep.gif')" onmouseout="hide()"><img alt="RW Cephei" src="images/RW_Cep.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/RW_Cephei" title="RW Cep">RW Цефея</a></div>
 <div class="angular">2.45</div>
@@ -172,6 +173,7 @@
 <div class="temp">3900–4200</div>
 <div class="mag">6.65</div>
 <div class="jmag">2.83</div>
+<div class="bib">2023AJ....166...78A</div>
 </div><div class="obj LBV cse nebula hypergiant variable">
 <div class="img" onmouseover="show(this, 'images/Eta_Carinae-big.png')" onmouseout="hide()"><img alt="Eta Carinae" src="images/Eta_Carinae.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Eta_Carinae" title="η Car">Эта Киля</a></div>
@@ -427,7 +429,7 @@
 <div class="temp">2800</div>
 <div class="mag">3.9–10.5</div>
 <div class="jmag">0.09</div>
-</div><div class="obj hypergiant cse Lc variable">
+</div><div class="obj hypergiant cse Lc variable dimming">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="VY Canis Majoris" src="images/VY_Canis_Majoris.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/VY_Canis_Majoris" title="VY Большого Пса"><span style="font-size: 13px">VY</span><span style="font-size: 13.5px"> Canis Majoris</span></a></div>
 <div class="angular">&nbsp;</div>
@@ -518,6 +520,23 @@
 <li><a href="https://nplus1.ru/news/2021/04/26/flare-proxima" target="_blank" rel="noopener noreferrer">Проксима Центавра произвела экстремально мощную вспышку</a>,
   <a href="https://arxiv.org/abs/2104.09519" target="_blank" rel="noopener noreferrer">Discovery of an Extremely Short Duration Flare from Proxima Centauri Using Millimeter through FUV Observations</a></li>
 </ul>
+
+<h3 id="variable">Переменные звезды</h3>
+<ul>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2022RNAAS...6...12N" target="_blank" rel="noopener noreferrer">Stars on the Verge: Analyses of the Complex Light Variations of the Hyper-luminous Red Supergiant VY Canis Majoris: On the Nature of the Star's "Great Dimming" Episodes</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2021RNAAS...5..177L" target="_blank" rel="noopener noreferrer">Stars on the Verge: Investigating Semiregular Light Variations and Changing Multiperiods of the Luminous Red Supergiant μ Cephei from over 175 yr of Photometry</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2022RNAAS...6..204L" target="_blank" rel="noopener noreferrer">Stars on the Verge: From Days to Decades, Studying the Photometric Variations of the Red Supergiant W Persei</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2023AJ....166...78A" target="_blank" rel="noopener noreferrer">The Great Dimming of the Hypergiant Star RW Cephei: CHARA Array Images and Spectral Analysis</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...905...34H" target="_blank" rel="noopener noreferrer">The Photospheric Temperatures of Betelgeuse during the Great Dimming of 2019/2020: No New Dust Required</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2023NewA...9901962J" target="_blank" rel="noopener noreferrer">Analysis of photometric and spectroscopic variability of red supergiant Betelgeuse</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...878..155D" target="_blank" rel="noopener noreferrer">Short-term Variability of Evolved Massive Stars with TESS</a>,
+  <a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...902...24D" target="_blank" rel="noopener noreferrer">Short-term Variability of Evolved Massive Stars with TESS. II. A New Class of Cool, Pulsating Supergiants</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...940...27D" target="_blank" rel="noopener noreferrer">The Properties of Fast Yellow Pulsating Supergiants: FYPS Point the Way to Missing Red Supergiants</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2023AJ....165..239P" target="_blank" rel="noopener noreferrer">Contamination in TESS Light Curves: The Case of the Fast Yellow Pulsating Supergiants</a>. This work demonstrates how much of a challenge source confusion can be for analyses of TESS data.<br>
+  <a href="https://ui.adsabs.harvard.edu/abs/2023AJ....165..141H" target="_blank" rel="noopener noreferrer">Localizing Sources of Variability in Crowded TESS Photometry</a> (<a href="https://github.com/Higgins00/TESS-Localize" target="_blank" rel="noopener noreferrer">TESS_localize</a>). As seen in this work, signals of nearby variable stars can contaminate light curves even when they are more than five magnitudes fainter than the target stars.</li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2023AJ....166..106W" target="_blank" rel="noopener noreferrer">Catalog of Integrated-light Star Cluster Light Curves in TESS</a></li>
+</ul>
+
 <h3 id="lists">Списки, каталоги и обзоры</h3>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/List_of_stars_that_have_unusual_dimming_periods" target="_blank" rel="noopener noreferrer">List of stars that have unusual dimming periods</a></li>
