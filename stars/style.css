@@ -1,5 +1,8 @@
 img {max-width: 1024px;}
-.name, .size, .temp {width: 100px}
+.name, .size, .temp {
+  width: 100px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
 /* .name a {
   font-size: font-size: 10px;
   font-size: calc(0.7vw + 0.7vh + 0.7vmin);

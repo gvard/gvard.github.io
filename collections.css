@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;700&display=swap');
 * {
 margin: 0;
 padding: 0;
@@ -105,7 +106,7 @@ background-color: black;
 .desc {display: none;}
 .cont {
 padding: 1em;
-max-width: 1621px;
+max-width: 1921px;
 min-width: 306px;
 }
 .name {
