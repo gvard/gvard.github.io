@@ -1,6 +1,6 @@
 "use strict";
 const OBJTYPES = {
-  star: "звезда", pla: "планета", neo: "околоземный астероид", co: "ядро кометы", ea: "спутник Земли", mar: "спутник Марса", mab: "астероид основного пояса", dw: "карликовая планета", ju: "спутник Юпитера", sat: "спутник Сатурна", ur: "спутник Урана", ne: "спутник Нептуна", pl: "спутник Плутона", tno: "Транснептуновый объект", centaur: "Кентавр"
+  star: "звезда", pla: "планета", neo: "околоземный астероид", co: "ядро кометы", ea: "спутник Земли", mar: "спутник Марса", mab: "астероид основного пояса", dw: "карликовая планета", ju: "спутник Юпитера", sat: "спутник Сатурна", ur: "спутник Урана", ne: "спутник Нептуна", pl: "спутник Плутона", tno: "транснептуновый объект", centaur: "кентавр", contactbinary: "контактно-двойная",
 };
 function ObjParams() {
   const objs = getDivs('obj');
@@ -75,27 +75,64 @@ function toSort(classNam) {
 function show(divImg, imgPth) {
   const obj = divImg.parentElement;
   let name = divImg.getElementsByTagName('img')[0].alt;
+  let des = obj.getElementsByClassName("des");
+  if (des.length) {
+    des = mkPar('<b>Обозначение</b>: ', des[0].innerText, '');
+  } else {
+    des = "";
+  }
   let size = obj.getElementsByClassName("size")[0].innerText;
-  size = mkPar('Радиус: ', size, '&nbsp;км');
-  let mass = obj.getElementsByClassName("mass")[0].innerText.trim();
+  size = mkPar('<b>Радиус</b>: ', size, '&nbsp;км');
+  try {
+    var mass = obj.getElementsByClassName("mass")[0].innerText.trim();
+  } catch (error) {
+    if (error instanceof TypeError) {
+      var mass = "";
+    }
+  }
   if (mass)
-    mass = mkPar('Масса: ', mass, '&nbsp;кг');
+    mass = mkPar('<b>Масса</b>: ', mass, '&nbsp;кг');
   let dens = obj.getElementsByClassName("dens");
   if (dens.length) {
-    dens = mkPar('Плотность: ', dens[0].innerText, '&nbsp;г/см<sup>3</sup>');
+    dens = mkPar('<b>Плотность</b>: ', dens[0].innerText, '&nbsp;г/см<sup>3</sup>');
   } else {
     dens = "";
   }
-  let date = obj.getElementsByClassName("date")[0].innerText;
-  date = mkPar('Дата открытия: ', date, '');
+  try {
+    var date = obj.getElementsByClassName("date")[0].innerText;
+  } catch (error) {
+    if (error instanceof TypeError) {
+      var date = "";
+    }
+  }
+  if (date)
+    date = mkPar('<b>Дата открытия</b>: ', date, '');
+  let imda = obj.getElementsByClassName("imgdat");
+  if (imda.length) {
+    imda = mkPar('<b>Первые подробные изображения</b>: ', imda[0].innerText, '');
+  } else {
+    imda = "";
+  }
+  let pre = obj.getElementsByClassName("pre");
+  if (pre.length) {
+    pre = mkPar('<b>Первые наблюдения</b>: ', pre[0].innerText, '');
+  } else {
+    pre = "";
+  }
   let deltaV = obj.getElementsByClassName("deltav");
   if (deltaV.length) {
-    deltaV = mkPar('Δv: ', deltaV[0].innerText, '&nbsp;км/с');
+    deltaV = mkPar('<b>Δv</b>: ', deltaV[0].innerText, '&nbsp;км/с');
   } else {
     deltaV = "";
   }
+  let rot = obj.getElementsByClassName("rot");
+  if (rot.length) {
+    rot = mkPar('<b>Период вращения</b>: ', rot[0].innerText, '&nbsp;суток');
+  } else {
+    rot = "";
+  }
   let type = mkType(obj.className, OBJTYPES);
-  type = mkPar('Типы: ', type, '');
+  type = mkPar('<b>Типы</b>: ', type, '');
   let desc = obj.getElementsByClassName("desc");
   if (desc.length)
     desc = mkPar('', desc[0].innerText, '');
@@ -104,7 +141,7 @@ function show(divImg, imgPth) {
   if (!imgPth) {
     imgPth = divImg.getElementsByTagName('img')[0].src;
   }
-  const contentToShow = `<img src="${imgPth}"><h2>${name}</h2>` + type + size + mass + dens + date + deltaV + desc;
+  const contentToShow = `<img src="${imgPth}"><h2>${name}</h2>` + des + type + size + mass + dens + rot + deltaV + date + imda + pre + desc;
   toShow(contentToShow);
 }
 function getToday() {
