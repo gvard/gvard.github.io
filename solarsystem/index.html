@@ -34,16 +34,16 @@
 <div class="cont">
 <b>Пульт управления информацией:</b><br>
 <div id="controls">
-<label class="nowrap"><input type="checkbox" name=".name" checked onclick="showHideThis(this)">Имя</label>,
-<label class="nowrap"><input type="checkbox" name=".des" onclick="showHideThis(this)">Обозначение</label>,
-<label class="nowrap"><input type="checkbox" name=".size" checked onclick="showHideThis(this)">Радиус</label>,
-<label class="nowrap"><input type="checkbox" name=".date" checked onclick="showHideThis(this)">Дата открытия</label>,
-<label class="nowrap"><input type="checkbox" name=".mass" onclick="showHideThis(this)">Масса</label>,
-<label class="nowrap"><input type="checkbox" name=".dens" onclick="showHideThis(this)">Плотность</label>,
-<label class="nowrap"><input type="checkbox" name=".rot" onclick="showHideThis(this)">Период вращения</label>,
-<label class="nowrap" title="Дата первой наблюдения, регистрации"><input type="checkbox" name=".pre" onchange="showHideThis(this)">Первые наблюдения</label>,
-<label class="nowrap" title="Дата первых наблюдений формы, поверхности или дата подробных изображений"><input type="checkbox" name=".imgdat" onchange="showHideThis(this)">Первые подробные изображения</label>,
+<label class="nowrap"><input type="checkbox" name=".name" checked onclick="showHideThis(this)">Имя</label>
+<label class="nowrap"><input type="checkbox" name=".des" onclick="showHideThis(this)">Обозначение</label>
+<label class="nowrap"><input type="checkbox" name=".size" checked onclick="showHideThis(this)">Радиус</label>
+<label class="nowrap"><input type="checkbox" name=".date" checked onclick="showHideThis(this)">Дата открытия</label>
+<label class="nowrap"><input type="checkbox" name=".mass" onclick="showHideThis(this)">Масса</label>
+<label class="nowrap"><input type="checkbox" name=".dens" onclick="showHideThis(this)">Плотность</label>
+<label class="nowrap"><input type="checkbox" name=".rot" onclick="showHideThis(this)">Период вращения</label>
 <label class="nowrap" title="Характеристическая скорость орбитального маневра"><input type="checkbox" name=".deltav" onchange="showHideThis(this)">Δv</label>
+<label class="nowrap" title="Дата первой наблюдения, регистрации"><input type="checkbox" name=".pre" onchange="showHideThis(this)">Первые наблюдения</label>
+<label class="nowrap" title="Дата первых наблюдений формы, поверхности или дата подробных изображений"><input type="checkbox" name=".imgdat" onchange="showHideThis(this)">Первые подробные изображения</label>
 <div id="props">
 <button onclick="uncheckAll(true)">Вкл</button><button onclick="uncheckAll(false)">Выкл</button><br>
 <b>Изображение и поверхность:</b><br>
@@ -88,6 +88,9 @@
 <label class="nowrap"><input type="checkbox" name=".visited" checked onclick="showHideThis(this)">Посещенные АМС</label>
 <label class="nowrap"><input type="checkbox" name=".flyby" checked onclick="showHideThis(this)">Пролетные миссии</label>
 <label class="nowrap"><input type="checkbox" name=".orbited" checked onclick="showHideThis(this)">Орбитальные миссии</label>
+<label class="nowrap"><input type="checkbox" name=".surf" checked onclick="showHideThis(this)">Исследование поверхности</label>
+<label class="nowrap"><input type="checkbox" name=".impact" checked onclick="showHideThis(this)">Импакт</label>
+<label class="nowrap"><input type="checkbox" name=".sample" checked onclick="showHideThis(this)">Проба вещества</label>
 <br>
 <b>Номенклатура:</b><br>
 <label class="nowrap"><input type="checkbox" name=".numbered" checked onclick="showHideThis(this)">Нумерованные</label>
@@ -119,7 +122,7 @@
 <div class="dens">1.408</div>
 <div class="desc">В составе Солнца всего 1.48% элементов тяжелее Водорода и Гелия</div>
 <div class="imgdat">18.12.1610</div>
-</div><div class="obj pla he gp visited orbited rings">
+</div><div class="obj pla he gp visited orbited rings animation">
 <div class="img" onmouseover="show(this, 'images/Jupiter-Voyager1.gif')" onmouseout="hide()"><img alt="Jupiter" src="images/Jupiter.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Jupiter">Юпитер</a></div>
 <div class="size">69911±6</div>
@@ -154,30 +157,33 @@
 <div class="deltav">8.6</div>
 <div class="dens">1.638</div>
 <div class="imgdat">20.08.1989</div>
-</div><div class="obj pla he gp radar map">
+</div><div class="obj pla he gp radar map surf impact sample">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Earth" src="images/Earth.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Earth">Земля</a></div>
 <div class="size">6371.0</div>
 <div class="mass">5.972E24</div>
 <div class="deltav">0</div>
 <div class="dens">5.5134</div>
+<div class="rot">0.99727</div>
 <div class="desc">Планета с самой большой плотностью в Солнечной системе. Здесь живет более 8 миллиардов человек.</div>
 <div class="imgdat">26.07.1948</div>
-</div><div class="obj pla he gp radar visited orbited map">
+</div><div class="obj pla he gp radar visited orbited map surf impact">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Venus" src="images/Venus.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Venus">Венера</a></div>
 <div class="size">6051.8±1.0</div>
 <div class="mass">4.8675E24</div>
 <div class="deltav">6.79</div>
 <div class="dens">5.243</div>
+<div class="rot">-243.0226</div>
 <div class="imgdat">05.02.1974</div>
-</div><div class="obj pla he gp radar visited orbited map">
+</div><div class="obj pla he gp radar visited orbited map surf impact">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Mars" src="images/Mars.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Mars">Марс</a></div>
 <div class="size">3389.5±0.2</div>
 <div class="mass">6.4171E23</div>
 <div class="deltav">&gt;5.7</div>
 <div class="dens">3.9335</div>
+<div class="rot">1.025957</div>
 <div class="imgdat">15.07.1965</div>
 <div class="desc">Известно не менее 240 метеоритов марсианского происхождения</div>
 </div><div class="obj ju he gp moon map visited">
@@ -189,7 +195,7 @@
 <div class="deltav">14.07</div>
 <div class="dens">1.936</div>
 <div class="imgdat">01.07.1973</div>
-</div><div class="obj sat he gp moon radar visited map">
+</div><div class="obj sat he gp moon radar visited map surf">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Pntitan.jpg/264px-Pntitan.jpg')" onmouseout="hide()"><img alt="Titan" src="images/Titan.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Titan_(moon)">Титан</a></div>
 <div class="size">2574.7</div>
@@ -198,13 +204,14 @@
 <div class="deltav">&gt;7.7</div>
 <div class="dens">1.8798±0.0044</div>
 <div class="imgdat">02.09.1979</div>
-</div><div class="obj pla he gp radar visited orbited map">
+</div><div class="obj pla he gp radar visited orbited map impact">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Mercury" src="images/Mercury.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Mercury_(planet)">Меркурий</a></div>
 <div class="size">2439.7±1.0</div>
 <div class="mass">3.3011E23</div>
 <div class="deltav">13.2</div>
 <div class="dens">5.427</div>
+<div class="rot">58.6462</div>
 <div class="imgdat">29.03.1974</div>
 </div><div class="obj ju he gp moon map visited">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Callisto" src="images/Callisto.jpg"></div>
@@ -224,7 +231,7 @@
 <div class="deltav">&gt;7.7</div>
 <div class="dens">3.528±0.006</div>
 <div class="imgdat">05.03.1979</div>
-</div><div class="obj ea he gp moon radar radarimage visited orbited map">
+</div><div class="obj ea he gp moon radar radarimage visited orbited map surf impact sample">
 <div class="img" onmouseover="show(this, 'images/Moon-Tycho-crater.jpg')" onmouseout="hide()"><img alt="Moon" src="images/Moon.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Moon">Луна</a></div>
 <div class="size">1737.1</div>
@@ -251,7 +258,7 @@
 <div class="deltav">&gt;7.7</div>
 <div class="dens">2.061</div>
 <div class="imgdat">25.08.1989</div>
-</div><div class="obj dw tno he gp havesats visited flyby numbered named map">
+</div><div class="obj dw tno he gp havesats visited flyby numbered named map animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="134340 Pluto" src="images/Pluto.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Pluto">Плутон</a></div>
 <div class="num">134340</div>
@@ -823,7 +830,7 @@
 <div class="deltav">&gt;7.7</div>
 <div class="dens">2.13</div>
 <div class="imgdat">14.07.2015</div>
-</div><div class="obj pl dwmoon flyby">
+</div><div class="obj pl dwmoon flyby map">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Nix" src="images/Nix.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Nix_(moon)">Никс</a></div>
 <div class="size">19.017</div>
@@ -903,7 +910,7 @@
 <div class="date">13.03.1980</div>
 <div class="deltav">&gt;7.7</div>
 <div class="imgdat">23.09.2005</div>
-</div><div class="obj neo visited orbited animation map numbered named">
+</div><div class="obj neo visited orbited animation map numbered named surf">
 <div class="img" onmouseover="show(this, 'https://nssdc.gsfc.nasa.gov/planetary/image/near_20000212_anim.gif')" onmouseout="hide()"><img alt="433 Eros" src="images/Eros.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/433_Eros">Эрос</a></div>
 <div class="size">8.42±0.02</div>
@@ -984,8 +991,8 @@
 <div class="deltav">&gt;7.7</div>
 <div class="dens">0.34±0.26</div>
 <div class="imgdat">16.01.2017</div>
-</div><div class="obj co jfc visited flyby">
-<div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Deep_Impact_HRI.jpeg/600px-Deep_Impact_HRI.jpegx')" onmouseout="hide()"><img alt="9P/Tempel" src="images/Tempel1.jpg"></div>
+</div><div class="obj co jfc visited flyby surf impact">
+<div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Deep_Impact_HRI.jpeg/600px-Deep_Impact_HRI.jpeg')" onmouseout="hide()"><img alt="9P/Tempel" src="images/Tempel1.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Tempel_1">Темпель 1</a></div>
 <div class="size">3±0.1</div>
 <div class="mass"><a href="https://www.sciencedirect.com/science/article/abs/pii/S001910350700303X">4.5E13</a></div>
@@ -1043,7 +1050,7 @@
 <div class="deltav">&gt;7.7</div>
 <div class="dens">0.25±0.09</div>
 <div class="imgdat">16.10.2010</div>
-</div><div class="obj co jfc visited flyby">
+</div><div class="obj co jfc visited flyby sample">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="81P/Wild" src="images/Wild.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/81P/Wild">Вилт 2</a></div>
 <div class="size">2.133</div>
@@ -1061,7 +1068,7 @@
 <div class="date">02.03.1981</div>
 <div class="deltav">8.171</div>
 <div class="dens">1.4</div>
-</div><div class="obj co jfc contactbinary visited orbited animation">
+</div><div class="obj co jfc contactbinary visited orbited animation surf">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/d/da/NavCam_Comet_67P_animation_20140806_%28cropped%29.gif')" onmouseout="hide()"><img alt="67P/Churyumov–Gerasimenko" src="images/ChuryumovGerasimenko.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/67P/Churyumov–Gerasimenko" title="67P/Чурюмова-Герасименко">Чурюмова-</a></div>
 <div class="size">2</div>
@@ -1071,7 +1078,7 @@
 <div class="dens">0.533±0.006</div>
 <div class="desc">Первые подробные фото получены КА Rosetta в промежуток 1–6 августа 2014 г.</div>
 <div class="imgdat">06.08.2014</div>
-</div><div class="obj mab contactbinary visited flyby numbered named animation">
+</div><div class="obj mab contactbinary visited flyby numbered named map animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="52246 Donaldjohanson" src="images/Donaldjohanson.gif" width="100"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/52246_Donaldjohanson" title="Дональдджохансон">Дональдджохансон</a></div>
 <div class="size">1.948</div>
@@ -1255,7 +1262,7 @@
 <div class="size">0.45</div>
 <div class="date">01.05.1989</div>
 <div class="deltav">7.131</div>
-</div><div class="obj neo pha visited orbited numbered animation map named">
+</div><div class="obj neo pha visited orbited numbered animation map named surf sample">
 <div class="img" onmouseover="show(this, 'images/Ryugu.gif')" onmouseout="hide()"><img alt="162173 Ryugu" src="images/Ryugu.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/162173_Ryugu">Рюгу</a></div>
 <div class="size">0.448</div>
@@ -1272,9 +1279,10 @@
 <div class="date">05.05.2014</div>
 <div class="deltav">13.173</div>
 <div class="imgdat">19.04.2017</div>
-</div><div class="obj mab havesats binary visited flyby numbered named">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="152830 Dinkinesh" src="images/Dinkinesh.png" width="100"></div>
+</div><div class="obj mab havesats binary visited flyby numbered named map animation">
+<div class="img" onmouseover="show(this, 'https://www.nasa.gov/wp-content/uploads/2024/05/dinkystereo-straight.gif')" onmouseout="hide()"><img alt="152830 Dinkinesh" src="images/Dinkinesh.png" width="100"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/152830_Dinkinesh">Динкинеш</a></div>
+<div class="des">1999 VD57</div>
 <div class="size">0.395</div>
 <div class="date">04.11.1999</div>
 <div class="imgdat">01.11.2023</div>
@@ -1322,7 +1330,7 @@
 <div class="date">19.04.2015</div>
 <div class="deltav">6.4</div>
 <div class="desc"></div>
-</div><div class="obj neo pha radar visited orbited animation numbered named map">
+</div><div class="obj neo pha radar visited orbited animation numbered named map surf sample">
 <div class="img" onmouseover="show(this, 'images/Bennu.gif')" onmouseout="hide()"><img alt="101955 Bennu" src="images/Bennu.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/101955_Bennu">Бенну</a></div>
 <div class="size">0.245</div>
@@ -1353,7 +1361,7 @@
 <div class="deltav">6.9</div>
 <div class="desc"></div>
 <div class="imgdat">07.11.2011</div>
-</div><div class="obj neo pha contactbinary visited orbited numbered named map radar">
+</div><div class="obj neo pha contactbinary visited orbited numbered named map radar surf sample">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="25143 Itokawa" src="images/Itokawa.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/25143_Itokawa">Итокава</a></div>
 <div class="size">0.173</div>
@@ -1391,13 +1399,19 @@
 <div class="size">0.15</div>
 <div class="date">30.01.2004</div>
 <div class="deltav">8.705</div>
+</div><div class="obj mab contactbinary satellite binary visited flyby named map">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Selam" src="images/Selam.png"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/Selam_(moon)">Селам</a></div>
+<div class="size">0.12</div>
+<div class="date">01.11.2023</div>
+<div class="deltav">8.6</div>
 </div><div class="obj neo pha radar radarimage havesats animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="2016 AZ8" src="images/2016AZ8.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2016_AZ8">2016 AZ8</a></div>
 <div class="size">0.108</div>
 <div class="date">03.01.2016</div>
 <div class="deltav">5.629</div>
-</div><div class="obj neo pha satellite binary radar animation visited flyby impact map named">
+</div><div class="obj neo pha satellite binary radar animation visited flyby impact map named surf">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Dimorphos" src="images/Dimorphos.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Dimorphos">Диморф</a></div>
 <div class="size">0.085</div>
@@ -1436,6 +1450,7 @@
 <div class="cont">
 <h3>Очередь объектов для добавления в таблицу</h3>
 <ul>
+  <li><a href="https://en.wikipedia.org/wiki/469219_Kamo%CA%BBoalewa" target="_blank" rel="noopener noreferrer">469219 Камоалева</a></li>
   <li><a href="https://en.wikipedia.org/wiki/31_Euphrosyne" target="_blank" rel="noopener noreferrer">31 Евфросина</a></li>
   <li><a href="https://en.wikipedia.org/wiki/87_Sylvia" target="_blank" rel="noopener noreferrer">87 Сильвия</a></li>
   <li><a href="https://en.wikipedia.org/wiki/532_Herculina" target="_blank" rel="noopener noreferrer">532 Геркулина</a></li>
