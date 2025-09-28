@@ -74,6 +74,7 @@
 <br>
 <label class="nowrap"><input type="checkbox" name=".mab" checked onclick="showHideThis(this)">Астероиды главного пояса</label>
 <label class="nowrap"><input type="checkbox" name=".tno,.centaur" checked onclick="showHideThis(this)">Транснептуновые объекты и кентавры</label>
+<label class="nowrap"><input type="checkbox" name=".sca" checked onclick="showHideThis(this)">Объекты рассеянного диска</label>
 <label class="nowrap"><input type="checkbox" name=".co" checked onclick="showHideThis(this)">Кометы</label>
 <label class="nowrap"><input type="checkbox" name=".jfc" checked onclick="showHideThis(this)">Кометы семейства Юпитера</label>
 <label class="nowrap"><input type="checkbox" name=".neo" checked onclick="showHideThis(this)">Околоземные объекты</label>
@@ -274,7 +275,7 @@
 <div class="dens">1.854±0.006</div>
 <div class="desc">Клайд Томбо открыл Плутон на снимках от 23 и 29 января 1930 г.</div>
 <div class="imgdat">14.07.2015</div>
-</div><div class="obj dw he gp tno havesats binary occultation dot numbered named">
+</div><div class="obj tno sca dw he gp havesats binary occultation dot numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="136199 Eris" src="images/Eris.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Eris_(dwarf_planet)">Эрида</a></div>
 <div class="num">136199</div>
@@ -420,7 +421,7 @@
 <div class="date">14.11.2003</div>
 <div class="pre">25.09.1990</div>
 <div class="deltav">10.1</div>
-</div><div class="obj mab dw he gp visited orbited animation map numbered named">
+</div><div class="obj mab dw he gp visited orbited animation occultation map numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="1 Ceres" src="images/Ceres.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)">Церера</a></div>
 <div class="size">470</div>
@@ -448,6 +449,16 @@
 <div class="pre">08.11.1951</div>
 <div class="deltav">13.2</div>
 <div class="dens">1.53±0.1</div>
+</div><div class="obj tno havesats dot he numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="120347 Salacia" src="images/Salacia.jpg"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/120347_Salacia">Салация</a></div>
+<div class="des">2004 SB60</div>
+<div class="size">423±21</div>
+<div class="mass">4.92±0.07E20</div>
+<div class="date">22.09.2004</div>
+<div class="pre">25.07.1982</div>
+<div class="deltav">13.9</div>
+<div class="dens">1.26−1.5</div>
 </div><div class="obj tno dot numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="55565 Aya" src="images/Aya.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/55565_Aya">Айа</a></div>
@@ -457,16 +468,6 @@
 <div class="date">10.01.2002</div>
 <div class="pre">29.12.1997</div>
 <div class="deltav">13.8</div>
-</div><div class="obj tno havesats dot he numbered named">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="120347 Salacia" src="images/Salacia.jpg"></div>
-<div class="name"><a href="https://en.wikipedia.org/wiki/120347_Salacia">Салация</a></div>
-<div class="des">2004 SB60</div>
-<div class="size">446.5±11</div>
-<div class="mass">4.92±0.07E20</div>
-<div class="date">22.09.2004</div>
-<div class="pre">25.07.1982</div>
-<div class="deltav">13.9</div>
-<div class="dens">1.26−1.5</div>
 </div><div class="obj tno havesats dot he animation occultation numbered named">
 <div class="img" onmouseover="show(this, 'images/Varda-occultation-model.png')" onmouseout="hide()"><img alt="174567 Varda" src="images/Varda.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/174567_Varda">Варда</a></div>
@@ -477,7 +478,15 @@
 <div class="pre">19.03.1980</div>
 <div class="deltav">13.4</div>
 <div class="dens">1.23−1.78</div>
-</div><div class="obj dwmoon binary tno he dot named">
+</div><div class="obj tno sca havesats dot numbered named">
+<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="532037 Chiminigagua" src="images/Chiminigagua.png"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/532037_Chiminigagua">Чиминигагуа</a></div>
+<div class="des">2013 FY27</div>
+<div class="size">371±40</div>
+<div class="date">17.03.2013</div>
+<div class="pre">15.03.2011</div>
+<div class="deltav">14.2</div>
+</div><div class="obj tno sca dwmoon binary tno he dot named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Dysnomia" src="images/Eris.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Dysnomia_(moon)">Дисномия</a></div>
 <div class="size">300</div>
@@ -485,7 +494,7 @@
 <div class="date">10.09.2005</div>
 <div class="deltav">16.0</div>
 <div class="dens">1.8−2.4</div>
-</div><div class="obj mab animation visited orbited map numbered named">
+</div><div class="obj mab animation visited orbited map occultation numbered named">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Vesta_Rotation.gif/180px-Vesta_Rotation.gif')" onmouseout="hide()"><img alt="4 Vesta" src="images/Vesta.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/4_Vesta">Веста</a></div>
 <div class="size">262.7±0.1</div>
@@ -522,7 +531,7 @@
 <div class="deltav">&gt;7.7</div>
 <div class="dens">1.20±0.15</div>
 <div class="imgdat">24.01.1986</div>
-</div><div class="obj mab highcontrast numbered named">
+</div><div class="obj mab highcontrast numbered named occultation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="10 Hygiea" src="images/Hygiea.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/10_Hygiea">Гигея</a></div>
 <div class="size">217±7</div>
@@ -566,7 +575,7 @@
 <div class="date">02.10.1910</div>
 <div class="deltav">11.4</div>
 <div class="dens">1.84±0.28</div>
-</div><div class="obj mab highcontrast numbered named">
+</div><div class="obj mab highcontrast occultation numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="52 Europa" src="images/Europa.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/52_Europa">Европа</a></div>
 <div class="size">159.5±2</div>
@@ -574,7 +583,7 @@
 <div class="date">04.02.1858</div>
 <div class="deltav">10.6</div>
 <div class="dens">1.41±0.23</div>
-</div><div class="obj mab highcontrast numbered named">
+</div><div class="obj mab highcontrast occultation numbered named">
 <div class="img" onmouseover="show(this, 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/511_Davida_VLT_%282021%29%2C_deconvolved.pdf/page1-350px-511_Davida_VLT_%282021%29%2C_deconvolved.pdf.jpg')" onmouseout="hide()"><img alt="511 Davida" src="images/Davida.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/511_Davida">Давида</a></div>
 <div class="size">145±10</div>
@@ -602,7 +611,7 @@
 <div class="pre">18.06.1974</div>
 <div class="deltav">12.1</div>
 <div class="dens">0.64±0.15</div>
-</div><div class="obj mab highcontrast numbered named">
+</div><div class="obj mab highcontrast occultation numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="15 Eunomia" src="images/Eunomia.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/15_Eunomia">Эвномия</a></div>
 <div class="size">135±1.5</div>
@@ -610,7 +619,7 @@
 <div class="date">29.07.1851</div>
 <div class="deltav">9.9</div>
 <div class="dens">2.96±0.21</div>
-</div><div class="obj mab highcontrast numbered named">
+</div><div class="obj mab highcontrast occultation numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="3 Juno" src="images/Juno.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/3_Juno">Юнона</a></div>
 <div class="size">127±1</div>
@@ -630,7 +639,7 @@
 <div class="pre">05.11.1988</div>
 <div class="deltav">14.26</div>
 <div class="dens">0.73–0.85</div>
-</div><div class="obj mab radar highcontrast numbered named">
+</div><div class="obj mab radar highcontrast occultation numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="16 Psyche" src="images/Psyche.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/16_Psyche">Психея</a></div>
 <div class="size">111.5±1.5</div>
@@ -646,7 +655,7 @@
 <div class="date">25.02.1892</div>
 <div class="deltav">9.0</div>
 <div class="dens">1.67±0.16</div>
-</div><div class="obj mab highcontrast numbered named">
+</div><div class="obj mab highcontrast occultation numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="7 Iris" src="images/Iris.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/7_Iris">Ирида</a></div>
 <div class="size">107±2.5</div>
@@ -672,7 +681,7 @@
 <div class="deltav">&gt;7.7</div>
 <div class="dens">1.2</div>
 <div class="imgdat">24.08.1989</div>
-</div><div class="obj mab highcontrast numbered named">
+</div><div class="obj mab highcontrast occultation numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="6 Hebe" src="images/Hebe.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/6_Hebe">Геба</a></div>
 <div class="size">93</div>
@@ -743,7 +752,7 @@
 <div class="deltav">&gt;7.7</div>
 <div class="dens">1.63</div>
 <div class="imgdat">19.12.2000</div>
-</div><div class="obj mab innermb lightcurve numbered named">
+</div><div class="obj mab innermb lightcurve occultation numbered named">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="8 Flora" src="images/Flora.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/8_Flora">Флора</a></div>
 <div class="size">64</div>
@@ -751,7 +760,7 @@
 <div class="date">18.10.1847</div>
 <div class="deltav">8.6</div>
 <div class="dens">2.4±1</div>
-</div><div class="obj mab highcontrast havesats contactbinary numbered named model animation">
+</div><div class="obj mab highcontrast occultation havesats contactbinary numbered named model animation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="216 Kleopatra" src="images/Kleopatra.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/216_Kleopatra">Клеопатра</a></div>
 <div class="size">59±1</div>
@@ -759,7 +768,7 @@
 <div class="date">10.04.1880</div>
 <div class="deltav">9.9</div>
 <div class="dens">3.45±0.41</div>
-</div><div class="obj mab lightcurve numbered named">
+</div><div class="obj mab lightcurve numbered named occultation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="5 Astraea" src="images/Astraea.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/5_Astraea">Астрея</a></div>
 <div class="size">59.5</div>
@@ -784,7 +793,7 @@
 <div class="date">05.03.1979</div>
 <div class="deltav">&gt;7.7</div>
 <div class="imgdat">04.01.2000</div>
-</div><div class="obj mab visited flyby map numbered named">
+</div><div class="obj mab visited flyby map numbered named occultation">
 <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="21 Lutetia" src="images/Lutetia.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/21_Lutetia">Лютеция</a></div>
 <div class="size">49±1</div>
@@ -934,12 +943,13 @@
 <div class="date">13.03.1980</div>
 <div class="deltav">&gt;7.7</div>
 <div class="imgdat">23.09.2005</div>
-</div><div class="obj neo visited orbited animation map numbered named surf">
+</div><div class="obj neo visited orbited animation map occultation numbered named surf">
 <div class="img" onmouseover="show(this, 'https://nssdc.gsfc.nasa.gov/planetary/image/near_20000212_anim.gif')" onmouseout="hide()"><img alt="433 Eros" src="images/Eros.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/433_Eros">Эрос</a></div>
 <div class="size">8.42±0.02</div>
 <div class="mass">6.69±E15</div>
 <div class="date">13.08.1898</div>
+<div class="pre">29.10.1893</div>
 <div class="deltav">6.112</div>
 <div class="dens">2.67±0.03</div>
 <div class="imgdat">29.02.2000</div>
