@@ -1,6 +1,5 @@
 img {max-width: 1024px;}
-.age {
+.age, .exp {
   display: none;
-  font-size: 0.75em;
   color: white;
 }

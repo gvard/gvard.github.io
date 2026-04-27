@@ -17,6 +17,8 @@ function show(divImg, imgPth) {
   const obj = divImg.parentElement;
   let name = obj.getElementsByClassName("name")[0].getElementsByTagName("a")[0].innerText;
   name = mkPar('<b>', name, '</b>');
+  let exp = obj.getElementsByClassName("exp")[0].innerText;
+  exp = mkPar('Экспозиция: ', exp, '&nbsp;сек');
   let angular = obj.getElementsByClassName("angular")[0].innerText;
   angular = mkPar('Угловые размеры: ', angular, '&nbsp;');
   let dist = obj.getElementsByClassName("dist")[0].innerText;
@@ -36,6 +38,6 @@ function show(divImg, imgPth) {
   } else {
     desc = "";
   }
-  const contentToShow = `<img src="${imgPth}"><h2>${name}</h2>` + type + angular + dist + age + mag + desc;
+  const contentToShow = `<img src="${imgPth}"><h2>${name}</h2>` + exp + type + angular + dist + age + mag + desc;
   toShow(contentToShow);
 }
