@@ -80,22 +80,46 @@ fetch("https://raw.githubusercontent.com/gvard/astrodata/main/data/stars/resolve
 </div>
 <h1>Звезды не как точки</h1>
 <div class="cont">
+<b>Пульт управления информацией:</b><br>
 <div id="controls">
-<label class="nowrap"><input type="checkbox" name=".name" value="block" checked onclick="showHideThis(this)">Имя</label>,
+<label class="nowrap"><input type="checkbox" name=".name" checked onclick="showHideThis(this)">Имя</label>,
 <label class="nowrap"><input type="checkbox" name=".angular" value="block" onclick="showHideThis(this)">Угловой диаметр</label>,
 <label class="nowrap"><input type="checkbox" name=".size" value="block" checked onclick="showHideThis(this)">Радиус</label>,
 <label class="nowrap"><input type="checkbox" name=".mass" value="block" onclick="showHideThis(this)">Масса</label>,
 <label class="nowrap"><input type="checkbox" name=".class" value="block" checked onclick="showHideThis(this)">Спектральный класс</label>,
 <label class="nowrap"><input type="checkbox" name=".temp" value="block" checked onclick="showHideThis(this)">Эффективная температура</label>,
 <label class="nowrap"><input type="checkbox" name=".mag" value="block" onclick="showHideThis(this)">Зв. величина (V)</label>,
-<label class="nowrap"><input type="checkbox" name=".jmag" value="block" onclick="showHideThis(this)">Зв. величина (J)</label>.<br>
-<b>Картинка:</b>
+<label class="nowrap"><input type="checkbox" name=".jmag" value="block" onclick="showHideThis(this)">Зв. величина (J)</label>
+<div id="props">
+<button onclick="uncheckAll(true)">Вкл</button><button onclick="uncheckAll(false)">Выкл</button><br>
+<label class="nowrap"><input type="checkbox" name=".obj" checked onclick="showHideThis(this)">Все объекты</label>
+<br><b>Классы:</b><br>
+<label class="nowrap"><input type="checkbox" name=".hypergiant" checked onclick="showHideThis(this)">Гипергиганты</label>
+<label class="nowrap"><input type="checkbox" name=".sg" checked onclick="showHideThis(this)">Сверхгиганты</label>
+<label class="nowrap"><input type="checkbox" name=".brightgiant" checked onclick="showHideThis(this)">Яркие гиганты</label>
+<label class="nowrap"><input type="checkbox" name=".giant" checked onclick="showHideThis(this)">Гиганты</label>
+<label class="nowrap"><input type="checkbox" name=".agb" checked onclick="showHideThis(this)">AGB</label>
+<label class="nowrap"><input type="checkbox" name=".subgiant" checked onclick="showHideThis(this)">Субгиганты</label>
+<label class="nowrap"><input type="checkbox" name=".dwarf" checked onclick="showHideThis(this)">Карлики</label>
+<label class="nowrap"><input type="checkbox" name=".wd" checked onclick="showHideThis(this)">Белые карлики</label>
+<br><b title="Appearance">Проявление:</b><br>
+<label class="nowrap"><input type="checkbox" name=".variable" checked onclick="showHideThis(this)">Переменные</label>
+<label class="nowrap"><input type="checkbox" name=".mira" checked onclick="showHideThis(this)">Мириды</label>
+<label class="nowrap"><input type="checkbox" name=".cepheid" checked onclick="showHideThis(this)">Цефеиды</label>
+<label class="nowrap"><input type="checkbox" name=".dimming" checked onclick="showHideThis(this)">Звезды с примечательными эпизодами падения блеска</label>
+<br><b>Окружение:</b><br>
+<label class="nowrap"><input type="checkbox" name=".cse" checked onclick="showHideThis(this)">Околозвездная оболочка</label>
+<label class="nowrap"><input type="checkbox" name=".bowshock" checked onclick="showHideThis(this)">Астросфера, головная ударная волна</label>
+<label class="nowrap"><input type="checkbox" name=".nebula" checked onclick="showHideThis(this)">Туманность</label>
+<br><b>Картинка:</b>
 <label class="nowrap"><input type="checkbox" name=".animation" value="block" checked onclick="showHideThis(this)">Анимация</label>
 <label class="nowrap"><input type="checkbox" name=".low" value="block" checked onclick="showHideThis(this)">Низкое разрешение</label><br>
 <b>Сортировать:</b> <button onclick="toSort('size')">по возрастанию размера</button>
 <button onclick="toSort('mass')">по возрастанию массы</button>
 <!-- <button onclick="toSort('mag')">по возрастанию звездной величины</button> -->
 </div>
+</div>
+Фокус на картинке – полная информация
 </div>
 
 <div id="tab">
