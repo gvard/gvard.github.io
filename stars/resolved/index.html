@@ -45,7 +45,7 @@ function addCollectionTable(data) {
     }
     tab.innerHTML += `
 <div class="obj ${classes.join(' ')}">
-<div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="${params['name']}" src="${pth}"></div>
+<div class="img" onmouseover="show(this${showthis})" onmouseout="hide()"><img alt="${params['name']}" src="${pth}"></div>
 <div class="name"><a href="${params['url']}">${params['runame']}</a></div>
 <div class="angular">${params['angular']}</div>
 <div class="size">${params['size']}</div>
