@@ -1,4 +1,32 @@
 "use strict";
+document.addEventListener('DOMContentLoaded', () => {
+const grid = document.getElementById('tab');
+grid.addEventListener('mouseover', (event) => {
+  const imgDiv = event.target.closest('.obj .img');
+  if (imgDiv) {
+    const baseImg = imgDiv.querySelector('.img img');
+    let finalImgUrl;
+    const imgData = imgDiv.dataset.b;
+    if (!imgData) {
+      finalImgUrl = baseImg.getAttribute('src');
+    } 
+    else if (imgData.startsWith('http')) {
+      finalImgUrl = imgData;
+    } 
+    else {
+      finalImgUrl = `images/${imgData}`;
+    }
+  show(event, imgDiv, finalImgUrl);
+  }
+});
+grid.addEventListener('mouseout', (event) => {
+  const imgDiv = event.target.closest('.obj .img');
+  const relatedTarget = event.relatedTarget ? event.relatedTarget.closest('.obj .img') : null;
+  if (imgDiv && imgDiv !== relatedTarget) {
+    hide();
+  }
+});
+});
 const OBJTYPES = {
   star: "звезда", pla: "планета", neo: "околоземный астероид", co: "ядро кометы", ea: "спутник Земли", mar: "спутник Марса", mab: "астероид основного пояса", dw: "карликовая планета", ju: "спутник Юпитера", sat: "спутник Сатурна", ur: "спутник Урана", ne: "спутник Нептуна", pl: "спутник Плутона", tno: "транснептуновый объект", centaur: "кентавр", contactbinary: "контактно-двойная",
 };
@@ -8,14 +36,15 @@ function ObjParams() {
   let objDct = [];
   let datesObj = {};
   for (let i = 0; i < objs.length; i += 1) {
+    const name = objs[i].getElementsByClassName('name')[0].innerText;
     const classes = objs[i].className.replace('obj ', '').split(' ');
     const a = objs[i].getElementsByClassName('name')[0].getElementsByTagName("a")[0];
     const objRuName = a.text;
     const img = objs[i].getElementsByClassName('img')[0].getElementsByTagName("img")[0];
     const imgPath = img.src.split('/');
     const size = getSize(objs[i].getElementsByClassName('size')[0].innerText);
-    const mass = txtMass(objs[i].getElementsByClassName('mass')[0].innerText);
-    const date = objs[i].getElementsByClassName('date')[0].innerText;
+    const mass = txtMass(objs[i].getElementsByClassName('mass')[0]?.innerText ?? "");
+    const date = objs[i].getElementsByClassName('date')[0]?.innerText ?? "";
     const deltaV = getDeltaV(objs[i].getElementsByClassName('deltav')[0].innerText);
     const type = mkType(objs[i].className, OBJTYPES);
     let otkrWord = "Открыт ";
@@ -72,7 +101,7 @@ function toSort(classNam) {
     sortFunction = getDeltaV;
   doSort(sortFunction, classNam);
 }
-function show(divImg, imgPth) {
+function show(evnt, divImg, imgPth) {
   const obj = divImg.parentElement;
   let name = divImg.getElementsByTagName('img')[0].alt;
   let des = obj.getElementsByClassName("des");
@@ -138,11 +167,8 @@ function show(divImg, imgPth) {
     desc = mkPar('', desc[0].innerText, '');
   else
     desc = "";
-  if (!imgPth) {
-    imgPth = divImg.getElementsByTagName('img')[0].src;
-  }
   const contentToShow = `<img src="${imgPth}"><h2>${name}</h2>` + des + type + size + mass + dens + rot + deltaV + date + imda + pre + desc;
-  toShow(contentToShow);
+  toShow(evnt, contentToShow);
 }
 function getToday() {
   const currentdate = new Date();

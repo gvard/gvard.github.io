@@ -81,26 +81,31 @@ function uncheckAll(isChecked){
   }
   showHideThis(document.getElementsByName(".obj")[0])
 }
-function toShow(contentToShow) {
+function toShow(e, contentToShow) {
   let contents = document.getElementById('contents');
-  contents.innerHTML = contentToShow;
   let messageBox = document.getElementById('messageBox');
-  let x, y;
-  if (window.event) {
-    x = window.event.clientX + document.documentElement.scrollLeft +
-      document.body.scrollLeft;
-    y = window.event.clientY + document.documentElement.scrollTop +
-      document.body.scrollTop;
-  } else {
-    x = event.clientX + window.scrollX;
-    y = event.clientY + window.scrollY;
-  }
+  contents.innerHTML = contentToShow;
   messageBox.style.display = "block";
-  x -= 5 / window.devicePixelRatio;
-  y += 5 / window.devicePixelRatio;
-  let xOff = messageBox.offsetWidth;
-  if ((x - xOff) >= 0 && (x + xOff) >= screen.width)
-    x -= xOff;
+  let x = e.pageX;
+  let y = e.pageY;
+  const offset = 10; 
+  x += offset;
+  y += offset;
+  let boxWidth = messageBox.offsetWidth;
+  let boxHeight = messageBox.offsetHeight;
+  let windowWidth = window.innerWidth;
+  let windowHeight = window.innerHeight;
+  let scrollX = window.scrollX;
+  let scrollY = window.scrollY;
+
+  if ((x + boxWidth) > (scrollX + windowWidth)) {
+    x = e.pageX - boxWidth - offset;
+  }
+  if ((y + boxHeight) > (scrollY + windowHeight)) {
+    y = e.pageY - boxHeight - offset;
+  }
+  if (x < scrollX) x = scrollX + offset;
+  if (y < scrollY) y = scrollY + offset;
   messageBox.style.left = x + "px";
   messageBox.style.top = y + "px";
 }
