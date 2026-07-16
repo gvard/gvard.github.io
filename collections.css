@@ -47,7 +47,8 @@ padding: 5px;
 max-width: 500px;
 }
 #messageBox img {
-max-width: 490px;
+max-width: 450px;
+max-height: 450px;
 }
 #contents {
 width: 100%;
@@ -126,24 +127,24 @@ color: white;
 white-space: nowrap;
 }
 @media (max-width: 900px) {
-  .cont {
-    padding: 0 0 0.4em 2px;
-  }
-  #tab {
-    padding: 0 0 0.4em 2px;
-  }
-  #controls {
-    margin: 4px 2px 2px 0;
-    padding: 10px 5px;
-  }
-  .info_field {
-    font-size: 0.82em;
-    color: white;
-  }
-  nav ul {
-    padding-left: 4px;
-  }
-  nav ul li {
-    margin-right: 2px;
-  }
+.cont {
+  padding: 0 0 0.4em 2px;
+}
+#tab {
+  padding: 0 0 0.4em 2px;
+}
+#controls {
+  margin: 4px 2px 2px 0;
+  padding: 10px 5px;
+}
+.info_field {
+  font-size: 0.82em;
+  color: white;
+}
+nav ul {
+  padding-left: 4px;
+}
+nav ul li {
+  margin-right: 2px;
+}
 }

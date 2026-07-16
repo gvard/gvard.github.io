@@ -88,7 +88,7 @@ function toShow(e, contentToShow) {
   messageBox.style.display = "block";
   let x = e.pageX;
   let y = e.pageY;
-  const offset = 10; 
+  const offset = 10;
   x += offset;
   y += offset;
   let boxWidth = messageBox.offsetWidth;

@@ -2,7 +2,7 @@
   font-size: 0.9em;
   color: white;
 }
-.num, .mass, .desc, .rot, .deltav, .dens, .des, .imgdat, .bib, .pre, .imgdist {
+.mass, .desc, .dv, .dens, .des, .imdat, .pre {
   display: none;
   font-size: 0.78em;
   color: white;

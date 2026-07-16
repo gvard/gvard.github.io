@@ -9,10 +9,10 @@ grid.addEventListener('mouseover', (event) => {
     const imgData = imgDiv.dataset.b;
     if (!imgData) {
       finalImgUrl = baseImg.getAttribute('src');
-    } 
+    }
     else if (imgData.startsWith('http')) {
       finalImgUrl = imgData;
-    } 
+    }
     else {
       finalImgUrl = `images/${imgData}`;
     }
@@ -28,7 +28,7 @@ grid.addEventListener('mouseout', (event) => {
 });
 });
 const OBJTYPES = {
-  star: "звезда", pla: "планета", neo: "околоземный астероид", co: "ядро кометы", ea: "спутник Земли", mar: "спутник Марса", mab: "астероид основного пояса", dw: "карликовая планета", ju: "спутник Юпитера", sat: "спутник Сатурна", ur: "спутник Урана", ne: "спутник Нептуна", pl: "спутник Плутона", tno: "транснептуновый объект", centaur: "кентавр", contactbinary: "контактно-двойная",
+  star: "звезда", pla: "планета", neo: "околоземный объект", pha: "потенциально опасный астероид", co: "ядро кометы", ea: "спутник Земли", mar: "спутник Марса", mab: "объект основного пояса астероидов", innermb: "объект внутренней части пояса астероидов", dw: "карликовая планета", dwmoon: "спутник карликовой планеты", ju: "спутник Юпитера", sat: "спутник Сатурна", ur: "спутник Урана", ne: "спутник Нептуна", pl: "спутник Плутона", tno: "транснептуновый объект", centaur: "кентавр", contactbinary: "контактно-двойная", sca: "объект рассеянного диска", satellite: "спутник малой планеты", jfc: "комета семейства Юпитера"
 };
 function ObjParams() {
   const objs = getDivs('obj');
@@ -112,6 +112,8 @@ function show(evnt, divImg, imgPth) {
   }
   let size = obj.getElementsByClassName("size")[0].innerText;
   size = mkPar('<b>Радиус</b>: ', size, '&nbsp;км');
+  let imdis = obj.dataset.id;
+  imdis = mkPar('<b>Изображение получено с расстояния</b> ', imdis, '&nbsp;км');
   try {
     var mass = obj.getElementsByClassName("mass")[0].innerText.trim();
   } catch (error) {
@@ -154,12 +156,8 @@ function show(evnt, divImg, imgPth) {
   } else {
     deltaV = "";
   }
-  let rot = obj.getElementsByClassName("rot");
-  if (rot.length) {
-    rot = mkPar('<b>Период вращения</b>: ', rot[0].innerText, '&nbsp;суток');
-  } else {
-    rot = "";
-  }
+  let rot = obj.dataset.r;
+  rot = mkPar('<b>Период вращения</b>: ', rot, '&nbsp;суток');
   let type = mkType(obj.className, OBJTYPES);
   type = mkPar('<b>Типы</b>: ', type, '');
   let desc = obj.getElementsByClassName("desc");
@@ -167,7 +165,7 @@ function show(evnt, divImg, imgPth) {
     desc = mkPar('', desc[0].innerText, '');
   else
     desc = "";
-  const contentToShow = `<img src="${imgPth}"><h2>${name}</h2>` + des + type + size + mass + dens + rot + deltaV + date + imda + pre + desc;
+  const contentToShow = `<img src="${imgPth}"><h2>${name}</h2>` + des + type + size + mass + dens + rot + deltaV + date + imda + pre + imdis + desc;
   toShow(evnt, contentToShow);
 }
 function getToday() {
