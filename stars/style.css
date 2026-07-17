@@ -14,10 +14,10 @@ div.desc, .class, .temp {
   font-size: 0.89em;
   color: white;
 }
-.angular, .size, .mass, .class, .bib {
+.angular, .size, .mass, .class {
   overflow: hidden;
 }
-.mass, .desc, .mag, .jmag, .class, .bib {
+.mass, .desc, .mag, .jmag, .class {
   display: none;
   font-size: 0.75em;
   color: white;

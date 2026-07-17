@@ -15,7 +15,7 @@ grid.addEventListener('mouseover', (event) => {
       finalImgUrl = imgData;
     }
     else {
-      finalImgUrl = `images/${imgData}`;
+      finalImgUrl = `../images/${imgData}`;
     }
   show(event, imgDiv, finalImgUrl);
   }

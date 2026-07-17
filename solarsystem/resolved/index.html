@@ -64,14 +64,17 @@ function addSolsysTable(data) {
     if ("imdis" in params) {
       dataid = ` data-id="${params['imdis']}"`;
     }
-    tab.innerHTML += `<div class="obj ${classes.join(' ')}"${datan}${datar}${dataid}>
+    let databib = "";
+    if ("bib" in params) {
+      databib = ` data-b="${params['bib']}"`;
+    }
+    tab.innerHTML += `<div class="obj ${classes.join(' ')}"${datan}${datar}${dataid}${databib}>
 <div class="img"${datab}><img alt="${params['nmnam']}" src="${pth}"></div>
 <div class="name"><a href="${params['url']}">${params['runam']}</a></div>
 ${des}<div class="size">${params['size']}</div>
 ${mass}${dateEl}${pre}${imdat}<div class="dv">${params['dv']}</div>
 ${dens}${desc}</div>`;
 })
-console.log(tab);
 }
 fetch("https://raw.githubusercontent.com/gvard/astrodata/main/data/solarsystem/resolved.json")
   .then(response => response.json())

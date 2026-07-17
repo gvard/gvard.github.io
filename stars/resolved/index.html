@@ -13,60 +13,54 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="../../collections.js"></script>
-<script src="../script.js"></script>
+<script src="script.js"></script>
 <script>
 function addCollectionTable(data) {
-  tab = document.getElementById("tab");
-  Object.entries(data).forEach(([name, params]) => {
-    let classes = params["tags"];
-    let pth = `../images/${params["imgnam"]}`;
-    let mass = "&nbsp;";
-    if ("mass" in params) {
-      mass = params['mass'];
-    }
-    let imgdat = "";
-    if ("imgdat" in params) {
-      imgdat = `<div class="imgdat">${params['imgdat']}</div>`;
-    }
-    let desc = "";
-    if ("desc" in params) {
-      desc = `<div class="desc">${params['desc']}</div>`;
-    }
-    let sp = "&nbsp;";
-    if ("sp" in params) {
-      sp = params['sp'];
-    }
-    var showthis = "";
-    if ("imgurl" in params) {
-      if (params["imgurl"].startsWith("images/")) {
-        params["imgurl"] = "../" + params["imgurl"];
-      }
-      showthis = `, '${params["imgurl"]}'`;
-    }
-    tab.innerHTML += `
-<div class="obj ${classes.join(' ')}">
-<div class="img" onmouseover="show(this${showthis})" onmouseout="hide()"><img alt="${params['name']}" src="${pth}"></div>
-<div class="name"><a href="${params['url']}">${params['runame']}</a></div>
+tab = document.getElementById("tab");
+Object.entries(data).forEach(([name, params]) => {
+  let classes = params["tags"];
+  let pth = `../images/${params["imnam"]}`;
+  let mass = "";
+  if ("mass" in params) {
+    mass = `<div class="mass">${params['mass']}</div>\n`;
+  }
+  let temp = "";
+  if ("temp" in params) {
+    temp = `<div class="temp">${params['temp']}</div>\n`;
+  }
+  let jmag = "";
+  if ("jmag" in params) {
+    jmag = `<div class="jmag">${params['jmag']}</div>\n`;
+  }
+  let imgdat = "";
+  if ("imgdat" in params) {
+    imgdat = `<div class="imgdat">${params['imgdat']}</div>\n`;
+  }
+  let bib = "";
+  if ("bib" in params) {
+    bib = ` data-b="${params['bib']}"`;
+  }
+  let desc = "";
+  if ("desc" in params) {
+    desc = `<div class="desc">${params['desc']}</div>\n`;
+  }
+  let sp = "";
+  if ("sp" in params) {
+    sp = params['sp'];
+  }
+  let datab = "";
+  if ("imurl" in params) {
+    datab = ` data-b="${params['imurl']}"`;
+  }
+  tab.innerHTML += `<div class="obj ${classes.join(' ')}"${bib}>
+<div class="img"${datab}><img alt="${params['name']}" src="${pth}"></div>
+<div class="name"><a href="${params['url']}">${params['runam']}</a></div>
 <div class="angular">${params['angular']}</div>
 <div class="size">${params['size']}</div>
-<div class="mass">${mass}</div>
-<div class="class">${sp}</div>
-<div class="temp">${params['temp']}</div>
-<div class="mag">${params['mag']}</div>
-<div class="jmag">${params['jmag']}</div>
-${desc}
-${imgdat}
-</div>`;
+${mass}<div class="class">${sp}</div>
+${temp}<div class="mag">${params['mag']}</div>
+${jmag}${desc}${imgdat}</div>`;
 })
-// <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="Betelgeuse" src="images/Betelgeuse.jpg"></div>
-// <div class="name"><a href="https://en.wikipedia.org/wiki/Betelgeuse" title="α Ori">Бетельгейзе</a></div>
-// <div class="angular">50</div>
-// <div class="size">887</div>
-// <div class="mass">11.6</div>
-// <div class="class">M1–M2 Ia–ab</div>
-// <div class="temp">3590</div>
-// <div class="mag">0.0–1.61</div>
-// <div class="jmag">−3.00</div>
 }
 fetch("https://raw.githubusercontent.com/gvard/astrodata/main/data/stars/resolved.json")
   .then(response => response.json())
@@ -121,7 +115,6 @@ fetch("https://raw.githubusercontent.com/gvard/astrodata/main/data/stars/resolve
 </div>
 Фокус на картинке – полная информация
 </div>
-
 <div id="tab">
 </div>
 </body>
