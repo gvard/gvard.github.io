@@ -1,5 +1,33 @@
 "use strict";
 /*jshint esversion: 6 */
+document.addEventListener('DOMContentLoaded', () => {
+const grid = document.getElementById('tab');
+grid.addEventListener('mouseover', (event) => {
+  const imgDiv = event.target.closest('.obj .img');
+  if (imgDiv) {
+    const baseImg = imgDiv.querySelector('.img img');
+    let finalImgUrl;
+    const imgData = imgDiv.dataset.b;
+    if (!imgData) {
+      finalImgUrl = baseImg.getAttribute('src');
+    }
+    else if (imgData.startsWith('http')) {
+      finalImgUrl = imgData;
+    }
+    else {
+      finalImgUrl = `images/${imgData}`;
+    }
+  show(event, imgDiv, finalImgUrl);
+  }
+});
+grid.addEventListener('mouseout', (event) => {
+  const imgDiv = event.target.closest('.obj .img');
+  const relatedTarget = event.relatedTarget ? event.relatedTarget.closest('.obj .img') : null;
+  if (imgDiv && imgDiv !== relatedTarget) {
+    hide();
+  }
+});
+});
 const OBJTYPES = {
   giant: "Гигант",
   subgiant: "Субгигант",
@@ -31,7 +59,7 @@ function ObjParams() {
     const imgPath = img.src.split('/');
     const size = getSize(objs[i].getElementsByClassName('size')[0].innerText);
     const mass = txtMass(objs[i].getElementsByClassName('mass')[0].innerText);
-    objDct.push({ 'name': img.alt, 'runame': objRuName, 'size': size, 'mass': mass, 'classes': classes });
+    objDct.push({'name': img.alt, 'runame': objRuName, 'size': size, 'mass': mass, 'classes': classes});
     objArr.push([img.alt, objRuName, size, mass, classes, imgPath[imgPath.length - 1]]);
   }
   console.log(objArr);
@@ -45,7 +73,7 @@ function toSort(classNam) {
     sortFunction = getSize;
   doSort(sortFunction, classNam);
 }
-function show(divImg, imgPth) {
+function show(evnt, divImg, imgPth) {
   const obj = divImg.parentElement;
   let name = obj.getElementsByClassName("name")[0].getElementsByTagName("a")[0].innerText;
   name = mkPar('<b>', name, '</b>');
@@ -73,5 +101,5 @@ function show(divImg, imgPth) {
     imgPth = divImg.getElementsByTagName('img')[0].src;
   }
   const contentToShow = `<img src="${imgPth}"><h2>${name}</h2>` + type + angular + size + mass + spClass + temp + mag + desc;
-  toShow(contentToShow);
+  toShow(evnt, contentToShow);
 }
