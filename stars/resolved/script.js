@@ -1,5 +1,4 @@
 "use strict";
-/*jshint esversion: 6 */
 document.addEventListener('DOMContentLoaded', () => {
 const grid = document.getElementById('tab');
 grid.addEventListener('mouseover', (event) => {
