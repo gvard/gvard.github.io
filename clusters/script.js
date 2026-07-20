@@ -1,7 +1,6 @@
 "use strict";
-/*jshint esversion: 6 */
 const OBJTYPES = {
-  gc: "Шаровое звёздное скопление",
+gc: "Шаровое звёздное скопление",
 };
 function toSort(classNam) {
   let sortFunction;
@@ -11,7 +10,7 @@ function toSort(classNam) {
     sortFunction = getSize;
   doSort(sortFunction, classNam);
 }
-function show(divImg) {
+function show(evnt, divImg) {
   const obj = divImg.parentElement;
   let name = obj.getElementsByClassName("name")[0].getElementsByTagName("a")[0].innerText;
   name = mkPar('<b>', name, '</b>');
@@ -34,5 +33,5 @@ function show(divImg) {
     desc = "";
   }
   const contentToShow = divImg.innerHTML + name + type + angular + dist + mass + age + mag + desc;
-  toShow(contentToShow);
+  toShow(evnt, contentToShow);
 }

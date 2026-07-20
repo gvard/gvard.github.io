@@ -1,8 +1,7 @@
 "use strict";
-/*jshint esversion: 6 */
 const OBJTYPES = {
-  imaging: "Прямое наблюдение",
-  GDor: "Переменная типа γ Золотой Рыбы",
+imaging: "Прямое наблюдение",
+GDor: "Переменная типа γ Золотой Рыбы",
 };
 function ObjParams() {
   const objs = getDivs('obj');
@@ -30,7 +29,7 @@ function toSort(classNam) {
     sortFunction = getSize;
   doSort(sortFunction, classNam);
 }
-function show(divImg, imgPth) {
+function show(evnt, divImg, imgPth) {
   const obj = divImg.parentElement;
   let name = obj.getElementsByClassName("name")[0].getElementsByTagName("a")[0].innerText;
   name = mkPar('<b>', name, '</b>');
@@ -62,5 +61,5 @@ function show(divImg, imgPth) {
     imgPth = divImg.getElementsByTagName('img')[0].src;
   }
   const contentToShow = `<img src="${imgPth}">` + type + name + size + mass + temp + spClass + mag + age + dist + date + desc;
-  toShow(contentToShow);
+  toShow(evnt, contentToShow);
 }

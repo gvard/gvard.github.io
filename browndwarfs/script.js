@@ -1,10 +1,9 @@
 "use strict";
-/*jshint esversion: 6 */
 const OBJTYPES = {
-  m: "M-карлик",
-  l: "L-карлик",
-  t: "T-карлик",
-  y: "Y-карлик",
+m: "M-карлик",
+l: "L-карлик",
+t: "T-карлик",
+y: "Y-карлик",
 };
 function ObjParams() {
   const objs = getDivs('obj');
@@ -32,7 +31,7 @@ function toSort(classNam) {
     sortFunction = getSize;
   doSort(sortFunction, classNam);
 }
-function show(divImg) {
+function show(evnt, divImg) {
   const obj = divImg.parentElement;
   let name = obj.getElementsByClassName("name")[0].getElementsByTagName("a")[0].innerText;
   name = mkPar('<b>', name, '</b>');
@@ -59,5 +58,5 @@ function show(divImg) {
     desc = "";
   }
   const contentToShow = divImg.innerHTML + name + type + dist + size + mass + spClass + age + temp + mag + desc;
-  toShow(contentToShow);
+  toShow(evnt, contentToShow);
 }
