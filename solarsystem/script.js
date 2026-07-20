@@ -1,34 +1,6 @@
 "use strict";
-document.addEventListener('DOMContentLoaded', () => {
-const grid = document.getElementById('tab');
-grid.addEventListener('mouseover', (event) => {
-  const imgDiv = event.target.closest('.obj .img');
-  if (imgDiv) {
-    const baseImg = imgDiv.querySelector('.img img');
-    let finalImgUrl;
-    const imgData = imgDiv.dataset.b;
-    if (!imgData) {
-      finalImgUrl = baseImg.getAttribute('src');
-    }
-    else if (imgData.startsWith('http')) {
-      finalImgUrl = imgData;
-    }
-    else {
-      finalImgUrl = `images/${imgData}`;
-    }
-  show(event, imgDiv, finalImgUrl);
-  }
-});
-grid.addEventListener('mouseout', (event) => {
-  const imgDiv = event.target.closest('.obj .img');
-  const relatedTarget = event.relatedTarget ? event.relatedTarget.closest('.obj .img') : null;
-  if (imgDiv && imgDiv !== relatedTarget) {
-    hide();
-  }
-});
-});
 const OBJTYPES = {
-  star: "звезда", pla: "планета", neo: "околоземный объект", pha: "потенциально опасный астероид", co: "ядро кометы", ea: "спутник Земли", mar: "спутник Марса", mab: "объект основного пояса астероидов", innermb: "объект внутренней части пояса астероидов", dw: "карликовая планета", dwmoon: "спутник карликовой планеты", ju: "спутник Юпитера", sat: "спутник Сатурна", ur: "спутник Урана", ne: "спутник Нептуна", pl: "спутник Плутона", tno: "транснептуновый объект", centaur: "кентавр", contactbinary: "контактно-двойная", sca: "объект рассеянного диска", satellite: "спутник малой планеты", jfc: "комета семейства Юпитера"
+star: "звезда", pla: "планета", neo: "околоземный объект", pha: "потенциально опасный астероид", co: "ядро кометы", ea: "спутник Земли", mar: "спутник Марса", mab: "объект основного пояса астероидов", innermb: "объект внутренней части пояса астероидов", dw: "карликовая планета", dwmoon: "спутник карликовой планеты", ju: "спутник Юпитера", sat: "спутник Сатурна", ur: "спутник Урана", ne: "спутник Нептуна", pl: "спутник Плутона", tno: "транснептуновый объект", centaur: "кентавр", contactbinary: "контактно-двойная", sca: "объект рассеянного диска", satellite: "спутник малой планеты", jfc: "комета семейства Юпитера"
 };
 function ObjParams() {
   const objs = getDivs('obj');
