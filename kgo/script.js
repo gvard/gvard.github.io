@@ -1,9 +1,8 @@
 "use strict";
-/*jshint esversion: 6 */
 const OBJTYPES = {
-  gc: "Шаровое звёздное скопление",
-  pn: "Планетарная туманность",
-  ga: "Галактика",
+gc: "Шаровое звёздное скопление",
+pn: "Планетарная туманность",
+ga: "Галактика",
 };
 function toSort(classNam) {
   let sortFunction;
@@ -13,7 +12,7 @@ function toSort(classNam) {
     sortFunction = getSize;
   doSort(sortFunction, classNam);
 }
-function show(divImg, imgPth) {
+function show(evnt, divImg, imgPth) {
   const obj = divImg.parentElement;
   let name = obj.getElementsByClassName("name")[0].getElementsByTagName("a")[0].innerText;
   name = mkPar('<b>', name, '</b>');
@@ -39,5 +38,5 @@ function show(divImg, imgPth) {
     desc = "";
   }
   const contentToShow = `<img src="${imgPth}"><h2>${name}</h2>` + exp + type + angular + dist + age + mag + desc;
-  toShow(contentToShow);
+  toShow(evnt, contentToShow);
 }

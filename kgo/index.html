@@ -1,115 +1,109 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Объекты глубокого космоса: фото из КГО">
-  <title>Объекты глубокого космоса: фото из КГО</title>
-  <link rel="stylesheet" href="../collections.css">
-  <link rel="stylesheet" href="style.css">
-  <script src="../collections.js"></script>
-  <script src="script.js"></script>
-  <link rel="shortcut icon" href="favicon.png" type="image/png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Объекты глубокого космоса: фото из КГО">
+<title>Объекты глубокого космоса: фото из КГО</title>
+<link rel="stylesheet" href="../collections.css">
+<link rel="stylesheet" href="style.css">
+<script src="../grid-interactions.js"></script>
+<script src="../collections.js"></script>
+<script src="script.js"></script>
+<link rel="shortcut icon" href="favicon.png" type="image/png">
 </head>
 <body>
 <nav class="menu">
 <ul>
-  <li><a href="../collections/">Коллекции:</a></li>
-  <li><a href="../solarsystem/">Солнечная система</a></li>
-  <li><a href="../stars/">Звезды</a></li>
-  <li><a>Звездные скопления</a></li>
-  <li><a href="../exoplanets/">Экзопланеты</a></li>
-  <li><a href="../nsbh/">Звездные остатки</a></li>
-  <li><a href="../browndwarfs/">Бурые карлики</a></li>
-  <li><a href="../nebulae/">Туманности</a></li>
-  <li><a href="../galaxies/">Галактики</a></li>
+<li><a href="../collections/">Коллекции:</a></li>
+<li><a href="../solarsystem/">Солнечная система</a></li>
+<li><a href="../stars/">Звезды</a></li>
+<li><a>Звездные скопления</a></li>
+<li><a href="../exoplanets/">Экзопланеты</a></li>
+<li><a href="../nsbh/">Звездные остатки</a></li>
+<li><a href="../browndwarfs/">Бурые карлики</a></li>
+<li><a href="../nebulae/">Туманности</a></li>
+<li><a href="../galaxies/">Галактики</a></li>
 </ul>
 </nav>
-
 <div id="messageBox">
-  <div id="contents"></div>
+<div id="contents"></div>
 </div>
-
 <h1>Астрофото из КГО</h1>
-
 <div class="cont">
-  <input type="checkbox" name=".name" value="block" checked onclick="showHideThis(this)">Имя,
-  <input type="checkbox" name=".exp" value="block" onclick="showHideThis(this)">Экспозиция,
-  <input type="checkbox" name=".angular" value="block" checked onclick="showHideThis(this)">Угловые размеры,
-  <input type="checkbox" name=".dist" value="block" checked onclick="showHideThis(this)">Расстояние,
-  <!-- <input type="checkbox" name=".age" value="block" checked onclick="showHideThis(this)">Возраст, -->
-  <input type="checkbox" name=".mag" value="block" checked onclick="showHideThis(this)">Звездная величина.
+<input type="checkbox" name=".name" value="block" checked onclick="showHideThis(this)">Имя,
+<input type="checkbox" name=".exp" value="block" onclick="showHideThis(this)">Экспозиция,
+<input type="checkbox" name=".angular" value="block" checked onclick="showHideThis(this)">Угловые размеры,
+<input type="checkbox" name=".dist" value="block" checked onclick="showHideThis(this)">Расстояние,
+<!-- <input type="checkbox" name=".age" value="block" checked onclick="showHideThis(this)">Возраст, -->
+<input type="checkbox" name=".mag" value="block" checked onclick="showHideThis(this)">Звездная величина.
 </div>
-
 <div id="tab">
 <div class="obj gc">
-  <div class="img" onmouseover="show(this, 'images/M10big.jpg')" onmouseout="hide()"><img alt="" src="images/M10.jpg"></div>
-  <div class="name"><a href="https://en.wikipedia.org/wiki/Messier_10" title="Messier 10">Мессье 10</a></div>
-  <div class="info_field angular">20′</div>
-  <div class="info_field exp">29×10</div>
-  <div class="info_field dist">4.4</div>
-  <div class="info_field age">11.4 млрд</div>
-  <div class="info_field mag">6.5</div>
+<div class="img" data-b="M10big.jpg"><img alt="" src="images/M10.jpg"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/Messier_10" title="Messier 10">Мессье 10</a></div>
+<div class="if angular">20′</div>
+<div class="if exp">29×10</div>
+<div class="if dist">4.4</div>
+<div class="if age">11.4 млрд</div>
+<div class="if mag">6.5</div>
 </div><div class="obj gc">
-  <div class="img" onmouseover="show(this, 'images/M13big.jpg')" onmouseout="hide()"><img alt="" src="images/M13.jpg"></div>
-  <div class="name"><a href="https://en.wikipedia.org/wiki/Messier_13" title="Messier 13">Мессье 13</a></div>
-  <div class="info_field angular">20′</div>
-  <div class="info_field exp">92×10</div>
-  <div class="info_field dist">7.4</div>
-  <div class="info_field age">11.65 млрд</div>
-  <div class="info_field mag">5.8</div>
+<div class="img" data-b="M13big.jpg"><img alt="" src="images/M13.jpg"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/Messier_13" title="Messier 13">Мессье 13</a></div>
+<div class="if angular">20′</div>
+<div class="if exp">92×10</div>
+<div class="if dist">7.4</div>
+<div class="if age">11.65 млрд</div>
+<div class="if mag">5.8</div>
 </div><div class="obj ga">
-  <div class="img" onmouseover="show(this, 'images/M51big.jpg')" onmouseout="hide()"><img alt="" src="images/M51.jpg"></div>
-  <div class="name"><a href="https://en.wikipedia.org/wiki/Whirlpool_Galaxy" title="Messier 51">Водоворот</a></div>
-  <div class="info_field angular">11′.2</div>
-  <div class="info_field exp">386×10</div>
-  <div class="info_field dist">7220</div>
-  <div class="info_field age">400 млн</div>
-  <div class="info_field mag">8.4</div>
+<div class="img" data-b="M51big.jpg"><img alt="" src="images/M51.jpg"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/Whirlpool_Galaxy" title="Messier 51">Водоворот</a></div>
+<div class="if angular">11′.2</div>
+<div class="if exp">386×10</div>
+<div class="if dist">7220</div>
+<div class="if age">400 млн</div>
+<div class="if mag">8.4</div>
 </div><div class="obj ga">
-  <div class="img" onmouseover="show(this, 'images/M101big.jpg')" onmouseout="hide()"><img alt="" src="images/M101.jpg"></div>
-  <div class="name"><a href="https://en.wikipedia.org/wiki/Pinwheel_Galaxy" title="Messier 101">Вертушка</a></div>
-  <div class="info_field angular">28′.8</div>
-  <div class="info_field exp">240×10</div>
-  <div class="info_field dist">6644</div>
-  <div class="info_field age">~10 млрд</div>
-  <div class="info_field mag">7.9</div>
+<div class="img" data-b="M101big.jpg"><img alt="" src="images/M101.jpg"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/Pinwheel_Galaxy" title="Messier 101">Вертушка</a></div>
+<div class="if angular">28′.8</div>
+<div class="if exp">240×10</div>
+<div class="if dist">6644</div>
+<div class="if age">~10 млрд</div>
+<div class="if mag">7.9</div>
 </div><div class="obj pn">
-  <div class="img" onmouseover="show(this)" onmouseout="hide()"><img alt="" src="images/M57.jpg"></div>
-  <div class="name"><a href="https://en.wikipedia.org/wiki/Ring_Nebula" title="Ring Nebula">Туманность Кольцо</a></div>
-  <div class="info_field angular">2′.5</div>
-  <div class="info_field exp">53×10</div>
-  <div class="info_field dist">0.79</div>
-  <div class="info_field age">7000</div>
-  <div class="info_field mag">8.8</div>
-</div>
-</div>
-
+<div class="img"><img alt="" src="images/M57.jpg"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/Ring_Nebula" title="Ring Nebula">Туманность Кольцо</a></div>
+<div class="if angular">2′.5</div>
+<div class="if exp">53×10</div>
+<div class="if dist">0.79</div>
+<div class="if age">7000</div>
+<div class="if mag">8.8</div>
+</div></div>
 <div class="cont">
-
 <h2>Ссылки</h2>
 <ul>
-  <li><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3_%D0%9C%D0%B5%D1%81%D1%81%D1%8C%D0%B5" target="_blank" rel="noopener noreferrer">Каталог Мессье</a></li>
-  <li><a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D0%BD%D0%B5%D1%82%D0%B0%D1%80%D0%BD%D0%B0%D1%8F_%D1%82%D1%83%D0%BC%D0%B0%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C" target="_blank" rel="noopener noreferrer">Планетарная туманность</a>,
-    <a href="https://en.wikipedia.org/wiki/List_of_planetary_nebulae" target="_blank" rel="noopener noreferrer">Список планетарных туманностей</a></li>
-  <li><a href="https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D1%80%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B7%D0%B2%D1%91%D0%B7%D0%B4%D0%BD%D0%BE%D0%B5_%D1%81%D0%BA%D0%BE%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener noreferrer">Шаровое звёздное скопление</a>,
-    <a href="https://en.wikipedia.org/wiki/List_of_globular_clusters" target="_blank" rel="noopener noreferrer">Список шаровых звёздных скоплений</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Open_cluster" target="_blank" rel="noopener noreferrer">Рассеянное звёздное скопление</a>,
-    <a href="https://en.wikipedia.org/wiki/List_of_open_clusters" target="_blank" rel="noopener noreferrer">Список рассеянных звёздных скоплений</a></li>
+<li><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3_%D0%9C%D0%B5%D1%81%D1%81%D1%8C%D0%B5" target="_blank" rel="noopener noreferrer">Каталог Мессье</a></li>
+<li><a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D0%BD%D0%B5%D1%82%D0%B0%D1%80%D0%BD%D0%B0%D1%8F_%D1%82%D1%83%D0%BC%D0%B0%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C" target="_blank" rel="noopener noreferrer">Планетарная туманность</a>,
+  <a href="https://en.wikipedia.org/wiki/List_of_planetary_nebulae" target="_blank" rel="noopener noreferrer">Список планетарных туманностей</a></li>
+<li><a href="https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D1%80%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B7%D0%B2%D1%91%D0%B7%D0%B4%D0%BD%D0%BE%D0%B5_%D1%81%D0%BA%D0%BE%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener noreferrer">Шаровое звёздное скопление</a>,
+  <a href="https://en.wikipedia.org/wiki/List_of_globular_clusters" target="_blank" rel="noopener noreferrer">Список шаровых звёздных скоплений</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Open_cluster" target="_blank" rel="noopener noreferrer">Рассеянное звёздное скопление</a>,
+  <a href="https://en.wikipedia.org/wiki/List_of_open_clusters" target="_blank" rel="noopener noreferrer">Список рассеянных звёздных скоплений</a></li>
 </ul>
 <h2>Каталоги и списки</h2>
 <ul>
-  <li>Каталоги шаровых звёздных скоплений: <a href="http://gclusters.altervista.org/" target="_blank" rel="noopener noreferrer">GGCs database</a>,
-    <a href="http://cdsarc.u-strasbg.fr/viz-bin/cat/VII/202" target="_blank" rel="noopener noreferrer">Globular Clusters in the Milky Way</a>: VII/202</li>
-  <li><a href="https://heasarc.gsfc.nasa.gov/W3Browse/all/mwsc.html" target="_blank" rel="noopener noreferrer">MWSC - Milky Way Star Clusters Catalog</a>,
-    <a href="https://cdsarc.unistra.fr/viz-bin/cat/J/A+A/558/A53" target="_blank" rel="noopener noreferrer">Milky Way global survey of star clusters. II. : J/A+A/558/A53</a>. We present a list of 3006 Milky Way Stellar Clusters (MWSC), found in the 2MAst (2MASS with Astrometry) catalogue.</li>
-  <li><a href="https://ui.adsabs.harvard.edu/abs/2019AJ....157...12B/abstract" target="_blank" rel="noopener noreferrer">A Multi-band Catalog of 10978 Star Clusters, Associations, and Candidates in the Milky Way</a>. About 3200 objects have measured parameters in the literature. A fundamental contribution of the present study is to present an additional ≈7700 objects for the first analyses of nature, photometry, spectroscopy and structure.</li>
-  <li><a href="https://ui.adsabs.harvard.edu/abs/2023A%26A...673A.114H/abstract" target="_blank" rel="noopener noreferrer">Improving the open cluster census. II. An all-sky cluster catalogue with Gaia DR3</a></li>
-  <li><a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.526.4107P/abstract" target="_blank" rel="noopener noreferrer">The Unified Cluster Catalogue: towards a comprehensive and homogeneous data base of stellar clusters</a></li>
-  <li><a href="https://gclusters.altervista.org/" target="_blank" rel="noopener noreferrer" title="1996AJ....112.1487H">A Galactic globular clusters database</a> (157 objects?)</li>
-  <li><a href="https://physics.mcmaster.ca/~harris/Databases.html" target="_blank" rel="noopener noreferrer">Catalog of Globular Cluster Systems in Galaxies</a>,
-    <a href="https://ui.adsabs.harvard.edu/abs/2013ApJ...772...82H/abstract" target="_blank" rel="noopener noreferrer">A Catalog of Globular Cluster Systems: What Determines the Size of a Galaxy's Globular Cluster Population?</a></li>
+<li>Каталоги шаровых звёздных скоплений: <a href="http://gclusters.altervista.org/" target="_blank" rel="noopener noreferrer">GGCs database</a>,
+  <a href="http://cdsarc.u-strasbg.fr/viz-bin/cat/VII/202" target="_blank" rel="noopener noreferrer">Globular Clusters in the Milky Way</a>: VII/202</li>
+<li><a href="https://heasarc.gsfc.nasa.gov/W3Browse/all/mwsc.html" target="_blank" rel="noopener noreferrer">MWSC - Milky Way Star Clusters Catalog</a>,
+  <a href="https://cdsarc.unistra.fr/viz-bin/cat/J/A+A/558/A53" target="_blank" rel="noopener noreferrer">Milky Way global survey of star clusters. II. : J/A+A/558/A53</a>. We present a list of 3006 Milky Way Stellar Clusters (MWSC), found in the 2MAst (2MASS with Astrometry) catalogue.</li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2019AJ....157...12B/abstract" target="_blank" rel="noopener noreferrer">A Multi-band Catalog of 10978 Star Clusters, Associations, and Candidates in the Milky Way</a>. About 3200 objects have measured parameters in the literature. A fundamental contribution of the present study is to present an additional ≈7700 objects for the first analyses of nature, photometry, spectroscopy and structure.</li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2023A%26A...673A.114H/abstract" target="_blank" rel="noopener noreferrer">Improving the open cluster census. II. An all-sky cluster catalogue with Gaia DR3</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.526.4107P/abstract" target="_blank" rel="noopener noreferrer">The Unified Cluster Catalogue: towards a comprehensive and homogeneous data base of stellar clusters</a></li>
+<li><a href="https://gclusters.altervista.org/" target="_blank" rel="noopener noreferrer" title="1996AJ....112.1487H">A Galactic globular clusters database</a> (157 objects?)</li>
+<li><a href="https://physics.mcmaster.ca/~harris/Databases.html" target="_blank" rel="noopener noreferrer">Catalog of Globular Cluster Systems in Galaxies</a>,
+  <a href="https://ui.adsabs.harvard.edu/abs/2013ApJ...772...82H/abstract" target="_blank" rel="noopener noreferrer">A Catalog of Globular Cluster Systems: What Determines the Size of a Galaxy's Globular Cluster Population?</a></li>
 </ul>
 </div>
 <footer>2026 Автор фото: Андрей Боровский</footer>
