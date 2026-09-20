@@ -14,3 +14,8 @@
 *.webp -text
 *.avif -text
 *.ico -text
+
+*.css linguist-language=CSS
+*.js linguist-language=JavaScript
+*.ts linguist-language=TypeScript
+*.php linguist-language=PHP
