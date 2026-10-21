@@ -76,6 +76,10 @@ function toSort(classNam) {
 function show(evnt, divImg, imgPth) {
   const obj = divImg.parentElement;
   let name = divImg.getElementsByTagName('img')[0].alt;
+  let number = obj.dataset.n;
+  if (number) {
+    name = `${number} ${name}`;
+  }
   let des = obj.getElementsByClassName("des");
   if (des.length) {
     des = mkPar('<b>Обозначение</b>: ', des[0].innerText, '');
@@ -86,15 +90,10 @@ function show(evnt, divImg, imgPth) {
   size = mkPar('<b>Радиус</b>: ', size, '&nbsp;км');
   let imdis = obj.dataset.id;
   imdis = mkPar('<b>Изображение получено с расстояния</b> ', imdis, '&nbsp;км');
-  try {
-    var mass = obj.getElementsByClassName("mass")[0].innerText.trim();
-  } catch (error) {
-    if (error instanceof TypeError) {
-      var mass = "";
-    }
-  }
-  if (mass)
-    mass = mkPar('<b>Масса</b>: ', mass, '&nbsp;кг');
+
+  const massElem = obj.getElementsByClassName("mass")[0];
+  let mass = massElem ? mkPar('<b>Масса</b>: ', massElem.innerText.trim(), '&nbsp;кг') : "";
+
   let dens = obj.getElementsByClassName("dens");
   if (dens.length) {
     dens = mkPar('<b>Плотность</b>: ', dens[0].innerText, '&nbsp;г/см<sup>3</sup>');
@@ -108,8 +107,9 @@ function show(evnt, divImg, imgPth) {
       var date = "";
     }
   }
-  if (date)
+  if (date) {
     date = mkPar('<b>Дата открытия</b>: ', date, '');
+  }
   let imda = obj.getElementsByClassName("imgdat");
   if (imda.length) {
     imda = mkPar('<b>Первые подробные изображения</b>: ', imda[0].innerText, '');
@@ -133,10 +133,11 @@ function show(evnt, divImg, imgPth) {
   let type = mkType(obj.className, OBJTYPES);
   type = mkPar('<b>Типы</b>: ', type, '');
   let desc = obj.getElementsByClassName("desc");
-  if (desc.length)
+  if (desc.length) {
     desc = mkPar('', desc[0].innerText, '');
-  else
+  } else {
     desc = "";
+  }
   const contentToShow = `<img src="${imgPth}"><h2>${name}</h2>` + des + type + size + mass + dens + rot + deltaV + date + imda + pre + imdis + desc;
   toShow(evnt, contentToShow);
 }
@@ -157,13 +158,15 @@ function findDate() {
     const mon = elems[i].innerText.slice(3, 5);
     const divName = elems[i].parentElement.getElementsByClassName('name')[0];
     const objHtml = `${divName.innerHTML}. Дата открытия: ${elems[i].innerHTML}<br>`;
-    if (mon == today.month)
+    if (mon == today.month) {
       objOfMonthDiv.innerHTML += objHtml;
+    }
     if (today.daymon == daymon) {
       objOfDayDiv.innerHTML += objHtml;
       objOfDay.push(objHtml);
     }
   }
-  if (!objOfDay.length)
+  if (!objOfDay.length) {
     objOfDayDiv.style.display = 'none';
+  }
 }
