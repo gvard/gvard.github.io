@@ -42,17 +42,17 @@
 <label class="nowrap"><input type="checkbox" name=".dens" onclick="showHideThis(this)">Плотность</label>
 <label class="nowrap" title="Характеристическая скорость орбитального маневра"><input type="checkbox" name=".dv" onchange="showHideThis(this)">Δv</label>
 <label class="nowrap" title="Дата первого наблюдения до открытия (precovery date)"><input type="checkbox" name=".pre" onchange="showHideThis(this)">Первые наблюдения</label>
-<label class="nowrap" title="Дата первых наблюдений формы, поверхности или дата подробных изображений"><input type="checkbox" name=".imdat" onchange="showHideThis(this)">Первые подробные изображения</label>
+<label class="nowrap" title="Дата первых наблюдений формы, поверхности или дата подробных изображений"><input type="checkbox" name=".idat" onchange="showHideThis(this)">Первые подробные изображения</label>
 <div id="props">
 <button onclick="uncheckAll(true)">Вкл</button><button onclick="uncheckAll(false)">Выкл</button><br>
 <b>Изображение и поверхность:</b><br>
 <label class="nowrap"><input type="checkbox" name=".dot,.lowcontrast" checked onchange="showHideThis(this)">Низкое разрешение/точечное</label>
 <label class="nowrap"><input type="checkbox" name=".highcontrast,.lightcurve,.model" checked onchange="showHideThis(this)">Восстановленное изображение/модель</label>
-<label class="nowrap"><input type="checkbox" name=".occultation" checked onchange="showHideThis(this)">Наблюдались
+<label class="nowrap"><input type="checkbox" name=".occlt" checked onchange="showHideThis(this)">Наблюдались
 <a href="https://en.wikipedia.org/wiki/Occultation#Occultations_by_smaller_bodies" target="_blank" rel="noopener noreferrer">покрытия звезд</a></label>
 <label class="nowrap"><input type="checkbox" name=".lightcurve" checked onchange="showHideThis(this)">Модель по кривой блеска</label>
-<label class="nowrap"><input type="checkbox" name=".radarimage" checked onchange="showHideThis(this)">Радарное изображение</label>
-<label class="nowrap"><input type="checkbox" name=".animation" checked onclick="showHideThis(this)">Анимация</label>
+<label class="nowrap"><input type="checkbox" name=".rdrimg" checked onchange="showHideThis(this)">Радарное изображение</label>
+<label class="nowrap"><input type="checkbox" name=".ani" checked onclick="showHideThis(this)">Анимация</label>
 <label class="nowrap"><input type="checkbox" name=".map" checked onclick="showHideThis(this)">Карта поверхности</label>
 <br>
 <b>Классы тел:</b><br>
@@ -83,9 +83,9 @@
 <label class="nowrap"><input type="checkbox" name=".he" checked onchange="showHideThis(this)">«Круглые» тела</label> (в гидростатическом равновесии)
 <label class="nowrap"><input type="checkbox" name=".rings" checked onchange="showHideThis(this)">Имеют кольца</label>
 <label class="nowrap"><input type="checkbox" name=".havesats" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Minor-planet_moon" target="_blank" rel="noopener noreferrer">Имеют спутники/луны</a></label>
-<label class="nowrap"><input type="checkbox" name=".binary" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Binary_asteroid" target="_blank" rel="noopener noreferrer">Двойные</a></label>,
+<label class="nowrap"><input type="checkbox" name=".bin" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Binary_asteroid" target="_blank" rel="noopener noreferrer">Двойные</a></label>,
 <label class="nowrap"><input type="checkbox" name=".triple" checked onchange="showHideThis(this)">тройные системы</label>
-<label class="nowrap"><input type="checkbox" name=".contactbinary" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Contact_binary_(small_Solar_System_body)" target="_blank" rel="noopener noreferrer">Контактные двойные</a></label>
+<label class="nowrap"><input type="checkbox" name=".cbin" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Contact_binary_(small_Solar_System_body)" target="_blank" rel="noopener noreferrer">Контактные двойные</a></label>
 <br>
 <b>Космонавтика:</b><br>
 <label class="nowrap"><input type="checkbox" name=".visited" checked onclick="showHideThis(this)">Посещенные АМС</label>
@@ -120,24 +120,24 @@
 <div class="name"><a href="https://en.wikipedia.org/wiki/Sun">Солнце</a></div>
 <div class="size">696342±65</div>
 <div class="mass">1.9885E30</div>
-<div class="imdat">18.12.1610</div>
+<div class="idat">18.12.1610</div>
 <div class="dv">&gt;21</div>
 <div class="dens">1.408</div>
 <div class="desc">В составе Солнца всего 1.48% элементов тяжелее Водорода и Гелия</div>
-</div><div class="obj pla he gp visited orbited rings animation" data-r="0.41354">
+</div><div class="obj pla he gp visited orbited rings ani" data-r="0.41354">
 <div class="img" data-b="Jupiter-Voyager1.gif"><img alt="Jupiter" src="images/Jupiter.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Jupiter">Юпитер</a></div>
 <div class="size">69911±6</div>
 <div class="mass">1.898E27</div>
-<div class="imdat">1665-1711</div>
+<div class="idat">1665-1711</div>
 <div class="dv">6.6-23.78</div>
 <div class="dens">1.326</div>
-</div><div class="obj pla he gp visited orbited animation rings" data-r="0.440">
+</div><div class="obj pla he gp visited orbited ani rings" data-r="0.440">
 <div class="img" data-b="https://upload.wikimedia.org/wikipedia/commons/f/fe/Saturnoppositions-animated.gif"><img alt="Saturn" src="images/Saturn.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Saturn">Сатурн</a></div>
 <div class="size">58232±6</div>
 <div class="mass">5.6834E26</div>
-<div class="imdat">1655-1676</div>
+<div class="idat">1655-1676</div>
 <div class="dv">&gt;7.71</div>
 <div class="dens">0.687</div>
 </div><div class="obj pla he gp visited flyby rings" data-r="-0.71866">
@@ -146,7 +146,7 @@
 <div class="size">25362±7</div>
 <div class="mass">8.681E25</div>
 <div class="date">13.03.1781</div>
-<div class="imdat">25.01.1986</div>
+<div class="idat">25.01.1986</div>
 <div class="dv">&gt;8.49</div>
 <div class="dens">1.27</div>
 <div class="desc">Название планеты устоялось лишь спустя 70 лет после открытия. Среди предложений было имя Нептун.</div>
@@ -156,7 +156,7 @@
 <div class="size">24622±19</div>
 <div class="mass">1.024E26</div>
 <div class="date">23.09.1846</div>
-<div class="imdat">20.08.1989</div>
+<div class="idat">20.08.1989</div>
 <div class="dv">8.6</div>
 <div class="dens">1.638</div>
 </div><div class="obj pla he gp radar map surf impact sample" data-r="0.99727">
@@ -164,7 +164,7 @@
 <div class="name"><a href="https://en.wikipedia.org/wiki/Earth">Земля</a></div>
 <div class="size">6371.0</div>
 <div class="mass">5.972E24</div>
-<div class="imdat">26.07.1948</div>
+<div class="idat">26.07.1948</div>
 <div class="dv">7.91</div>
 <div class="dens">5.5134</div>
 <div class="desc">Планета с самой большой плотностью в Солнечной системе. Здесь живет более 8 миллиардов человек.</div>
@@ -173,7 +173,7 @@
 <div class="name"><a href="https://en.wikipedia.org/wiki/Venus">Венера</a></div>
 <div class="size">6051.8±1.0</div>
 <div class="mass">4.8675E24</div>
-<div class="imdat">05.02.1974</div>
+<div class="idat">05.02.1974</div>
 <div class="dv">6.79</div>
 <div class="dens">5.243</div>
 </div><div class="obj pla he gp radar visited orbited map surf impact" data-r="1.025957">
@@ -181,7 +181,7 @@
 <div class="name"><a href="https://en.wikipedia.org/wiki/Mars">Марс</a></div>
 <div class="size">3389.5±0.2</div>
 <div class="mass">6.4171E23</div>
-<div class="imdat">15.07.1965</div>
+<div class="idat">15.07.1965</div>
 <div class="dv">&gt;5.7</div>
 <div class="dens">3.9335</div>
 <div class="desc">Известно не менее 240 метеоритов марсианского происхождения</div>
@@ -191,7 +191,7 @@
 <div class="size">2634.1±0.3</div>
 <div class="mass">1.4819E23</div>
 <div class="date">13.03.1610</div>
-<div class="imdat">01.07.1973</div>
+<div class="idat">01.07.1973</div>
 <div class="dv">14.07</div>
 <div class="dens">1.936</div>
 </div><div class="obj sat he gp moon radar visited map surf">
@@ -200,7 +200,7 @@
 <div class="size">2574.7</div>
 <div class="mass">1.3452E23</div>
 <div class="date">25.03.1655</div>
-<div class="imdat">02.09.1979</div>
+<div class="idat">02.09.1979</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.8798±0.0044</div>
 </div><div class="obj pla he gp radar visited orbited map impact" data-r="58.6462">
@@ -208,7 +208,7 @@
 <div class="name"><a href="https://en.wikipedia.org/wiki/Mercury_(planet)">Меркурий</a></div>
 <div class="size">2439.7±1.0</div>
 <div class="mass">3.3011E23</div>
-<div class="imdat">29.03.1974</div>
+<div class="idat">29.03.1974</div>
 <div class="dv">13.2</div>
 <div class="dens">5.427</div>
 </div><div class="obj ju he gp moon map visited">
@@ -217,7 +217,7 @@
 <div class="size">2410.3±1.5</div>
 <div class="mass">1.0759E23</div>
 <div class="date">13.03.1610</div>
-<div class="imdat">05.03.1979</div>
+<div class="idat">05.03.1979</div>
 <div class="dv">12.42</div>
 <div class="dens">1.8344±0.0034</div>
 </div><div class="obj ju he gp moon map visited">
@@ -226,15 +226,15 @@
 <div class="size">1821.6±0.5</div>
 <div class="mass">8.932E22</div>
 <div class="date">13.03.1610</div>
-<div class="imdat">05.03.1979</div>
+<div class="idat">05.03.1979</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">3.528±0.006</div>
-</div><div class="obj ea he gp moon radar radarimage visited orbited map surf impact sample">
+</div><div class="obj ea he gp moon radar rdrimg visited orbited map surf impact sample">
 <div class="img" data-b="Moon-Tycho-crater.jpg"><img alt="Moon" src="images/Moon.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Moon">Луна</a></div>
 <div class="size">1737.1</div>
 <div class="mass">7.342E22</div>
-<div class="imdat">07.10.1959</div>
+<div class="idat">07.10.1959</div>
 <div class="dv">6.3</div>
 <div class="dens">3.344</div>
 <div class="desc">Известно не менее 390 метеоритов с Луны и не менее 35 событий их падения (одно событие – много фрагментов).</div>
@@ -244,7 +244,7 @@
 <div class="size">1560.8±0.5</div>
 <div class="mass">4.7998E22</div>
 <div class="date">13.03.1610</div>
-<div class="imdat">02.03.1979</div>
+<div class="idat">02.03.1979</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">3.013±0.005</div>
 </div><div class="obj ne he gp moon visited flyby map">
@@ -253,21 +253,21 @@
 <div class="size">1353.4±0.9</div>
 <div class="mass">2.14E22</div>
 <div class="date">10.10.1846</div>
-<div class="imdat">25.08.1989</div>
+<div class="idat">25.08.1989</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">2.061</div>
-</div><div class="obj dw tno he gp havesats visited flyby numbered named map animation" data-n="134340" data-r="6.3872">
+</div><div class="obj dw tno he gp havesats visited flyby numbered named map ani" data-n="134340" data-r="6.3872">
 <div class="img" data-b="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Pluto_in_True_Color_-_High-Res.jpg/250px-Pluto_in_True_Color_-_High-Res.jpg"><img alt="Pluto" src="images/Pluto.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Pluto">Плутон</a></div>
 <div class="size">1188.3±0.8</div>
 <div class="mass">1.3E22</div>
 <div class="date">18.02.1930</div>
 <div class="pre">20.08.1909</div>
-<div class="imdat">14.07.2015</div>
+<div class="idat">14.07.2015</div>
 <div class="dv">12.7</div>
 <div class="dens">1.854±0.006</div>
 <div class="desc">Клайд Томбо открыл Плутон на снимках от 23 и 29 января 1930 г.</div>
-</div><div class="obj tno sca dw he gp havesats binary occultation dot numbered named" data-n="136199" data-r="15.786">
+</div><div class="obj tno sca dw he gp havesats bin occlt dot numbered named" data-n="136199" data-r="15.786">
 <div class="img"><img alt="Eris" src="images/Eris.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Eris_(dwarf_planet)">Эрида</a></div>
 <div class="des">2003 UB313</div>
@@ -277,7 +277,7 @@
 <div class="pre">03.09.1954</div>
 <div class="dv">16.0</div>
 <div class="dens">2.43±0.05</div>
-</div><div class="obj dw tno he gp havesats triple occultation dot numbered named rings" data-n="136108" data-r="0.16314">
+</div><div class="obj dw tno he gp havesats triple occlt dot numbered named rings" data-n="136108" data-r="0.16314">
 <div class="img"><img alt="Haumea" src="images/Haumea.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Haumea">Хаумеа</a></div>
 <div class="des">2003 EL61</div>
@@ -293,7 +293,7 @@
 <div class="size">788.4±0.6</div>
 <div class="mass">3.4E21</div>
 <div class="date">11.01.1787</div>
-<div class="imdat">24.01.1986</div>
+<div class="idat">24.01.1986</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.711±0.005</div>
 </div><div class="obj sat he gp moon map visited">
@@ -302,7 +302,7 @@
 <div class="size">763.8±1</div>
 <div class="mass">2.307E21</div>
 <div class="date">23.12.1672</div>
-<div class="imdat">25.08.1981</div>
+<div class="idat">25.08.1981</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.236±0.005</div>
 </div><div class="obj ur he gp moon map visited flyby">
@@ -311,7 +311,7 @@
 <div class="size">761.4±2.6</div>
 <div class="mass">3.08±0.09E21</div>
 <div class="date">11.01.1787</div>
-<div class="imdat">24.01.1986</div>
+<div class="idat">24.01.1986</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.63±0.05</div>
 </div><div class="obj sat he gp moon map visited">
@@ -320,7 +320,7 @@
 <div class="size">734.5±2.8</div>
 <div class="mass">1.81E21</div>
 <div class="date">25.10.1671</div>
-<div class="imdat">22.08.1981</div>
+<div class="idat">22.08.1981</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.088±0.013</div>
 </div><div class="obj dw tno he gp havesats dot numbered named" data-n="136472" data-r="0.95111">
@@ -350,7 +350,7 @@
 <div class="size">606.0±0.5</div>
 <div class="mass">1.59±0.015E21</div>
 <div class="date">13.04.1978</div>
-<div class="imdat">14.07.2015</div>
+<div class="idat">14.07.2015</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.702±0.017</div>
 </div><div class="obj ur he gp moon map visited flyby">
@@ -359,7 +359,7 @@
 <div class="size">584.7±2.8</div>
 <div class="mass">1.28±0.03E21</div>
 <div class="date">24.10.1851</div>
-<div class="imdat">24.01.1986</div>
+<div class="idat">24.01.1986</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.39±0.16</div>
 </div><div class="obj ur he gp moon map visited flyby">
@@ -368,7 +368,7 @@
 <div class="size">578.9±0.6</div>
 <div class="mass">1.25±0.02E21</div>
 <div class="date">24.10.1851</div>
-<div class="imdat">24.01.1986</div>
+<div class="idat">24.01.1986</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.592±0.15</div>
 </div><div class="obj sat he gp moon map visited">
@@ -377,10 +377,10 @@
 <div class="size">561.4±0.4</div>
 <div class="mass">1.095E21</div>
 <div class="date">21.03.1684</div>
-<div class="imdat">13.11.1980</div>
+<div class="idat">13.11.1980</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.478±0.003</div>
-</div><div class="obj tno havesats occultation dot he gp numbered named rings" data-n="50000">
+</div><div class="obj tno havesats occlt dot he gp numbered named rings" data-n="50000">
 <div class="img"><img alt="Quaoar" src="images/Quaoar.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/50000_Quaoar">Квавар</a></div>
 <div class="des">2002 LM60</div>
@@ -397,7 +397,7 @@
 <div class="size">531.1±0.6</div>
 <div class="mass">6.175E20</div>
 <div class="date">21.03.1684</div>
-<div class="imdat">25.08.1981</div>
+<div class="idat">25.08.1981</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">0.984±0.003</div>
 </div><div class="obj tno dot he gp numbered named" data-n="90377">
@@ -408,16 +408,16 @@
 <div class="date">14.11.2003</div>
 <div class="pre">25.09.1990</div>
 <div class="dv">10.1</div>
-</div><div class="obj mab dw he gp visited orbited animation occultation map numbered named" data-n="1">
+</div><div class="obj mab dw he gp visited orbited ani occlt map numbered named" data-n="1">
 <div class="img" data-b="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ceres_-_RC3_-_Haulani_Crater_%2822381131691%29_%28cropped%29.jpg/250px-Ceres_-_RC3_-_Haulani_Crater_%2822381131691%29_%28cropped%29.jpg"><img alt="Ceres" src="images/Ceres.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)">Церера</a></div>
 <div class="size">470</div>
 <div class="mass">9.3835E20</div>
 <div class="date">01.01.1801</div>
-<div class="imdat">04.05.2015</div>
+<div class="idat">04.05.2015</div>
 <div class="dv">10.5</div>
 <div class="dens">2.162±0.008</div>
-</div><div class="obj tno dot he occultation numbered named" data-n="307261">
+</div><div class="obj tno dot he occlt numbered named" data-n="307261">
 <div class="img" data-b="2002MS4-occultation-20200808-EPSC2021.png"><img alt="Máni" src="images/2002MS4.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/307261_M%C3%A1ni">Мани</a></div>
 <div class="des">2002 MS4</div>
@@ -426,7 +426,7 @@
 <div class="pre">08.04.1954</div>
 <div class="dv">13.0</div>
 <div class="desc">Из наблюдений покрытия звезд в 2019–2020 годах получены оценки размера 808 на 748 км</div>
-</div><div class="obj tno havesats dot he gp numbered named animation" data-n="90482">
+</div><div class="obj tno havesats dot he gp numbered named ani" data-n="90482">
 <div class="img" data-b="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Orcus-Vanth.gif/330px-Orcus-Vanth.gif"><img alt="Orcus" src="images/Orcus.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/90482_Orcus">Орк</a></div>
 <div class="des">2004 DW</div>
@@ -454,7 +454,7 @@
 <div class="date">10.01.2002</div>
 <div class="pre">29.12.1997</div>
 <div class="dv">13.8</div>
-</div><div class="obj tno havesats dot he animation occultation numbered named" data-n="174567">
+</div><div class="obj tno havesats dot he ani occlt numbered named" data-n="174567">
 <div class="img" data-b="Varda-occultation-model.png"><img alt="Varda" src="images/Varda.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/174567_Varda">Варда</a></div>
 <div class="des">2003 MW12</div>
@@ -472,7 +472,7 @@
 <div class="date">17.03.2013</div>
 <div class="pre">15.03.2011</div>
 <div class="dv">14.2</div>
-</div><div class="obj tno sca dwmoon binary he dot named">
+</div><div class="obj tno sca dwmoon bin he dot named">
 <div class="img"><img alt="Dysnomia" src="images/Eris.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Dysnomia_(moon)">Дисномия</a></div>
 <div class="size">300</div>
@@ -480,16 +480,16 @@
 <div class="date">10.09.2005</div>
 <div class="dv">16.0</div>
 <div class="dens">1.8−2.4</div>
-</div><div class="obj mab innermb animation visited orbited map occultation numbered named" data-n="4">
+</div><div class="obj mab innermb ani visited orbited map occlt numbered named" data-n="4">
 <div class="img" data-b="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Vesta_in_natural_color.jpg/500px-Vesta_in_natural_color.jpg"><img alt="Vesta" src="images/Vesta.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/4_Vesta">Веста</a></div>
 <div class="size">262.7±0.1</div>
 <div class="mass">2.59E20</div>
 <div class="date">29.03.1807</div>
-<div class="imdat">23.07.2011</div>
+<div class="idat">23.07.2011</div>
 <div class="dv">9.4</div>
 <div class="dens">3.456±0.035</div>
-</div><div class="obj mab highcontrast occultation numbered named" data-n="2">
+</div><div class="obj mab highcontrast occlt numbered named" data-n="2">
 <div class="img"><img alt="Pallas" src="images/Pallas.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2_Pallas">Паллада</a></div>
 <div class="size">256±3</div>
@@ -505,7 +505,7 @@
 <div class="size">252.1±0.2</div>
 <div class="mass">1.08E20</div>
 <div class="date">28.08.1789</div>
-<div class="imdat">26.08.1981</div>
+<div class="idat">26.08.1981</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.609±0.005</div>
 </div><div class="obj ur he gp moon map visited flyby">
@@ -514,10 +514,10 @@
 <div class="size">235.8±0.7</div>
 <div class="mass">0.66±0.08E20</div>
 <div class="date">16.02.1948</div>
-<div class="imdat">24.01.1986</div>
+<div class="idat">24.01.1986</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.20±0.15</div>
-</div><div class="obj mab highcontrast numbered named occultation" data-n="10">
+</div><div class="obj mab highcontrast numbered named occlt" data-n="10">
 <div class="img"><img alt="Hygiea" src="images/Hygiea.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/10_Hygiea">Гигея</a></div>
 <div class="size">217±7</div>
@@ -532,7 +532,7 @@
 <div class="size">210±7</div>
 <div class="mass">4.4E19</div>
 <div class="date">16.06.1989</div>
-<div class="imdat">25.08.1989</div>
+<div class="idat">25.08.1989</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.3</div>
 </div><div class="obj sat he gp moon map visited">
@@ -541,7 +541,7 @@
 <div class="size">198.2±0.4</div>
 <div class="mass">3.749E19</div>
 <div class="date">17.09.1789</div>
-<div class="imdat">12.11.1980</div>
+<div class="idat">12.11.1980</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.1479±0.007</div>
 </div><div class="obj ne lowcontrast moon visited flyby">
@@ -550,10 +550,10 @@
 <div class="size">170±25</div>
 <div class="mass"><a href="https://solarsystem.nasa.gov/moons/neptune-moons/nereid/by-the-numbers/">3.09E19</a></div>
 <div class="date">01.05.1949</div>
-<div class="imdat">24.08.1989</div>
+<div class="idat">24.08.1989</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.5</div>
-</div><div class="obj mab highcontrast occultation numbered named" data-n="704">
+</div><div class="obj mab highcontrast occlt numbered named" data-n="704">
 <div class="img"><img alt="Interamnia" src="images/Interamnia.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/704_Interamnia">Интерамния</a></div>
 <div class="size">166±3</div>
@@ -561,7 +561,7 @@
 <div class="date">02.10.1910</div>
 <div class="dv">11.4</div>
 <div class="dens">1.84±0.28</div>
-</div><div class="obj mab highcontrast occultation numbered named" data-n="52">
+</div><div class="obj mab highcontrast occlt numbered named" data-n="52">
 <div class="img"><img alt="Europa" src="images/Europa.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/52_Europa">Европа</a></div>
 <div class="size">159.5±2</div>
@@ -569,7 +569,7 @@
 <div class="date">04.02.1858</div>
 <div class="dv">10.6</div>
 <div class="dens">1.41±0.23</div>
-</div><div class="obj mab highcontrast occultation numbered named" data-n="511" data-r="0.2137">
+</div><div class="obj mab highcontrast occlt numbered named" data-n="511" data-r="0.2137">
 <div class="img"><img alt="Davida" src="images/Davida.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/511_Davida">Давида</a></div>
 <div class="size">145±10</div>
@@ -583,7 +583,7 @@
 <div class="size">138.6±4</div>
 <div class="mass">5.62±0.05E18</div>
 <div class="date">16.09.1848</div>
-<div class="imdat">25.09.2005</div>
+<div class="idat">25.09.2005</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">0.544±0.05</div>
 </div><div class="obj tno dot triple numbered named" data-n="47171">
@@ -596,7 +596,7 @@
 <div class="pre">18.06.1974</div>
 <div class="dv">12.1</div>
 <div class="dens">0.64±0.15</div>
-</div><div class="obj mab highcontrast occultation numbered named" data-n="15">
+</div><div class="obj mab highcontrast occlt numbered named" data-n="15">
 <div class="img"><img alt="Eunomia" src="images/Eunomia.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/15_Eunomia">Эвномия</a></div>
 <div class="size">135±1.5</div>
@@ -604,13 +604,13 @@
 <div class="date">29.07.1851</div>
 <div class="dv">9.9</div>
 <div class="dens">2.96±0.21</div>
-</div><div class="obj mab highcontrast occultation numbered named" data-n="3" data-b="2003Icar..163..135B">
+</div><div class="obj mab highcontrast occlt numbered named" data-n="3" data-b="2003Icar..163..135B">
 <div class="img"><img alt="Juno" src="images/Juno.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/3_Juno">Юнона</a></div>
 <div class="size">127±1</div>
 <div class="mass">2.7±0.2E19</div>
 <div class="date">01.09.1804</div>
-<div class="imdat">06.08.2003</div>
+<div class="idat">06.08.2003</div>
 <div class="dv">9.7</div>
 <div class="dens">3.15±0.28</div>
 </div><div class="obj centaur dot numbered named rings" data-n="10199">
@@ -623,7 +623,7 @@
 <div class="pre">05.11.1988</div>
 <div class="dv">14.26</div>
 <div class="dens">0.73–0.85</div>
-</div><div class="obj mab radar highcontrast occultation numbered named" data-n="16">
+</div><div class="obj mab radar highcontrast occlt numbered named" data-n="16">
 <div class="img"><img alt="Psyche" src="images/Psyche.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/16_Psyche">Психея</a></div>
 <div class="size">111.5±1.5</div>
@@ -639,7 +639,7 @@
 <div class="date">25.02.1892</div>
 <div class="dv">9.0</div>
 <div class="dens">1.67±0.16</div>
-</div><div class="obj mab highcontrast occultation numbered named" data-n="7">
+</div><div class="obj mab highcontrast occlt numbered named" data-n="7">
 <div class="img"><img alt="Iris" src="images/Iris.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/7_Iris">Ирида</a></div>
 <div class="size">107±2.5</div>
@@ -653,7 +653,7 @@
 <div class="size">106.6±0.8</div>
 <div class="mass">8.29±0.01E18</div>
 <div class="date">16.08.1898</div>
-<div class="imdat">11.06.2004</div>
+<div class="idat">11.06.2004</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.638±0.033</div>
 </div><div class="obj ne moon visited flyby">
@@ -662,16 +662,16 @@
 <div class="size">97±5.4</div>
 <div class="mass">4.2E18</div>
 <div class="date">24.05.1981</div>
-<div class="imdat">24.08.1989</div>
+<div class="idat">24.08.1989</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.2</div>
-</div><div class="obj mab highcontrast occultation numbered named" data-n="6" data-b="2017A&amp;A...604A..64M">
+</div><div class="obj mab highcontrast occlt numbered named" data-n="6" data-b="2017A&amp;A...604A..64M">
 <div class="img"><img alt="Hebe" src="images/Hebe.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/6_Hebe">Геба</a></div>
 <div class="size">93</div>
 <div class="mass">1.27±0.13E19</div>
 <div class="date">01.07.1847</div>
-<div class="imdat">8-12.12.2014</div>
+<div class="idat">8-12.12.2014</div>
 <div class="dv">9.7</div>
 <div class="dens">3.18±0.64</div>
 </div><div class="obj sat moon map visited">
@@ -680,10 +680,10 @@
 <div class="size">89.5±1.4</div>
 <div class="mass">1.898E18</div>
 <div class="date">15.12.1966</div>
-<div class="imdat">25.08.1981</div>
+<div class="idat">25.08.1981</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">0.63±0.03</div>
-</div><div class="obj mab binary highcontrast numbered named" data-n="90">
+</div><div class="obj mab bin highcontrast numbered named" data-n="90">
 <div class="img"><img alt="Antiope" src="images/Antiope.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/90_Antiope">Антиопа</a></div>
 <div class="size">84−88</div>
@@ -691,7 +691,7 @@
 <div class="date">01.10.1866</div>
 <div class="dv">10.2</div>
 <div class="dens">1.25±0.05</div>
-</div><div class="obj tno dot numbered named animation" data-n="15760">
+</div><div class="obj tno dot numbered named ani" data-n="15760">
 <div class="img"><img alt="Albion" src="images/Albion.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/15760_Albion">Альбион</a></div>
 <div class="des">1992 QB1</div>
@@ -705,7 +705,7 @@
 <div class="size">83.5±2</div>
 <div class="mass">2.08±0.15E18</div>
 <div class="date">09.09.1892</div>
-<div class="imdat">04.03.1979</div>
+<div class="idat">04.03.1979</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">0.857±0.099</div>
 </div><div class="obj ur moon map flyby">
@@ -714,7 +714,7 @@
 <div class="size">81±2</div>
 <div class="mass">2.9E18</div>
 <div class="date">30.12.1985</div>
-<div class="imdat">24.01.1986</div>
+<div class="idat">24.01.1986</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.3</div>
 </div><div class="obj ne moon lowcontrast flyby">
@@ -723,7 +723,7 @@
 <div class="size">78.0±4.7</div>
 <div class="mass">2.2E18</div>
 <div class="date">02.08.1989</div>
-<div class="imdat">24.08.1989</div>
+<div class="idat">24.08.1989</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.2</div>
 </div><div class="obj ju moon dot visited">
@@ -732,10 +732,10 @@
 <div class="size">69.8±0.9</div>
 <div class="mass">4.2±0.6E18</div>
 <div class="date">03.12.1904</div>
-<div class="imdat">19.12.2000</div>
+<div class="idat">19.12.2000</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.63</div>
-</div><div class="obj mab innermb lightcurve occultation numbered named" data-n="8">
+</div><div class="obj mab innermb lightcurve occlt numbered named" data-n="8">
 <div class="img"><img alt="Flora" src="images/Flora.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/8_Flora">Флора</a></div>
 <div class="size">64</div>
@@ -743,7 +743,7 @@
 <div class="date">18.10.1847</div>
 <div class="dv">8.6</div>
 <div class="dens">2.4±1</div>
-</div><div class="obj mab highcontrast occultation havesats contactbinary numbered named model animation" data-n="216">
+</div><div class="obj mab highcontrast occlt havesats cbin numbered named model ani" data-n="216">
 <div class="img"><img alt="Kleopatra" src="images/Kleopatra.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/216_Kleopatra">Клеопатра</a></div>
 <div class="size">59±1</div>
@@ -751,7 +751,7 @@
 <div class="date">10.04.1880</div>
 <div class="dv">9.9</div>
 <div class="dens">3.45±0.41</div>
-</div><div class="obj mab lightcurve numbered named occultation" data-n="5">
+</div><div class="obj mab lightcurve numbered named occlt" data-n="5">
 <div class="img"><img alt="Astraea" src="images/Astraea.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/5_Astraea">Астрея</a></div>
 <div class="size">59.5</div>
@@ -765,7 +765,7 @@
 <div class="size">58.1±1.8</div>
 <div class="mass">5.27±0.01E17</div>
 <div class="date">18.12.1966</div>
-<div class="imdat">12.11.1980</div>
+<div class="idat">12.11.1980</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">0.640±0.062</div>
 </div><div class="obj ju moon map visited">
@@ -774,15 +774,15 @@
 <div class="size">49.3±2</div>
 <div class="mass">4.3E17</div>
 <div class="date">05.03.1979</div>
-<div class="imdat">04.01.2000</div>
+<div class="idat">04.01.2000</div>
 <div class="dv">&gt;7.7</div>
-</div><div class="obj mab innermb visited flyby animation map numbered named occultation" data-n="21">
+</div><div class="obj mab innermb visited flyby ani map numbered named occlt" data-n="21">
 <div class="img" data-b="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Rosetta_triumphs_at_asteroid_Lutetia.jpg/250px-Rosetta_triumphs_at_asteroid_Lutetia.jpg"><img alt="Lutetia" src="images/Lutetia.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/21_Lutetia">Лютеция</a></div>
 <div class="size">49±1</div>
 <div class="mass">1.7±0.02E18</div>
 <div class="date">15.11.1852</div>
-<div class="imdat">10.07.2010</div>
+<div class="idat">10.07.2010</div>
 <div class="dv">9.0</div>
 <div class="dens">3.45±0.21</div>
 </div><div class="obj ur lowcontrast moon flyby">
@@ -791,7 +791,7 @@
 <div class="size">46.8±4</div>
 <div class="mass">5.6E17</div>
 <div class="date">03.01.1986</div>
-<div class="imdat">03.01.1986</div>
+<div class="idat">03.01.1986</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.3</div>
 </div><div class="obj sat moon visited">
@@ -800,7 +800,7 @@
 <div class="size">43.1±2.7</div>
 <div class="mass">1.59±0.02E17</div>
 <div class="date">01.10.1980</div>
-<div class="imdat">25.08.1981</div>
+<div class="idat">25.08.1981</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">0.48±0.09</div>
 </div><div class="obj sat moon visited">
@@ -809,7 +809,7 @@
 <div class="size">40.7±1.5</div>
 <div class="mass">1.37±0.02E17</div>
 <div class="date">01.10.1980</div>
-<div class="imdat">05.09.2005</div>
+<div class="idat">05.09.2005</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">0.49±0.06</div>
 </div><div class="obj ju moon lowcontrast visited">
@@ -818,15 +818,15 @@
 <div class="size">39.9±0.9</div>
 <div class="mass">8.66±0.6E17</div>
 <div class="date">02.01.1905</div>
-<div class="imdat">05.03.2007</div>
+<div class="idat">05.03.2007</div>
 <div class="dv">&gt;7.7</div>
-</div><div class="obj mab visited flyby animation map numbered named" data-n="253">
+</div><div class="obj mab visited flyby ani map numbered named" data-n="253">
 <div class="img" data-b="https://upload.wikimedia.org/wikipedia/commons/b/b9/253_Mathilde_Flyby.gif"><img alt="Mathilde" src="images/Mathilde.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/253_Mathilde">Матильда</a></div>
 <div class="size">26.4</div>
 <div class="mass">1.03±0.04E17</div>
 <div class="date">12.11.1885</div>
-<div class="imdat">27.06.1997</div>
+<div class="idat">27.06.1997</div>
 <div class="dv">9</div>
 <div class="dens">1.3</div>
 </div><div class="obj ju lowcontrast moon">
@@ -835,7 +835,7 @@
 <div class="size">21.5±2</div>
 <div class="mass"><a href="https://solarsystem.nasa.gov/moons/jupiter-moons/metis/by-the-numbers/">1.2E17</a></div>
 <div class="date">04.03.1979</div>
-<div class="imdat">06.11.1997</div>
+<div class="idat">06.11.1997</div>
 <div class="dv">&gt;7.7</div>
 </div><div class="obj pl dwmoon flyby named">
 <div class="img"><img alt="Hydra" src="images/Hydra.jpg"></div>
@@ -843,7 +843,7 @@
 <div class="size">19.65</div>
 <div class="mass">4.8±4.2E16</div>
 <div class="date">15.05.2005</div>
-<div class="imdat">14.07.2015</div>
+<div class="idat">14.07.2015</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">2.13</div>
 </div><div class="obj pl dwmoon flyby map named">
@@ -852,7 +852,7 @@
 <div class="size">19.017</div>
 <div class="mass">4.5±4E16</div>
 <div class="date">15.05.2005</div>
-<div class="imdat">14.07.2015</div>
+<div class="idat">14.07.2015</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.37</div>
 </div><div class="obj sat moon visited">
@@ -861,25 +861,25 @@
 <div class="size">17.6±0.4</div>
 <div class="mass"><a href="https://solarsystem.nasa.gov/moons/saturn-moons/helene/by-the-numbers/">1.139E16</a></div>
 <div class="date">01.03.1980</div>
-<div class="imdat">20.07.2007</div>
+<div class="idat">20.07.2007</div>
 <div class="dv">&gt;7.7</div>
-</div><div class="obj tno contactbinary occultation visited flyby animation map numbered named" data-n="486958">
+</div><div class="obj tno cbin occlt visited flyby ani map numbered named" data-n="486958">
 <div class="img"><img alt="Arrokoth" src="images/Arrokoth.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/486958_Arrokoth">Аррокот</a></div>
 <div class="des">2014 MU69</div>
 <div class="size">15.85±0.25</div>
 <div class="mass"><a href="https://jenab6.livejournal.com/85249.html">1.25E16</a></div>
 <div class="date">26.06.2014</div>
-<div class="imdat">01.01.2019</div>
+<div class="idat">01.01.2019</div>
 <div class="dv">12.378</div>
 <div class="dens">0.235</div>
-</div><div class="obj mab havesats binary visited animation flyby map numbered named" data-n="243">
+</div><div class="obj mab havesats bin visited ani flyby map numbered named" data-n="243">
 <div class="img" data-b="Ida-big.gif"><img alt="Ida" src="images/Ida.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/243_Ida">Ида</a></div>
 <div class="size">15.7</div>
 <div class="mass">4.2±6E16</div>
 <div class="date">29.09.1884</div>
-<div class="imdat">28.08.1993</div>
+<div class="idat">28.08.1993</div>
 <div class="dv">10.3</div>
 <div class="dens">2.6±0.5</div>
 </div><div class="obj sat moon visited" data-id="181000">
@@ -888,7 +888,7 @@
 <div class="size">15.1±0.9</div>
 <div class="mass">6.60±0.45E15</div>
 <div class="date">01.10.1980</div>
-<div class="imdat">12.06.2007</div>
+<div class="idat">12.06.2007</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">0.46±0.11</div>
 </div><div class="obj sat moon visited">
@@ -897,7 +897,7 @@
 <div class="size">14.1±1.3</div>
 <div class="mass">4.95±0.75E15</div>
 <div class="date">16.07.1990</div>
-<div class="imdat">07.03.2017</div>
+<div class="idat">07.03.2017</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">0.42±0.15</div>
 </div><div class="obj sat moon visited">
@@ -906,7 +906,7 @@
 <div class="size">12.4±0.4</div>
 <div class="mass"><a href="https://solarsystem.nasa.gov/moons/saturn-moons/telesto/by-the-numbers/">4.046E15</a></div>
 <div class="date">08.04.1980</div>
-<div class="imdat">11.10.2005</div>
+<div class="idat">11.10.2005</div>
 <div class="dv">&gt;7.7</div>
 </div><div class="obj mar moon map visited">
 <div class="img"><img alt="Phobos" src="images/Phobos.jpg"></div>
@@ -914,7 +914,7 @@
 <div class="size">11.267</div>
 <div class="mass">1.0659E16</div>
 <div class="date">18.08.1877</div>
-<div class="imdat">29.11.1971</div>
+<div class="idat">29.11.1971</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.876</div>
 </div><div class="obj sat moon visited">
@@ -923,16 +923,16 @@
 <div class="size">10.7±0.7</div>
 <div class="mass"><a href="https://solarsystem.nasa.gov/moons/saturn-moons/calypso/by-the-numbers/">2.548E15</a></div>
 <div class="date">13.03.1980</div>
-<div class="imdat">23.09.2005</div>
+<div class="idat">23.09.2005</div>
 <div class="dv">&gt;7.7</div>
-</div><div class="obj neo visited orbited animation map occultation numbered named surf" data-n="433">
+</div><div class="obj neo visited orbited ani map occlt numbered named surf" data-n="433">
 <div class="img"><img alt="Eros" src="images/Eros.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/433_Eros">Эрос</a></div>
 <div class="size">8.42±0.02</div>
 <div class="mass">6.69±E15</div>
 <div class="date">13.08.1898</div>
 <div class="pre">29.10.1893</div>
-<div class="imdat">29.02.2000</div>
+<div class="idat">29.02.2000</div>
 <div class="dv">6.112</div>
 <div class="dens">2.67±0.03</div>
 </div><div class="obj ju moon lowcontrast" data-id="658100">
@@ -941,7 +941,7 @@
 <div class="size">8.2±2</div>
 <div class="mass">2E15</div>
 <div class="date">08.07.1979</div>
-<div class="imdat">19.12.1996</div>
+<div class="idat">19.12.1996</div>
 <div class="dv">&gt;7.7</div>
 </div><div class="obj pl lowcontrast dwmoon flyby named">
 <div class="img"><img alt="Kerberos" src="images/Kerberos.jpg"></div>
@@ -949,7 +949,7 @@
 <div class="size">6.33</div>
 <div class="mass">1.65E16</div>
 <div class="date">28.06.2011</div>
-<div class="imdat">14.07.2015</div>
+<div class="idat">14.07.2015</div>
 <div class="dv">12.7</div>
 </div><div class="obj mar moon map visited">
 <div class="img"><img alt="Deimos" src="images/Deimos.jpg"></div>
@@ -957,7 +957,7 @@
 <div class="size">6.2±0.18</div>
 <div class="mass">1.476E15</div>
 <div class="date">12.08.1877</div>
-<div class="imdat">20.12.1971</div>
+<div class="idat">20.12.1971</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">1.471±0.166</div>
 </div><div class="obj mab innermb visited flyby map numbered named" data-n="951">
@@ -967,7 +967,7 @@
 <div class="mass">2.5E16</div>
 <div class="date">30.07.1916</div>
 <div class="pre">19.12.1913</div>
-<div class="imdat">29.10.1991</div>
+<div class="idat">29.10.1991</div>
 <div class="dv">8.402</div>
 <div class="dens">2.7</div>
 <div class="desc">Первый посещенный космическим аппаратом (<a href="https://en.wikipedia.org/wiki/Galileo_spacecraft">Галилео</a>) астероид. Был посещен 29.10.1991, фото сделаны с расстояния 5300 км на скорости 8 км/с.</div>
@@ -978,7 +978,7 @@
 <div class="mass">2.2E14</div>
 <div class="date">25.12.1758</div>
 <div class="pre">05.04.1066</div>
-<div class="imdat">04.03.1986</div>
+<div class="idat">04.03.1986</div>
 <div class="dv">&gt;29.8</div>
 <div class="dens">0.6</div>
 <div class="desc">АМС Вега-1 передала первые изображения ядра кометы 4 марта 1986 года. Космический аппарат Джотто сблизился с кометой 14 марта на расстояние 596 км</div>
@@ -988,15 +988,15 @@
 <div class="size">5.5</div>
 <div class="mass">7.5E15</div>
 <div class="date">26.06.2012</div>
-<div class="imdat">13.07.2015</div>
+<div class="idat">13.07.2015</div>
 <div class="dv">12.7</div>
-</div><div class="obj neo radar radarimage model numbered named" data-n="1627" data-b="1990AJ.....99.2012O, 2017Icar..291..254C">
+</div><div class="obj neo radar rdrimg model numbered named" data-n="1627" data-b="1990AJ.....99.2012O, 2017Icar..291..254C">
 <div class="img" data-b="Ivar-radar.png"><img alt="Ivar" src="images/Ivar.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/1627_Ivar">Ивар</a></div>
 <div class="des">1929 SH</div>
 <div class="size" title="15x6x6">4.19</div>
 <div class="date">25.09.1929</div>
-<div class="imdat">05.07.1985</div>
+<div class="idat">05.07.1985</div>
 <div class="dv">6.3</div>
 <div class="desc">Первое радарное изображение астероида</div>
 </div><div class="obj sat moon visited">
@@ -1005,7 +1005,7 @@
 <div class="size">3.8±0.8</div>
 <div class="mass">7.79E13</div>
 <div class="date">01.05.2005</div>
-<div class="imdat">16.01.2017</div>
+<div class="idat">16.01.2017</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">0.34±0.26</div>
 </div><div class="obj co jfc visited flyby surf impact">
@@ -1014,26 +1014,26 @@
 <div class="size">3±0.1</div>
 <div class="mass"><a href="https://www.sciencedirect.com/science/article/abs/pii/S001910350700303X">4.5E13</a></div>
 <div class="date">03.04.1867</div>
-<div class="imdat">04.07.2005</div>
+<div class="idat">04.07.2005</div>
 <div class="dv">&gt;11.1</div>
 <div class="dens">0.62</div>
-</div><div class="obj neo pha radar radarimage numbered" data-n="53319" data-b="2012LPICo1667.6183B">
+</div><div class="obj neo pha radar rdrimg numbered" data-n="53319" data-b="2012LPICo1667.6183B">
 <div class="img" data-b="https://upload.wikimedia.org/wikipedia/commons/9/9f/1999jm8-01.jpg"><img alt="1999 JM8" src="images/1999JM8.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(53319)_1999_JM8">1999 JM8</a></div>
 <div class="des">1999 JM8</div>
 <div class="size">3</div>
 <div class="date">13.05.1999</div>
 <div class="pre">10.04.1999</div>
-<div class="imdat">26.08.1999</div>
+<div class="idat">26.08.1999</div>
 <div class="dv">7.86</div>
-</div><div class="obj neo pha radar radarimage animation numbered named" data-n="3200">
+</div><div class="obj neo pha radar rdrimg ani numbered named" data-n="3200">
 <div class="img"><img alt="Phaethon" src="images/Phaethon.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/3200_Phaethon">Фаэтон</a></div>
 <div class="des">1983 TB</div>
 <div class="size">2.9</div>
 <div class="mass">1.4E14</div>
 <div class="date">11.10.1983</div>
-<div class="imdat">17.12.2017</div>
+<div class="idat">17.12.2017</div>
 <div class="dv">15.35</div>
 </div><div class="obj co jfc visited flyby">
 <div class="img"><img alt="19P/Borrelly" src="images/Borrelly.jpg"></div>
@@ -1041,7 +1041,7 @@
 <div class="size">2.66</div>
 <div class="mass">2E13</div>
 <div class="date">28.12.1904</div>
-<div class="imdat">22.09.2001</div>
+<div class="idat">22.09.2001</div>
 <div class="dv">&gt;13</div>
 <div class="dens">0.3</div>
 </div><div class="obj mab visited flyby map numbered named" data-n="2867">
@@ -1051,7 +1051,7 @@
 <div class="size">2.58±0.084</div>
 <div class="date">04.11.1969</div>
 <div class="pre">28.11.1951</div>
-<div class="imdat">05.09.2008</div>
+<div class="idat">05.09.2008</div>
 <div class="dv">9.35</div>
 </div><div class="obj mab visited flyby numbered named" data-n="5535">
 <div class="img"><img alt="Annefrank" src="images/Annefrank.jpg"></div>
@@ -1059,7 +1059,7 @@
 <div class="des">1942 EM</div>
 <div class="size">2.4</div>
 <div class="date">23.03.1942</div>
-<div class="imdat">02.11.2002</div>
+<div class="idat">02.11.2002</div>
 <div class="dv">8.96</div>
 <div class="desc">Фото астероида было получено КА Stardust 02.11.2002 с расстояния 3 км.</div>
 </div><div class="obj sat moon lowcontrast">
@@ -1068,7 +1068,7 @@
 <div class="size">2.22±0.07</div>
 <div class="mass">2E13</div>
 <div class="date">06.01.1978</div>
-<div class="imdat">16.10.2010</div>
+<div class="idat">16.10.2010</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">0.25±0.09</div>
 </div><div class="obj co jfc visited flyby sample">
@@ -1077,11 +1077,11 @@
 <div class="size">2.133</div>
 <div class="mass">2.3E13</div>
 <div class="date">06.01.1978</div>
-<div class="imdat">02.01.2004</div>
+<div class="idat">02.01.2004</div>
 <div class="dv">&gt;10.8</div>
 <div class="dens">0.6</div>
 <div class="desc">КА Stardust сблизился с ядром кометы 02.01.2004 с относительной скоростью 6.1 км/с. Фото сделано с расстояния 237 км.</div>
-</div><div class="obj neo pha havesats triple radarimage numbered named animation" data-n="3122">
+</div><div class="obj neo pha havesats triple rdrimg numbered named ani" data-n="3122">
 <div class="img"><img alt="Florence" src="images/Florence.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/3122_Florence">Флоренс</a></div>
 <div class="des">1981 ET3</div>
@@ -1089,39 +1089,39 @@
 <div class="mass">7.9E13</div>
 <div class="date">02.03.1981</div>
 <div class="pre">09.03.1979</div>
-<div class="imdat">29.08.2017</div>
+<div class="idat">29.08.2017</div>
 <div class="dv">8.171</div>
 <div class="dens">1.4</div>
-</div><div class="obj co jfc contactbinary visited orbited animation surf">
+</div><div class="obj co jfc cbin visited orbited ani surf">
 <div class="img" data-b="https://upload.wikimedia.org/wikipedia/commons/d/da/NavCam_Comet_67P_animation_20140806_%28cropped%29.gif"><img alt="67P/Churyumov–Gerasimenko" src="images/ChuryumovGerasimenko.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/67P/Churyumov–Gerasimenko" title="67P/Чурюмова-Герасименко">Чурюмова-</a></div>
 <div class="size">2</div>
 <div class="mass">9.98E12</div>
 <div class="date">20.09.1969</div>
 <div class="pre">09.09.1969</div>
-<div class="imdat">06.08.2014</div>
+<div class="idat">06.08.2014</div>
 <div class="dv">&gt;9.8</div>
 <div class="dens">0.533±0.006</div>
 <div class="desc">Первые подробные фото получены КА Rosetta в промежуток 1–6 августа 2014 г.</div>
-</div><div class="obj mab innermb contactbinary visited flyby numbered named map animation" data-n="52246">
+</div><div class="obj mab innermb cbin visited flyby numbered named map ani" data-n="52246">
 <div class="img"><img alt="Donaldjohanson" src="images/Donaldjohanson.gif" width="100"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/52246_Donaldjohanson" title="Дональдджохансон">Дональдджохансон</a></div>
 <div class="des">1981 EQ5</div>
 <div class="size">1.948</div>
 <div class="date">02.03.1981</div>
 <div class="pre">14.02.1981</div>
-<div class="imdat">20.04.2025</div>
+<div class="idat">20.04.2025</div>
 <div class="dv">8.78</div>
 <div class="desc">Посещен АМС Lucy</div>
-</div><div class="obj neo pha binary havesats radar radarimage numbered animation" data-n="285263">
+</div><div class="obj neo pha bin havesats radar rdrimg numbered ani" data-n="285263">
 <div class="img" data-b="https://planetary.s3.amazonaws.com/web/assets/pictures/20130624_asteroid_1998_QE2_on_20130607.gif"><img alt="1998 QE2" src="images/1998QE2.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(285263)_1998_QE2">1998 QE2</a></div>
 <div class="des">1998 QE2</div>
 <div class="size">1.6</div>
 <div class="date">19.08.1998</div>
-<div class="imdat">30.05.2013</div>
+<div class="idat">30.05.2013</div>
 <div class="dv">7.4</div>
-</div><div class="obj neo pha radar radarimage visited flyby numbered named animation" data-n="4179">
+</div><div class="obj neo pha radar rdrimg visited flyby numbered named ani" data-n="4179">
 <div class="img" data-b="Toutatis.webp"><img alt="Toutatis" src="images/Toutatis.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/4179_Toutatis">Таутатис</a></div>
 <div class="des">1989 AC/1934 CT</div>
@@ -1129,17 +1129,17 @@
 <div class="mass">5.05E13</div>
 <div class="date">04.01.1989</div>
 <div class="pre">10.02.1934</div>
-<div class="imdat">13.12.2012</div>
+<div class="idat">13.12.2012</div>
 <div class="dv">6.59</div>
 <div class="dens">2.5</div>
-</div><div class="obj mab co active dot binary numbered animation" data-n="300163">
+</div><div class="obj mab co active dot bin numbered ani" data-n="300163">
 <div class="img" data-b="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/2006VW139.gif/330px-2006VW139.gif"><img alt="288P/2006 VW139" src="images/288P-2006VW139.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(300163)_2006_VW139">2006 VW139</a></div>
 <div class="size">1.5</div>
 <div class="mass">6.1E12</div>
 <div class="date">15.11.2006</div>
 <div class="pre">03.09.2000</div>
-<div class="imdat">22.08.2016</div>
+<div class="idat">22.08.2016</div>
 <div class="dv">9.9</div>
 </div><div class="obj sat moon">
 <div class="img"><img alt="Methone" src="images/Methone.jpg"></div>
@@ -1147,7 +1147,7 @@
 <div class="size">1.45±0.03</div>
 <div class="mass"><a href="https://solarsystem.nasa.gov/moons/saturn-moons/methone/by-the-numbers/">8.992E12</a></div>
 <div class="date">01.06.2004</div>
-<div class="imdat">20.05.2012</div>
+<div class="idat">20.05.2012</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">0.31±0.05</div>
 </div><div class="obj mab lowcontrast flyby numbered named" data-n="132524">
@@ -1157,7 +1157,7 @@
 <div class="size">1.25</div>
 <div class="date">09.05.2002</div>
 <div class="pre">28.09.1990</div>
-<div class="imdat">13.06.2006</div>
+<div class="idat">13.06.2006</div>
 <div class="dv">8.77</div>
 </div><div class="obj sat lowcontrast moon">
 <div class="img"><img alt="Polydeuces" src="images/Polydeuces.jpg"></div>
@@ -1165,31 +1165,31 @@
 <div class="size">1.3±0.4</div>
 <div class="mass">3E13</div>  <!-- https://photojournal.jpl.nasa.gov/catalog/?IDNumber=PIA08209 -->
 <div class="date">24.10.2004</div>
-<div class="imdat">22.05.2006</div>
+<div class="idat">22.05.2006</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">0.5–2</div>
-</div><div class="obj neo pha havesats triple radar radarimage numbered" data-n="153591">
+</div><div class="obj neo pha havesats triple radar rdrimg numbered" data-n="153591">
 <div class="img"><img alt="2001 SN263" src="images/2001SN263.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(153591)_2001_SN263">2001 SN263</a></div>
 <div class="size">1.25</div>
 <div class="mass">9.17E12</div>
 <div class="date">20.09.2001</div>
-<div class="imdat">11.02.2008</div>
+<div class="idat">11.02.2008</div>
 <div class="dv">6.1</div>
 <div class="dens">1.1±0.2</div>
-</div><div class="obj neo pha radar radarimage numbered animation" data-n="52768">
+</div><div class="obj neo pha radar rdrimg numbered ani" data-n="52768">
 <div class="img"><img alt="1998 OR2" src="images/1998OR2.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(52768)_1998_OR2">1998 OR2</a></div>
 <div class="size">1.03</div>
 <div class="date">24.07.1998</div>
-<div class="imdat">18.04.2020</div>
+<div class="idat">18.04.2020</div>
 <div class="dv">6.55</div>
-</div><div class="obj neo pha contactbinary radar radarimage numbered animation" data-n="85989">
+</div><div class="obj neo pha cbin radar rdrimg numbered ani" data-n="85989">
 <div class="img"><img alt="1999 JD6" src="images/1999JD6.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(85989)_1999_JD6">1999 JD6</a></div>
 <div class="size">1</div>
 <div class="date">12.05.1999</div>
-<div class="imdat">25.07.2015</div>
+<div class="idat">25.07.2015</div>
 <div class="dv">14.8</div>
 </div><div class="obj neo pha radar lightcurve numbered named" data-n="1620">
 <div class="img"><img alt="Geographos" src="images/Geographos.jpg"></div>
@@ -1206,7 +1206,7 @@
 <div class="size">0.9</div>
 <div class="mass">1.5E12</div>
 <div class="date">30.05.2007</div>
-<div class="imdat">30.01.2016</div>
+<div class="idat">30.01.2016</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">0.5</div>
 </div><div class="obj mab lowcontrast visited flyby numbered named" data-n="9969">
@@ -1216,10 +1216,10 @@
 <div class="size">0.82</div>
 <div class="mass">7.8E12</div>
 <div class="date">27.05.1992</div>
-<div class="imdat">29.07.1999</div>
+<div class="idat">29.07.1999</div>
 <div class="dv">10.93</div>
 <div class="dens">3.9</div>
-</div><div class="obj neo pha contactbinary radar model numbered named animation" data-n="4769" data-b="1990Sci...248.1523O">
+</div><div class="obj neo pha cbin radar model numbered named ani" data-n="4769" data-b="1990Sci...248.1523O">
 <div class="img"><img alt="Castalia" src="images/Castalia.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/4769_Castalia">Касталия</a></div>
 <div class="des">1989 PB</div>
@@ -1228,29 +1228,29 @@
 <div class="pre">01.08.1989</div>
 <div class="dv">8.5</div>
 <div class="desc">Первый астероид, для которого была рассчитана трехмерная модель по радиолакационным данным</div>
-</div><div class="obj mab binary visited flyby satellite map named">
+</div><div class="obj mab bin visited flyby satellite map named">
 <div class="img"><img alt="Dactyl" src="images/Dactyl.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/243_Ida#Dactyl">Дактиль</a></div>
 <div class="size">0.7</div>
 <div class="date">17.02.1994</div>
 <div class="dv">10.3</div>
 <div class="desc">Спутник астероида Ида, обнаружен 17.02.1994 на снимках АМС Галилео от 28 августа 1993 г. Стал первым прямым доказательством существования лун у астероидов.</div>
-<div class="imdat">28.08.1993</div>
-</div><div class="obj neo pha radar radarimage numbered animation" data-n="620094">
+<div class="idat">28.08.1993</div>
+</div><div class="obj neo pha radar rdrimg numbered ani" data-n="620094">
 <div class="img" data-b="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Asteroid_2016_AJ193_-_PIA24564.jpg/330px-Asteroid_2016_AJ193_-_PIA24564.jpg"><img alt="2016 AJ193" src="images/2016AJ193.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2016_AJ193">2016 AJ193</a></div>
 <div class="size">0.69±0.2</div>
 <div class="date">17.05.2010</div>
-<div class="imdat">22.08.2021</div>
+<div class="idat">22.08.2021</div>
 <div class="dv">10.58</div>
-</div><div class="obj neo pha radar radarimage numbered" data-n="214869">
+</div><div class="obj neo pha radar rdrimg numbered" data-n="214869">
 <div class="img"><img alt="2007 PA8" src="images/2007PA8.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(214869)_2007_PA8">2007 PA8</a></div>
 <div class="size">0.68±0.04</div>
 <div class="date">09.08.2007</div>
-<div class="imdat">31.10.2012</div>
+<div class="idat">31.10.2012</div>
 <div class="dv">6.812</div>
-</div><div class="obj neo pha binary radar highcontrast numbered named" data-n="66391">
+</div><div class="obj neo pha bin radar highcontrast numbered named" data-n="66391">
 <div class="img"><img alt="Moshup" src="images/Moshup.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/66391_Moshup">Мошап</a></div>
 <div class="des">1999 KW4</div>
@@ -1258,7 +1258,7 @@
 <div class="mass">2.49±0.05E12</div>
 <div class="date">20.05.1999</div>
 <div class="pre">29.05.1998</div>
-<div class="imdat">25.05.2019</div>
+<div class="idat">25.05.2019</div>
 <div class="dv">21.374</div>
 <div class="dens">1.97±0.24</div>
 </div><div class="obj co jfc radar visited flyby">
@@ -1267,47 +1267,47 @@
 <div class="size">0.57±0.08</div>
 <div class="mass">3E11</div>
 <div class="date">15.03.1986</div>
-<div class="imdat">03.11.2010</div>
+<div class="idat">03.11.2010</div>
 <div class="dv">&gt;13</div>
-</div><div class="obj neo pha radar radarimage numbered animation" data-n="29075">
+</div><div class="obj neo pha radar rdrimg numbered ani" data-n="29075">
 <div class="img"><img alt="1950 DA" src="images/1950DA.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(29075)_1950_DA">1950 DA</a></div>
 <div class="des">1950 DA</div>
 <div class="size">0.55</div>
 <div class="mass">4E12</div>
 <div class="date">23.02.1950</div>
-<div class="imdat">04.03.2001</div>
+<div class="idat">04.03.2001</div>
 <div class="dv">6.994</div>
 <div class="dens">3.5</div>
 <div class="desc">Имеет вероятность столкновения с Землей в 2880 году.</div>
-</div><div class="obj neo co jfc nec radar radarimage">
+</div><div class="obj neo co jfc nec radar rdrimg">
 <div class="img"><img alt="460P/PanSTARRS, P/2016 BA14" src="images/P2016BA14.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/P/2016_BA14">P/2016 BA14</a></div>
 <div class="size">0.5</div>
 <div class="date">21.01.2016</div>
 <div class="pre">01.12.2015</div>
 <div class="dv">8.852</div>
-</div><div class="obj neo pha radar radarimage numbered" data-n="163899">
+</div><div class="obj neo pha radar rdrimg numbered" data-n="163899">
 <div class="img"><img alt="2003 SD220" src="images/2003SD220.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(163899)_2003_SD220">2003 SD220</a></div>
 <div class="size">0.5</div>
 <div class="date">29.09.2003</div>
-<div class="imdat">17.12.2015</div>
+<div class="idat">17.12.2015</div>
 <div class="dv">7.884</div>
-</div><div class="obj neo pha binary radar radarimage">
+</div><div class="obj neo pha bin radar rdrimg">
 <div class="img"><img alt="2017 YE5" src="images/2017YE5.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2017_YE5">2017 YE5</a></div>
 <div class="size">0.5</div>
 <div class="date">21.12.2017</div>
 <div class="dv">7.562</div>
 <div class="dens">0.6−1.2</div>
-</div><div class="obj neo pha numbered havesats binary radar radarimage animation" data-n="7335">
+</div><div class="obj neo pha numbered havesats bin radar rdrimg ani" data-n="7335">
 <div class="img"><img alt="1989 JA" src="images/1989JA.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(7335)_1989_JA">1989 JA</a></div>
 <div class="size">0.45</div>
 <div class="date">01.05.1989</div>
 <div class="dv">7.131</div>
-</div><div class="obj neo pha visited orbited numbered animation map named surf sample" data-n="162173">
+</div><div class="obj neo pha visited orbited numbered ani map named surf sample" data-n="162173">
 <div class="img" data-b="Ryugu.gif"><img alt="Ryugu" src="images/Ryugu.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/162173_Ryugu">Рюгу</a></div>
 <div class="des">1999 JU3</div>
@@ -1315,35 +1315,35 @@
 <div class="mass">4.5E11</div>
 <div class="date">10.05.1999</div>
 <div class="pre">14.04.1986</div>
-<div class="imdat">10.07.2018</div>
+<div class="idat">10.07.2018</div>
 <div class="dv">4.663</div>
 <div class="dens">1.19±0.03</div>
 <div class="desc">Миссия Hayabusa2 прибыла к астероиду 27.06.2018</div>
-</div><div class="obj neo pha contactbinary radar radarimage numbered animation" data-n="671294">
+</div><div class="obj neo pha cbin radar rdrimg numbered ani" data-n="671294">
 <div class="img"><img alt="2014 JO25" src="images/2014JO25.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2014_JO25">2014 JO25</a></div>
 <div class="size">0.4</div>
 <div class="date">05.05.2014</div>
-<div class="imdat">19.04.2017</div>
+<div class="idat">19.04.2017</div>
 <div class="dv">13.173</div>
-</div><div class="obj mab innermb havesats binary visited flyby numbered named map animation" data-n="152830">
+</div><div class="obj mab innermb havesats bin visited flyby numbered named map ani" data-n="152830">
 <div class="img" data-b="https://www.nasa.gov/wp-content/uploads/2024/05/dinkystereo-straight.gif"><img alt="Dinkinesh" src="images/Dinkinesh.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/152830_Dinkinesh">Динкинеш</a></div>
 <div class="des">1999 VD57</div>
 <div class="size">0.395</div>
 <div class="date">04.11.1999</div>
 <div class="pre">15.10.1999</div>
-<div class="imdat">01.11.2023</div>
+<div class="idat">01.11.2023</div>
 <div class="dv">8.6</div>
 <div class="desc">Цель миссии Lucy</div>
-</div><div class="obj neo pha havesats binary radar visited flyby map numbered named" data-n="65803">
+</div><div class="obj neo pha havesats bin radar visited flyby map numbered named" data-n="65803">
 <div class="img"><img alt="Didymos" src="images/Didymos_dimorphos.png" width="100"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/65803_Didymos">Дидим</a></div>
 <div class="des">1996 GT</div>
 <div class="size">0.39</div>
 <div class="mass">5.4E11</div>
 <div class="date">11.04.1996</div>
-<div class="imdat">26.09.2022</div>
+<div class="idat">26.09.2022</div>
 <div class="dv">5.162</div>
 <div class="dens">2.4±0.3</div>
 <div class="desc">Цель миссии DART.</div>
@@ -1353,68 +1353,68 @@
 <div class="size">0.33±0.06</div>
 <div class="mass">6E12</div>
 <div class="date">03.03.2009</div>
-<div class="imdat">27.01.2010</div>
+<div class="idat">27.01.2010</div>
 <div class="dv">&gt;7.7</div>
 <div class="dens">0.54±0.15</div>
-</div><div class="obj neo pha radar radarimage animation">
+</div><div class="obj neo pha radar rdrimg ani">
 <div class="img"><img alt="2015 TB145" src="images/2015TB145.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2015_TB145">2015 TB145</a></div>
 <div class="size">0.325</div>
 <div class="date">10.10.2015</div>
-<div class="imdat">30.10.2015</div>
+<div class="idat">30.10.2015</div>
 <div class="dv">15.747</div>
-</div><div class="obj neo pha havesats triple radar radarimage animation numbered" data-n="136617">
+</div><div class="obj neo pha havesats triple radar rdrimg ani numbered" data-n="136617">
 <div class="img"><img alt="1994 CC" src="images/1994CC.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(136617)_1994_CC">1994 CC</a></div>
 <div class="size">0.31±0.03</div>
 <div class="date">03.02.1994</div>
 <div class="dv">5.4</div>
-</div><div class="obj neo radar radarimage animation">
+</div><div class="obj neo radar rdrimg ani">
 <div class="img"><img alt="2015 HM10" src="images/2015HM10.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2015_HM10">2015 HM10</a></div>
 <div class="size">0.29</div>
 <div class="date">19.04.2015</div>
 <div class="dv">6.4</div>
-</div><div class="obj neo pha radar visited orbited animation numbered named map surf sample" data-n="101955">
+</div><div class="obj neo pha radar visited orbited ani numbered named map surf sample" data-n="101955">
 <div class="img" data-b="Bennu.gif"><img alt="Bennu" src="images/Bennu.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/101955_Bennu">Бенну</a></div>
 <div class="des">1999 RQ36</div>
 <div class="size">0.245</div>
 <div class="mass">7.329E10</div>
 <div class="date">11.09.1999</div>
-<div class="imdat">02.12.2018</div>
+<div class="idat">02.12.2018</div>
 <div class="dv">5.096</div>
 <div class="dens">1.190±0.013</div>
 <div class="desc">Имеет высокую вероятность столкновения с Землей в 2175–2199 гг. 03.12.2018 к астероиду приблизился КА OSIRIS-REx.</div>
-</div><div class="obj neo visited flyby numbered named contactbinary" data-n="98943" data-r="0.20921">
+</div><div class="obj neo visited flyby numbered named cbin" data-n="98943" data-r="0.20921">
 <div class="img" data-b="Torifune-big.png"><img alt="Torifune" src="images/Torifune.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/98943_Torifune">Торифунэ</a></div>
 <div class="des">2001 CC21</div>
 <div class="size">0.238</div>
 <div class="date">03.02.2001</div>
-<div class="imdat">05.07.2026</div>
+<div class="idat">05.07.2026</div>
 <div class="dv">5.6</div>
-</div><div class="obj neo pha radar radarimage animation numbered" data-n="436724">
+</div><div class="obj neo pha radar rdrimg ani numbered" data-n="436724">
 <div class="img"><img alt="2011 UW158" src="images/2011UW158.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(436724)_2011_UW158">2011 UW158</a></div>
 <div class="size">0.22±0.04</div>
 <div class="date">25.10.2011</div>
 <div class="dv">5.189</div>
-</div><div class="obj neo pha radar radarimage animation numbered" data-n="33342">
+</div><div class="obj neo pha radar rdrimg ani numbered" data-n="33342">
 <div class="img" data-b="https://upload.wikimedia.org/wikipedia/commons/0/03/%2833342%29_1998_WT24_bistatic_radar_image.gif"><img alt="1998 WT24" src="images/1998WT24.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(33342)_1998_WT24">1998 WT24</a></div>
 <div class="size">0.205</div>
 <div class="mass">7.8E10</div> <!-- 2008cosp...37..984G -->
 <div class="date">25.11.1998</div>
 <div class="dv">10.865</div>
-</div><div class="obj neo pha radarimage numbered" data-n="308635">
+</div><div class="obj neo pha rdrimg numbered" data-n="308635">
 <div class="img"><img alt="2005 YU55" src="images/2005YU55.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(308635)_2005_YU55">2005 YU55</a></div>
 <div class="size">0.18</div>
 <div class="date">28.12.2005</div>
-<div class="imdat">07.11.2011</div>
+<div class="idat">07.11.2011</div>
 <div class="dv">6.9</div>
-</div><div class="obj neo pha contactbinary visited orbited numbered named map radar surf sample" data-n="25143">
+</div><div class="obj neo pha cbin visited orbited numbered named map radar surf sample" data-n="25143">
 <div class="img"><img alt="Itokawa" src="images/Itokawa.jpg"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/25143_Itokawa">Итокава</a></div>
 <div class="des">1998 SF36</div>
@@ -1422,7 +1422,7 @@
 <div class="mass">3.51±0.1E10</div>
 <div class="date">26.09.1998</div>
 <div class="pre">19.09.1998</div>
-<div class="imdat">28.12.2005</div>
+<div class="idat">28.12.2005</div>
 <div class="dv">4.637</div>
 <div class="dens">1.9±0.13</div>
 <div class="desc">Посещен миссией Хаябуса в октябре 2005 г. Капсула с ~1500 частицами астероида (почти все менее 10 мкм) приземлилась в Австралии 13.06.2010</div>
@@ -1437,7 +1437,7 @@
 <div class="dv">5.688</div>
 <div class="dens">2.6−3.2</div>
 <div class="desc">Больше не потенциально опасный астероид. До 2013 г. вероятность столкновения была сильно переоценена.</div>
-</div><div class="obj neo pha radar radarimage animation numbered named" data-n="4660">
+</div><div class="obj neo pha radar rdrimg ani numbered named" data-n="4660">
 <div class="img"><img alt="Nereus" src="images/Nereus.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/4660_Nereus">Нерей</a></div>
 <div class="des">1982 DB</div>
@@ -1445,55 +1445,55 @@
 <div class="date">28.02.1982</div>
 <div class="pre">30.09.1981</div>
 <div class="dv">4.987</div>
-</div><div class="obj neo pha contactbinary radar radarimage animation">
+</div><div class="obj neo pha cbin radar rdrimg ani">
 <div class="img" data-b="2014HQ124.jpg"><img alt="2014 HQ124" src="images/2014HQ124.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2014_HQ124">2014 HQ124</a></div>
 <div class="size">0.163</div>
 <div class="date">23.04.2014</div>
-<div class="imdat">08.06.2014</div>
+<div class="idat">08.06.2014</div>
 <div class="dv">12.229</div>
-</div><div class="obj neo pha radar radarimage havesats binary animation numbered" data-n="357439">
+</div><div class="obj neo pha radar rdrimg havesats bin ani numbered" data-n="357439">
 <div class="img"><img alt="2004 BL86" src="images/2004BL86.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(357439)_2004_BL86">2004 BL86</a></div>
 <div class="size">0.15</div>
 <div class="date">30.01.2004</div>
 <div class="dv">8.705</div>
-</div><div class="obj mab contactbinary satellite binary visited flyby named map">
+</div><div class="obj mab cbin satellite bin visited flyby named map">
 <div class="img"><img alt="Selam" src="images/Selam.png"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Selam_(moon)">Селам</a></div>
 <div class="size">0.12</div>
 <div class="date">01.11.2023</div>
-<div class="imdat">01.11.2023</div>
+<div class="idat">01.11.2023</div>
 <div class="dv">8.6</div>
-</div><div class="obj neo pha radar radarimage havesats binary animation">
+</div><div class="obj neo pha radar rdrimg havesats bin ani">
 <div class="img"><img alt="2016 AZ8" src="images/2016AZ8.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2016_AZ8">2016 AZ8</a></div>
 <div class="size">0.108</div>
 <div class="date">03.01.2016</div>
 <div class="dv">5.629</div>
-</div><div class="obj neo pha satellite binary radar animation visited flyby impact map named surf">
+</div><div class="obj neo pha satellite bin radar ani visited flyby impact map named surf">
 <div class="img"><img alt="Dimorphos" src="images/Dimorphos.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/Dimorphos">Диморф</a></div>
 <div class="size">0.085</div>
 <div class="mass">4.3E9</div>
 <div class="date">20.11.2003</div>
-<div class="imdat">26.09.2022</div>
+<div class="idat">26.09.2022</div>
 <div class="dv">5.162</div>
 <div class="dens">0.6−2.4</div>
-</div><div class="obj neo pha radar radarimage animation">
+</div><div class="obj neo pha radar rdrimg ani">
 <div class="img"><img alt="2017 BQ6" src="images/2017BQ6.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/2017_BQ6">2017 BQ6</a></div>
 <div class="size">0.078</div>
 <div class="date">26.01.2017</div>
-<div class="imdat">07.02.2017</div>
+<div class="idat">07.02.2017</div>
 <div class="dv">6.542</div>
-</div><div class="obj neo pha radar radarimage numbered animation" data-n="367789">
+</div><div class="obj neo pha radar rdrimg numbered ani" data-n="367789">
 <div class="img"><img alt="2011 AG5" src="images/2011AG5.gif"></div>
 <div class="name"><a href="https://en.wikipedia.org/wiki/(367789)_2011_AG5">2011 AG5</a></div>
 <div class="size">0.07</div>
 <div class="mass">4E9</div>
 <div class="date">08.01.2011</div>
-<div class="imdat">04.02.2023</div>
+<div class="idat">04.02.2023</div>
 <div class="dv">5.534</div>
 </div><div class="obj neo numbered visited orbited numbered named" data-n="469219" data-r="0.019375" data-id="20">
 <div class="img" data-b="Kamooalewa-big.png"><img alt="Kamo'oalewa" src="images/Kamooalewa.png"></div>
@@ -1501,7 +1501,7 @@
 <div class="des">2016 HO3</div>
 <div class="size">0.0137</div>
 <div class="date">27.04.2016</div>
-<div class="imdat">02.07.2026</div>
+<div class="idat">02.07.2026</div>
 <div class="dv">5.6</div>
 </div></div>
 <div class="cont">
@@ -1548,67 +1548,67 @@
 <div class="cont" id="description">
 <p>Этот список тел Солнечной системы содержит:</p>
 <ul>
-  <li>Все известные тела в гидростатическом равновесии, то есть, имеющие близкую к сферической форму (39 штук)</li>
-  <li>Все известные
-    <a href="https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size" target="_blank" rel="noopener noreferrer">тела c радиусом от 400 км и более</a> (36 штук)</li>
-  <li>Все известные
-    <a href="https://planetarynames.wr.usgs.gov/" target="_blank" rel="noopener noreferrer">тела с картой поверхности</a>
-    (52 тела: Меркурий, Венера, Луна, Марс, Фобос и Деймос, 18 астероидов и их спутников, 6 спутников Юпитера,
-    11 спутников Сатурна и 6 спутников Урана, 2 спутника Нептуна, Плутон, Харон и Никс).</li>
-  <li>Все <a href="https://en.wikipedia.org/wiki/List_of_minor_planets_and_comets_visited_by_spacecraft" target="_blank" rel="noopener noreferrer">тела, посещенные космическими аппаратами</a>,
-    за исключением <a href="https://en.wikipedia.org/wiki/Category:Comets_visited_by_spacecraft" target="_blank" rel="noopener noreferrer">комет</a>
-    <a href="https://en.wikipedia.org/wiki/21P/Giacobini%E2%80%93Zinner" target="_blank" rel="noopener noreferrer">21P/Джакобини – Циннера</a>,
-    <a href="https://en.wikipedia.org/wiki/26P/Grigg%E2%80%93Skjellerup" target="_blank" rel="noopener noreferrer">26P/Григга – Скьеллерупа</a>,
-    <a href="https://en.wikipedia.org/wiki/C/2006_P1_(McNaught)#Ulysses_probe" target="_blank" rel="noopener noreferrer">C/2006 P1 (Макнота)</a>.</li>
-  <li>Некоторые <a href="https://en.wikipedia.org/wiki/List_of_natural_satellites" target="_blank" rel="noopener noreferrer">спутники планет</a>
-    (<a href="http://www.johnstonsarchive.net/astro/sssatellitedata.html" target="_blank" rel="noopener noreferrer">таблицы</a>
-    <a href="http://www.johnstonsarchive.net/astro/solar_system_phys_data.html" target="_blank" rel="noopener noreferrer">физических</a>
-    <a href="https://ssd.jpl.nasa.gov/?sat_phys_par" target="_blank" rel="noopener noreferrer">свойств</a>), в том числе изображения которых были получены с борта КА.</li>
-  <li>Некоторые <a href="https://echo.jpl.nasa.gov/asteroids/" target="_blank" rel="noopener noreferrer">тела с изображением, полученным методом радиолокации</a>,
-    в том числе с <a href="http://www.johnstonsarchive.net/astro/radarasteroids.html" target="_blank" rel="noopener noreferrer">трехмерной моделью</a>
-    (см. <a href="https://en.wikipedia.org/wiki/Radar_astronomy" target="_blank" rel="noopener noreferrer">Радиолокационная астрономия</a>,
-    <a href="https://photojournal.jpl.nasa.gov/target/Other" target="_blank" rel="noopener noreferrer">Пресс-релизы изображений</a>,
-    <a href="https://www.naic.edu/~pradar/" target="_blank" rel="noopener noreferrer">Planetary Radar Science Group</a>).</li>
-  <li>Некоторые тела c изображением, полученным при помощи <a href="https://en.wikipedia.org/wiki/Adaptive_optics" target="_blank" rel="noopener noreferrer">адаптивной оптики</a>,
-    метода <a href="https://en.wikipedia.org/wiki/Occultation#Occultations_by_smaller_bodies" target="_blank" rel="noopener noreferrer">покрытия звезд</a>
-    и <a href="https://en.wikipedia.org/wiki/List_of_instrument-resolved_minor_planets" target="_blank" rel="noopener noreferrer">других способов восстановления формы тел</a>.
-  <li>Некоторые <a href="https://en.wikipedia.org/wiki/List_of_exceptional_asteroids" target="_blank" rel="noopener noreferrer">примечательные астероиды</a>,
-    включая <a href="https://en.wikipedia.org/wiki/List_of_asteroid_close_approaches_to_Earth" target="_blank" rel="noopener noreferrer">сближавшиеся с Землей</a>.</li>
+<li>Все известные тела в гидростатическом равновесии, то есть, имеющие близкую к сферической форму (39 штук)</li>
+<li>Все известные
+  <a href="https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size" target="_blank" rel="noopener noreferrer">тела c радиусом от 400 км и более</a> (36 штук)</li>
+<li>Все известные
+  <a href="https://planetarynames.wr.usgs.gov/" target="_blank" rel="noopener noreferrer">тела с картой поверхности</a>
+  (52 тела: Меркурий, Венера, Луна, Марс, Фобос и Деймос, 18 астероидов и их спутников, 6 спутников Юпитера,
+  11 спутников Сатурна и 6 спутников Урана, 2 спутника Нептуна, Плутон, Харон и Никс).</li>
+<li>Все <a href="https://en.wikipedia.org/wiki/List_of_minor_planets_and_comets_visited_by_spacecraft" target="_blank" rel="noopener noreferrer">тела, посещенные космическими аппаратами</a>,
+  за исключением <a href="https://en.wikipedia.org/wiki/Category:Comets_visited_by_spacecraft" target="_blank" rel="noopener noreferrer">комет</a>
+  <a href="https://en.wikipedia.org/wiki/21P/Giacobini%E2%80%93Zinner" target="_blank" rel="noopener noreferrer">21P/Джакобини – Циннера</a>,
+  <a href="https://en.wikipedia.org/wiki/26P/Grigg%E2%80%93Skjellerup" target="_blank" rel="noopener noreferrer">26P/Григга – Скьеллерупа</a>,
+  <a href="https://en.wikipedia.org/wiki/C/2006_P1_(McNaught)#Ulysses_probe" target="_blank" rel="noopener noreferrer">C/2006 P1 (Макнота)</a>.</li>
+<li>Некоторые <a href="https://en.wikipedia.org/wiki/List_of_natural_satellites" target="_blank" rel="noopener noreferrer">спутники планет</a>
+  (<a href="http://www.johnstonsarchive.net/astro/sssatellitedata.html" target="_blank" rel="noopener noreferrer">таблицы</a>
+  <a href="http://www.johnstonsarchive.net/astro/solar_system_phys_data.html" target="_blank" rel="noopener noreferrer">физических</a>
+  <a href="https://ssd.jpl.nasa.gov/?sat_phys_par" target="_blank" rel="noopener noreferrer">свойств</a>), в том числе изображения которых были получены с борта КА.</li>
+<li>Некоторые <a href="https://echo.jpl.nasa.gov/asteroids/" target="_blank" rel="noopener noreferrer">тела с изображением, полученным методом радиолокации</a>,
+  в том числе с <a href="http://www.johnstonsarchive.net/astro/radarasteroids.html" target="_blank" rel="noopener noreferrer">трехмерной моделью</a>
+  (см. <a href="https://en.wikipedia.org/wiki/Radar_astronomy" target="_blank" rel="noopener noreferrer">Радиолокационная астрономия</a>,
+  <a href="https://photojournal.jpl.nasa.gov/target/Other" target="_blank" rel="noopener noreferrer">Пресс-релизы изображений</a>,
+  <a href="https://www.naic.edu/~pradar/" target="_blank" rel="noopener noreferrer">Planetary Radar Science Group</a>).</li>
+<li>Некоторые тела c изображением, полученным при помощи <a href="https://en.wikipedia.org/wiki/Adaptive_optics" target="_blank" rel="noopener noreferrer">адаптивной оптики</a>,
+  метода <a href="https://en.wikipedia.org/wiki/Occultation#Occultations_by_smaller_bodies" target="_blank" rel="noopener noreferrer">покрытия звезд</a>
+  и <a href="https://en.wikipedia.org/wiki/List_of_instrument-resolved_minor_planets" target="_blank" rel="noopener noreferrer">других способов восстановления формы тел</a>.
+<li>Некоторые <a href="https://en.wikipedia.org/wiki/List_of_exceptional_asteroids" target="_blank" rel="noopener noreferrer">примечательные астероиды</a>,
+  включая <a href="https://en.wikipedia.org/wiki/List_of_asteroid_close_approaches_to_Earth" target="_blank" rel="noopener noreferrer">сближавшиеся с Землей</a>.</li>
 </ul>
 
 <p>А также: <a href="stats.html">Статистика тел Солнечной системы</a> (файл создается автоматически)</p><br>
 
 <p>Замечания:</p>
 <ul>
-  <li>Спутник Юпитера <a href="https://en.wikipedia.org/wiki/Ganymede_(moon)">Ганимед</a> и спутник Сатурна <a href="https://en.wikipedia.org/wiki/Titan_(moon)">Титан</a> больше по размерам,
-    чем <a href="https://en.wikipedia.org/wiki/Mercury_(planet)">Меркурий</a>. Все же, ближайшая к Солнцу планета, обладая железным ядром, массивнее их вместе взятых.
-  <li>Ядро <a href="https://en.wikipedia.org/wiki/1P/Halley">кометы Галлея</a> было снято космическим аппаратом <a href="https://en.wikipedia.org/wiki/Giotto_(spacecraft)">Джотто</a>
-    и КА <a href="https://en.wikipedia.org/wiki/Vega_2" target="_blank" rel="noopener noreferrer">Вега 2</a> в марте 1986 г. Размеры - 15×8 км, масса - 2.2×10<sup>17</sup> г (220 млрд тонн).
-  <li>Первым астероидом, которого посетил спутник, стал астероид <a href="https://en.wikipedia.org/wiki/951_Gaspra">951 Гаспра</a>.
-    29 октября 1991 года к ней подлетел КА <a href="https://en.wikipedia.org/wiki/Galileo_spacecraft">Галилей</a>.
-  <li>У астероида Ида есть спутник <a href="https://en.wikipedia.org/wiki/Dactyl_(moon)#Moon">Дактиль</a>.
-    Эта система была второй, посещенной космическим аппаратом, тем же Galileo. Сближение на 2390 км произошло в августе 1993-го.
-    Дактиля нашли позже, в феврале 1994, по анализу снимков, сделанных во время сближения.
-  <li>Астероид <a href="https://en.wikipedia.org/wiki/5535_Annefrank">5535 Аннафранк</a> был сфотографирован в 2002 году в ходе миссии
-    <a href="https://en.wikipedia.org/wiki/Stardust_(spacecraft)">Stardust</a> с расстояния 3079 км.
-  <li>Астероид <a href="https://en.wikipedia.org/wiki/9969_Braille">9969 Брайль</a> сфотографирован
-    КА <a href="https://en.wikipedia.org/wiki/Deep_Space_1">Deep Space 1</a> с расстояния 14000 км, хотя 29 июля 1999 года они сближались на расстояние всего лишь 26 км.
-    Размеры этого астероида - 2.1×1×1 км, масса - 7.8 × 10<sup>15</sup> г (7.8 млрд тонн).
-    Качество изображения – <a href="https://planetimages.blogspot.com/2009/09/ds-1-part-ii-cruise-and-braille.html">не лучшее</a>:<br>
-  <img src="images/braillepair.png" alt="" class="w">
-  <li>Астероид <a href="https://en.wikipedia.org/wiki/25143_Itokawa">(25143) Итокава</a> был посещен японским КА "Хаябуса" в сентябре-ноябре 2005 года.
-    После относительно успешного сбора проб вещества астероида на Землю была отправлена капсула с образцом. Она приземлилась в Австралии 13 июня 2010 года.
-    Размеры астероида весьма скромные: 535×294×209 метров. Масса - 3.5×10<sup>13</sup> г (35 млн тонн).
-  <li>13 декабря 2012 года <a href="https://en.wikipedia.org/wiki/Chang'e_2">китайским КА Чанъэ-2</a> был осуществлен пролет возле астероида
-    <a href="https://en.wikipedia.org/wiki/4179_Toutatis">(4179) Таутатис</a>. У него уже был "портрет", полученный с помощью
-    <a href="https://en.wikipedia.org/wiki/Goldstone_Deep_Space_Communications_Complex">обсерватории Голдстоун</a> и построена трехмерная модель.
-    Размеры Таутатиса - 4.5×2.4×1.9 км, масса - 5×10<sup>16</sup> г (50 млрд тонн).
-  <li>Аппарат Европейского космического агенства
-    <a href="https://en.wikipedia.org/wiki/Rosetta_(spacecraft)" target="_blank" rel="noopener noreferrer">Розетта</a>,
-    встретившись с Лютецией и Штейнсом, долетел до кометы
-    <a href="https://en.wikipedia.org/wiki/67P/Churyumov%E2%80%93Gerasimenko" target="_blank" rel="noopener noreferrer">Чурюмова-Герасименко</a> в августе 2014 года.
-  <li>Примерно 6% околоземных астероидов, как предполагается, яввляются
-    <a href="https://en.wikipedia.org/wiki/Extinct_comet" target="_blank" rel="noopener noreferrer">выродившимися кометами</a>.</li>
+<li>Спутник Юпитера <a href="https://en.wikipedia.org/wiki/Ganymede_(moon)">Ганимед</a> и спутник Сатурна <a href="https://en.wikipedia.org/wiki/Titan_(moon)">Титан</a> больше по размерам,
+  чем <a href="https://en.wikipedia.org/wiki/Mercury_(planet)">Меркурий</a>. Все же, ближайшая к Солнцу планета, обладая железным ядром, массивнее их вместе взятых.
+<li>Ядро <a href="https://en.wikipedia.org/wiki/1P/Halley">кометы Галлея</a> было снято космическим аппаратом <a href="https://en.wikipedia.org/wiki/Giotto_(spacecraft)">Джотто</a>
+  и КА <a href="https://en.wikipedia.org/wiki/Vega_2" target="_blank" rel="noopener noreferrer">Вега 2</a> в марте 1986 г. Размеры - 15×8 км, масса - 2.2×10<sup>17</sup> г (220 млрд тонн).
+<li>Первым астероидом, которого посетил спутник, стал астероид <a href="https://en.wikipedia.org/wiki/951_Gaspra">951 Гаспра</a>.
+  29 октября 1991 года к ней подлетел КА <a href="https://en.wikipedia.org/wiki/Galileo_spacecraft">Галилей</a>.
+<li>У астероида Ида есть спутник <a href="https://en.wikipedia.org/wiki/Dactyl_(moon)#Moon">Дактиль</a>.
+  Эта система была второй, посещенной космическим аппаратом, тем же Galileo. Сближение на 2390 км произошло в августе 1993-го.
+  Дактиля нашли позже, в феврале 1994, по анализу снимков, сделанных во время сближения.
+<li>Астероид <a href="https://en.wikipedia.org/wiki/5535_Annefrank">5535 Аннафранк</a> был сфотографирован в 2002 году в ходе миссии
+  <a href="https://en.wikipedia.org/wiki/Stardust_(spacecraft)">Stardust</a> с расстояния 3079 км.
+<li>Астероид <a href="https://en.wikipedia.org/wiki/9969_Braille">9969 Брайль</a> сфотографирован
+  КА <a href="https://en.wikipedia.org/wiki/Deep_Space_1">Deep Space 1</a> с расстояния 14000 км, хотя 29 июля 1999 года они сближались на расстояние всего лишь 26 км.
+  Размеры этого астероида - 2.1×1×1 км, масса - 7.8 × 10<sup>15</sup> г (7.8 млрд тонн).
+  Качество изображения – <a href="https://planetimages.blogspot.com/2009/09/ds-1-part-ii-cruise-and-braille.html">не лучшее</a>:<br>
+<img src="images/braillepair.png" alt="" class="w">
+<li>Астероид <a href="https://en.wikipedia.org/wiki/25143_Itokawa">(25143) Итокава</a> был посещен японским КА "Хаябуса" в сентябре-ноябре 2005 года.
+  После относительно успешного сбора проб вещества астероида на Землю была отправлена капсула с образцом. Она приземлилась в Австралии 13 июня 2010 года.
+  Размеры астероида весьма скромные: 535×294×209 метров. Масса - 3.5×10<sup>13</sup> г (35 млн тонн).
+<li>13 декабря 2012 года <a href="https://en.wikipedia.org/wiki/Chang'e_2">китайским КА Чанъэ-2</a> был осуществлен пролет возле астероида
+  <a href="https://en.wikipedia.org/wiki/4179_Toutatis">(4179) Таутатис</a>. У него уже был "портрет", полученный с помощью
+  <a href="https://en.wikipedia.org/wiki/Goldstone_Deep_Space_Communications_Complex">обсерватории Голдстоун</a> и построена трехмерная модель.
+  Размеры Таутатиса - 4.5×2.4×1.9 км, масса - 5×10<sup>16</sup> г (50 млрд тонн).
+<li>Аппарат Европейского космического агенства
+  <a href="https://en.wikipedia.org/wiki/Rosetta_(spacecraft)" target="_blank" rel="noopener noreferrer">Розетта</a>,
+  встретившись с Лютецией и Штейнсом, долетел до кометы
+  <a href="https://en.wikipedia.org/wiki/67P/Churyumov%E2%80%93Gerasimenko" target="_blank" rel="noopener noreferrer">Чурюмова-Герасименко</a> в августе 2014 года.
+<li>Примерно 6% околоземных астероидов, как предполагается, яввляются
+  <a href="https://en.wikipedia.org/wiki/Extinct_comet" target="_blank" rel="noopener noreferrer">выродившимися кометами</a>.</li>
 </ul>
 
 <p>На снимке ниже изображен коллаж из четырех снимков Нептуна, полученных КА Вояджер-2 24 августа 1989 года с паузами в 9 минут.
@@ -1638,64 +1638,63 @@
 </ul>
 <h2 id="links">Ссылки:</h2>
 <ul>
-  <li><a href="https://en.wikipedia.org/wiki/Discovery_and_exploration_of_the_Solar_System" target="_blank" rel="noopener noreferrer">Discovery and exploration of the Solar System</a>;
-    <a href="https://en.wikipedia.org/wiki/Solar_System#Visual_summary" target="_blank" rel="noopener noreferrer">Solar System#Visual summary</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Extraterrestrial_liquid_water" target="_blank" rel="noopener noreferrer">Extraterrestrial liquid water</a></li>
-  <li><a href="https://armchairastronautics.blogspot.com/p/solar-system-missions.html" target="_blank" rel="noopener noreferrer">Solar System Missions</a>:
-    карта текущих и предстоящих миссий в Солнечной системе,
-    <a href="https://twitter.com/OlafFrohn/" target="_blank" rel="noopener noreferrer">Olaf Frohn twitter</a>.</li>
-  <li><a href="https://en.wikipedia.org/wiki/List_of_Solar_System_probes" target="_blank" rel="noopener noreferrer">List of Solar System probes</a></li>
-  <li><a href="https://newton.spacedys.com/astdys/index.php?pc=1.0.0" target="_blank" rel="noopener noreferrer">AstDyS-2</a>,
-    <a href="https://newton.spacedys.com/neodys/index.php?pc=1.0" target="_blank" rel="noopener noreferrer">NEODyS-2</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Low_Earth_orbit" target="_blank" rel="noopener noreferrer">Низкая околоземная орбита: характеристики, delta v</a>.
-    <a href="http://www.asterank.com/" target="_blank" rel="noopener noreferrer">База данных Asterank</a>,
-    <a href="https://www.spacereference.org/" target="_blank" rel="noopener noreferrer">База данных Space Reference</a>.</li>
-  <li><a href="https://www.esa.int/Safety_Security/Space_Debris" target="_blank" rel="noopener noreferrer">ESA Space Debris Office</a>.
-    <a href="https://orbitaldebris.jsc.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA Orbital Debris Program Office</a>.</li>
-  <li><a href="https://cneos.jpl.nasa.gov/sentry/" target="_blank" rel="noopener noreferrer">Sentry: Impact Risk Data table</a>.
-    <a href="https://cneos.jpl.nasa.gov/nhats/" target="_blank" rel="noopener noreferrer">Accessible NEAs</a>.
-    <a href="https://ssd-api.jpl.nasa.gov/" target="_blank" rel="noopener noreferrer">PL SSD/CNEOS API</a>,
-    <a href="https://ssd-api.jpl.nasa.gov/nhats.api?dv=6&dur=390&stay=8&launch=2020-2045&h=26&occ=7" target="_blank"  rel="noopener noreferrer">example request</a>.</li>
-  <li><a href="https://ui.adsabs.harvard.edu/abs/2021A%26A...654A..56V/abstract" target="_blank" rel="noopener noreferrer">VLT/SPHERE imaging survey of the largest main-belt asteroids: Final results and synthesis</a></li>
-  <li><a href="https://space.stackexchange.com/questions/21158/is-delay-doppler-radar-imaging-of-neo-asteroids-possible-only-if-it-spins-fast-e" target="_blank" rel="noopener noreferrer">Is delay-doppler radar imaging of NEO asteroids possible only if it spins fast enough?</a>,
-    <a href="https://space.stackexchange.com/questions/22493/why-do-radar-maps-of-the-surface-of-venus-have-missing-slices" target="_blank" rel="noopener noreferrer">Why do radar maps of the surface of Venus have missing slices?</a></li>
-  <li><a href="https://ui.adsabs.harvard.edu/abs/2002aste.book..151O/abstract" target="_blank" rel="noopener noreferrer">Asteroid Radar Astronomy</a> (2002),
-    <a href="http://mel.ess.ucla.edu/jlm/publications/Ostro02.AsteroidsIII.pdf" target="_blank" rel="noopener noreferrer">pdf</a>.
-    Delay-Doppler Radar Imaging: <a href="https://www.planetary.org/articles/3248" target="_blank" rel="noopener noreferrer">How radio telescopes get "images" of asteroids</a></li>
-  <li><a href="https://echo.jpl.nasa.gov/introduction.html" target="_blank" rel="noopener noreferrer">Asteroid Radar Research</a>,
-    <a href="http://echo.jpl.nasa.gov/asteroids/ostro_1997_es.pdf" target="_blank" rel="noopener noreferrer">Radar observations of Earth-approaching asteroids (1997, pdf)</a></li>
-  <li><a href="https://nplus1.ru/material/2021/09/09/1001-radar-neo" target="_blank" rel="noopener noreferrer">Ты узнаешь его из тысячи</a>. Радиоастрономы рассмотрели уже 1001 астероид, сближавшийся с Землей. Вот самые интересные</li>
-  <li><a href="https://gvard-ru.livejournal.com/108111.html" target="_blank" rel="noopener noreferrer">Анонс первой версии инфографики</a></li>
-  <li><a href="https://www2.jpl.nasa.gov/saturn/back.html" target="_blank" rel="noopener noreferrer">Historical Background of Saturn's Rings</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Discovery_and_exploration_of_the_Solar_System" target="_blank" rel="noopener noreferrer">Discovery and exploration of the Solar System</a>;
+  <a href="https://en.wikipedia.org/wiki/Solar_System#Visual_summary" target="_blank" rel="noopener noreferrer">Solar System#Visual summary</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Extraterrestrial_liquid_water" target="_blank" rel="noopener noreferrer">Extraterrestrial liquid water</a></li>
+<li><a href="https://armchairastronautics.blogspot.com/p/solar-system-missions.html" target="_blank" rel="noopener noreferrer">Solar System Missions</a>:
+  карта текущих и предстоящих миссий в Солнечной системе,
+  <a href="https://twitter.com/OlafFrohn/" target="_blank" rel="noopener noreferrer">Olaf Frohn twitter</a>.</li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_Solar_System_probes" target="_blank" rel="noopener noreferrer">List of Solar System probes</a></li>
+<li><a href="https://newton.spacedys.com/astdys/index.php?pc=1.0.0" target="_blank" rel="noopener noreferrer">AstDyS-2</a>,
+  <a href="https://newton.spacedys.com/neodys/index.php?pc=1.0" target="_blank" rel="noopener noreferrer">NEODyS-2</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Low_Earth_orbit" target="_blank" rel="noopener noreferrer">Низкая околоземная орбита: характеристики, delta v</a>.
+  <a href="http://www.asterank.com/" target="_blank" rel="noopener noreferrer">База данных Asterank</a>,
+  <a href="https://www.spacereference.org/" target="_blank" rel="noopener noreferrer">База данных Space Reference</a>.</li>
+<li><a href="https://www.esa.int/Safety_Security/Space_Debris" target="_blank" rel="noopener noreferrer">ESA Space Debris Office</a>.
+  <a href="https://orbitaldebris.jsc.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA Orbital Debris Program Office</a>.</li>
+<li><a href="https://cneos.jpl.nasa.gov/sentry/" target="_blank" rel="noopener noreferrer">Sentry: Impact Risk Data table</a>.
+  <a href="https://cneos.jpl.nasa.gov/nhats/" target="_blank" rel="noopener noreferrer">Accessible NEAs</a>.
+  <a href="https://ssd-api.jpl.nasa.gov/" target="_blank" rel="noopener noreferrer">PL SSD/CNEOS API</a>,
+  <a href="https://ssd-api.jpl.nasa.gov/nhats.api?dv=6&dur=390&stay=8&launch=2020-2045&h=26&occ=7" target="_blank"  rel="noopener noreferrer">example request</a>.</li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2021A%26A...654A..56V/abstract" target="_blank" rel="noopener noreferrer">VLT/SPHERE imaging survey of the largest main-belt asteroids: Final results and synthesis</a></li>
+<li><a href="https://space.stackexchange.com/questions/21158/is-delay-doppler-radar-imaging-of-neo-asteroids-possible-only-if-it-spins-fast-e" target="_blank" rel="noopener noreferrer">Is delay-doppler radar imaging of NEO asteroids possible only if it spins fast enough?</a>,
+  <a href="https://space.stackexchange.com/questions/22493/why-do-radar-maps-of-the-surface-of-venus-have-missing-slices" target="_blank" rel="noopener noreferrer">Why do radar maps of the surface of Venus have missing slices?</a></li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2002aste.book..151O/abstract" target="_blank" rel="noopener noreferrer">Asteroid Radar Astronomy</a> (2002),
+  <a href="http://mel.ess.ucla.edu/jlm/publications/Ostro02.AsteroidsIII.pdf" target="_blank" rel="noopener noreferrer">pdf</a>.
+  Delay-Doppler Radar Imaging: <a href="https://www.planetary.org/articles/3248" target="_blank" rel="noopener noreferrer">How radio telescopes get "images" of asteroids</a></li>
+<li><a href="https://echo.jpl.nasa.gov/introduction.html" target="_blank" rel="noopener noreferrer">Asteroid Radar Research</a>,
+  <a href="http://echo.jpl.nasa.gov/asteroids/ostro_1997_es.pdf" target="_blank" rel="noopener noreferrer">Radar observations of Earth-approaching asteroids (1997, pdf)</a></li>
+<li><a href="https://nplus1.ru/material/2021/09/09/1001-radar-neo" target="_blank" rel="noopener noreferrer">Ты узнаешь его из тысячи</a>. Радиоастрономы рассмотрели уже 1001 астероид, сближавшийся с Землей. Вот самые интересные</li>
+<li><a href="https://gvard-ru.livejournal.com/108111.html" target="_blank" rel="noopener noreferrer">Анонс первой версии инфографики</a></li>
+<li><a href="https://www2.jpl.nasa.gov/saturn/back.html" target="_blank" rel="noopener noreferrer">Historical Background of Saturn's Rings</a></li>
 </ul>
 
 <h3>Списки и статистика</h3>
 <ul>
-  <li><a href="http://www.gps.caltech.edu/~mbrown/dps.html">страница М. Брауна о карликовых планетах</a>,
-    <a href="https://en.wikipedia.org/wiki/List_of_possible_dwarf_planets" target="_blank" rel="noopener noreferrer">список возможных карликовых планет</a>,
-    критерий "<a href="https://en.wikipedia.org/wiki/Clearing_the_neighbourhood" target="_blank" rel="noopener noreferrer">Clearing the neighbourhood</a>".</li>
-  <li><a href="http://www.johnstonsarchive.net/astro/asteroidmoons.html" target="_blank" rel="noopener noreferrer">Астероиды, имеющие спутники</a>,
-    <a href="http://www.johnstonsarchive.net/astro/contactbinast.html" target="_blank" rel="noopener noreferrer">контактные двойные</a> (Johnston's Archive).</li>
-  <li><a href="https://minorplanetcenter.net/iau/lists/MPNames.html" target="_blank" rel="noopener noreferrer">Список имен малых планет</a>,
-    <a href="https://www.wgsbn-iau.org/files/Bulletins/" target="_blank" rel="noopener noreferrer">Бюллетени рабочей группы по номенклатуре малых тел</a>,
-    <a href="https://en.wikipedia.org/wiki/List_of_named_minor_planets_(alphabetical)" target="_blank" rel="noopener noreferrer">Список малых планет с именами</a>.</li>
-  <li><a href="https://en.wikipedia.org/wiki/List_of_minor-planet_groups" target="_blank" rel="noopener noreferrer">Список групп малых планет</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_greatest_aphelion" target="_blank" rel="noopener noreferrer">Список тел Солнечной системы с наибольшими афелиями</a>,
-    <a href="https://en.wikipedia.org/wiki/Scattered_disc#/media/File:KBOs_and_resonances.png" target="_blank" rel="noopener noreferrer">Distribution
-      of trans-Neptunian objects, with semi-major axis on the horizontal, and inclination on the vertical axis</a>.</li>
-  <li><a href="https://en.wikipedia.org/wiki/List_of_minor_planets" target="_blank" rel="noopener noreferrer">List of minor planets</a>.
-    (4596) 1981 QB and 616689 Yihangyiyang are currently the lowest-numbered unnamed and highest-numbered named minor planets, respectively.</li>
-  <li><a href="https://en.wikipedia.org/wiki/List_of_unnumbered_minor_planets" target="_blank" rel="noopener noreferrer">List of unnumbered minor planets</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/List_of_unnumbered_trans-Neptunian_objects" target="_blank" rel="noopener noreferrer">List of unnumbered trans-Neptunian objects</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Lost_minor_planet" target="_blank" rel="noopener noreferrer">Lost minor planet</a></li>
-  <li><a href="https://minorplanetcenter.net/iau/lists/ArchiveStatistics.html" target="_blank" rel="noopener noreferrer">Архивная статистика</a>
-    на сайте <a href="https://minorplanetcenter.net/iau/TheIndex.html" target="_blank" rel="noopener noreferrer">Центра малых планет</a></li>
+<li><a href="http://www.gps.caltech.edu/~mbrown/dps.html">страница М. Брауна о карликовых планетах</a>,
+  <a href="https://en.wikipedia.org/wiki/List_of_possible_dwarf_planets" target="_blank" rel="noopener noreferrer">список возможных карликовых планет</a>,
+  критерий "<a href="https://en.wikipedia.org/wiki/Clearing_the_neighbourhood" target="_blank" rel="noopener noreferrer">Clearing the neighbourhood</a>".</li>
+<li><a href="http://www.johnstonsarchive.net/astro/asteroidmoons.html" target="_blank" rel="noopener noreferrer">Астероиды, имеющие спутники</a>,
+  <a href="http://www.johnstonsarchive.net/astro/contactbinast.html" target="_blank" rel="noopener noreferrer">контактные двойные</a> (Johnston's Archive).</li>
+<li><a href="https://minorplanetcenter.net/iau/lists/MPNames.html" target="_blank" rel="noopener noreferrer">Список имен малых планет</a>,
+  <a href="https://www.wgsbn-iau.org/files/Bulletins/" target="_blank" rel="noopener noreferrer">Бюллетени рабочей группы по номенклатуре малых тел</a>,
+  <a href="https://en.wikipedia.org/wiki/List_of_named_minor_planets_(alphabetical)" target="_blank" rel="noopener noreferrer">Список малых планет с именами</a>.</li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_minor-planet_groups" target="_blank" rel="noopener noreferrer">Список групп малых планет</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_greatest_aphelion" target="_blank" rel="noopener noreferrer">Список тел Солнечной системы с наибольшими афелиями</a>,
+  <a href="https://en.wikipedia.org/wiki/Scattered_disc#/media/File:KBOs_and_resonances.png" target="_blank" rel="noopener noreferrer">Distribution
+    of trans-Neptunian objects, with semi-major axis on the horizontal, and inclination on the vertical axis</a>.</li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_minor_planets" target="_blank" rel="noopener noreferrer">List of minor planets</a>.
+  (4596) 1981 QB and 616689 Yihangyiyang are currently the lowest-numbered unnamed and highest-numbered named minor planets, respectively.</li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_unnumbered_minor_planets" target="_blank" rel="noopener noreferrer">List of unnumbered minor planets</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_unnumbered_trans-Neptunian_objects" target="_blank" rel="noopener noreferrer">List of unnumbered trans-Neptunian objects</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Lost_minor_planet" target="_blank" rel="noopener noreferrer">Lost minor planet</a></li>
+<li><a href="https://minorplanetcenter.net/iau/lists/ArchiveStatistics.html" target="_blank" rel="noopener noreferrer">Архивная статистика</a>
+  на сайте <a href="https://minorplanetcenter.net/iau/TheIndex.html" target="_blank" rel="noopener noreferrer">Центра малых планет</a></li>
 </ul>
 </div>
 <footer id="copyright" class="cont">
 <div><a href="https://creativecommons.org/licenses/by/4.0/deed.ru" target="_blank" rel="noopener noreferrer">
-  <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="100" alt="CC BY icon"
-    title="Представленные здесь материалы доступны под лицензией Creative Commons BY «С указанием авторства»"></a>
+<img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg" width="100" alt="CC BY icon"></a>
 </div>
 <div id="link">Д.С. Насонов</div>
 </footer>
