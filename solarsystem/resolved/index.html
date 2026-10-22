@@ -18,62 +18,64 @@
 <script>
 function addSolsysTable(data) {
   tab = document.getElementById("tab");
+  data = data["data"];
   Object.entries(data).forEach(([name, params]) => {
-    let classes = params["tags"];
-    let pth = `../images/${params["imnam"]}`;
+    const [tags, numNam, ruNam, imNam, wurl, size, dat, dv, extra] = params;
+    let classes = tags;
+    let pth = `../images/${imNam}`;
     let des = "";
-    if ("des" in params) {
-      des = `<div class="des">${params['des']}</div>\n`;
+    if ("des" in extra) {
+      des = `<div class="des">${extra['des']}</div>\n`;
     }
     let mass = "";
-    if ("mass" in params) {
-      mass = `<div class="mass">${params['mass']}</div>\n`;
+    if ("mass" in extra) {
+      mass = `<div class="mass">${typeof extra['mass'] === 'string' ? extra['mass'].replaceAll("-", "–") : extra['mass']}</div>\n`;
     }
     let dateEl = "";
-    if ("dat" in params) {
-      dateEl = `<div class="date">${params['dat']}</div>\n`;
+    if (dat) {
+      dateEl = `<div class="date">${dat}</div>\n`;
     }
     let pre = "";
-    if ("pre" in params) {
-      pre = `<div class="pre">${params['pre']}</div>\n`;
+    if ("pre" in extra) {
+      pre = `<div class="pre">${extra['pre']}</div>\n`;
     }
     let dens = "";
-    if ("dens" in params) {
-      dens = `<div class="dens">${params['dens']}</div>\n`;
+    if ("dens" in extra) {
+      dens = `<div class="dens">${typeof extra['dens'] === 'string' ? extra['dens'].replaceAll("-", "–") : extra['dens']}</div>\n`;
     }
     let imdat = "";
-    if ("imdat" in params) {
-      imdat = `<div class="imdat">${params['imdat']}</div>\n`;
+    if ("idat" in extra) {
+      imdat = `<div class="idat">${extra['idat']}</div>\n`;
     }
     let desc = "";
-    if ("desc" in params) {
-      desc = `<div class="desc">${params['desc']}</div>\n`;
+    if ("desc" in extra) {
+      desc = `<div class="desc">${extra['desc']}</div>\n`;
     }
     let datar = "";
-    if ("rot" in params) {
-      datar = ` data-r="${params['rot']}"`;
+    if ("rot" in extra) {
+      datar = ` data-r="${extra['rot']}"`;
     }
     let datab = "";
-    if ("imurl" in params) {
-      datab = ` data-b="${params['imurl']}"`;
+    if ("imurl" in extra) {
+      datab = ` data-b="${extra['imurl']}"`;
     }
     let datan = "";
-    if ("num" in params) {
-      datan = ` data-n="${params['num']}"`;
+    if ("num" in extra) {
+      datan = ` data-n="${extra['num']}"`;
     }
     let dataid = "";
-    if ("imdis" in params) {
-      dataid = ` data-id="${params['imdis']}"`;
+    if ("imdis" in extra) {
+      dataid = ` data-id="${extra['imdis']}"`;
     }
     let databib = "";
-    if ("bib" in params) {
-      databib = ` data-b="${params['bib']}"`;
+    if ("bib" in extra) {
+      databib = ` data-b="${extra['bib']}"`;
     }
     tab.innerHTML += `<div class="obj ${classes.join(' ')}"${datan}${datar}${dataid}${databib}>
-<div class="img"${datab}><img alt="${params['nmnam']}" src="${pth}"></div>
-<div class="name"><a href="${params['url']}">${params['runam']}</a></div>
-${des}<div class="size">${params['size']}</div>
-${mass}${dateEl}${pre}${imdat}<div class="dv">${params['dv']}</div>
+<div class="img"${datab}><img alt="${name}" src="${pth}"></div>
+<div class="name"><a href="https://en.wikipedia.org/wiki/${wurl}">${ruNam}</a></div>
+${des}<div class="size">${size}</div>
+${mass}${dateEl}${pre}${imdat}<div class="dv">${dv}</div>
 ${dens}${desc}</div>`;
 })
 }
@@ -99,17 +101,17 @@ fetch("https://raw.githubusercontent.com/gvard/astrodata/main/data/solarsystem/r
 <label class="nowrap"><input type="checkbox" name=".dens" onclick="showHideThis(this)">Плотность</label>
 <label class="nowrap" title="Характеристическая скорость орбитального маневра"><input type="checkbox" name=".dv" onchange="showHideThis(this)">Δv</label>
 <label class="nowrap" title="Дата первого наблюдения до открытия (precovery date)"><input type="checkbox" name=".pre" onchange="showHideThis(this)">Первые наблюдения</label>
-<label class="nowrap" title="Дата первых наблюдений формы, поверхности или дата подробных изображений"><input type="checkbox" name=".imdat" onchange="showHideThis(this)">Первые подробные изображения</label>
+<label class="nowrap" title="Дата первых наблюдений формы, поверхности или дата подробных изображений"><input type="checkbox" name=".idat" onchange="showHideThis(this)">Первые подробные изображения</label>
 <div id="props">
 <button onclick="uncheckAll(true)">Вкл</button><button onclick="uncheckAll(false)">Выкл</button><br>
 <b>Изображение и поверхность:</b><br>
 <label class="nowrap"><input type="checkbox" name=".dot,.lowcontrast" checked onchange="showHideThis(this)">Низкое разрешение/точечное</label>
 <label class="nowrap"><input type="checkbox" name=".highcontrast,.lightcurve,.model" checked onchange="showHideThis(this)">Восстановленное изображение/модель</label>
-<label class="nowrap"><input type="checkbox" name=".occultation" checked onchange="showHideThis(this)">Наблюдались
+<label class="nowrap"><input type="checkbox" name=".occlt" checked onchange="showHideThis(this)">Наблюдались
 <a href="https://en.wikipedia.org/wiki/Occultation#Occultations_by_smaller_bodies" target="_blank" rel="noopener noreferrer">покрытия звезд</a></label>
 <label class="nowrap"><input type="checkbox" name=".lightcurve" checked onchange="showHideThis(this)">Модель по кривой блеска</label>
-<label class="nowrap"><input type="checkbox" name=".radarimage" checked onchange="showHideThis(this)">Радарное изображение</label>
-<label class="nowrap"><input type="checkbox" name=".animation" checked onclick="showHideThis(this)">Анимация</label>
+<label class="nowrap"><input type="checkbox" name=".rdrimg" checked onchange="showHideThis(this)">Радарное изображение</label>
+<label class="nowrap"><input type="checkbox" name=".ani" checked onclick="showHideThis(this)">Анимация</label>
 <label class="nowrap"><input type="checkbox" name=".map" checked onclick="showHideThis(this)">Карта поверхности</label>
 <br>
 <b>Классы тел:</b><br>
@@ -140,9 +142,9 @@ fetch("https://raw.githubusercontent.com/gvard/astrodata/main/data/solarsystem/r
 <label class="nowrap"><input type="checkbox" name=".he" checked onchange="showHideThis(this)">«Круглые» тела</label> (в гидростатическом равновесии)
 <label class="nowrap"><input type="checkbox" name=".rings" checked onchange="showHideThis(this)">Имеют кольца</label>
 <label class="nowrap"><input type="checkbox" name=".havesats" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Minor-planet_moon" target="_blank" rel="noopener noreferrer">Имеют спутники/луны</a></label>
-<label class="nowrap"><input type="checkbox" name=".binary" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Binary_asteroid" target="_blank" rel="noopener noreferrer">Двойные</a></label>,
+<label class="nowrap"><input type="checkbox" name=".bin" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Binary_asteroid" target="_blank" rel="noopener noreferrer">Двойные</a></label>,
 <label class="nowrap"><input type="checkbox" name=".triple" checked onchange="showHideThis(this)">тройные системы</label>
-<label class="nowrap"><input type="checkbox" name=".contactbinary" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Contact_binary_(small_Solar_System_body)" target="_blank" rel="noopener noreferrer">Контактные двойные</a></label>
+<label class="nowrap"><input type="checkbox" name=".cbin" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Contact_binary_(small_Solar_System_body)" target="_blank" rel="noopener noreferrer">Контактные двойные</a></label>
 <br>
 <b>Космонавтика:</b><br>
 <label class="nowrap"><input type="checkbox" name=".visited" checked onclick="showHideThis(this)">Посещенные АМС</label>
@@ -171,7 +173,6 @@ fetch("https://raw.githubusercontent.com/gvard/astrodata/main/data/solarsystem/r
 </div>
 Фокус на картинке – полная информация
 </div>
-<div id="tab">
-</div>
+<div id="tab"></div>
 </body>
 </html>
