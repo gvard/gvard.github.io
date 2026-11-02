@@ -105,11 +105,11 @@ fetch("https://raw.githubusercontent.com/gvard/astrodata/main/data/solarsystem/r
 <div id="props">
 <button onclick="uncheckAll(true)">Вкл</button><button onclick="uncheckAll(false)">Выкл</button><br>
 <b>Изображение и поверхность:</b><br>
-<label class="nowrap"><input type="checkbox" name=".dot,.lowcontrast" checked onchange="showHideThis(this)">Низкое разрешение/точечное</label>
-<label class="nowrap"><input type="checkbox" name=".highcontrast,.lightcurve,.model" checked onchange="showHideThis(this)">Восстановленное изображение/модель</label>
+<label class="nowrap"><input type="checkbox" name=".dot,.lowcntr" checked onchange="showHideThis(this)">Низкое разрешение/точечное</label>
+<label class="nowrap"><input type="checkbox" name=".higcntr,.ligcrv,.model" checked onchange="showHideThis(this)">Восстановленное изображение/модель</label>
 <label class="nowrap"><input type="checkbox" name=".occlt" checked onchange="showHideThis(this)">Наблюдались
 <a href="https://en.wikipedia.org/wiki/Occultation#Occultations_by_smaller_bodies" target="_blank" rel="noopener noreferrer">покрытия звезд</a></label>
-<label class="nowrap"><input type="checkbox" name=".lightcurve" checked onchange="showHideThis(this)">Модель по кривой блеска</label>
+<label class="nowrap"><input type="checkbox" name=".ligcrv" checked onchange="showHideThis(this)">Модель по кривой блеска</label>
 <label class="nowrap"><input type="checkbox" name=".rdrimg" checked onchange="showHideThis(this)">Радарное изображение</label>
 <label class="nowrap"><input type="checkbox" name=".ani" checked onclick="showHideThis(this)">Анимация</label>
 <label class="nowrap"><input type="checkbox" name=".map" checked onclick="showHideThis(this)">Карта поверхности</label>
@@ -128,9 +128,12 @@ fetch("https://raw.githubusercontent.com/gvard/astrodata/main/data/solarsystem/r
 <label class="nowrap"><input type="checkbox" name=".ur" checked onclick="showHideThis(this)">Урана</label>,
 <label class="nowrap"><input type="checkbox" name=".ne" checked onclick="showHideThis(this)">Нептуна</label>.
 <label class="nowrap"><input type="checkbox" name=".dwmoon" checked onclick="showHideThis(this)">Спутники карликовых планет</label>
-<label class="nowrap"><input type="checkbox" name=".satellite" checked onclick="showHideThis(this)">Спутники малых планет</label>
+<label class="nowrap"><input type="checkbox" name=".satellt" checked onclick="showHideThis(this)">Спутники малых планет</label>
 <br>
 <label class="nowrap"><input type="checkbox" name=".mab" checked onclick="showHideThis(this)">Астероиды главного пояса</label>
+(<label class="nowrap"><input type="checkbox" name=".innmb" checked onclick="showHideThis(this)">внутренней</label>,
+<label class="nowrap"><input type="checkbox" name=".midmb" checked onclick="showHideThis(this)">средней</label>,
+<label class="nowrap"><input type="checkbox" name=".outmb" checked onclick="showHideThis(this)">внешней части</label>)
 <label class="nowrap"><input type="checkbox" name=".tno,.centaur" checked onclick="showHideThis(this)">Транснептуновые объекты и кентавры</label>
 <label class="nowrap"><input type="checkbox" name=".sca" checked onclick="showHideThis(this)">Объекты рассеянного диска</label>
 <label class="nowrap"><input type="checkbox" name=".co" checked onclick="showHideThis(this)">Кометы</label>
@@ -141,13 +144,13 @@ fetch("https://raw.githubusercontent.com/gvard/astrodata/main/data/solarsystem/r
 <b>Свойства:</b><br>
 <label class="nowrap"><input type="checkbox" name=".he" checked onchange="showHideThis(this)">«Круглые» тела</label> (в гидростатическом равновесии)
 <label class="nowrap"><input type="checkbox" name=".rings" checked onchange="showHideThis(this)">Имеют кольца</label>
-<label class="nowrap"><input type="checkbox" name=".havesats" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Minor-planet_moon" target="_blank" rel="noopener noreferrer">Имеют спутники/луны</a></label>
+<label class="nowrap"><input type="checkbox" name=".havsat" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Minor-planet_moon" target="_blank" rel="noopener noreferrer">Имеют спутники/луны</a></label>
 <label class="nowrap"><input type="checkbox" name=".bin" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Binary_asteroid" target="_blank" rel="noopener noreferrer">Двойные</a></label>,
 <label class="nowrap"><input type="checkbox" name=".triple" checked onchange="showHideThis(this)">тройные системы</label>
 <label class="nowrap"><input type="checkbox" name=".cbin" checked onchange="showHideThis(this)"><a href="https://en.wikipedia.org/wiki/Contact_binary_(small_Solar_System_body)" target="_blank" rel="noopener noreferrer">Контактные двойные</a></label>
 <br>
 <b>Космонавтика:</b><br>
-<label class="nowrap"><input type="checkbox" name=".visited" checked onclick="showHideThis(this)">Посещенные АМС</label>
+<label class="nowrap"><input type="checkbox" name=".visitd" checked onclick="showHideThis(this)">Посещенные АМС</label>
 <label class="nowrap"><input type="checkbox" name=".flyby" checked onclick="showHideThis(this)">Пролетные миссии</label>
 <label class="nowrap"><input type="checkbox" name=".orbited" checked onclick="showHideThis(this)">Орбитальные миссии</label>
 <label class="nowrap"><input type="checkbox" name=".surf" checked onclick="showHideThis(this)">Исследование поверхности</label>
@@ -155,7 +158,7 @@ fetch("https://raw.githubusercontent.com/gvard/astrodata/main/data/solarsystem/r
 <label class="nowrap"><input type="checkbox" name=".sample" checked onclick="showHideThis(this)">Проба вещества</label>
 <br>
 <b>Номенклатура:</b><br>
-<label class="nowrap"><input type="checkbox" name=".numbered" checked onclick="showHideThis(this)">Нумерованные</label>
+<label class="nowrap"><input type="checkbox" name=".nmbrd" checked onclick="showHideThis(this)">Нумерованные</label>
 <label class="nowrap"><input type="checkbox" name=".named" checked onclick="showHideThis(this)">Именованные</label>
 <br>
 <b>Дата открытия:</b>
